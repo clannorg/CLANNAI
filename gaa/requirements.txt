@@ -1,0 +1,15 @@
+# GAA Analysis Backend Dependencies
+# Backend service: URL → JSON events
+
+# Core Analysis
+google-generativeai>=0.7.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Video Processing
+opencv-python>=4.8.0
+moviepy>=1.0.3
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0 

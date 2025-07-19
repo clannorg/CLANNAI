@@ -1,0 +1,49 @@
+📅 Player_31 GAME TIMELINE
+==================================================
+
+Total Segments: 40
+Time Range: 00:000.0 - 09:045.0
+
+CHRONOLOGICAL ACTIVITY:
+----------------------------------------
+
+ 1. 00:000.0 - Player_31 passes to teammate - COMPLETED → ... → Player_31 running on left side of court
+ 2. 00:015.0 - Player_31 receives the ball. → ... → Player_31 is waiting in front of the free-throw line.
+ 3. 00:030.0 - Player_31 standing near baseline - Not involved in play → ... → Player_31 takes jump shot - MISSED
+ 4. 00:045.0 - Player_31 not visible
+ 5. 01:000.0 - Player_31 contests shot at the basket - MISSED → ... → Player_31 continues dribbling
+ 6. 01:015.0 - Player_31 is holding the ball facing the basket. → ... → Player_31 standing near the side of the court
+ 7. 01:030.0 - Player_31 starts running down the court. → ... → Player_31 walks off the court.
+ 8. 01:045.0 - Player_31 visible but no specific actions tracked
+ 9. 02:000.0 - Player_31 is standing at the free throw line extended. → ... → Player_31 takes jump shot - MISSED (right hoop)
+10. 02:015.0 - Player_31 is standing with the ball. → ... → Player_31 shoots the ball - MISSED.
+11. 02:030.0 - Player_31 dribbles ball - INITIATED → ... → Player_31 standing in position
+12. 02:045.0 - Player_31 standing at the free throw line - GUARDING → ... → Player_31 shoots the ball - MISSED
+13. 03:000.0 - Player_31 dribbles ball - INITIATED → ... → Player_31 exits frame
+14. 03:015.0 - Player_31 standing near the key - positioning → ... → Player_31 dribbles ball - CONTINUED
+15. 03:030.0 - Player_31 not visible
+16. 03:045.0 - Player_31 moving along the three point line - NO OUTCOME → ... → Player_31 takes jump shot - MISSED
+17. 04:000.0 - Player_31 is near the free throw line - Positioning. → ... → Player_31 is walking towards the camera. Movement.
+18. 04:015.0 - Player_31 with ball - INITIATED dribbling. → ... → Player_31 moving to the other side of the court.
+19. 04:030.0 - Player_31 not visible
+20. 04:045.0 - Player_31 shoots the ball from the free throw line - MADE → ... → Player_31 dribbles the ball - INITIATED
+21. 05:000.0 - 04s: Player_31 starts running towards the opposite side of the court. → ... → 14s: Player_31 observes the play and prepares for a rebound.
+22. 05:015.0 - Player_31 takes jump shot - MADE (at the basket in view) → ... → Player_31 dribbles the ball - INITIATED
+23. 05:030.0 - Player_31 stands in place, watching the game. → ... → Player_31 dribbles the ball - INITIATED
+24. 05:045.0 - Player_31 dribbles ball - INITIATED → ... → Player_31 standing near free throw line.
+25. 06:000.0 - Player_31 starts running down the court. → ... → Player_31 starts running down the court.
+26. 06:015.0 - Player_31 runs down the court - in transition → ... → Player_31 - Positioning on the baseline - Positioning
+27. 06:030.0 - Player_31 is stationary. → ... → Player_31 moves toward other side of court.
+28. 06:045.0 - ** Player_31 dribbles the ball - INITIATED → ... → ** Player_31 is guarding player - POSITIONING
+29. 07:000.0 - Player_31 walks along the side of the court. → ... → Player_31 runs down the court.
+30. 07:015.0 - Player_31 runs to the key area - positioning → ... → Player_31 takes jump shot - MISSED
+31. 07:030.0 - Player_31 dribbles ball - INITIATED → ... → Player_31 attempts to box out - GUARDING
+32. 07:045.0 - Player_31 moving to defensive position. → ... → Player_31 contests shot.
+33. 08:000.0 - Player_31 not visible
+34. 08:015.0 - Player_31 in defensive position near the free throw line. → ... → Player_31 takes jump shot - MADE.
+35. 08:030.0 - Player_31 in center court, under the hoop. → ... → Player_31 moves down court, without possession.
+36. 08:045.0 - Player_31 moves up the court. → ... → Player_31 looks for a possible rebound.
+37. 09:000.0 - 10s: Player_31 starts dribbling ball - INITIATED → ... → 14s: Player_31 dribbles ball - COMPLETED
+38. 09:015.0 - Player_31 dribbles ball - INITIATED → ... → Player_31 takes jump shot - MISSED
+39. 09:030.0 - Player_31 moving to offensive position → ... → Player_31 is standing on the court
+40. 09:045.0 - Player_31 shoots the ball - MISSED (far basket) → ... → Player_31 signals for the ball.

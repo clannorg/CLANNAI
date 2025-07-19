@@ -1,0 +1,27 @@
+🏀 BASKETBALL PLAYER SYNTHESIS REPORT
+==================================================
+
+Okay, I understand. Here's the synthesized basketball player data, with aggressive deduplication and limited to 13 active players and 4 bystanders, following the provided format:
+
+🏀 ACTIVE PLAYERS
+=================
+Player_3: Black jersey #3, athletic/slender build, passes/dribbles the ball, part of game flow, appears in 2 clips
+Player_31: Blue jersey #31, athletic/medium/stocky build, takes shots (sometimes misses), dribbling, passing, plays defense, runs the court, setting up plays, involved in court movement, appears in 6 clips
+Player_14: White/Blue jersey #14, slim/average build, passes the ball, participating in game flow, appears in 2 clips
+Player_05: Black jersey #05, medium build, plays defense, appears in 1 clip
+GrayShirt_Player: Gray shirt, slim/average build, passing/dribbling the ball, participating in game flow, playing defense near key, appears in 5 clips
+Player_25/35/PurpleJersey_Player/PurpleJersey_35: Purple jersey #25/#35, athletic/medium/thin build, running the court, shooting, setting up plays, involved, appears in 6 clips
+WhiteShirt_Player: White shirt, athletic/average build, running the court, playing defense, appears in 2 clips
+Player_10: White jersey #10, slim build, takes shot and makes, appears in 1 clip
+Player_16: Blue jersey #16, medium build, passing the ball, participating in game flow, appears in 2 clips
+Player_15: White jersey #15, athletic build, running the court, appears in 1 clip
+Player_86: White/Black jersey #86, stocky/slim/medium build, dribbling, playing offense, taking shots (with defenders), runs around with the team, involved in the game, appears in 8 clips
+BlueJersey_Player: Blue jersey, average/stocky/medium build, participating in game flow, running court playing defense, plays defense, part of organized game, appears in 6 clips
+WhiteJersey_Player/WhiteJersey_Player2/WhiteJersey_Player3/WhiteJersey_77: White jersey, tall/average build, participating in game flow, setting screens, moving with the offense, passing the ball, running on the offense, running the court, plays defense near key, involved in passing, appears in 11 clips
+
+👥 BYSTANDERS
+==============
+Bystander_BlackShirt: Black T-shirt, stocky/average build, standing/walking on the sideline, observing, no ball involvement, appears in 6 clips
+Bystander_GrayShirt: Gray shirt, stocky/average build, taking shots alone/walking around/standing on sidelines, appears in 5 clips
+BlueShorts_WhiteShirt_Bystander: Blue shorts, White shirt, older gentleman, dribbling along the side, appears in 1 clip
+Bystander_DarkShirt/HoldingBall: Dark shirt, standing on the side holding a ball, appears in 2 clips

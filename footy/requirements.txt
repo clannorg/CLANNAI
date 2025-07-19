@@ -1,0 +1,5 @@
+requests>=2.25.1
+google-generativeai>=0.3.0
+pathlib
+opencv-python>=4.5.0
+ffmpeg-python>=0.2.0 

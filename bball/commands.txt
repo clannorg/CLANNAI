@@ -1,0 +1,24 @@
+# BASKETBALL ANALYSIS COMMANDS
+# Copy and paste these commands into your terminal
+
+# HIGH-QUALITY ANALYSIS (1920x1080) - RECOMMENDED
+python 1_game_events/events_clip_analyzer_hq.py
+python 1_game_events/events_synthesis.py
+python 1_game_events/basketball_json_converter.py
+
+# COMPRESSED ANALYSIS (640x480)
+python 1_game_events/events_clip_analyzer.py
+python 1_game_events/events_synthesis.py
+python 1_game_events/basketball_json_converter.py
+
+PLAYER PROFILING
+python 2_player_profiling/player_clip_analyzer.py
+python 2_player_profiling/player_synthesis.py
+
+# PLAYER TRACKING
+python 3_player_analysis/tracking_clip_analyzer.py
+python 3_player_analysis/tracking_synthesis.py
+
+# ACCURACY EVALUATION
+python 1.5_accuracy_eval/accuracy_evaluation.py
+python 1.5_accuracy_eval/llm_accuracy_evaluator.py 

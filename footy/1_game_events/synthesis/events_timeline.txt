@@ -1,0 +1,21 @@
+⚽ FOOTBALL MATCH EVENTS TIMELINE
+==================================================
+
+Total Events: 12
+Time Range: 18:27.00 - 22:40.00
+
+CHRONOLOGICAL EVENTS:
+------------------------------
+
+  1. 18:27.00 - Foul committed - MAJOR FOUL
+  2. 18:57.00 - Referee makes a call and stops play - FOUL
+  3. 19:00.00 - Kickoff - GAME START
+  4. 19:19.00 - Shot towards goal by blue team, appears to be saved by the goalkeeper - SHOT ON TARGET
+  5. 19:55.00 - Kick off from the center circle - TURNOVER
+  6. 20:15.00 - Kick-off - GAME START
+  7. 21:28.00 - Shot towards goal, saved by goalkeeper - SHOT ON TARGET
+  8. 22:25.00 - Shot on goal - SHOT ON TARGET
+  9. 22:26.00 - Goal scored by team in blue - GOAL
+ 10. 22:35.00 - Shot blocked in front of goal - SHOT ON TARGET
+ 11. 22:35.00 - Scramble in the box - PLAY ON
+ 12. 22:40.00 - Team in yellow gains possession - TURNOVER

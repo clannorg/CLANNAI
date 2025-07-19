@@ -1,0 +1,36 @@
+```
+ ____________________________________
+| Player_31: Concise Analysis        |
+|====================================|
+| Primarily Jump Shooter, Inconsistent|
+| Needs Improved Shot Selection      |
+ ------------------------------------
+
+ _______________________
+| STATISTICAL OVERVIEW |
+|=======================|
+| Field Goal %: 21.4% (3/14)       |
+| Jump Shot Attempts: 14         |
+| Made Jump Shots: 3                |
+| Passes Completed: 1/1          |
+ -----------------------
+
+ __________________________
+| KEY OBSERVATIONS        |
+|==========================|
+| Poor Shooting Efficiency     |
+| Below average dribbling skills  |
+| Inconsistent Shot Selection |
+| Limited Defensive Impact    |
+ --------------------------
+
+ ________________
+| PLAYER RATING |
+|===============|
+| Rating: 3/10  |
+| VERDICT:      |
+| Needs significant    |
+| improvement in     |
+| shooting efficiency   |
+ ----------------
+```
