@@ -1,0 +1,21 @@
+```
+GAME298_0601 EVENTS TIMELINE
+==================================================
+
+0m06s: Goal scored by team A - GOAL
+0m39s: Shot on goal, blocked by defender - SHOT
+0m48s: Goal scored by team A - GOAL
+1m17s: Goal scored by team A - GOAL
+1m35s: Shot on target, saved by goalkeeper - SAVE
+2m11s: Shot on target, saved by goalkeeper - SAVE
+2m39s: Shot on target - SHOT
+2m40s: Save by goalkeeper - SAVE
+3m25s: Shot on goal, saved by goalkeeper - SAVE
+3m46s: Shot on goal - SHOT
+
+
+Total Events: 10
+Goals: 3
+Shots: 5
+Saves: 4
+```

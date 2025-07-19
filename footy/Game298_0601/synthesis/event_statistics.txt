@@ -1,0 +1,10 @@
+GAME298_0601 EVENT STATISTICS
+==================================================
+
+Total Events: 9
+Goals: 0
+Shots: 9
+Saves: 0
+Passes: 0
+Turnovers: 0
+General Play: 0

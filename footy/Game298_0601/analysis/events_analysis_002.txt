@@ -1,0 +1,18 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_002
+==================================================
+
+Okay, I've analyzed the 30-second football clip. Here's my analysis:
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_002 (Starts at 0m30s)
+==================================================
+
+0m39s: Shot on goal is blocked by defender - SHOT ON TARGET
+0m48s: Shot on goal goes into net - GOAL
+
+**KEY MOMENTS:**
+- Goal scored at the end of the clip.
+
+**MATCH FLOW:**
+- A shot is blocked early in the clip, followed by continued play, leading to a goal.
+```
