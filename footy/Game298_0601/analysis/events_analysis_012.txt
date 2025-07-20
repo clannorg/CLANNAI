@@ -1,0 +1,19 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_012
+==================================================
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_012 (Starts at 1m50s)
+==================================================
+
+1m52s: Player in black/blue kicks the ball downfield - PASS
+1m54s: Player in purple dribbles upfield with the ball - POSSESSION
+2m02s: Player in purple passes the ball to a teammate - PASS
+2m04s: Player in purple shoots the ball - SHOT
+2m05s: Goalkeeper saves the shot - SAVE
+
+**KEY MOMENTS:**
+- A shot and a subsequent save by the goalkeeper
+
+**MATCH FLOW:**
+- Purple team attacking the blue/black team's goal.
+```

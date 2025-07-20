@@ -1,0 +1,19 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_021
+==================================================
+
+Okay, I've analyzed the provided 30-second football video clip.
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_021 (Starts at 10m00s)
+==================================================
+
+10m07s: Player with ball dribbles towards the goal. - PLAY
+10m13s: Player takes a shot. - SHOT
+10m14s: The ball is saved by the goalkeeper. - SHOT ON TARGET
+
+**KEY MOMENTS:**
+- A shot on target is taken and saved by the goalkeeper.
+
+**MATCH FLOW:**
+- The clip contains an attacking move culminating in a save by the goalkeeper.
+```

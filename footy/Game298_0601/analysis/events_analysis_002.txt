@@ -1,18 +1,17 @@
 FOOTBALL EVENTS ANALYSIS - CLIP_002
 ==================================================
 
-Okay, I've analyzed the 30-second football clip. Here's my analysis:
+Okay, I've analyzed the 15-second football clip. Here's the breakdown of the major events:
 
 ```
-FOOTBALL EVENTS ANALYSIS - CLIP_002 (Starts at 0m30s)
+FOOTBALL EVENTS ANALYSIS - CLIP_002 (Starts at 0m10s)
 ==================================================
 
-0m39s: Shot on goal is blocked by defender - SHOT ON TARGET
-0m48s: Shot on goal goes into net - GOAL
+0m12s: Player passes the ball to another player - TURNOVER (potentially, possession changes)
 
 **KEY MOMENTS:**
-- Goal scored at the end of the clip.
+- A possible turnover occurs at 0m12s.
 
 **MATCH FLOW:**
-- A shot is blocked early in the clip, followed by continued play, leading to a goal.
+- The clip shows a brief passing sequence in midfield.
 ```

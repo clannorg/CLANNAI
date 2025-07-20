@@ -1,0 +1,16 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_049
+==================================================
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_049 (Starts at 8m00s)
+==================================================
+
+8m04s: Player passes the ball forward - PASS
+8m13s: Player dribbles the ball - DRIBBLE
+
+**KEY MOMENTS:**
+- A forward pass and dribble are the only key actions.
+
+**MATCH FLOW:**
+- Players are running forward.
+```

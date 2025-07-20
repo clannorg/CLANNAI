@@ -47,7 +47,7 @@ class FootballEventsAnalyzer:
             "errors": 0
         }
     
-    def encode_video_base64(self, video_path: str) -> bytes | None:
+    def encode_video_base64(self, video_path: str) -> bytes:
         """Convert video to base64 for Gemini API (same as basketball)"""
         try:
             result = subprocess.run([

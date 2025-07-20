@@ -73,7 +73,7 @@ def analyze_clip_for_kickouts(clip_path, timestamp, half_name):
         **PRE-DETECTED OBJECTS:**
         A separate, specialized object detection and segmentation model (GroundedSAM2) has identified the following objects (their bounding boxes and segmentation masks) in a frame from this clip. Use this as a strong prior for your analysis. 
         You must perform your own frame analysis and not solely rely on the pre-detected objects. The segmentation has only been computed once per second on this 30fps footage.
-        {object_detections_text} It is vital to recall that the goalkeeper may be mistaken for a player in the detections, but will consistently be found next to their goal.
+        {object_detections_text} It is vital to recall that the goalkeeper will most likely be mistaken for a player in the detections, but will consistently be found next to their goal.
 
 
         **CAMERA SYSTEM:**
@@ -139,7 +139,7 @@ def analyze_clip_for_kickouts(clip_path, timestamp, half_name):
         - The ball goes out of play, either due to a goal, a point, or a missed shot.
         - The referee blows his whistle and signals a kickout. You may observe the referee moving arms to make this signal.
         - All players will be observed to move away from the goalpost and spread out across the pitch, possibly off frame.
-        - The goalkeeper ( likely a football player in the detections) moves away from their goalpost, placing the ball down around the 20m line, and performing a quick runup before kicking the ball.
+        - The goalkeeper ( ikely mistaken for a football player in the detections) moves away from their goalpost, placing the ball down around the 20m line, and performing a quick runup before kicking the ball.
         - The ball is kicked, and the players on the pitch contest for the ball.
 
 

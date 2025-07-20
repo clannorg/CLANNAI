@@ -1,18 +1,16 @@
 FOOTBALL EVENTS ANALYSIS - CLIP_003
 ==================================================
 
-Okay, I've analyzed the 30-second football clip. Here's the event analysis based on your instructions:
-
 ```
-FOOTBALL EVENTS ANALYSIS - CLIP_003 (Starts at 1m00s)
+FOOTBALL EVENTS ANALYSIS - CLIP_003 (Starts at 0m20s)
 ==================================================
 
-1m17s: Shot on goal - SHOT ON TARGET
-1m17s: Goal scored (Whistle) - GOAL
+0m33s: Player #6 passes the ball - PASS
+0m34s: Player #6 receives ball back and attempts a shot on goal - SHOT
 
 **KEY MOMENTS:**
-- A shot on goal is taken, and a goal is scored.
+- Player #6 pass followed by a return pass and attempt to shot on goal.
 
 **MATCH FLOW:**
-- The clip shows an offensive play resulting in a goal.
+- Standard match play
 ```

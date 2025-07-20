@@ -1,18 +1,16 @@
 FOOTBALL EVENTS ANALYSIS - CLIP_001
 ==================================================
 
-Okay, I've reviewed the 30-second video clip, focusing on key football events. Here's my analysis:
-
 ```
 FOOTBALL EVENTS ANALYSIS - CLIP_001 (Starts at 0m00s)
 ==================================================
 
-0m06s: Shot on goal - SHOT ON TARGET
-0m06s: Goal - GOAL
+0m07s: Shot on goal is taken. - SHOT ON TARGET
+0m08s: Goal is scored. - GOAL
 
 **KEY MOMENTS:**
-- A goal is scored at 0m06s
+- A goal is scored.
 
 **MATCH FLOW:**
-- The clip starts with play in the attacking third, leading to a goal.
+- The clip shows a quick attacking play leading to a goal.
 ```

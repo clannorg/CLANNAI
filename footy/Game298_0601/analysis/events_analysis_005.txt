@@ -1,17 +1,16 @@
 FOOTBALL EVENTS ANALYSIS - CLIP_005
 ==================================================
 
-Okay, I'm ready to analyze the football clip.
-
 ```
-FOOTBALL EVENTS ANALYSIS - CLIP_005 (Starts at 2m00s)
+FOOTBALL EVENTS ANALYSIS - CLIP_005 (Starts at 0m40s)
 ==================================================
 
-2m11s: Player #3 takes a shot. - SHOT ON TARGET (Saved by Goalkeeper)
+0m48s: Shot on goal, saved by goalkeeper - SHOT ON TARGET
+0m49s: Ball rebounded - SHOT ON TARGET
 
 **KEY MOMENTS:**
-- The clip contains a shot on target that was saved by the goalkeeper.
+- A shot on goal, followed by a rebound attempt
 
 **MATCH FLOW:**
-- The clip shows an offensive play resulting in a shot on goal.
+- Offensive play is building up
 ```

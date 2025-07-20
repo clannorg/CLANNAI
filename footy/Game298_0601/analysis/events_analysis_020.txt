@@ -1,0 +1,17 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_020
+==================================================
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_020 (Starts at 9m30s)
+==================================================
+
+9m40s: Shot on goal is taken. - SHOT ON TARGET
+9m40s: The shot on goal is blocked. - SHOT ON TARGET
+9m50s: Possession changes as ball is played to other side. - TURNOVER
+
+**KEY MOMENTS:**
+- There was one shot on target that was blocked.
+
+**MATCH FLOW:**
+- Ball is moving from one side of the field to the other.
+```

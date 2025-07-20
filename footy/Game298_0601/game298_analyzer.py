@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Dict, Any, List
 import os
 from dotenv import load_dotenv
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Load environment variables
 load_dotenv()
@@ -69,12 +70,12 @@ class Game298Analyzer:
     
     def get_events_prompt(self, clip_path: str, clip_number: int, clip_start_time: str) -> str:
         """Generate prompt for football event analysis"""
-        duration = 30  # 30 seconds per clip
+        duration = 15  # 15 seconds per clip
         prompt = f"""
 You are analyzing a {duration}-second football video clip that starts at {clip_start_time} into the match. 
 
 **FOCUS ON CRITICAL FOOTBALL EVENTS ONLY:**
-- GOALS (listen for referee whistle - whistle indicates goal scored)
+- GOALS (ball crosses goal line - use visual evidence first, referee whistle as confirmation)
 - SHOTS ON TARGET (saved/blocked/missed - no whistle means not a goal)
 - TURNOVERS (possession changes, interceptions, clear possession switches)
 - PENALTIES awarded or taken
@@ -117,11 +118,12 @@ FOOTBALL EVENTS ANALYSIS - CLIP_{clip_number:03d} (Starts at {clip_start_time})
 - Only report events you are confident about
 - If unsure about a foul/card/penalty, don't call it
 - Focus on clear, significant moments
-- Be slightly less conservative with goals - if it looks like a goal, call it a goal
-- Pay attention to referee whistle for goal confirmation
-- Distinguish between shots and saves (no whistle = save, whistle = goal)
-- For goals: Look for ball crossing goal line, referee whistle, or clear goal celebration
+- Be moderately conservative with goals - use visual evidence of ball crossing line
+- Use referee whistle as additional confirmation, not primary indicator
+- Distinguish between shots and saves (visual evidence first, whistle as backup)
+- For goals: Look for ball crossing goal line, clear goal celebration, then confirm with whistle
 - ALWAYS use absolute match time, never clip-relative time
+- IMPORTANT: Referee whistle should sound around goal times (0m48s and 3m06s) - use as confirmation
 
 Analyze this {duration}-second football clip and identify ONLY the major football events that occurred.
 """
@@ -198,46 +200,50 @@ Analyze this {duration}-second football clip and identify ONLY the major footbal
             logger.error(f"No clips found in: {clips_dir}")
             return []
         
-        # Filter clips up to 4 minutes (240 seconds)
-        # We want clips: clip_0m00s.mp4, clip_0m30s.mp4, ..., clip_3m30s.mp4
-        max_minutes = 3  # Up to 3 minutes 30 seconds
-        filtered_clips = []
+        # Process all clips (no time limit)
+        filtered_clips = clip_files
         
-        for clip_path in clip_files:
-            # Extract start time from filename (e.g., clip_0m30s.mp4 -> 0m30s)
-            time_str = clip_path.stem.split('_')[-1]
-            minutes = int(time_str.split('m')[0])
-            seconds = int(time_str.split('m')[1].split('s')[0])
-            start_time_seconds = minutes * 60 + seconds
-            
-            if start_time_seconds <= 210:  # 3m30s = 210 seconds
-                filtered_clips.append(clip_path)
-        
-        logger.info(f"Found {len(filtered_clips)} clips to analyze (first 4 minutes)")
+        logger.info(f"Found {len(filtered_clips)} clips to analyze (full game)")
         
         results = []
         
-        for clip_path in filtered_clips:
-            # Extract start time from filename (e.g., clip_0m30s.mp4 -> 0m30s)
-            time_str = clip_path.stem.split('_')[-1]
-            minutes = int(time_str.split('m')[0])
-            seconds = int(time_str.split('m')[1].split('s')[0])
-            start_time_seconds = minutes * 60 + seconds
+        # Process clips in parallel (2 at a time)
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            # Submit all tasks
+            future_to_clip = {}
             
-            # Calculate clip number based on start time (0, 30, 60, 90, 120, 150, 180, 210)
-            clip_number = (start_time_seconds // 30) + 1
+            for clip_path in filtered_clips:
+                # Extract start time from filename (e.g., clip_0m30s.mp4 -> 0m30s)
+                time_str = clip_path.stem.split('_')[-1]
+                minutes = int(time_str.split('m')[0])
+                seconds = int(time_str.split('m')[1].split('s')[0])
+                start_time_seconds = minutes * 60 + seconds
+                
+                # Calculate clip number based on start time (0, 10, 20, 30, 40, 50, 60, 70...)
+                clip_number = (start_time_seconds // 10) + 1
+                
+                # Calculate clip start time string
+                clip_start_minutes = start_time_seconds // 60
+                clip_start_seconds = start_time_seconds % 60
+                clip_start_time = f"{clip_start_minutes}m{clip_start_seconds:02d}s"
+                
+                # Submit for parallel processing
+                future = executor.submit(self.analyze_clip, str(clip_path), clip_number, clip_start_time)
+                future_to_clip[future] = clip_path
             
-            # Calculate clip start time string
-            clip_start_minutes = start_time_seconds // 60
-            clip_start_seconds = start_time_seconds % 60
-            clip_start_time = f"{clip_start_minutes}m{clip_start_seconds:02d}s"
-            
-            # Analyze clip
-            result = self.analyze_clip(str(clip_path), clip_number, clip_start_time)
-            results.append(result)
-            
-            # Rate limiting
-            time.sleep(1.0)  # 1 second delay between API calls
+            # Collect results as they complete
+            for future in as_completed(future_to_clip):
+                clip_path = future_to_clip[future]
+                try:
+                    result = future.result()
+                    results.append(result)
+                except Exception as e:
+                    logger.error(f"❌ Error processing {clip_path}: {e}")
+                    results.append({
+                        "success": False,
+                        "clip_path": str(clip_path),
+                        "error": str(e)
+                    })
         
         return results
     

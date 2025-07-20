@@ -1,17 +1,16 @@
 FOOTBALL EVENTS ANALYSIS - CLIP_004
 ==================================================
 
-Okay, I'm ready to analyze the 30-second football clip.
-
 ```
-FOOTBALL EVENTS ANALYSIS - CLIP_004 (Starts at 1m30s)
+FOOTBALL EVENTS ANALYSIS - CLIP_004 (Starts at 0m30s)
 ==================================================
 
-1m35s: Shot on target, saved by the Goalkeeper - SHOT ON TARGET
+0m33s: Player passes the ball forward.
+0m39s: Player shoots at the goal, ball blocked by goalkeeper - SHOT ON TARGET
 
 **KEY MOMENTS:**
-- A shot on target was saved by the Goalkeeper
+- A shot on target is saved by the goalkeeper.
 
 **MATCH FLOW:**
-- Attacking play near goal leads to save
+- The team in purple has the ball in their attacking half.
 ```

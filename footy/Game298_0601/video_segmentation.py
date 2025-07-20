@@ -20,7 +20,8 @@ class VideoSegmentation:
         """Initialize segmentation system"""
         self.input_video = Path("Game298_0601_p1.mp4")
         self.clips_dir = Path("clips")
-        self.clip_duration = 30  # 30 seconds per clip
+        self.clip_duration = 15  # 15 seconds per clip for better precision
+        self.overlap = 5  # 5 second overlap
         self.total_duration = 917.6  # Total video duration in seconds
         
         # Create clips directory
@@ -80,18 +81,19 @@ class VideoSegmentation:
             return False
     
     def segment_video(self) -> bool:
-        """Segment the entire video into 30-second clips"""
+        """Segment the entire video into 15-second overlapping clips"""
         duration = self.get_video_duration()
         
-        # Calculate number of clips needed
-        num_clips = int(duration // self.clip_duration) + 1
-        logger.info(f"Creating {num_clips} clips of {self.clip_duration} seconds each")
+        # Calculate number of clips with overlap
+        effective_duration = self.clip_duration - self.overlap  # 10 seconds of new content per clip
+        num_clips = int(duration // effective_duration) + 1
+        logger.info(f"Creating {num_clips} clips of {self.clip_duration}s each with {self.overlap}s overlap")
         
         success_count = 0
         
         for i in range(num_clips):
-            start_time = i * self.clip_duration
-            end_time = min((i + 1) * self.clip_duration, duration)
+            start_time = i * effective_duration
+            end_time = min(start_time + self.clip_duration, duration)
             
             # Skip if start time is beyond video duration
             if start_time >= duration:

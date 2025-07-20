@@ -1,0 +1,18 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_017
+==================================================
+
+Okay, I've analyzed the football video clip. Here's a breakdown of the major events:
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_017 (Starts at 2m40s)
+==================================================
+
+2m42s: Goalkeeper passes the ball to teammate - TURNOVER
+2m54s: Shot on target blocked by the goalkeeper - SHOT ON TARGET
+
+**KEY MOMENTS:**
+- A pass by the goalkeeper is intercepted, leading to a shot on target.
+
+**MATCH FLOW:**
+- The goalkeeper tries to play out from the back, leading to an immediate attack.
+```

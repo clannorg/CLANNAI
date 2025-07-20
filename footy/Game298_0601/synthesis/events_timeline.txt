@@ -2,20 +2,56 @@
 GAME298_0601 EVENTS TIMELINE
 ==================================================
 
-0m06s: Goal scored by team A - GOAL
-0m39s: Shot on goal, blocked by defender - SHOT
-0m48s: Goal scored by team A - GOAL
-1m17s: Goal scored by team A - GOAL
-1m35s: Shot on target, saved by goalkeeper - SAVE
-2m11s: Shot on target, saved by goalkeeper - SAVE
-2m39s: Shot on target - SHOT
-2m40s: Save by goalkeeper - SAVE
-3m25s: Shot on goal, saved by goalkeeper - SAVE
-3m46s: Shot on goal - SHOT
+0m08s: Goal scored by team A - GOAL
+0m34s: Shot on goal - SHOT
+0m39s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+0m48s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+1m00s: Shot on goal - SHOT
+1m29s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+1m36s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+1m42s: Shot on goal - SHOT
+2m04s: Shot on goal - SHOT
+2m05s: Save by goalkeeper - SAVE
+2m12s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+2m38s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+2m53s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+2m54s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+3m05s: Goal scored by team A - GOAL
+3m25s: Shot on goal - SHOT
+4m49s: Free kick awarded - MAJOR FOUL
+5m03s: Free kick taken - FREE KICK
+5m26s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+5m31s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+5m42s: Shot - SHOT
+5m54s: Shot on goal - SHOT
+6m03s: Shot on goal, blocked by defender - SHOT
+6m11s: Shot on goal - SHOT
+7m54s: Shot on goal - SHOT
+7m55s: Save by goalkeeper - SAVE
+8m26s: Pass - PASS
+8m34s: Shot on goal, blocked by defender - SHOT
+8m45s: Shot on goal - SHOT
+8m58s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+9m03s: Shot on goal, blocked by defender - SHOT
+9m13s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+9m31s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+9m40s: Shot on goal, blocked - SHOT
+10m13s: Shot on goal - SHOT
+10m14s: Save by goalkeeper - SAVE
+11m08s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+11m35s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+12m24s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+13m16s: Shot on goal, blocked by defender - SHOT
+13m16s: Shot on goal, saved by goalkeeper - SHOT, SAVE
+13m31s: Shot on goal - SHOT
+13m38s: Shot on goal, saved by goalkeeper - SHOT, SAVE
 
 
-Total Events: 10
-Goals: 3
-Shots: 5
-Saves: 4
+Total Events: 49
+Goals: 2
+Shots: 33
+Saves: 14
+Free Kicks: 1
+Major Fouls: 3
+
 ```
