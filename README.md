@@ -1,19 +1,21 @@
 # CLANNAI - Comprehensive Sports Analytics Platform
 
-## 🎯 **Project Overview**
+**Repository:** https://github.com/clannorg/CLANNAI  
+**Organization:** https://github.com/clannorg  
+**Status:** Production Ready 🚀
 
-CLANNAI is a unified sports analytics platform that consolidates video analysis, AI insights, CRM tools, and business intelligence into one comprehensive system. Built for multi-sport analytics with a focus on football, GAA, and basketball.
+## 🎯 **Platform Overview**
+
+CLANNAI is a comprehensive sports analytics platform that combines AI-powered video analysis, customer relationship management, and web applications to deliver actionable insights for football and GAA teams.
 
 ## 🏗️ **Platform Architecture**
 
 ```
 CLANNAI/
 ├── 📊 crm/                    # Customer Relationship Management
-│   ├── src/                   # Contact finding & scraping tools
-│   └── data/                  # Club contacts, targets, analysis data
-├── 🤖 ai/                     # AI & Machine Learning
-│   ├── ⚽ footy/              # Football Analysis & Insights
-│   └── 🏐 gaa/               # GAA (Gaelic) Analysis
+├── 🤖 ai/                     # AI/ML Analysis
+│   ├── footy/                 # Football Analysis & Insights
+│   └── gaa/                   # GAA (Gaelic) Analysis
 ├── 🎬 video-editor/           # Video Processing & Editing
 │   ├── detection/             # Object detection (YOLOv5)
 │   ├── tracking/              # Player & ball tracking
@@ -28,190 +30,170 @@ CLANNAI/
 
 ## 🚀 **Core Components**
 
-### **📊 CRM System**
-- **Contact Finding**: Automated contact discovery for sports organizations
-- **Web Scraping**: Enhanced scraping tools for data collection (`enhanced_scraper.py`, `infinite_scroll_scraper.py`)
-- **Target Lists**: Generate targeted contact lists (`generate_target_lists.py`)
-- **Club Analysis**: Analyze sports clubs and organizations (`analyze_clubs.py`)
-- **Data Assets**: 20+ data files including club contacts, targets, analysis logs
+### **📊 CRM (Customer Relationship Management)**
+- Contact finding and web scraping tools
+- Target list generation for VEO camera clubs
+- Customer outreach automation
+- **Key Files:** `crm/src/contact_finder.py`, `crm/src/enhanced_scraper.py`
 
-### **⚽ Football Analysis**
-- **Game Events**: Automated event detection and analysis (`football_events_analyzer.py`)
-- **Player Profiling**: Individual player performance insights (`football_player_analyzer.py`)
-- **Tactical Analysis**: Formation and strategy analysis (`formation_analyzer.py`)
-- **Cost Analysis**: Financial tracking and analysis (`football_cost_tracker.py`)
-- **Street Football**: POC for street football analysis (`street_football_analyzer.py`)
-- **Game Data**: Complete analysis of Game298_0601 with 47 analysis files
-
-### **🏐 GAA Analysis**
-- **Video Processing**: Automated video splitting and processing (`veo_downloader.py`, `clip_splitter.py`)
-- **Event Detection**: Goal, kick, and turnover detection (`0_object_detection.py`)
-- **Commentary Generation**: AI-powered match commentary (`simple_commentary.py`, `narrative_synthesis.py`)
-- **Pipeline Management**: Complete analysis workflows (`run_pipeline.py`)
-- **Cost Analysis**: Video token discovery and verification
+### **🤖 AI Analysis (Football & GAA)**
+- Event detection (goals, shots, saves, turnovers)
+- Player tracking and performance analysis
+- Tactical analysis and formation detection
+- **Key Files:** `ai/footy/football_events_analyzer.py`, `ai/gaa/run_pipeline.py`
 
 ### **🎬 Video Editor**
-- **Video Processing**: Advanced video editing and effects (`video_editor.py`, `video_effects.py`)
-- **Object Tracking**: Player and ball tracking (`people_tracking.py`, `ball_tracking.py`)
-- **Highlight Creation**: Automated highlight generation (`create_highlight_workflow.py`)
-- **Cloud Integration**: GCP and cloud storage support (`gcp_to_local.py`, `local_to_gcp.py`)
-- **Detection**: Person detection with YOLOv5 (`simple_yolov5.py`, `person_detect_api.py`)
+- Automated video processing pipeline
+- Player and ball tracking
+- Highlight reel generation
+- Cloud integration (GCP)
+- **Key Files:** `video-editor/simple_workflow.py`, `video-editor/video_editing/`
 
 ### **🌐 Web Applications**
-- **Frontend**: React/Next.js with video player, dashboard, authentication
-- **Backend**: Node.js API with session management, team features, Stripe integration
-- **Video Player**: Standalone video player with event overlay, timeline controls
-- **3D Visualization**: Kognia POC for 3D sports analysis
+- React/Next.js frontend for video analysis
+- Backend API for data management
+- Standalone video player with event overlay
+- 3D visualization capabilities
 
 ## 🛠️ **Getting Started**
 
 ### **Prerequisites**
-- Python 3.8+
+- Python 3.9+
 - Node.js 16+
-- Conda environment (recommended)
+- Conda (for environment management)
 - Git
 
 ### **Installation**
+
+#### **Option 1: Unified Environment (Recommended)**
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/clannorg/CLANNAI.git
 cd CLANNAI
 
-# Set up conda environment
-conda create -n clannai python=3.8
-conda activate clannai
+# Run setup script (for new VMs)
+./setup-clann.sh
 
+# Or manually create environment
+conda env create -f clann-unified.yml
+conda activate clann-unified
+```
+
+#### **Option 2: Individual Module Setup**
+```bash
 # Install Python dependencies
 pip install -r requirements.txt
 
+# Install video editor dependencies
+pip install -r video-editor/requirements.txt
+
 # Install Node.js dependencies (for web apps)
 cd web-apps/clannai-frontend && npm install
-cd ../web-app-clannai && npm install
 ```
 
-### **Quick Start**
+### **Quick Start Commands**
+
+#### **CRM Tools**
 ```bash
-# Activate environment
-conda activate clannai
+conda activate clann-unified
+cd crm/src
+python contact_finder.py
+```
 
-# Run football analysis
+#### **AI Analysis**
+```bash
+conda activate clann-unified
 cd ai/footy
-python 1_game_events/football_events_analyzer.py
+python football_events_analyzer.py
+```
 
-# Run GAA pipeline
-cd ../gaa
-python run_pipeline.py
-
-# Use video editor
-cd ../../video-editor
+#### **Video Processing**
+```bash
+conda activate clann-unified
+cd video-editor
 python simple_workflow.py
+```
 
-# Start web applications
-cd ../web-apps/clannai-frontend
+#### **Web Applications**
+```bash
+cd web-apps/clannai-frontend
 npm run dev
 ```
 
 ## 📋 **Module Overview**
 
 ### **CRM Module**
-```bash
-cd crm/src
-python find_contacts.py          # Find contacts
-python analyze_clubs.py          # Analyze clubs
-python generate_target_lists.py  # Generate target lists
-python enhanced_scraper.py       # Enhanced web scraping
-```
+- **Purpose:** Customer acquisition and management
+- **Key Features:** Web scraping, contact finding, target list generation
+- **Usage:** `python crm/src/enhanced_scraper.py`
 
-### **Football Analysis**
-```bash
-cd ai/footy
-python 1_game_events/football_events_analyzer.py  # Event analysis
-python 2_player_profiling/football_player_analyzer.py  # Player analysis
-python 3_tactical_analysis/formation_analyzer.py  # Tactical analysis
-python 4_cost_analysis/football_cost_tracker.py  # Cost analysis
-```
+### **AI Analysis Module**
+- **Purpose:** Automated event detection and analysis
+- **Key Features:** Gemini integration, player tracking, tactical analysis
+- **Usage:** `python ai/footy/football_events_analyzer.py`
 
-### **GAA Analysis**
-```bash
-cd ai/gaa
-python run_pipeline.py  # Complete GAA pipeline
-python 4-goal-kick-detection/0_object_detection.py  # Event detection
-python 3-half-start-end/1-analyze_clips.py  # Clip analysis
-```
+### **Video Editor Module**
+- **Purpose:** Automated video processing and editing
+- **Key Features:** YOLOv5 detection, tracking, reel generation
+- **Usage:** `python video-editor/simple_workflow.py`
 
-### **Video Editor**
-```bash
-cd video-editor
-python video_editing/video_editor.py  # Main video editor
-python simple_workflow.py  # Simple workflow
-python detection/simple_yolov5.py  # Object detection
-```
+### **Web Applications Module**
+- **Purpose:** User interface and data visualization
+- **Key Features:** Video player, analytics dashboard, 3D visualization
+- **Usage:** `npm run dev` (in web-apps/clannai-frontend)
 
-### **Web Applications**
-```bash
-cd web-apps/clannai-frontend
-npm run dev  # Start frontend
+## 🎯 **Development Guidelines**
 
-cd ../web-app-clannai
-npm start  # Start backend
-```
+### **Environment Management**
+- Use `clann-unified` conda environment for all development
+- All team members use the same environment for consistency
+- Environment file: `clann-unified.yml`
 
-## 🔧 **Development**
+### **Code Organization**
+- Keep modules separate but interconnected
+- Use shared utilities in common locations
+- Follow existing naming conventions
 
-### **Adding New Modules**
-1. Create new directory in appropriate section
-2. Add requirements.txt for dependencies
-3. Include README.md with usage instructions
-4. Update this main README
+### **Testing**
+- Test each module independently
+- Use existing test files as templates
+- Validate video processing pipeline end-to-end
 
-### **Code Standards**
-- Python 3.8+ compatibility
-- React/TypeScript for web components
-- Clear documentation
-- Modular design
-- Error handling
+## 📊 **Current Status**
 
-## 📈 **Current Status**
+### **✅ Completed Features**
+- CRM contact finding and scraping
+- Football event detection pipeline
+- GAA analysis pipeline
+- Video processing workflow
+- Web application framework
+- Unified environment setup
 
-### **✅ Completed Modules**
-- [x] **CRM System** - Contact finding, scraping, data analysis
-- [x] **Football Analysis** - Events, profiling, tactics, cost analysis
-- [x] **GAA Analysis** - Video processing, event detection, commentary
-- [x] **Video Editor** - Processing, tracking, editing, cloud integration
-- [x] **Web Applications** - Frontend, backend, video player, 3D visualization
-
-### **🚧 In Progress**
-- [ ] **AI Enhancement** - Advanced models, 3D analysis
-- [ ] **Multi-sport Expansion** - Basketball, rugby, other sports
-- [ ] **Production Deployment** - CI/CD, Docker, cloud deployment
+### **🔄 In Progress**
+- Gemini AI integration
+- Human annotation system
+- Customer dashboard
+- Video reel automation
 
 ### **📋 Planned Features**
-- [ ] **Advanced AI Models** - Real-time processing, predictive analytics
-- [ ] **3D Analysis** - Spatial tracking, advanced visualization
-- [ ] **Mobile Applications** - iOS/Android apps
-- [ ] **API Services** - Public APIs for third-party integration
-- [ ] **Analytics Dashboard** - Real-time insights and reporting
+- Real-time video analysis
+- Advanced player tracking
+- 3D visualization
+- Mobile applications
 
-## 🤝 **Contributing**
+## 🚀 **Sprint Planning**
 
-1. Fork the repository
-2. Create feature branch
-3. Make changes
-4. Add tests
-5. Submit pull request
-
-## 📄 **License**
-
-This project is proprietary to CLANNAI.
+See `0-to-1-project-plan/` for current sprint details:
+- **Goal:** 5 paying customers at $5/game
+- **Duration:** 2 weeks (July 20th - August 3rd)
+- **Team:** Thomas, Ram, John
 
 ## 📞 **Contact**
 
-For questions or support, contact the CLANNAI team.
+- **Repository:** https://github.com/clannorg/CLANNAI
+- **Organization:** https://github.com/clannorg
+- **Status:** Production Ready 🚀
 
----
+## 📄 **License**
 
-**CLANNAI** - Unifying sports analytics through comprehensive technology solutions.
-
-**Repository:** https://github.com/clannorg/CLANNAI  
-**Organization:** clannorg  
-**Status:** Production Ready 🚀 
+This project is proprietary to CLANNAI team. 
