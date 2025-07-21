@@ -1,0 +1,8 @@
+2025-01-24 00:08:45,785 - Error processing ㈱エフスリー: nothing to repeat at position 0
+2025-01-24 00:08:47,237 - Error processing AFC Lightning: HTTPSConnectionPool(host='m.afclightning.co.uk', port=443): Max retries exceeded with url: /contacts.htm (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'm.afclightning.co.uk'. (_ssl.c:1000)")))
+2025-01-24 00:11:13,816 - Error processing ACBB: Invalid URL '/search?q=ACBB+football+club+contact': No scheme supplied. Perhaps you meant https:///search?q=ACBB+football+club+contact?
+2025-01-24 00:11:43,627 - Error processing AFC Rushden & Diamonds: HTTPSConnectionPool(host='www.afcdiamonds.com', port=443): Read timed out. (read timeout=10)
+2025-01-24 00:12:00,914 - Error processing Accrington Stanley Football Club: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-01-24 00:12:04,390 - Error processing サルパ: Invalid URL '/search?q=サルパ+football+club+contact': No scheme supplied. Perhaps you meant https:///search?q=サルパ+football+club+contact?
+2025-01-24 00:12:20,170 - Error processing Achilles Enschede: Invalid URL '/search?q=Achilles+Enschede+football+club+contact': No scheme supplied. Perhaps you meant https:///search?q=Achilles+Enschede+football+club+contact?
+2025-01-24 00:12:55,453 - Error processing Allstars: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
