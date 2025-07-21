@@ -9,11 +9,11 @@ CLANNAI is a unified sports analytics platform that consolidates video analysis,
 ```
 CLANNAI/
 ├── 📊 crm/                    # Customer Relationship Management
-├── ⚽ footy/                   # Football Analysis & Insights
-├── 🏐 gaa/                     # GAA (Gaelic) Analysis
+├── 🤖 ai/                     # AI & Machine Learning
+│   ├── ⚽ footy/              # Football Analysis & Insights
+│   └── 🏐 gaa/               # GAA (Gaelic) Analysis
 ├── 🎬 video-editor/           # Video Processing & Editing
 ├── 🌐 web-apps/               # Web Applications (Future)
-├── 🤖 ai/                     # AI & Machine Learning (Future)
 └── 🛠️ shared/                # Shared Utilities (Future)
 ```
 
@@ -71,7 +71,7 @@ pip install -r requirements.txt
 conda activate clannai
 
 # Run football analysis
-cd footy
+cd ai/footy
 python 1_game_events/football_events_analyzer.py
 
 # Run GAA pipeline
@@ -95,7 +95,7 @@ python generate_target_lists.py  # Generate target lists
 
 ### **Football Analysis**
 ```bash
-cd footy
+cd ai/footy
 python 1_game_events/football_events_analyzer.py  # Event analysis
 python 2_player_profiling/football_player_analyzer.py  # Player analysis
 python 3_tactical_analysis/formation_analyzer.py  # Tactical analysis
@@ -103,7 +103,7 @@ python 3_tactical_analysis/formation_analyzer.py  # Tactical analysis
 
 ### **GAA Analysis**
 ```bash
-cd gaa
+cd ai/gaa
 python run_pipeline.py  # Complete GAA pipeline
 python 4-goal-kick-detection/0_object_detection.py  # Event detection
 ```
