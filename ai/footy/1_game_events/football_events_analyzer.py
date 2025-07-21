@@ -56,7 +56,7 @@ class FootballEventsAnalyzer:
                 '-r', '2',  # 2 fps for better event detection
                 '-f', 'image2pipe', '-pix_fmt', 'yuv420p',
                 '-vcodec', 'libx264', '-preset', 'ultrafast',
-                '-t', '30',  # 30 seconds max for football clips
+                '-t', '10',  # 10 seconds max to match clip duration
                 '-y', '-'
             ], capture_output=True, check=True)
             return result.stdout
@@ -66,7 +66,7 @@ class FootballEventsAnalyzer:
     
     def get_events_prompt(self, clip_path: str, clip_number: int) -> str:
         """Generate prompt for football event analysis"""
-        duration = 30 # Assuming a default duration for the prompt
+        duration = 10 # The clips are 10 seconds long
         prompt = f"""
         You are analyzing a {duration}-second football video clip. 
         CAMERA SETUP:
@@ -88,6 +88,11 @@ class FootballEventsAnalyzer:
         - Playing with/against other active participants
         - Defensive pressure or competitive conditions present
 
+        REFEREE: The referee is the person in charge of the game.
+        - The referee wears a unique colour compared to other players. Typical colours include fluorescent yellow or black.
+        - The referee is the person in charge of the game and uses a whistle and hand actions to signal decisions.
+
+
         BYSTANDERS: People present but not actively participating in the game
         - Walking around the pitch during active gameplay
         - Taking casual shots while others are competing elsewhere
@@ -104,9 +109,12 @@ class FootballEventsAnalyzer:
         - What happened (shot, save, block, tackle, turnover, foul, etc.)
         - The outcome (made/missed, etc.)
         - Which goal the event occurred at (LEFT GOAL or RIGHT GOAL)
+        - If referee is present, include the referee's actions in the event description.
 
         **FOCUS ON CRITICAL FOOTBALL EVENTS ONLY:**
         - GOALS (with team and player if visible)
+        - GOALKICK
+        - GOALKEEPER SAVES 
         - TURNOVERS (possession changes, interceptions, clear possession switches)
         - SHOTS ON TARGET (saved/blocked/missed)
         - PENALTIES awarded or taken`
@@ -217,12 +225,17 @@ class FootballEventsAnalyzer:
             logger.error(f"Clips directory not found: {clips_dir}")
             return []
         
-        # Find all football clips (support both naming patterns)
-        clip_files = sorted([
-            f for f in clips_path.glob("*.mp4")
-            if f.name.startswith("clip_")
-        ])
+        # Find all football clips and sort them chronologically
+        def sort_key(path):
+            time_str = path.stem.replace("clip_", "").replace("m", ":").replace("s", "")
+            minutes, seconds = map(int, time_str.split(":"))
+            return minutes * 60 + seconds
 
+        clip_files = sorted(
+            [f for f in clips_path.glob("*.mp4") if f.name.startswith("clip_")],
+            key=sort_key
+        )
+        
         if not clip_files:
             logger.error(f"No football clips found in: {clips_dir}")
             return []

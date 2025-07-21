@@ -1,5 +1,5 @@
 {
-  "total_events": 12,
+  "total_events": 162,
   "goals": 0,
   "shots": 0,
   "passes": 0,
@@ -11,8 +11,8 @@
   "penalties": 0,
   "substitutions": 0,
   "turnovers": 0,
-  "referee_action": 0,
-  "game_start": 1,
+  "referee_action": 1,
+  "game_start": 0,
   "general_play": 0,
-  "other": 1
+  "other": 0
 }
