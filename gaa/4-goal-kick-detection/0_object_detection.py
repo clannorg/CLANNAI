@@ -19,6 +19,9 @@ import numpy as np
 import pycocotools.mask as mask_util
 from tqdm import tqdm
 
+# --- Add this import for batched post-processing ---
+from groundingdino.util.utils import get_phrase
+
 # --- Setup logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -48,6 +51,7 @@ CLIPS_BASE_DIR = SCRIPT_DIR.parent / "3.5-video-splitting/clips/first_half"
 OUTPUT_DIR = SCRIPT_DIR / "results/object_detections"
 TIME_LIMIT_MINUTES = 10  # Must match the clip analysis script for consistency
 MAX_WORKERS = 1          # GPU-heavy task; limit workers to avoid OOM errors
+BATCH_SIZE = 16          # Process frames in batches for performance
 
 # Model Configuration (paths relative to the '4-goal-kick-detection' directory)
 # We now define the root directory to locate the model checkpoints
@@ -72,19 +76,20 @@ TEXT_THRESHOLD = 0.25
 VIDEO_FPS = 30 # Approximate FPS for analysis
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-def single_mask_to_rle(mask):
-    """
-    Converts a single binary mask to Run-Length Encoding (RLE).
-    """
-    rle = mask_util.encode(np.array(mask[:, :, None], order="F", dtype="uint8"))[0]
-    rle["counts"] = rle["counts"].decode("utf-8")
-    return rle
+# def single_mask_to_rle(mask):
+#     """
+#     Converts a single binary mask to Run-Length Encoding (RLE).
+#     """
+#     rle = mask_util.encode(np.array(mask[:, :, None], order="F", dtype="uint8"))[0]
+#     rle["counts"] = rle["counts"].decode("utf-8")
+#     return rle
 
 class ObjectDetector:
     """
     A wrapper class for GroundingDINO and SAM2 models to perform object detection.
     """
     _instance = None
+    _model_loaded = False # Use a class variable to ensure model is loaded only once
 
     def __new__(cls):
         # This singleton ensures models are loaded only once, even with multiple workers.
@@ -95,18 +100,17 @@ class ObjectDetector:
         return cls._instance
 
     def _load_models_if_needed(self):
-        """Loads the SAM2 and GroundingDINO models if they haven't been loaded."""
-        if self.sam2_predictor is not None and self.grounding_model is not None:
+        """Loads the GroundingDINO model if it hasn't been loaded."""
+        if ObjectDetector._model_loaded:
             return
 
         logging.info(f"Loading models to device: {DEVICE}")
         try:
-            # Build SAM2 image predictor
-            # Note: The model config file is not needed for the default predictor setup
-            sam2_model_cfg = "configs/sam2.1/sam2.1_hiera_l.yaml"
-            sam2_model = build_sam2(sam2_model_cfg, str(SAM2_CHECKPOINT), device=DEVICE)
-            self.sam2_predictor = SAM2ImagePredictor(sam2_model)
-            logging.info("SAM2 model loaded successfully.")
+            # # Build SAM2 image predictor (Commented out)
+            # sam2_model_cfg = "configs/sam2.1/sam2.1_hiera_l.yaml"
+            # sam2_model = build_sam2(sam2_model_cfg, str(SAM2_CHECKPOINT), device=DEVICE)
+            # self.sam2_predictor = SAM2ImagePredictor(sam2_model)
+            # logging.info("SAM2 model loaded successfully.")
 
             # Build Grounding DINO model
             self.grounding_model = load_model(
@@ -120,87 +124,92 @@ class ObjectDetector:
                 logging.info("Enabling TF32 for Ampere GPU.")
                 torch.backends.cuda.matmul.allow_tf32 = True
                 torch.backends.cudnn.allow_tf32 = True
+            
+            ObjectDetector._model_loaded = True
 
         except Exception as e:
             logging.error(f"Error loading models: {e}")
             raise
 
-    def detect_objects_in_frame(self, frame_bgr):
+    def detect_objects_in_batch(self, frame_batch_bgr):
         """
-        Detects objects in a single BGR image frame.
-
+        Detects objects in a batch of BGR image frames.
         Args:
-            frame_bgr: A numpy array representing the image in BGR format.
-
+            frame_batch_bgr: A list of numpy arrays, each representing an image in BGR format.
         Returns:
-            A list of dictionaries, each containing detection info (label, box, scores, segmentation).
+            A list of lists of dictionaries, each containing detection info.
         """
         self._load_models_if_needed()
 
-        # Save frame to a temporary file to use the demo's load_image function.
-        # This is the most reliable way to replicate the demo's behavior and avoid race conditions.
-        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as temp_f:
-            temp_image_path = temp_f.name
-            cv2.imwrite(temp_image_path, frame_bgr)
-
-        try:
-            # Load image using the library's utility function, which handles all transformations.
-            image_source, image_tensor = load_image(temp_image_path)
-            
-            # Use torch.float32 for stability if bfloat16 is not supported.
-            autocast_dtype = torch.float32 # torch.bfloat16 if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else torch.float32
-            with torch.autocast(device_type=DEVICE, dtype=autocast_dtype):
-                boxes, grounding_dino_scores, labels = predict(
-                    model=self.grounding_model,
-                    image=image_tensor,
-                    caption=TEXT_PROMPT.lower(),
-                    box_threshold=BOX_THRESHOLD,
-                    text_threshold=TEXT_THRESHOLD,
-                    device=DEVICE
-                )
-        finally:
-            # Ensure the temporary file is always deleted.
-            os.remove(temp_image_path)
-
-        if len(labels) == 0:
-            return []
-            
-        # Process boxes for SAM
-        h, w, _ = image_source.shape
-        boxes = boxes * torch.Tensor([w, h, w, h])
-        input_boxes = box_convert(boxes=boxes, in_fmt="cxcywh", out_fmt="xyxy").numpy()
-        
-        # Get segmentations from SAM-2
-        self.sam2_predictor.set_image(image_source)
-        masks, sam_scores, _ = self.sam2_predictor.predict(
-            point_coords=None,
-            point_labels=None,
-            box=input_boxes,
-            multimask_output=False,
+        # Prepare image transforms for batching
+        transform = T.Compose(
+            [
+                T.Resize((800, 800)),  # Resize to a fixed size for batching
+                T.ToTensor(),
+                T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+            ]
         )
 
-        if masks.ndim == 4:
-            masks = masks.squeeze(1)
-        
-        # Convert masks to RLE format
-        mask_rles = [single_mask_to_rle(mask) for mask in masks]
+        # Transform all frames and stack them into a single tensor
+        image_pil_batch = [Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)) for frame in frame_batch_bgr]
+        image_tensor_batch = torch.stack([transform(img, None)[0] for img in image_pil_batch])
 
-        detections = [
-            {
-                "class_name": label,
-                "bbox": box.tolist(),
-                "grounding_dino_score": gd_score.item(),
-                "sam_score": sam_score.item(),
-                "segmentation": mask_rle,
-            }
-            for label, box, gd_score, sam_score, mask_rle in zip(labels, input_boxes, grounding_dino_scores, sam_scores, mask_rles)
-        ]
+        try:
+            autocast_dtype = torch.float32
+            with torch.autocast(device_type=DEVICE, dtype=autocast_dtype):
+                outputs = self.grounding_model(image_tensor_batch.to(DEVICE), captions=[TEXT_PROMPT.lower()] * len(frame_batch_bgr))
+        except Exception as e:
+            logging.error(f"Error during prediction: {e}")
+            return [[] for _ in frame_batch_bgr]
 
-        return detections
+        # Post-process results for each image in the batch
+        batch_detections = []
+        prediction_logits = outputs["pred_logits"].cpu().sigmoid()
+        prediction_boxes = outputs["pred_boxes"].cpu()
+        tokenizer = self.grounding_model.tokenizer
+        tokenized_prompt = tokenizer(TEXT_PROMPT.lower(), padding="longest", return_tensors="pt")
+
+        for i, (image_pil, frame_bgr) in enumerate(zip(image_pil_batch, frame_batch_bgr)):
+            logits_i = prediction_logits[i]
+            boxes_i = prediction_boxes[i]
+            
+            # Filter by box threshold
+            mask = logits_i.max(dim=1)[0] > BOX_THRESHOLD
+            logits_filt = logits_i[mask]
+            boxes_filt = boxes_i[mask]
+
+            if logits_filt.shape[0] == 0:
+                batch_detections.append([])
+                continue
+
+            # Get labels for filtered boxes
+            pred_phrases = []
+            for logit_row in logits_filt:
+                pred_phrases.append(get_phrase(logit_row, tokenized_prompt, tokenizer, TEXT_THRESHOLD))
+            
+            grounding_dino_scores = logits_filt.max(dim=1)[0]
+            
+            # Convert boxes to original image coordinates
+            original_h, original_w, _ = frame_bgr.shape
+            boxes_filt = boxes_filt * torch.Tensor([original_w, original_h, original_w, original_h])
+            input_boxes = box_convert(boxes=boxes_filt, in_fmt="cxcywh", out_fmt="xyxy").numpy()
+            
+            frame_detections = [
+                {
+                    "class_name": label,
+                    "bbox": box.tolist(),
+                    "grounding_dino_score": gd_score.item(),
+                }
+                for label, box, gd_score in zip(pred_phrases, input_boxes, grounding_dino_scores)
+            ]
+            batch_detections.append(frame_detections)
+
+        return batch_detections
+
 
 def extract_frames_from_clip(clip_path):
     """
-    Extracts one frame per second from a video clip.
+    Extracts every frame from a video clip.
 
     Args:
         clip_path (Path): Path to the video clip.
@@ -214,23 +223,13 @@ def extract_frames_from_clip(clip_path):
             logging.error(f"Cannot open video file: {clip_path}")
             return
 
-        fps = cap.get(cv2.CAP_PROP_FPS)
-        if not fps > 0:
-            logging.warning(f"Invalid FPS ({fps}) for {clip_path.name}. Assuming 30.")
-            fps = 30
-
-        next_frame_to_sample = 0.0
         frame_count = 0
-        
         while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
                 break
             
-            if frame_count >= next_frame_to_sample:
-                yield frame_count, frame.copy()
-                next_frame_to_sample += fps # Schedule next sample
-            
+            yield frame_count, frame.copy()
             frame_count += 1
             
         cap.release()
@@ -254,22 +253,42 @@ def process_clip(clip_path, detector):
     annotations_by_frame = {}
     
     try:
+        # Get total frame count for tqdm progress bar
+        cap = cv2.VideoCapture(str(clip_path))
+        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        cap.release()
+
         frames_generator = extract_frames_from_clip(clip_path)
         
-        # We need to count the items for tqdm without consuming the generator
-        frame_list = list(frames_generator)
+        frame_batch = []
+        frame_idx_batch = []
         
-        for frame_idx, frame in tqdm(frame_list, desc=f"Analyzing {clip_path.stem}", leave=False):
-            detections = detector.detect_objects_in_frame(frame)
-            annotations_by_frame[frame_idx] = detections
-        
+        with tqdm(total=total_frames, desc=f"Analyzing {clip_path.stem}", leave=False) as pbar:
+            for frame_idx, frame in frames_generator:
+                frame_batch.append(frame)
+                frame_idx_batch.append(frame_idx)
+
+                if len(frame_batch) == BATCH_SIZE:
+                    batch_detections = detector.detect_objects_in_batch(frame_batch)
+                    for idx, detections in zip(frame_idx_batch, batch_detections):
+                        annotations_by_frame[idx] = detections
+                    pbar.update(len(frame_batch))
+                    frame_batch, frame_idx_batch = [], []
+
+            # Process the final partial batch
+            if frame_batch:
+                batch_detections = detector.detect_objects_in_batch(frame_batch)
+                for idx, detections in zip(frame_idx_batch, batch_detections):
+                    annotations_by_frame[idx] = detections
+                pbar.update(len(frame_batch))
+
         # Save results to a JSON file
         result_data = {
             "clip_name": clip_path.name,
             "text_prompt": TEXT_PROMPT,
             "annotations_by_frame": annotations_by_frame,
             "box_format": "xyxy",
-            "mask_format": "rle"
+            # "mask_format": "rle"
         }
         with open(output_file, 'w') as f:
             json.dump(result_data, f, indent=4)

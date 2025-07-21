@@ -63,7 +63,7 @@ COST_SETTINGS = {
 PATHS = {
     "input_dir": INPUT_DIR,
     "output_dir": OUTPUT_DIR,
-    "processed_clips": BASE_DIR / "0_utils" / "output",
+    "processed_clips": BASE_DIR / "Game298_0601" / "clips",
     "events_output": BASE_DIR / "1_game_events" / "output",
     "player_output": BASE_DIR / "2_player_profiling" / "output",
     "tactical_output": BASE_DIR / "3_tactical_analysis" / "output",

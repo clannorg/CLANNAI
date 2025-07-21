@@ -96,8 +96,8 @@ def analyze_clip_for_kickouts(clip_path, timestamp, half_name):
         2. GOALKEEPER: 
         - There are two goalkeepers. They typically wear jerseys with a bright colour and are consistently found next to their goal, and no where else. 
         - The goalkeeper may be mistaken for a player in the detections, but will consistently be found next to their goal.
-        - There will never be more than one goalkeepr in a frame. 
-        - The goalkeeper will typically stand right in front of their goalpost
+        - It is highly unlikely that there will be more than one goalkeeper in a frame. 
+        - The goalkeeper will typically stand right in front of their goalpost.
         - The goalkeeper moves forward and away from their goal when placing the ball down for a kickout.
 
         3. BALL: 
@@ -143,9 +143,9 @@ def analyze_clip_for_kickouts(clip_path, timestamp, half_name):
         - The ball is kicked, and the players on the pitch contest for the ball.
 
 
-        ** ADDITIONAL GUIDELINES:**
+        ** ADDITIONAL GUIDELINES:*`*
         - If you observe the goalkeeper kick a ball on the pitch with less than 4 players in their vicinity (500 pixels), mark it as a kickout.
-        - It is not compulsory to observe all events of the kickout sequence within the clip. The most essential action to observe is the goalkeeper kicking the ball. 
+        - It is not compulsory to observe all events of the kickout sequence within the clip. The most essential action to observe is the goalkeeper (which may be mistaken for a player in the detections) kicking a stationary ball. 
         - The ball will always be present in the clip as the camera swivels to follow it.
         - There wont be more than 3 players in the vicinity of the goalkeeper when the ball is kicked.
         - You must prioritise the goalkeeper kicking the ball over any other action in the event sequence.
@@ -157,7 +157,7 @@ def analyze_clip_for_kickouts(clip_path, timestamp, half_name):
 
         **CONTEXTUAL IMPROVEMENTS:**
         - Utilise the context of the previous 15 seconds of footage to predict if a kickout is likely to occur in the next clip.
-        - It is possible that some kickout sequence events will be missed by you due to a lack of accurate object detection. Factor this into your confidence score. This means even partial event detections could indicate a kickout.
+        - It is possible that some kickout sequence events will be missed by you due to a lack of accurate object detection. Factor this into your confidence score. This means even partial sequence detections could indicate a kickout.
         
         
 

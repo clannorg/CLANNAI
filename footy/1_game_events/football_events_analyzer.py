@@ -68,54 +68,91 @@ class FootballEventsAnalyzer:
         """Generate prompt for football event analysis"""
         duration = 30 # Assuming a default duration for the prompt
         prompt = f"""
-You are analyzing a {duration}-second football video clip. 
+        You are analyzing a {duration}-second football video clip. 
+        CAMERA SETUP:
+        - This is a single camera setup where the camera is positioned on the sideline of the field. 
+        - The camera is observing a 5 vs 5 football game played on a sub region of a full size football field.
+        - The camera pans left to view the LEFT GOAL and pans right to view the RIGHT GOAL.
 
-**FOCUS ON CRITICAL FOOTBALL EVENTS ONLY:**
-- GOALS (with team and player if visible)
-- TURNOVERS (possession changes, interceptions, clear possession switches)
-- SHOTS ON TARGET (saved/blocked/missed)
-- PENALTIES awarded or taken
-- RED/YELLOW CARDS shown
-- MAJOR FOULS (that result in free kicks/penalties)
-- CORNER KICKS awarded
-- SUBSTITUTIONS
-- MAJOR TACTICAL CHANGES (formation shifts, pressing)
 
-**IGNORE:**
-- Routine passes
-- Basic dribbling
-- Minor movements
-- Unclear/uncertain events
+        AUDIO:
+        - Utilise the clip's audio to improve event identification.
+        - The audio will typically be in english or hindi.
+        - Use crowd reactions (cheers etc) to identify key moments.
+        - Use the referee's whistle if present to identify key moments. 
 
-**ANALYSIS FORMAT:**
-```
-FOOTBALL EVENTS ANALYSIS - CLIP_{clip_number:03d}
-==================================================
 
-[Seconds]s: [Event Description] - [EVENT TYPE]
-[Seconds]s: [Event Description] - [EVENT TYPE]
-...
+        ACTIVE PLAYERS: People actively participating in competitive gameplay
+        - Engaged in the actual football game with other players
+        - Part of competitive action and game flow
+        - Playing with/against other active participants
+        - Defensive pressure or competitive conditions present
 
-**KEY MOMENTS:**
-- [Summary of major events]
+        BYSTANDERS: People present but not actively participating in the game
+        - Walking around the pitch during active gameplay
+        - Taking casual shots while others are competing elsewhere
+        - Present but not engaged in the actual competitive game
+        - Just shooting for fun while the real game happens
+        - Not part of the competitive action
+        - Players and other games happenign in the background of this clip should be ignored. 
 
-**MATCH FLOW:**
-- [Brief tactical overview]
-```
 
-**TIMESTAMP FORMAT:**
-- Use format: "27s:" (not "00:27s:" or "27.5s:")
-- Just the number of seconds from clip start
-- Example: "15s: Goal scored by team A - GOAL"
+        TASK:
+        Analyze the clip and describe, in plain text, any high-confidence football events you see. Include:
+        - The exact time in the clip (in seconds) for each event
+        - Who was involved (active player or bystander, with description)
+        - What happened (shot, save, block, tackle, turnover, foul, etc.)
+        - The outcome (made/missed, etc.)
+        - Which goal the event occurred at (LEFT GOAL or RIGHT GOAL)
 
-**IMPORTANT:**
-- Only report events you are confident about
-- If unsure about a foul/card/penalty, don't call it
-- Focus on clear, significant moments
-- Be conservative - quality over quantity
+        **FOCUS ON CRITICAL FOOTBALL EVENTS ONLY:**
+        - GOALS (with team and player if visible)
+        - TURNOVERS (possession changes, interceptions, clear possession switches)
+        - SHOTS ON TARGET (saved/blocked/missed)
+        - PENALTIES awarded or taken`
+        - RED/YELLOW CARDS shown
+        - MAJOR FOULS (that result in free kicks/penalties)
+        - CORNER KICKS awarded
+        - SUBSTITUTIONS
+        - MAJOR TACTICAL CHANGES (formation shifts, pressing)
+        - SKILLFUL ON-BALL ACTIONS- football skills like stepovers, rabonas, bicycle kicks, etc. or long solo dribbles through several players.
+        - SKILLFUL OFF-BALL ACTIONS- vital sliding tackles, interceptions or defensive actions that prevent a goal or goalscoring opportunity.
 
-Analyze this {duration}-second football clip and identify ONLY the major football events that occurred.
-"""
+        **IGNORE:**
+        - Routine passes
+        - Basic dribbling
+        - Minor movements
+        - Unclear/uncertain events
+
+        **ANALYSIS FORMAT:**
+        ```
+        FOOTBALL EVENTS ANALYSIS - CLIP_{clip_number:03d}
+        ==================================================
+
+        [Seconds]s: [Event Description] - [EVENT TYPE]
+        [Seconds]s: [Event Description] - [EVENT TYPE]
+        ...
+
+        **KEY MOMENTS:**
+        - [Summary of major events]
+
+        **MATCH FLOW:**
+        - [Brief tactical overview]
+        ```
+
+        **TIMESTAMP FORMAT:**
+        - Use format: "27s:" (not "00:27s:" or "27.5s:")
+        - Just the number of seconds from clip start
+        - Example: "15s: Goal scored by team A - GOAL"
+
+        **IMPORTANT:**
+        - Only report events you are confident about
+        - If unsure about a foul/card/penalty, don't call it
+        - Focus on clear, significant moments
+        - Be conservative - quality over quantity
+
+        Analyze this {duration}-second football clip and identify ONLY the major football events that occurred.
+        """
         return prompt
     
     def analyze_clip(self, clip_path: str, clip_number: int) -> Dict[str, Any]:
@@ -182,10 +219,10 @@ Analyze this {duration}-second football clip and identify ONLY the major footbal
         
         # Find all football clips (support both naming patterns)
         clip_files = sorted([
-            f for f in clips_path.glob("*.mp4") 
-            if f.name.startswith(("football_clip_", "match_"))
+            f for f in clips_path.glob("*.mp4")
+            if f.name.startswith("clip_")
         ])
-        
+
         if not clip_files:
             logger.error(f"No football clips found in: {clips_dir}")
             return []
@@ -196,15 +233,20 @@ Analyze this {duration}-second football clip and identify ONLY the major footbal
         
         for i, clip_path in enumerate(clip_files):
             # Extract clip number from filename (handle both naming patterns)
-            if clip_path.name.startswith("football_clip_"):
-                clip_number = int(clip_path.stem.split('_')[-1])
-            elif clip_path.name.startswith("match_"):
-                # Extract actual match time from match_18m00s.mp4 -> 18:00
-                time_str = clip_path.stem.replace("match_", "").replace("m", ":").replace("s", "")
+            if clip_path.name.startswith("clip_"):
+                # Extract actual match time from clip_18m00s.mp4 -> 18:00
+                time_str = clip_path.stem.replace("clip_", "").replace("m", ":").replace("s", "")
                 # Convert to seconds for absolute time calculation
-                minutes, seconds = map(int, time_str.split(":"))
-                clip_start_time = minutes * 60 + seconds
-                clip_number = clip_start_time  # Use actual match time in seconds
+                if ":" in time_str:
+                    parts = time_str.split(":")
+                    if len(parts) == 2:
+                        minutes, seconds = map(int, parts)
+                        clip_start_time = minutes * 60 + seconds
+                        clip_number = clip_start_time
+                    else:
+                        clip_number = i # Fallback
+                else:
+                    clip_number = i # Fallback
             else:
                 clip_number = i
             
