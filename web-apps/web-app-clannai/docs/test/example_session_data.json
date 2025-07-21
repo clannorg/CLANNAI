@@ -1,0 +1,28 @@
+{
+  "match_info": {
+    "team1": {
+      "name": "Test Team",
+      "metrics": {
+        "total_distance": 89.09,
+        "sprint_distance": 1873.5,
+        "total_sprints": 66,
+        "avg_sprint_speed": 8.22,
+        "energy": 16.0
+      }
+    },
+    "team2": {
+      "name": "Opponent",
+      "metrics": {
+        "total_distance": 93.80,
+        "sprint_distance": 1782.8,
+        "total_sprints": 70,
+        "avg_sprint_speed": 8.01,
+        "energy": 9.9
+      }
+    },
+    "score": {
+      "team1": 3,
+      "team2": 1
+    }
+  }
+} 

@@ -1,0 +1,2 @@
+tree -I 'node_modules|build|.git' -L 7
+

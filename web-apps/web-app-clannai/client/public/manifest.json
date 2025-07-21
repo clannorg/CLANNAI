@@ -1,0 +1,15 @@
+{
+  "short_name": "Clann",
+  "name": "Clann Analysis",
+  "icons": [
+    {
+      "src": "clann-sliothar.png",
+      "type": "image/png",
+      "sizes": "35x35"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#016F33",
+  "background_color": "#1a1a1a"
+}

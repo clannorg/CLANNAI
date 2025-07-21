@@ -1,0 +1,5 @@
+cd docs/db
+npm run definition 
+npm run content 
+npm run details
+npm run get-schema

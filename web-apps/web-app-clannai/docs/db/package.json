@@ -1,0 +1,15 @@
+{
+  "name": "db-tools",
+  "private": true,
+  "scripts": {
+    "definition": "node docs/db/scripts/printDbDefinition.js",
+    "content": "node docs/db/scripts/printDbContent.js",
+    "add-metrics": "node docs/db/scripts/addTeamMetrics.js",
+    "details": "node docs/db/scripts/printDetailedContent.js",
+    "get-schema": "node docs/db/scripts/getCurrentSchema.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1",
+    "dotenv": "^16.4.5"
+  }
+}

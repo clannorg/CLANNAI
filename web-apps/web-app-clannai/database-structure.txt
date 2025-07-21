@@ -1,0 +1,80 @@
+CLANN Database Structure
+
+1. USERS
+   - id (UUID)
+   - email (unique)
+   - password_hash
+   - role: ['USER', 'COMPANY_MEMBER']
+   - created_at
+   - updated_at
+   Current Stats:
+   • 1 COMPANY_MEMBER (thomas@clannai.com)
+   • 55 regular users
+
+2. TEAMS
+   - id (UUID)
+   - name
+   - team_code (unique)
+   - subscription_status: ['FREE', 'TRIAL', 'PREMIUM']
+   - trial_ends_at (timestamp)
+   - created_at
+   - updated_at
+   Relationships:
+   • Has many Users through TeamMembers
+   • Has many Sessions
+
+3. TEAM_MEMBERS
+   - team_id (UUID)
+   - user_id (UUID)
+   - role: ['ADMIN', 'MEMBER']
+   - joined_at
+   Relationships:
+   • Links Users to Teams
+   • One user can be in multiple teams
+
+4. SESSIONS
+   - id (UUID)
+   - team_id (UUID)
+   - footage_url
+   - status: ['PENDING', 'REVIEWED']
+   - uploaded_by (UUID -> Users)
+   - reviewed_by (UUID -> Users)
+   - analysis_image1_url (heatmap)
+   - analysis_image2_url (sprint map)
+   - analysis_image3_url (game momentum)
+   - analysis_video1_url through analysis_video5_url
+   - created_at
+   - updated_at
+   Current Stats:
+   • 14 total sessions
+   • 11 PENDING
+   • 3 REVIEWED
+
+5. KEY RELATIONSHIPS
+   - User -> Teams: Many-to-Many through TeamMembers
+   - Team -> Sessions: One-to-Many
+   - Session -> User (uploaded_by): Many-to-One
+   - Session -> User (reviewed_by): Many-to-One
+
+6. IMPORTANT FIELDS FOR FEATURES
+   Team Management:
+   • team_code: Used for invites
+   • subscription_status: Controls access level
+   • trial_ends_at: Manages trial period
+
+   Analysis Tracking:
+   • status: Tracks analysis state
+   • uploaded_by: Who submitted the footage
+   • reviewed_by: Which analyst processed it
+   • analysis_urls: Store S3 links to analysis files
+
+   User Access:
+   • user.role: Controls dashboard access
+   • team_member.role: Controls team permissions
+
+7. CURRENT CONSTRAINTS
+   • Users must have unique emails
+   • Teams must have unique team_codes
+   • Sessions must belong to a team
+   • Analysis URLs can be null
+   • Status must be either 'PENDING' or 'REVIEWED' 

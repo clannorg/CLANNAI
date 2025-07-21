@@ -1,0 +1,53 @@
+CLANN - User Flow Documentation
+
+1. REGULAR USER PATH
+- Register/Login
+- Upload game footage URL
+- Enter team name (becomes admin if first upload)
+- Get team code to share
+- View their team's sessions
+- See analysis results:
+  • Heatmaps
+  • Sprint maps 
+  • Game momentum graphs
+  • Performance metrics
+
+2. TEAM ADMIN PATH (Regular user with extra permissions)
+Everything a regular user can do, plus:
+- Remove team members
+- Manage auto-joined members  
+- Promote other members to admin
+- Share team access codes
+
+3. COMPANY USER (ANALYST) PATH
+- Login to company dashboard
+- View ALL sessions from ALL teams
+- Filter/Sort sessions by:
+  • Date
+  • Team name 
+  • Status (PENDING/REVIEWED)
+- For each session can:
+  • Upload 3 analysis images:
+    - Heatmap
+    - Sprint Map
+    - Game Momentum
+  • Upload up to 5 analysis videos
+  • Toggle session status
+  • Add descriptions
+  • Delete analyses
+
+4. SESSION ANALYSIS TYPES
+All users can view:
+a) Performance Metrics
+   - Total distance (km)
+   - Sprint distance (m) 
+   - Total sprints
+   - Top sprint speed (m/s)
+
+b) AI Analysis
+   - Heatmap
+   - Sprint map
+   - Game momentum
+
+c) Video Analysis
+   - Up to 5 analysis videos

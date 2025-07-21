@@ -1,0 +1,9 @@
+aws rds create-db-instance \
+    --db-instance-identifier clann-db-11nov \
+    --db-instance-class db.t3.micro \
+    --engine postgres \
+    --master-username postgres \
+    --master-user-password ClannPass123! \
+    --allocated-storage 20 \
+    --publicly-accessible \
+    --region eu-west-1

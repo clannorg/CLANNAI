@@ -1,0 +1,12 @@
+suggestion from jef
+
+design your mono repo to be, surprise, a MONOREPO
+- you have too many repos
+
+
+if you want to use mononrepo
+- add python code, javascript, web, api, etc, to the same repo
+- deploy all of them using Devopness
+- you will have clear visibility of all the changes that happens in all parts of the system (your product) from Devopness dashboard
+- you will have a single path to deploy your product, even if you change programming languages and frameworks in the future
+- also you can quyicly try your AI code in other cloud providers, such as a GCP and Azure, if you get credits from them

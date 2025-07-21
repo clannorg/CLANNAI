@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "pg": "^8.13.1",
+    "react-hot-toast": "^2.4.1",
+    "react-type-animation": "^3.2.0",
+    "typed.js": "^2.1.0"
+  },
+  "scripts": {
+    "db:definition": "node docs/db/scripts/printDbDefinition.js",
+    "db:content": "node docs/db/scripts/printDetailedContent.js",
+    "db:add-metrics": "node docs/db/scripts/addTeamMetrics.js",
+    "db:details": "node docs/db/scripts/printDetailedContent.js",
+    "db:get-schema": "node docs/db/scripts/getCurrentSchema.js"
+  }
+}
