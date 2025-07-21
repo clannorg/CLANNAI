@@ -1,0 +1,20 @@
+# Ignore virtual environment
+venv/
+gcp_env/
+street_env/
+
+# Ignore service account key
+/path/to/your/service-account-file.json
+
+# Ignore other unwanted files or directories
+*.pyc
+__pycache__/
+.DS_Store
+/street_env
+/image_results
+/data_results
+detection/*.pt
+.DS_store
+__pycache__/
+*.pyc
+*.pt
