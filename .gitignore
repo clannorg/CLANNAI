@@ -1,45 +1,22 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
 *.so
 .Python
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
 # Virtual environments
 venv/
 env/
 ENV/
-env.bak/
-venv.bak/
 .venv/
-
-# Conda environments
 .conda/
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# Environment variables
+# Environment variables (keep secrets safe)
 .env
 .env.local
 .env.development.local
@@ -51,7 +28,6 @@ ipython_config.py
 .idea/
 *.swp
 *.swo
-*~
 
 # OS
 .DS_Store
@@ -59,14 +35,13 @@ ipython_config.py
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
 Thumbs.db
 
 # Logs
 *.log
 logs/
 
-# Media files (large video files)
+# Large media files (don't commit videos)
 *.mp4
 *.avi
 *.mov
@@ -78,17 +53,7 @@ logs/
 *.3gp
 *.ogv
 
-# Image files (large datasets)
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.tiff
-*.tif
-*.webp
-
-# Model files
+# Large model files (don't commit ML models)
 *.pth
 *.pt
 *.onnx
@@ -99,38 +64,14 @@ logs/
 *.model
 *.weights
 
-# Data files
-*.csv
-*.json
-*.xml
-*.yaml
-*.yml
-*.parquet
-*.feather
-*.hdf5
-*.h5
-
-# Temporary files
-*.tmp
-*.temp
-temp/
-tmp/
-
-# Cache
-.cache/
-cache/
-__pycache__/
-
-# Output directories
+# Large datasets (don't commit data)
+data/
+datasets/
+samples/
 output/
 results/
 artifacts/
 checkpoints/
-
-# Large datasets
-data/
-datasets/
-samples/
 
 # API keys and secrets
 *.key
@@ -139,11 +80,6 @@ samples/
 *.pfx
 secrets.json
 credentials.json
-
-# Docker
-.dockerignore
-Dockerfile
-docker-compose.yml
 
 # Node.js (for web components)
 node_modules/
@@ -154,27 +90,15 @@ yarn-error.log*
 # Coverage reports
 htmlcov/
 .coverage
-.coverage.*
-coverage.xml
 *.cover
-.hypothesis/
 .pytest_cache/
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Cache
+.cache/
+cache/
 
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# Local development
-local/
-dev/ gaa/Grounded-SAM-2/
-gaa/Grounded-SAM-2/
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
