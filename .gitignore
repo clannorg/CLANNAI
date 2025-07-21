@@ -80,6 +80,7 @@ checkpoints/
 *.pfx
 secrets.json
 credentials.json
+stripe-setup-notes.txt
 
 # Node.js (for web components)
 node_modules/
