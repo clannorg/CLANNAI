@@ -1,0 +1,135 @@
+{
+  "match_info": {
+    "total_events": 12,
+    "total_clips": 10,
+    "synthesis_date": "2025-07-17T11:26:31.394554"
+  },
+  "statistics": {
+    "total_events": 12,
+    "goals": 0,
+    "shots": 0,
+    "passes": 0,
+    "tackles": 0,
+    "fouls": 0,
+    "cards": 0,
+    "corners": 0,
+    "free_kicks": 0,
+    "penalties": 0,
+    "substitutions": 0,
+    "turnovers": 0,
+    "referee_action": 0,
+    "game_start": 1,
+    "general_play": 0,
+    "other": 1
+  },
+  "events": [
+    {
+      "clip_number": 1080,
+      "relative_time": 27.0,
+      "absolute_time": 1107.0,
+      "event_text": "Foul committed - MAJOR FOUL",
+      "formatted_time": "18:27.00",
+      "event_type": "foul",
+      "event_number": 1
+    },
+    {
+      "clip_number": 1110,
+      "relative_time": 27.0,
+      "absolute_time": 1137.0,
+      "event_text": "Referee makes a call and stops play - FOUL",
+      "formatted_time": "18:57.00",
+      "event_type": "foul",
+      "event_number": 2
+    },
+    {
+      "clip_number": 1140,
+      "relative_time": 0.0,
+      "absolute_time": 1140.0,
+      "event_text": "Kickoff - GAME START",
+      "formatted_time": "19:00.00",
+      "event_type": "game_start",
+      "event_number": 3
+    },
+    {
+      "clip_number": 1140,
+      "relative_time": 19.0,
+      "absolute_time": 1159.0,
+      "event_text": "Shot towards goal by blue team, appears to be saved by the goalkeeper - SHOT ON TARGET",
+      "formatted_time": "19:19.00",
+      "event_type": "goal",
+      "event_number": 4
+    },
+    {
+      "clip_number": 1170,
+      "relative_time": 25.0,
+      "absolute_time": 1195.0,
+      "event_text": "Kick off from the center circle - TURNOVER",
+      "formatted_time": "19:55.00",
+      "event_type": "turnover",
+      "event_number": 5
+    },
+    {
+      "clip_number": 1200,
+      "relative_time": 15.0,
+      "absolute_time": 1215.0,
+      "event_text": "Kick-off - GAME START",
+      "formatted_time": "20:15.00",
+      "event_type": "turnover",
+      "event_number": 6
+    },
+    {
+      "clip_number": 1260,
+      "relative_time": 28.0,
+      "absolute_time": 1288.0,
+      "event_text": "Shot towards goal, saved by goalkeeper - SHOT ON TARGET",
+      "formatted_time": "21:28.00",
+      "event_type": "goal",
+      "event_number": 7
+    },
+    {
+      "clip_number": 1320,
+      "relative_time": 25.0,
+      "absolute_time": 1345.0,
+      "event_text": "Shot on goal - SHOT ON TARGET",
+      "formatted_time": "22:25.00",
+      "event_type": "goal",
+      "event_number": 8
+    },
+    {
+      "clip_number": 1320,
+      "relative_time": 26.0,
+      "absolute_time": 1346.0,
+      "event_text": "Goal scored by team in blue - GOAL",
+      "formatted_time": "22:26.00",
+      "event_type": "goal",
+      "event_number": 9
+    },
+    {
+      "clip_number": 1350,
+      "relative_time": 5.0,
+      "absolute_time": 1355.0,
+      "event_text": "Shot blocked in front of goal - SHOT ON TARGET",
+      "formatted_time": "22:35.00",
+      "event_type": "goal",
+      "event_number": 10
+    },
+    {
+      "clip_number": 1350,
+      "relative_time": 5.0,
+      "absolute_time": 1355.0,
+      "event_text": "Scramble in the box - PLAY ON",
+      "formatted_time": "22:35.00",
+      "event_type": "other",
+      "event_number": 11
+    },
+    {
+      "clip_number": 1350,
+      "relative_time": 10.0,
+      "absolute_time": 1360.0,
+      "event_text": "Team in yellow gains possession - TURNOVER",
+      "formatted_time": "22:40.00",
+      "event_type": "turnover",
+      "event_number": 12
+    }
+  ]
+}
