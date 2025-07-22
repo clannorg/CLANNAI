@@ -1,1 +1,3 @@
 tree -I 'venv|__pycache__|*.pyc|*.md|*.txt|*.json|*.csv|*.lock|.git'
+
+tree -I 'node_modules' -L 3
