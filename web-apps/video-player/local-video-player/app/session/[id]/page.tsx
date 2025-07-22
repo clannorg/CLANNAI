@@ -485,49 +485,24 @@ export default function SessionPage({ params }: { params: { id: string } }) {
                   </button>
                 </div>
 
-                {/* Center - Current Event Display */}
-                <div className="flex items-center space-x-3">
-                  {/* Toggle Events Left */}
+                {/* Center - Events Toggle, Time, and Progress Bar */}
+                <div className="flex-1 flex flex-col items-center justify-center mx-8">
+                  {/* Events Toggle Button - Above Time */}
                   <button
                     onClick={() => setShowEvents(!showEvents)}
-                    className="text-white/90 hover:text-white transition-colors p-2"
+                    className="text-white/90 hover:text-white transition-colors p-1 mb-2"
                     title="Toggle Events Panel"
                   >
                     ☰
                   </button>
 
-                  {/* Current Event Display */}
-                  <div className="text-white/90 text-sm font-medium min-w-[200px] text-center">
-                    {currentEventIndex >= 0 && footballData?.events[currentEventIndex] ? (
-                      <div className="flex items-center justify-center space-x-2">
-                        <span>{footballData.events[currentEventIndex].bystander ? '●' : (footballData.events[currentEventIndex].team === 'team_a' ? '●' : '●')}</span>
-                        <span>{getTeamName(footballData.events[currentEventIndex].team)} {footballData.events[currentEventIndex].event_type}</span>
-                        <span className="text-gray-400">• {footballData.events[currentEventIndex].timestamp}</span>
-                      </div>
-                    ) : (
-                      <span>No current event</span>
-                    )}
-                  </div>
-
-                  {/* Toggle Events Right */}
-                  <button
-                    onClick={() => setShowEvents(!showEvents)}
-                    className="text-white/90 hover:text-white transition-colors p-2"
-                    title="Toggle Events Panel"
-                  >
-                    ☰
-                  </button>
-                </div>
-
-                {/* Right Side - Time and Progress */}
-                <div className="flex items-center space-x-4">
                   {/* Time Display */}
-                  <div className="text-white/90 text-sm font-medium">
+                  <div className="text-white/90 text-sm font-medium mb-2">
                     {formatTime(currentTime)} / {formatTime(duration)}
                   </div>
-
+                  
                   {/* Progress Bar */}
-                  <div className="w-32">
+                  <div className="w-full max-w-md">
                     <div className="relative">
                       <input
                         type="range"
@@ -543,6 +518,41 @@ export default function SessionPage({ params }: { params: { id: string } }) {
                       />
                     </div>
                   </div>
+                </div>
+
+                {/* Right Side - Event Navigation */}
+                <div className="flex items-center space-x-2">
+                  {/* Previous Event */}
+                  <button
+                    onClick={handlePreviousEvent}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title="Previous Event"
+                    disabled={filteredEvents.length === 0}
+                  >
+                    ◀
+                  </button>
+
+                  {/* Current Event Display - Centered */}
+                  <div className="text-white/90 text-xs font-medium min-w-[140px] text-center flex items-center justify-center">
+                    {currentEventIndex >= 0 && footballData?.events[currentEventIndex] ? (
+                      <div className="flex items-center justify-center space-x-1">
+                        <span>{footballData.events[currentEventIndex].bystander ? '●' : (footballData.events[currentEventIndex].team === 'team_a' ? '●' : '●')}</span>
+                        <span>{getTeamName(footballData.events[currentEventIndex].team)} {footballData.events[currentEventIndex].event_type}</span>
+                      </div>
+                    ) : (
+                      <span>No event</span>
+                    )}
+                  </div>
+
+                  {/* Next Event */}
+                  <button
+                    onClick={handleNextEvent}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title="Next Event"
+                    disabled={filteredEvents.length === 0}
+                  >
+                    ▶
+                  </button>
 
                   {/* Fullscreen Button */}
                   <button
