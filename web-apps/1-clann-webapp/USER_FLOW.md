@@ -4,13 +4,13 @@
 
 ### **New User Flow:**
 1. **Landing Page** → Learn about the platform
-2. **Sign Up** → Create account
+2. **Modal Sign Up** → Create account (popup on same page)
 3. **Dashboard** → See empty state, create first team
-4. **Upload Video** → Upload first game
+4. **Modal Upload** → Upload first game (popup on dashboard)
 5. **View Analysis** → See video with events
 
 ### **Returning User Flow:**
-1. **Login** → Access dashboard
+1. **Landing Page** → Login modal (popup on same page)
 2. **Dashboard** → Toggle between Teams/Games
 3. **View Games** → Browse uploaded games
 4. **Watch Analysis** → View video with events
@@ -20,189 +20,237 @@
 ## 📋 **Detailed User Flows**
 
 ### **1. Landing Page Experience**
-**User Actions:**
-- [ ] Visit landing page
-- [ ] Read about features (video analysis, AI detection)
-- [ ] Click "Get Started" or "Sign Up"
-- [ ] Fill out registration form
-- [ ] Verify email (if required)
-- [ ] Complete onboarding
+**Goal:** Convert visitors to users
 
-**System Responses:**
-- [ ] Display professional landing page
-- [ ] Show feature highlights
-- [ ] Collect user information
-- [ ] Create user account
-- [ ] Send welcome email
-- [ ] Redirect to dashboard
+**Steps:**
+1. **Land on homepage** → See hero video, animated text, demo metrics
+2. **Paste video URL** → Enter Veo/Trace/Spiideo URL in input box
+3. **Click "Analyze"** → Triggers login modal if not authenticated
+4. **Sign up/Login** → Modal appears on same page
+5. **Redirect to dashboard** → After successful authentication
 
-### **2. Dashboard Experience**
-**User Actions:**
-- [ ] View dashboard with empty state
-- [ ] Toggle between "Teams" and "Games" views
-- [ ] Create first team (if none exist)
-- [ ] See recent activity
-- [ ] Access quick actions
+**Key Features:**
+- Hero video background with animated text
+- Demo metrics comparison (spider chart)
+- Analysis showcase (position tracking, heat mapping, sprint analysis)
+- Pricing tiers display
+- URL input with "Analyze" button
 
-**System Responses:**
-- [ ] Show dashboard with stats
-- [ ] Display team/games toggle
-- [ ] Show empty state with CTA
-- [ ] Display recent games/teams
-- [ ] Show quick action buttons
+### **2. Authentication Flow**
+**Goal:** Seamless sign up/login experience
 
-### **3. Team Management**
-**User Actions:**
-- [ ] Click "Create Team" button
-- [ ] Fill team details (name, description)
-- [ ] Invite team members (optional)
-- [ ] View team settings
-- [ ] Manage team members
+**Steps:**
+1. **Trigger auth modal** → From "Analyze" button or nav links
+2. **Choose mode** → Toggle between Login/Register
+3. **Fill form** → Email, password, terms (for register)
+4. **Submit** → API call with loading state
+5. **Success** → Store token, redirect to dashboard
+6. **Error** → Show error message in modal
 
-**System Responses:**
-- [ ] Show team creation form
-- [ ] Validate team information
-- [ ] Create team in database
-- [ ] Send invitations (if any)
-- [ ] Display team management interface
+**Modal Features:**
+- Toggle between Login/Register
+- Form validation
+- Password visibility toggle
+- Terms checkbox (register only)
+- Error message display
+- Loading states
 
-### **4. Video Upload Process**
-**User Actions:**
-- [ ] Click "Upload Video" button
-- [ ] Select video file (1 hour max)
-- [ ] Fill game details (title, teams, date)
-- [ ] Wait for upload progress
-- [ ] Wait for processing
+### **3. Dashboard Experience**
+**Goal:** Manage teams and games
 
-**System Responses:**
-- [ ] Show upload interface
-- [ ] Validate file type and size
-- [ ] Upload to S3 storage
-- [ ] Show progress indicator
-- [ ] Process video for analysis
-- [ ] Generate thumbnail
-- [ ] Extract video metadata
+**Steps:**
+1. **Land on dashboard** → See teams and games tabs
+2. **Toggle view** → Switch between Teams/Games
+3. **Create team** → Modal form for new team
+4. **Upload game** → Modal form for video upload
+5. **View games** → List of uploaded games with status
+
+**Dashboard Features:**
+- Teams/Games toggle tabs
+- Create team modal
+- Upload video modal
+- Games list with status indicators
+- Search and filter options
+
+### **4. Video Upload Flow**
+**Goal:** Upload and process game videos
+
+**Steps:**
+1. **Click "Upload"** → Opens upload modal
+2. **Select file** → Drag & drop or file picker
+3. **Add metadata** → Title, description, team
+4. **Submit** → Upload to S3 with progress
+5. **Processing** → Show status updates
+6. **Complete** → Game appears in list
+
+**Upload Modal Features:**
+- Drag & drop file upload
+- File validation (type, size)
+- Progress indicator
+- Metadata form (title, description, team)
+- Error handling and retry
 
 ### **5. Video Analysis View**
-**User Actions:**
-- [ ] Click on a game from dashboard
-- [ ] View video player with timeline
-- [ ] See event markers on timeline
-- [ ] Click events to jump to timestamp
-- [ ] Filter events by team/type
-- [ ] View event details
+**Goal:** Watch videos with event tracking
 
-**System Responses:**
-- [ ] Load video with HLS streaming
-- [ ] Display timeline with events
-- [ ] Show event markers
-- [ ] Seek to clicked event
-- [ ] Filter events in sidebar
-- [ ] Show event information
+**Steps:**
+1. **Click game** → Navigate to video player
+2. **Load video** → HLS streaming with events
+3. **View timeline** → See event markers
+4. **Add events** → Click timeline or use sidebar
+5. **Edit events** → Modal form for event editing
+6. **Filter events** → By type, team, player
 
-### **6. Event Management**
-**User Actions:**
-- [ ] Add new events manually
-- [ ] Edit existing events
-- [ ] Delete events
-- [ ] Export event data
-- [ ] Share game analysis
+**Video Player Features:**
+- HLS.js streaming player
+- Timeline with event markers
+- Event creation sidebar
+- Event editing modal
+- Filter and search events
+- Fullscreen support
 
-**System Responses:**
-- [ ] Show event creation form
-- [ ] Validate event data
-- [ ] Update event in database
-- [ ] Generate export files
-- [ ] Create shareable links
+### **6. Event Management Flow**
+**Goal:** Create and edit game events
+
+**Steps:**
+1. **Click timeline** → Opens event creation modal
+2. **Fill event form** → Type, timestamp, team, player, description
+3. **Add coordinates** → Click on pitch or enter manually
+4. **Add metadata** → Tags, notes, custom fields
+5. **Save** → Event appears on timeline
+6. **Edit/Delete** → Right-click or use sidebar
+
+**Event Modal Features:**
+- Event type selection
+- Timestamp input
+- Team and player selection
+- Description field
+- Coordinate picker
+- Metadata fields (tags, notes)
+- Preview of event on timeline
 
 ---
 
 ## 🎯 **User Personas**
 
 ### **Team Manager**
-- **Primary Goal**: Analyze team performance
-- **Key Actions**: Upload games, view analysis, share insights
-- **Pain Points**: Time-consuming manual analysis
-
-### **Player**
-- **Primary Goal**: Review personal performance
-- **Key Actions**: Watch game analysis, focus on personal events
-- **Pain Points**: Hard to track individual performance
+- **Goal:** Analyze team performance
+- **Pain Points:** Manual video analysis, no metrics
+- **Solution:** Automated tracking and insights
+- **Key Features:** Team management, game uploads, performance metrics
 
 ### **Coach**
-- **Primary Goal**: Tactical analysis
-- **Key Actions**: Detailed event analysis, pattern recognition
-- **Pain Points**: Need for detailed statistics
+- **Goal:** Improve team tactics
+- **Pain Points:** Limited tactical insights
+- **Solution:** Position tracking and formation analysis
+- **Key Features:** Video player with events, tactical overlays
+
+### **Player**
+- **Goal:** Review personal performance
+- **Pain Points:** No individual metrics
+- **Solution:** Player-specific tracking
+- **Key Features:** Individual player stats, highlight reels
 
 ---
 
 ## 📊 **User Interface Requirements**
 
 ### **Landing Page**
-- [ ] Hero section with clear value proposition
-- [ ] Feature highlights (3 main benefits)
-- [ ] Call-to-action buttons
-- [ ] Simple navigation
+- **Hero Section:** Video background with animated text
+- **Demo Metrics:** Spider chart comparison
+- **Analysis Showcase:** Three feature cards
+- **Pricing Tiers:** Three-column layout
+- **URL Input:** Prominent input with analyze button
+- **Navigation:** Clean top nav with auth buttons
 
 ### **Dashboard**
-- [ ] Team/Games toggle
-- [ ] Statistics cards
-- [ ] Recent activity feed
-- [ ] Quick action buttons
-- [ ] Empty state handling
+- **Header:** User info, logout, team selector
+- **Tabs:** Teams/Games toggle
+- **Content Area:** Dynamic based on selected tab
+- **Action Buttons:** Create team, upload video
+- **Search/Filter:** For games and teams
 
 ### **Video Player**
-- [ ] Full-screen video player
-- [ ] Timeline with event markers
-- [ ] Event sidebar with filters
-- [ ] Click-to-seek functionality
-- [ ] Event details panel
+- **Player:** Full-width video with controls
+- **Timeline:** Below video with event markers
+- **Sidebar:** Event list and filters
+- **Toolbar:** Playback controls and fullscreen
+- **Event Modal:** Overlay for event creation/editing
 
-### **Forms**
-- [ ] Registration/Login forms
-- [ ] Team creation form
-- [ ] Video upload form
-- [ ] Event creation form
+### **Forms (All Modals)**
+- **Consistent Design:** Same styling across all modals
+- **Validation:** Real-time form validation
+- **Loading States:** Spinners and progress indicators
+- **Error Handling:** Clear error messages
+- **Responsive:** Work on mobile and desktop
 
 ---
 
 ## 🔄 **Error Handling**
 
 ### **Upload Errors**
-- [ ] File too large
-- [ ] Invalid file type
-- [ ] Upload timeout
-- [ ] Processing failure
+- **File too large:** Show size limit message
+- **Invalid file type:** Show supported formats
+- **Upload timeout:** Retry with progress indicator
+- **Processing failure:** Show error status
 
 ### **Authentication Errors**
-- [ ] Invalid credentials
-- [ ] Account not found
-- [ ] Password reset flow
-- [ ] Session expiration
+- **Invalid credentials:** Clear error message in modal
+- **Account not found:** Clear registration prompt
+- **Network issues:** Retry with exponential backoff
+- **Token expired:** Automatic refresh or redirect
 
 ### **Video Playback Errors**
-- [ ] Video not found
-- [ ] Streaming issues
-- [ ] Browser compatibility
-- [ ] Network problems
+- **Video not found:** Show 404 with upload option
+- **Streaming issues:** Retry with different quality
+- **Browser compatibility:** Show fallback player
+- **Network problems:** Offline indicator
 
 ---
 
 ## 📱 **Responsive Design**
 
-### **Desktop (Primary)**
-- [ ] Full dashboard layout
-- [ ] Side-by-side video and events
-- [ ] Advanced controls
+### **Desktop (1200px+)**
+- **Full layout:** All features visible
+- **Sidebar:** Event management panel
+- **Large video player:** Full-width with controls
+- **Modal forms:** Centered with backdrop
 
-### **Tablet**
-- [ ] Collapsible sidebar
-- [ ] Touch-friendly controls
-- [ ] Optimized video player
+### **Tablet (768px - 1199px)**
+- **Adaptive layout:** Responsive grid
+- **Collapsible sidebar:** Toggle for events
+- **Medium video player:** Responsive sizing
+- **Modal forms:** Full-width on tablet
 
-### **Mobile**
-- [ ] Simplified navigation
-- [ ] Mobile-optimized video player
-- [ ] Touch-friendly event markers
+### **Mobile (320px - 767px)**
+- **Stacked layout:** Single column
+- **Hidden sidebar:** Events in bottom sheet
+- **Small video player:** Optimized for mobile
+- **Modal forms:** Full-screen on mobile
 
-This user flow ensures we build exactly what users need to accomplish their goals! 
+---
+
+## 🎨 **Modal Form Strategy**
+
+### **Consistent Modal Design**
+- **Backdrop:** Semi-transparent overlay
+- **Container:** Centered with rounded corners
+- **Header:** Title and close button
+- **Form:** Consistent input styling
+- **Actions:** Primary and secondary buttons
+
+### **Modal Types**
+1. **Auth Modal:** Login/Register toggle
+2. **Team Modal:** Create/Edit team
+3. **Upload Modal:** Video upload with progress
+4. **Event Modal:** Create/Edit events
+5. **Settings Modal:** User preferences
+
+### **Modal Behavior**
+- **Open:** Smooth fade-in animation
+- **Close:** Click backdrop, escape key, or X button
+- **Form submission:** Loading state with spinner
+- **Success:** Close modal and update parent
+- **Error:** Show error message in modal
+
+This user flow ensures we build exactly what users need with a consistent, modal-based experience! 
