@@ -103,3 +103,4 @@ cache/
 *.temp
 temp/
 tmp/
+web-apps/video-player/local-video-player/public/videos/
