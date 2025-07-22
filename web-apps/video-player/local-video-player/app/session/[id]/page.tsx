@@ -443,35 +443,121 @@ export default function SessionPage({ params }: { params: { id: string } }) {
               </div>
             )}
 
-            {/* Main Control Bar */}
+            {/* Main Control Bar - Veo Style */}
             <div className="px-6 py-3">
               <div className="flex items-center justify-between">
-                {/* Time Display */}
-                <div className="text-white/90 text-sm font-medium">
-                  {formatTime(currentTime)}
+                {/* Left Side - Playback Controls */}
+                <div className="flex items-center space-x-2">
+                  {/* Play/Pause Button */}
+                  <button
+                    onClick={handlePlayPause}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title={isPlaying ? 'Pause' : 'Play'}
+                  >
+                    {isPlaying ? '⏸' : '▶'}
+                  </button>
+
+                  {/* Skip Backward */}
+                  <button
+                    onClick={handleJumpBackward}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title="Skip Backward 5s"
+                  >
+                    ↺
+                  </button>
+
+                  {/* Skip Forward */}
+                  <button
+                    onClick={handleJumpForward}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title="Skip Forward 5s"
+                  >
+                    ↻
+                  </button>
+
+                  {/* Volume Control */}
+                  <button
+                    onClick={handleMuteToggle}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title={isMuted ? 'Unmute' : 'Mute'}
+                  >
+                    {isMuted ? '🔇' : '🔊'}
+                  </button>
                 </div>
 
-                {/* Progress Bar */}
-                <div className="flex-1 mx-4">
-                  <div className="relative z-50">
-                    <input
-                      type="range"
-                      min="0"
-                      max={duration || 0}
-                      value={currentTime}
-                      onChange={handleSeek}
-                      onInput={handleSeek}
-                      className="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
-                      style={{
-                        background: `linear-gradient(to right, #ffffff 0%, #ffffff ${(currentTime / duration) * 100}%, #4b5563 ${(currentTime / duration) * 100}%, #4b5563 100%)`
-                      }}
-                    />
+                {/* Center - Current Event Display */}
+                <div className="flex items-center space-x-3">
+                  {/* Toggle Events Left */}
+                  <button
+                    onClick={() => setShowEvents(!showEvents)}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title="Toggle Events Panel"
+                  >
+                    ☰
+                  </button>
+
+                  {/* Current Event Display */}
+                  <div className="text-white/90 text-sm font-medium min-w-[200px] text-center">
+                    {currentEventIndex >= 0 && footballData?.events[currentEventIndex] ? (
+                      <div className="flex items-center justify-center space-x-2">
+                        <span>{footballData.events[currentEventIndex].bystander ? '●' : (footballData.events[currentEventIndex].team === 'team_a' ? '●' : '●')}</span>
+                        <span>{getTeamName(footballData.events[currentEventIndex].team)} {footballData.events[currentEventIndex].event_type}</span>
+                        <span className="text-gray-400">• {footballData.events[currentEventIndex].timestamp}</span>
+                      </div>
+                    ) : (
+                      <span>No current event</span>
+                    )}
                   </div>
+
+                  {/* Toggle Events Right */}
+                  <button
+                    onClick={() => setShowEvents(!showEvents)}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title="Toggle Events Panel"
+                  >
+                    ☰
+                  </button>
                 </div>
 
-                {/* Total Duration */}
-                <div className="text-white/90 text-sm font-medium">
-                  {formatTime(duration)}
+                {/* Right Side - Time and Progress */}
+                <div className="flex items-center space-x-4">
+                  {/* Time Display */}
+                  <div className="text-white/90 text-sm font-medium">
+                    {formatTime(currentTime)} / {formatTime(duration)}
+                  </div>
+
+                  {/* Progress Bar */}
+                  <div className="w-32">
+                    <div className="relative">
+                      <input
+                        type="range"
+                        min="0"
+                        max={duration || 0}
+                        value={currentTime}
+                        onChange={handleSeek}
+                        onInput={handleSeek}
+                        className="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
+                        style={{
+                          background: `linear-gradient(to right, #ffffff 0%, #ffffff ${(currentTime / duration) * 100}%, #4b5563 ${(currentTime / duration) * 100}%, #4b5563 100%)`
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Fullscreen Button */}
+                  <button
+                    onClick={() => {
+                      if (document.fullscreenElement) {
+                        document.exitFullscreen();
+                      } else {
+                        document.documentElement.requestFullscreen();
+                      }
+                    }}
+                    className="text-white/90 hover:text-white transition-colors p-2"
+                    title="Toggle Fullscreen"
+                  >
+                    ⛶
+                  </button>
                 </div>
               </div>
             </div>
