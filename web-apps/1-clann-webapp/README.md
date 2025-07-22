@@ -1,220 +1,150 @@
-# 1-Clann-WebApp 🏈
+# 🏈 ClannAI Football Analysis Platform
 
 A unified football analysis platform built with Next.js 15, combining the best features from both existing ClannAI applications into one modern, football-focused webapp.
 
-## 🎯 **What This App Does**
+## 🎯 **New Plan: Hybrid Solution**
 
-### **Core Workflow**
-```
-User Uploads Football Video → AI Processing (VM) → JSON Stats → Video Player with Events
-```
+### **What We're Building**
+We're creating a **hybrid solution** that takes the best parts from both existing apps:
 
-### **Key Features**
-- **🎥 Advanced Video Player** with event tagging and timeline overlay
-- **📤 Simple File Upload** for football game footage
-- **🤖 AI Processing Integration** with your VM for automatic event detection
-- **📊 Event Visualization** with color-coded timeline markers
-- **👥 Team Management** with role-based access
-- **💳 Payment Integration** for premium features
-- **📱 Responsive Design** for mobile and desktop
+**From `web-app-clannai` (Backend):**
+- ✅ **Real Express.js backend** with PostgreSQL
+- ✅ **Working authentication** (JWT)
+- ✅ **File upload to S3** 
+- ✅ **Stripe payment integration**
+- ✅ **Real database** with 55 users, 14 sessions
+- ✅ **Complete API endpoints** for teams, sessions, auth
 
-## 🏗️ **Architecture**
+**From `clannai-frontend` (Frontend):**
+- ✅ **Advanced video player** with event tagging
+- ✅ **Professional dashboard** with tabs
+- ✅ **Modern Next.js 15** with TypeScript
+- ✅ **React Query** for state management
+- ✅ **Professional UI components**
 
-### **Frontend (Next.js 15)**
-```
-/app
-├── /dashboard
-│   ├── /games (list of uploaded games)
-│   ├── /games/[id] (game details)
-│   └── /games/[id]/video (video player with events)
-├── /upload (simple file upload)
-├── /auth (login/register)
-└── /teams (team management)
-```
+### **Why This Approach?**
+- **Control**: We own the entire stack
+- **Features**: Get the best of both worlds
+- **Simplicity**: No external AWS dependencies
+- **Cost**: No AWS charges, self-hosted
+- **Flexibility**: Easy to modify and extend
 
-### **Backend (Express API)**
-```
-/api
-├── /auth (login/register)
-├── /games (CRUD for games)
-├── /upload (file upload to S3)
-├── /events (AI processing results)
-├── /teams (team management)
-└── /payments (Stripe integration)
-```
+## 🏗️ **Architecture Plan**
 
-### **Database (PostgreSQL)**
-```sql
-users (id, email, password_hash, role, created_at)
-teams (id, name, invite_code, subscription_status, created_at)
-games (id, team_id, user_id, video_url, status, created_at)
-events (id, game_id, time, event_type, team, outcome, validated)
+### **Backend (Express.js + PostgreSQL)**
+```
+Frontend (Next.js 15) 
+    ↓ (JWT Auth)
+Express.js Server (Port 3001)
+    ↓ (PostgreSQL)
+Database (Users, Teams, Sessions)
+    ↓ (S3)
+File Storage (Videos, Analysis)
+    ↓ (Stripe)
+Payment Processing
 ```
 
-## 🚀 **Technology Stack**
+### **Database Schema**
+- **Users**: Authentication and profiles
+- **Teams**: Team management with roles
+- **Sessions**: Game footage and analysis
+- **TeamMembers**: Many-to-many relationships
+- **Analysis**: AI processing results
 
-### **Frontend**
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type safety and better DX
-- **Tailwind CSS** - Utility-first styling
-- **Radix UI** - Accessible component primitives
-- **Framer Motion** - Smooth animations
-- **React Query** - Server state management
+### **Frontend Structure**
+- **Dashboard**: Tabs for Matches, Team, Public Matches
+- **Video Player**: Advanced with timeline and events
+- **Authentication**: Login/register with JWT
+- **Team Management**: Invite codes, member roles
+- **File Upload**: Video upload with progress
 
-### **Backend**
-- **Express.js** - Node.js web framework
-- **PostgreSQL** - Reliable relational database
-- **AWS S3** - File storage for videos
-- **JWT** - Authentication tokens
-- **Stripe** - Payment processing
+## 🚀 **Implementation Phases**
 
-### **AI Integration**
-- **Custom VM** - AI processing for football events
-- **JSON API** - Event data exchange
-- **Real-time Updates** - Processing status updates
+### **Phase 1: Backend Foundation**
+- [ ] Set up Express.js server
+- [ ] Configure PostgreSQL database
+- [ ] Implement JWT authentication
+- [ ] Create basic API endpoints
+- [ ] Set up S3 file upload
 
-## 🎮 **User Experience**
+### **Phase 2: Frontend Foundation**
+- [ ] Set up Next.js 15 with TypeScript
+- [ ] Copy advanced video player
+- [ ] Copy professional dashboard
+- [ ] Implement authentication flow
+- [ ] Connect to backend APIs
 
-### **For Regular Users**
-1. **Upload** football game video
-2. **Wait** for AI processing (5-10 minutes)
-3. **View** analysis with event timeline
-4. **Filter** and search events
-5. **Export** reports and statistics
+### **Phase 3: Core Features**
+- [ ] Team management system
+- [ ] Video upload and processing
+- [ ] Event tagging and timeline
+- [ ] User roles and permissions
+- [ ] File storage integration
 
-### **For Team Admins**
-1. **Create** team and invite members
-2. **Manage** team subscriptions
-3. **Review** all team games
-4. **Access** premium features
+### **Phase 4: Advanced Features**
+- [ ] Payment integration (Stripe)
+- [ ] AI processing integration
+- [ ] Advanced analytics
+- [ ] Export functionality
+- [ ] Mobile responsiveness
 
-### **For Company Analysts**
-1. **View** all games across teams
-2. **Upload** additional analysis
-3. **Update** game statuses
-4. **Generate** comprehensive reports
+## 🎮 **User Experience Plan**
 
-## 🏈 **Football-Specific Features**
+### **Landing Page**
+- Professional hero section
+- Feature highlights
+- Call-to-action buttons
+- Testimonials
 
-### **Event Types**
-- **Goal** - Successful scoring attempts
-- **Shot** - Attempts on goal
-- **Pass** - Successful passes
-- **Tackle** - Defensive actions
-- **Foul** - Rule violations
-- **Corner** - Corner kicks
-- **Free Kick** - Set piece situations
-
-### **Team Management**
-- **Red vs Blue** - Color-coded teams
-- **Player Tracking** - Individual performance
-- **Possession Stats** - Ball control metrics
-- **Formation Analysis** - Tactical insights
+### **Dashboard**
+- **Matches Tab**: Game management with video player
+- **Team Tab**: Member management and settings
+- **Public Matches Tab**: Company analyst features
 
 ### **Video Player Features**
-- **Timeline Overlay** - Visual event markers
-- **Event Filtering** - Show/hide event types
-- **Click to Seek** - Jump to specific events
-- **Fullscreen Support** - Immersive viewing
-- **Keyboard Shortcuts** - Quick navigation
+- **Timeline Overlay**: Color-coded event markers
+- **Event Filtering**: By team and event type
+- **Click to Seek**: Jump to specific events
+- **Fullscreen Support**: With floating controls
+- **Event Management**: Add, edit, delete events
 
-## 🔧 **Development Setup**
-
-### **Prerequisites**
-- Node.js 18+
-- PostgreSQL 14+
-- AWS Account (for S3)
-- Stripe Account (for payments)
-
-### **Local Development**
-```bash
-# Clone and setup
-cd web-apps/1-clann-webapp
-npm install
-
-# Start frontend
-cd frontend
-npm run dev
-
-# Start backend
-cd ../backend
-npm run dev
-
-# Setup database
-cd ../database
-npm run migrate
-```
-
-### **Environment Variables**
-```env
-# Database
-DATABASE_URL=postgresql://user:pass@localhost:5432/clann_football
-
-# AWS
-AWS_ACCESS_KEY_ID=your_key
-AWS_SECRET_ACCESS_KEY=your_secret
-AWS_S3_BUCKET=your_bucket
-
-# Stripe
-STRIPE_SECRET_KEY=sk_test_...
-STRIPE_PUBLISHABLE_KEY=pk_test_...
-
-# JWT
-JWT_SECRET=your_jwt_secret
-```
-
-## 🚀 **Deployment**
-
-### **Frontend (AWS Amplify)**
-- Automatic deployments from Git
-- Global CDN for fast loading
-- SSL certificates included
-
-### **Backend (AWS EC2)**
-- Node.js server on EC2
-- Load balancer for scaling
-- Auto-scaling groups
-
-### **Database (AWS RDS)**
-- Managed PostgreSQL
-- Automated backups
-- Multi-AZ for reliability
-
-## 📈 **Future Enhancements**
-
-### **Phase 2 Features**
-- **Real-time Processing** - Live event detection
-- **Advanced Analytics** - Player performance metrics
-- **Team Comparisons** - Head-to-head analysis
-- **Mobile App** - Native iOS/Android
-
-### **Phase 3 Features**
-- **AI Coaching** - Automated insights
-- **Social Features** - Team sharing
-- **Advanced Export** - PDF reports
-- **API Access** - Third-party integrations
-
-## 🎯 **Why This Approach**
-
-### **Advantages**
-- ✅ **Modern Tech Stack** - Next.js 15, TypeScript, Tailwind
-- ✅ **Football-Focused** - No unnecessary complexity
-- ✅ **Scalable Architecture** - Can grow with your needs
-- ✅ **Professional UX** - Clean, intuitive interface
-- ✅ **Cost-Effective** - Start simple, add features
-
-### **Learning from Existing Apps**
-- ✅ **clannai-frontend** - Advanced video player and modern UI
-- ✅ **web-app-clannai** - Complete backend and team management
-- ✅ **Combined** - Best of both worlds
+### **Football Events**
+- **Goal** (Green): Successful scoring attempts
+- **Shot** (Yellow): Attempts on goal
+- **Pass** (Blue): Successful passes
+- **Tackle** (Red): Defensive actions
+- **Foul** (Orange): Rule violations
+- **Corner** (Purple): Corner kicks
+- **Free Kick** (Pink): Set piece situations
 
 ## 🏆 **Success Metrics**
 
-- **User Engagement** - Time spent analyzing games
-- **Processing Speed** - AI analysis completion time
-- **User Retention** - Monthly active users
-- **Feature Adoption** - Premium subscription rate
-- **Technical Performance** - Page load times, API response times
+### **Technical Excellence**
+- ✅ **Type Safety**: 100% TypeScript coverage
+- ✅ **Performance**: < 2s page load times
+- ✅ **Accessibility**: WCAG 2.1 AA compliance
+- ✅ **Mobile Responsive**: Perfect on all devices
+
+### **User Experience**
+- ✅ **Intuitive Workflow**: Upload → Process → View
+- ✅ **Fast Processing**: < 10 minutes for AI analysis
+- ✅ **Reliable System**: 99.9% uptime
+- ✅ **Professional UI**: Modern, clean design
+
+### **Business Value**
+- ✅ **User Retention**: 80% monthly active users
+- ✅ **Feature Adoption**: 60% premium conversion
+- ✅ **Processing Speed**: 5-10 minute analysis time
+- ✅ **Scalability**: Support 1000+ concurrent users
+
+## 🎯 **Next Steps**
+
+1. **Set up backend** with Express.js and PostgreSQL
+2. **Copy video player** from clannai-frontend
+3. **Copy dashboard** from clannai-frontend
+4. **Connect frontend to backend** APIs
+5. **Test all features** end-to-end
+6. **Deploy and launch**
 
 ---
 
