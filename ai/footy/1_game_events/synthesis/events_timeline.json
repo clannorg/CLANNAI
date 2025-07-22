@@ -1,11 +1,11 @@
 {
   "match_info": {
-    "total_events": 12,
-    "total_clips": 10,
-    "synthesis_date": "2025-07-17T11:26:31.394554"
+    "total_events": 162,
+    "total_clips": 92,
+    "synthesis_date": "2025-07-21T15:46:18.191648"
   },
   "statistics": {
-    "total_events": 12,
+    "total_events": 162,
     "goals": 0,
     "shots": 0,
     "passes": 0,
@@ -17,119 +17,1469 @@
     "penalties": 0,
     "substitutions": 0,
     "turnovers": 0,
-    "referee_action": 0,
-    "game_start": 1,
+    "referee_action": 1,
+    "game_start": 0,
     "general_play": 0,
-    "other": 1
+    "other": 0
   },
   "events": [
     {
-      "clip_number": 1080,
-      "relative_time": 27.0,
-      "absolute_time": 1107.0,
-      "event_text": "Foul committed - MAJOR FOUL",
-      "formatted_time": "18:27.00",
-      "event_type": "foul",
+      "clip_number": 0,
+      "relative_time": 0.0,
+      "absolute_time": 0.0,
+      "event_text": "Referee (wearing a fluorescent yellow top) raises his arms.",
+      "formatted_time": "00:00.00",
+      "event_type": "referee_action",
       "event_number": 1
     },
     {
-      "clip_number": 1110,
-      "relative_time": 27.0,
-      "absolute_time": 1137.0,
-      "event_text": "Referee makes a call and stops play - FOUL",
-      "formatted_time": "18:57.00",
-      "event_type": "foul",
+      "clip_number": 0,
+      "relative_time": 13.0,
+      "absolute_time": 13.0,
+      "event_text": "Player in purple with number 6 dribbles up to the LEFT GOAL and shoots the ball- SHOT ON TARGET",
+      "formatted_time": "00:13.00",
+      "event_type": "goal",
       "event_number": 2
     },
     {
-      "clip_number": 1140,
-      "relative_time": 0.0,
-      "absolute_time": 1140.0,
-      "event_text": "Kickoff - GAME START",
-      "formatted_time": "19:00.00",
-      "event_type": "game_start",
+      "clip_number": 10,
+      "relative_time": 3.0,
+      "absolute_time": 13.0,
+      "event_text": "Player in white kicks the ball towards the LEFT GOAL",
+      "formatted_time": "00:13.00",
+      "event_type": "shot",
       "event_number": 3
     },
     {
-      "clip_number": 1140,
-      "relative_time": 19.0,
-      "absolute_time": 1159.0,
-      "event_text": "Shot towards goal by blue team, appears to be saved by the goalkeeper - SHOT ON TARGET",
-      "formatted_time": "19:19.00",
+      "clip_number": 0,
+      "relative_time": 14.0,
+      "absolute_time": 14.0,
+      "event_text": "The ball goes into the LEFT GOAL- GOAL",
+      "formatted_time": "00:14.00",
       "event_type": "goal",
       "event_number": 4
     },
     {
-      "clip_number": 1170,
-      "relative_time": 25.0,
-      "absolute_time": 1195.0,
-      "event_text": "Kick off from the center circle - TURNOVER",
-      "formatted_time": "19:55.00",
-      "event_type": "turnover",
+      "clip_number": 20,
+      "relative_time": 3.0,
+      "absolute_time": 23.0,
+      "event_text": "Player in black passes the ball to teammate on the right side of the field",
+      "formatted_time": "00:23.00",
+      "event_type": "pass",
       "event_number": 5
     },
     {
-      "clip_number": 1200,
-      "relative_time": 15.0,
-      "absolute_time": 1215.0,
-      "event_text": "Kick-off - GAME START",
-      "formatted_time": "20:15.00",
-      "event_type": "turnover",
+      "clip_number": 20,
+      "relative_time": 7.0,
+      "absolute_time": 27.0,
+      "event_text": "Player in black dribbles the ball towards the RIGHT GOAL",
+      "formatted_time": "00:27.00",
+      "event_type": "skillful_on-ball_action",
       "event_number": 6
     },
     {
-      "clip_number": 1260,
-      "relative_time": 28.0,
-      "absolute_time": 1288.0,
-      "event_text": "Shot towards goal, saved by goalkeeper - SHOT ON TARGET",
-      "formatted_time": "21:28.00",
-      "event_type": "goal",
+      "clip_number": 20,
+      "relative_time": 11.0,
+      "absolute_time": 31.0,
+      "event_text": "Player in black with the ball runs to the RIGHT GOAL, towards the edge of the pitch",
+      "formatted_time": "00:31.00",
+      "event_type": "skillful_on-ball_action",
       "event_number": 7
     },
     {
-      "clip_number": 1320,
-      "relative_time": 25.0,
-      "absolute_time": 1345.0,
-      "event_text": "Shot on goal - SHOT ON TARGET",
-      "formatted_time": "22:25.00",
-      "event_type": "goal",
+      "clip_number": 30,
+      "relative_time": 3.0,
+      "absolute_time": 33.0,
+      "event_text": "Player in purple takes a shot at the LEFT GOAL.",
+      "formatted_time": "00:33.00",
+      "event_type": "shot_on_target",
       "event_number": 8
     },
     {
-      "clip_number": 1320,
-      "relative_time": 26.0,
-      "absolute_time": 1346.0,
-      "event_text": "Goal scored by team in blue - GOAL",
-      "formatted_time": "22:26.00",
-      "event_type": "goal",
+      "clip_number": 30,
+      "relative_time": 4.0,
+      "absolute_time": 34.0,
+      "event_text": "Goalkeeper at the LEFT GOAL saves the shot.",
+      "formatted_time": "00:34.00",
+      "event_type": "goalkeeper_save",
       "event_number": 9
     },
     {
-      "clip_number": 1350,
-      "relative_time": 5.0,
-      "absolute_time": 1355.0,
-      "event_text": "Shot blocked in front of goal - SHOT ON TARGET",
-      "formatted_time": "22:35.00",
-      "event_type": "goal",
+      "clip_number": 30,
+      "relative_time": 9.0,
+      "absolute_time": 39.0,
+      "event_text": "Player in purple takes a shot at the RIGHT GOAL.",
+      "formatted_time": "00:39.00",
+      "event_type": "shot_on_target",
       "event_number": 10
     },
     {
-      "clip_number": 1350,
-      "relative_time": 5.0,
-      "absolute_time": 1355.0,
-      "event_text": "Scramble in the box - PLAY ON",
-      "formatted_time": "22:35.00",
-      "event_type": "other",
+      "clip_number": 30,
+      "relative_time": 10.0,
+      "absolute_time": 40.0,
+      "event_text": "Shot goes wide to the left of the RIGHT GOAL.",
+      "formatted_time": "00:40.00",
+      "event_type": "shot_missed",
       "event_number": 11
     },
     {
-      "clip_number": 1350,
-      "relative_time": 10.0,
-      "absolute_time": 1360.0,
-      "event_text": "Team in yellow gains possession - TURNOVER",
-      "formatted_time": "22:40.00",
-      "event_type": "turnover",
+      "clip_number": 40,
+      "relative_time": 8.0,
+      "absolute_time": 48.0,
+      "event_text": "Player in black and purple takes a shot on goal at the RIGHT GOAL",
+      "formatted_time": "00:48.00",
+      "event_type": "shot_on_target",
       "event_number": 12
+    },
+    {
+      "clip_number": 40,
+      "relative_time": 9.0,
+      "absolute_time": 49.0,
+      "event_text": "Goal is scored by player in black and purple",
+      "formatted_time": "00:49.00",
+      "event_type": "goal",
+      "event_number": 13
+    },
+    {
+      "clip_number": 50,
+      "relative_time": 12.0,
+      "absolute_time": 62.0,
+      "event_text": "Active player in black and purple jersey takes a shot at the LEFT GOAL.",
+      "formatted_time": "01:02.00",
+      "event_type": "shot_on_target",
+      "event_number": 14
+    },
+    {
+      "clip_number": 50,
+      "relative_time": 13.0,
+      "absolute_time": 63.0,
+      "event_text": "The shot at the LEFT GOAL is saved by the goalkeeper.",
+      "formatted_time": "01:03.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 15
+    },
+    {
+      "clip_number": 60,
+      "relative_time": 4.0,
+      "absolute_time": 64.0,
+      "event_text": "Player in dark blue/purple jersey takes a shot.",
+      "formatted_time": "01:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 16
+    },
+    {
+      "clip_number": 60,
+      "relative_time": 4.0,
+      "absolute_time": 64.0,
+      "event_text": "Goalkeeper in dark blue/purple jersey makes a save.",
+      "formatted_time": "01:04.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 17
+    },
+    {
+      "clip_number": 70,
+      "relative_time": 1.0,
+      "absolute_time": 71.0,
+      "event_text": "A player in a white jersey takes a shot on goal at the LEFT GOAL",
+      "formatted_time": "01:11.00",
+      "event_type": "shot_on_target",
+      "event_number": 18
+    },
+    {
+      "clip_number": 70,
+      "relative_time": 3.0,
+      "absolute_time": 73.0,
+      "event_text": "The shot is blocked by a player in a black jersey",
+      "formatted_time": "01:13.00",
+      "event_type": "block",
+      "event_number": 19
+    },
+    {
+      "clip_number": 80,
+      "relative_time": 6.0,
+      "absolute_time": 86.0,
+      "event_text": "A player on the team in dark and light blue takes a shot at the RIGHT GOAL.",
+      "formatted_time": "01:26.00",
+      "event_type": "shot",
+      "event_number": 20
+    },
+    {
+      "clip_number": 80,
+      "relative_time": 7.0,
+      "absolute_time": 87.0,
+      "event_text": "The shot is saved by the Goalkeeper in the fluorescent green jersey and black shorts.",
+      "formatted_time": "01:27.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 21
+    },
+    {
+      "clip_number": 90,
+      "relative_time": 7.0,
+      "absolute_time": 97.0,
+      "event_text": "Player #7 from the team in black dribbles towards the LEFT GOAL and takes a shot.",
+      "formatted_time": "01:37.00",
+      "event_type": "shot",
+      "event_number": 22
+    },
+    {
+      "clip_number": 90,
+      "relative_time": 8.0,
+      "absolute_time": 98.0,
+      "event_text": "The ball hits the goalpost.",
+      "formatted_time": "01:38.00",
+      "event_type": "missed_shot",
+      "event_number": 23
+    },
+    {
+      "clip_number": 100,
+      "relative_time": 0.0,
+      "absolute_time": 100.0,
+      "event_text": "Player in white with the ball dribbles towards the RIGHT GOAL, opposed by a player in black.",
+      "formatted_time": "01:40.00",
+      "event_type": "on-ball_action",
+      "event_number": 24
+    },
+    {
+      "clip_number": 100,
+      "relative_time": 1.0,
+      "absolute_time": 101.0,
+      "event_text": "Player in white takes a shot at the RIGHT GOAL.",
+      "formatted_time": "01:41.00",
+      "event_type": "shot_on_target",
+      "event_number": 25
+    },
+    {
+      "clip_number": 100,
+      "relative_time": 1.0,
+      "absolute_time": 101.0,
+      "event_text": "Goalkeeper in black attempts a save.",
+      "formatted_time": "01:41.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 26
+    },
+    {
+      "clip_number": 100,
+      "relative_time": 1.0,
+      "absolute_time": 101.0,
+      "event_text": "The ball is blocked and gameplay continues.",
+      "formatted_time": "01:41.00",
+      "event_type": "blocked_shot",
+      "event_number": 27
+    },
+    {
+      "clip_number": 120,
+      "relative_time": 6.0,
+      "absolute_time": 126.0,
+      "event_text": "Player in the purple and black kit takes a shot at goal at the RIGHT GOAL",
+      "formatted_time": "02:06.00",
+      "event_type": "shot",
+      "event_number": 28
+    },
+    {
+      "clip_number": 120,
+      "relative_time": 7.0,
+      "absolute_time": 127.0,
+      "event_text": "The goalkeeper successfully saves the shot from the purple and black kit player",
+      "formatted_time": "02:07.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 29
+    },
+    {
+      "clip_number": 130,
+      "relative_time": 8.0,
+      "absolute_time": 138.0,
+      "event_text": "Player in purple/black kit dribbles towards the LEFT GOAL, another player in the same kit moves into a shooting position.",
+      "formatted_time": "02:18.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 30
+    },
+    {
+      "clip_number": 140,
+      "relative_time": 2.0,
+      "absolute_time": 142.0,
+      "event_text": "Player in black kicks the ball from the center towards the LEFT GOAL.",
+      "formatted_time": "02:22.00",
+      "event_type": "goal_kick",
+      "event_number": 31
+    },
+    {
+      "clip_number": 140,
+      "relative_time": 13.0,
+      "absolute_time": 153.0,
+      "event_text": "Player in black dribbles the ball along the floor.",
+      "formatted_time": "02:33.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 32
+    },
+    {
+      "clip_number": 150,
+      "relative_time": 8.0,
+      "absolute_time": 158.0,
+      "event_text": "Player in dark purple jersey #5 takes a shot on goal towards the RIGHT GOAL",
+      "formatted_time": "02:38.00",
+      "event_type": "shot_on_target",
+      "event_number": 33
+    },
+    {
+      "clip_number": 150,
+      "relative_time": 9.0,
+      "absolute_time": 159.0,
+      "event_text": "Goalkeeper saves the shot",
+      "formatted_time": "02:39.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 34
+    },
+    {
+      "clip_number": 160,
+      "relative_time": 0.0,
+      "absolute_time": 160.0,
+      "event_text": "Goalkeeper (in white with black sleeves) takes a goal kick",
+      "formatted_time": "02:40.00",
+      "event_type": "goalkick",
+      "event_number": 35
+    },
+    {
+      "clip_number": 170,
+      "relative_time": 4.0,
+      "absolute_time": 174.0,
+      "event_text": "A player shoots towards the RIGHT GOAL.",
+      "formatted_time": "02:54.00",
+      "event_type": "shot_on_target",
+      "event_number": 36
+    },
+    {
+      "clip_number": 170,
+      "relative_time": 4.0,
+      "absolute_time": 174.0,
+      "event_text": "The player in green and black makes a save.",
+      "formatted_time": "02:54.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 37
+    },
+    {
+      "clip_number": 180,
+      "relative_time": 4.0,
+      "absolute_time": 184.0,
+      "event_text": "Player in purple/maroon kicks the ball at the RIGHT GOAL.",
+      "formatted_time": "03:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 38
+    },
+    {
+      "clip_number": 180,
+      "relative_time": 5.0,
+      "absolute_time": 185.0,
+      "event_text": "Goalkeeper on the RIGHT GOAL saves the shot.",
+      "formatted_time": "03:05.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 39
+    },
+    {
+      "clip_number": 190,
+      "relative_time": 12.0,
+      "absolute_time": 202.0,
+      "event_text": "Player in black and purple takes a shot at the LEFT GOAL. The shot is on target and goes into the goal.",
+      "formatted_time": "03:22.00",
+      "event_type": "goal",
+      "event_number": 40
+    },
+    {
+      "clip_number": 200,
+      "relative_time": 8.0,
+      "absolute_time": 208.0,
+      "event_text": "Player in black and purple shoots at the RIGHT GOAL, the ball is deflected out for a corner by the defender.",
+      "formatted_time": "03:28.00",
+      "event_type": "shot_on_target",
+      "event_number": 41
+    },
+    {
+      "clip_number": 200,
+      "relative_time": 12.0,
+      "absolute_time": 212.0,
+      "event_text": "Player in black and purple takes a corner kick at the RIGHT GOAL.",
+      "formatted_time": "03:32.00",
+      "event_type": "corner_kick",
+      "event_number": 42
+    },
+    {
+      "clip_number": 230,
+      "relative_time": 4.0,
+      "absolute_time": 234.0,
+      "event_text": "Player in black and pink number 6 passes the ball towards the LEFT GOAL",
+      "formatted_time": "03:54.00",
+      "event_type": "pass",
+      "event_number": 43
+    },
+    {
+      "clip_number": 240,
+      "relative_time": 3.0,
+      "absolute_time": 243.0,
+      "event_text": "Player in black and purple takes a shot",
+      "formatted_time": "04:03.00",
+      "event_type": "shot",
+      "event_number": 44
+    },
+    {
+      "clip_number": 240,
+      "relative_time": 4.0,
+      "absolute_time": 244.0,
+      "event_text": "The shot is missed.",
+      "formatted_time": "04:04.00",
+      "event_type": "miss",
+      "event_number": 45
+    },
+    {
+      "clip_number": 250,
+      "relative_time": 12.0,
+      "absolute_time": 262.0,
+      "event_text": "Active player dribbles the ball forward.",
+      "formatted_time": "04:22.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 46
+    },
+    {
+      "clip_number": 250,
+      "relative_time": 13.0,
+      "absolute_time": 263.0,
+      "event_text": "Active player dribbles the ball forward.",
+      "formatted_time": "04:23.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 47
+    },
+    {
+      "clip_number": 260,
+      "relative_time": 3.0,
+      "absolute_time": 263.0,
+      "event_text": "Player in white and green shoots at the RIGHT GOAL",
+      "formatted_time": "04:23.00",
+      "event_type": "shot_on_target",
+      "event_number": 48
+    },
+    {
+      "clip_number": 260,
+      "relative_time": 4.0,
+      "absolute_time": 264.0,
+      "event_text": "Goalkeeper in blue saves the shot",
+      "formatted_time": "04:24.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 49
+    },
+    {
+      "clip_number": 270,
+      "relative_time": 5.0,
+      "absolute_time": 275.0,
+      "event_text": "Active player in red takes a shot on goal at the LEFT GOAL.",
+      "formatted_time": "04:35.00",
+      "event_type": "shot_on_target",
+      "event_number": 50
+    },
+    {
+      "clip_number": 270,
+      "relative_time": 6.0,
+      "absolute_time": 276.0,
+      "event_text": "Shot is missed and goes to the side of the goal.",
+      "formatted_time": "04:36.00",
+      "event_type": "shot_missed",
+      "event_number": 51
+    },
+    {
+      "clip_number": 290,
+      "relative_time": 10.0,
+      "absolute_time": 300.0,
+      "event_text": "Player in the purple kit takes a shot towards the LEFT GOAL.",
+      "formatted_time": "05:00.00",
+      "event_type": "shot_on_target",
+      "event_number": 52
+    },
+    {
+      "clip_number": 290,
+      "relative_time": 11.0,
+      "absolute_time": 301.0,
+      "event_text": "Goalkeeper in the green kit saves the shot towards the LEFT GOAL.",
+      "formatted_time": "05:01.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 53
+    },
+    {
+      "clip_number": 300,
+      "relative_time": 10.0,
+      "absolute_time": 310.0,
+      "event_text": "A player from the team in purple has the ball near the RIGHT GOAL and appears to dribble it away from the defensive player in white.",
+      "formatted_time": "05:10.00",
+      "event_type": "skillful_on-ball_actions",
+      "event_number": 54
+    },
+    {
+      "clip_number": 310,
+      "relative_time": 11.0,
+      "absolute_time": 321.0,
+      "event_text": "Player in dark kit skillfully dribbles the ball down the right side of the field",
+      "formatted_time": "05:21.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 55
+    },
+    {
+      "clip_number": 320,
+      "relative_time": 7.0,
+      "absolute_time": 327.0,
+      "event_text": "Player in purple and black takes a shot on goal at the LEFT GOAL",
+      "formatted_time": "05:27.00",
+      "event_type": "shot_on_target",
+      "event_number": 56
+    },
+    {
+      "clip_number": 320,
+      "relative_time": 8.0,
+      "absolute_time": 328.0,
+      "event_text": "Goalkeeper saves the shot",
+      "formatted_time": "05:28.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 57
+    },
+    {
+      "clip_number": 330,
+      "relative_time": 1.0,
+      "absolute_time": 331.0,
+      "event_text": "Player wearing black and blue shoots at the RIGHT GOAL",
+      "formatted_time": "05:31.00",
+      "event_type": "shot_on_target",
+      "event_number": 58
+    },
+    {
+      "clip_number": 330,
+      "relative_time": 1.0,
+      "absolute_time": 331.0,
+      "event_text": "Goalkeeper dives and saves the shot",
+      "formatted_time": "05:31.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 59
+    },
+    {
+      "clip_number": 330,
+      "relative_time": 11.0,
+      "absolute_time": 341.0,
+      "event_text": "Player wearing black and blue with number 8 takes a shot on the RIGHT GOAL",
+      "formatted_time": "05:41.00",
+      "event_type": "shot_on_target",
+      "event_number": 60
+    },
+    {
+      "clip_number": 330,
+      "relative_time": 12.0,
+      "absolute_time": 342.0,
+      "event_text": "The ball hits the LEFT post and bounces back into play",
+      "formatted_time": "05:42.00",
+      "event_type": "shot_missed",
+      "event_number": 61
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 2.0,
+      "absolute_time": 342.0,
+      "event_text": "Player (in black/pink kit) shoots the ball towards the LEFT GOAL.",
+      "formatted_time": "05:42.00",
+      "event_type": "shot",
+      "event_number": 62
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 3.0,
+      "absolute_time": 343.0,
+      "event_text": "Player (in blue kit) blocks shot, preventing it from going to goal",
+      "formatted_time": "05:43.00",
+      "event_type": "block",
+      "event_number": 63
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 5.0,
+      "absolute_time": 345.0,
+      "event_text": "Player (in blue kit) controls ball in midfield and begins dribbling.",
+      "formatted_time": "05:45.00",
+      "event_type": "turnover",
+      "event_number": 64
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 7.0,
+      "absolute_time": 347.0,
+      "event_text": "Player (in black/pink kit) tackles player (in blue kit)",
+      "formatted_time": "05:47.00",
+      "event_type": "tackle",
+      "event_number": 65
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 8.0,
+      "absolute_time": 348.0,
+      "event_text": "Player (in black/pink kit) dribbles towards RIGHT GOAL.",
+      "formatted_time": "05:48.00",
+      "event_type": "on-ball_action",
+      "event_number": 66
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 9.0,
+      "absolute_time": 349.0,
+      "event_text": "Player (in black/pink kit) shoots towards RIGHT GOAL",
+      "formatted_time": "05:49.00",
+      "event_type": "shot",
+      "event_number": 67
+    },
+    {
+      "clip_number": 350,
+      "relative_time": 3.0,
+      "absolute_time": 353.0,
+      "event_text": "Player in navy blue/black (#8) dribbles towards the LEFT GOAL, and attempts to create a scoring opportunity.",
+      "formatted_time": "05:53.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 68
+    },
+    {
+      "clip_number": 360,
+      "relative_time": 3.0,
+      "absolute_time": 363.0,
+      "event_text": "Player in black and pink shoots towards the RIGHT GOAL",
+      "formatted_time": "06:03.00",
+      "event_type": "shot",
+      "event_number": 69
+    },
+    {
+      "clip_number": 350,
+      "relative_time": 14.0,
+      "absolute_time": 364.0,
+      "event_text": "Player in navy blue/black (#8) takes a shot towards the LEFT GOAL.",
+      "formatted_time": "06:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 70
+    },
+    {
+      "clip_number": 360,
+      "relative_time": 4.0,
+      "absolute_time": 364.0,
+      "event_text": "The ball misses RIGHT GOAL",
+      "formatted_time": "06:04.00",
+      "event_type": "shot_missed",
+      "event_number": 71
+    },
+    {
+      "clip_number": 370,
+      "relative_time": 0.0,
+      "absolute_time": 370.0,
+      "event_text": "Player in black and pink (#6) passes the ball towards the RIGHT GOAL.",
+      "formatted_time": "06:10.00",
+      "event_type": "pass",
+      "event_number": 72
+    },
+    {
+      "clip_number": 370,
+      "relative_time": 9.0,
+      "absolute_time": 379.0,
+      "event_text": "Player in blue takes the ball, dribbles past a defender and advances towards the RIGHT GOAL.",
+      "formatted_time": "06:19.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 73
+    },
+    {
+      "clip_number": 380,
+      "relative_time": 2.0,
+      "absolute_time": 382.0,
+      "event_text": "Active player number 6 shoots the ball towards the RIGHT GOAL",
+      "formatted_time": "06:22.00",
+      "event_type": "shot_on_target",
+      "event_number": 74
+    },
+    {
+      "clip_number": 380,
+      "relative_time": 14.0,
+      "absolute_time": 394.0,
+      "event_text": "Active player number 6 takes shot",
+      "formatted_time": "06:34.00",
+      "event_type": "shot_on_target",
+      "event_number": 75
+    },
+    {
+      "clip_number": 390,
+      "relative_time": 9.0,
+      "absolute_time": 399.0,
+      "event_text": "Player in dark purple and white clothing takes a shot at the RIGHT GOAL",
+      "formatted_time": "06:39.00",
+      "event_type": "shot_on_target",
+      "event_number": 76
+    },
+    {
+      "clip_number": 390,
+      "relative_time": 10.0,
+      "absolute_time": 400.0,
+      "event_text": "Goalkeeper makes a save",
+      "formatted_time": "06:40.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 77
+    },
+    {
+      "clip_number": 400,
+      "relative_time": 8.0,
+      "absolute_time": 408.0,
+      "event_text": "Player in black and purple shoots the ball towards the LEFT GOAL.",
+      "formatted_time": "06:48.00",
+      "event_type": "shot_on_target",
+      "event_number": 78
+    },
+    {
+      "clip_number": 400,
+      "relative_time": 9.0,
+      "absolute_time": 409.0,
+      "event_text": "Goalkeeper in green makes a save.",
+      "formatted_time": "06:49.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 79
+    },
+    {
+      "clip_number": 410,
+      "relative_time": 8.0,
+      "absolute_time": 418.0,
+      "event_text": "A player in a black kit dribbles the ball towards the RIGHT GOAL.",
+      "formatted_time": "06:58.00",
+      "event_type": "on-ball_skill_action",
+      "event_number": 80
+    },
+    {
+      "clip_number": 420,
+      "relative_time": 4.0,
+      "absolute_time": 424.0,
+      "event_text": "Player in black and purple shoots the ball towards the LEFT GOAL",
+      "formatted_time": "07:04.00",
+      "event_type": "shot",
+      "event_number": 81
+    },
+    {
+      "clip_number": 420,
+      "relative_time": 5.0,
+      "absolute_time": 425.0,
+      "event_text": "Shot goes into the LEFT GOAL",
+      "formatted_time": "07:05.00",
+      "event_type": "goal",
+      "event_number": 82
+    },
+    {
+      "clip_number": 430,
+      "relative_time": 6.0,
+      "absolute_time": 436.0,
+      "event_text": "A player in white and black shoots at the LEFT GOAL.",
+      "formatted_time": "07:16.00",
+      "event_type": "shot_on_target",
+      "event_number": 83
+    },
+    {
+      "clip_number": 430,
+      "relative_time": 6.0,
+      "absolute_time": 436.0,
+      "event_text": "The goalkeeper, wearing green, makes a save at the LEFT GOAL.",
+      "formatted_time": "07:16.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 84
+    },
+    {
+      "clip_number": 440,
+      "relative_time": 2.0,
+      "absolute_time": 442.0,
+      "event_text": "Player with the ball dribbles towards the RIGHT GOAL, evading a defender.",
+      "formatted_time": "07:22.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 85
+    },
+    {
+      "clip_number": 440,
+      "relative_time": 4.0,
+      "absolute_time": 444.0,
+      "event_text": "Player in purple shoots with their right foot at the RIGHT GOAL.",
+      "formatted_time": "07:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 86
+    },
+    {
+      "clip_number": 450,
+      "relative_time": 1.0,
+      "absolute_time": 451.0,
+      "event_text": "Player in green is dribbling toward the RIGHT GOAL, while a player in purple slides in for a tackle",
+      "formatted_time": "07:31.00",
+      "event_type": "defensive_action",
+      "event_number": 87
+    },
+    {
+      "clip_number": 450,
+      "relative_time": 1.0,
+      "absolute_time": 451.0,
+      "event_text": "Player in purple executes a successful sliding tackle on the player in green",
+      "formatted_time": "07:31.00",
+      "event_type": "successful_tackle",
+      "event_number": 88
+    },
+    {
+      "clip_number": 450,
+      "relative_time": 2.0,
+      "absolute_time": 452.0,
+      "event_text": "The ball is free following the tackle",
+      "formatted_time": "07:32.00",
+      "event_type": "turnover",
+      "event_number": 89
+    },
+    {
+      "clip_number": 460,
+      "relative_time": 0.0,
+      "absolute_time": 460.0,
+      "event_text": "A player in black slips and falls near the LEFT GOAL.",
+      "formatted_time": "07:40.00",
+      "event_type": "fall",
+      "event_number": 90
+    },
+    {
+      "clip_number": 470,
+      "relative_time": 1.0,
+      "absolute_time": 471.0,
+      "event_text": "Player with pink footwear takes a shot at the LEFT GOAL",
+      "formatted_time": "07:51.00",
+      "event_type": "shot",
+      "event_number": 91
+    },
+    {
+      "clip_number": 480,
+      "relative_time": 2.0,
+      "absolute_time": 482.0,
+      "event_text": "Player in blue makes a shot towards the LEFT GOAL.",
+      "formatted_time": "08:02.00",
+      "event_type": "shot_on_target",
+      "event_number": 92
+    },
+    {
+      "clip_number": 470,
+      "relative_time": 13.0,
+      "absolute_time": 483.0,
+      "event_text": "Player in the navy kit (number 7) takes a shot on the LEFT GOAL",
+      "formatted_time": "08:03.00",
+      "event_type": "shot",
+      "event_number": 93
+    },
+    {
+      "clip_number": 480,
+      "relative_time": 3.0,
+      "absolute_time": 483.0,
+      "event_text": "The goalkeeper from the team in black, positioned at the LEFT GOAL, makes a save.",
+      "formatted_time": "08:03.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 94
+    },
+    {
+      "clip_number": 490,
+      "relative_time": 14.0,
+      "absolute_time": 504.0,
+      "event_text": "Player #3 in black and purple takes a shot at the LEFT GOAL.",
+      "formatted_time": "08:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 95
+    },
+    {
+      "clip_number": 500,
+      "relative_time": 4.0,
+      "absolute_time": 504.0,
+      "event_text": "Active player wearing number 3 on the purple team takes a shot from a long distance towards the RIGHT GOAL. The shot is on target.",
+      "formatted_time": "08:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 96
+    },
+    {
+      "clip_number": 490,
+      "relative_time": 15.0,
+      "absolute_time": 505.0,
+      "event_text": "Player #4 saves the shot at the LEFT GOAL",
+      "formatted_time": "08:25.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 97
+    },
+    {
+      "clip_number": 500,
+      "relative_time": 5.0,
+      "absolute_time": 505.0,
+      "event_text": "Active player wearing number 3 on the purple team misses the shot and the ball goes past the RIGHT GOAL.",
+      "formatted_time": "08:25.00",
+      "event_type": "shot_missed",
+      "event_number": 98
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 0.0,
+      "absolute_time": 510.0,
+      "event_text": "Player in black & blue dribbles past a player in purple",
+      "formatted_time": "08:30.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 99
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 1.0,
+      "absolute_time": 511.0,
+      "event_text": "Player in black & blue continues dribbling towards LEFT GOAL- SKILLFUL ON-BALL ACTION",
+      "formatted_time": "08:31.00",
+      "event_type": "goal",
+      "event_number": 100
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 2.0,
+      "absolute_time": 512.0,
+      "event_text": "Player in black & blue loses possession to another player in purple- TURNOVER",
+      "formatted_time": "08:32.00",
+      "event_type": "turnover",
+      "event_number": 101
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 8.0,
+      "absolute_time": 518.0,
+      "event_text": "Player in black & blue dribbles past a player in purple",
+      "formatted_time": "08:38.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 102
+    },
+    {
+      "clip_number": 520,
+      "relative_time": 6.0,
+      "absolute_time": 526.0,
+      "event_text": "Player in black and purple takes a shot at the LEFT GOAL",
+      "formatted_time": "08:46.00",
+      "event_type": "shot_on_target",
+      "event_number": 103
+    },
+    {
+      "clip_number": 520,
+      "relative_time": 7.0,
+      "absolute_time": 527.0,
+      "event_text": "The shot goes into the LEFT GOAL",
+      "formatted_time": "08:47.00",
+      "event_type": "goal",
+      "event_number": 104
+    },
+    {
+      "clip_number": 530,
+      "relative_time": 0.0,
+      "absolute_time": 530.0,
+      "event_text": "A player in a purple and black uniform dribbles towards the RIGHT GOAL.",
+      "formatted_time": "08:50.00",
+      "event_type": "on-ball_action",
+      "event_number": 105
+    },
+    {
+      "clip_number": 530,
+      "relative_time": 3.0,
+      "absolute_time": 533.0,
+      "event_text": "The player in purple and black uniform passes the ball towards the RIGHT GOAL.",
+      "formatted_time": "08:53.00",
+      "event_type": "pass",
+      "event_number": 106
+    },
+    {
+      "clip_number": 530,
+      "relative_time": 9.0,
+      "absolute_time": 539.0,
+      "event_text": "A player in black and blue uniform scores a goal at the LEFT GOAL.",
+      "formatted_time": "08:59.00",
+      "event_type": "goal",
+      "event_number": 107
+    },
+    {
+      "clip_number": 540,
+      "relative_time": 8.0,
+      "absolute_time": 548.0,
+      "event_text": "Player in purple (#7) performs a skillful dribble, evading multiple defenders.",
+      "formatted_time": "09:08.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 108
+    },
+    {
+      "clip_number": 550,
+      "relative_time": 3.0,
+      "absolute_time": 553.0,
+      "event_text": "Player in black/purple dribbles the ball towards the RIGHT GOAL, opposed by player in red/white.",
+      "formatted_time": "09:13.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 109
+    },
+    {
+      "clip_number": 550,
+      "relative_time": 5.0,
+      "absolute_time": 555.0,
+      "event_text": "Player in black/purple shoots at the RIGHT GOAL, misses the goal and the ball goes out of play.",
+      "formatted_time": "09:15.00",
+      "event_type": "shot_on_target",
+      "event_number": 110
+    },
+    {
+      "clip_number": 560,
+      "relative_time": 6.0,
+      "absolute_time": 566.0,
+      "event_text": "Player from the team in black with purple trim shoots at the RIGHT GOAL.",
+      "formatted_time": "09:26.00",
+      "event_type": "shot_on_target",
+      "event_number": 111
+    },
+    {
+      "clip_number": 560,
+      "relative_time": 7.0,
+      "absolute_time": 567.0,
+      "event_text": "The shot is blocked by the goal keeper.",
+      "formatted_time": "09:27.00",
+      "event_type": "save",
+      "event_number": 112
+    },
+    {
+      "clip_number": 570,
+      "relative_time": 5.0,
+      "absolute_time": 575.0,
+      "event_text": "Player in black/purple passes the ball to a teammate who is running towards the LEFT GOAL",
+      "formatted_time": "09:35.00",
+      "event_type": "pass",
+      "event_number": 113
+    },
+    {
+      "clip_number": 580,
+      "relative_time": 9.0,
+      "absolute_time": 589.0,
+      "event_text": "Player in the purple and black kit takes a shot on goal at the RIGHT GOAL.",
+      "formatted_time": "09:49.00",
+      "event_type": "shot_on_target",
+      "event_number": 114
+    },
+    {
+      "clip_number": 580,
+      "relative_time": 10.0,
+      "absolute_time": 590.0,
+      "event_text": "The shot on goal is saved by the goalkeeper.",
+      "formatted_time": "09:50.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 115
+    },
+    {
+      "clip_number": 590,
+      "relative_time": 15.0,
+      "absolute_time": 605.0,
+      "event_text": "Player in purple takes a shot on goal at the RIGHT GOAL",
+      "formatted_time": "10:05.00",
+      "event_type": "shot_on_target",
+      "event_number": 116
+    },
+    {
+      "clip_number": 590,
+      "relative_time": 15.0,
+      "absolute_time": 605.0,
+      "event_text": "Goalkeeper makes a save",
+      "formatted_time": "10:05.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 117
+    },
+    {
+      "clip_number": 600,
+      "relative_time": 9.0,
+      "absolute_time": 609.0,
+      "event_text": "Player in the black and purple kit dribbles the ball and shoots at the RIGHT GOAL.",
+      "formatted_time": "10:09.00",
+      "event_type": "shot_on_target",
+      "event_number": 118
+    },
+    {
+      "clip_number": 600,
+      "relative_time": 9.0,
+      "absolute_time": 609.0,
+      "event_text": "Goalkeeper in the green kit saves the shot.",
+      "formatted_time": "10:09.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 119
+    },
+    {
+      "clip_number": 620,
+      "relative_time": 8.0,
+      "absolute_time": 628.0,
+      "event_text": "Player in black dribbles with the ball.",
+      "formatted_time": "10:28.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 120
+    },
+    {
+      "clip_number": 620,
+      "relative_time": 11.0,
+      "absolute_time": 631.0,
+      "event_text": "Player in black passes the ball to player with green boots who continues dribbling.",
+      "formatted_time": "10:31.00",
+      "event_type": "routine_pass",
+      "event_number": 121
+    },
+    {
+      "clip_number": 640,
+      "relative_time": 12.0,
+      "absolute_time": 652.0,
+      "event_text": "Player in black makes a skillful dribble past two opponents",
+      "formatted_time": "10:52.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 122
+    },
+    {
+      "clip_number": 660,
+      "relative_time": 1.0,
+      "absolute_time": 661.0,
+      "event_text": "Active player in the dark uniform takes a shot at goal",
+      "formatted_time": "11:01.00",
+      "event_type": "shot",
+      "event_number": 123
+    },
+    {
+      "clip_number": 660,
+      "relative_time": 1.0,
+      "absolute_time": 661.0,
+      "event_text": "The shot is on target and heads toward the RIGHT GOAL.",
+      "formatted_time": "11:01.00",
+      "event_type": "goal",
+      "event_number": 124
+    },
+    {
+      "clip_number": 660,
+      "relative_time": 8.0,
+      "absolute_time": 668.0,
+      "event_text": "Active player in the dark uniform takes a shot at goal",
+      "formatted_time": "11:08.00",
+      "event_type": "shot",
+      "event_number": 125
+    },
+    {
+      "clip_number": 660,
+      "relative_time": 8.0,
+      "absolute_time": 668.0,
+      "event_text": "The shot is on target and heads toward the LEFT GOAL.",
+      "formatted_time": "11:08.00",
+      "event_type": "goal",
+      "event_number": 126
+    },
+    {
+      "clip_number": 670,
+      "relative_time": 6.0,
+      "absolute_time": 676.0,
+      "event_text": "Player in black and purple takes a shot at goal.",
+      "formatted_time": "11:16.00",
+      "event_type": "shot_on_target",
+      "event_number": 127
+    },
+    {
+      "clip_number": 670,
+      "relative_time": 7.0,
+      "absolute_time": 677.0,
+      "event_text": "Goalkeeper saves the shot.",
+      "formatted_time": "11:17.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 128
+    },
+    {
+      "clip_number": 680,
+      "relative_time": 6.0,
+      "absolute_time": 686.0,
+      "event_text": "Player in black and purple kit dribbles past defender and has a shot on goal.",
+      "formatted_time": "11:26.00",
+      "event_type": "shot_on_target",
+      "event_number": 129
+    },
+    {
+      "clip_number": 680,
+      "relative_time": 7.0,
+      "absolute_time": 687.0,
+      "event_text": "Goalkeeper makes a save at the LEFT GOAL.",
+      "formatted_time": "11:27.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 130
+    },
+    {
+      "clip_number": 690,
+      "relative_time": 5.0,
+      "absolute_time": 695.0,
+      "event_text": "Player in dark blue takes a shot at the RIGHT GOAL",
+      "formatted_time": "11:35.00",
+      "event_type": "shot_on_target",
+      "event_number": 131
+    },
+    {
+      "clip_number": 690,
+      "relative_time": 6.0,
+      "absolute_time": 696.0,
+      "event_text": "The goalkeeper in red and white makes a save.",
+      "formatted_time": "11:36.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 132
+    },
+    {
+      "clip_number": 720,
+      "relative_time": 0.0,
+      "absolute_time": 720.0,
+      "event_text": "Player in black makes a shot on goal",
+      "formatted_time": "12:00.00",
+      "event_type": "shot_on_target",
+      "event_number": 133
+    },
+    {
+      "clip_number": 720,
+      "relative_time": 1.0,
+      "absolute_time": 721.0,
+      "event_text": "Goalkeeper saves the shot",
+      "formatted_time": "12:01.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 134
+    },
+    {
+      "clip_number": 720,
+      "relative_time": 1.0,
+      "absolute_time": 721.0,
+      "event_text": "Ball is cleared after the save",
+      "formatted_time": "12:01.00",
+      "event_type": "goalkick",
+      "event_number": 135
+    },
+    {
+      "clip_number": 740,
+      "relative_time": 3.0,
+      "absolute_time": 743.0,
+      "event_text": "A player in white/black shoots the ball toward the RIGHT GOAL",
+      "formatted_time": "12:23.00",
+      "event_type": "shot_on_target",
+      "event_number": 136
+    },
+    {
+      "clip_number": 740,
+      "relative_time": 4.0,
+      "absolute_time": 744.0,
+      "event_text": "The shot goes into the RIGHT GOAL.",
+      "formatted_time": "12:24.00",
+      "event_type": "goal",
+      "event_number": 137
+    },
+    {
+      "clip_number": 750,
+      "relative_time": 10.0,
+      "absolute_time": 760.0,
+      "event_text": "Player in the purple and black kit is tackled by a player in the blue kit.",
+      "formatted_time": "12:40.00",
+      "event_type": "tackle",
+      "event_number": 138
+    },
+    {
+      "clip_number": 770,
+      "relative_time": 0.0,
+      "absolute_time": 770.0,
+      "event_text": "Active player from the team in black and purple initiates a goal kick from the LEFT GOAL.",
+      "formatted_time": "12:50.00",
+      "event_type": "goal_kick",
+      "event_number": 139
+    },
+    {
+      "clip_number": 780,
+      "relative_time": 8.0,
+      "absolute_time": 788.0,
+      "event_text": "Player in black and purple with the number 8 dribbles towards the LEFT GOAL, dodging one defender.",
+      "formatted_time": "13:08.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 140
+    },
+    {
+      "clip_number": 780,
+      "relative_time": 11.0,
+      "absolute_time": 791.0,
+      "event_text": "Player in black and purple shoots towards the RIGHT GOAL, but the attempt is blocked by another player in black and purple.",
+      "formatted_time": "13:11.00",
+      "event_type": "shot_on_target",
+      "event_number": 141
+    },
+    {
+      "clip_number": 790,
+      "relative_time": 7.0,
+      "absolute_time": 797.0,
+      "event_text": "A player wearing dark blue and purple takes a shot at the LEFT GOAL.",
+      "formatted_time": "13:17.00",
+      "event_type": "shot_on_target",
+      "event_number": 142
+    },
+    {
+      "clip_number": 790,
+      "relative_time": 7.0,
+      "absolute_time": 797.0,
+      "event_text": "The goalkeeper wearing red makes a save.",
+      "formatted_time": "13:17.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 143
+    },
+    {
+      "clip_number": 800,
+      "relative_time": 3.0,
+      "absolute_time": 803.0,
+      "event_text": "Player in purple/black takes a shot at goal",
+      "formatted_time": "13:23.00",
+      "event_type": "shot",
+      "event_number": 144
+    },
+    {
+      "clip_number": 800,
+      "relative_time": 3.0,
+      "absolute_time": 803.0,
+      "event_text": "The shot is successful and the ball goes into the LEFT GOAL.",
+      "formatted_time": "13:23.00",
+      "event_type": "goal",
+      "event_number": 145
+    },
+    {
+      "clip_number": 810,
+      "relative_time": 7.0,
+      "absolute_time": 817.0,
+      "event_text": "Player in purple/black dribbles towards the RIGHT GOAL.",
+      "formatted_time": "13:37.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 146
+    },
+    {
+      "clip_number": 810,
+      "relative_time": 14.0,
+      "absolute_time": 824.0,
+      "event_text": "Player in purple/black makes a successful tackle on the ball and prevents Player in blue from getting the ball",
+      "formatted_time": "13:44.00",
+      "event_type": "skillful_off-ball_action",
+      "event_number": 147
+    },
+    {
+      "clip_number": 820,
+      "relative_time": 7.0,
+      "absolute_time": 827.0,
+      "event_text": "Player in black and purple makes a sliding tackle on an opponent.",
+      "formatted_time": "13:47.00",
+      "event_type": "skillful_off-ball_action",
+      "event_number": 148
+    },
+    {
+      "clip_number": 830,
+      "relative_time": 5.0,
+      "absolute_time": 835.0,
+      "event_text": "An active player in a black and blue jersey makes a skillful play.",
+      "formatted_time": "13:55.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 149
+    },
+    {
+      "clip_number": 850,
+      "relative_time": 5.0,
+      "absolute_time": 855.0,
+      "event_text": "Player in purple makes a shot at the LEFT GOAL",
+      "formatted_time": "14:15.00",
+      "event_type": "shot",
+      "event_number": 150
+    },
+    {
+      "clip_number": 850,
+      "relative_time": 5.0,
+      "absolute_time": 855.0,
+      "event_text": "Player in black blocks the shot",
+      "formatted_time": "14:15.00",
+      "event_type": "block",
+      "event_number": 151
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 7.0,
+      "absolute_time": 867.0,
+      "event_text": "Player in purple/black shoots the ball towards the LEFT GOAL.",
+      "formatted_time": "14:27.00",
+      "event_type": "shot",
+      "event_number": 152
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 7.0,
+      "absolute_time": 867.0,
+      "event_text": "Goalkeeper (wearing green) saves the shot.",
+      "formatted_time": "14:27.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 153
+    },
+    {
+      "clip_number": 870,
+      "relative_time": 6.0,
+      "absolute_time": 876.0,
+      "event_text": "Player in black and blue kicks the ball towards the LEFT GOAL.",
+      "formatted_time": "14:36.00",
+      "event_type": "shot",
+      "event_number": 154
+    },
+    {
+      "clip_number": 870,
+      "relative_time": 7.0,
+      "absolute_time": 877.0,
+      "event_text": "The player continues towards the LEFT GOAL after the shot.",
+      "formatted_time": "14:37.00",
+      "event_type": "player_movement",
+      "event_number": 155
+    },
+    {
+      "clip_number": 870,
+      "relative_time": 9.0,
+      "absolute_time": 879.0,
+      "event_text": "A player walks behind the LEFT GOAL, indicating the ball went behind the goal.",
+      "formatted_time": "14:39.00",
+      "event_type": "goalkick",
+      "event_number": 156
+    },
+    {
+      "clip_number": 890,
+      "relative_time": 6.0,
+      "absolute_time": 896.0,
+      "event_text": "Player #11 takes a shot on the RIGHT GOAL.",
+      "formatted_time": "14:56.00",
+      "event_type": "shot_on_target",
+      "event_number": 157
+    },
+    {
+      "clip_number": 890,
+      "relative_time": 7.0,
+      "absolute_time": 897.0,
+      "event_text": "The goalkeeper, wearing a dark kit, dives and makes the save.",
+      "formatted_time": "14:57.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 158
+    },
+    {
+      "clip_number": 900,
+      "relative_time": 4.0,
+      "absolute_time": 904.0,
+      "event_text": "Player in black/purple dribbles the ball towards the RIGHT GOAL",
+      "formatted_time": "15:04.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 159
+    },
+    {
+      "clip_number": 900,
+      "relative_time": 13.0,
+      "absolute_time": 913.0,
+      "event_text": "Player in black/purple performs skillful ball control while dribbling towards the RIGHT GOAL.",
+      "formatted_time": "15:13.00",
+      "event_type": "skillful_on-ball_action",
+      "event_number": 160
+    },
+    {
+      "clip_number": 910,
+      "relative_time": 3.0,
+      "absolute_time": 913.0,
+      "event_text": "Active player kicks the ball toward the LEFT GOAL.",
+      "formatted_time": "15:13.00",
+      "event_type": "shot_on_target",
+      "event_number": 161
+    },
+    {
+      "clip_number": 910,
+      "relative_time": 4.0,
+      "absolute_time": 914.0,
+      "event_text": "Active player makes a header. The ball trajectory is towards the LEFT GOAL",
+      "formatted_time": "15:14.00",
+      "event_type": "shot_on_target",
+      "event_number": 162
     }
   ]
 }

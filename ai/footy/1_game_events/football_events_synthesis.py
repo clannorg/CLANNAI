@@ -70,12 +70,21 @@ class FootballEventsSynthesis:
         
         # Calculate absolute time (clip start + relative time)
         # For match time clips, clip_number is already the start time in seconds
-        if clip_number >= 1000:  # If clip_number is large, it's likely match time in seconds
-            absolute_time = clip_number + timestamp
-        else:
-            # Fallback for old format (clip index * 30 seconds)
-            absolute_time = (clip_number * 30) + timestamp
+        absolute_time = clip_number + timestamp
         
+        # Try to extract event type from the line first
+        event_type = "other"
+        if " - " in event_text:
+            parts = event_text.split(" - ", 1)
+            event_text = parts[0]
+            event_type_str = parts[1].strip()
+            
+            # Normalize event type
+            event_type = event_type_str.lower().replace(" ", "_")
+        else:
+            # Fallback to categorization for older formats
+            event_type = self.categorize_event(event_text)
+
         # Parse event details
         event_data = {
             "clip_number": clip_number,
@@ -86,7 +95,6 @@ class FootballEventsSynthesis:
         }
         
         # Categorize event type
-        event_type = self.categorize_event(event_text)
         event_data["event_type"] = event_type
         
         return event_data
