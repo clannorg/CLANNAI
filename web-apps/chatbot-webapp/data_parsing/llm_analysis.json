@@ -1,0 +1,3192 @@
+{
+  "match_summary": {
+    "teams": [
+      "Chelsea FC",
+      "West Ham"
+    ],
+    "score": "2 - 1",
+    "date": "2025-02-03T20:00:00",
+    "competition": "Premier League",
+    "venue": "Stamford Bridge",
+    "total_events": 6426,
+    "match_duration_minutes": 100.45,
+    "first_half_length": 50.22,
+    "pitch_dimensions": {
+      "length": 105.0,
+      "width": 68.0
+    }
+  },
+  "match_periods": {
+    "first_half": {
+      "start_frame": 75,
+      "end_frame": 104885,
+      "duration_frames": 104810
+    },
+    "second_half": {
+      "start_frame": 104886,
+      "end_frame": 150749,
+      "duration_frames": 45863
+    },
+    "halftime_frame": 104886,
+    "total_frames": 150674,
+    "fps_estimate": 25
+  },
+  "team_comparison": {
+    "overall": {
+      "possession": {
+        "Chelsea FC": 52.7,
+        "West Ham": 47.3
+      },
+      "pass_completion": {
+        "Chelsea FC": 83.3,
+        "West Ham": 70.3
+      },
+      "pass_volume": {
+        "Chelsea FC": 599,
+        "West Ham": 263
+      },
+      "shots": {
+        "Chelsea FC": 21,
+        "West Ham": 13
+      },
+      "goal_chances": {
+        "Chelsea FC": 3,
+        "West Ham": 4
+      },
+      "crosses": {
+        "Chelsea FC": 13,
+        "West Ham": 7
+      },
+      "field_tilt": 60.2
+    },
+    "first_half": {
+      "possession": {
+        "Chelsea FC": 52.9,
+        "West Ham": 47.1
+      },
+      "pass_completion": {
+        "Chelsea FC": 85.2,
+        "West Ham": 69.2
+      }
+    },
+    "second_half": {
+      "possession": {
+        "Chelsea FC": 52.2,
+        "West Ham": 47.8
+      },
+      "pass_completion": {
+        "Chelsea FC": 79.0,
+        "West Ham": 74.5
+      }
+    },
+    "attack_patterns": {
+      "Chelsea FC": {
+        "counter_attacks": 64,
+        "build_up_sequences": 1306,
+        "high_press_sequences": 0,
+        "sustained_attacks": 0
+      },
+      "West Ham": {
+        "counter_attacks": 55,
+        "build_up_sequences": 1312,
+        "high_press_sequences": 0,
+        "sustained_attacks": 0
+      }
+    },
+    "attack_success_rates": {
+      "Chelsea FC": {
+        "counter_attacks": 0.0,
+        "build_up": 1.8,
+        "high_press": 0,
+        "sustained_attacks": 0
+      },
+      "West Ham": {
+        "counter_attacks": 0.0,
+        "build_up": 1.3,
+        "high_press": 0,
+        "sustained_attacks": 0
+      }
+    }
+  },
+  "tactical_efficiency": {
+    "Chelsea FC": {
+      "pressing_efficiency": {
+        "pressing_actions": 199,
+        "ball_recoveries": 52,
+        "recovery_percentage": 26.1,
+        "ppda": 9.51,
+        "ppda_interpretation": "Lower PPDA indicates more intense pressing"
+      },
+      "crossing_efficiency": {
+        "width_positions": 258,
+        "crosses_attempted": 13,
+        "conversion_ratio": 0.05,
+        "benchmark": 0.1
+      },
+      "passing_direction_ratio": {
+        "horizontal_passes": 412,
+        "forward_passes": 49,
+        "vertical_ratio": 0.119,
+        "progressive_passes": 34.3
+      },
+      "defensive_organization": {
+        "compactness_estimate": 94.3,
+        "defensive_line_events": 192
+      }
+    },
+    "West Ham": {
+      "pressing_efficiency": {
+        "pressing_actions": 371,
+        "ball_recoveries": 45,
+        "recovery_percentage": 12.1,
+        "ppda": 3.37,
+        "ppda_interpretation": "Lower PPDA indicates more intense pressing"
+      },
+      "crossing_efficiency": {
+        "width_positions": 124,
+        "crosses_attempted": 7,
+        "conversion_ratio": 0.056,
+        "benchmark": 0.1
+      },
+      "passing_direction_ratio": {
+        "horizontal_passes": 135,
+        "forward_passes": 31,
+        "vertical_ratio": 0.23,
+        "progressive_passes": 21.7
+      },
+      "defensive_organization": {
+        "compactness_estimate": 90.1,
+        "defensive_line_events": 300
+      }
+    }
+  },
+  "player_network": {
+    "player_metrics": {
+      "Chelsea FC": [
+        {
+          "name": "Marc Cucurella",
+          "position": "Wing back",
+          "jersey": 3,
+          "total_involvements": 650,
+          "key_contributions": {
+            "passes": 74,
+            "defensive_actions": 131,
+            "attacking_involvement": 10,
+            "pressing_actions": 57
+          },
+          "physical": {
+            "distance": 11658.18,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.45,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 926.99,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 7,
+            "successful_take_ons": 33,
+            "final_third_entries": 10
+          },
+          "zone_activity": {
+            "defensive_left": 211,
+            "middle_third": 112,
+            "middle_left": 74
+          }
+        },
+        {
+          "name": "Levi Colwill",
+          "position": "Central defender",
+          "jersey": 6,
+          "total_involvements": 586,
+          "key_contributions": {
+            "passes": 121,
+            "defensive_actions": 119,
+            "attacking_involvement": 2,
+            "pressing_actions": 35
+          },
+          "physical": {
+            "distance": 10407.39,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 7.86,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 462.71,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 5,
+            "successful_take_ons": 35,
+            "final_third_entries": 2
+          },
+          "zone_activity": {
+            "defensive_left": 190,
+            "middle_third": 120,
+            "middle_left": 8
+          }
+        },
+        {
+          "name": "Enzo Fernandez",
+          "position": "Defensive midfielder",
+          "jersey": 8,
+          "total_involvements": 534,
+          "key_contributions": {
+            "passes": 77,
+            "defensive_actions": 131,
+            "attacking_involvement": 8,
+            "pressing_actions": 59
+          },
+          "physical": {
+            "distance": 11747.42,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 7.79,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 931.96,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 7,
+            "successful_take_ons": 33,
+            "final_third_entries": 7
+          },
+          "zone_activity": {
+            "defensive_left": 194,
+            "middle_third": 85,
+            "middle_left": 63
+          }
+        },
+        {
+          "name": "Tosin Adarabioyo",
+          "position": "Central defender",
+          "jersey": 4,
+          "total_involvements": 513,
+          "key_contributions": {
+            "passes": 159,
+            "defensive_actions": 61,
+            "attacking_involvement": 6,
+            "pressing_actions": 39
+          },
+          "physical": {
+            "distance": 9448.72,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 7.21,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 360.21,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 12,
+            "successful_take_ons": 20,
+            "final_third_entries": 5
+          },
+          "zone_activity": {
+            "middle_third": 153,
+            "defensive_left": 104,
+            "middle_left": 16
+          }
+        },
+        {
+          "name": "Noni Madueke",
+          "position": "Winger",
+          "jersey": 11,
+          "total_involvements": 480,
+          "key_contributions": {
+            "passes": 53,
+            "defensive_actions": 52,
+            "attacking_involvement": 8,
+            "pressing_actions": 51
+          },
+          "physical": {
+            "distance": 7003.16,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.59,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 568.53,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 5,
+            "successful_take_ons": 57,
+            "final_third_entries": 7
+          },
+          "zone_activity": {
+            "defensive_left": 138,
+            "middle_third": 104,
+            "middle_left": 45
+          }
+        },
+        {
+          "name": "Jadon Sancho",
+          "position": "Winger",
+          "jersey": 19,
+          "total_involvements": 463,
+          "key_contributions": {
+            "passes": 20,
+            "defensive_actions": 50,
+            "attacking_involvement": 11,
+            "pressing_actions": 56
+          },
+          "physical": {
+            "distance": 5903.88,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.43,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 373.43,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 4,
+            "successful_take_ons": 67,
+            "final_third_entries": 11
+          },
+          "zone_activity": {
+            "defensive_left": 188,
+            "middle_third": 61,
+            "middle_left": 47
+          }
+        },
+        {
+          "name": "Cole Palmer",
+          "position": "Attacking midfielder",
+          "jersey": 20,
+          "total_involvements": 408,
+          "key_contributions": {
+            "passes": 78,
+            "defensive_actions": 31,
+            "attacking_involvement": 9,
+            "pressing_actions": 70
+          },
+          "physical": {
+            "distance": 9721.01,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.09,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 461.68,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 10,
+            "successful_take_ons": 33,
+            "final_third_entries": 9
+          },
+          "zone_activity": {
+            "defensive_left": 113,
+            "middle_third": 80,
+            "middle_left": 33
+          }
+        },
+        {
+          "name": "Moises Caicedo",
+          "position": "Defensive midfielder",
+          "jersey": 25,
+          "total_involvements": 381,
+          "key_contributions": {
+            "passes": 100,
+            "defensive_actions": 41,
+            "attacking_involvement": 2,
+            "pressing_actions": 57
+          },
+          "physical": {
+            "distance": 10891.86,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.96,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 585.81,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 15,
+            "successful_take_ons": 23,
+            "final_third_entries": 1
+          },
+          "zone_activity": {
+            "defensive_left": 98,
+            "middle_third": 97,
+            "middle_left": 16
+          }
+        },
+        {
+          "name": "Reece James",
+          "position": "Wing back",
+          "jersey": 24,
+          "total_involvements": 379,
+          "key_contributions": {
+            "passes": 108,
+            "defensive_actions": 17,
+            "attacking_involvement": 5,
+            "pressing_actions": 36
+          },
+          "physical": {
+            "distance": 6732.16,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.36,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 381.97,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 10,
+            "successful_take_ons": 26,
+            "final_third_entries": 5
+          },
+          "zone_activity": {
+            "middle_third": 120,
+            "defensive_left": 76,
+            "defensive_central": 13
+          }
+        },
+        {
+          "name": "Christopher Nkunku",
+          "position": "Winger",
+          "jersey": 18,
+          "total_involvements": 322,
+          "key_contributions": {
+            "passes": 50,
+            "defensive_actions": 73,
+            "attacking_involvement": 3,
+            "pressing_actions": 34
+          },
+          "physical": {
+            "distance": 4046.52,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.56,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 318.41,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 6,
+            "successful_take_ons": 30,
+            "final_third_entries": 3
+          },
+          "zone_activity": {
+            "defensive_left": 144,
+            "middle_third": 53,
+            "middle_left": 35
+          }
+        },
+        {
+          "name": "Pedro Neto",
+          "position": "Winger",
+          "jersey": 7,
+          "total_involvements": 307,
+          "key_contributions": {
+            "passes": 30,
+            "defensive_actions": 9,
+            "attacking_involvement": 5,
+            "pressing_actions": 34
+          },
+          "physical": {
+            "distance": 4788.08,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.82,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 316.52,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 3,
+            "successful_take_ons": 44,
+            "final_third_entries": 5
+          },
+          "zone_activity": {
+            "defensive_left": 66,
+            "middle_third": 63,
+            "defensive_central": 34
+          }
+        },
+        {
+          "name": "Nicolas Jackson",
+          "position": "Striker",
+          "jersey": 15,
+          "total_involvements": 297,
+          "key_contributions": {
+            "passes": 15,
+            "defensive_actions": 114,
+            "attacking_involvement": 8,
+            "pressing_actions": 19
+          },
+          "physical": {
+            "distance": 5766.51,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.64,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 343.96,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 5,
+            "successful_take_ons": 34,
+            "final_third_entries": 7
+          },
+          "zone_activity": {
+            "defensive_left": 192,
+            "middle_left": 38,
+            "middle_third": 14
+          }
+        },
+        {
+          "name": "Marc Guiu",
+          "position": "Striker",
+          "jersey": 38,
+          "total_involvements": 280,
+          "key_contributions": {
+            "passes": 14,
+            "defensive_actions": 99,
+            "attacking_involvement": 8,
+            "pressing_actions": 17
+          },
+          "physical": {
+            "distance": 4641.73,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.27,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 284.27,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 5,
+            "successful_take_ons": 33,
+            "final_third_entries": 7
+          },
+          "zone_activity": {
+            "defensive_left": 183,
+            "middle_left": 31,
+            "middle_third": 17
+          }
+        },
+        {
+          "name": "Malo Gusto",
+          "position": "Wing back",
+          "jersey": 27,
+          "total_involvements": 256,
+          "key_contributions": {
+            "passes": 42,
+            "defensive_actions": 9,
+            "attacking_involvement": 2,
+            "pressing_actions": 27
+          },
+          "physical": {
+            "distance": 4042.32,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.14,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 315.63,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 0,
+            "successful_take_ons": 33,
+            "final_third_entries": 2
+          },
+          "zone_activity": {
+            "defensive_left": 67,
+            "middle_third": 52,
+            "defensive_central": 15
+          }
+        },
+        {
+          "name": "Jorgensen",
+          "position": "Goalkeeper",
+          "jersey": 12,
+          "total_involvements": 116,
+          "key_contributions": {
+            "passes": 41,
+            "defensive_actions": 6,
+            "attacking_involvement": 5,
+            "pressing_actions": 7
+          },
+          "physical": {
+            "distance": 5614.66,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 5.37,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 17.11,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 4,
+            "successful_take_ons": 4,
+            "final_third_entries": 5
+          },
+          "zone_activity": {
+            "middle_third": 32,
+            "defensive_left": 20,
+            "attacking_third": 4
+          }
+        },
+        {
+          "name": "Trevoh Chalobah",
+          "position": "Attacking midfielder",
+          "jersey": 23,
+          "total_involvements": 83,
+          "key_contributions": {
+            "passes": 16,
+            "defensive_actions": 6,
+            "attacking_involvement": 0,
+            "pressing_actions": 5
+          },
+          "physical": {
+            "distance": 977.9,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.32,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 46.57,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 0,
+            "successful_take_ons": 13,
+            "final_third_entries": 0
+          },
+          "zone_activity": {
+            "defensive_left": 30,
+            "middle_third": 17,
+            "defensive_central": 3
+          }
+        }
+      ],
+      "West Ham": [
+        {
+          "name": "Vladimir Coufal",
+          "position": "Central defender",
+          "jersey": 5,
+          "total_involvements": 518,
+          "key_contributions": {
+            "passes": 29,
+            "defensive_actions": 82,
+            "attacking_involvement": 5,
+            "pressing_actions": 31
+          },
+          "physical": {
+            "distance": 7588.33,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 7.61,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 339.4,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 4,
+            "successful_take_ons": 115,
+            "final_third_entries": 5
+          },
+          "zone_activity": {
+            "defensive_left": 286,
+            "middle_third": 33,
+            "defensive_central": 30
+          }
+        },
+        {
+          "name": "Aaron Wan Bissaka",
+          "position": "Wing back",
+          "jersey": 29,
+          "total_involvements": 451,
+          "key_contributions": {
+            "passes": 28,
+            "defensive_actions": 94,
+            "attacking_involvement": 11,
+            "pressing_actions": 59
+          },
+          "physical": {
+            "distance": 10771.98,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.22,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 767.82,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 5,
+            "successful_take_ons": 20,
+            "final_third_entries": 11
+          },
+          "zone_activity": {
+            "defensive_left": 130,
+            "middle_third": 65,
+            "defensive_central": 22
+          }
+        },
+        {
+          "name": "Max Kilman",
+          "position": "Central defender",
+          "jersey": 26,
+          "total_involvements": 428,
+          "key_contributions": {
+            "passes": 37,
+            "defensive_actions": 162,
+            "attacking_involvement": 1,
+            "pressing_actions": 25
+          },
+          "physical": {
+            "distance": 9317.1,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.06,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 231.79,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 2,
+            "successful_take_ons": 15,
+            "final_third_entries": 1
+          },
+          "zone_activity": {
+            "defensive_left": 194,
+            "middle_third": 34,
+            "middle_left": 11
+          }
+        },
+        {
+          "name": "Mohammed Kudus",
+          "position": "Attacking midfielder",
+          "jersey": 14,
+          "total_involvements": 403,
+          "key_contributions": {
+            "passes": 37,
+            "defensive_actions": 35,
+            "attacking_involvement": 10,
+            "pressing_actions": 69
+          },
+          "physical": {
+            "distance": 10787.76,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 9.46,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 616.18,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 10,
+            "successful_take_ons": 63,
+            "final_third_entries": 10
+          },
+          "zone_activity": {
+            "defensive_left": 154,
+            "middle_third": 44,
+            "middle_left": 35
+          }
+        },
+        {
+          "name": "Carlos Soler",
+          "position": "Attacking midfielder",
+          "jersey": 4,
+          "total_involvements": 385,
+          "key_contributions": {
+            "passes": 35,
+            "defensive_actions": 40,
+            "attacking_involvement": 2,
+            "pressing_actions": 74
+          },
+          "physical": {
+            "distance": 9032.31,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.67,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 577.46,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 5,
+            "successful_take_ons": 55,
+            "final_third_entries": 2
+          },
+          "zone_activity": {
+            "defensive_left": 143,
+            "middle_third": 34,
+            "middle_left": 25
+          }
+        },
+        {
+          "name": "Aaron Cresswell",
+          "position": "Central defender",
+          "jersey": 3,
+          "total_involvements": 342,
+          "key_contributions": {
+            "passes": 46,
+            "defensive_actions": 123,
+            "attacking_involvement": 2,
+            "pressing_actions": 22
+          },
+          "physical": {
+            "distance": 8840.63,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 7.21,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 299.2,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 4,
+            "successful_take_ons": 13,
+            "final_third_entries": 2
+          },
+          "zone_activity": {
+            "defensive_left": 157,
+            "middle_third": 48,
+            "attacking_third": 2
+          }
+        },
+        {
+          "name": "Jarrod Bowen",
+          "position": "Striker",
+          "jersey": 20,
+          "total_involvements": 336,
+          "key_contributions": {
+            "passes": 20,
+            "defensive_actions": 74,
+            "attacking_involvement": 5,
+            "pressing_actions": 68
+          },
+          "physical": {
+            "distance": 10639.29,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.08,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 682.57,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 6,
+            "successful_take_ons": 45,
+            "final_third_entries": 5
+          },
+          "zone_activity": {
+            "defensive_left": 167,
+            "middle_left": 27,
+            "middle_third": 22
+          }
+        },
+        {
+          "name": "Tomas Soucek",
+          "position": "Defensive midfielder",
+          "jersey": 28,
+          "total_involvements": 333,
+          "key_contributions": {
+            "passes": 29,
+            "defensive_actions": 122,
+            "attacking_involvement": 6,
+            "pressing_actions": 60
+          },
+          "physical": {
+            "distance": 11892.12,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.18,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 523.64,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 8,
+            "successful_take_ons": 14,
+            "final_third_entries": 6
+          },
+          "zone_activity": {
+            "defensive_left": 153,
+            "middle_third": 28,
+            "middle_left": 17
+          }
+        },
+        {
+          "name": "Andy Irving",
+          "position": "Defensive midfielder",
+          "jersey": 39,
+          "total_involvements": 254,
+          "key_contributions": {
+            "passes": 38,
+            "defensive_actions": 50,
+            "attacking_involvement": 4,
+            "pressing_actions": 56
+          },
+          "physical": {
+            "distance": 9442.31,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 7.67,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 587.73,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 7,
+            "successful_take_ons": 15,
+            "final_third_entries": 4
+          },
+          "zone_activity": {
+            "defensive_left": 88,
+            "middle_third": 35,
+            "defensive_central": 6
+          }
+        },
+        {
+          "name": "Emerson Palmieri",
+          "position": "Wing back",
+          "jersey": 33,
+          "total_involvements": 233,
+          "key_contributions": {
+            "passes": 15,
+            "defensive_actions": 38,
+            "attacking_involvement": 1,
+            "pressing_actions": 50
+          },
+          "physical": {
+            "distance": 7564.71,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.57,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 361.64,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 2,
+            "successful_take_ons": 11,
+            "final_third_entries": 1
+          },
+          "zone_activity": {
+            "defensive_left": 58,
+            "middle_third": 38,
+            "middle_left": 5
+          }
+        },
+        {
+          "name": "Konstantinos Mavropanos",
+          "position": "Central defender",
+          "jersey": 15,
+          "total_involvements": 224,
+          "key_contributions": {
+            "passes": 13,
+            "defensive_actions": 55,
+            "attacking_involvement": 3,
+            "pressing_actions": 15
+          },
+          "physical": {
+            "distance": 2784.35,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.14,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 151.98,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 2,
+            "successful_take_ons": 48,
+            "final_third_entries": 3
+          },
+          "zone_activity": {
+            "defensive_left": 139,
+            "defensive_central": 18,
+            "middle_third": 13
+          }
+        },
+        {
+          "name": "Oliver Scarles",
+          "position": "Wing back",
+          "jersey": 57,
+          "total_involvements": 154,
+          "key_contributions": {
+            "passes": 6,
+            "defensive_actions": 24,
+            "attacking_involvement": 2,
+            "pressing_actions": 17
+          },
+          "physical": {
+            "distance": 2943.43,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.66,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 208.55,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 0,
+            "successful_take_ons": 12,
+            "final_third_entries": 2
+          },
+          "zone_activity": {
+            "defensive_left": 52,
+            "middle_third": 17,
+            "defensive_central": 2
+          }
+        },
+        {
+          "name": "Alphonse Areola",
+          "position": "Goalkeeper",
+          "jersey": 23,
+          "total_involvements": 119,
+          "key_contributions": {
+            "passes": 19,
+            "defensive_actions": 4,
+            "attacking_involvement": 3,
+            "pressing_actions": 7
+          },
+          "physical": {
+            "distance": 5612.77,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 4.89,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 8.54,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 2,
+            "successful_take_ons": 2,
+            "final_third_entries": 3
+          },
+          "zone_activity": {
+            "defensive_left": 28,
+            "middle_third": 17,
+            "attacking_third": 3
+          }
+        },
+        {
+          "name": "Danny Ings",
+          "position": "Attacking midfielder",
+          "jersey": 18,
+          "total_involvements": 104,
+          "key_contributions": {
+            "passes": 5,
+            "defensive_actions": 27,
+            "attacking_involvement": 2,
+            "pressing_actions": 14
+          },
+          "physical": {
+            "distance": 2660.93,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.76,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 226.0,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 1,
+            "successful_take_ons": 12,
+            "final_third_entries": 2
+          },
+          "zone_activity": {
+            "defensive_left": 49,
+            "middle_third": 12,
+            "middle_left": 3
+          }
+        },
+        {
+          "name": "Luis Guilherme Lira",
+          "position": "Central defender",
+          "jersey": 17,
+          "total_involvements": 103,
+          "key_contributions": {
+            "passes": 9,
+            "defensive_actions": 6,
+            "attacking_involvement": 4,
+            "pressing_actions": 10
+          },
+          "physical": {
+            "distance": 1537.46,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 9.42,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 177.32,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 4,
+            "successful_take_ons": 15,
+            "final_third_entries": 4
+          },
+          "zone_activity": {
+            "defensive_left": 35,
+            "middle_third": 12,
+            "defensive_central": 7
+          }
+        },
+        {
+          "name": "Lewis Orford",
+          "position": "Defensive midfielder",
+          "jersey": 61,
+          "total_involvements": 63,
+          "key_contributions": {
+            "passes": 4,
+            "defensive_actions": 6,
+            "attacking_involvement": 1,
+            "pressing_actions": 19
+          },
+          "physical": {
+            "distance": 2841.77,
+            "distance_unit": "meters",
+            "sprints": 0,
+            "top_speed": 8.02,
+            "top_speed_unit": "m/s",
+            "high_intensity_distance": 317.43,
+            "high_intensity_unit": "meters"
+          },
+          "progressive_actions": {
+            "forward_passes": 0,
+            "successful_take_ons": 10,
+            "final_third_entries": 1
+          },
+          "zone_activity": {
+            "defensive_left": 22,
+            "middle_third": 4,
+            "defensive_central": 2
+          }
+        }
+      ]
+    },
+    "pass_networks": {
+      "Chelsea FC": {
+        "nodes": [
+          {
+            "id": "238",
+            "name": "Jorgensen",
+            "position": "Goalkeeper",
+            "jersey": 12
+          },
+          {
+            "id": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "name": "Levi Colwill",
+            "position": "Central defender",
+            "jersey": 6
+          },
+          {
+            "id": "3973",
+            "name": "Tosin Adarabioyo",
+            "position": "Central defender",
+            "jersey": 4
+          },
+          {
+            "id": "1716",
+            "name": "Marc Cucurella",
+            "position": "Wing back",
+            "jersey": 3
+          },
+          {
+            "id": "2108",
+            "name": "Reece James",
+            "position": "Wing back",
+            "jersey": 24
+          },
+          {
+            "id": "3849",
+            "name": "Cole Palmer",
+            "position": "Attacking midfielder",
+            "jersey": 20
+          },
+          {
+            "id": "5880",
+            "name": "Noni Madueke",
+            "position": "Winger",
+            "jersey": 11
+          },
+          {
+            "id": "6765",
+            "name": "Enzo Fernandez",
+            "position": "Defensive midfielder",
+            "jersey": 8
+          },
+          {
+            "id": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "name": "Moises Caicedo",
+            "position": "Defensive midfielder",
+            "jersey": 25
+          },
+          {
+            "id": "2121",
+            "name": "Jadon Sancho",
+            "position": "Winger",
+            "jersey": 19
+          },
+          {
+            "id": "2282",
+            "name": "Nicolas Jackson",
+            "position": "Striker",
+            "jersey": 15
+          },
+          {
+            "id": "4207",
+            "name": "Pedro Neto",
+            "position": "Winger",
+            "jersey": 7
+          },
+          {
+            "id": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "name": "Malo Gusto",
+            "position": "Wing back",
+            "jersey": 27
+          },
+          {
+            "id": "5366",
+            "name": "Marc Guiu",
+            "position": "Striker",
+            "jersey": 38
+          },
+          {
+            "id": "10630",
+            "name": "Tyrique George",
+            "position": "Striker",
+            "jersey": 32
+          },
+          {
+            "id": "4135",
+            "name": "Trevoh Chalobah",
+            "position": "Attacking midfielder",
+            "jersey": 23
+          },
+          {
+            "id": "10629",
+            "name": "Josh Acheampong",
+            "position": "Central defender",
+            "jersey": 34
+          },
+          {
+            "id": "7099",
+            "name": "Christopher Nkunku",
+            "position": "Winger",
+            "jersey": 18
+          },
+          {
+            "id": "2469",
+            "name": "Robert Sanchez",
+            "position": "Goalkeeper",
+            "jersey": 1
+          },
+          {
+            "id": "6775",
+            "name": "Kiernan Dewsbury Hall",
+            "position": "Attacking midfielder",
+            "jersey": 22
+          }
+        ],
+        "edges": [
+          {
+            "source": "2282",
+            "target": "5880",
+            "weight": 3
+          },
+          {
+            "source": "2282",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 2
+          },
+          {
+            "source": "2282",
+            "target": "3849",
+            "weight": 2
+          },
+          {
+            "source": "3973",
+            "target": "238",
+            "weight": 9
+          },
+          {
+            "source": "3973",
+            "target": "6765",
+            "weight": 3
+          },
+          {
+            "source": "3973",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 13
+          },
+          {
+            "source": "3973",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 23
+          },
+          {
+            "source": "3973",
+            "target": "1716",
+            "weight": 5
+          },
+          {
+            "source": "3973",
+            "target": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "weight": 3
+          },
+          {
+            "source": "3973",
+            "target": "2108",
+            "weight": 11
+          },
+          {
+            "source": "3973",
+            "target": "3849",
+            "weight": 7
+          },
+          {
+            "source": "3973",
+            "target": "4135",
+            "weight": 4
+          },
+          {
+            "source": "1716",
+            "target": "3973",
+            "weight": 3
+          },
+          {
+            "source": "1716",
+            "target": "7099",
+            "weight": 6
+          },
+          {
+            "source": "1716",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 5
+          },
+          {
+            "source": "1716",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 11
+          },
+          {
+            "source": "1716",
+            "target": "2121",
+            "weight": 3
+          },
+          {
+            "source": "1716",
+            "target": "3849",
+            "weight": 2
+          },
+          {
+            "source": "7099",
+            "target": "1716",
+            "weight": 4
+          },
+          {
+            "source": "7099",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 5
+          },
+          {
+            "source": "7099",
+            "target": "6765",
+            "weight": 2
+          },
+          {
+            "source": "7099",
+            "target": "5366",
+            "weight": 2
+          },
+          {
+            "source": "7099",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 4
+          },
+          {
+            "source": "7099",
+            "target": "3849",
+            "weight": 3
+          },
+          {
+            "source": "7099",
+            "target": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "weight": 2
+          },
+          {
+            "source": "4207",
+            "target": "6765",
+            "weight": 4
+          },
+          {
+            "source": "4207",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 2
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "1716",
+            "weight": 8
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "238",
+            "weight": 3
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "7099",
+            "weight": 8
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "2121",
+            "weight": 2
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "3973",
+            "weight": 21
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 6
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "2108",
+            "weight": 3
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "weight": 2
+          },
+          {
+            "source": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "target": "6765",
+            "weight": 2
+          },
+          {
+            "source": "2121",
+            "target": "1716",
+            "weight": 4
+          },
+          {
+            "source": "2121",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 3
+          },
+          {
+            "source": "2121",
+            "target": "3849",
+            "weight": 2
+          },
+          {
+            "source": "5880",
+            "target": "2108",
+            "weight": 12
+          },
+          {
+            "source": "5880",
+            "target": "3849",
+            "weight": 5
+          },
+          {
+            "source": "5880",
+            "target": "6765",
+            "weight": 2
+          },
+          {
+            "source": "5366",
+            "target": "4207",
+            "weight": 3
+          },
+          {
+            "source": "5366",
+            "target": "3973",
+            "weight": 2
+          },
+          {
+            "source": "4135",
+            "target": "6765",
+            "weight": 2
+          },
+          {
+            "source": "4135",
+            "target": "3973",
+            "weight": 4
+          },
+          {
+            "source": "4135",
+            "target": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "weight": 2
+          },
+          {
+            "source": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "target": "4207",
+            "weight": 10
+          },
+          {
+            "source": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "target": "3973",
+            "weight": 6
+          },
+          {
+            "source": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 4
+          },
+          {
+            "source": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "target": "3849",
+            "weight": 2
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "6765",
+            "weight": 4
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "3849",
+            "weight": 7
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "2108",
+            "weight": 6
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "7099",
+            "weight": 7
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "3973",
+            "weight": 12
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "1716",
+            "weight": 3
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 5
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "weight": 3
+          },
+          {
+            "source": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "target": "5880",
+            "weight": 2
+          },
+          {
+            "source": "6765",
+            "target": "4135",
+            "weight": 3
+          },
+          {
+            "source": "6765",
+            "target": "4207",
+            "weight": 4
+          },
+          {
+            "source": "6765",
+            "target": "2282",
+            "weight": 2
+          },
+          {
+            "source": "6765",
+            "target": "5880",
+            "weight": 6
+          },
+          {
+            "source": "6765",
+            "target": "3973",
+            "weight": 3
+          },
+          {
+            "source": "6765",
+            "target": "2108",
+            "weight": 6
+          },
+          {
+            "source": "6765",
+            "target": "3849",
+            "weight": 2
+          },
+          {
+            "source": "6765",
+            "target": "1716",
+            "weight": 3
+          },
+          {
+            "source": "6765",
+            "target": "7099",
+            "weight": 3
+          },
+          {
+            "source": "6765",
+            "target": "2a93c921-91ac-4548-bf07-88ef7c177f9a",
+            "weight": 4
+          },
+          {
+            "source": "6765",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 2
+          },
+          {
+            "source": "238",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 7
+          },
+          {
+            "source": "238",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 2
+          },
+          {
+            "source": "238",
+            "target": "3973",
+            "weight": 12
+          },
+          {
+            "source": "3849",
+            "target": "1716",
+            "weight": 8
+          },
+          {
+            "source": "3849",
+            "target": "7099",
+            "weight": 3
+          },
+          {
+            "source": "3849",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 7
+          },
+          {
+            "source": "3849",
+            "target": "2108",
+            "weight": 6
+          },
+          {
+            "source": "3849",
+            "target": "6765",
+            "weight": 2
+          },
+          {
+            "source": "3849",
+            "target": "5880",
+            "weight": 5
+          },
+          {
+            "source": "3849",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 3
+          },
+          {
+            "source": "2108",
+            "target": "6765",
+            "weight": 12
+          },
+          {
+            "source": "2108",
+            "target": "5880",
+            "weight": 13
+          },
+          {
+            "source": "2108",
+            "target": "3849",
+            "weight": 7
+          },
+          {
+            "source": "2108",
+            "target": "3973",
+            "weight": 14
+          },
+          {
+            "source": "2108",
+            "target": "7cee890d-8091-4937-9ad5-7c991e5a14d4",
+            "weight": 4
+          },
+          {
+            "source": "2108",
+            "target": "1716",
+            "weight": 3
+          },
+          {
+            "source": "2108",
+            "target": "238",
+            "weight": 2
+          },
+          {
+            "source": "2108",
+            "target": "cb414201-acba-4e50-9fc5-dd5d7d6628b6",
+            "weight": 4
+          }
+        ],
+        "centrality": {
+          "238": {
+            "out_degree": 26,
+            "in_degree": 15,
+            "centrality": 41
+          },
+          "cb414201-acba-4e50-9fc5-dd5d7d6628b6": {
+            "out_degree": 57,
+            "in_degree": 64,
+            "centrality": 121
+          },
+          "3973": {
+            "out_degree": 79,
+            "in_degree": 80,
+            "centrality": 159
+          },
+          "1716": {
+            "out_degree": 33,
+            "in_degree": 41,
+            "centrality": 74
+          },
+          "2108": {
+            "out_degree": 61,
+            "in_degree": 47,
+            "centrality": 108
+          },
+          "3849": {
+            "out_degree": 36,
+            "in_degree": 42,
+            "centrality": 78
+          },
+          "5880": {
+            "out_degree": 24,
+            "in_degree": 29,
+            "centrality": 53
+          },
+          "6765": {
+            "out_degree": 40,
+            "in_degree": 37,
+            "centrality": 77
+          },
+          "7cee890d-8091-4937-9ad5-7c991e5a14d4": {
+            "out_degree": 50,
+            "in_degree": 50,
+            "centrality": 100
+          },
+          "2121": {
+            "out_degree": 11,
+            "in_degree": 9,
+            "centrality": 20
+          },
+          "2282": {
+            "out_degree": 9,
+            "in_degree": 6,
+            "centrality": 15
+          },
+          "4207": {
+            "out_degree": 10,
+            "in_degree": 20,
+            "centrality": 30
+          },
+          "2a93c921-91ac-4548-bf07-88ef7c177f9a": {
+            "out_degree": 24,
+            "in_degree": 18,
+            "centrality": 42
+          },
+          "5366": {
+            "out_degree": 8,
+            "in_degree": 6,
+            "centrality": 14
+          },
+          "10630": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          },
+          "4135": {
+            "out_degree": 8,
+            "in_degree": 8,
+            "centrality": 16
+          },
+          "10629": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          },
+          "7099": {
+            "out_degree": 23,
+            "in_degree": 27,
+            "centrality": 50
+          },
+          "2469": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          },
+          "6775": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          }
+        },
+        "strongest_connections": [
+          {
+            "passer": "Tosin Adarabioyo",
+            "receiver": "Levi Colwill",
+            "count": 23
+          },
+          {
+            "passer": "Levi Colwill",
+            "receiver": "Tosin Adarabioyo",
+            "count": 21
+          },
+          {
+            "passer": "Reece James",
+            "receiver": "Tosin Adarabioyo",
+            "count": 14
+          },
+          {
+            "passer": "Tosin Adarabioyo",
+            "receiver": "Moises Caicedo",
+            "count": 13
+          },
+          {
+            "passer": "Reece James",
+            "receiver": "Noni Madueke",
+            "count": 13
+          },
+          {
+            "passer": "Noni Madueke",
+            "receiver": "Reece James",
+            "count": 12
+          },
+          {
+            "passer": "Moises Caicedo",
+            "receiver": "Tosin Adarabioyo",
+            "count": 12
+          },
+          {
+            "passer": "Jorgensen",
+            "receiver": "Tosin Adarabioyo",
+            "count": 12
+          },
+          {
+            "passer": "Reece James",
+            "receiver": "Enzo Fernandez",
+            "count": 12
+          },
+          {
+            "passer": "Tosin Adarabioyo",
+            "receiver": "Reece James",
+            "count": 11
+          }
+        ]
+      },
+      "West Ham": {
+        "nodes": [
+          {
+            "id": "64db18f8-a037-4d95-a934-f10c55424609",
+            "name": "Alphonse Areola",
+            "position": "Goalkeeper",
+            "jersey": 23
+          },
+          {
+            "id": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "name": "Aaron Cresswell",
+            "position": "Central defender",
+            "jersey": 3
+          },
+          {
+            "id": "8f85435c-d809-444f-b52a-5f6401795600",
+            "name": "Vladimir Coufal",
+            "position": "Central defender",
+            "jersey": 5
+          },
+          {
+            "id": "4192",
+            "name": "Max Kilman",
+            "position": "Central defender",
+            "jersey": 26
+          },
+          {
+            "id": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "name": "Tomas Soucek",
+            "position": "Defensive midfielder",
+            "jersey": 28
+          },
+          {
+            "id": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "name": "Andy Irving",
+            "position": "Defensive midfielder",
+            "jersey": 39
+          },
+          {
+            "id": "459c6588-46a3-4784-868d-e9e4befa2d7d",
+            "name": "Emerson Palmieri",
+            "position": "Wing back",
+            "jersey": 33
+          },
+          {
+            "id": "3009",
+            "name": "Aaron Wan Bissaka",
+            "position": "Wing back",
+            "jersey": 29
+          },
+          {
+            "id": "1398",
+            "name": "Carlos Soler",
+            "position": "Attacking midfielder",
+            "jersey": 4
+          },
+          {
+            "id": "5852",
+            "name": "Mohammed Kudus",
+            "position": "Attacking midfielder",
+            "jersey": 14
+          },
+          {
+            "id": "4bb74c50-79ce-44a6-88f3-abd394827170",
+            "name": "Jarrod Bowen",
+            "position": "Striker",
+            "jersey": 20
+          },
+          {
+            "id": "6550",
+            "name": "Konstantinos Mavropanos",
+            "position": "Central defender",
+            "jersey": 15
+          },
+          {
+            "id": "1249",
+            "name": "Lukasz Fabianski",
+            "position": "Goalkeeper",
+            "jersey": 1
+          },
+          {
+            "id": "d402a67d-55c1-4b52-8d8c-8e90076d000b",
+            "name": "Kaelan Casey",
+            "position": "Central defender",
+            "jersey": 42
+          },
+          {
+            "id": "e57ffa36-94b2-446e-93db-e09210a79ffc",
+            "name": "Lewis Orford",
+            "position": "Defensive midfielder",
+            "jersey": 61
+          },
+          {
+            "id": "6bdf3282-387e-4eed-aa56-c62d37ba6cf7",
+            "name": "Wes Foderingham",
+            "position": "Goalkeeper",
+            "jersey": 21
+          },
+          {
+            "id": "5abf82ed-95ab-4109-be05-97f9bc03598b",
+            "name": "Oliver Scarles",
+            "position": "Wing back",
+            "jersey": 57
+          },
+          {
+            "id": "91bad9b5-0a18-4fba-9d08-c3c5a17a335c",
+            "name": "Luis Guilherme Lira",
+            "position": "Central defender",
+            "jersey": 17
+          },
+          {
+            "id": "4188",
+            "name": "Danny Ings",
+            "position": "Attacking midfielder",
+            "jersey": 18
+          },
+          {
+            "id": "1597",
+            "name": "Guido Rodriguez",
+            "position": "Attacking midfielder",
+            "jersey": 24
+          }
+        ],
+        "edges": [
+          {
+            "source": "1398",
+            "target": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "weight": 7
+          },
+          {
+            "source": "1398",
+            "target": "4bb74c50-79ce-44a6-88f3-abd394827170",
+            "weight": 3
+          },
+          {
+            "source": "1398",
+            "target": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "weight": 4
+          },
+          {
+            "source": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "target": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "weight": 3
+          },
+          {
+            "source": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "target": "5abf82ed-95ab-4109-be05-97f9bc03598b",
+            "weight": 2
+          },
+          {
+            "source": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "target": "1398",
+            "weight": 5
+          },
+          {
+            "source": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "target": "4192",
+            "weight": 11
+          },
+          {
+            "source": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "target": "459c6588-46a3-4784-868d-e9e4befa2d7d",
+            "weight": 4
+          },
+          {
+            "source": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "target": "5852",
+            "weight": 2
+          },
+          {
+            "source": "3009",
+            "target": "8f85435c-d809-444f-b52a-5f6401795600",
+            "weight": 2
+          },
+          {
+            "source": "3009",
+            "target": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "weight": 3
+          },
+          {
+            "source": "3009",
+            "target": "91bad9b5-0a18-4fba-9d08-c3c5a17a335c",
+            "weight": 2
+          },
+          {
+            "source": "3009",
+            "target": "5852",
+            "weight": 4
+          },
+          {
+            "source": "5852",
+            "target": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "weight": 3
+          },
+          {
+            "source": "5852",
+            "target": "4bb74c50-79ce-44a6-88f3-abd394827170",
+            "weight": 3
+          },
+          {
+            "source": "5852",
+            "target": "1398",
+            "weight": 3
+          },
+          {
+            "source": "5852",
+            "target": "3009",
+            "weight": 2
+          },
+          {
+            "source": "5852",
+            "target": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "weight": 2
+          },
+          {
+            "source": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "target": "1398",
+            "weight": 2
+          },
+          {
+            "source": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "target": "8f85435c-d809-444f-b52a-5f6401795600",
+            "weight": 3
+          },
+          {
+            "source": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "target": "3009",
+            "weight": 4
+          },
+          {
+            "source": "64db18f8-a037-4d95-a934-f10c55424609",
+            "target": "4192",
+            "weight": 4
+          },
+          {
+            "source": "64db18f8-a037-4d95-a934-f10c55424609",
+            "target": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "weight": 3
+          },
+          {
+            "source": "64db18f8-a037-4d95-a934-f10c55424609",
+            "target": "6550",
+            "weight": 2
+          },
+          {
+            "source": "8f85435c-d809-444f-b52a-5f6401795600",
+            "target": "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47",
+            "weight": 3
+          },
+          {
+            "source": "8f85435c-d809-444f-b52a-5f6401795600",
+            "target": "3009",
+            "weight": 2
+          },
+          {
+            "source": "8f85435c-d809-444f-b52a-5f6401795600",
+            "target": "5852",
+            "weight": 3
+          },
+          {
+            "source": "8f85435c-d809-444f-b52a-5f6401795600",
+            "target": "64db18f8-a037-4d95-a934-f10c55424609",
+            "weight": 3
+          },
+          {
+            "source": "8f85435c-d809-444f-b52a-5f6401795600",
+            "target": "4192",
+            "weight": 3
+          },
+          {
+            "source": "4192",
+            "target": "8f85435c-d809-444f-b52a-5f6401795600",
+            "weight": 5
+          },
+          {
+            "source": "4192",
+            "target": "64db18f8-a037-4d95-a934-f10c55424609",
+            "weight": 3
+          },
+          {
+            "source": "4192",
+            "target": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "weight": 4
+          },
+          {
+            "source": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "target": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "weight": 6
+          },
+          {
+            "source": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "target": "5852",
+            "weight": 5
+          },
+          {
+            "source": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "target": "1398",
+            "weight": 4
+          },
+          {
+            "source": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "target": "459c6588-46a3-4784-868d-e9e4befa2d7d",
+            "weight": 2
+          },
+          {
+            "source": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "target": "3009",
+            "weight": 2
+          },
+          {
+            "source": "91bad9b5-0a18-4fba-9d08-c3c5a17a335c",
+            "target": "6550",
+            "weight": 3
+          },
+          {
+            "source": "459c6588-46a3-4784-868d-e9e4befa2d7d",
+            "target": "e1dcaaac-13f4-4680-b7bb-85ba0c31093e",
+            "weight": 2
+          },
+          {
+            "source": "459c6588-46a3-4784-868d-e9e4befa2d7d",
+            "target": "38e59cab-c893-418c-95ce-111cd26cee5c",
+            "weight": 2
+          },
+          {
+            "source": "459c6588-46a3-4784-868d-e9e4befa2d7d",
+            "target": "4bb74c50-79ce-44a6-88f3-abd394827170",
+            "weight": 2
+          },
+          {
+            "source": "4bb74c50-79ce-44a6-88f3-abd394827170",
+            "target": "3009",
+            "weight": 2
+          },
+          {
+            "source": "4bb74c50-79ce-44a6-88f3-abd394827170",
+            "target": "5852",
+            "weight": 2
+          },
+          {
+            "source": "4bb74c50-79ce-44a6-88f3-abd394827170",
+            "target": "1398",
+            "weight": 2
+          },
+          {
+            "source": "6550",
+            "target": "e57ffa36-94b2-446e-93db-e09210a79ffc",
+            "weight": 2
+          }
+        ],
+        "centrality": {
+          "64db18f8-a037-4d95-a934-f10c55424609": {
+            "out_degree": 12,
+            "in_degree": 7,
+            "centrality": 19
+          },
+          "38e59cab-c893-418c-95ce-111cd26cee5c": {
+            "out_degree": 28,
+            "in_degree": 18,
+            "centrality": 46
+          },
+          "8f85435c-d809-444f-b52a-5f6401795600": {
+            "out_degree": 16,
+            "in_degree": 13,
+            "centrality": 29
+          },
+          "4192": {
+            "out_degree": 15,
+            "in_degree": 22,
+            "centrality": 37
+          },
+          "868fdb39-21a1-4e8a-90c5-8fba2cdd2b47": {
+            "out_degree": 13,
+            "in_degree": 16,
+            "centrality": 29
+          },
+          "e1dcaaac-13f4-4680-b7bb-85ba0c31093e": {
+            "out_degree": 23,
+            "in_degree": 15,
+            "centrality": 38
+          },
+          "459c6588-46a3-4784-868d-e9e4befa2d7d": {
+            "out_degree": 8,
+            "in_degree": 7,
+            "centrality": 15
+          },
+          "3009": {
+            "out_degree": 15,
+            "in_degree": 13,
+            "centrality": 28
+          },
+          "1398": {
+            "out_degree": 16,
+            "in_degree": 19,
+            "centrality": 35
+          },
+          "5852": {
+            "out_degree": 17,
+            "in_degree": 20,
+            "centrality": 37
+          },
+          "4bb74c50-79ce-44a6-88f3-abd394827170": {
+            "out_degree": 6,
+            "in_degree": 14,
+            "centrality": 20
+          },
+          "6550": {
+            "out_degree": 3,
+            "in_degree": 10,
+            "centrality": 13
+          },
+          "1249": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          },
+          "d402a67d-55c1-4b52-8d8c-8e90076d000b": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          },
+          "e57ffa36-94b2-446e-93db-e09210a79ffc": {
+            "out_degree": 1,
+            "in_degree": 3,
+            "centrality": 4
+          },
+          "6bdf3282-387e-4eed-aa56-c62d37ba6cf7": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          },
+          "5abf82ed-95ab-4109-be05-97f9bc03598b": {
+            "out_degree": 3,
+            "in_degree": 3,
+            "centrality": 6
+          },
+          "91bad9b5-0a18-4fba-9d08-c3c5a17a335c": {
+            "out_degree": 5,
+            "in_degree": 4,
+            "centrality": 9
+          },
+          "4188": {
+            "out_degree": 4,
+            "in_degree": 1,
+            "centrality": 5
+          },
+          "1597": {
+            "out_degree": 0,
+            "in_degree": 0,
+            "centrality": 0
+          }
+        },
+        "strongest_connections": [
+          {
+            "passer": "Aaron Cresswell",
+            "receiver": "Max Kilman",
+            "count": 11
+          },
+          {
+            "passer": "Carlos Soler",
+            "receiver": "Andy Irving",
+            "count": 7
+          },
+          {
+            "passer": "Andy Irving",
+            "receiver": "Aaron Cresswell",
+            "count": 6
+          },
+          {
+            "passer": "Aaron Cresswell",
+            "receiver": "Carlos Soler",
+            "count": 5
+          },
+          {
+            "passer": "Max Kilman",
+            "receiver": "Vladimir Coufal",
+            "count": 5
+          },
+          {
+            "passer": "Andy Irving",
+            "receiver": "Mohammed Kudus",
+            "count": 5
+          },
+          {
+            "passer": "Carlos Soler",
+            "receiver": "Tomas Soucek",
+            "count": 4
+          },
+          {
+            "passer": "Aaron Cresswell",
+            "receiver": "Emerson Palmieri",
+            "count": 4
+          },
+          {
+            "passer": "Aaron Wan Bissaka",
+            "receiver": "Mohammed Kudus",
+            "count": 4
+          },
+          {
+            "passer": "Tomas Soucek",
+            "receiver": "Aaron Wan Bissaka",
+            "count": 4
+          }
+        ]
+      }
+    }
+  },
+  "sequential_patterns": {
+    "Chelsea FC": {
+      "most_common_sequences": [
+        {
+          "pattern": [
+            "Occupying Space In The Box",
+            "Occupying Space In The Box",
+            "Occupying Space In The Box"
+          ],
+          "occurrences": 189,
+          "outcome_distribution": {
+            "Possession Maintained": 182,
+            "Shot": 5,
+            "Lost Possession": 4
+          },
+          "zone_progression": [
+            "middle_left",
+            "middle_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box"
+          ],
+          "occurrences": 115,
+          "outcome_distribution": {
+            "Possession Maintained": 115,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Realized Vertical Overcoming Support",
+            "Completed Horizontal Pass",
+            "Overcoming Opponents With Vertical Passes"
+          ],
+          "occurrences": 48,
+          "outcome_distribution": {
+            "Possession Maintained": 45,
+            "Shot": 0,
+            "Lost Possession": 3
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "Possession recycling, maintaining control without progression"
+        },
+        {
+          "pattern": [
+            "Completed Horizontal Pass",
+            "Realized Horizontal Overcoming Support",
+            "Completed Horizontal Pass"
+          ],
+          "occurrences": 46,
+          "outcome_distribution": {
+            "Possession Maintained": 44,
+            "Shot": 0,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "middle_third",
+            "middle_third"
+          ],
+          "tactical_interpretation": "Possession recycling, maintaining control without progression"
+        },
+        {
+          "pattern": [
+            "Balance Of The Team",
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width"
+          ],
+          "occurrences": 44,
+          "outcome_distribution": {
+            "Possession Maintained": 44,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        }
+      ],
+      "first_half_sequences": [
+        {
+          "pattern": [
+            "Occupying Space In The Box",
+            "Occupying Space In The Box",
+            "Occupying Space In The Box"
+          ],
+          "occurrences": 115,
+          "outcome_distribution": {
+            "Possession Maintained": 182,
+            "Shot": 5,
+            "Lost Possession": 4
+          },
+          "zone_progression": [
+            "middle_left",
+            "middle_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box"
+          ],
+          "occurrences": 96,
+          "outcome_distribution": {
+            "Possession Maintained": 115,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Completed Horizontal Pass",
+            "Realized Horizontal Overcoming Support",
+            "Completed Horizontal Pass"
+          ],
+          "occurrences": 35,
+          "outcome_distribution": {
+            "Possession Maintained": 44,
+            "Shot": 0,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "middle_third",
+            "middle_third"
+          ],
+          "tactical_interpretation": "Possession recycling, maintaining control without progression"
+        },
+        {
+          "pattern": [
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 33,
+          "outcome_distribution": {
+            "Possession Maintained": 37,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Realized Vertical Overcoming Support",
+            "Completed Horizontal Pass",
+            "Overcoming Opponents With Vertical Passes"
+          ],
+          "occurrences": 30,
+          "outcome_distribution": {
+            "Possession Maintained": 45,
+            "Shot": 0,
+            "Lost Possession": 3
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "Possession recycling, maintaining control without progression"
+        }
+      ],
+      "second_half_sequences": [
+        {
+          "pattern": [
+            "Occupying Space In The Box",
+            "Occupying Space In The Box",
+            "Occupying Space In The Box"
+          ],
+          "occurrences": 74,
+          "outcome_distribution": {
+            "Possession Maintained": 182,
+            "Shot": 5,
+            "Lost Possession": 4
+          },
+          "zone_progression": [
+            "middle_left",
+            "middle_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box"
+          ],
+          "occurrences": 19,
+          "outcome_distribution": {
+            "Possession Maintained": 115,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Realized Vertical Overcoming Support",
+            "Completed Horizontal Pass",
+            "Overcoming Opponents With Vertical Passes"
+          ],
+          "occurrences": 18,
+          "outcome_distribution": {
+            "Possession Maintained": 45,
+            "Shot": 0,
+            "Lost Possession": 3
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "Possession recycling, maintaining control without progression"
+        },
+        {
+          "pattern": [
+            "Balance Of The Team",
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width"
+          ],
+          "occurrences": 15,
+          "outcome_distribution": {
+            "Possession Maintained": 44,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        },
+        {
+          "pattern": [
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 12,
+          "outcome_distribution": {
+            "Possession Maintained": 39,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        }
+      ],
+      "attack_success_paths": {
+        "highest_percentage": [
+          "Occupying Space In The Box",
+          "Occupying Space In The Box",
+          "Occupying Space In The Box"
+        ],
+        "success_rate": 20.8,
+        "tactical_interpretation": "General play sequence"
+      }
+    },
+    "West Ham": {
+      "most_common_sequences": [
+        {
+          "pattern": [
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box"
+          ],
+          "occurrences": 541,
+          "outcome_distribution": {
+            "Possession Maintained": 539,
+            "Shot": 0,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 74,
+          "outcome_distribution": {
+            "Possession Maintained": 76,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 57,
+          "outcome_distribution": {
+            "Possession Maintained": 57,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        },
+        {
+          "pattern": [
+            "Occupying Space In The Box",
+            "Occupying Space In The Box",
+            "Occupying Space In The Box"
+          ],
+          "occurrences": 54,
+          "outcome_distribution": {
+            "Possession Maintained": 49,
+            "Shot": 4,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "middle_left",
+            "middle_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Balance Of The Team",
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width"
+          ],
+          "occurrences": 53,
+          "outcome_distribution": {
+            "Possession Maintained": 53,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        }
+      ],
+      "first_half_sequences": [
+        {
+          "pattern": [
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box"
+          ],
+          "occurrences": 301,
+          "outcome_distribution": {
+            "Possession Maintained": 539,
+            "Shot": 0,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 50,
+          "outcome_distribution": {
+            "Possession Maintained": 76,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Occupying Space In The Box",
+            "Occupying Space In The Box",
+            "Occupying Space In The Box"
+          ],
+          "occurrences": 40,
+          "outcome_distribution": {
+            "Possession Maintained": 49,
+            "Shot": 4,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "middle_left",
+            "middle_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 36,
+          "outcome_distribution": {
+            "Possession Maintained": 57,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        },
+        {
+          "pattern": [
+            "Balance Of The Team",
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width"
+          ],
+          "occurrences": 35,
+          "outcome_distribution": {
+            "Possession Maintained": 53,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        }
+      ],
+      "second_half_sequences": [
+        {
+          "pattern": [
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box",
+            "Marking Opponents Inside The Box"
+          ],
+          "occurrences": 240,
+          "outcome_distribution": {
+            "Possession Maintained": 539,
+            "Shot": 0,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "defensive_left",
+            "defensive_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 24,
+          "outcome_distribution": {
+            "Possession Maintained": 76,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "General play sequence"
+        },
+        {
+          "pattern": [
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width",
+            "Pressure On The Ball Possessor"
+          ],
+          "occurrences": 21,
+          "outcome_distribution": {
+            "Possession Maintained": 57,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        },
+        {
+          "pattern": [
+            "Balance Of The Team",
+            "Defensive Line Imbalance In Depth",
+            "Defensive Line Imbalance In Width"
+          ],
+          "occurrences": 18,
+          "outcome_distribution": {
+            "Possession Maintained": 53,
+            "Shot": 0,
+            "Lost Possession": 0
+          },
+          "zone_progression": [
+            "unknown",
+            "unknown"
+          ],
+          "tactical_interpretation": "Exploiting defensive disorganization"
+        },
+        {
+          "pattern": [
+            "Occupying Space In The Box",
+            "Occupying Space In The Box",
+            "Occupying Space In The Box"
+          ],
+          "occurrences": 14,
+          "outcome_distribution": {
+            "Possession Maintained": 49,
+            "Shot": 4,
+            "Lost Possession": 2
+          },
+          "zone_progression": [
+            "middle_left",
+            "middle_left"
+          ],
+          "tactical_interpretation": "General play sequence"
+        }
+      ],
+      "attack_success_paths": {
+        "highest_percentage": [
+          "Occupying Space In The Box",
+          "Occupying Space In The Box",
+          "Occupying Space In The Box"
+        ],
+        "success_rate": 23.5,
+        "tactical_interpretation": "General play sequence"
+      }
+    }
+  },
+  "tactical_imbalances": {
+    "team_imbalances": {
+      "Chelsea FC": [
+        {
+          "type": "Width vs Crossing",
+          "metric1": {
+            "name": "Width Positioning",
+            "value": 258
+          },
+          "metric2": {
+            "name": "Crosses",
+            "value": 13
+          },
+          "ratio": 19.8,
+          "benchmark_ratio": 20.0,
+          "deviation": "-0.8%",
+          "interpretation": "Lower ratio indicates team crosses efficiently from wide positions"
+        },
+        {
+          "type": "Pressing vs Recovery",
+          "metric1": {
+            "name": "Pressing Actions",
+            "value": 199
+          },
+          "metric2": {
+            "name": "Ball Recoveries",
+            "value": 52
+          },
+          "ratio": 3.8,
+          "benchmark_ratio": 6.0,
+          "deviation": "-36.2%",
+          "interpretation": "Lower ratio indicates effective pressing leading to recoveries"
+        },
+        {
+          "type": "Horizontal vs Forward Passing",
+          "metric1": {
+            "name": "Horizontal Passes",
+            "value": 412
+          },
+          "metric2": {
+            "name": "Forward Passes",
+            "value": 49
+          },
+          "ratio": 8.4,
+          "benchmark_ratio": 1.8,
+          "deviation": "+367.1%",
+          "interpretation": "Higher ratio indicates excess sideways passing lacking progression"
+        },
+        {
+          "type": "Shot Generation Efficiency",
+          "metric1": {
+            "name": "Shots",
+            "value": 21
+          },
+          "metric2": {
+            "name": "Possession %",
+            "value": 52.7
+          },
+          "ratio": 39.85,
+          "benchmark_ratio": 12.0,
+          "deviation": "+232.1%",
+          "interpretation": "Team generates shots efficiently from possession"
+        }
+      ],
+      "West Ham": [
+        {
+          "type": "Width vs Crossing",
+          "metric1": {
+            "name": "Width Positioning",
+            "value": 124
+          },
+          "metric2": {
+            "name": "Crosses",
+            "value": 7
+          },
+          "ratio": 17.7,
+          "benchmark_ratio": 20.0,
+          "deviation": "-11.4%",
+          "interpretation": "Lower ratio indicates team crosses efficiently from wide positions"
+        },
+        {
+          "type": "Pressing vs Recovery",
+          "metric1": {
+            "name": "Pressing Actions",
+            "value": 371
+          },
+          "metric2": {
+            "name": "Ball Recoveries",
+            "value": 45
+          },
+          "ratio": 8.2,
+          "benchmark_ratio": 6.0,
+          "deviation": "+37.4%",
+          "interpretation": "Higher ratio indicates inefficient pressing"
+        },
+        {
+          "type": "Shot Generation Efficiency",
+          "metric1": {
+            "name": "Shots",
+            "value": 13
+          },
+          "metric2": {
+            "name": "Possession %",
+            "value": 47.3
+          },
+          "ratio": 27.48,
+          "benchmark_ratio": 12.0,
+          "deviation": "+129.0%",
+          "interpretation": "Team generates shots efficiently from possession"
+        }
+      ]
+    },
+    "comparative_imbalances": [
+      {
+        "type": "Vertical Passing Contrast",
+        "team1": "Chelsea FC",
+        "team2": "West Ham",
+        "team1_ratio": 0.12,
+        "team2_ratio": 0.23,
+        "difference": "-48.2%",
+        "interpretation": "West Ham plays more vertically than Chelsea FC"
+      }
+    ]
+  },
+  "defensive_organization": {
+    "Chelsea FC": {
+      "defensive_actions": {
+        "total": 419,
+        "by_type": {
+          "Defending Against The Possessor": 8,
+          "Defending Running Into The Box": 2,
+          "Defending Moving Behind The Defensive Line": 1,
+          "Defensive Line Imbalance In Depth": 100,
+          "Defensive Line Imbalance In Width": 92,
+          "Marking Opponents Inside The Box": 164,
+          "Recovered Ball": 52
+        }
+      },
+      "defensive_organization": {
+        "line_discipline_issues": 192,
+        "defensive_height": 0.0,
+        "interpretation": "Deep defensive block - team defends close to own goal",
+        "width_focus": 100.0,
+        "interpretation_width": "Wide defensive block"
+      },
+      "pressing_intensity": {
+        "pressure_actions": 0,
+        "pressure_per_defensive_action": 0.0,
+        "interpretation": "Low pressing intensity"
+      },
+      "defensive_zones": {
+        "defensive_third": 175,
+        "middle_third": 0,
+        "attacking_third": 0,
+        "zone_distribution": {
+          "defensive_third": 100.0,
+          "middle_third": 0.0,
+          "attacking_third": 0.0
+        }
+      }
+    },
+    "West Ham": {
+      "defensive_actions": {
+        "total": 1067,
+        "by_type": {
+          "Defending Moving Behind The Defensive Line": 13,
+          "Defending Against The Possessor": 16,
+          "Defending Running Into The Box": 4,
+          "Defensive Line Imbalance In Depth": 153,
+          "Defensive Line Imbalance In Width": 147,
+          "Marking Opponents Inside The Box": 689,
+          "Recovered Ball": 45
+        }
+      },
+      "defensive_organization": {
+        "line_discipline_issues": 300,
+        "defensive_height": 0.0,
+        "interpretation": "Deep defensive block - team defends close to own goal",
+        "width_focus": 99.4,
+        "interpretation_width": "Wide defensive block"
+      },
+      "pressing_intensity": {
+        "pressure_actions": 0,
+        "pressure_per_defensive_action": 0.0,
+        "interpretation": "Low pressing intensity"
+      },
+      "defensive_zones": {
+        "defensive_third": 722,
+        "middle_third": 0,
+        "attacking_third": 0,
+        "zone_distribution": {
+          "defensive_third": 100.0,
+          "middle_third": 0.0,
+          "attacking_third": 0.0
+        }
+      }
+    }
+  },
+  "tactical_summaries": {
+    "match_overview": "Chelsea FC 2 - 1 West Ham. Chelsea FC won the match with a balanced approach.",
+    "possession_summary": "Chelsea FC had 52.7% possession compared to West Ham's 47.3%, showing a balanced control of the ball.",
+    "passing_summary": "Chelsea FC completed 83.3% of their passes, while West Ham completed 70.3%. This indicates a significant difference in passing quality.",
+    "attack_patterns": {
+      "Chelsea FC": "Primary approach: Balanced. Utilized 64 counter-attacks and 1306 build-up sequences.",
+      "West Ham": "Primary approach: Balanced. Utilized 55 counter-attacks and 1312 build-up sequences."
+    },
+    "tactical_imbalances": {
+      "Chelsea FC": [
+        "Higher ratio indicates excess sideways passing lacking progression",
+        "Team generates shots efficiently from possession"
+      ],
+      "West Ham": [
+        "Team generates shots efficiently from possession"
+      ]
+    },
+    "successful_patterns": {
+      "Chelsea FC": "General play sequence",
+      "West Ham": "General play sequence"
+    }
+  },
+  "analysis_timestamp": "2025-03-28T14:22:41.287129"
+}

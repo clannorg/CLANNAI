@@ -1,0 +1,612 @@
+{
+  "$defs": {
+    "Event": {
+      "description": "Asset Event.",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "team_uuid": {
+          "title": "Team Uuid",
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Categories",
+          "type": "array"
+        },
+        "start_frame": {
+          "title": "Start Frame",
+          "type": "integer"
+        },
+        "end_frame": {
+          "title": "End Frame",
+          "type": "integer"
+        },
+        "metrics": {
+          "items": {
+            "$ref": "#/$defs/Metric"
+          },
+          "title": "Metrics",
+          "type": "array"
+        },
+        "player_roles": {
+          "items": {
+            "$ref": "#/$defs/PlayerRole"
+          },
+          "title": "Player Roles",
+          "type": "array"
+        }
+      },
+      "required": [
+        "type",
+        "id",
+        "team_uuid",
+        "categories",
+        "start_frame",
+        "end_frame",
+        "metrics",
+        "player_roles"
+      ],
+      "title": "Event",
+      "type": "object"
+    },
+    "FixtureEndType": {
+      "description": "Fixture end Types.",
+      "enum": [
+        "Normal Time",
+        "Extended Time",
+        "Golden Goal Rule",
+        "Penalty Shoot-Out"
+      ],
+      "title": "FixtureEndType",
+      "type": "string"
+    },
+    "FixtureMetadata": {
+      "description": "Fixture Metadata.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "number"
+        },
+        "home_team_score": {
+          "title": "Home Team Score",
+          "type": "integer"
+        },
+        "away_team_score": {
+          "title": "Away Team Score",
+          "type": "integer"
+        },
+        "date": {
+          "format": "date-time",
+          "title": "Date",
+          "type": "string"
+        },
+        "pitch_length": {
+          "title": "Pitch Length",
+          "type": "number"
+        },
+        "pitch_width": {
+          "title": "Pitch Width",
+          "type": "number"
+        },
+        "home_penalty_score": {
+          "title": "Home Penalty Score",
+          "type": "integer"
+        },
+        "away_penalty_score": {
+          "title": "Away Penalty Score",
+          "type": "integer"
+        },
+        "match_end_type": {
+          "$ref": "#/$defs/FixtureEndType"
+        },
+        "home_team": {
+          "$ref": "#/$defs/MetadataTeam"
+        },
+        "away_team": {
+          "$ref": "#/$defs/MetadataTeam"
+        },
+        "stage": {
+          "$ref": "#/$defs/MetadataStage"
+        },
+        "season": {
+          "$ref": "#/$defs/MetadataSeason"
+        },
+        "players": {
+          "items": {
+            "$ref": "#/$defs/MetadataPlayer"
+          },
+          "title": "Players",
+          "type": "array"
+        },
+        "venue": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataVenue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "home_coach": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataCoach"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "away_coach": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataCoach"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "uuid",
+        "name",
+        "duration",
+        "home_team_score",
+        "away_team_score",
+        "date",
+        "pitch_length",
+        "pitch_width",
+        "home_penalty_score",
+        "away_penalty_score",
+        "match_end_type",
+        "home_team",
+        "away_team",
+        "stage",
+        "season",
+        "players"
+      ],
+      "title": "FixtureMetadata",
+      "type": "object"
+    },
+    "MetadataCoach": {
+      "description": "Metadata Coach.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "MetadataCoach",
+      "type": "object"
+    },
+    "MetadataCompetition": {
+      "description": "Metadata Competition.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "country": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Country"
+        }
+      },
+      "required": [
+        "uuid",
+        "name"
+      ],
+      "title": "MetadataCompetition",
+      "type": "object"
+    },
+    "MetadataPlayer": {
+      "description": "Metadata Player.",
+      "properties": {
+        "position": {
+          "title": "Position",
+          "type": "string"
+        },
+        "side": {
+          "title": "Side",
+          "type": "string"
+        },
+        "jersey_number": {
+          "title": "Jersey Number",
+          "type": "integer"
+        },
+        "player_name": {
+          "title": "Player Name",
+          "type": "string"
+        },
+        "player_uuid": {
+          "title": "Player Uuid",
+          "type": "string"
+        },
+        "team_uuid": {
+          "title": "Team Uuid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "position",
+        "side",
+        "jersey_number",
+        "player_name",
+        "player_uuid",
+        "team_uuid"
+      ],
+      "title": "MetadataPlayer",
+      "type": "object"
+    },
+    "MetadataSeason": {
+      "description": "Metadata Season.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "year": {
+          "title": "Year",
+          "type": "integer"
+        },
+        "crosses_year": {
+          "title": "Crosses Year",
+          "type": "boolean"
+        },
+        "competition": {
+          "$ref": "#/$defs/MetadataCompetition"
+        }
+      },
+      "required": [
+        "uuid",
+        "name",
+        "year",
+        "crosses_year",
+        "competition"
+      ],
+      "title": "MetadataSeason",
+      "type": "object"
+    },
+    "MetadataStage": {
+      "description": "Metadata Stage.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "MetadataStage",
+      "type": "object"
+    },
+    "MetadataTeam": {
+      "description": "Metadata Team.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "abbreviation": {
+          "title": "Abbreviation",
+          "type": "string"
+        },
+        "country_code": {
+          "title": "Country Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "uuid",
+        "abbreviation",
+        "country_code"
+      ],
+      "title": "MetadataTeam",
+      "type": "object"
+    },
+    "MetadataVenue": {
+      "description": "Metadata Venue.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "country_code": {
+          "title": "Country Code",
+          "type": "string"
+        },
+        "city": {
+          "title": "City",
+          "type": "string"
+        }
+      },
+      "required": [
+        "uuid",
+        "name",
+        "country_code",
+        "city"
+      ],
+      "title": "MetadataVenue",
+      "type": "object"
+    },
+    "Metric": {
+      "description": "Metric.",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "items": {},
+          "title": "Value",
+          "type": "array"
+        },
+        "players": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Players",
+          "type": "array"
+        }
+      },
+      "required": [
+        "type",
+        "value",
+        "players"
+      ],
+      "title": "Metric",
+      "type": "object"
+    },
+    "PlayerRole": {
+      "description": "Player Role.",
+      "properties": {
+        "player_uuid": {
+          "title": "Player Uuid",
+          "type": "string"
+        },
+        "start_frame": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Start Frame"
+        },
+        "end_frame": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "End Frame"
+        },
+        "team_uuid": {
+          "title": "Team Uuid",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "player_uuid",
+        "start_frame",
+        "end_frame",
+        "team_uuid",
+        "type"
+      ],
+      "title": "PlayerRole",
+      "type": "object"
+    }
+  },
+  "description": "Tactical Data Asset.",
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "creation_time": {
+      "format": "date-time",
+      "title": "Creation Time",
+      "type": "string"
+    },
+    "metadata": {
+      "$ref": "#/$defs/FixtureMetadata"
+    },
+    "data": {
+      "items": {
+        "$ref": "#/$defs/Event"
+      },
+      "title": "Data",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "creation_time",
+    "metadata",
+    "data"
+  ],
+  "title": "TacticalDataAsset",
+  "type": "object",
+  "labels": {
+    "events": {
+      "E47": "Balance Of The Team",
+      "E70": "Balance Of The Team After Loss",
+      "E60": "Balance Of The Team After Recovery",
+      "E64": "Clear The Box",
+      "E06": "Commit Foul After Loss",
+      "E16": "Completed Backward Pass",
+      "E65": "Completed Forward Pass",
+      "E68": "Completed Horizontal Pass",
+      "E59": "Cross Into The Box",
+      "E46": "Defending Against The Possessor",
+      "E22": "Defending Moving Behind The Defensive Line",
+      "E04": "Defending Running Into The Box",
+      "E27": "Defensive Line Imbalance In Depth",
+      "E71": "Defensive Line Imbalance In Width",
+      "E07": "Finishing",
+      "E42": "Finishing Pass",
+      "E35": "Free Kick Shot Event",
+      "E05": "Goal Assist",
+      "E33": "Goal Chance",
+      "E21": "Goal Kick Start Long Inside Channels",
+      "E23": "Goal Kick Start Long Outside Channels",
+      "E63": "Goal Kick Start Short Inside Channels",
+      "E32": "Goal Kick Start Short Outside Channels",
+      "E53": "Hold After Loss",
+      "E17": "Identifying Passing Lines Under Pressure",
+      "E58": "Long Ball",
+      "E75": "Lost Ball",
+      "E18": "Marking Opponents Inside The Box",
+      "E34": "Moving Behind The Defensive Line",
+      "E12": "Moving Forward During Organized Pressure",
+      "E43": "Neutralizing Opponent Advantage Of Defensive Line Imbalance",
+      "E69": "Occupying Space In The Box",
+      "E55": "Overcoming Opponents With Vertical Passes",
+      "E29": "Pass Behind Defensive Line",
+      "E39": "Passing Between Lines",
+      "E52": "Possession After Recovery",
+      "E09": "Press After Loss",
+      "E31": "Pressure On The Ball Possessor",
+      "E13": "Progression After Recovery",
+      "E30": "Realized Emergency Support",
+      "E26": "Realized Finishing Support",
+      "E54": "Realized Horizontal Overcoming Support",
+      "E50": "Realized Striker Support",
+      "E72": "Realized Vertical Overcoming Support",
+      "E08": "Receive Foul After Recovery",
+      "E48": "Receiving Between Lines",
+      "E37": "Recovered Ball",
+      "E67": "Running Into The Box",
+      "E20": "Second Ball Defensive Winning After Cross",
+      "E14": "Second Ball Defensive Winning After Direct Play",
+      "E51": "Second Ball Defensive Winning After Finishing",
+      "E38": "Second Ball Defensive Winning After Set Piece",
+      "E15": "Second Ball Offensive Winning After Cross",
+      "E28": "Second Ball Offensive Winning After Finishing",
+      "E10": "Second Ball Offensive Winning After Set Piece",
+      "E73": "Space Between Defensive Line And Halfway Line",
+      "E56": "Switch Of Play",
+      "E02": "Taking Advantage Of Defensive Line Imbalances",
+      "E03": "Uncompleted Backward Pass",
+      "E44": "Uncompleted Forward Pass",
+      "E11": "Uncompleted Horizontal Pass",
+      "E01": "Width Of The Team",
+      "E25": "Width Of The Team Opposite Channel"
+    },
+    "metrics": {
+      "M04": "Attacker Advantage Ratio",
+      "M12": "Circle Area To Receivers Closest Opponent",
+      "M31": "Contact With The Ball Outcome",
+      "M32": "Cross Into The Box Outcome",
+      "M08": "Defending Against The Possessor Outcome",
+      "M05": "Defensive Line Imbalance Area Depth Percentage",
+      "M13": "Defensive Line Imbalance Width Gap Deviation",
+      "M30": "Defensive Line Mean Position Movement Location",
+      "M25": "Defensive Line Mean X Position Forward Movement",
+      "M36": "Defensive Line Median Position Change",
+      "M03": "Expected Goal",
+      "M23": "Finishing Location",
+      "M37": "Finishing Outcome",
+      "M19": "Goal Chance",
+      "M22": "Goal Kick Outcome",
+      "M06": "Instantaneous Distance To Closest Opponent",
+      "M10": "Mean Distance To Closest Opponent",
+      "M20": "Mean Team Vertical Distance To Halfway Line",
+      "M11": "Median Forward Movement Of Involved Players",
+      "M15": "Movement Length",
+      "M07": "Movement Mean Speed",
+      "M26": "Movement Start End Location",
+      "M34": "Number Non Possessing Attackers In DLI Area",
+      "M38": "Pass Initiation To Reception Pressure Change",
+      "M29": "Pass Length",
+      "M39": "Pass Mean Speed",
+      "M33": "Pass Number Overcome Opponents",
+      "M02": "Pass Start End Location",
+      "M09": "Passer Distance To Median Defensive Line At Pass Start",
+      "M17": "Possession Start End Location",
+      "M24": "Pressure On Passer At Pass Initiation",
+      "M18": "Reception Outcome",
+      "M14": "Recovery Outcome",
+      "M35": "Second Ball Outcome",
+      "M21": "Shot Distance To Goal",
+      "M28": "Success Or Failure",
+      "M16": "Support Location",
+      "M27": "Team Perimeter Pitch Width Percentage",
+      "M01": "Time Elapsed In Seconds"
+    },
+    "player_roles": {
+      "P01": "Attacker",
+      "P03": "Attacker Complementary",
+      "P02": "Defender"
+    }
+  }
+}

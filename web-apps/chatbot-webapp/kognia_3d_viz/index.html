@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Pitch Visualization</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="pitchCanvas"></canvas>
+    <div id="match-title">
+        <!-- Match title populated by script -->
+    </div>
+    <!--
+    <div id="legend">
+        <!-- Legend content will be populated by script.js -->
+    </div>
+    -->
+    <div id="view-controls">
+        <!-- Remove old select dropdown -->
+        <!-- 
+        <label for="view-select">View Data:</label>
+        <select id="view-select" name="view-select">
+            <option value="none" selected>None</option>
+            <option value="passes">Passes Only</option>
+            <option value="shots">Shots Only</option>
+            <option value="crosses">Crosses Only</option> 
+            <option value="all">All Passes & Shots</option> 
+        </select>
+        -->
+        <div id="options-list">
+            <p class="view-option" data-view="none">None</p>
+            <p class="view-option" data-view="passes">Passes</p>
+            <p class="view-option" data-view="shots_all">All Shots</p>
+            <p class="view-option" data-view="shots_on_target">On-Target Shots</p>
+            <!-- <p class="view-option" data-view="shots_goal">Goals</p> -->
+            <p class="view-option" data-view="crosses">Crosses</p>
+        </div>
+        <!-- Remove the 'All' option for now to simplify scroll selection -->
+    </div>
+
+    <!-- Chatbot Interface -->
+    <div id="chatbot-container">
+        <h2>Game Analyst Chat</h2>
+        <div id="chatbox">
+            <!-- Messages will appear here -->
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask about the game...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+    <!-- End Chatbot Interface -->
+
+    <!-- Import Three.js (use CDN for simplicity) -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

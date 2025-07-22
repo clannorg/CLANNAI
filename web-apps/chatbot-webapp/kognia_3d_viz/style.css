@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    font-family: sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+canvas#pitchCanvas {
+    display: block; /* Remove extra space below canvas */
+    width: 100vw;
+    height: 100vh;
+}
+
+#info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    z-index: 100; /* Ensure it's above the canvas */
+}
+
+#info h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#info label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+#match-title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Background will be removed by script */
+    color: white; /* Color will be set by script */
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent wrapping */
+    transition: background-color 0.3s, color 0.3s; /* Added for smooth color transition */
+}
+
+/* Legend styles are removed */
+
+/* Remove old controls styling */
+/*
+#controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+#controls label {
+    margin-right: 5px;
+}
+*/
+
+#view-controls {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    /* background-color: rgba(0, 0, 0, 0.7); */ /* REMOVE background */
+    color: white;
+    padding: 10px 5px; /* Adjust padding as needed */
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 14px; /* Slightly larger base font */
+    width: 120px; /* Wider for longer text */
+    height: 200px; /* Taller for more options */
+    overflow: hidden;
+    text-align: center;
+}
+
+#options-list {
+    /* This container will move */
+    transition: transform 0.3s ease-out; /* Smooth scrolling animation */
+    width: 100%; /* Take full width of parent */
+}
+
+.view-option {
+    /* padding: 4px 8px; */ /* Remove specific padding */
+    padding: 5px 0; /* Adjust padding for vertical spacing */
+    margin: 0; /* Remove default margin */
+    cursor: default;
+    border-radius: 3px;
+    transition: transform 0.3s ease-out, color 0.3s ease-out; /* Smooth transition */
+    transform-origin: center center;
+    color: #aaa; /* Dim non-active items */
+}
+
+.view-option.active-view {
+    /* background-color: #555; */ /* Remove background highlight */
+    color: #fff; /* White color for active */
+    font-weight: bold;
+    transform: scale(1.2); /* Make the active item larger */
+}
+
+/* Remove old control item styling */
+/*
+#view-controls > span {
+    margin-bottom: 5px;
+}
+
+.control-item {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.control-item:hover {
+    color: #aaa;
+}
+*/
+
+
+/* Chatbot Styles */
+#chatbot-container {
+    position: fixed; /* Or absolute, depending on layout */
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    max-height: 450px;
+    background-color: #333; /* Darker background to match theme */
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents content overflow */
+    font-family: sans-serif;
+    color: #fff; /* Default text color */
+    z-index: 101; /* Ensure it's above other UI elements */
+}
+
+#chatbot-container h2 {
+    background-color: #444; /* Darker header */
+    color: white;
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 1.1em;
+    border-top-left-radius: 7px; /* Match container border */
+    border-top-right-radius: 7px;
+    border-bottom: 1px solid #555;
+}
+
+#chatbox {
+    flex-grow: 1; /* Takes available space */
+    overflow-y: auto; /* Allows scrolling for messages */
+    padding: 15px;
+    background-color: #282828; /* Slightly lighter dark for chat area */
+    min-height: 100px; /* Ensure it has some height even when empty */
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 15px; /* More rounded bubbles */
+    max-width: 85%;
+    word-wrap: break-word; /* Prevent long words from overflowing */
+    font-size: 0.9em;
+}
+
+.user-message {
+    background-color: #00529B; /* Darker blue for user */
+    color: #fff;
+    margin-left: auto; /* Align to right */
+    text-align: left; /* Text aligned left within bubble */
+    border-bottom-right-radius: 5px; /* Slightly less rounded corner */
+}
+
+.bot-message {
+    background-color: #4a4a4a; /* Grey for bot */
+    color: #fff;
+    margin-right: auto; /* Align to left */
+    text-align: left;
+    border-bottom-left-radius: 5px; /* Slightly less rounded corner */
+}
+
+#chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #555;
+    background-color: #333;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 8px 10px;
+    border: 1px solid #666;
+    border-radius: 15px;
+    margin-right: 8px;
+    background-color: #555;
+    color: #fff;
+}
+
+#chat-input::placeholder {
+    color: #bbb;
+}
+
+#send-button {
+    padding: 8px 15px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#send-button:hover {
+    background-color: #45a049;
+}

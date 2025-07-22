@@ -1,0 +1,443 @@
+{
+  "$defs": {
+    "FixtureEndType": {
+      "description": "Fixture end Types.",
+      "enum": [
+        "Normal Time",
+        "Extended Time",
+        "Golden Goal Rule",
+        "Penalty Shoot-Out"
+      ],
+      "title": "FixtureEndType",
+      "type": "string"
+    },
+    "FixtureMetadata": {
+      "description": "Fixture Metadata.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "number"
+        },
+        "home_team_score": {
+          "title": "Home Team Score",
+          "type": "integer"
+        },
+        "away_team_score": {
+          "title": "Away Team Score",
+          "type": "integer"
+        },
+        "date": {
+          "format": "date-time",
+          "title": "Date",
+          "type": "string"
+        },
+        "pitch_length": {
+          "title": "Pitch Length",
+          "type": "number"
+        },
+        "pitch_width": {
+          "title": "Pitch Width",
+          "type": "number"
+        },
+        "home_penalty_score": {
+          "title": "Home Penalty Score",
+          "type": "integer"
+        },
+        "away_penalty_score": {
+          "title": "Away Penalty Score",
+          "type": "integer"
+        },
+        "match_end_type": {
+          "$ref": "#/$defs/FixtureEndType"
+        },
+        "home_team": {
+          "$ref": "#/$defs/MetadataTeam"
+        },
+        "away_team": {
+          "$ref": "#/$defs/MetadataTeam"
+        },
+        "stage": {
+          "$ref": "#/$defs/MetadataStage"
+        },
+        "season": {
+          "$ref": "#/$defs/MetadataSeason"
+        },
+        "players": {
+          "items": {
+            "$ref": "#/$defs/MetadataPlayer"
+          },
+          "title": "Players",
+          "type": "array"
+        },
+        "venue": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataVenue"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "home_coach": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataCoach"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "away_coach": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataCoach"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "uuid",
+        "name",
+        "duration",
+        "home_team_score",
+        "away_team_score",
+        "date",
+        "pitch_length",
+        "pitch_width",
+        "home_penalty_score",
+        "away_penalty_score",
+        "match_end_type",
+        "home_team",
+        "away_team",
+        "stage",
+        "season",
+        "players"
+      ],
+      "title": "FixtureMetadata",
+      "type": "object"
+    },
+    "MetadataCoach": {
+      "description": "Metadata Coach.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "MetadataCoach",
+      "type": "object"
+    },
+    "MetadataCompetition": {
+      "description": "Metadata Competition.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "country": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Country"
+        }
+      },
+      "required": [
+        "uuid",
+        "name"
+      ],
+      "title": "MetadataCompetition",
+      "type": "object"
+    },
+    "MetadataPlayer": {
+      "description": "Metadata Player.",
+      "properties": {
+        "position": {
+          "title": "Position",
+          "type": "string"
+        },
+        "side": {
+          "title": "Side",
+          "type": "string"
+        },
+        "jersey_number": {
+          "title": "Jersey Number",
+          "type": "integer"
+        },
+        "player_name": {
+          "title": "Player Name",
+          "type": "string"
+        },
+        "player_uuid": {
+          "title": "Player Uuid",
+          "type": "string"
+        },
+        "team_uuid": {
+          "title": "Team Uuid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "position",
+        "side",
+        "jersey_number",
+        "player_name",
+        "player_uuid",
+        "team_uuid"
+      ],
+      "title": "MetadataPlayer",
+      "type": "object"
+    },
+    "MetadataSeason": {
+      "description": "Metadata Season.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "year": {
+          "title": "Year",
+          "type": "integer"
+        },
+        "crosses_year": {
+          "title": "Crosses Year",
+          "type": "boolean"
+        },
+        "competition": {
+          "$ref": "#/$defs/MetadataCompetition"
+        }
+      },
+      "required": [
+        "uuid",
+        "name",
+        "year",
+        "crosses_year",
+        "competition"
+      ],
+      "title": "MetadataSeason",
+      "type": "object"
+    },
+    "MetadataStage": {
+      "description": "Metadata Stage.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "uuid"
+      ],
+      "title": "MetadataStage",
+      "type": "object"
+    },
+    "MetadataTeam": {
+      "description": "Metadata Team.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "abbreviation": {
+          "title": "Abbreviation",
+          "type": "string"
+        },
+        "country_code": {
+          "title": "Country Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "uuid",
+        "abbreviation",
+        "country_code"
+      ],
+      "title": "MetadataTeam",
+      "type": "object"
+    },
+    "MetadataVenue": {
+      "description": "Metadata Venue.",
+      "properties": {
+        "uuid": {
+          "title": "Uuid",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "country_code": {
+          "title": "Country Code",
+          "type": "string"
+        },
+        "city": {
+          "title": "City",
+          "type": "string"
+        }
+      },
+      "required": [
+        "uuid",
+        "name",
+        "country_code",
+        "city"
+      ],
+      "title": "MetadataVenue",
+      "type": "object"
+    },
+    "PhysicalMetric": {
+      "description": "Physical Metric.",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value",
+        "unit"
+      ],
+      "title": "PhysicalMetric",
+      "type": "object"
+    },
+    "PlayerPhysicalMetric": {
+      "description": "Player Physical Metric.",
+      "properties": {
+        "player_uuid": {
+          "title": "Player Uuid",
+          "type": "string"
+        },
+        "team_uuid": {
+          "title": "Team Uuid",
+          "type": "string"
+        },
+        "metrics": {
+          "items": {
+            "$ref": "#/$defs/PhysicalMetric"
+          },
+          "title": "Metrics",
+          "type": "array"
+        }
+      },
+      "required": [
+        "player_uuid",
+        "team_uuid",
+        "metrics"
+      ],
+      "title": "PlayerPhysicalMetric",
+      "type": "object"
+    }
+  },
+  "description": "Physical Data Asset.",
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "creation_time": {
+      "format": "date-time",
+      "title": "Creation Time",
+      "type": "string"
+    },
+    "metadata": {
+      "$ref": "#/$defs/FixtureMetadata"
+    },
+    "data": {
+      "items": {
+        "$ref": "#/$defs/PlayerPhysicalMetric"
+      },
+      "title": "Data",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "creation_time",
+    "metadata",
+    "data"
+  ],
+  "title": "PhysicalSummaryAsset",
+  "type": "object",
+  "labels": {
+    "PM07": "Player Counts Accelerating",
+    "PM08": "Player Counts Decelerating",
+    "PM06": "Player Counts High Speed Running",
+    "PM05": "Player Counts Jogging",
+    "PM02": "Player Counts Running",
+    "PM04": "Player Counts Sprinting",
+    "PM01": "Player Counts Standing",
+    "PM03": "Player Counts Walking",
+    "PM17": "Player Distance Accelerating",
+    "PM25": "Player Distance High Speed Running",
+    "PM15": "Player Distance Jogging",
+    "PM20": "Player Distance Running",
+    "PM22": "Player Distance Sprinting",
+    "PM11": "Player Distance Standing",
+    "PM14": "Player Distance Walking",
+    "PM13": "Player Time Accelerating",
+    "PM26": "Player Time Decelerating",
+    "PM10": "Player Time High Speed Running",
+    "PM21": "Player Time Jogging",
+    "PM23": "Player Time Played",
+    "PM16": "Player Time Running",
+    "PM24": "Player Time Sprinting",
+    "PM18": "Player Time Standing",
+    "PM19": "Player Time Walking",
+    "PM12": "Player Top Speed",
+    "PM09": "Player Total Distance"
+  }
+}
