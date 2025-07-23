@@ -1,0 +1,5 @@
+cd /Users/thomasbradley/CLANNAI/web-apps/web-app-clannai
+cd server && npm start
+
+cd /Users/thomasbradley/CLANNAI/web-apps/web-app-clannai
+cd client && npm start

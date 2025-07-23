@@ -1,6 +1,6 @@
 import api from './api';
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://api.clannai.com/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
 const sessionService = {
     getSessions: async () => {

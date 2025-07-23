@@ -1,0 +1,51 @@
+# Copy and paste these commands into terminal to run the ClannAI app
+
+# 1. Navigate to the project
+cd /Users/thomasbradley/CLANNAI/web-apps/web-app-clannai
+
+# 2. Create server .env file
+cat > server/.env << 'EOF'
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=clannai
+DB_PASSWORD=test
+DB_PORT=5432
+JWT_SECRET=test_secret_key_for_development
+AWS_REGION=us-east-1
+AWS_ACCESS_KEY_ID=test_access_key
+AWS_SECRET_ACCESS_KEY=test_secret_key
+STRIPE_SECRET_KEY=test_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=test_webhook_secret
+STRIPE_PRICE_ID=test_price_id
+CLIENT_URL=http://localhost:3000
+REACT_APP_CLIENT_URL=http://localhost:3000
+PORT=3001
+EOF
+
+# 3. Create client .env file
+cat > client/.env << 'EOF'
+REACT_APP_API_URL=http://localhost:3001
+REACT_APP_STRIPE_PUBLIC_KEY=test_stripe_public_key
+EOF
+
+# 4. Install dependencies
+cd server && npm install && cd ..
+cd client && npm install && cd ..
+
+# 5. Start backend server
+cd server && npm start &
+
+# 6. Wait 3 seconds
+sleep 3
+
+# 7. Start frontend
+cd client && npm start &
+
+# 8. Wait for servers to start
+sleep 10
+
+# 9. Check if running
+curl -s http://localhost:3001 > /dev/null && echo "✅ Backend running" || echo "❌ Backend not responding"
+curl -s http://localhost:3000 > /dev/null && echo "✅ Frontend running" || echo "❌ Frontend not responding"
+
+echo "App should be running at http://localhost:3000" 

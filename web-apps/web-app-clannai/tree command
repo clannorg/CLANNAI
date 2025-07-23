@@ -1,2 +1,83 @@
-tree -I 'node_modules|build|.git' -L 7
+# Commands to run the ClannAI web app from /Users/thomasbradley/CLANNAI/web-apps/web-app-clannai
+
+# 1. Navigate to the project directory
+cd /Users/thomasbradley/CLANNAI/web-apps/web-app-clannai
+
+# 2. Create environment files
+echo "Creating environment files..."
+
+# Create server .env file
+cat > server/.env << 'EOF'
+# Database Configuration
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=clannai
+DB_PASSWORD=test
+DB_PORT=5432
+
+# JWT Configuration
+JWT_SECRET=test_secret_key_for_development
+
+# AWS S3 Configuration
+AWS_REGION=us-east-1
+AWS_ACCESS_KEY_ID=test_access_key
+AWS_SECRET_ACCESS_KEY=test_secret_key
+
+# Stripe Configuration
+STRIPE_SECRET_KEY=test_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=test_webhook_secret
+STRIPE_PRICE_ID=test_price_id
+
+# Client URL
+CLIENT_URL=http://localhost:3000
+REACT_APP_CLIENT_URL=http://localhost:3000
+
+# Server Port
+PORT=3001
+EOF
+
+# Create client .env file
+cat > client/.env << 'EOF'
+# API Configuration
+REACT_APP_API_URL=http://localhost:3001
+
+# Stripe Configuration
+REACT_APP_STRIPE_PUBLIC_KEY=test_stripe_public_key
+EOF
+
+echo "✅ Environment files created"
+
+# 3. Install dependencies for both server and client
+echo "Installing server dependencies..."
+cd server && npm install && cd ..
+
+echo "Installing client dependencies..."
+cd client && npm install && cd ..
+
+# 4. Start the backend server (in background)
+echo "Starting backend server on port 3001..."
+cd server && npm start &
+
+# 5. Wait a moment for server to start
+sleep 3
+
+# 6. Start the frontend client (in background)
+echo "Starting frontend client on port 3000..."
+cd client && npm start &
+
+# 7. Wait for both servers to be ready
+sleep 10
+
+# 8. Check if servers are running
+echo "Checking server status..."
+curl -s http://localhost:3001 > /dev/null && echo "✅ Backend server running on http://localhost:3001" || echo "❌ Backend server not responding"
+curl -s http://localhost:3000 > /dev/null && echo "✅ Frontend client running on http://localhost:3000" || echo "❌ Frontend client not responding"
+
+echo ""
+echo "🎉 App should now be running!"
+echo "🌐 Frontend: http://localhost:3000"
+echo "🔧 Backend API: http://localhost:3001"
+echo ""
+echo "To stop the servers:"
+echo "pkill -f 'node src/index.js' && pkill -f 'react-scripts start'"
 
