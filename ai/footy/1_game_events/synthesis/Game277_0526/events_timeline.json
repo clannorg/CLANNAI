@@ -1,0 +1,3825 @@
+{
+  "match_info": {
+    "total_events": 421,
+    "total_clips": 701,
+    "synthesis_date": "2025-07-24T12:27:33.612727"
+  },
+  "statistics": {
+    "active_players": 6,
+    "active_player": 1,
+    "goalkick": 9,
+    "referee": 63,
+    "other": 4,
+    "kick": 3,
+    "turnover": 40,
+    "shot_on_target": 115,
+    "goalkeeper_saves": 86,
+    "foul": 32,
+    "free_kick": 15,
+    "goalkeeper_save": 14,
+    "corner_kick": 13,
+    "skills": 1,
+    "goal": 3,
+    "major_foul": 1,
+    "pass": 4,
+    "block": 2,
+    "referee_action": 2,
+    "substitution": 3,
+    "blocks": 1,
+    "turnovers": 1,
+    "kick_off": 1,
+    "right_goal": 1,
+    "total_events": 421
+  },
+  "events": [
+    {
+      "clip_number": 100,
+      "relative_time": 0.0,
+      "absolute_time": 100.0,
+      "event_text": "Two teams line up on opposite sides of the field. One team is wearing black and the other is wearing red.",
+      "formatted_time": "01:40.00",
+      "event_type": "active_players",
+      "event_number": 1
+    },
+    {
+      "clip_number": 100,
+      "relative_time": 13.0,
+      "absolute_time": 113.0,
+      "event_text": "Player in white kicks the ball towards the LEFT GOAL.",
+      "formatted_time": "01:53.00",
+      "event_type": "active_player",
+      "event_number": 2
+    },
+    {
+      "clip_number": 130,
+      "relative_time": 12.0,
+      "absolute_time": 142.0,
+      "event_text": "Goalkeeper in orange kicks the ball from the RIGHT GOAL.",
+      "formatted_time": "02:22.00",
+      "event_type": "goalkick",
+      "event_number": 3
+    },
+    {
+      "clip_number": 260,
+      "relative_time": 0.0,
+      "absolute_time": 260.0,
+      "event_text": "Referee is standing on the left side of the field.",
+      "formatted_time": "04:20.00",
+      "event_type": "referee",
+      "event_number": 4
+    },
+    {
+      "clip_number": 260,
+      "relative_time": 0.0,
+      "absolute_time": 260.0,
+      "event_text": "Active players are positioned on both sides of the field.",
+      "formatted_time": "04:20.00",
+      "event_type": "active_players",
+      "event_number": 5
+    },
+    {
+      "clip_number": 270,
+      "relative_time": 0.0,
+      "absolute_time": 270.0,
+      "event_text": "CORNER KICK awarded - Team in light blue shirts is preparing to take a corner kick at the LEFT GOAL. The referee is standing near the corner flag.",
+      "formatted_time": "04:30.00",
+      "event_type": "other",
+      "event_number": 6
+    },
+    {
+      "clip_number": 260,
+      "relative_time": 12.0,
+      "absolute_time": 272.0,
+      "event_text": "Active players are moving towards the RIGHT GOAL.",
+      "formatted_time": "04:32.00",
+      "event_type": "active_players",
+      "event_number": 7
+    },
+    {
+      "clip_number": 290,
+      "relative_time": 0.0,
+      "absolute_time": 290.0,
+      "event_text": "OFF - Player from the team in dark uniforms kicks the ball to start the game.",
+      "formatted_time": "04:50.00",
+      "event_type": "kick",
+      "event_number": 8
+    },
+    {
+      "clip_number": 290,
+      "relative_time": 5.0,
+      "absolute_time": 295.0,
+      "event_text": "Player in light blue gains possession.",
+      "formatted_time": "04:55.00",
+      "event_type": "turnover",
+      "event_number": 9
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 11.0,
+      "absolute_time": 351.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "05:51.00",
+      "event_type": "shot_on_target",
+      "event_number": 10
+    },
+    {
+      "clip_number": 340,
+      "relative_time": 11.0,
+      "absolute_time": 351.0,
+      "event_text": "Goalkeeper in black makes a save.",
+      "formatted_time": "05:51.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 11
+    },
+    {
+      "clip_number": 410,
+      "relative_time": 8.0,
+      "absolute_time": 418.0,
+      "event_text": "A player in black fouls a player in light blue. Referee is present and signals the foul.",
+      "formatted_time": "06:58.00",
+      "event_type": "foul",
+      "event_number": 12
+    },
+    {
+      "clip_number": 410,
+      "relative_time": 9.0,
+      "absolute_time": 419.0,
+      "event_text": "Free kick awarded to the light blue team at the LEFT GOAL.",
+      "formatted_time": "06:59.00",
+      "event_type": "free_kick",
+      "event_number": 13
+    },
+    {
+      "clip_number": 430,
+      "relative_time": 6.0,
+      "absolute_time": 436.0,
+      "event_text": "Referee signals with hand towards the LEFT GOAL.",
+      "formatted_time": "07:16.00",
+      "event_type": "referee",
+      "event_number": 14
+    },
+    {
+      "clip_number": 430,
+      "relative_time": 7.0,
+      "absolute_time": 437.0,
+      "event_text": "Player in light blue takes a goalkick from the LEFT GOAL.",
+      "formatted_time": "07:17.00",
+      "event_type": "goalkick",
+      "event_number": 15
+    },
+    {
+      "clip_number": 450,
+      "relative_time": 13.0,
+      "absolute_time": 463.0,
+      "event_text": "A player from the team in light blue takes a goal kick from the LEFT GOAL.",
+      "formatted_time": "07:43.00",
+      "event_type": "goalkick",
+      "event_number": 16
+    },
+    {
+      "clip_number": 460,
+      "relative_time": 7.0,
+      "absolute_time": 467.0,
+      "event_text": "Player in black gains possession.",
+      "formatted_time": "07:47.00",
+      "event_type": "turnover",
+      "event_number": 17
+    },
+    {
+      "clip_number": 460,
+      "relative_time": 13.0,
+      "absolute_time": 473.0,
+      "event_text": "Player in light blue gains possession.",
+      "formatted_time": "07:53.00",
+      "event_type": "turnover",
+      "event_number": 18
+    },
+    {
+      "clip_number": 470,
+      "relative_time": 6.0,
+      "absolute_time": 476.0,
+      "event_text": "Player in light blue shoots towards the LEFT GOAL.",
+      "formatted_time": "07:56.00",
+      "event_type": "shot_on_target",
+      "event_number": 19
+    },
+    {
+      "clip_number": 470,
+      "relative_time": 6.0,
+      "absolute_time": 476.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "07:56.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 20
+    },
+    {
+      "clip_number": 500,
+      "relative_time": 0.0,
+      "absolute_time": 500.0,
+      "event_text": "Player in light blue takes a shot on goal.",
+      "formatted_time": "08:20.00",
+      "event_type": "shot_on_target",
+      "event_number": 21
+    },
+    {
+      "clip_number": 500,
+      "relative_time": 0.0,
+      "absolute_time": 500.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "08:20.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 22
+    },
+    {
+      "clip_number": 500,
+      "relative_time": 0.0,
+      "absolute_time": 500.0,
+      "event_text": "Referee in red is present.",
+      "formatted_time": "08:20.00",
+      "event_type": "referee",
+      "event_number": 23
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 0.0,
+      "absolute_time": 510.0,
+      "event_text": "Free kick taken by a player in black, towards the LEFT GOAL.",
+      "formatted_time": "08:30.00",
+      "event_type": "free_kick",
+      "event_number": 24
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 1.0,
+      "absolute_time": 511.0,
+      "event_text": "Shot on target by a player in black.",
+      "formatted_time": "08:31.00",
+      "event_type": "shot_on_target",
+      "event_number": 25
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 1.0,
+      "absolute_time": 511.0,
+      "event_text": "Goalkeeper in light blue makes a save.",
+      "formatted_time": "08:31.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 26
+    },
+    {
+      "clip_number": 500,
+      "relative_time": 14.0,
+      "absolute_time": 514.0,
+      "event_text": "Corner kick awarded to the team in light blue.",
+      "formatted_time": "08:34.00",
+      "event_type": "corner_kick",
+      "event_number": 27
+    },
+    {
+      "clip_number": 520,
+      "relative_time": 0.0,
+      "absolute_time": 520.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "08:40.00",
+      "event_type": "shot_on_target",
+      "event_number": 28
+    },
+    {
+      "clip_number": 520,
+      "relative_time": 0.0,
+      "absolute_time": 520.0,
+      "event_text": "Goalkeeper in light blue makes a save.",
+      "formatted_time": "08:40.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 29
+    },
+    {
+      "clip_number": 510,
+      "relative_time": 11.0,
+      "absolute_time": 521.0,
+      "event_text": "Turnover, player in black gains possession.",
+      "formatted_time": "08:41.00",
+      "event_type": "turnover",
+      "event_number": 30
+    },
+    {
+      "clip_number": 520,
+      "relative_time": 12.0,
+      "absolute_time": 532.0,
+      "event_text": "Player in red gains possession.",
+      "formatted_time": "08:52.00",
+      "event_type": "turnover",
+      "event_number": 31
+    },
+    {
+      "clip_number": 560,
+      "relative_time": 13.0,
+      "absolute_time": 573.0,
+      "event_text": "Referee raises flag to indicate a corner kick for the team in light blue at the LEFT GOAL.",
+      "formatted_time": "09:33.00",
+      "event_type": "corner_kick",
+      "event_number": 32
+    },
+    {
+      "clip_number": 570,
+      "relative_time": 13.0,
+      "absolute_time": 583.0,
+      "event_text": "Referee raises arm to indicate a corner kick.",
+      "formatted_time": "09:43.00",
+      "event_type": "corner_kick",
+      "event_number": 33
+    },
+    {
+      "clip_number": 600,
+      "relative_time": 0.0,
+      "absolute_time": 600.0,
+      "event_text": "Player in black passes the ball to a player in light blue near the LEFT GOAL.",
+      "formatted_time": "10:00.00",
+      "event_type": "turnover",
+      "event_number": 34
+    },
+    {
+      "clip_number": 590,
+      "relative_time": 12.0,
+      "absolute_time": 602.0,
+      "event_text": "The referee raises his arm to signal a free kick.",
+      "formatted_time": "10:02.00",
+      "event_type": "referee",
+      "event_number": 35
+    },
+    {
+      "clip_number": 590,
+      "relative_time": 12.0,
+      "absolute_time": 602.0,
+      "event_text": "A foul occurs near the RIGHT GOAL.",
+      "formatted_time": "10:02.00",
+      "event_type": "foul",
+      "event_number": 36
+    },
+    {
+      "clip_number": 600,
+      "relative_time": 3.0,
+      "absolute_time": 603.0,
+      "event_text": "Player in light blue throws the ball in from the sideline.",
+      "formatted_time": "10:03.00",
+      "event_type": "turnover",
+      "event_number": 37
+    },
+    {
+      "clip_number": 600,
+      "relative_time": 8.0,
+      "absolute_time": 608.0,
+      "event_text": "Player in black passes the ball to a player in light blue.",
+      "formatted_time": "10:08.00",
+      "event_type": "turnover",
+      "event_number": 38
+    },
+    {
+      "clip_number": 640,
+      "relative_time": 0.0,
+      "absolute_time": 640.0,
+      "event_text": "Players are running down the field.",
+      "formatted_time": "10:40.00",
+      "event_type": "active_players",
+      "event_number": 39
+    },
+    {
+      "clip_number": 640,
+      "relative_time": 4.0,
+      "absolute_time": 644.0,
+      "event_text": "The referee is running down the field with the players.",
+      "formatted_time": "10:44.00",
+      "event_type": "active_players",
+      "event_number": 40
+    },
+    {
+      "clip_number": 640,
+      "relative_time": 14.0,
+      "absolute_time": 654.0,
+      "event_text": "Players are running towards the RIGHT GOAL.",
+      "formatted_time": "10:54.00",
+      "event_type": "active_players",
+      "event_number": 41
+    },
+    {
+      "clip_number": 680,
+      "relative_time": 0.0,
+      "absolute_time": 680.0,
+      "event_text": "Player from the team in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "11:20.00",
+      "event_type": "shot_on_target",
+      "event_number": 42
+    },
+    {
+      "clip_number": 680,
+      "relative_time": 1.0,
+      "absolute_time": 681.0,
+      "event_text": "Goalkeeper from the team in blue saves the shot at the RIGHT GOAL.",
+      "formatted_time": "11:21.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 43
+    },
+    {
+      "clip_number": 690,
+      "relative_time": 0.0,
+      "absolute_time": 690.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "11:30.00",
+      "event_type": "shot_on_target",
+      "event_number": 44
+    },
+    {
+      "clip_number": 690,
+      "relative_time": 1.0,
+      "absolute_time": 691.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "11:31.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 45
+    },
+    {
+      "clip_number": 690,
+      "relative_time": 12.0,
+      "absolute_time": 702.0,
+      "event_text": "Player in black gains possession.",
+      "formatted_time": "11:42.00",
+      "event_type": "turnover",
+      "event_number": 46
+    },
+    {
+      "clip_number": 700,
+      "relative_time": 14.0,
+      "absolute_time": 714.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "11:54.00",
+      "event_type": "shot_on_target",
+      "event_number": 47
+    },
+    {
+      "clip_number": 700,
+      "relative_time": 14.0,
+      "absolute_time": 714.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "11:54.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 48
+    },
+    {
+      "clip_number": 720,
+      "relative_time": 11.0,
+      "absolute_time": 731.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "12:11.00",
+      "event_type": "shot_on_target",
+      "event_number": 49
+    },
+    {
+      "clip_number": 720,
+      "relative_time": 11.0,
+      "absolute_time": 731.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "12:11.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 50
+    },
+    {
+      "clip_number": 780,
+      "relative_time": 11.0,
+      "absolute_time": 791.0,
+      "event_text": "Player in dark jersey takes a shot on the LEFT GOAL.",
+      "formatted_time": "13:11.00",
+      "event_type": "shot_on_target",
+      "event_number": 51
+    },
+    {
+      "clip_number": 780,
+      "relative_time": 12.0,
+      "absolute_time": 792.0,
+      "event_text": "Goalkeeper saves the shot on the LEFT GOAL.",
+      "formatted_time": "13:12.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 52
+    },
+    {
+      "clip_number": 810,
+      "relative_time": 13.0,
+      "absolute_time": 823.0,
+      "event_text": "Referee in red shirt is visible in the middle of the field.",
+      "formatted_time": "13:43.00",
+      "event_type": "referee",
+      "event_number": 53
+    },
+    {
+      "clip_number": 820,
+      "relative_time": 6.0,
+      "absolute_time": 826.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "13:46.00",
+      "event_type": "shot_on_target",
+      "event_number": 54
+    },
+    {
+      "clip_number": 820,
+      "relative_time": 7.0,
+      "absolute_time": 827.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "13:47.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 55
+    },
+    {
+      "clip_number": 830,
+      "relative_time": 5.0,
+      "absolute_time": 835.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "13:55.00",
+      "event_type": "shot_on_target",
+      "event_number": 56
+    },
+    {
+      "clip_number": 830,
+      "relative_time": 6.0,
+      "absolute_time": 836.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "13:56.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 57
+    },
+    {
+      "clip_number": 830,
+      "relative_time": 7.0,
+      "absolute_time": 837.0,
+      "event_text": "Player in light blue gains possession.",
+      "formatted_time": "13:57.00",
+      "event_type": "turnover",
+      "event_number": 58
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 0.0,
+      "absolute_time": 860.0,
+      "event_text": "A player from the light blue team takes a free kick towards the LEFT GOAL.",
+      "formatted_time": "14:20.00",
+      "event_type": "free_kick",
+      "event_number": 59
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 1.0,
+      "absolute_time": 861.0,
+      "event_text": "The free kick is blocked by the wall of players from the black team.",
+      "formatted_time": "14:21.00",
+      "event_type": "shot_on_target",
+      "event_number": 60
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 2.0,
+      "absolute_time": 862.0,
+      "event_text": "A player from the light blue team is fouled by a player from the black team. The referee, wearing a black uniform, signals the foul.",
+      "formatted_time": "14:22.00",
+      "event_type": "foul",
+      "event_number": 61
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 3.0,
+      "absolute_time": 863.0,
+      "event_text": "The light blue team takes another free kick towards the LEFT GOAL.",
+      "formatted_time": "14:23.00",
+      "event_type": "free_kick",
+      "event_number": 62
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 4.0,
+      "absolute_time": 864.0,
+      "event_text": "The free kick is blocked by the wall of players from the black team.",
+      "formatted_time": "14:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 63
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 5.0,
+      "absolute_time": 865.0,
+      "event_text": "A player from the light blue team is fouled by a player from the black team. The referee, wearing a black uniform, signals the foul.",
+      "formatted_time": "14:25.00",
+      "event_type": "foul",
+      "event_number": 64
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 6.0,
+      "absolute_time": 866.0,
+      "event_text": "The light blue team takes another free kick towards the LEFT GOAL.",
+      "formatted_time": "14:26.00",
+      "event_type": "free_kick",
+      "event_number": 65
+    },
+    {
+      "clip_number": 860,
+      "relative_time": 7.0,
+      "absolute_time": 867.0,
+      "event_text": "The free kick is blocked by the wall of players from the black team.",
+      "formatted_time": "14:27.00",
+      "event_type": "shot_on_target",
+      "event_number": 66
+    },
+    {
+      "clip_number": 870,
+      "relative_time": 1.0,
+      "absolute_time": 871.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "14:31.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 67
+    },
+    {
+      "clip_number": 960,
+      "relative_time": 13.0,
+      "absolute_time": 973.0,
+      "event_text": "Player in black takes a shot on goal at the LEFT GOAL.",
+      "formatted_time": "16:13.00",
+      "event_type": "shot_on_target",
+      "event_number": 68
+    },
+    {
+      "clip_number": 960,
+      "relative_time": 14.0,
+      "absolute_time": 974.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "16:14.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 69
+    },
+    {
+      "clip_number": 970,
+      "relative_time": 4.0,
+      "absolute_time": 974.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "16:14.00",
+      "event_type": "shot_on_target",
+      "event_number": 70
+    },
+    {
+      "clip_number": 970,
+      "relative_time": 4.0,
+      "absolute_time": 974.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "16:14.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 71
+    },
+    {
+      "clip_number": 1000,
+      "relative_time": 7.0,
+      "absolute_time": 1007.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "16:47.00",
+      "event_type": "shot_on_target",
+      "event_number": 72
+    },
+    {
+      "clip_number": 1000,
+      "relative_time": 7.0,
+      "absolute_time": 1007.0,
+      "event_text": "Goalkeeper in orange makes a save at the LEFT GOAL.",
+      "formatted_time": "16:47.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 73
+    },
+    {
+      "clip_number": 1020,
+      "relative_time": 9.0,
+      "absolute_time": 1029.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "17:09.00",
+      "event_type": "shot_on_target",
+      "event_number": 74
+    },
+    {
+      "clip_number": 1020,
+      "relative_time": 9.0,
+      "absolute_time": 1029.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "17:09.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 75
+    },
+    {
+      "clip_number": 1020,
+      "relative_time": 13.0,
+      "absolute_time": 1033.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "17:13.00",
+      "event_type": "shot_on_target",
+      "event_number": 76
+    },
+    {
+      "clip_number": 1020,
+      "relative_time": 13.0,
+      "absolute_time": 1033.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "17:13.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 77
+    },
+    {
+      "clip_number": 1090,
+      "relative_time": 14.0,
+      "absolute_time": 1104.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "18:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 78
+    },
+    {
+      "clip_number": 1090,
+      "relative_time": 14.0,
+      "absolute_time": 1104.0,
+      "event_text": "Goalkeeper in light blue makes a save at the LEFT GOAL.",
+      "formatted_time": "18:24.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 79
+    },
+    {
+      "clip_number": 1130,
+      "relative_time": 8.0,
+      "absolute_time": 1138.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL, saved by the goalkeeper.",
+      "formatted_time": "18:58.00",
+      "event_type": "shot_on_target",
+      "event_number": 80
+    },
+    {
+      "clip_number": 1140,
+      "relative_time": 5.0,
+      "absolute_time": 1145.0,
+      "event_text": "Player in black is fouled by player in light blue.",
+      "formatted_time": "19:05.00",
+      "event_type": "foul",
+      "event_number": 81
+    },
+    {
+      "clip_number": 1140,
+      "relative_time": 6.0,
+      "absolute_time": 1146.0,
+      "event_text": "Referee is present and signals the foul.",
+      "formatted_time": "19:06.00",
+      "event_type": "referee",
+      "event_number": 82
+    },
+    {
+      "clip_number": 1140,
+      "relative_time": 11.0,
+      "absolute_time": 1151.0,
+      "event_text": "Player in black is fouled by player in light blue.",
+      "formatted_time": "19:11.00",
+      "event_type": "foul",
+      "event_number": 83
+    },
+    {
+      "clip_number": 1150,
+      "relative_time": 9.0,
+      "absolute_time": 1159.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "19:19.00",
+      "event_type": "shot_on_target",
+      "event_number": 84
+    },
+    {
+      "clip_number": 1150,
+      "relative_time": 9.0,
+      "absolute_time": 1159.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "19:19.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 85
+    },
+    {
+      "clip_number": 1160,
+      "relative_time": 2.0,
+      "absolute_time": 1162.0,
+      "event_text": "A player in a light blue jersey is fouled by a player in a dark jersey.",
+      "formatted_time": "19:22.00",
+      "event_type": "foul",
+      "event_number": 86
+    },
+    {
+      "clip_number": 1160,
+      "relative_time": 13.0,
+      "absolute_time": 1173.0,
+      "event_text": "The referee, wearing a red shirt, raises his hand to signal a foul.",
+      "formatted_time": "19:33.00",
+      "event_type": "referee",
+      "event_number": 87
+    },
+    {
+      "clip_number": 1170,
+      "relative_time": 3.0,
+      "absolute_time": 1173.0,
+      "event_text": "Player in light blue shirt commits a foul on a player in black shirt. Referee in red raises his hand to signal the foul.",
+      "formatted_time": "19:33.00",
+      "event_type": "foul",
+      "event_number": 88
+    },
+    {
+      "clip_number": 1170,
+      "relative_time": 3.0,
+      "absolute_time": 1173.0,
+      "event_text": "Free kick awarded to the team in black shirts.",
+      "formatted_time": "19:33.00",
+      "event_type": "free_kick",
+      "event_number": 89
+    },
+    {
+      "clip_number": 1170,
+      "relative_time": 4.0,
+      "absolute_time": 1174.0,
+      "event_text": "Referee in red shirt is seen pointing towards the direction of the free kick.",
+      "formatted_time": "19:34.00",
+      "event_type": "referee",
+      "event_number": 90
+    },
+    {
+      "clip_number": 1180,
+      "relative_time": 10.0,
+      "absolute_time": 1190.0,
+      "event_text": "Player in light blue shirt commits a foul on another player near the LEFT GOAL. Referee is present and signals the foul.",
+      "formatted_time": "19:50.00",
+      "event_type": "foul",
+      "event_number": 91
+    },
+    {
+      "clip_number": 1200,
+      "relative_time": 0.0,
+      "absolute_time": 1200.0,
+      "event_text": "A player in a light blue jersey is down on the ground near the LEFT GOAL. The referee, wearing a red shirt, is standing nearby.",
+      "formatted_time": "20:00.00",
+      "event_type": "foul",
+      "event_number": 92
+    },
+    {
+      "clip_number": 1230,
+      "relative_time": 10.0,
+      "absolute_time": 1240.0,
+      "event_text": "Player in black dribbles towards the RIGHT GOAL and takes a shot.",
+      "formatted_time": "20:40.00",
+      "event_type": "shot_on_target",
+      "event_number": 93
+    },
+    {
+      "clip_number": 1230,
+      "relative_time": 10.0,
+      "absolute_time": 1240.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "20:40.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 94
+    },
+    {
+      "clip_number": 1260,
+      "relative_time": 8.0,
+      "absolute_time": 1268.0,
+      "event_text": "Player in black performs a bicycle kick.",
+      "formatted_time": "21:08.00",
+      "event_type": "skills",
+      "event_number": 95
+    },
+    {
+      "clip_number": 1260,
+      "relative_time": 10.0,
+      "absolute_time": 1270.0,
+      "event_text": "Player in black loses possession.",
+      "formatted_time": "21:10.00",
+      "event_type": "turnover",
+      "event_number": 96
+    },
+    {
+      "clip_number": 1290,
+      "relative_time": 12.0,
+      "absolute_time": 1302.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "21:42.00",
+      "event_type": "shot_on_target",
+      "event_number": 97
+    },
+    {
+      "clip_number": 1290,
+      "relative_time": 13.0,
+      "absolute_time": 1303.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "21:43.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 98
+    },
+    {
+      "clip_number": 1320,
+      "relative_time": 6.0,
+      "absolute_time": 1326.0,
+      "event_text": "Player in light blue takes a shot on the LEFT GOAL.",
+      "formatted_time": "22:06.00",
+      "event_type": "shot_on_target",
+      "event_number": 99
+    },
+    {
+      "clip_number": 1320,
+      "relative_time": 6.0,
+      "absolute_time": 1326.0,
+      "event_text": "Goalkeeper in orange saves the shot on the LEFT GOAL.",
+      "formatted_time": "22:06.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 100
+    },
+    {
+      "clip_number": 1390,
+      "relative_time": 14.0,
+      "absolute_time": 1404.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "23:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 101
+    },
+    {
+      "clip_number": 1390,
+      "relative_time": 14.0,
+      "absolute_time": 1404.0,
+      "event_text": "Goalkeeper in light blue makes a save.",
+      "formatted_time": "23:24.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 102
+    },
+    {
+      "clip_number": 1400,
+      "relative_time": 7.0,
+      "absolute_time": 1407.0,
+      "event_text": "Player in light blue takes a shot on goal.",
+      "formatted_time": "23:27.00",
+      "event_type": "shot_on_target",
+      "event_number": 103
+    },
+    {
+      "clip_number": 1400,
+      "relative_time": 7.0,
+      "absolute_time": 1407.0,
+      "event_text": "Goalkeeper saves the shot. The event occurred at the LEFT GOAL.",
+      "formatted_time": "23:27.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 104
+    },
+    {
+      "clip_number": 1410,
+      "relative_time": 5.0,
+      "absolute_time": 1415.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "23:35.00",
+      "event_type": "shot_on_target",
+      "event_number": 105
+    },
+    {
+      "clip_number": 1410,
+      "relative_time": 6.0,
+      "absolute_time": 1416.0,
+      "event_text": "Goalkeeper saves the shot at the LEFT GOAL.",
+      "formatted_time": "23:36.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 106
+    },
+    {
+      "clip_number": 1410,
+      "relative_time": 7.0,
+      "absolute_time": 1417.0,
+      "event_text": "Referee runs towards the play.",
+      "formatted_time": "23:37.00",
+      "event_type": "referee",
+      "event_number": 107
+    },
+    {
+      "clip_number": 1430,
+      "relative_time": 7.0,
+      "absolute_time": 1437.0,
+      "event_text": "A player from the light blue team scores a goal at the LEFT GOAL.",
+      "formatted_time": "23:57.00",
+      "event_type": "goal",
+      "event_number": 108
+    },
+    {
+      "clip_number": 1490,
+      "relative_time": 0.0,
+      "absolute_time": 1490.0,
+      "event_text": "Player from the black team takes a shot on goal at the LEFT GOAL.",
+      "formatted_time": "24:50.00",
+      "event_type": "shot_on_target",
+      "event_number": 109
+    },
+    {
+      "clip_number": 1490,
+      "relative_time": 1.0,
+      "absolute_time": 1491.0,
+      "event_text": "The goalkeeper from the orange team saves the shot at the LEFT GOAL.",
+      "formatted_time": "24:51.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 110
+    },
+    {
+      "clip_number": 1500,
+      "relative_time": 0.0,
+      "absolute_time": 1500.0,
+      "event_text": "Player in black team gains possession from player in light blue team.",
+      "formatted_time": "25:00.00",
+      "event_type": "turnover",
+      "event_number": 111
+    },
+    {
+      "clip_number": 1490,
+      "relative_time": 13.0,
+      "absolute_time": 1503.0,
+      "event_text": "The referee is looking at his watch.",
+      "formatted_time": "25:03.00",
+      "event_type": "referee",
+      "event_number": 112
+    },
+    {
+      "clip_number": 1500,
+      "relative_time": 3.0,
+      "absolute_time": 1503.0,
+      "event_text": "Player in black team shoots towards the LEFT GOAL.",
+      "formatted_time": "25:03.00",
+      "event_type": "shot_on_target",
+      "event_number": 113
+    },
+    {
+      "clip_number": 1500,
+      "relative_time": 3.0,
+      "absolute_time": 1503.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "25:03.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 114
+    },
+    {
+      "clip_number": 1500,
+      "relative_time": 4.0,
+      "absolute_time": 1504.0,
+      "event_text": "Referee is present on the sideline, observing the play.",
+      "formatted_time": "25:04.00",
+      "event_type": "referee",
+      "event_number": 115
+    },
+    {
+      "clip_number": 1550,
+      "relative_time": 12.0,
+      "absolute_time": 1562.0,
+      "event_text": "Player in light blue is fouled by a player in black. The referee in red is present and signals the foul.",
+      "formatted_time": "26:02.00",
+      "event_type": "foul",
+      "event_number": 116
+    },
+    {
+      "clip_number": 1550,
+      "relative_time": 13.0,
+      "absolute_time": 1563.0,
+      "event_text": "Free kick awarded to the light blue team.",
+      "formatted_time": "26:03.00",
+      "event_type": "free_kick",
+      "event_number": 117
+    },
+    {
+      "clip_number": 1570,
+      "relative_time": 11.0,
+      "absolute_time": 1581.0,
+      "event_text": "The referee, wearing a red shirt, raises his arm to signal a free kick.",
+      "formatted_time": "26:21.00",
+      "event_type": "referee",
+      "event_number": 118
+    },
+    {
+      "clip_number": 1570,
+      "relative_time": 13.0,
+      "absolute_time": 1583.0,
+      "event_text": "A player in a black jersey commits a foul on a player in a light blue jersey near the center circle.",
+      "formatted_time": "26:23.00",
+      "event_type": "major_foul",
+      "event_number": 119
+    },
+    {
+      "clip_number": 1580,
+      "relative_time": 7.0,
+      "absolute_time": 1587.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "26:27.00",
+      "event_type": "shot_on_target",
+      "event_number": 120
+    },
+    {
+      "clip_number": 1580,
+      "relative_time": 8.0,
+      "absolute_time": 1588.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "26:28.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 121
+    },
+    {
+      "clip_number": 1610,
+      "relative_time": 13.0,
+      "absolute_time": 1623.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL, goalkeeper in orange dives and makes a save.",
+      "formatted_time": "27:03.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 122
+    },
+    {
+      "clip_number": 1620,
+      "relative_time": 10.0,
+      "absolute_time": 1630.0,
+      "event_text": "Referee in red jogs along the sideline.",
+      "formatted_time": "27:10.00",
+      "event_type": "referee",
+      "event_number": 123
+    },
+    {
+      "clip_number": 1670,
+      "relative_time": 9.0,
+      "absolute_time": 1679.0,
+      "event_text": "Player in black tackles player in light blue, resulting in a turnover.",
+      "formatted_time": "27:59.00",
+      "event_type": "turnover",
+      "event_number": 124
+    },
+    {
+      "clip_number": 1670,
+      "relative_time": 11.0,
+      "absolute_time": 1681.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "28:01.00",
+      "event_type": "shot_on_target",
+      "event_number": 125
+    },
+    {
+      "clip_number": 1670,
+      "relative_time": 11.0,
+      "absolute_time": 1681.0,
+      "event_text": "Goalkeeper in light blue saves the shot at the RIGHT GOAL.",
+      "formatted_time": "28:01.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 126
+    },
+    {
+      "clip_number": 1730,
+      "relative_time": 0.0,
+      "absolute_time": 1730.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "28:50.00",
+      "event_type": "shot_on_target",
+      "event_number": 127
+    },
+    {
+      "clip_number": 1730,
+      "relative_time": 1.0,
+      "absolute_time": 1731.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "28:51.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 128
+    },
+    {
+      "clip_number": 1780,
+      "relative_time": 0.0,
+      "absolute_time": 1780.0,
+      "event_text": "A player in a light blue jersey is fouled by a player in a dark jersey.",
+      "formatted_time": "29:40.00",
+      "event_type": "foul",
+      "event_number": 129
+    },
+    {
+      "clip_number": 1770,
+      "relative_time": 12.0,
+      "absolute_time": 1782.0,
+      "event_text": "Referee in red shirt raises his arms to signal a free kick.",
+      "formatted_time": "29:42.00",
+      "event_type": "referee",
+      "event_number": 130
+    },
+    {
+      "clip_number": 1780,
+      "relative_time": 7.0,
+      "absolute_time": 1787.0,
+      "event_text": "The referee, wearing a red shirt, enters the frame.",
+      "formatted_time": "29:47.00",
+      "event_type": "referee",
+      "event_number": 131
+    },
+    {
+      "clip_number": 1800,
+      "relative_time": 11.0,
+      "absolute_time": 1811.0,
+      "event_text": "Referee in red enters the frame on the left sideline.",
+      "formatted_time": "30:11.00",
+      "event_type": "referee",
+      "event_number": 132
+    },
+    {
+      "clip_number": 1830,
+      "relative_time": 3.0,
+      "absolute_time": 1833.0,
+      "event_text": "Player in black commits a foul. Referee raises flag.",
+      "formatted_time": "30:33.00",
+      "event_type": "foul",
+      "event_number": 133
+    },
+    {
+      "clip_number": 1840,
+      "relative_time": 0.0,
+      "absolute_time": 1840.0,
+      "event_text": "A player in a light blue jersey throws the ball in from the sideline.",
+      "formatted_time": "30:40.00",
+      "event_type": "turnover",
+      "event_number": 134
+    },
+    {
+      "clip_number": 1840,
+      "relative_time": 4.0,
+      "absolute_time": 1844.0,
+      "event_text": "A player in a black jersey gains possession of the ball.",
+      "formatted_time": "30:44.00",
+      "event_type": "turnover",
+      "event_number": 135
+    },
+    {
+      "clip_number": 1840,
+      "relative_time": 10.0,
+      "absolute_time": 1850.0,
+      "event_text": "A player in a black jersey gains possession of the ball.",
+      "formatted_time": "30:50.00",
+      "event_type": "turnover",
+      "event_number": 136
+    },
+    {
+      "clip_number": 1840,
+      "relative_time": 11.0,
+      "absolute_time": 1851.0,
+      "event_text": "The referee, wearing a red shirt, is running up the field.",
+      "formatted_time": "30:51.00",
+      "event_type": "referee",
+      "event_number": 137
+    },
+    {
+      "clip_number": 1900,
+      "relative_time": 6.0,
+      "absolute_time": 1906.0,
+      "event_text": "Goalkeeper in orange makes a save from a shot on target. RIGHT GOAL",
+      "formatted_time": "31:46.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 138
+    },
+    {
+      "clip_number": 1960,
+      "relative_time": 10.0,
+      "absolute_time": 1970.0,
+      "event_text": "The referee, wearing black, raises his arm.",
+      "formatted_time": "32:50.00",
+      "event_type": "referee",
+      "event_number": 139
+    },
+    {
+      "clip_number": 1960,
+      "relative_time": 12.0,
+      "absolute_time": 1972.0,
+      "event_text": "A player from the team in black takes a goal kick from the RIGHT GOAL.",
+      "formatted_time": "32:52.00",
+      "event_type": "goalkick",
+      "event_number": 140
+    },
+    {
+      "clip_number": 2010,
+      "relative_time": 10.0,
+      "absolute_time": 2020.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "33:40.00",
+      "event_type": "shot_on_target",
+      "event_number": 141
+    },
+    {
+      "clip_number": 2010,
+      "relative_time": 11.0,
+      "absolute_time": 2021.0,
+      "event_text": "Referee in red is observing the play.",
+      "formatted_time": "33:41.00",
+      "event_type": "referee",
+      "event_number": 142
+    },
+    {
+      "clip_number": 2010,
+      "relative_time": 14.0,
+      "absolute_time": 2024.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "33:44.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 143
+    },
+    {
+      "clip_number": 2030,
+      "relative_time": 10.0,
+      "absolute_time": 2040.0,
+      "event_text": "A player in a light blue jersey loses possession after being tackled by a player in a black jersey.",
+      "formatted_time": "34:00.00",
+      "event_type": "turnover",
+      "event_number": 144
+    },
+    {
+      "clip_number": 2030,
+      "relative_time": 11.0,
+      "absolute_time": 2041.0,
+      "event_text": "A player in a black jersey commits a foul on a player in a light blue jersey. The referee is present.",
+      "formatted_time": "34:01.00",
+      "event_type": "foul",
+      "event_number": 145
+    },
+    {
+      "clip_number": 2220,
+      "relative_time": 9.0,
+      "absolute_time": 2229.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "37:09.00",
+      "event_type": "shot_on_target",
+      "event_number": 146
+    },
+    {
+      "clip_number": 2220,
+      "relative_time": 10.0,
+      "absolute_time": 2230.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "37:10.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 147
+    },
+    {
+      "clip_number": 2230,
+      "relative_time": 0.0,
+      "absolute_time": 2230.0,
+      "event_text": "Tackle - Player in black tackles player in light blue near the LEFT GOAL.",
+      "formatted_time": "37:10.00",
+      "event_type": "other",
+      "event_number": 148
+    },
+    {
+      "clip_number": 2230,
+      "relative_time": 12.0,
+      "absolute_time": 2242.0,
+      "event_text": "Turnover - Player in light blue gains possession.",
+      "formatted_time": "37:22.00",
+      "event_type": "other",
+      "event_number": 149
+    },
+    {
+      "clip_number": 2340,
+      "relative_time": 12.0,
+      "absolute_time": 2352.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "39:12.00",
+      "event_type": "shot_on_target",
+      "event_number": 150
+    },
+    {
+      "clip_number": 2340,
+      "relative_time": 13.0,
+      "absolute_time": 2353.0,
+      "event_text": "Goalkeeper in black makes a save at the RIGHT GOAL.",
+      "formatted_time": "39:13.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 151
+    },
+    {
+      "clip_number": 2390,
+      "relative_time": 9.0,
+      "absolute_time": 2399.0,
+      "event_text": "Referee in red enters the field of play.",
+      "formatted_time": "39:59.00",
+      "event_type": "referee",
+      "event_number": 152
+    },
+    {
+      "clip_number": 2400,
+      "relative_time": 9.0,
+      "absolute_time": 2409.0,
+      "event_text": "The referee raises his arm, possibly signaling a foul or offside.",
+      "formatted_time": "40:09.00",
+      "event_type": "referee",
+      "event_number": 153
+    },
+    {
+      "clip_number": 2530,
+      "relative_time": 10.0,
+      "absolute_time": 2540.0,
+      "event_text": "Referee signals with hand gesture.",
+      "formatted_time": "42:20.00",
+      "event_type": "referee",
+      "event_number": 154
+    },
+    {
+      "clip_number": 2550,
+      "relative_time": 0.0,
+      "absolute_time": 2550.0,
+      "event_text": "Player from the team in black takes a shot on the LEFT GOAL.",
+      "formatted_time": "42:30.00",
+      "event_type": "shot_on_target",
+      "event_number": 155
+    },
+    {
+      "clip_number": 2550,
+      "relative_time": 1.0,
+      "absolute_time": 2551.0,
+      "event_text": "Goalkeeper from the team in light blue saves the shot on the LEFT GOAL.",
+      "formatted_time": "42:31.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 156
+    },
+    {
+      "clip_number": 2560,
+      "relative_time": 0.0,
+      "absolute_time": 2560.0,
+      "event_text": "Player from the team in light blue takes a shot on goal.",
+      "formatted_time": "42:40.00",
+      "event_type": "shot_on_target",
+      "event_number": 157
+    },
+    {
+      "clip_number": 2560,
+      "relative_time": 1.0,
+      "absolute_time": 2561.0,
+      "event_text": "Goalkeeper from the team in black makes a save. The shot was taken at the LEFT GOAL.",
+      "formatted_time": "42:41.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 158
+    },
+    {
+      "clip_number": 2550,
+      "relative_time": 13.0,
+      "absolute_time": 2563.0,
+      "event_text": "The referee is seen walking towards the players near the LEFT GOAL.",
+      "formatted_time": "42:43.00",
+      "event_type": "referee",
+      "event_number": 159
+    },
+    {
+      "clip_number": 2560,
+      "relative_time": 14.0,
+      "absolute_time": 2574.0,
+      "event_text": "Referee is seen raising his arm.",
+      "formatted_time": "42:54.00",
+      "event_type": "referee",
+      "event_number": 160
+    },
+    {
+      "clip_number": 2580,
+      "relative_time": 7.0,
+      "absolute_time": 2587.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "43:07.00",
+      "event_type": "shot_on_target",
+      "event_number": 161
+    },
+    {
+      "clip_number": 2580,
+      "relative_time": 7.0,
+      "absolute_time": 2587.0,
+      "event_text": "Goalkeeper in light blue makes a save.",
+      "formatted_time": "43:07.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 162
+    },
+    {
+      "clip_number": 2580,
+      "relative_time": 12.0,
+      "absolute_time": 2592.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "43:12.00",
+      "event_type": "shot_on_target",
+      "event_number": 163
+    },
+    {
+      "clip_number": 2580,
+      "relative_time": 12.0,
+      "absolute_time": 2592.0,
+      "event_text": "Goalkeeper in light blue makes a save.",
+      "formatted_time": "43:12.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 164
+    },
+    {
+      "clip_number": 2610,
+      "relative_time": 11.0,
+      "absolute_time": 2621.0,
+      "event_text": "Player in white takes a shot on goal.",
+      "formatted_time": "43:41.00",
+      "event_type": "shot_on_target",
+      "event_number": 165
+    },
+    {
+      "clip_number": 2610,
+      "relative_time": 12.0,
+      "absolute_time": 2622.0,
+      "event_text": "Goalkeeper makes a save. RIGHT GOAL",
+      "formatted_time": "43:42.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 166
+    },
+    {
+      "clip_number": 2620,
+      "relative_time": 4.0,
+      "absolute_time": 2624.0,
+      "event_text": "Player in white is fouled by player in black, resulting in a fall.",
+      "formatted_time": "43:44.00",
+      "event_type": "foul",
+      "event_number": 167
+    },
+    {
+      "clip_number": 2620,
+      "relative_time": 7.0,
+      "absolute_time": 2627.0,
+      "event_text": "Referee signals with hand up.",
+      "formatted_time": "43:47.00",
+      "event_type": "referee",
+      "event_number": 168
+    },
+    {
+      "clip_number": 2620,
+      "relative_time": 8.0,
+      "absolute_time": 2628.0,
+      "event_text": "Player in white is fouled by player in black, resulting in a fall.",
+      "formatted_time": "43:48.00",
+      "event_type": "foul",
+      "event_number": 169
+    },
+    {
+      "clip_number": 2620,
+      "relative_time": 10.0,
+      "absolute_time": 2630.0,
+      "event_text": "Player in white loses possession to player in black.",
+      "formatted_time": "43:50.00",
+      "event_type": "turnover",
+      "event_number": 170
+    },
+    {
+      "clip_number": 2640,
+      "relative_time": 6.0,
+      "absolute_time": 2646.0,
+      "event_text": "Player in light blue is fouled.",
+      "formatted_time": "44:06.00",
+      "event_type": "foul",
+      "event_number": 171
+    },
+    {
+      "clip_number": 2640,
+      "relative_time": 6.0,
+      "absolute_time": 2646.0,
+      "event_text": "Referee signals a foul with hand gestures.",
+      "formatted_time": "44:06.00",
+      "event_type": "referee",
+      "event_number": 172
+    },
+    {
+      "clip_number": 2640,
+      "relative_time": 10.0,
+      "absolute_time": 2650.0,
+      "event_text": "Player in light blue prepares to take a free kick.",
+      "formatted_time": "44:10.00",
+      "event_type": "free_kick",
+      "event_number": 173
+    },
+    {
+      "clip_number": 2650,
+      "relative_time": 0.0,
+      "absolute_time": 2650.0,
+      "event_text": "Referee in red signals with his arm.",
+      "formatted_time": "44:10.00",
+      "event_type": "referee",
+      "event_number": 174
+    },
+    {
+      "clip_number": 2650,
+      "relative_time": 10.0,
+      "absolute_time": 2660.0,
+      "event_text": "Player in black gains possession from player in light blue.",
+      "formatted_time": "44:20.00",
+      "event_type": "turnover",
+      "event_number": 175
+    },
+    {
+      "clip_number": 2670,
+      "relative_time": 0.0,
+      "absolute_time": 2670.0,
+      "event_text": "Player in light blue kicks the ball from the sideline.",
+      "formatted_time": "44:30.00",
+      "event_type": "kick",
+      "event_number": 176
+    },
+    {
+      "clip_number": 2670,
+      "relative_time": 3.0,
+      "absolute_time": 2673.0,
+      "event_text": "Player in light blue passes the ball to another player.",
+      "formatted_time": "44:33.00",
+      "event_type": "pass",
+      "event_number": 177
+    },
+    {
+      "clip_number": 2670,
+      "relative_time": 14.0,
+      "absolute_time": 2684.0,
+      "event_text": "Player in light blue passes the ball to another player.",
+      "formatted_time": "44:44.00",
+      "event_type": "pass",
+      "event_number": 178
+    },
+    {
+      "clip_number": 2680,
+      "relative_time": 13.0,
+      "absolute_time": 2693.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "44:53.00",
+      "event_type": "shot_on_target",
+      "event_number": 179
+    },
+    {
+      "clip_number": 2680,
+      "relative_time": 13.0,
+      "absolute_time": 2693.0,
+      "event_text": "Goalkeeper in red makes a save at the LEFT GOAL.",
+      "formatted_time": "44:53.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 180
+    },
+    {
+      "clip_number": 2690,
+      "relative_time": 3.0,
+      "absolute_time": 2693.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL, goalkeeper saves.",
+      "formatted_time": "44:53.00",
+      "event_type": "shot_on_target",
+      "event_number": 181
+    },
+    {
+      "clip_number": 2700,
+      "relative_time": 8.0,
+      "absolute_time": 2708.0,
+      "event_text": "Referee signals a foul with a raised arm.",
+      "formatted_time": "45:08.00",
+      "event_type": "foul",
+      "event_number": 182
+    },
+    {
+      "clip_number": 2700,
+      "relative_time": 9.0,
+      "absolute_time": 2709.0,
+      "event_text": "A free kick is awarded to a player in the light blue team.",
+      "formatted_time": "45:09.00",
+      "event_type": "free_kick",
+      "event_number": 183
+    },
+    {
+      "clip_number": 2710,
+      "relative_time": 0.0,
+      "absolute_time": 2710.0,
+      "event_text": "The referee is visible on the sideline, raising his arm.",
+      "formatted_time": "45:10.00",
+      "event_type": "referee",
+      "event_number": 184
+    },
+    {
+      "clip_number": 2710,
+      "relative_time": 13.0,
+      "absolute_time": 2723.0,
+      "event_text": "A player in a light blue jersey takes a shot on goal at the RIGHT GOAL.",
+      "formatted_time": "45:23.00",
+      "event_type": "shot_on_target",
+      "event_number": 185
+    },
+    {
+      "clip_number": 2710,
+      "relative_time": 14.0,
+      "absolute_time": 2724.0,
+      "event_text": "The goalkeeper makes a save, preventing a goal at the RIGHT GOAL.",
+      "formatted_time": "45:24.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 186
+    },
+    {
+      "clip_number": 2720,
+      "relative_time": 11.0,
+      "absolute_time": 2731.0,
+      "event_text": "Corner kick awarded to the team in light blue at the LEFT GOAL. Referee signals with hand.",
+      "formatted_time": "45:31.00",
+      "event_type": "corner_kick",
+      "event_number": 187
+    },
+    {
+      "clip_number": 2750,
+      "relative_time": 0.0,
+      "absolute_time": 2750.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "45:50.00",
+      "event_type": "shot_on_target",
+      "event_number": 188
+    },
+    {
+      "clip_number": 2750,
+      "relative_time": 1.0,
+      "absolute_time": 2751.0,
+      "event_text": "Goalkeeper in orange makes a save at the LEFT GOAL.",
+      "formatted_time": "45:51.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 189
+    },
+    {
+      "clip_number": 2750,
+      "relative_time": 10.0,
+      "absolute_time": 2760.0,
+      "event_text": "Player in black gains possession.",
+      "formatted_time": "46:00.00",
+      "event_type": "turnover",
+      "event_number": 190
+    },
+    {
+      "clip_number": 2750,
+      "relative_time": 11.0,
+      "absolute_time": 2761.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "46:01.00",
+      "event_type": "shot_on_target",
+      "event_number": 191
+    },
+    {
+      "clip_number": 2750,
+      "relative_time": 12.0,
+      "absolute_time": 2762.0,
+      "event_text": "Player in light blue blocks the shot at the LEFT GOAL.",
+      "formatted_time": "46:02.00",
+      "event_type": "block",
+      "event_number": 192
+    },
+    {
+      "clip_number": 2810,
+      "relative_time": 9.0,
+      "absolute_time": 2819.0,
+      "event_text": "Player in black takes a shot on goal.",
+      "formatted_time": "46:59.00",
+      "event_type": "shot_on_target",
+      "event_number": 193
+    },
+    {
+      "clip_number": 2810,
+      "relative_time": 10.0,
+      "absolute_time": 2820.0,
+      "event_text": "Goalkeeper in orange saves the shot. RIGHT GOAL",
+      "formatted_time": "47:00.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 194
+    },
+    {
+      "clip_number": 2910,
+      "relative_time": 12.0,
+      "absolute_time": 2922.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "48:42.00",
+      "event_type": "shot_on_target",
+      "event_number": 195
+    },
+    {
+      "clip_number": 2910,
+      "relative_time": 12.0,
+      "absolute_time": 2922.0,
+      "event_text": "Goalkeeper in orange makes a save on the ground at the RIGHT GOAL.",
+      "formatted_time": "48:42.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 196
+    },
+    {
+      "clip_number": 2920,
+      "relative_time": 2.0,
+      "absolute_time": 2922.0,
+      "event_text": "Player in light blue is fouled by player in dark kit.",
+      "formatted_time": "48:42.00",
+      "event_type": "foul",
+      "event_number": 197
+    },
+    {
+      "clip_number": 2920,
+      "relative_time": 3.0,
+      "absolute_time": 2923.0,
+      "event_text": "Referee is pointing to the location of the foul.",
+      "formatted_time": "48:43.00",
+      "event_type": "referee",
+      "event_number": 198
+    },
+    {
+      "clip_number": 2920,
+      "relative_time": 13.0,
+      "absolute_time": 2933.0,
+      "event_text": "Player in dark kit wins the ball.",
+      "formatted_time": "48:53.00",
+      "event_type": "turnover",
+      "event_number": 199
+    },
+    {
+      "clip_number": 2960,
+      "relative_time": 13.0,
+      "absolute_time": 2973.0,
+      "event_text": "Referee signals a foul with a raised arm.",
+      "formatted_time": "49:33.00",
+      "event_type": "foul",
+      "event_number": 200
+    },
+    {
+      "clip_number": 2970,
+      "relative_time": 3.0,
+      "absolute_time": 2973.0,
+      "event_text": "Referee raises his hand to signal a decision.",
+      "formatted_time": "49:33.00",
+      "event_type": "referee",
+      "event_number": 201
+    },
+    {
+      "clip_number": 2960,
+      "relative_time": 14.0,
+      "absolute_time": 2974.0,
+      "event_text": "A free kick is awarded.",
+      "formatted_time": "49:34.00",
+      "event_type": "free_kick",
+      "event_number": 202
+    },
+    {
+      "clip_number": 2970,
+      "relative_time": 6.0,
+      "absolute_time": 2976.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "49:36.00",
+      "event_type": "shot_on_target",
+      "event_number": 203
+    },
+    {
+      "clip_number": 2970,
+      "relative_time": 7.0,
+      "absolute_time": 2977.0,
+      "event_text": "Goalkeeper in orange makes a save at the LEFT GOAL.",
+      "formatted_time": "49:37.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 204
+    },
+    {
+      "clip_number": 3000,
+      "relative_time": 14.0,
+      "absolute_time": 3014.0,
+      "event_text": "Player in black jersey gains possession and dribbles towards the LEFT GOAL.",
+      "formatted_time": "50:14.00",
+      "event_type": "turnover",
+      "event_number": 205
+    },
+    {
+      "clip_number": 3060,
+      "relative_time": 9.0,
+      "absolute_time": 3069.0,
+      "event_text": "Goalkeeper kicks the ball from the LEFT GOAL.",
+      "formatted_time": "51:09.00",
+      "event_type": "goalkick",
+      "event_number": 206
+    },
+    {
+      "clip_number": 3080,
+      "relative_time": 7.0,
+      "absolute_time": 3087.0,
+      "event_text": "Referee signals with hand gesture.",
+      "formatted_time": "51:27.00",
+      "event_type": "referee",
+      "event_number": 207
+    },
+    {
+      "clip_number": 3080,
+      "relative_time": 13.0,
+      "absolute_time": 3093.0,
+      "event_text": "Referee signals with hand gesture.",
+      "formatted_time": "51:33.00",
+      "event_type": "referee",
+      "event_number": 208
+    },
+    {
+      "clip_number": 3090,
+      "relative_time": 4.0,
+      "absolute_time": 3094.0,
+      "event_text": "Referee in red raises his arm to signal a free kick.",
+      "formatted_time": "51:34.00",
+      "event_type": "referee_action",
+      "event_number": 209
+    },
+    {
+      "clip_number": 3090,
+      "relative_time": 11.0,
+      "absolute_time": 3101.0,
+      "event_text": "Player in black wins possession from player in light blue.",
+      "formatted_time": "51:41.00",
+      "event_type": "turnover",
+      "event_number": 210
+    },
+    {
+      "clip_number": 3170,
+      "relative_time": 11.0,
+      "absolute_time": 3181.0,
+      "event_text": "Players from the team in black and gold are being substituted on the left side of the field.",
+      "formatted_time": "53:01.00",
+      "event_type": "substitution",
+      "event_number": 211
+    },
+    {
+      "clip_number": 3250,
+      "relative_time": 5.0,
+      "absolute_time": 3255.0,
+      "event_text": "Player in blue shoots the ball towards the LEFT GOAL.",
+      "formatted_time": "54:15.00",
+      "event_type": "shot_on_target",
+      "event_number": 212
+    },
+    {
+      "clip_number": 3250,
+      "relative_time": 6.0,
+      "absolute_time": 3256.0,
+      "event_text": "Goalkeeper in blue saves the shot at the LEFT GOAL.",
+      "formatted_time": "54:16.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 213
+    },
+    {
+      "clip_number": 3290,
+      "relative_time": 6.0,
+      "absolute_time": 3296.0,
+      "event_text": "Player in blue shoots the ball towards the LEFT GOAL.",
+      "formatted_time": "54:56.00",
+      "event_type": "shot_on_target",
+      "event_number": 214
+    },
+    {
+      "clip_number": 3290,
+      "relative_time": 6.0,
+      "absolute_time": 3296.0,
+      "event_text": "Goalkeeper in grey saves the shot at the LEFT GOAL.",
+      "formatted_time": "54:56.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 215
+    },
+    {
+      "clip_number": 3300,
+      "relative_time": 4.0,
+      "absolute_time": 3304.0,
+      "event_text": "Player in white shoots the ball towards the LEFT GOAL.",
+      "formatted_time": "55:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 216
+    },
+    {
+      "clip_number": 3300,
+      "relative_time": 6.0,
+      "absolute_time": 3306.0,
+      "event_text": "Goalkeeper in blue makes a save at the LEFT GOAL.",
+      "formatted_time": "55:06.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 217
+    },
+    {
+      "clip_number": 3300,
+      "relative_time": 9.0,
+      "absolute_time": 3309.0,
+      "event_text": "Player in white shoots the ball towards the LEFT GOAL.",
+      "formatted_time": "55:09.00",
+      "event_type": "shot_on_target",
+      "event_number": 218
+    },
+    {
+      "clip_number": 3300,
+      "relative_time": 10.0,
+      "absolute_time": 3310.0,
+      "event_text": "Player in blue blocks the shot at the LEFT GOAL.",
+      "formatted_time": "55:10.00",
+      "event_type": "blocks",
+      "event_number": 219
+    },
+    {
+      "clip_number": 3640,
+      "relative_time": 7.0,
+      "absolute_time": 3647.0,
+      "event_text": "Player in blue shoots the ball towards the RIGHT GOAL.",
+      "formatted_time": "60:47.00",
+      "event_type": "shot_on_target",
+      "event_number": 220
+    },
+    {
+      "clip_number": 3640,
+      "relative_time": 11.0,
+      "absolute_time": 3651.0,
+      "event_text": "Player in blue shoots the ball towards the RIGHT GOAL.",
+      "formatted_time": "60:51.00",
+      "event_type": "shot_on_target",
+      "event_number": 221
+    },
+    {
+      "clip_number": 3920,
+      "relative_time": 12.0,
+      "absolute_time": 3932.0,
+      "event_text": "Player in light blue takes a shot on goal - Shot is MISSED - LEFT GOAL",
+      "formatted_time": "65:32.00",
+      "event_type": "shot_on_target",
+      "event_number": 222
+    },
+    {
+      "clip_number": 3930,
+      "relative_time": 14.0,
+      "absolute_time": 3944.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "65:44.00",
+      "event_type": "shot_on_target",
+      "event_number": 223
+    },
+    {
+      "clip_number": 4090,
+      "relative_time": 5.0,
+      "absolute_time": 4095.0,
+      "event_text": "Player in light blue shoots towards the LEFT GOAL, saved by the goalkeeper.",
+      "formatted_time": "68:15.00",
+      "event_type": "shot_on_target",
+      "event_number": 224
+    },
+    {
+      "clip_number": 4090,
+      "relative_time": 14.0,
+      "absolute_time": 4104.0,
+      "event_text": "Player in light blue shoots towards the LEFT GOAL, missed.",
+      "formatted_time": "68:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 225
+    },
+    {
+      "clip_number": 4190,
+      "relative_time": 13.0,
+      "absolute_time": 4203.0,
+      "event_text": "Referee signals with a hand gesture.",
+      "formatted_time": "70:03.00",
+      "event_type": "referee",
+      "event_number": 226
+    },
+    {
+      "clip_number": 4260,
+      "relative_time": 10.0,
+      "absolute_time": 4270.0,
+      "event_text": "Referee in fluorescent yellow runs towards the center circle.",
+      "formatted_time": "71:10.00",
+      "event_type": "referee",
+      "event_number": 227
+    },
+    {
+      "clip_number": 4270,
+      "relative_time": 6.0,
+      "absolute_time": 4276.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "71:16.00",
+      "event_type": "shot_on_target",
+      "event_number": 228
+    },
+    {
+      "clip_number": 4270,
+      "relative_time": 7.0,
+      "absolute_time": 4277.0,
+      "event_text": "Goalkeeper saves the shot at the LEFT GOAL.",
+      "formatted_time": "71:17.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 229
+    },
+    {
+      "clip_number": 4280,
+      "relative_time": 6.0,
+      "absolute_time": 4286.0,
+      "event_text": "Player in light blue is fouled by a player in black.",
+      "formatted_time": "71:26.00",
+      "event_type": "foul",
+      "event_number": 230
+    },
+    {
+      "clip_number": 4280,
+      "relative_time": 7.0,
+      "absolute_time": 4287.0,
+      "event_text": "Referee raises his arm to signal the foul.",
+      "formatted_time": "71:27.00",
+      "event_type": "referee",
+      "event_number": 231
+    },
+    {
+      "clip_number": 4280,
+      "relative_time": 7.0,
+      "absolute_time": 4287.0,
+      "event_text": "Free kick awarded to the light blue team. The free kick is taken.",
+      "formatted_time": "71:27.00",
+      "event_type": "free_kick",
+      "event_number": 232
+    },
+    {
+      "clip_number": 4280,
+      "relative_time": 8.0,
+      "absolute_time": 4288.0,
+      "event_text": "The ball is turned over to the black team.",
+      "formatted_time": "71:28.00",
+      "event_type": "turnover",
+      "event_number": 233
+    },
+    {
+      "clip_number": 4280,
+      "relative_time": 12.0,
+      "absolute_time": 4292.0,
+      "event_text": "Player in light blue is fouled by a player in black.",
+      "formatted_time": "71:32.00",
+      "event_type": "foul",
+      "event_number": 234
+    },
+    {
+      "clip_number": 4280,
+      "relative_time": 13.0,
+      "absolute_time": 4293.0,
+      "event_text": "Referee raises his arm to signal the foul.",
+      "formatted_time": "71:33.00",
+      "event_type": "referee",
+      "event_number": 235
+    },
+    {
+      "clip_number": 4280,
+      "relative_time": 13.0,
+      "absolute_time": 4293.0,
+      "event_text": "Free kick awarded to the light blue team.",
+      "formatted_time": "71:33.00",
+      "event_type": "free_kick",
+      "event_number": 236
+    },
+    {
+      "clip_number": 4290,
+      "relative_time": 3.0,
+      "absolute_time": 4293.0,
+      "event_text": "Player in light blue is fouled by player in black.",
+      "formatted_time": "71:33.00",
+      "event_type": "foul",
+      "event_number": 237
+    },
+    {
+      "clip_number": 4290,
+      "relative_time": 4.0,
+      "absolute_time": 4294.0,
+      "event_text": "Referee signals a foul with his hand.",
+      "formatted_time": "71:34.00",
+      "event_type": "referee",
+      "event_number": 238
+    },
+    {
+      "clip_number": 4290,
+      "relative_time": 13.0,
+      "absolute_time": 4303.0,
+      "event_text": "Player in black gains possession.",
+      "formatted_time": "71:43.00",
+      "event_type": "turnover",
+      "event_number": 239
+    },
+    {
+      "clip_number": 4370,
+      "relative_time": 0.0,
+      "absolute_time": 4370.0,
+      "event_text": "Goalkeeper kicks the ball from the LEFT GOAL.",
+      "formatted_time": "72:50.00",
+      "event_type": "goalkick",
+      "event_number": 240
+    },
+    {
+      "clip_number": 4370,
+      "relative_time": 13.0,
+      "absolute_time": 4383.0,
+      "event_text": "Player in black wins possession.",
+      "formatted_time": "73:03.00",
+      "event_type": "turnover",
+      "event_number": 241
+    },
+    {
+      "clip_number": 4390,
+      "relative_time": 13.0,
+      "absolute_time": 4403.0,
+      "event_text": "Player in black jersey #18 scores a goal at the LEFT GOAL.",
+      "formatted_time": "73:23.00",
+      "event_type": "goal",
+      "event_number": 242
+    },
+    {
+      "clip_number": 4410,
+      "relative_time": 7.0,
+      "absolute_time": 4417.0,
+      "event_text": "Player in black commits a foul on a player in light blue.",
+      "formatted_time": "73:37.00",
+      "event_type": "foul",
+      "event_number": 243
+    },
+    {
+      "clip_number": 4410,
+      "relative_time": 8.0,
+      "absolute_time": 4418.0,
+      "event_text": "Referee signals a foul with a hand gesture.",
+      "formatted_time": "73:38.00",
+      "event_type": "referee",
+      "event_number": 244
+    },
+    {
+      "clip_number": 4410,
+      "relative_time": 8.0,
+      "absolute_time": 4418.0,
+      "event_text": "Free kick awarded to the light blue team.",
+      "formatted_time": "73:38.00",
+      "event_type": "free_kick",
+      "event_number": 245
+    },
+    {
+      "clip_number": 4440,
+      "relative_time": 4.0,
+      "absolute_time": 4444.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "74:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 246
+    },
+    {
+      "clip_number": 4440,
+      "relative_time": 4.0,
+      "absolute_time": 4444.0,
+      "event_text": "Goalkeeper in light blue makes a save.",
+      "formatted_time": "74:04.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 247
+    },
+    {
+      "clip_number": 4440,
+      "relative_time": 4.0,
+      "absolute_time": 4444.0,
+      "event_text": "The referee is present and observes the play.",
+      "formatted_time": "74:04.00",
+      "event_type": "referee",
+      "event_number": 248
+    },
+    {
+      "clip_number": 4480,
+      "relative_time": 1.0,
+      "absolute_time": 4481.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "74:41.00",
+      "event_type": "shot_on_target",
+      "event_number": 249
+    },
+    {
+      "clip_number": 4480,
+      "relative_time": 2.0,
+      "absolute_time": 4482.0,
+      "event_text": "Goalkeeper in light blue makes a save at the LEFT GOAL.",
+      "formatted_time": "74:42.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 250
+    },
+    {
+      "clip_number": 4480,
+      "relative_time": 9.0,
+      "absolute_time": 4489.0,
+      "event_text": "Player in black gains possession.",
+      "formatted_time": "74:49.00",
+      "event_type": "turnover",
+      "event_number": 251
+    },
+    {
+      "clip_number": 4480,
+      "relative_time": 10.0,
+      "absolute_time": 4490.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "74:50.00",
+      "event_type": "shot_on_target",
+      "event_number": 252
+    },
+    {
+      "clip_number": 4480,
+      "relative_time": 11.0,
+      "absolute_time": 4491.0,
+      "event_text": "Goalkeeper in light blue makes a save at the LEFT GOAL.",
+      "formatted_time": "74:51.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 253
+    },
+    {
+      "clip_number": 4500,
+      "relative_time": 0.0,
+      "absolute_time": 4500.0,
+      "event_text": "Goalkeeper kicks the ball from the LEFT GOAL.",
+      "formatted_time": "75:00.00",
+      "event_type": "goalkick",
+      "event_number": 254
+    },
+    {
+      "clip_number": 4500,
+      "relative_time": 11.0,
+      "absolute_time": 4511.0,
+      "event_text": "Player in black passes to a player in white, resulting in a turnover.",
+      "formatted_time": "75:11.00",
+      "event_type": "turnover",
+      "event_number": 255
+    },
+    {
+      "clip_number": 4570,
+      "relative_time": 11.0,
+      "absolute_time": 4581.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL, the goalkeeper dives to save the shot.",
+      "formatted_time": "76:21.00",
+      "event_type": "shot_on_target",
+      "event_number": 256
+    },
+    {
+      "clip_number": 4580,
+      "relative_time": 1.0,
+      "absolute_time": 4581.0,
+      "event_text": "Player in black loses possession after a sliding tackle by a player in light blue.",
+      "formatted_time": "76:21.00",
+      "event_type": "turnover",
+      "event_number": 257
+    },
+    {
+      "clip_number": 4570,
+      "relative_time": 12.0,
+      "absolute_time": 4582.0,
+      "event_text": "Goalkeeper saves the shot.",
+      "formatted_time": "76:22.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 258
+    },
+    {
+      "clip_number": 4580,
+      "relative_time": 12.0,
+      "absolute_time": 4592.0,
+      "event_text": "Player in light blue loses possession after a tackle by a player in black.",
+      "formatted_time": "76:32.00",
+      "event_type": "turnover",
+      "event_number": 259
+    },
+    {
+      "clip_number": 4680,
+      "relative_time": 8.0,
+      "absolute_time": 4688.0,
+      "event_text": "Referee in red shirt enters the field of play.",
+      "formatted_time": "78:08.00",
+      "event_type": "referee",
+      "event_number": 260
+    },
+    {
+      "clip_number": 4740,
+      "relative_time": 8.0,
+      "absolute_time": 4748.0,
+      "event_text": "Goalkeeper in orange makes a save from a shot on target. RIGHT GOAL",
+      "formatted_time": "79:08.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 261
+    },
+    {
+      "clip_number": 4750,
+      "relative_time": 8.0,
+      "absolute_time": 4758.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "79:18.00",
+      "event_type": "shot_on_target",
+      "event_number": 262
+    },
+    {
+      "clip_number": 4750,
+      "relative_time": 9.0,
+      "absolute_time": 4759.0,
+      "event_text": "Goalkeeper saves the shot on the RIGHT GOAL.",
+      "formatted_time": "79:19.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 263
+    },
+    {
+      "clip_number": 4790,
+      "relative_time": 5.0,
+      "absolute_time": 4795.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "79:55.00",
+      "event_type": "shot_on_target",
+      "event_number": 264
+    },
+    {
+      "clip_number": 4790,
+      "relative_time": 6.0,
+      "absolute_time": 4796.0,
+      "event_text": "Goalkeeper in black makes a save at the RIGHT GOAL.",
+      "formatted_time": "79:56.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 265
+    },
+    {
+      "clip_number": 4810,
+      "relative_time": 12.0,
+      "absolute_time": 4822.0,
+      "event_text": "Corner kick awarded to the team in light blue at the LEFT GOAL.",
+      "formatted_time": "80:22.00",
+      "event_type": "corner_kick",
+      "event_number": 266
+    },
+    {
+      "clip_number": 4870,
+      "relative_time": 13.0,
+      "absolute_time": 4883.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "81:23.00",
+      "event_type": "shot_on_target",
+      "event_number": 267
+    },
+    {
+      "clip_number": 4870,
+      "relative_time": 13.0,
+      "absolute_time": 4883.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "81:23.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 268
+    },
+    {
+      "clip_number": 4890,
+      "relative_time": 8.0,
+      "absolute_time": 4898.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "81:38.00",
+      "event_type": "shot_on_target",
+      "event_number": 269
+    },
+    {
+      "clip_number": 4890,
+      "relative_time": 10.0,
+      "absolute_time": 4900.0,
+      "event_text": "Goalkeeper in light blue makes a save at the LEFT GOAL.",
+      "formatted_time": "81:40.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 270
+    },
+    {
+      "clip_number": 4900,
+      "relative_time": 5.0,
+      "absolute_time": 4905.0,
+      "event_text": "The referee, wearing red, runs down the right side of the field.",
+      "formatted_time": "81:45.00",
+      "event_type": "referee",
+      "event_number": 271
+    },
+    {
+      "clip_number": 4900,
+      "relative_time": 7.0,
+      "absolute_time": 4907.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "81:47.00",
+      "event_type": "shot_on_target",
+      "event_number": 272
+    },
+    {
+      "clip_number": 4900,
+      "relative_time": 8.0,
+      "absolute_time": 4908.0,
+      "event_text": "Goalkeeper in blue makes a save at the LEFT GOAL.",
+      "formatted_time": "81:48.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 273
+    },
+    {
+      "clip_number": 4930,
+      "relative_time": 13.0,
+      "absolute_time": 4943.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "82:23.00",
+      "event_type": "shot_on_target",
+      "event_number": 274
+    },
+    {
+      "clip_number": 4930,
+      "relative_time": 14.0,
+      "absolute_time": 4944.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "82:24.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 275
+    },
+    {
+      "clip_number": 5100,
+      "relative_time": 14.0,
+      "absolute_time": 5114.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "85:14.00",
+      "event_type": "shot_on_target",
+      "event_number": 276
+    },
+    {
+      "clip_number": 5100,
+      "relative_time": 14.0,
+      "absolute_time": 5114.0,
+      "event_text": "Goalkeeper in red saves the shot at the RIGHT GOAL.",
+      "formatted_time": "85:14.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 277
+    },
+    {
+      "clip_number": 5120,
+      "relative_time": 10.0,
+      "absolute_time": 5130.0,
+      "event_text": "Referee is observing the game.",
+      "formatted_time": "85:30.00",
+      "event_type": "referee",
+      "event_number": 278
+    },
+    {
+      "clip_number": 5170,
+      "relative_time": 10.0,
+      "absolute_time": 5180.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "86:20.00",
+      "event_type": "shot_on_target",
+      "event_number": 279
+    },
+    {
+      "clip_number": 5170,
+      "relative_time": 11.0,
+      "absolute_time": 5181.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "86:21.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 280
+    },
+    {
+      "clip_number": 5210,
+      "relative_time": 11.0,
+      "absolute_time": 5221.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "87:01.00",
+      "event_type": "shot_on_target",
+      "event_number": 281
+    },
+    {
+      "clip_number": 5210,
+      "relative_time": 12.0,
+      "absolute_time": 5222.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "87:02.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 282
+    },
+    {
+      "clip_number": 5220,
+      "relative_time": 13.0,
+      "absolute_time": 5233.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "87:13.00",
+      "event_type": "shot_on_target",
+      "event_number": 283
+    },
+    {
+      "clip_number": 5220,
+      "relative_time": 14.0,
+      "absolute_time": 5234.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "87:14.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 284
+    },
+    {
+      "clip_number": 5260,
+      "relative_time": 7.0,
+      "absolute_time": 5267.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL, shot is missed.",
+      "formatted_time": "87:47.00",
+      "event_type": "shot_on_target",
+      "event_number": 285
+    },
+    {
+      "clip_number": 5360,
+      "relative_time": 14.0,
+      "absolute_time": 5374.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "89:34.00",
+      "event_type": "shot_on_target",
+      "event_number": 286
+    },
+    {
+      "clip_number": 5360,
+      "relative_time": 14.0,
+      "absolute_time": 5374.0,
+      "event_text": "Goalkeeper in light blue makes a save.",
+      "formatted_time": "89:34.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 287
+    },
+    {
+      "clip_number": 5370,
+      "relative_time": 6.0,
+      "absolute_time": 5376.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "89:36.00",
+      "event_type": "shot_on_target",
+      "event_number": 288
+    },
+    {
+      "clip_number": 5370,
+      "relative_time": 6.0,
+      "absolute_time": 5376.0,
+      "event_text": "Goalkeeper in red saves the shot at the LEFT GOAL.",
+      "formatted_time": "89:36.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 289
+    },
+    {
+      "clip_number": 5410,
+      "relative_time": 13.0,
+      "absolute_time": 5423.0,
+      "event_text": "Player in black commits a foul on a player in light blue. Referee signals the foul with a raised arm.",
+      "formatted_time": "90:23.00",
+      "event_type": "foul",
+      "event_number": 290
+    },
+    {
+      "clip_number": 5420,
+      "relative_time": 12.0,
+      "absolute_time": 5432.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "90:32.00",
+      "event_type": "shot_on_target",
+      "event_number": 291
+    },
+    {
+      "clip_number": 5420,
+      "relative_time": 12.0,
+      "absolute_time": 5432.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "90:32.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 292
+    },
+    {
+      "clip_number": 5500,
+      "relative_time": 0.0,
+      "absolute_time": 5500.0,
+      "event_text": "Player from the team in light blue takes a free kick towards the RIGHT GOAL.",
+      "formatted_time": "91:40.00",
+      "event_type": "free_kick",
+      "event_number": 293
+    },
+    {
+      "clip_number": 5500,
+      "relative_time": 1.0,
+      "absolute_time": 5501.0,
+      "event_text": "The free kick is blocked by a player from the team in black.",
+      "formatted_time": "91:41.00",
+      "event_type": "shot_on_target",
+      "event_number": 294
+    },
+    {
+      "clip_number": 5510,
+      "relative_time": 9.0,
+      "absolute_time": 5519.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "91:59.00",
+      "event_type": "shot_on_target",
+      "event_number": 295
+    },
+    {
+      "clip_number": 5510,
+      "relative_time": 10.0,
+      "absolute_time": 5520.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "92:00.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 296
+    },
+    {
+      "clip_number": 5520,
+      "relative_time": 0.0,
+      "absolute_time": 5520.0,
+      "event_text": "Player in light blue takes a shot on goal.",
+      "formatted_time": "92:00.00",
+      "event_type": "shot_on_target",
+      "event_number": 297
+    },
+    {
+      "clip_number": 5520,
+      "relative_time": 1.0,
+      "absolute_time": 5521.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "92:01.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 298
+    },
+    {
+      "clip_number": 5520,
+      "relative_time": 11.0,
+      "absolute_time": 5531.0,
+      "event_text": "Player in black gains possession.",
+      "formatted_time": "92:11.00",
+      "event_type": "turnover",
+      "event_number": 299
+    },
+    {
+      "clip_number": 5550,
+      "relative_time": 8.0,
+      "absolute_time": 5558.0,
+      "event_text": "The referee, wearing a fluorescent yellow shirt, raises his hand.",
+      "formatted_time": "92:38.00",
+      "event_type": "referee",
+      "event_number": 300
+    },
+    {
+      "clip_number": 5550,
+      "relative_time": 11.0,
+      "absolute_time": 5561.0,
+      "event_text": "A player from the light blue team takes a goalkick from the LEFT GOAL.",
+      "formatted_time": "92:41.00",
+      "event_type": "goalkick",
+      "event_number": 301
+    },
+    {
+      "clip_number": 5620,
+      "relative_time": 8.0,
+      "absolute_time": 5628.0,
+      "event_text": "Player in light blue takes a corner kick from the RIGHT GOAL.",
+      "formatted_time": "93:48.00",
+      "event_type": "corner_kick",
+      "event_number": 302
+    },
+    {
+      "clip_number": 5620,
+      "relative_time": 14.0,
+      "absolute_time": 5634.0,
+      "event_text": "Player in black takes a shot on the RIGHT GOAL.",
+      "formatted_time": "93:54.00",
+      "event_type": "shot_on_target",
+      "event_number": 303
+    },
+    {
+      "clip_number": 5630,
+      "relative_time": 10.0,
+      "absolute_time": 5640.0,
+      "event_text": "Player in black falls to the ground, losing possession to a player in light blue.",
+      "formatted_time": "94:00.00",
+      "event_type": "turnover",
+      "event_number": 304
+    },
+    {
+      "clip_number": 5630,
+      "relative_time": 10.0,
+      "absolute_time": 5640.0,
+      "event_text": "Player in black is lying on the ground. Referee is present.",
+      "formatted_time": "94:00.00",
+      "event_type": "foul",
+      "event_number": 305
+    },
+    {
+      "clip_number": 5660,
+      "relative_time": 4.0,
+      "absolute_time": 5664.0,
+      "event_text": "Player in black passes the ball to another player in black.",
+      "formatted_time": "94:24.00",
+      "event_type": "pass",
+      "event_number": 306
+    },
+    {
+      "clip_number": 5660,
+      "relative_time": 11.0,
+      "absolute_time": 5671.0,
+      "event_text": "Player in black takes a shot on the LEFT GOAL.",
+      "formatted_time": "94:31.00",
+      "event_type": "shot_on_target",
+      "event_number": 307
+    },
+    {
+      "clip_number": 5660,
+      "relative_time": 11.0,
+      "absolute_time": 5671.0,
+      "event_text": "Goalkeeper in orange saves the shot on the LEFT GOAL.",
+      "formatted_time": "94:31.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 308
+    },
+    {
+      "clip_number": 5710,
+      "relative_time": 10.0,
+      "absolute_time": 5720.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL, saved by the goalkeeper.",
+      "formatted_time": "95:20.00",
+      "event_type": "shot_on_target",
+      "event_number": 309
+    },
+    {
+      "clip_number": 5710,
+      "relative_time": 11.0,
+      "absolute_time": 5721.0,
+      "event_text": "Player in light blue gains possession.",
+      "formatted_time": "95:21.00",
+      "event_type": "turnover",
+      "event_number": 310
+    },
+    {
+      "clip_number": 5800,
+      "relative_time": 7.0,
+      "absolute_time": 5807.0,
+      "event_text": "Player in light blue takes a shot on goal.",
+      "formatted_time": "96:47.00",
+      "event_type": "shot_on_target",
+      "event_number": 311
+    },
+    {
+      "clip_number": 5800,
+      "relative_time": 7.0,
+      "absolute_time": 5807.0,
+      "event_text": "Goalkeeper in black saves the shot at the RIGHT GOAL.",
+      "formatted_time": "96:47.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 312
+    },
+    {
+      "clip_number": 5800,
+      "relative_time": 8.0,
+      "absolute_time": 5808.0,
+      "event_text": "Referee in red runs towards the play.",
+      "formatted_time": "96:48.00",
+      "event_type": "referee_action",
+      "event_number": 313
+    },
+    {
+      "clip_number": 5850,
+      "relative_time": 12.0,
+      "absolute_time": 5862.0,
+      "event_text": "Player in black intercepts a pass from a player in light blue near the center circle.",
+      "formatted_time": "97:42.00",
+      "event_type": "turnover",
+      "event_number": 314
+    },
+    {
+      "clip_number": 5850,
+      "relative_time": 13.0,
+      "absolute_time": 5863.0,
+      "event_text": "Referee in red signals with his hands.",
+      "formatted_time": "97:43.00",
+      "event_type": "referee",
+      "event_number": 315
+    },
+    {
+      "clip_number": 5860,
+      "relative_time": 11.0,
+      "absolute_time": 5871.0,
+      "event_text": "The referee in fluorescent yellow raises his hand.",
+      "formatted_time": "97:51.00",
+      "event_type": "referee",
+      "event_number": 316
+    },
+    {
+      "clip_number": 5870,
+      "relative_time": 10.0,
+      "absolute_time": 5880.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "98:00.00",
+      "event_type": "shot_on_target",
+      "event_number": 317
+    },
+    {
+      "clip_number": 5870,
+      "relative_time": 12.0,
+      "absolute_time": 5882.0,
+      "event_text": "Goalkeeper in orange makes a save on the RIGHT GOAL.",
+      "formatted_time": "98:02.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 318
+    },
+    {
+      "clip_number": 5880,
+      "relative_time": 11.0,
+      "absolute_time": 5891.0,
+      "event_text": "Player in light blue gains possession of the ball.",
+      "formatted_time": "98:11.00",
+      "event_type": "turnovers",
+      "event_number": 319
+    },
+    {
+      "clip_number": 5910,
+      "relative_time": 11.0,
+      "absolute_time": 5921.0,
+      "event_text": "Player in black jersey takes a shot on goal.",
+      "formatted_time": "98:41.00",
+      "event_type": "shot_on_target",
+      "event_number": 320
+    },
+    {
+      "clip_number": 5910,
+      "relative_time": 12.0,
+      "absolute_time": 5922.0,
+      "event_text": "Goalkeeper in light blue jersey saves the shot on goal. RIGHT GOAL",
+      "formatted_time": "98:42.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 321
+    },
+    {
+      "clip_number": 5930,
+      "relative_time": 14.0,
+      "absolute_time": 5944.0,
+      "event_text": "Player in light blue takes a shot on goal at the LEFT GOAL.",
+      "formatted_time": "99:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 322
+    },
+    {
+      "clip_number": 5970,
+      "relative_time": 12.0,
+      "absolute_time": 5982.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "99:42.00",
+      "event_type": "shot_on_target",
+      "event_number": 323
+    },
+    {
+      "clip_number": 5970,
+      "relative_time": 12.0,
+      "absolute_time": 5982.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "99:42.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 324
+    },
+    {
+      "clip_number": 5980,
+      "relative_time": 7.0,
+      "absolute_time": 5987.0,
+      "event_text": "The referee, wearing red, raises his arm, possibly indicating a foul or stoppage in play.",
+      "formatted_time": "99:47.00",
+      "event_type": "referee",
+      "event_number": 325
+    },
+    {
+      "clip_number": 5980,
+      "relative_time": 13.0,
+      "absolute_time": 5993.0,
+      "event_text": "The referee continues to raise his arm.",
+      "formatted_time": "99:53.00",
+      "event_type": "referee",
+      "event_number": 326
+    },
+    {
+      "clip_number": 6030,
+      "relative_time": 8.0,
+      "absolute_time": 6038.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "100:38.00",
+      "event_type": "shot_on_target",
+      "event_number": 327
+    },
+    {
+      "clip_number": 6030,
+      "relative_time": 8.0,
+      "absolute_time": 6038.0,
+      "event_text": "Goalkeeper in orange saves the shot at the LEFT GOAL.",
+      "formatted_time": "100:38.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 328
+    },
+    {
+      "clip_number": 6050,
+      "relative_time": 0.0,
+      "absolute_time": 6050.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "100:50.00",
+      "event_type": "shot_on_target",
+      "event_number": 329
+    },
+    {
+      "clip_number": 6050,
+      "relative_time": 1.0,
+      "absolute_time": 6051.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "100:51.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 330
+    },
+    {
+      "clip_number": 6060,
+      "relative_time": 4.0,
+      "absolute_time": 6064.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "101:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 331
+    },
+    {
+      "clip_number": 6060,
+      "relative_time": 4.0,
+      "absolute_time": 6064.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "101:04.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 332
+    },
+    {
+      "clip_number": 6090,
+      "relative_time": 13.0,
+      "absolute_time": 6103.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "101:43.00",
+      "event_type": "shot_on_target",
+      "event_number": 333
+    },
+    {
+      "clip_number": 6090,
+      "relative_time": 14.0,
+      "absolute_time": 6104.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "101:44.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 334
+    },
+    {
+      "clip_number": 6100,
+      "relative_time": 4.0,
+      "absolute_time": 6104.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "101:44.00",
+      "event_type": "shot_on_target",
+      "event_number": 335
+    },
+    {
+      "clip_number": 6100,
+      "relative_time": 4.0,
+      "absolute_time": 6104.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "101:44.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 336
+    },
+    {
+      "clip_number": 6130,
+      "relative_time": 8.0,
+      "absolute_time": 6138.0,
+      "event_text": "Player in black team fouls player in light blue team.",
+      "formatted_time": "102:18.00",
+      "event_type": "foul",
+      "event_number": 337
+    },
+    {
+      "clip_number": 6130,
+      "relative_time": 8.0,
+      "absolute_time": 6138.0,
+      "event_text": "Referee in red runs towards the players.",
+      "formatted_time": "102:18.00",
+      "event_type": "referee",
+      "event_number": 338
+    },
+    {
+      "clip_number": 6210,
+      "relative_time": 7.0,
+      "absolute_time": 6217.0,
+      "event_text": "Player in black dribbles towards the RIGHT GOAL and takes a shot.",
+      "formatted_time": "103:37.00",
+      "event_type": "shot_on_target",
+      "event_number": 339
+    },
+    {
+      "clip_number": 6210,
+      "relative_time": 8.0,
+      "absolute_time": 6218.0,
+      "event_text": "Goalkeeper saves the shot at the RIGHT GOAL.",
+      "formatted_time": "103:38.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 340
+    },
+    {
+      "clip_number": 6220,
+      "relative_time": 6.0,
+      "absolute_time": 6226.0,
+      "event_text": "Goalkeeper in black kicks the ball from the ground.",
+      "formatted_time": "103:46.00",
+      "event_type": "goalkick",
+      "event_number": 341
+    },
+    {
+      "clip_number": 6220,
+      "relative_time": 7.0,
+      "absolute_time": 6227.0,
+      "event_text": "Referee in red raises his arm.",
+      "formatted_time": "103:47.00",
+      "event_type": "referee",
+      "event_number": 342
+    },
+    {
+      "clip_number": 6240,
+      "relative_time": 4.0,
+      "absolute_time": 6244.0,
+      "event_text": "Player in black intercepts the ball from a player in light blue near the center of the field.",
+      "formatted_time": "104:04.00",
+      "event_type": "turnover",
+      "event_number": 343
+    },
+    {
+      "clip_number": 6240,
+      "relative_time": 12.0,
+      "absolute_time": 6252.0,
+      "event_text": "Referee in red walks onto the field.",
+      "formatted_time": "104:12.00",
+      "event_type": "referee",
+      "event_number": 344
+    },
+    {
+      "clip_number": 6290,
+      "relative_time": 7.0,
+      "absolute_time": 6297.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "104:57.00",
+      "event_type": "shot_on_target",
+      "event_number": 345
+    },
+    {
+      "clip_number": 6290,
+      "relative_time": 9.0,
+      "absolute_time": 6299.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "104:59.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 346
+    },
+    {
+      "clip_number": 6300,
+      "relative_time": 5.0,
+      "absolute_time": 6305.0,
+      "event_text": "Player from the black team scores a goal at the RIGHT GOAL.",
+      "formatted_time": "105:05.00",
+      "event_type": "goal",
+      "event_number": 347
+    },
+    {
+      "clip_number": 6300,
+      "relative_time": 5.0,
+      "absolute_time": 6305.0,
+      "event_text": "Referee raises arm to signal goal.",
+      "formatted_time": "105:05.00",
+      "event_type": "referee",
+      "event_number": 348
+    },
+    {
+      "clip_number": 6310,
+      "relative_time": 9.0,
+      "absolute_time": 6319.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "105:19.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 349
+    },
+    {
+      "clip_number": 6320,
+      "relative_time": 0.0,
+      "absolute_time": 6320.0,
+      "event_text": "Player in white shoots towards the RIGHT GOAL.",
+      "formatted_time": "105:20.00",
+      "event_type": "shot_on_target",
+      "event_number": 350
+    },
+    {
+      "clip_number": 6320,
+      "relative_time": 1.0,
+      "absolute_time": 6321.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "105:21.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 351
+    },
+    {
+      "clip_number": 6320,
+      "relative_time": 3.0,
+      "absolute_time": 6323.0,
+      "event_text": "Referee in orange signals with his hands.",
+      "formatted_time": "105:23.00",
+      "event_type": "referee",
+      "event_number": 352
+    },
+    {
+      "clip_number": 6320,
+      "relative_time": 3.0,
+      "absolute_time": 6323.0,
+      "event_text": "Player in white commits a foul.",
+      "formatted_time": "105:23.00",
+      "event_type": "foul",
+      "event_number": 353
+    },
+    {
+      "clip_number": 6320,
+      "relative_time": 3.0,
+      "absolute_time": 6323.0,
+      "event_text": "Free kick awarded to the team in black.",
+      "formatted_time": "105:23.00",
+      "event_type": "free_kick",
+      "event_number": 354
+    },
+    {
+      "clip_number": 6340,
+      "relative_time": 10.0,
+      "absolute_time": 6350.0,
+      "event_text": "Player in black takes a shot on goal.",
+      "formatted_time": "105:50.00",
+      "event_type": "shot_on_target",
+      "event_number": 355
+    },
+    {
+      "clip_number": 6340,
+      "relative_time": 11.0,
+      "absolute_time": 6351.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "105:51.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 356
+    },
+    {
+      "clip_number": 6420,
+      "relative_time": 8.0,
+      "absolute_time": 6428.0,
+      "event_text": "Player in light blue is fouled by player in black near the center circle.",
+      "formatted_time": "107:08.00",
+      "event_type": "foul",
+      "event_number": 357
+    },
+    {
+      "clip_number": 6420,
+      "relative_time": 9.0,
+      "absolute_time": 6429.0,
+      "event_text": "The referee, wearing a fluorescent yellow shirt, approaches the location of the foul.",
+      "formatted_time": "107:09.00",
+      "event_type": "referee",
+      "event_number": 358
+    },
+    {
+      "clip_number": 6430,
+      "relative_time": 0.0,
+      "absolute_time": 6430.0,
+      "event_text": "The referee signals the start of the match with a whistle.",
+      "formatted_time": "107:10.00",
+      "event_type": "kick_off",
+      "event_number": 359
+    },
+    {
+      "clip_number": 6430,
+      "relative_time": 0.0,
+      "absolute_time": 6430.0,
+      "event_text": "Player in black passes the ball to a teammate in the center circle.",
+      "formatted_time": "107:10.00",
+      "event_type": "pass",
+      "event_number": 360
+    },
+    {
+      "clip_number": 6440,
+      "relative_time": 0.0,
+      "absolute_time": 6440.0,
+      "event_text": "OFF - Game starts with a player from the light blue team kicking the ball from the center circle.",
+      "formatted_time": "107:20.00",
+      "event_type": "kick",
+      "event_number": 361
+    },
+    {
+      "clip_number": 6440,
+      "relative_time": 2.0,
+      "absolute_time": 6442.0,
+      "event_text": "Player in black wins possession from the light blue team.",
+      "formatted_time": "107:22.00",
+      "event_type": "turnover",
+      "event_number": 362
+    },
+    {
+      "clip_number": 6440,
+      "relative_time": 12.0,
+      "absolute_time": 6452.0,
+      "event_text": "Player in black commits a foul on a player in light blue. Referee signals the foul.",
+      "formatted_time": "107:32.00",
+      "event_type": "foul",
+      "event_number": 363
+    },
+    {
+      "clip_number": 6460,
+      "relative_time": 11.0,
+      "absolute_time": 6471.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "107:51.00",
+      "event_type": "shot_on_target",
+      "event_number": 364
+    },
+    {
+      "clip_number": 6460,
+      "relative_time": 11.0,
+      "absolute_time": 6471.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "107:51.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 365
+    },
+    {
+      "clip_number": 6470,
+      "relative_time": 13.0,
+      "absolute_time": 6483.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "108:03.00",
+      "event_type": "shot_on_target",
+      "event_number": 366
+    },
+    {
+      "clip_number": 6480,
+      "relative_time": 3.0,
+      "absolute_time": 6483.0,
+      "event_text": "Goalkeeper in orange makes a save. RIGHT GOAL",
+      "formatted_time": "108:03.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 367
+    },
+    {
+      "clip_number": 6470,
+      "relative_time": 14.0,
+      "absolute_time": 6484.0,
+      "event_text": "Player in light blue blocks the shot.",
+      "formatted_time": "108:04.00",
+      "event_type": "block",
+      "event_number": 368
+    },
+    {
+      "clip_number": 6490,
+      "relative_time": 4.0,
+      "absolute_time": 6494.0,
+      "event_text": "Player in white commits a foul, tripping a player in black.",
+      "formatted_time": "108:14.00",
+      "event_type": "foul",
+      "event_number": 369
+    },
+    {
+      "clip_number": 6490,
+      "relative_time": 4.0,
+      "absolute_time": 6494.0,
+      "event_text": "Referee stops play.",
+      "formatted_time": "108:14.00",
+      "event_type": "referee",
+      "event_number": 370
+    },
+    {
+      "clip_number": 6490,
+      "relative_time": 14.0,
+      "absolute_time": 6504.0,
+      "event_text": "Player in white takes a shot on goal.",
+      "formatted_time": "108:24.00",
+      "event_type": "shot_on_target",
+      "event_number": 371
+    },
+    {
+      "clip_number": 6490,
+      "relative_time": 14.0,
+      "absolute_time": 6504.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "108:24.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 372
+    },
+    {
+      "clip_number": 6490,
+      "relative_time": 14.0,
+      "absolute_time": 6504.0,
+      "event_text": "Event occurs at the RIGHT GOAL.",
+      "formatted_time": "108:24.00",
+      "event_type": "right_goal",
+      "event_number": 373
+    },
+    {
+      "clip_number": 6510,
+      "relative_time": 0.0,
+      "absolute_time": 6510.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "108:30.00",
+      "event_type": "shot_on_target",
+      "event_number": 374
+    },
+    {
+      "clip_number": 6510,
+      "relative_time": 1.0,
+      "absolute_time": 6511.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "108:31.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 375
+    },
+    {
+      "clip_number": 6520,
+      "relative_time": 0.0,
+      "absolute_time": 6520.0,
+      "event_text": "Player in black takes a shot on goal.",
+      "formatted_time": "108:40.00",
+      "event_type": "shot_on_target",
+      "event_number": 376
+    },
+    {
+      "clip_number": 6520,
+      "relative_time": 1.0,
+      "absolute_time": 6521.0,
+      "event_text": "Goalkeeper in orange makes a save.",
+      "formatted_time": "108:41.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 377
+    },
+    {
+      "clip_number": 6520,
+      "relative_time": 3.0,
+      "absolute_time": 6523.0,
+      "event_text": "Referee in orange raises his hand.",
+      "formatted_time": "108:43.00",
+      "event_type": "referee",
+      "event_number": 378
+    },
+    {
+      "clip_number": 6520,
+      "relative_time": 3.0,
+      "absolute_time": 6523.0,
+      "event_text": "Corner kick awarded.",
+      "formatted_time": "108:43.00",
+      "event_type": "corner_kick",
+      "event_number": 379
+    },
+    {
+      "clip_number": 6520,
+      "relative_time": 14.0,
+      "absolute_time": 6534.0,
+      "event_text": "Player in blue takes the corner kick.",
+      "formatted_time": "108:54.00",
+      "event_type": "corner_kick",
+      "event_number": 380
+    },
+    {
+      "clip_number": 6530,
+      "relative_time": 8.0,
+      "absolute_time": 6538.0,
+      "event_text": "Player from the team in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "108:58.00",
+      "event_type": "shot_on_target",
+      "event_number": 381
+    },
+    {
+      "clip_number": 6530,
+      "relative_time": 8.0,
+      "absolute_time": 6538.0,
+      "event_text": "Goalkeeper from the team in light blue saves the shot at the RIGHT GOAL.",
+      "formatted_time": "108:58.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 382
+    },
+    {
+      "clip_number": 6530,
+      "relative_time": 10.0,
+      "absolute_time": 6540.0,
+      "event_text": "Referee raises his hand.",
+      "formatted_time": "109:00.00",
+      "event_type": "referee",
+      "event_number": 383
+    },
+    {
+      "clip_number": 6540,
+      "relative_time": 7.0,
+      "absolute_time": 6547.0,
+      "event_text": "A player from the light blue team is preparing to take a corner kick at the RIGHT GOAL. The referee is standing nearby.",
+      "formatted_time": "109:07.00",
+      "event_type": "corner_kick",
+      "event_number": 384
+    },
+    {
+      "clip_number": 6550,
+      "relative_time": 14.0,
+      "absolute_time": 6564.0,
+      "event_text": "Referee in black walks onto the field.",
+      "formatted_time": "109:24.00",
+      "event_type": "referee",
+      "event_number": 385
+    },
+    {
+      "clip_number": 6570,
+      "relative_time": 11.0,
+      "absolute_time": 6581.0,
+      "event_text": "Player from the black team takes a corner kick from the RIGHT GOAL.",
+      "formatted_time": "109:41.00",
+      "event_type": "corner_kick",
+      "event_number": 386
+    },
+    {
+      "clip_number": 6580,
+      "relative_time": 7.0,
+      "absolute_time": 6587.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "109:47.00",
+      "event_type": "shot_on_target",
+      "event_number": 387
+    },
+    {
+      "clip_number": 6580,
+      "relative_time": 8.0,
+      "absolute_time": 6588.0,
+      "event_text": "Goalkeeper in orange makes a save at the LEFT GOAL.",
+      "formatted_time": "109:48.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 388
+    },
+    {
+      "clip_number": 6590,
+      "relative_time": 0.0,
+      "absolute_time": 6590.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "109:50.00",
+      "event_type": "shot_on_target",
+      "event_number": 389
+    },
+    {
+      "clip_number": 6580,
+      "relative_time": 11.0,
+      "absolute_time": 6591.0,
+      "event_text": "Referee in red awards a corner kick to the team in black near the LEFT GOAL.",
+      "formatted_time": "109:51.00",
+      "event_type": "corner_kick",
+      "event_number": 390
+    },
+    {
+      "clip_number": 6590,
+      "relative_time": 1.0,
+      "absolute_time": 6591.0,
+      "event_text": "Goalkeeper in orange makes a save at the RIGHT GOAL.",
+      "formatted_time": "109:51.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 391
+    },
+    {
+      "clip_number": 6610,
+      "relative_time": 7.0,
+      "absolute_time": 6617.0,
+      "event_text": "Goalkeeper in orange makes a save from a shot on target. RIGHT GOAL",
+      "formatted_time": "110:17.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 392
+    },
+    {
+      "clip_number": 6660,
+      "relative_time": 13.0,
+      "absolute_time": 6673.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "111:13.00",
+      "event_type": "shot_on_target",
+      "event_number": 393
+    },
+    {
+      "clip_number": 6660,
+      "relative_time": 13.0,
+      "absolute_time": 6673.0,
+      "event_text": "Goalkeeper in orange saves the shot at the RIGHT GOAL.",
+      "formatted_time": "111:13.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 394
+    },
+    {
+      "clip_number": 6670,
+      "relative_time": 5.0,
+      "absolute_time": 6675.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL, the goalkeeper in orange makes a save.",
+      "formatted_time": "111:15.00",
+      "event_type": "shot_on_target",
+      "event_number": 395
+    },
+    {
+      "clip_number": 6680,
+      "relative_time": 13.0,
+      "absolute_time": 6693.0,
+      "event_text": "A player from the team in black takes a corner kick at the LEFT GOAL. The referee is present.",
+      "formatted_time": "111:33.00",
+      "event_type": "corner_kick",
+      "event_number": 396
+    },
+    {
+      "clip_number": 6690,
+      "relative_time": 4.0,
+      "absolute_time": 6694.0,
+      "event_text": "Referee raises his arm to signal a decision.",
+      "formatted_time": "111:34.00",
+      "event_type": "referee",
+      "event_number": 397
+    },
+    {
+      "clip_number": 6690,
+      "relative_time": 13.0,
+      "absolute_time": 6703.0,
+      "event_text": "Player in light blue shoots towards the RIGHT GOAL.",
+      "formatted_time": "111:43.00",
+      "event_type": "shot_on_target",
+      "event_number": 398
+    },
+    {
+      "clip_number": 6710,
+      "relative_time": 12.0,
+      "absolute_time": 6722.0,
+      "event_text": "Player in black gains possession of the ball.",
+      "formatted_time": "112:02.00",
+      "event_type": "turnover",
+      "event_number": 399
+    },
+    {
+      "clip_number": 6710,
+      "relative_time": 13.0,
+      "absolute_time": 6723.0,
+      "event_text": "Player in black takes a shot on the RIGHT GOAL.",
+      "formatted_time": "112:03.00",
+      "event_type": "shot_on_target",
+      "event_number": 400
+    },
+    {
+      "clip_number": 6710,
+      "relative_time": 14.0,
+      "absolute_time": 6724.0,
+      "event_text": "Goalkeeper in orange saves the shot on the RIGHT GOAL.",
+      "formatted_time": "112:04.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 401
+    },
+    {
+      "clip_number": 6740,
+      "relative_time": 13.0,
+      "absolute_time": 6753.0,
+      "event_text": "Player in black shoots towards the RIGHT GOAL.",
+      "formatted_time": "112:33.00",
+      "event_type": "shot_on_target",
+      "event_number": 402
+    },
+    {
+      "clip_number": 6740,
+      "relative_time": 14.0,
+      "absolute_time": 6754.0,
+      "event_text": "Goalkeeper in orange saves the shot on target at the RIGHT GOAL.",
+      "formatted_time": "112:34.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 403
+    },
+    {
+      "clip_number": 6770,
+      "relative_time": 0.0,
+      "absolute_time": 6770.0,
+      "event_text": "Player in black takes a corner kick from the RIGHT GOAL.",
+      "formatted_time": "112:50.00",
+      "event_type": "corner_kick",
+      "event_number": 404
+    },
+    {
+      "clip_number": 6770,
+      "relative_time": 14.0,
+      "absolute_time": 6784.0,
+      "event_text": "Player in black takes a shot on goal.",
+      "formatted_time": "113:04.00",
+      "event_type": "shot_on_target",
+      "event_number": 405
+    },
+    {
+      "clip_number": 6780,
+      "relative_time": 13.0,
+      "absolute_time": 6793.0,
+      "event_text": "Referee is running with the play.",
+      "formatted_time": "113:13.00",
+      "event_type": "referee",
+      "event_number": 406
+    },
+    {
+      "clip_number": 6810,
+      "relative_time": 10.0,
+      "absolute_time": 6820.0,
+      "event_text": "Player in black shoots towards the LEFT GOAL.",
+      "formatted_time": "113:40.00",
+      "event_type": "shot_on_target",
+      "event_number": 407
+    },
+    {
+      "clip_number": 6810,
+      "relative_time": 10.0,
+      "absolute_time": 6820.0,
+      "event_text": "Goalkeeper saves the shot at the LEFT GOAL.",
+      "formatted_time": "113:40.00",
+      "event_type": "goalkeeper_saves",
+      "event_number": 408
+    },
+    {
+      "clip_number": 6840,
+      "relative_time": 10.0,
+      "absolute_time": 6850.0,
+      "event_text": "Referee in fluorescent yellow runs down the center of the field.",
+      "formatted_time": "114:10.00",
+      "event_type": "referee",
+      "event_number": 409
+    },
+    {
+      "clip_number": 6850,
+      "relative_time": 9.0,
+      "absolute_time": 6859.0,
+      "event_text": "Player in light blue shoots towards the LEFT GOAL.",
+      "formatted_time": "114:19.00",
+      "event_type": "shot_on_target",
+      "event_number": 410
+    },
+    {
+      "clip_number": 6850,
+      "relative_time": 10.0,
+      "absolute_time": 6860.0,
+      "event_text": "Goalkeeper in black makes a save.",
+      "formatted_time": "114:20.00",
+      "event_type": "goalkeeper_save",
+      "event_number": 411
+    },
+    {
+      "clip_number": 6860,
+      "relative_time": 0.0,
+      "absolute_time": 6860.0,
+      "event_text": "Player in light blue loses possession after a tackle by a player in black near the LEFT GOAL.",
+      "formatted_time": "114:20.00",
+      "event_type": "turnover",
+      "event_number": 412
+    },
+    {
+      "clip_number": 6850,
+      "relative_time": 11.0,
+      "absolute_time": 6861.0,
+      "event_text": "Player in light blue commits a foul. Referee is present.",
+      "formatted_time": "114:21.00",
+      "event_type": "foul",
+      "event_number": 413
+    },
+    {
+      "clip_number": 6860,
+      "relative_time": 1.0,
+      "absolute_time": 6861.0,
+      "event_text": "Player in black loses possession after falling to the ground near the LEFT GOAL.",
+      "formatted_time": "114:21.00",
+      "event_type": "turnover",
+      "event_number": 414
+    },
+    {
+      "clip_number": 6860,
+      "relative_time": 10.0,
+      "absolute_time": 6870.0,
+      "event_text": "Player in black loses possession after a tackle by a player in light blue near the RIGHT GOAL.",
+      "formatted_time": "114:30.00",
+      "event_type": "turnover",
+      "event_number": 415
+    },
+    {
+      "clip_number": 6870,
+      "relative_time": 13.0,
+      "absolute_time": 6883.0,
+      "event_text": "Referee in fluorescent orange runs down the right side of the field.",
+      "formatted_time": "114:43.00",
+      "event_type": "referee",
+      "event_number": 416
+    },
+    {
+      "clip_number": 6890,
+      "relative_time": 10.0,
+      "absolute_time": 6900.0,
+      "event_text": "A player in blue is being substituted off and walks towards the sideline. The referee is present and observes the substitution.",
+      "formatted_time": "115:00.00",
+      "event_type": "substitution",
+      "event_number": 417
+    },
+    {
+      "clip_number": 6900,
+      "relative_time": 6.0,
+      "absolute_time": 6906.0,
+      "event_text": "RED/YELLOW CARDS - Referee shows a yellow card to a player in black uniform near the LEFT GOAL.",
+      "formatted_time": "115:06.00",
+      "event_type": "other",
+      "event_number": 418
+    },
+    {
+      "clip_number": 6910,
+      "relative_time": 0.0,
+      "absolute_time": 6910.0,
+      "event_text": "A player in light blue is being substituted off the field near the RIGHT GOAL.",
+      "formatted_time": "115:10.00",
+      "event_type": "substitution",
+      "event_number": 419
+    },
+    {
+      "clip_number": 6910,
+      "relative_time": 3.0,
+      "absolute_time": 6913.0,
+      "event_text": "The referee, wearing red, is walking towards the players.",
+      "formatted_time": "115:13.00",
+      "event_type": "referee",
+      "event_number": 420
+    },
+    {
+      "clip_number": 6910,
+      "relative_time": 11.0,
+      "absolute_time": 6921.0,
+      "event_text": "The referee, wearing red, is standing on the sideline.",
+      "formatted_time": "115:21.00",
+      "event_type": "referee",
+      "event_number": 421
+    }
+  ]
+}
