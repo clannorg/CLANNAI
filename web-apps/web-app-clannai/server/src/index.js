@@ -102,7 +102,20 @@ app.use('/analysis-images', express.static(path.join(__dirname, '../public/analy
 app.use('/analysis-images', express.static(path.join(__dirname, '../storage/analysis-images')));
 
 // Serve React build files (including videos, images, etc.)
-app.use(express.static(path.join(__dirname, '../client/build')));
+// Add debugging and explicit MIME type handling
+app.use((req, res, next) => {
+    console.log('Static request:', req.url);
+    next();
+});
+
+app.use(express.static(path.join(__dirname, '../client/build'), {
+    setHeaders: (res, path) => {
+        console.log('Serving static file:', path);
+        if (path.endsWith('.mp4')) {
+            res.setHeader('Content-Type', 'video/mp4');
+        }
+    }
+}));
 
 // Routes
 app.use('/api/auth', authRoutes);
