@@ -101,6 +101,9 @@ app.post('/api/create-checkout-session', async (req, res) => {
 app.use('/analysis-images', express.static(path.join(__dirname, '../public/analysis-images')));
 app.use('/analysis-images', express.static(path.join(__dirname, '../storage/analysis-images')));
 
+// Serve React build files (including videos, images, etc.)
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/sessions', sessionsRoutes);
@@ -111,6 +114,11 @@ app.post('/teams/:teamId/revert-premium', teamsController.revertPremiumStatus);
 app.post('/api/teams/:teamId/billing-portal', (req, res, next) => {
     console.log('🎯 Billing portal route hit:', req.params);
     teamsController.createBillingPortalSession(req, res, next);
+});
+
+// Catch-all handler: send back React's index.html file for any non-API routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 // Error handling middleware
