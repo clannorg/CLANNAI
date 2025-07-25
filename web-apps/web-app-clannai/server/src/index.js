@@ -131,6 +131,13 @@ app.post('/api/teams/:teamId/billing-portal', (req, res, next) => {
 
 // Catch-all handler: send back React's index.html file for any non-API routes
 app.get('*', (req, res) => {
+    // Don't intercept API routes or static assets
+    if (req.path.startsWith('/api/') ||
+        req.path.startsWith('/videos/') ||
+        req.path.startsWith('/static/') ||
+        req.path.includes('.')) {
+        return res.status(404).send('Not found');
+    }
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
