@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Football Cost Tracker
-Monitors API usage and costs for football analysis
+Monitors API usage and costs for football analysis based on token consumption.
 """
 
 import json
@@ -22,266 +22,164 @@ logger = logging.getLogger(__name__)
 
 class FootballCostTracker:
     """
-    Tracks costs and API usage for football analysis
-    Compares with basketball costs and provides optimization insights
+    Tracks costs and API usage for football analysis by reading detailed
+    run logs from the gemini_runs directory.
     """
     
     def __init__(self):
         """Initialize the cost tracker"""
         self.output_dir = PATHS["cost_output"]
         self.output_dir.mkdir(exist_ok=True)
-        
-        # Cost tracking data
-        self.cost_data = {
-            "analysis_date": datetime.now().isoformat(),
-            "football_costs": {},
-            "basketball_comparison": {},
-            "optimization_suggestions": []
-        }
-    
-    def analyze_events_costs(self) -> Dict[str, Any]:
-        """Analyze costs from events analysis"""
-        events_dir = PATHS["events_output"]
-        
-        if not events_dir.exists():
-            logger.warning("Events output directory not found")
-            return {}
-        
-        # Count analysis files
-        analysis_files = list(events_dir.glob("events_analysis_*.json"))
-        
-        if not analysis_files:
-            logger.warning("No events analysis files found")
-            return {}
-        
-        # Calculate costs
-        total_clips = len(analysis_files)
-        total_api_calls = total_clips
-        total_cost = total_clips * COST_SETTINGS["cost_per_clip"]
-        
-        return {
-            "module": "events_analysis",
-            "total_clips": total_clips,
-            "api_calls": total_api_calls,
-            "cost_per_clip": COST_SETTINGS["cost_per_clip"],
-            "total_cost": total_cost,
-            "processing_efficiency": "high"
-        }
-    
-    def analyze_player_costs(self) -> Dict[str, Any]:
-        """Analyze costs from player analysis"""
-        player_dir = PATHS["player_output"]
-        
-        if not player_dir.exists():
-            logger.warning("Player output directory not found")
-            return {}
-        
-        # Count analysis files
-        analysis_files = list(player_dir.glob("player_analysis_*.json"))
-        
-        if not analysis_files:
-            logger.warning("No player analysis files found")
-            return {}
-        
-        # Calculate costs
-        total_clips = len(analysis_files)
-        total_api_calls = total_clips
-        total_cost = total_clips * COST_SETTINGS["cost_per_clip"]
-        
-        return {
-            "module": "player_analysis",
-            "total_clips": total_clips,
-            "api_calls": total_api_calls,
-            "cost_per_clip": COST_SETTINGS["cost_per_clip"],
-            "total_cost": total_cost,
-            "processing_efficiency": "high"
-        }
-    
-    def analyze_tactical_costs(self) -> Dict[str, Any]:
-        """Analyze costs from tactical analysis"""
-        tactical_dir = PATHS["tactical_output"]
-        
-        if not tactical_dir.exists():
-            logger.warning("Tactical output directory not found")
-            return {}
-        
-        # Count analysis files
-        analysis_files = list(tactical_dir.glob("formation_analysis_*.json"))
-        
-        if not analysis_files:
-            logger.warning("No tactical analysis files found")
-            return {}
-        
-        # Calculate costs (tactical uses more expensive model)
-        total_clips = len(analysis_files)
-        total_api_calls = total_clips
-        # Tactical analysis uses 2.5 Flash model (more expensive)
-        tactical_cost_per_clip = COST_SETTINGS["cost_per_clip"] * 1.5  # Estimate
-        total_cost = total_clips * tactical_cost_per_clip
-        
-        return {
-            "module": "tactical_analysis",
-            "total_clips": total_clips,
-            "api_calls": total_api_calls,
-            "cost_per_clip": tactical_cost_per_clip,
-            "total_cost": total_cost,
-            "processing_efficiency": "medium"
-        }
-    
-    def calculate_total_costs(self) -> Dict[str, Any]:
-        """Calculate total costs across all modules"""
-        events_costs = self.analyze_events_costs()
-        player_costs = self.analyze_player_costs()
-        tactical_costs = self.analyze_tactical_costs()
-        
+        self.gemini_runs_dir = Path.cwd() / "gemini_runs"
+
+    def find_latest_run_file(self) -> Path:
+        """Finds the most recent run file in the gemini_runs directory."""
+        if not self.gemini_runs_dir.exists():
+            logger.error(f"Gemini runs directory not found at: {self.gemini_runs_dir}")
+            return None
+
+        run_files = list(self.gemini_runs_dir.glob("*.json"))
+        if not run_files:
+            logger.error(f"No run files found in {self.gemini_runs_dir}")
+            return None
+            
+        latest_file = max(run_files, key=lambda f: f.stat().st_mtime)
+        logger.info(f"Found latest run file: {latest_file.name}")
+        return latest_file
+
+    def calculate_run_costs(self, run_data: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Calculates total cost and other metrics from a run's metadata."""
         total_cost = 0
-        total_clips = 0
-        total_api_calls = 0
-        
-        for costs in [events_costs, player_costs, tactical_costs]:
-            if costs:
-                total_cost += costs.get("total_cost", 0)
-                total_clips += costs.get("total_clips", 0)
-                total_api_calls += costs.get("api_calls", 0)
-        
+        total_input_tokens = 0
+        total_output_tokens = 0
+        total_tokens = 0
+        model_usage = {}
+
+        for call in run_data:
+            model_name = call.get("model_name")
+            if not model_name or model_name not in COST_SETTINGS["models"]:
+                logger.warning(f"Cost settings for model '{model_name}' not found. Skipping call.")
+                continue
+
+            model_costs = COST_SETTINGS["models"][model_name]
+            input_tokens = call.get("prompt_token_count", 0)
+            output_tokens = call.get("candidates_token_count", 0)
+
+            # Calculate cost for this specific call
+            input_cost = (input_tokens / 1000) * model_costs["input_cost_per_1k_tokens"]
+            output_cost = (output_tokens / 1000) * model_costs["output_cost_per_1k_tokens"]
+            call_cost = input_cost + output_cost
+            
+            total_cost += call_cost
+            total_input_tokens += input_tokens
+            total_output_tokens += output_tokens
+            total_tokens += call.get("total_token_count", 0)
+
+            # Track usage per model
+            if model_name not in model_usage:
+                model_usage[model_name] = {"api_calls": 0, "total_tokens": 0, "cost": 0}
+            model_usage[model_name]["api_calls"] += 1
+            model_usage[model_name]["total_tokens"] += call.get("total_token_count", 0)
+            model_usage[model_name]["cost"] += call_cost
+
         return {
             "total_cost": total_cost,
-            "total_clips": total_clips,
-            "total_api_calls": total_api_calls,
-            "modules": {
-                "events": events_costs,
-                "player": player_costs,
-                "tactical": tactical_costs
-            }
+            "total_clips_analyzed": len(run_data),
+            "total_input_tokens": total_input_tokens,
+            "total_output_tokens": total_output_tokens,
+            "total_tokens_processed": total_tokens,
+            "model_usage_summary": model_usage
         }
-    
-    def compare_with_basketball(self) -> Dict[str, Any]:
-        """Compare football costs with basketball costs"""
-        football_costs = self.calculate_total_costs()
-        
-        # Basketball comparison (based on A2 results)
-        basketball_data = {
-            "total_cost": 0.0208,  # From A2 analysis
-            "total_clips": 99,  # From A2 analysis
-            "duration_minutes": 10,  # Basketball game duration
-            "cost_per_minute": 0.00168
-        }
-        
-        # Football data
-        football_data = {
-            "total_cost": football_costs["total_cost"],
-            "total_clips": football_costs["total_clips"],
-            "duration_minutes": 90,  # Football game duration
-            "cost_per_minute": football_costs["total_cost"] / 90 if football_costs["total_cost"] > 0 else 0
-        }
-        
-        # Calculate efficiency
-        cost_efficiency = football_data["cost_per_minute"] / basketball_data["cost_per_minute"] if basketball_data["cost_per_minute"] > 0 else 0
-        
-        return {
-            "basketball": basketball_data,
-            "football": football_data,
-            "comparison": {
-                "cost_efficiency_ratio": cost_efficiency,
-                "football_more_efficient": cost_efficiency < 1,
-                "cost_difference_per_minute": football_data["cost_per_minute"] - basketball_data["cost_per_minute"]
-            }
-        }
-    
-    def generate_optimization_suggestions(self) -> List[str]:
-        """Generate cost optimization suggestions"""
-        suggestions = []
-        
-        # Check for processing efficiency
-        total_costs = self.calculate_total_costs()
-        
-        if total_costs["total_clips"] > 0:
-            cost_per_clip = total_costs["total_cost"] / total_costs["total_clips"]
-            
-            if cost_per_clip > COST_SETTINGS["cost_per_clip"] * 1.5:
-                suggestions.append("Consider using more efficient API models for routine analysis")
-            
-            if total_costs["total_clips"] < COST_SETTINGS["estimated_clips_per_match"] * 0.5:
-                suggestions.append("Increase clip sampling for better coverage")
-            
-            if total_costs["total_api_calls"] > total_costs["total_clips"] * 1.5:
-                suggestions.append("Optimize API calls to reduce redundant requests")
-        
-        # Football-specific suggestions
-        suggestions.append("Use tactical analysis selectively (most expensive module)")
-        suggestions.append("Consider batch processing for large datasets")
-        suggestions.append("Monitor rate limits to avoid API errors")
-        
-        return suggestions
-    
+
     def generate_cost_report(self) -> Dict[str, Any]:
-        """Generate comprehensive cost report"""
-        logger.info("📊 Generating football cost analysis...")
+        """Generate comprehensive cost report from the latest run file."""
+        logger.info("📊 Generating football cost analysis from run log...")
         
-        # Calculate all costs
-        total_costs = self.calculate_total_costs()
-        comparison = self.compare_with_basketball()
-        suggestions = self.generate_optimization_suggestions()
+        latest_run_file = self.find_latest_run_file()
+        if not latest_run_file:
+            return None
+
+        try:
+            with open(latest_run_file, 'r') as f:
+                run_data = json.load(f)
+        except (json.JSONDecodeError, IOError) as e:
+            logger.error(f"Error reading or parsing run file {latest_run_file}: {e}")
+            return None
+
+        if not run_data:
+            logger.warning("Run file is empty. No costs to analyze.")
+            return None
+
+        cost_analysis = self.calculate_run_costs(run_data)
         
+        # Add footage metrics (assuming 10s clips from analyzer)
+        clip_duration_seconds = 10
+        total_footage_seconds = cost_analysis["total_clips_analyzed"] * clip_duration_seconds
+        total_footage_minutes = total_footage_seconds / 60
+        cost_per_minute_footage = cost_analysis["total_cost"] / total_footage_minutes if total_footage_minutes > 0 else 0
+
         # Create comprehensive report
         report = {
             "analysis_date": datetime.now().isoformat(),
-            "football_costs": total_costs,
-            "basketball_comparison": comparison,
-            "optimization_suggestions": suggestions,
-            "cost_efficiency": {
-                "football_cost_per_minute": comparison["football"]["cost_per_minute"],
-                "basketball_cost_per_minute": comparison["basketball"]["cost_per_minute"],
-                "efficiency_ratio": comparison["comparison"]["cost_efficiency_ratio"]
+            "source_file": latest_run_file.name,
+            "cost_analysis": cost_analysis,
+            "footage_metrics": {
+                "total_clips_analyzed": cost_analysis["total_clips_analyzed"],
+                "clip_duration_seconds": clip_duration_seconds,
+                "total_footage_seconds": total_footage_seconds,
+                "total_footage_minutes": total_footage_minutes,
+                "cost_per_minute_of_footage": cost_per_minute_footage
             }
         }
         
+        # Create timestamped filenames for the output reports
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        json_report_filename = f"football_cost_analysis_{timestamp}.json"
+        txt_summary_filename = f"cost_summary_{timestamp}.txt"
+
         # Save detailed report
-        report_path = self.output_dir / "football_cost_analysis.json"
+        report_path = self.output_dir / json_report_filename
         with open(report_path, 'w') as f:
             json.dump(report, f, indent=2)
         
-        # Save comparison report
-        comparison_path = self.output_dir / "cost_comparison.txt"
-        with open(comparison_path, 'w') as f:
-            f.write(self.create_comparison_text(comparison, suggestions))
+        # Save summary report
+        summary_path = self.output_dir / txt_summary_filename
+        with open(summary_path, 'w') as f:
+            f.write(self.create_summary_text(report))
         
-        logger.info(f"✅ Cost analysis complete: {report_path}")
+        logger.info(f"✅ Cost analysis complete. Reports saved in {self.output_dir}")
         return report
     
-    def create_comparison_text(self, comparison: Dict[str, Any], suggestions: List[str]) -> str:
-        """Create human-readable cost comparison"""
-        text = "💰 FOOTBALL vs BASKETBALL COST COMPARISON\n"
-        text += "=" * 50 + "\n\n"
+    def create_summary_text(self, report: Dict[str, Any]) -> str:
+        """Create human-readable cost summary."""
+        cost_analysis = report["cost_analysis"]
+        footage_metrics = report["footage_metrics"]
         
-        # Football costs
-        football = comparison["football"]
-        text += f"⚽ FOOTBALL ANALYSIS:\n"
-        text += f"   Total Cost: ${football['total_cost']:.4f}\n"
-        text += f"   Total Clips: {football['total_clips']}\n"
-        text += f"   Duration: {football['duration_minutes']} minutes\n"
-        text += f"   Cost per Minute: ${football['cost_per_minute']:.4f}\n\n"
+        text = "💰 FOOTBALL ANALYSIS COST & USAGE REPORT\n"
+        text += "=" * 50 + "\n"
+        text += f"Source File: {report['source_file']}\n"
+        text += f"Analysis Date: {datetime.fromisoformat(report['analysis_date']).strftime('%Y-%m-%d %H:%M:%S')}\n"
+        text += "-" * 50 + "\n\n"
+
+        text += "📊 COST SUMMARY\n"
+        text += f"   Total Cost: ${cost_analysis['total_cost']:.6f}\n"
+        text += f"   Cost per Minute of Footage: ${footage_metrics['cost_per_minute_of_footage']:.6f}\n\n"
         
-        # Basketball costs
-        basketball = comparison["basketball"]
-        text += f"🏀 BASKETBALL ANALYSIS:\n"
-        text += f"   Total Cost: ${basketball['total_cost']:.4f}\n"
-        text += f"   Total Clips: {basketball['total_clips']}\n"
-        text += f"   Duration: {basketball['duration_minutes']} minutes\n"
-        text += f"   Cost per Minute: ${basketball['cost_per_minute']:.4f}\n\n"
+        text += "📹 FOOTAGE & CLIP METRICS\n"
+        text += f"   Total Clips Analyzed: {footage_metrics['total_clips_analyzed']}\n"
+        text += f"   Total Footage Duration: {footage_metrics['total_footage_minutes']:.2f} minutes\n\n"
+
+        text += "🤖 API & TOKEN USAGE\n"
+        for model, usage in cost_analysis["model_usage_summary"].items():
+            text += f"   Model: {model}\n"
+            text += f"     - API Calls: {usage['api_calls']}\n"
+            text += f"     - Total Tokens: {usage['total_tokens']}\n"
+            text += f"     - Calculated Cost: ${usage['cost']:.6f}\n"
         
-        # Comparison
-        comp = comparison["comparison"]
-        text += f"📊 COMPARISON:\n"
-        text += f"   Efficiency Ratio: {comp['cost_efficiency_ratio']:.2f}x\n"
-        text += f"   Football More Efficient: {comp['football_more_efficient']}\n"
-        text += f"   Cost Difference per Minute: ${comp['cost_difference_per_minute']:.4f}\n\n"
-        
-        # Suggestions
-        text += f"💡 OPTIMIZATION SUGGESTIONS:\n"
-        for i, suggestion in enumerate(suggestions, 1):
-            text += f"   {i}. {suggestion}\n"
-        
+        text += f"\n   Overall Input Tokens: {cost_analysis['total_input_tokens']}\n"
+        text += f"   Overall Output Tokens: {cost_analysis['total_output_tokens']}\n"
+        text += f"   Overall Total Tokens: {cost_analysis['total_tokens_processed']}\n"
+
         return text
 
 def main():
@@ -291,27 +189,23 @@ def main():
     print("💰 Football Cost Analysis")
     print("=" * 30)
     print(f"Output directory: {PATHS['cost_output']}")
+    print(f"Reading from: {tracker.gemini_runs_dir}")
     print()
     
     # Generate cost report
     report = tracker.generate_cost_report()
     
     if report:
+        cost_analysis = report['cost_analysis']
+        footage_metrics = report['footage_metrics']
         print(f"\n✅ Cost analysis complete!")
-        print(f"📊 Total cost: ${report['football_costs']['total_cost']:.4f}")
-        print(f"📈 Total clips: {report['football_costs']['total_clips']}")
-        print(f"💰 Cost per minute: ${report['cost_efficiency']['football_cost_per_minute']:.4f}")
-        
-        # Print efficiency comparison
-        efficiency = report['cost_efficiency']['efficiency_ratio']
-        print(f"⚡ Efficiency vs Basketball: {efficiency:.2f}x")
-        
-        if efficiency < 1:
-            print("✅ Football is more cost-efficient than basketball!")
-        else:
-            print("⚠️ Football is less cost-efficient than basketball")
+        print(f"Source File: {report['source_file']}")
+        print(f"📊 Total cost: ${cost_analysis['total_cost']:.6f}")
+        print(f"📈 Total clips analyzed: {footage_metrics['total_clips_analyzed']}")
+        print(f"⏱️ Total footage analyzed: {footage_metrics['total_footage_minutes']:.2f} minutes")
+        print(f"💰 Cost per minute of footage: ${footage_metrics['cost_per_minute_of_footage']:.6f}")
     else:
-        print("\n❌ Cost analysis failed")
+        print("\n❌ Cost analysis failed. Check logs for details.")
 
 if __name__ == "__main__":
     main() 

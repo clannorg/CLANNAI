@@ -72,6 +72,8 @@ output/
 results/
 artifacts/
 checkpoints/
+prompts/
+gemini_runs/
 
 # API keys and secrets
 *.key
