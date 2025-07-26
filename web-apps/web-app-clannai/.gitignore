@@ -85,6 +85,7 @@ tmp/
 secrets.json
 credentials.json
 stripe-setup-notes.txt
+DEVOPNESS_ENV_VARS.md
 
 # Database files
 *.sqlite

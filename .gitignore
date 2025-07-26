@@ -79,6 +79,8 @@ checkpoints/
 *.p12
 *.pfx
 secrets.json
+DEVOPNESS_ENV_VARS.md
+DEVOPNESS_BUILD_CONFIG.md
 credentials.json
 stripe-setup-notes.txt
 
