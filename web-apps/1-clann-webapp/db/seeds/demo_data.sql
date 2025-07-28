@@ -31,7 +31,7 @@ INSERT INTO team_members (team_id, user_id) VALUES
 -- Insert demo games with AI analysis results
 -- Game 1: Arsenal FC Academy (Game269_0511)
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
-  ('game-269-0511-0000-0000-000000000000', 
+  ('11111111-1269-0511-0000-000000000000', 
    'Arsenal vs Local Academy - May 11th', 
    'Competitive youth match with tactical focus',
    'https://demo-videos.clann.ai/game269_0511.mp4',
@@ -43,7 +43,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
 
 -- Game 2: Chelsea Youth (Game277_0526)  
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
-  ('game-277-0526-0000-0000-000000000000',
+  ('22222222-2277-0526-0000-000000000000',
    'Chelsea Youth vs Brighton Academy - May 26th',
    'High-intensity academy match',
    'https://demo-videos.clann.ai/game277_0526.mp4', 
@@ -55,7 +55,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
 
 -- Game 3: Liverpool Reserves (Game297_0616)
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
-  ('game-297-0616-0000-0000-000000000000',
+  ('33333333-3297-0616-0000-000000000000',
    'Liverpool Reserves vs Everton U21 - June 16th',
    'Merseyside derby at reserve level',
    'https://demo-videos.clann.ai/game297_0616.mp4',
@@ -67,7 +67,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
 
 -- Game 4: City Development (Game298_0601)
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
-  ('game-298-0601-0000-0000-000000000000',
+  ('44444444-4298-0601-0000-000000000000',
    'City Development vs Newcastle Academy - June 1st',
    'Development squad friendly',
    'https://demo-videos.clann.ai/game298_0601.mp4',
@@ -79,7 +79,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
 
 -- Game 5: United U21s (Game304_0618)
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
-  ('game-304-0618-0000-0000-000000000000',
+  ('55555555-5304-0618-0000-000000000000',
    'United U21s vs Tottenham Development - June 18th', 
    'Competitive U21 league match',
    'https://demo-videos.clann.ai/game304_0618.mp4',
@@ -91,7 +91,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
 
 -- Add some pending games to demonstrate company workflow
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration) VALUES
-  ('pending-game-1-0000-0000-000000000000',
+  ('66666666-6666-6666-6666-666666666601',
    'Arsenal vs Brighton - July 28th',
    'Recent match awaiting analysis',
    'https://veo.co/watch/demo-match-arsenal-brighton',
@@ -99,7 +99,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '11111111-1111-1111-1111-111111111111',
    'pending',
    5400),
-  ('pending-game-2-0000-0000-000000000000',
+  ('77777777-7777-7777-7777-777777777702',
    'Chelsea vs Southampton - July 27th', 
    'Latest academy match for processing',
    'https://veo.co/watch/demo-match-chelsea-southampton',
