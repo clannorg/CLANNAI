@@ -1,0 +1,24 @@
+{
+  "match_id": "ballyclare-425e4c3f",
+  "match_name": "Ballyclare Match",
+  "date": "2025-01-11",
+  "veo_url": "https://app.veo.co/matches/20250111-ballyclare-425e4c3f/",
+  "teams": {
+    "home": "Ballyclare",
+    "away": "TBD"
+  },
+  "status": "pending_download",
+  "created_at": "2025-01-28",
+  "analysis_pipeline": {
+    "download_completed": false,
+    "clips_processed": false,
+    "events_analyzed": false,
+    "synthesis_completed": false
+  },
+  "files": {
+    "raw_video": null,
+    "clips_count": 0,
+    "analysis_files": [],
+    "synthesis_files": []
+  }
+} 
