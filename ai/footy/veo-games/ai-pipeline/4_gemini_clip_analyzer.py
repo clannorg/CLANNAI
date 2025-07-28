@@ -96,7 +96,7 @@ Be concise. Report facts only. No speculation.
 """
 
     def analyze_football_clip(self, compressed_clip_path: str, clip_info: dict) -> dict:
-        """Analyze a single compressed football clip"""
+        """Analyze a single compressed football clip (better accuracy than raw)"""
         clip_filename = clip_info['filename']
         start_seconds = clip_info['start_seconds']
         
@@ -186,7 +186,7 @@ def analyze_clips(match_id):
     # Create analyses directory
     analyses_dir.mkdir(exist_ok=True)
     
-    # Scan compressed clips directory directly (no metadata needed)
+    # Scan compressed clips directory directly (better accuracy than raw)
     clip_pairs = []
     compressed_clips = sorted(list(compressed_dir.glob("compressed_clip_*.mp4")))
     
@@ -217,7 +217,7 @@ def analyze_clips(match_id):
         print("❌ No compressed clips found for analysis")
         return False
     
-    print(f"⚽ Found {len(clip_pairs)} compressed clips for analysis")
+    print(f"⚽ Found {len(clip_pairs)} compressed clips for analysis (better accuracy)")
     print("⚡ Using OPTIMAL batching to max out 10 RPM experimental model limits")
     print("⏱️  Processing 10 clips in parallel every 60 seconds")
     print()
