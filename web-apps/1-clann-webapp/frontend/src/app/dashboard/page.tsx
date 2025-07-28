@@ -31,6 +31,9 @@ export default function Dashboard() {
   const [error, setError] = useState('')
   const [joinTeamCode, setJoinTeamCode] = useState('')
   const [joinTeamLoading, setJoinTeamLoading] = useState(false)
+  const [createTeamName, setCreateTeamName] = useState('')
+  const [createTeamDescription, setCreateTeamDescription] = useState('')
+  const [createTeamLoading, setCreateTeamLoading] = useState(false)
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
@@ -93,6 +96,39 @@ export default function Dashboard() {
       setError(err.message || 'Failed to join team')
     } finally {
       setJoinTeamLoading(false)
+    }
+  }
+
+  const handleCreateTeam = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!createTeamName.trim()) return
+
+    try {
+      setCreateTeamLoading(true)
+      setError('')
+      
+      const response = await apiClient.createTeam({
+        name: createTeamName.trim(),
+        description: createTeamDescription.trim() || undefined,
+        color: '#016F32'
+      })
+      
+      // Reload teams after creating
+      const teamsResponse = await apiClient.getUserTeams()
+      setTeams(teamsResponse.teams || [])
+      
+      // Close modal and reset form
+      setShowCreateTeamModal(false)
+      setCreateTeamName('')
+      setCreateTeamDescription('')
+      
+      // Switch to teams tab to show the new team
+      setActiveTab('teams')
+    } catch (err: any) {
+      console.error('Failed to create team:', err)
+      setError(err.message || 'Failed to create team')
+    } finally {
+      setCreateTeamLoading(false)
     }
   }
 
@@ -441,47 +477,73 @@ export default function Dashboard() {
           </div>
         )}
 
-      {/* Create Team Modal */}
-      {showCreateTeamModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Create New Team</h3>
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-600 mb-1">Team Name</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
-                  placeholder="e.g., My Football Club"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-600 mb-1">Description (Optional)</label>
-                <textarea
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
-                  placeholder="Brief description of your team"
-                  rows={3}
-                />
-              </div>
-              <div className="flex justify-end space-x-3">
-                <button
-                  type="button"
-                  onClick={() => setShowCreateTeamModal(false)}
-                  className="px-6 py-2.5 text-gray-600 hover:text-gray-800 transition-colors"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors"
-                >
-                  Create Team
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
+              {/* Create Team Modal */}
+        {showCreateTeamModal && (
+            <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Create New Team</h3>
+                    
+                    {error && (
+                      <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                        <p className="text-red-600 text-sm">{error}</p>
+                      </div>
+                    )}
+                    
+                    <form onSubmit={handleCreateTeam} className="space-y-4">
+                        <div>
+                            <label className="block text-sm font-medium text-gray-600 mb-1">Team Name</label>
+                            <input
+                                type="text"
+                                value={createTeamName}
+                                onChange={(e) => setCreateTeamName(e.target.value)}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
+                                placeholder="e.g., My Football Club"
+                                required
+                                disabled={createTeamLoading}
+                                maxLength={255}
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-600 mb-1">Description (Optional)</label>
+                            <textarea
+                                value={createTeamDescription}
+                                onChange={(e) => setCreateTeamDescription(e.target.value)}
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
+                                placeholder="Brief description of your team"
+                                rows={3}
+                                disabled={createTeamLoading}
+                                maxLength={500}
+                            />
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          <p>A unique team code will be automatically generated for others to join your team.</p>
+                        </div>
+                        <div className="flex justify-end space-x-3">
+                            <button
+                                type="button"
+                                onClick={() => {
+                                  setShowCreateTeamModal(false)
+                                  setCreateTeamName('')
+                                  setCreateTeamDescription('')
+                                  setError('')
+                                }}
+                                className="px-6 py-2.5 text-gray-600 hover:text-gray-800 transition-colors"
+                                disabled={createTeamLoading}
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="submit"
+                                disabled={createTeamLoading || !createTeamName.trim()}
+                                className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                {createTeamLoading ? 'Creating...' : 'Create Team'}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        )}
     </div>
   )
 } 

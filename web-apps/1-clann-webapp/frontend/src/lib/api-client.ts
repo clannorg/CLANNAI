@@ -85,6 +85,17 @@ class ApiClient {
     })
   }
 
+  async createTeam(teamData: {
+    name: string
+    description?: string
+    color?: string
+  }) {
+    return this.request<{ team: any }>('/api/teams/create', {
+      method: 'POST',
+      body: JSON.stringify(teamData)
+    })
+  }
+
   async getDemoTeamCodes() {
     return this.request<{ codes: any[] }>('/api/teams/codes/demo')
   }

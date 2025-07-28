@@ -5,10 +5,52 @@ const {
   addUserToTeam, 
   getUserTeams, 
   getTeamById,
+  createTeam,
   isTeamMember 
 } = require('../utils/database');
 
 const router = express.Router();
+
+// Create new team
+router.post('/create', authenticateToken, async (req, res) => {
+  try {
+    const { name, description, color } = req.body;
+
+    if (!name || name.trim().length === 0) {
+      return res.status(400).json({ error: 'Team name is required' });
+    }
+
+    if (name.trim().length > 255) {
+      return res.status(400).json({ error: 'Team name is too long (max 255 characters)' });
+    }
+
+    // Create the team
+    const team = await createTeam(
+      name.trim(), 
+      description?.trim() || null, 
+      req.user.id, 
+      color || '#016F32'
+    );
+
+    res.status(201).json({
+      message: 'Team created successfully',
+      team: {
+        id: team.id,
+        name: team.name,
+        description: team.description,
+        color: team.color,
+        team_code: team.team_code,
+        logo_url: team.logo_url,
+        is_public: team.is_public,
+        is_owner: true,
+        created_at: team.created_at
+      }
+    });
+  } catch (error) {
+    console.error('Create team error:', error);
+    res.status(500).json({ error: 'Failed to create team' });
+  }
+});
 
 // Join team by code
 router.post('/join', authenticateToken, async (req, res) => {

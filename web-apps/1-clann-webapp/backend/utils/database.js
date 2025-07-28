@@ -172,6 +172,51 @@ const updateGame = async (id, updates) => {
   return result.rows[0];
 };
 
+// Create new team with auto-generated team code
+const createTeam = async (name, description, ownerId, color = '#016F32') => {
+  // Generate unique team code
+  const generateTeamCode = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let code = '';
+    for (let i = 0; i < 6; i++) {
+      code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code;
+  };
+
+  let teamCode;
+  let attempts = 0;
+  const maxAttempts = 10;
+
+  // Keep generating codes until we find a unique one
+  while (attempts < maxAttempts) {
+    teamCode = generateTeamCode();
+    const existing = await pool.query('SELECT id FROM teams WHERE team_code = $1', [teamCode]);
+    if (existing.rows.length === 0) {
+      break;
+    }
+    attempts++;
+  }
+
+  if (attempts >= maxAttempts) {
+    throw new Error('Failed to generate unique team code');
+  }
+
+  const result = await pool.query(
+    `INSERT INTO teams (name, description, color, team_code, owner_id) 
+     VALUES ($1, $2, $3, $4, $5) 
+     RETURNING *`,
+    [name, description || null, color, teamCode, ownerId]
+  );
+
+  const team = result.rows[0];
+
+  // Automatically add the owner as a team member
+  await addUserToTeam(ownerId, team.id);
+
+  return team;
+};
+
 module.exports = {
   pool,
   getUserByEmail,
@@ -179,6 +224,7 @@ module.exports = {
   createUser,
   getTeamById,
   getTeamByCode,
+  createTeam,
   isTeamMember,
   addUserToTeam,
   getUserTeams,
