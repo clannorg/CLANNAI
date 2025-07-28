@@ -10,6 +10,9 @@ export default function Home() {
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [veoUrl, setVeoUrl] = useState('')
+  const [termsAccepted, setTermsAccepted] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const typedRef = useRef(null)
 
   // Typed.js animation
@@ -47,13 +50,19 @@ export default function Home() {
 
   const handleAuthSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError(null)
     
-    const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
-    const body = isLogin 
-      ? { email, password }
-      : { email, password, name }
-
     try {
+      if (!isLogin && !termsAccepted) {
+        setError('You must accept the Terms & Conditions to register')
+        return
+      }
+
+      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
+      const body = isLogin 
+        ? { email, password }
+        : { email, password, name }
+
       const response = await fetch(`http://localhost:3002${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -67,10 +76,10 @@ export default function Home() {
         localStorage.setItem('user', JSON.stringify(data.user))
         window.location.href = '/dashboard'
       } else {
-        alert(data.error || 'Authentication failed')
+        setError(data.error || 'Authentication failed')
       }
     } catch (error) {
-      alert('Network error: ' + error)
+      setError('Network error: ' + error)
     }
   }
 
@@ -87,11 +96,18 @@ export default function Home() {
   const openSignIn = () => {
     setIsLogin(true)
     setShowAuthModal(true)
+    setError(null)
   }
 
   const openSignUp = () => {
     setIsLogin(false)
     setShowAuthModal(true)
+    setError(null)
+  }
+
+  const handleClose = () => {
+    setShowAuthModal(false)
+    setError(null)
   }
   
 
@@ -456,84 +472,83 @@ export default function Home() {
 
       {/* Auth Modal */}
       {showAuthModal && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-gray-800/95 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 max-w-md w-full mx-4 shadow-2xl">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-30">
+          <div className="bg-gray-800/95 rounded-xl p-8 border border-gray-700/50 max-w-md w-full mx-4">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold text-white">
                 {isLogin ? 'Sign In' : 'Create Account'}
               </h2>
               <button 
-                onClick={() => setShowAuthModal(false)}
-                className="text-gray-400 hover:text-white text-2xl transition-colors"
+                onClick={handleClose}
+                className="text-gray-400 hover:text-white"
               >
                 ✕
               </button>
             </div>
 
-            <form onSubmit={handleAuthSubmit} className="space-y-4">
-              {!isLogin && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-3 bg-gray-700/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-                    placeholder="Enter your name"
-                    required={!isLogin}
-                  />
-                </div>
-              )}
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-3 bg-gray-700/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-                  placeholder="Enter your email"
-                  required
-                />
+            {error && (
+              <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded mb-6">
+                {error}
               </div>
+            )}
+
+            <form onSubmit={handleAuthSubmit} className="space-y-4">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
+                required
+              />
               
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
-                  Password
-                </label>
+              <div className="relative">
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-3 bg-gray-700/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-                  placeholder="Enter your password"
+                  placeholder="Password"
+                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
                   required
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400"
+                >
+                  {showPassword ? '🙈' : '👁️'}
+                </button>
               </div>
               
               <button
                 type="submit"
-                className="w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
-                style={{ 
-                  backgroundColor: 'var(--clann-green)',
-                  color: 'white'
-                }}
-                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#015928'}
-                onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--clann-green)'}
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 {isLogin ? 'Sign In' : 'Create Account'}
               </button>
             </form>
 
+            {!isLogin && (
+              <div className="mt-4">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={termsAccepted}
+                    onChange={(e) => setTermsAccepted(e.target.checked)}
+                    className="mt-1 rounded border-gray-600 bg-gray-700 text-green-500"
+                  />
+                  <span className="text-sm text-gray-300">
+                    I accept the <a href="/terms" className="text-green-500 hover:underline" target="_blank">Terms & Conditions</a> and
+                    <a href="/privacy" className="text-green-500 hover:underline" target="_blank"> Privacy Policy</a>
+                  </span>
+                </label>
+              </div>
+            )}
+
             <div className="mt-6 text-center">
               <button
                 onClick={() => setIsLogin(!isLogin)}
-                className="text-sm transition-colors"
-                style={{ color: 'var(--clann-bright-green)' }}
+                className="text-sm text-green-500 hover:underline transition-colors"
               >
                 {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
               </button>
