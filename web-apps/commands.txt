@@ -4,6 +4,6 @@ tree -I 'node_modules' -L 3
 
 cd web-apps/video-player/local-video-player && npm run dev
 
-cd 1-clann-webapp/backend && node server.js
+cd 1-clann-webapp/backend && npm start
 
 cd 1-clann-webapp/frontend && npm run dev

@@ -57,10 +57,10 @@ export default function Home() {
         setError('You must accept the Terms & Conditions to register')
         return
       }
-
-      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
-      const body = isLogin 
-        ? { email, password }
+    
+    const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
+    const body = isLogin 
+      ? { email, password }
         : { email, password, phone }
 
       const response = await fetch(`http://localhost:3002${endpoint}`, {
@@ -136,7 +136,7 @@ export default function Home() {
                 className="h-7 w-auto"
                 priority
               />
-            </div>
+          </div>
 
             {/* Auth Buttons */}
             <div className="flex items-center gap-6">
@@ -153,8 +153,8 @@ export default function Home() {
                 Get started
               </button>
             </div>
-          </div>
-        </div>
+            </div>
+            </div>
       </header>
 
       {/* Main Content Container */}
@@ -489,11 +489,11 @@ export default function Home() {
             {error && (
               <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-4 rounded-xl mb-6 backdrop-blur-sm">
                 {error}
-              </div>
-            )}
-
+                </div>
+              )}
+              
             <form onSubmit={handleAuthSubmit} className="space-y-5">
-                              <input
+                <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -526,10 +526,10 @@ export default function Home() {
               )}
               
               <div className="relative">
-                                  <input
+                <input
                     type={showPassword ? 'text' : 'password'}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
                     className="w-full rounded-xl px-5 py-4 text-white placeholder-gray-400 focus:outline-none transition-all"
                     style={{ 
@@ -538,8 +538,8 @@ export default function Home() {
                     }}
                     onFocus={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'}
                     onBlur={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'}
-                    required
-                  />
+                  required
+                />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
@@ -590,8 +590,8 @@ export default function Home() {
             <div className="mt-6 p-4 bg-black/40 rounded-xl border border-gray-800/30">
               <p className="text-xs text-gray-400 mb-3 font-medium">Demo Credentials:</p>
               <div className="space-y-1">
-                <p className="text-xs text-gray-300">User: arsenal@demo.com / demo123</p>
-                <p className="text-xs text-gray-300">Company: admin@clann.ai / demo123</p>
+              <p className="text-xs text-gray-300">User: arsenal@demo.com / demo123</p>
+              <p className="text-xs text-gray-300">Company: admin@clann.ai / demo123</p>
               </div>
             </div>
           </div>
