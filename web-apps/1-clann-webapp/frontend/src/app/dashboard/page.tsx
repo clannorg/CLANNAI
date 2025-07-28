@@ -55,8 +55,8 @@ export default function Dashboard() {
                 <Image 
                   src="/clann-logo-green.png" 
                   alt="ClannAI" 
-                  width={32} 
-                  height={32}
+                  width={48} 
+                  height={48}
                 />
                 {user && (
                   <div className="text-gray-600">
@@ -124,7 +124,7 @@ export default function Dashboard() {
         {activeTab === 'games' && (
           <div className="bg-white rounded-xl shadow-sm">
             <div className="flex justify-between items-center p-6 border-b border-gray-100">
-              <h2 className="text-2xl font-bold">Your Games</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Your Games</h2>
               <button
                 onClick={() => {
                   if (teams.length === 0) {
@@ -196,7 +196,7 @@ export default function Dashboard() {
         {activeTab === 'teams' && (
           <div className="bg-white rounded-xl shadow-sm">
             <div className="flex justify-between items-center p-6 border-b border-gray-100">
-              <h2 className="text-2xl font-bold">Your Teams</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Your Teams</h2>
               <button
                 onClick={() => setShowJoinModal(true)}
                 className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors"
