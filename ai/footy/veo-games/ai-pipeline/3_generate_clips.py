@@ -51,8 +51,8 @@ def get_video_duration(video_path):
         return 5400  # 90 minutes default
 
 def generate_clips(match_id):
-    """Generate 15-second clips from video using optimized parallel processing"""
-    print(f"✂️ Step 3: Generating clips for {match_id}")
+    """Generate 15-second clips from FIRST 15 MINUTES ONLY using time-based naming"""
+    print(f"✂️ Step 3: Generating clips for {match_id} (FIRST 15 MINUTES ONLY)")
     
     data_dir = Path("../data") / match_id
     video_path = data_dir / "video.mp4"
@@ -71,18 +71,24 @@ def generate_clips(match_id):
     
     # Get actual video duration
     video_duration = get_video_duration(video_path)
-    print(f"📊 Video duration: {video_duration/60:.1f} minutes")
+    print(f"📊 Full video duration: {video_duration/60:.1f} minutes")
     
-    # Calculate number of clips
+    # LIMIT TO FIRST 15 MINUTES (900 seconds)
+    max_duration = 900  # 15 minutes in seconds
+    processing_duration = min(video_duration, max_duration)
+    
+    # Calculate number of clips (exactly 60 for 15 minutes)
     clip_duration = 15
-    num_clips = int(video_duration // clip_duration)
+    num_clips = int(processing_duration // clip_duration)
     
+    print(f"🎯 Processing ONLY first {processing_duration/60:.1f} minutes")
     print(f"📊 Will create {num_clips} clips of {clip_duration} seconds each")
     print()
     
     clips_info = {
         "total_clips": num_clips,
         "clip_duration_seconds": clip_duration,
+        "processing_duration_seconds": processing_duration,
         "video_duration_seconds": video_duration,
         "clips": []
     }
@@ -91,10 +97,15 @@ def generate_clips(match_id):
     processing_start_time = time.time()
     
     def process_single_clip(i):
-        """Process a single clip with progress tracking"""
-        clip_filename = f"clip_{i:04d}.mp4"
+        """Process a single clip with time-based naming"""
         start_time = i * clip_duration
-        end_time = min(start_time + clip_duration, video_duration)
+        minutes = int(start_time // 60)
+        seconds = int(start_time % 60)
+        
+        # TIME-BASED NAMING: clip_00m00s.mp4, clip_00m15s.mp4, etc.
+        clip_filename = f"clip_{minutes:02d}m{seconds:02d}s.mp4"
+        
+        end_time = min(start_time + clip_duration, processing_duration)
         actual_duration = end_time - start_time
         
         clip_path = clips_dir / clip_filename
@@ -128,19 +139,22 @@ def generate_clips(match_id):
                 if success:
                     successful_clips += 1
                     
-                    # Add to clips info
+                    # Add to clips info with time-based naming
                     start_seconds = clip_index * clip_duration
-                    end_seconds = min(start_seconds + clip_duration, video_duration)
+                    end_seconds = min(start_seconds + clip_duration, processing_duration)
+                    minutes = int(start_seconds // 60)
+                    seconds = int(start_seconds % 60)
                     
                     clips_info["clips"].append({
-                        "filename": f"clip_{clip_index:04d}.mp4",
+                        "filename": f"clip_{minutes:02d}m{seconds:02d}s.mp4",
                         "start_seconds": start_seconds,
                         "end_seconds": end_seconds,
-                        "duration": end_seconds - start_seconds
+                        "duration": end_seconds - start_seconds,
+                        "timestamp": f"{minutes:02d}:{seconds:02d}"
                     })
                 
-                # Show speed metrics every 50 clips
-                if i % 50 == 0:
+                # Show speed metrics every 20 clips
+                if i % 20 == 0:
                     elapsed = time.time() - processing_start_time
                     rate = i / elapsed
                     print(f"  📊 Speed: {rate:.1f} clips/sec | Elapsed: {elapsed:.1f}s")
@@ -157,9 +171,10 @@ def generate_clips(match_id):
     with open(clips_dir / "segments.json", 'w') as f:
         json.dump(clips_info, f, indent=2)
     
-    print("\n⚡ FAST CLIPPING COMPLETE!")
+    print("\n⚡ FIRST 15 MINUTES CLIPPING COMPLETE!")
     print("=" * 50)
     print(f"✅ Created {successful_clips}/{num_clips} clips")
+    print(f"🎯 Coverage: 0:00 to {processing_duration//60:02.0f}:{processing_duration%60:02.0f}")
     print(f"⏱️  Total time: {total_time:.1f} seconds")
     print(f"🚀 Speed: {successful_clips/total_time:.1f} clips/second")
     print(f"📁 Clips saved to: {clips_dir}")

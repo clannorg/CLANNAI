@@ -8,6 +8,7 @@ import sys
 import os
 import json
 import time
+import math
 import subprocess
 from pathlib import Path
 from datetime import datetime
@@ -59,15 +60,16 @@ Analyze this 15-second football match clip and describe, in plain text, any foot
 - The outcome (successful/unsuccessful)
 - Field position (penalty area, center circle, attacking third, etc.)
 
-IMPORTANT FOOTBALL EVENTS TO DETECT:
-- ⚽ GOALS and shots (on target, off target, saved)
-- 🥅 GOALKEEPING actions (saves, catches, clearances)
-- ⚽ PASSING and crosses (successful, intercepted)
+IMPORTANT FOOTBALL EVENTS TO DETECT (IN ORDER OF PRIORITY):
+- 🚨 KICKOFFS (both teams lined up on either side of center circle - CRITICAL FOR GOAL DETECTION!)
+- ⚽ GOALS and shots (on target, off target, saved, rebounds)
+- 🎉 CELEBRATIONS (players running, arms up, hugging after scoring)
+- 🥅 GOALKEEPING actions (saves, catches, clearances, punches)
+- ⚽ PASSING and crosses (successful, intercepted, through balls)
 - 🏃 TACKLES and challenges (won, lost)
 - 🔄 POSSESSION changes and turnovers
 - 🟨 FOULS and disciplinary actions
-- 📐 SET PIECES (corners, free kicks, throw-ins)
-- 🏃 OFFSIDES and defensive plays
+- 📐 SET PIECES (corners, free kicks, throw-ins, penalties)
 
 If no significant football events occur, say: "No significant football events detected in this clip."
 
@@ -170,35 +172,43 @@ def analyze_clips(match_id):
         print("Run Step 3.5 first: python 3.5_compress_clips.py")
         return False
     
-    # Load clips metadata
-    clips_dir = data_dir / "clips"
-    segments_file = clips_dir / "segments.json"
-    if not segments_file.exists():
-        print(f"❌ Segments metadata not found: {segments_file}")
-        return False
-    
-    with open(segments_file, 'r') as f:
-        segments_data = json.load(f)
-    
     # Create analyses directory
     analyses_dir.mkdir(exist_ok=True)
     
-    # Get compressed clips with metadata
+    # Scan compressed clips directory directly (no metadata needed)
     clip_pairs = []
-    for clip_info in segments_data['clips']:
-        compressed_clip = compressed_dir / f"compressed_{clip_info['filename']}"
-        if compressed_clip.exists():
+    compressed_clips = sorted(list(compressed_dir.glob("compressed_clip_*.mp4")))
+    
+    for compressed_clip in compressed_clips:
+        # Extract timing from filename: compressed_clip_00m00s.mp4 -> 00m00s
+        filename_base = compressed_clip.stem.replace("compressed_", "")  # clip_00m00s
+        original_filename = f"{filename_base}.mp4"  # clip_00m00s.mp4
+        
+        # Parse time from filename: 00m00s -> 0 seconds
+        time_part = filename_base.replace("clip_", "")  # 00m00s
+        try:
+            minutes = int(time_part.split('m')[0])
+            seconds = int(time_part.split('m')[1].replace('s', ''))
+            start_seconds = minutes * 60 + seconds
+            
+            clip_info = {
+                'filename': original_filename,
+                'start_seconds': start_seconds,
+                'end_seconds': start_seconds + 15,  # 15-second clips
+                'duration': 15,
+                'timestamp': f"{minutes:02d}:{seconds:02d}"
+            }
             clip_pairs.append((compressed_clip, clip_info))
-        else:
-            print(f"⚠️  Missing compressed clip: {clip_info['filename']}")
+        except (ValueError, IndexError):
+            print(f"⚠️  Could not parse timing from: {compressed_clip.name}")
     
     if not clip_pairs:
         print("❌ No compressed clips found for analysis")
         return False
     
     print(f"⚽ Found {len(clip_pairs)} compressed clips for analysis")
-    print("🚀 Using batch processing with rate limiting")
-    print("⏱️  Processing in batches of 8 with 60s delays")
+    print("⚡ Using OPTIMAL batching to max out 10 RPM experimental model limits")
+    print("⏱️  Processing 10 clips in parallel every 60 seconds")
     print()
     
     # Initialize analyzer
@@ -209,18 +219,21 @@ def analyze_clips(match_id):
         return False
     
     results = []
-    batch_size = 8
-    max_workers = 4
-    delay_between_batches = 60
+    batch_size = 10  # Max out the 10 RPM limit
+    max_workers = 10  # Full parallel processing
+    delay_between_batches = 60  # Full minute between batches
     
     total_batches = math.ceil(len(clip_pairs) / batch_size)
+    print(f"🎯 Processing {len(clip_pairs)} clips in {total_batches} batches of {batch_size}")
+    print(f"⏱️  Estimated total time: {total_batches * delay_between_batches / 60:.1f} minutes")
+    print()
     
     for batch_num in range(total_batches):
         start = batch_num * batch_size
         end = min(start + batch_size, len(clip_pairs))
         batch = clip_pairs[start:end]
         
-        print(f"🏈 Processing batch {batch_num+1}/{total_batches} ({len(batch)} clips)")
+        print(f"⚡ Processing batch {batch_num+1}/{total_batches} ({len(batch)} clips in parallel)")
         batch_start_time = time.time()
         
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -242,6 +255,7 @@ def analyze_clips(match_id):
                         with open(analysis_path, 'w') as f:
                             json.dump(result, f, indent=2)
                         
+                        print(f"✅ Analysis complete for {clip_info['filename']}")
                     else:
                         print(f"❌ Failed to analyze {clip_info['filename']}")
                 except Exception as e:
@@ -250,9 +264,9 @@ def analyze_clips(match_id):
         batch_time = time.time() - batch_start_time
         print(f"✅ Batch {batch_num+1} complete in {batch_time:.1f}s")
         
-        # Rate limiting delay between batches
+        # Wait between batches (except for last batch)
         if batch_num < total_batches - 1:
-            print(f"⏳ Waiting {delay_between_batches}s to avoid rate limits...")
+            print(f"⏳ Waiting {delay_between_batches}s before next batch...")
             time.sleep(delay_between_batches)
             print()
     
