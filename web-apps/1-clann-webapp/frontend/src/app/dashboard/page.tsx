@@ -51,18 +51,18 @@ export default function Dashboard() {
           <div className="flex flex-col items-center md:flex-row md:justify-between md:items-center">
             {/* Logo */}
             <div className="mb-4 md:mb-0">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-4">
                 <Image 
                   src="/clann-logo-green.png" 
                   alt="ClannAI" 
-                  width={48} 
-                  height={48}
+                  width={64} 
+                  height={64}
                 />
                 {user && (
                   <div className="text-gray-600">
                     {user.name || user.email}
                     {user.role === 'company' && (
-                      <span className="ml-2 px-2 py-1 text-xs rounded bg-[#016F32] text-white">Company</span>
+                      <span className="ml-2 px-2 py-1 text-sm rounded bg-[#016F32] text-white">Company</span>
                     )}
                   </div>
                 )}
@@ -95,21 +95,21 @@ export default function Dashboard() {
           <div className="flex justify-center overflow-x-auto scrollbar-hide">
             <button
               onClick={() => setActiveTab('games')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'games'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+                                className={`px-8 py-3 font-medium text-base whitespace-nowrap ${
+                    activeTab === 'games'
+                      ? 'text-[#016F32] border-b-2 border-[#016F32]'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
             >
               Games
             </button>
             <button
               onClick={() => setActiveTab('teams')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'teams'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
+                                className={`px-8 py-3 font-medium text-base whitespace-nowrap ${
+                    activeTab === 'teams'
+                      ? 'text-[#016F32] border-b-2 border-[#016F32]'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
             >
               Teams
             </button>
