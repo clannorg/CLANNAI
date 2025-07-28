@@ -2,10 +2,25 @@
 
 import { useState, useEffect } from 'react'
 
+interface Game {
+  id: string
+  title: string
+  status: string
+  team_name: string
+  created_at: string
+}
+
+interface Team {
+  id: string
+  name: string
+  team_code: string
+  color: string
+}
+
 export default function Dashboard() {
   const [user, setUser] = useState<any>(null)
-  const [games, setGames] = useState([])
-  const [teams, setTeams] = useState([])
+  const [games, setGames] = useState<Game[]>([])
+  const [teams, setTeams] = useState<Team[]>([])
   const [activeTab, setActiveTab] = useState('games')
   const [showUploadModal, setShowUploadModal] = useState(false)
   const [showJoinModal, setShowJoinModal] = useState(false)
