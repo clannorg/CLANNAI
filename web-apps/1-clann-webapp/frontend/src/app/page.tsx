@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 export default function Home() {
   const [isLogin, setIsLogin] = useState(true)
@@ -79,66 +80,140 @@ export default function Home() {
     }
   }
 
+  const openSignIn = () => {
+    setIsLogin(true)
+    setShowAuthModal(true)
+  }
+
+  const openSignUp = () => {
+    setIsLogin(false)
+    setShowAuthModal(true)
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 overflow-hidden">
-      {/* Hero Section with Background */}
-      <div className="relative min-h-screen">
+      <style jsx global>{`
+        :root {
+          --clann-green: #016F32;
+          --clann-blue: #4EC2CA;
+          --clann-bright-green: #D1FB7A;
+          --clann-light-blue: #B9E8EB;
+        }
+      `}</style>
+
+      {/* Header Navigation */}
+      <header className="relative z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Image
+                src="/clann-logo.png"
+                alt="ClannAI"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+                priority
+              />
+            </div>
+
+            {/* Auth Buttons */}
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={openSignIn}
+                className="text-gray-300 hover:text-white px-4 py-2 text-sm font-medium transition-colors"
+              >
+                Sign In
+              </button>
+              <button
+                onClick={openSignUp}
+                className="px-6 py-2 rounded-lg text-sm font-medium transition-colors"
+                style={{ 
+                  backgroundColor: 'var(--clann-green)',
+                  color: 'white'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#015928'}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--clann-green)'}
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section with Video Background */}
+      <div className="relative min-h-screen flex items-center">
         
-        {/* Background Video/Gradient */}
-        <div className="absolute inset-0">
-          {/* For now using gradient, can add video later */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-green-900/20 to-gray-900"></div>
+        {/* Background Video */}
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+
+          {/* Gradient Overlay */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(17,24,39,0.3) 0%, rgba(17,24,39,0.2) 50%, rgba(17,24,39,0.8) 100%)'
+              background: 'linear-gradient(to bottom, rgba(17,24,39,0.4) 0%, rgba(17,24,39,0.3) 50%, rgba(17,24,39,0.9) 100%)'
             }}
           />
         </div>
 
         {/* Hero Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Spacer */}
-          <div className="h-[35vh]"></div>
-
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           {/* Main Hero Text */}
-          <div className="text-center mb-52">
-            <h1 className="text-5xl md:text-7xl font-bold text-white">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
               ClannAI can now track
               <br />
               <div style={{ height: '1.2em', position: 'relative' }} className="flex justify-center">
                 <span 
                   ref={typedRef}
-                  className="text-green-400 text-5xl md:text-7xl"
+                  className="text-5xl md:text-7xl font-bold"
+                  style={{ color: 'var(--clann-bright-green)' }}
                 />
               </div>
             </h1>
-            <p className="text-gray-400 text-xl mt-6">
+            <p className="text-gray-300 text-xl mt-8 font-light">
               Transform footage into winning game insights
             </p>
           </div>
 
           {/* VEO Input Section */}
-          <div className="relative max-w-2xl mx-auto mb-24">
-            <div className="relative bg-gray-800/90 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50">
+          <div className="relative max-w-2xl mx-auto mb-20">
+            <div className="relative bg-gray-800/90 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 shadow-2xl">
               <div className="space-y-4">
                 <input
                   type="text"
                   value={veoUrl}
                   onChange={(e) => setVeoUrl(e.target.value)}
                   placeholder="e.g. https://app.veo.co/matches/527e6a4e-f323-4524..."
-                  className="w-full bg-gray-900/50 text-white px-4 py-3 rounded-lg border border-gray-700/50 
-                            focus:border-green-500/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none"
+                  className="w-full bg-gray-900/70 text-white px-4 py-4 rounded-lg border border-gray-700/50 
+                            focus:border-green-500/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none
+                            placeholder-gray-400 text-lg"
                 />
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <p className="text-sm text-gray-400">
                     Paste your game footage URL from Veo, Trace, or Spiideo
                   </p>
                   <button 
                     onClick={handleAnalyzeClick}
-                    className="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-8 
-                               rounded-lg transition-colors focus:outline-none focus:ring-2 
-                               focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    className="px-8 py-4 rounded-lg font-medium text-white transition-all duration-200 
+                              hover:shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 
+                              focus:ring-offset-2 focus:ring-offset-gray-900"
+                    style={{ 
+                      backgroundColor: 'var(--clann-green)',
+                      boxShadow: '0 4px 20px rgba(1, 111, 50, 0.3)'
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#015928'}
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--clann-green)'}
                   >
                     Analyze
                   </button>
@@ -148,56 +223,66 @@ export default function Home() {
           </div>
 
           {/* Features Showcase */}
-          <div className="max-w-7xl mx-auto px-4 pt-8 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-4">Track Without GPS Devices</h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                Get metrics for both <span className="text-green-400 font-semibold">your team</span> and{' '}
-                <span className="text-blue-400 font-semibold">your opponent</span> from just your match footage.
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Track Without GPS Devices</h2>
+              <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+                Get metrics for both <span className="font-semibold" style={{ color: 'var(--clann-bright-green)' }}>your team</span> and{' '}
+                <span className="font-semibold" style={{ color: 'var(--clann-light-blue)' }}>your opponent</span> from just your match footage.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {/* Free Trial */}
-              <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-green-500/30 transition-all">
-                <div className="inline-block bg-green-500/10 text-green-400 px-4 py-1 rounded-full text-sm font-medium mb-4">
+              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-green-500/30 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4"
+                     style={{ 
+                       backgroundColor: 'rgba(209, 251, 122, 0.1)',
+                       color: 'var(--clann-bright-green)'
+                     }}>
                   FREE TRIAL
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-6">Get Started</h3>
                 <ul className="text-gray-300 space-y-4 mb-8">
                   <li className="flex items-center gap-3">
-                    <span className="text-green-400 text-xl">✓</span>
+                    <span className="text-xl" style={{ color: 'var(--clann-bright-green)' }}>✓</span>
                     First Game Analysis
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-green-400 text-xl">✓</span>
+                    <span className="text-xl" style={{ color: 'var(--clann-bright-green)' }}>✓</span>
                     Team Position Tracking
                   </li>
                   <li className="flex items-center gap-3">
-                    <span className="text-green-400 text-xl">✓</span>
+                    <span className="text-xl" style={{ color: 'var(--clann-bright-green)' }}>✓</span>
                     Full Feature Access
                   </li>
                 </ul>
                 <button
-                  onClick={() => { setShowAuthModal(true); setIsLogin(false) }}
-                  className="w-full px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg transition-colors"
+                  onClick={openSignUp}
+                  className="w-full px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
+                  style={{ 
+                    backgroundColor: 'var(--clann-green)',
+                    color: 'white'
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#015928'}
+                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--clann-green)'}
                 >
                   Start Free Trial
                 </button>
               </div>
 
               {/* Team Analysis */}
-              <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50">
+              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300">
                 <div className="text-4xl mb-4">📈</div>
                 <h3 className="text-xl font-bold text-white mb-3">Team Position Tracking</h3>
-                <p className="text-gray-400">Real-time tactical positioning analysis and heat mapping</p>
+                <p className="text-gray-400 leading-relaxed">Real-time tactical positioning analysis and heat mapping</p>
               </div>
 
               {/* Sprint Analysis */}
-              <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50">
+              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
                 <div className="text-4xl mb-4">⚡</div>
                 <h3 className="text-xl font-bold text-white mb-3">Sprint Analysis</h3>
-                <p className="text-gray-400">Automatic sprint detection and energy expenditure metrics</p>
+                <p className="text-gray-400 leading-relaxed">Automatic sprint detection and energy expenditure metrics</p>
               </div>
             </div>
 
@@ -205,35 +290,26 @@ export default function Home() {
             <div className="text-center">
               <h3 className="text-xl font-bold text-white mb-6">Demo Team Join Codes</h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm max-w-4xl mx-auto">
-                <div className="bg-red-900/30 p-3 rounded-lg border border-red-700/30">
+                <div className="bg-red-900/40 backdrop-blur-sm p-4 rounded-lg border border-red-700/30 hover:border-red-500/50 transition-all">
                   <div className="font-bold text-white">ARS269</div>
                   <div className="text-gray-400">Arsenal FC</div>
                 </div>
-                <div className="bg-blue-900/30 p-3 rounded-lg border border-blue-700/30">
+                <div className="bg-blue-900/40 backdrop-blur-sm p-4 rounded-lg border border-blue-700/30 hover:border-blue-500/50 transition-all">
                   <div className="font-bold text-white">CHE277</div>
                   <div className="text-gray-400">Chelsea Youth</div>
                 </div>
-                <div className="bg-red-900/30 p-3 rounded-lg border border-red-700/30">
+                <div className="bg-red-900/40 backdrop-blur-sm p-4 rounded-lg border border-red-700/30 hover:border-red-500/50 transition-all">
                   <div className="font-bold text-white">LIV297</div>
                   <div className="text-gray-400">Liverpool Reserves</div>
                 </div>
-                <div className="bg-sky-900/30 p-3 rounded-lg border border-sky-700/30">
+                <div className="bg-sky-900/40 backdrop-blur-sm p-4 rounded-lg border border-sky-700/30 hover:border-sky-500/50 transition-all">
                   <div className="font-bold text-white">MCI298</div>
                   <div className="text-gray-400">City Development</div>
                 </div>
-                <div className="bg-red-900/30 p-3 rounded-lg border border-red-700/30">
+                <div className="bg-red-900/40 backdrop-blur-sm p-4 rounded-lg border border-red-700/30 hover:border-red-500/50 transition-all">
                   <div className="font-bold text-white">MUN304</div>
                   <div className="text-gray-400">United U21s</div>
                 </div>
-              </div>
-              
-              <div className="mt-8">
-                <button
-                  onClick={() => { setShowAuthModal(true); setIsLogin(true) }}
-                  className="text-green-400 hover:text-green-300 underline"
-                >
-                  Already have an account? Sign in here
-                </button>
               </div>
             </div>
           </div>
@@ -242,15 +318,15 @@ export default function Home() {
 
       {/* Auth Modal */}
       {showAuthModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-gray-800/95 rounded-xl p-8 border border-gray-700/50 max-w-md w-full mx-4">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-gray-800/95 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 max-w-md w-full mx-4 shadow-2xl">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold text-white">
                 {isLogin ? 'Sign In' : 'Create Account'}
               </h2>
               <button 
                 onClick={() => setShowAuthModal(false)}
-                className="text-gray-400 hover:text-white text-2xl"
+                className="text-gray-400 hover:text-white text-2xl transition-colors"
               >
                 ✕
               </button>
@@ -266,7 +342,7 @@ export default function Home() {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full px-3 py-3 bg-gray-700/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
                     placeholder="Enter your name"
                     required={!isLogin}
                   />
@@ -281,7 +357,7 @@ export default function Home() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-3 bg-gray-700/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
                   placeholder="Enter your email"
                   required
                 />
@@ -295,7 +371,7 @@ export default function Home() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-3 bg-gray-700/70 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
                   placeholder="Enter your password"
                   required
                 />
@@ -303,7 +379,13 @@ export default function Home() {
               
               <button
                 type="submit"
-                className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors"
+                className="w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
+                style={{ 
+                  backgroundColor: 'var(--clann-green)',
+                  color: 'white'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#015928'}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--clann-green)'}
               >
                 {isLogin ? 'Sign In' : 'Create Account'}
               </button>
@@ -312,7 +394,8 @@ export default function Home() {
             <div className="mt-6 text-center">
               <button
                 onClick={() => setIsLogin(!isLogin)}
-                className="text-green-400 hover:text-green-300 text-sm"
+                className="text-sm transition-colors"
+                style={{ color: 'var(--clann-bright-green)' }}
               >
                 {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
               </button>
