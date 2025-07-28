@@ -15,11 +15,11 @@ def format_for_web(match_id):
     print(f"🌐 Step 6: Formatting web JSON for {match_id}")
     
     data_dir = Path("../data") / match_id
-    timeline_path = data_dir / "match_timeline.json"
+    timeline_path = data_dir / "intelligent_match_timeline.json"
     source_path = data_dir / "source.json"
     
     if not timeline_path.exists():
-        print(f"❌ Match timeline not found: {timeline_path}")
+        print(f"❌ Intelligent match timeline not found: {timeline_path}")
         print("Run Step 5 first: python 5_gemini_synthesis.py")
         return False
     
@@ -33,54 +33,76 @@ def format_for_web(match_id):
         with open(source_path, 'r') as f:
             source_data = json.load(f)
     
-    # Create web-formatted data
+    # Extract intelligent analysis
+    analysis = timeline.get("intelligent_analysis", {})
+    goals = analysis.get("goals_detected", [])
+    key_events = analysis.get("key_events", [])
+    match_summary = analysis.get("match_summary", {})
+    
+    # Create web-formatted data with coaching insights
     web_data = {
         "match_id": match_id,
         "url": source_data.get("url", ""),
         "generated_at": datetime.now().isoformat(),
+        "coaching_insights": {
+            "analysis_method": "Coaching-Focused AI Vision + Kickoff Validation",
+            "model_used": "gemini-2.0-flash-exp + gemini-2.5-pro synthesis",
+            "clips_analyzed": timeline.get("clips_analyzed", 0),
+            "processing_time": round(timeline.get("processing_time_seconds", 0), 1)
+        },
         "match_stats": {
-            "total_ai_events": timeline["total_events"],
-            "total_veo_events": source_data.get("total_events", 0),
-            "average_ai_confidence": timeline["average_confidence"],
-            "clips_analyzed": timeline["gemini_summary"]["clips_analyzed"]
+            "total_goals_detected": len(goals),
+            "total_key_events": len(key_events),
+            "match_summary": match_summary
         },
-        "event_summary": {
-            "goals": timeline["event_types"].get("GOAL", 0),
-            "shots_on_goal": timeline["event_types"].get("SHOT_ON_GOAL", 0),
-            "saves": timeline["event_types"].get("SAVE", 0),
-            "corners": timeline["event_types"].get("CORNER", 0),
-            "fouls": timeline["event_types"].get("FOUL", 0)
-        },
-        "timeline": [],
-        "key_moments": [],
-        "ai_insights": {
-            "model_used": "gemini-pro-vision",
-            "processing_method": "15-second clip analysis with synthesis",
-            "confidence_threshold": 0.5
-        }
+        "goals": [],
+        "key_events": [],
+        "timeline": []
     }
     
-    # Format timeline events for web
-    for event in timeline["events"]:
+    # Format goals with coaching details
+    for goal in goals:
+        web_goal = {
+            "timestamp": goal["timestamp"],
+            "team": goal["scoring_team"],
+            "description": goal["description"],
+            "confidence": goal["confidence"],
+            "evidence": goal.get("evidence", ""),
+            "source_clips": goal.get("source_clips", [])
+        }
+        web_data["goals"].append(web_goal)
+    
+    # Format key events for coaching insights
+    for event in key_events:
         web_event = {
             "timestamp": event["timestamp"],
             "type": event["type"],
-            "confidence": round(event["confidence"], 2),
-            "description": event.get("description", ""),
-            "is_key_moment": event["confidence"] > 0.8
+            "description": event["description"],
+            "confidence": event["confidence"]
         }
+        web_data["key_events"].append(web_event)
         
+        # Also add to timeline
         web_data["timeline"].append(web_event)
-        
-        # Add to key moments if high confidence
-        if event["confidence"] > 0.8:
-            web_data["key_moments"].append(web_event)
     
-    # Sort key moments by confidence
-    web_data["key_moments"].sort(key=lambda x: x["confidence"], reverse=True)
+    # Add goals to timeline as well
+    for goal in goals:
+        timeline_event = {
+            "timestamp": goal["timestamp"],
+            "type": "GOAL",
+            "description": goal["description"],
+            "confidence": goal["confidence"]
+        }
+        web_data["timeline"].append(timeline_event)
     
-    # Limit key moments to top 10
-    web_data["key_moments"] = web_data["key_moments"][:10]
+    # Sort timeline by timestamp
+    web_data["timeline"].sort(key=lambda x: x["timestamp"])
+    
+    # Limit key events to top 10 by confidence if available
+    if len(web_data["key_events"]) > 10:
+        web_data["key_events"] = sorted(web_data["key_events"], 
+                                      key=lambda x: x.get("confidence", "HIGH"), 
+                                      reverse=True)[:10]
     
     # Save web-formatted data
     web_path = data_dir / "web_format.json"
@@ -88,7 +110,7 @@ def format_for_web(match_id):
         json.dump(web_data, f, indent=2)
     
     print(f"✅ Step 6 complete: Web JSON saved to {web_path}")
-    print(f"📊 {len(web_data['timeline'])} events, {len(web_data['key_moments'])} key moments")
+    print(f"📊 {len(web_data['timeline'])} timeline events, {len(web_data['key_events'])} key events, {len(web_data['goals'])} goals")
     
     return True
 

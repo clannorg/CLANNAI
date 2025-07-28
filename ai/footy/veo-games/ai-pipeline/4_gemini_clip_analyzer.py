@@ -48,40 +48,51 @@ class FootballClipAnalyzer:
             return None
 
     def get_football_analysis_prompt(self, timestamp: str) -> str:
-        """Generate prompt for football event detection"""
+        """Generate concise, factual football event detection"""
         return f"""
-⚽ FOOTBALL EVENT DETECTION
-==============================
+⚽ CONCISE FOOTBALL EVENT DETECTION
+===================================
 
-Analyze this 15-second football match clip and describe, in plain text, any football events you see. Include:
-- The exact time in the clip (in seconds) for each event
-- Who was involved (player description, jersey color/number if visible)
-- What happened (goal, shot, pass, tackle, foul, corner kick, throw-in, etc.)
-- The outcome (successful/unsuccessful)
-- Field position (penalty area, center circle, attacking third, etc.)
+Analyze this 15-second clip. Report ONLY what you clearly see. Be factual and brief.
 
-IMPORTANT FOOTBALL EVENTS TO DETECT (IN ORDER OF PRIORITY):
-- 🚨 KICKOFFS (both teams lined up on either side of center circle - CRITICAL FOR GOAL DETECTION!)
-- ⚽ GOALS and shots (on target, off target, saved, rebounds)
-- 🎉 CELEBRATIONS (players running, arms up, hugging after scoring)
-- 🥅 GOALKEEPING actions (saves, catches, clearances, punches)
-- ⚽ PASSING and crosses (successful, intercepted, through balls)
-- 🏃 TACKLES and challenges (won, lost)
-- 🔄 POSSESSION changes and turnovers
-- 🟨 FOULS and disciplinary actions
-- 📐 SET PIECES (corners, free kicks, throw-ins, penalties)
+PRIORITY EVENTS (report if seen):
+- GOALS: "Goal scored by [team/player]"
+- SHOTS: "Shot by [team/player] - saved/missed"  
+- KICKOFFS: "KICKOFF by [RED/BLACK] team from CENTER CIRCLE"
+- GOAL KICKS: "GOAL KICK by [RED/BLACK] goalkeeper from penalty area"
+- CELEBRATIONS: "Players celebrating"
+- SAVES: "Goalkeeper save"
 
-If no significant football events occur, say: "No significant football events detected in this clip."
+🚨 ULTRA-CRITICAL DISTINCTION:
+- KICKOFF = Specific team lines up at CENTER CIRCLE, both teams on opposite sides, happens AFTER GOALS
+- GOAL KICK = Specific goalkeeper kicks from PENALTY AREA, happens when ball goes out over goal line
 
-RESPONSE FORMAT (PLAIN TEXT ONLY, NO JSON):
+ALWAYS specify which team/goalkeeper and which type of restart!
+
+RESPONSE FORMAT - BRIEF FACTS ONLY:
+State timestamp + what happened. No coaching advice. No invented details.
 
 Example:
-3.2s: Player in blue jersey (#10) takes a shot from edge of penalty area – SAVED by goalkeeper
-7.8s: Goalkeeper distributes ball with throw to defender
-12.1s: Red team player wins tackle in midfield, starts counter-attack
-14.5s: Cross from right wing into penalty area – CLEARED by defender
+2.1s: Shot by BLACK team - saved by goalkeeper
+8.3s: KICKOFF by RED team from CENTER CIRCLE
+12.0s: Players celebrating near penalty area
 
-Time reference: {timestamp}
+WRONG examples (do NOT write like this):
+❌ "Kickoff" (too vague - which team? which type?)
+❌ "Restart from goal" (unclear - kickoff or goal kick?)
+
+CORRECT examples (write like this):
+✅ "KICKOFF by BLACK team from CENTER CIRCLE"
+✅ "GOAL KICK by RED goalkeeper from penalty area"
+
+Current clip time: {timestamp}
+
+🚨 FINAL REMINDER: 
+- If you see teams at center circle → "KICKOFF by [TEAM] from CENTER CIRCLE"  
+- If you see goalkeeper in penalty area kicking → "GOAL KICK by [TEAM] goalkeeper"
+- NEVER just say "kickoff" or "restart" - always specify type and team!
+
+Be concise. Report facts only. No speculation.
 """
 
     def analyze_football_clip(self, compressed_clip_path: str, clip_info: dict) -> dict:

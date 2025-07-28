@@ -49,18 +49,33 @@ class IntelligentMatchSynthesizer:
 You are an expert football analyst reviewing 52 clips (13 minutes) from a match.
 Each clip below shows 15 seconds of footage with AI analysis.
 
-🚨 CRITICAL GOAL DETECTION STRATEGY:
-- KICKOFFS are the key to finding goals!
-- When you see "kickoff", "both teams lined up", "center circle restart" → A GOAL happened 15-60 seconds before
-- Look backward from kickoffs to find the actual goal/shot that caused the restart
+🚨 ULTRA-STRICT GOAL DETECTION (NO FALSE POSITIVES):
+
+RULE 1: ONLY count as goal if clip explicitly says "GOAL", "SCORES", "BALL CROSSES LINE"
+- NOT: "shot", "save", "celebration", "close attempt"
+- Must be CLEAR goal statement
+
+RULE 2: KICKOFF VALIDATION REQUIRED
+- Real goal MUST be followed by kickoff at CENTER CIRCLE
+- Opposing team takes kickoff (NOT the scoring team)
+- No kickoff = NO GOAL (was probably saved/missed)
+
+RULE 3: LOGICAL VALIDATION
+- If RED scores → BLACK takes kickoff
+- If BLACK scores → RED takes kickoff  
+- Same team kickoff = CONTRADICTION = NOT A GOAL
+
+RULE 4: TEMPORAL VALIDATION (NEW!)
+- Cannot have 2 kickoffs within 60 seconds by same team
+- Cannot have 2 goals within 30 seconds (extremely rare)
+- Check for impossible sequences (kickoff at 5:45 + goal at 6:00 = suspicious)
 
 📊 YOUR TASKS:
 
-1. **GOAL DETECTION** (Priority #1):
-   - Find all kickoffs/restarts in the clips
-   - Work backward to identify the goals that caused them
-   - Look for: shots, goalkeeper saves that failed, ball crossing goal line
-   - Mark confidence: HIGH if kickoff confirms it, MEDIUM if unclear
+1. **CONSERVATIVE GOAL DETECTION**:
+   - Find clips that explicitly state "GOAL" 
+   - Check next clip for CENTER CIRCLE kickoff by OPPOSING team
+   - REJECT if scoring team takes kickoff (breaks football rules)
 
 2. **EVENT TIMELINE** (Priority #2):
    - Create chronological list of significant events
@@ -72,9 +87,9 @@ Each clip below shows 15 seconds of footage with AI analysis.
    - Track possession changes and attacking patterns
 
 4. **CONFIDENCE ASSESSMENT**:
-   - HIGH: Clear visual evidence + kickoff confirmation
-   - MEDIUM: Good evidence but no restart confirmation  
-   - LOW: Unclear or routine play
+   - HIGH: Explicit "GOAL" statement + opposing team kickoff validation
+   - MEDIUM: Clear goal but kickoff issues (flag as suspicious)
+   - REJECT: No goal statement OR same team kickoff OR no kickoff found
 
 🔍 CLIP ANALYSES TO SYNTHESIZE:
 {all_clips_text}
@@ -84,11 +99,18 @@ Each clip below shows 15 seconds of footage with AI analysis.
   "goals_detected": [
     {{
       "timestamp": "2:45",
-      "scoring_team": "team in blue jerseys",
+      "scoring_team": "team in blue jerseys", 
       "description": "Shot from penalty area crosses goal line",
       "confidence": "HIGH",
-      "evidence": "Followed by kickoff restart at 2:50",
+      "evidence": "Explicit GOAL statement + opposing team kickoff at 2:50",
       "source_clips": ["clip_0011", "clip_0012"]
+    }}
+  ],
+  "rejected_false_positives": [
+    {{
+      "timestamp": "4:45",
+      "reason": "Scoring team took kickoff - violates football rules",
+      "original_description": "Shot from free kick"
     }}
   ],
   "key_events": [
@@ -100,8 +122,10 @@ Each clip below shows 15 seconds of footage with AI analysis.
     }}
   ],
   "match_summary": {{
-    "total_goals": 1,
-    "key_moments": ["2:45 - Goal scored", "1:23 - Great save"],
+    "total_real_goals": 2,
+    "total_false_positives_rejected": 6,
+    "validation_method": "Ultra-strict detection with kickoff validation",
+    "key_moments": ["Only kickoff-validated goals included"],
     "possession_flow": "Even possession with dangerous attacks from both teams"
   }},
   "kickoff_analysis": [
@@ -113,7 +137,13 @@ Each clip below shows 15 seconds of footage with AI analysis.
   ]
 }}
 
-REMEMBER: Use the kickoff strategy! They're the smoking gun for goals! 🚨
+🚨 CRITICAL REMINDER: 
+- REJECT if no explicit "GOAL" statement  
+- REJECT if same team takes kickoff (rule violation)
+- REJECT if kickoffs too close together (impossible timing)
+- REJECT if multiple goals within 30 seconds (extremely rare)
+- BETTER TO MISS than create FALSE POSITIVES
+- Conservative detection = accurate results!
 """
 
     def synthesize_intelligently(self, match_id: str) -> dict:
