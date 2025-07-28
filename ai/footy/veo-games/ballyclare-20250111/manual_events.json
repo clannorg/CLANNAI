@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "timestamp": "36:39",
+      "type": "SHOT_ON_GOAL", 
+      "team": "home",
+      "player": "Unknown",
+      "description": "Shot on goal attempt"
+    },
+    {
+      "timestamp": "66:26", 
+      "type": "SHOT_ON_GOAL",
+      "team": "away", 
+      "player": "Unknown",
+      "description": "Shot on goal attempt"
+    }
+  ],
+  "source": "manual_from_veo_observation",
+  "match_id": "20250111-ballyclare-425e4c3f"
+}
