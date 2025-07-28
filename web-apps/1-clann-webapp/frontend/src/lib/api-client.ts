@@ -104,6 +104,47 @@ class ApiClient {
   async healthCheck() {
     return this.request<{ status: string }>('/health')
   }
+
+  // Company methods
+  async getCompanyGames(status?: string) {
+    const params = status ? `?status=${status}` : ''
+    return this.request<{ games: any[], pagination: any }>(`/api/company/games${params}`)
+  }
+
+  async getCompanyStats() {
+    return this.request<{ stats: any }>('/api/company/stats')
+  }
+
+  async getPendingVeoGames() {
+    return this.request<{ games: any[] }>('/api/company/pending-veo')
+  }
+
+  async updateGameAnalysis(gameId: string, data: {
+    videoUrl?: string
+    events?: any
+    status?: string
+  }) {
+    if (data.videoUrl) {
+      await this.request(`/api/games/${gameId}/upload-video`, {
+        method: 'POST',
+        body: JSON.stringify({ videoUrl: data.videoUrl })
+      })
+    }
+    
+    if (data.events) {
+      await this.request(`/api/games/${gameId}/analysis`, {
+        method: 'POST',
+        body: JSON.stringify(data.events)
+      })
+    }
+    
+    if (data.status) {
+      await this.request(`/api/games/${gameId}/status`, {
+        method: 'PUT',
+        body: JSON.stringify({ status: data.status })
+      })
+    }
+  }
 }
 
 export const apiClient = new ApiClient()
