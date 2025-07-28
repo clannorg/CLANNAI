@@ -8,7 +8,7 @@ export default function Home() {
   const [showAuthModal, setShowAuthModal] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
   const [veoUrl, setVeoUrl] = useState('')
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
@@ -61,7 +61,7 @@ export default function Home() {
       const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
       const body = isLogin 
         ? { email, password }
-        : { email, password, name }
+        : { email, password, phone }
 
       const response = await fetch(`http://localhost:3002${endpoint}`, {
         method: 'POST',
@@ -501,6 +501,17 @@ export default function Home() {
                 className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
                 required
               />
+              
+              {!isLogin && (
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Phone Number"
+                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
+                  required
+                />
+              )}
               
               <div className="relative">
                 <input

@@ -9,11 +9,11 @@ const router = express.Router();
 // Register new user
 router.post('/register', async (req, res) => {
   try {
-    const { email, password, name, role } = req.body;
+    const { email, password, phone, role } = req.body;
 
     // Validation
-    if (!email || !password || !name) {
-      return res.status(400).json({ error: 'Email, password, and name are required' });
+    if (!email || !password || !phone) {
+      return res.status(400).json({ error: 'Email, password, and phone number are required' });
     }
 
     if (password.length < 6) {
@@ -37,7 +37,7 @@ router.post('/register', async (req, res) => {
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
     // Create user
-    const newUser = await createUser(email, passwordHash, name, userRole);
+    const newUser = await createUser(email, passwordHash, phone, userRole);
 
     // Generate JWT token
     const token = jwt.sign(

@@ -24,12 +24,12 @@ const getUserById = async (id) => {
 };
 
 // Create new user
-const createUser = async (email, passwordHash, name, role = 'user') => {
+const createUser = async (email, passwordHash, phone, role = 'user') => {
   const result = await pool.query(
     `INSERT INTO users (email, password_hash, name, role) 
      VALUES ($1, $2, $3, $4) 
      RETURNING id, email, name, role, created_at`,
-    [email, passwordHash, name, role]
+    [email, passwordHash, phone, role]
   );
   return result.rows[0];
 };
