@@ -93,6 +93,7 @@ export default function Home() {
     setIsLogin(false)
     setShowAuthModal(true)
   }
+  
 
   return (
     <div className="min-h-screen bg-gray-900 relative overflow-hidden">
@@ -106,40 +107,34 @@ export default function Home() {
       `}</style>
 
       {/* Header Navigation */}
-      <header className="relative z-50 bg-gray-900/20 backdrop-blur-sm border-b border-gray-800/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gray-800/0 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-8 py-4">
+          <div className="flex justify-between items-center">
             {/* Logo */}
-            <div className="flex items-center">
+            <div className="cursor-pointer">
               <Image
                 src="/clann-logo-white.png"
                 alt="ClannAI"
                 width={120}
-                height={40}
-                className="h-10 w-auto"
+                height={28}
+                className="h-7 w-auto"
                 priority
               />
             </div>
 
             {/* Auth Buttons */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center gap-6">
               <button
                 onClick={openSignIn}
-                className="text-gray-300 hover:text-white px-4 py-2 text-sm font-medium transition-colors"
+                className="text-white text-base font-medium hover:text-gray-300 px-6 py-2.5 text-[15px]"
               >
-                Sign In
+                Sign in
               </button>
               <button
                 onClick={openSignUp}
-                className="px-6 py-2 rounded-lg text-sm font-medium transition-colors"
-                style={{ 
-                  backgroundColor: 'var(--clann-green)',
-                  color: 'white'
-                }}
-                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#015928'}
-                onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--clann-green)'}
+                className="bg-black px-6 py-2.5 rounded-lg text-base font-medium text-white hover:bg-gray-900 text-[15px]"
               >
-                Sign Up
+                Get started
               </button>
             </div>
           </div>
@@ -418,6 +413,46 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-800/50 backdrop-blur-sm border-t border-gray-700/50 mt-24">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center mb-4 md:mb-0">
+              <Image
+                src="/clann-logo-white.png"
+                alt="ClannAI"
+                width={100}
+                height={24}
+                className="h-6 w-auto"
+              />
+              <span className="ml-3 text-gray-400 text-sm">
+                © 2025 ClannAI. All rights reserved.
+              </span>
+            </div>
+            <div className="flex items-center gap-6">
+              <a 
+                href="/privacy" 
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a 
+                href="/terms" 
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                Terms of Service
+              </a>
+              <a 
+                href="mailto:contact@clann.ai" 
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       {/* Auth Modal */}
       {showAuthModal && (
