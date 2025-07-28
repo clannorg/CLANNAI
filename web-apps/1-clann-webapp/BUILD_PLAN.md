@@ -1,92 +1,93 @@
-# 🔥 **TODAY BUILD PLAN - July 28th (REVISED)**
-## **Meeting Tomorrow - Get Shit Working + File Upload**
+# 🔥 **BUILD PLAN - July 28th (HYBRID APPROACH)**
+## **Meeting Tomorrow - Modern Frontend + Simple Backend**
+
+### **💡 HYBRID STRATEGY:**
+✅ **Modern Frontend** → Copy components from clannai-frontend (Next.js 15, TypeScript, shadcn/ui)  
+✅ **Simple Backend** → Express.js + PostgreSQL (no AWS complexity)  
+✅ **Best of Both** → Professional UI + Reliable backend + Fast build time
 
 ---
 
-## 🎯 **REVISED SCOPE - FULL FILE HANDLING**
+## 🎯 **SIMPLIFIED SCOPE**
 
 ### **IN SCOPE TODAY:**
 ✅ **Database setup** with demo data  
 ✅ **Backend API** (auth, teams, games, JSON upload)  
 ✅ **Frontend pages** (login, dashboard, game view)  
 ✅ **VEO URL upload** creates game records  
-✅ **FILE UPLOAD** (MP4, MOV to S3) **← NEW**  
-✅ **FILE DOWNLOAD** (signed S3 URLs) **← NEW**  
-✅ **JSON file upload** (company analysts only)  
+✅ **Company S3 upload** (manual process) 
+✅ **JSON analysis upload** (company analysts only)  
 ✅ **Team join codes** functionality  
 ✅ **Basic video player** with events timeline  
-✅ **Company dashboard** (view all games + upload JSON)  
+✅ **Company dashboard** (view all games + upload)  
 
 ### **OUT OF SCOPE TODAY:**
-❌ **Video encoding/compression** (store as-is)  
-❌ **Chunked upload** (simple multipart)  
-❌ **Upload progress bars** (basic only)  
+❌ **Direct file upload** from users (VEO URLs only)  
+❌ **Download functionality** (no user downloads)  
+❌ **Automated VM integration** (manual company process)  
 ❌ **Stripe payments** (add later)  
 ❌ **Mobile optimization** (desktop first)  
 ❌ **Email verification** (basic auth only)  
 
 ---
 
-## 🔄 **REVISED DATA FLOW**
+## 🔄 **SIMPLIFIED DATA FLOW**
 
 ### **User Workflow:**
-1. **Upload game** → Either VEO URL OR video file to S3
-2. **View dashboard** → See uploaded games with download links
-3. **Download original** → Signed S3 URL for file access
-4. **Click game** → Video player + events (if JSON uploaded)
+1. **Upload VEO URL** → Creates game record (status: "pending")
+2. **View dashboard** → See uploaded games with status
+3. **Wait for processing** → Company handles manually
+4. **View analyzed game** → S3 video + events timeline
 
 ### **Company Workflow:**
-1. **View ALL games** from ALL users (VEO + uploaded files)
-2. **Upload JSON file** → VM analysis becomes visible
-3. **Status changes** → "pending" → "analyzed"
-4. **Download any file** → Access to all uploaded videos
+1. **View ALL VEO URLs** from all users
+2. **Manual process** → Download VEO on VM → Upload to S3  
+3. **Upload JSON analysis** → From VM processing
+4. **Mark as analyzed** → Status changes to "analyzed"
 
-### **File Storage:**
-1. **Large video files** → S3 bucket storage
-2. **VEO URLs** → PostgreSQL text field
-3. **JSON analysis** → PostgreSQL JSONB column
+### **Storage:**
+- **VEO URLs** → PostgreSQL text field
+- **S3 videos** → Company uploads after manual processing
+- **JSON analysis** → PostgreSQL JSONB column
 
 ---
 
-## 📋 **EXACT PAGES TO BUILD (5 Pages)**
+## 📋 **PAGES TO BUILD (4 Simple Pages)**
 
 ### **Frontend Pages (Next.js 15):**
 
-#### **1. Landing Page (`/`)**
-- Hero section with "Upload Game Footage" CTA
-- Login/Register buttons
-- **Time: 20 mins**
+#### **1. Landing/Login Page (`/`)** *(Combined like existing app)*
+- **Hero section** with background video + "Upload Game Footage" 
+- **Features showcase** (3 analysis examples with demo data)
+- **Login/Register forms** (toggle when user clicks CTA)
+- **JWT token** storage → Redirect dashboard
+- **Time: 40 mins**
 
-#### **2. Login Page (`/login`)**  
-- Email/password form
-- Toggle between login/register
-- JWT token handling
-- **Time: 30 mins**
-
-#### **3. Dashboard (`/dashboard`)**
+#### **2. Dashboard (`/dashboard`)**
 **Two tabs:**
-- **Games Tab**: User's uploaded games (VEO + files) with download buttons
+- **Games Tab**: User's uploaded VEO URLs with status badges
 - **Team Tab**: Team join codes, team info  
-- **Upload modal**: VEO URL OR file upload
-- **Time: 90 mins** *(+30 for file handling)*
+- **Upload VEO URL modal**
+- **Time: 60 mins**
 
-#### **4. Game View (`/games/[id]`)**
-- **Video player** (VEO embed OR S3 file)
-- **Download button** (if file upload)
-- **Events timeline** (if JSON uploaded)
+#### **3. Game View (`/games/[id]`)**
+- **S3 video player** (if analyzed)
+- **Events timeline** (from JSON analysis)
 - **Events list** (click to jump to timestamp)
-- **Time: 60 mins** *(+15 for download logic)*
+- **Status display** (pending/analyzed)
+- **Time: 45 mins**
 
-#### **5. Company Dashboard (`/company`)**
-- **List ALL games** from ALL users
-- **[Upload JSON] button** for each game
-- **[Download] button** for file uploads
+#### **4. Company Dashboard (`/company`)**
+- **List ALL VEO URLs** from all users
+- **[Upload Video to S3] button** for each pending game
+- **[Upload JSON] button** for analysis
+- **[Mark Analyzed] button** to change status
 - **Status indicators** (pending/analyzed)
-- **Time: 45 mins** *(+15 for download access)*
+- **Time: 40 mins**
 
 ---
 
-## 🔌 **REVISED API ENDPOINTS**
+## 🔌 **SIMPLIFIED API ENDPOINTS**
 
 ### **Authentication (`/api/auth`)**
 ```
@@ -99,21 +100,15 @@ GET  /api/auth/me          # Get current user
 ```
 GET  /api/games            # Get user's games
 POST /api/games            # Upload VEO URL → create game
-POST /api/games/upload     # Upload video file to S3 ← NEW
 GET  /api/games/:id        # Get game details + JSON events
-GET  /api/games/:id/download # Get signed S3 download URL ← NEW
-```
-
-### **Analysis (`/api/analysis`)**
-```
-POST /api/games/:id/analysis # Upload JSON file (company only)
-PUT  /api/games/:id/status   # Update status (company only)
 ```
 
 ### **Company (`/api/company`)**
 ```
-GET  /api/company/games      # Get ALL games (all users)
-GET  /api/games/:id/download # Download any file (company access)
+GET  /api/company/games           # Get ALL games (all users)
+POST /api/games/:id/upload-video  # Upload S3 video (company only)
+POST /api/games/:id/analysis      # Upload JSON analysis (company only)
+PUT  /api/games/:id/status        # Mark as analyzed (company only)
 ```
 
 ### **Teams (`/api/teams`)**
@@ -124,122 +119,105 @@ GET  /api/teams/:id          # Get team info
 
 ---
 
-## 🗄️ **REVISED DATABASE STRUCTURE**
+## 🗄️ **SIMPLIFIED DATABASE STRUCTURE**
 
-### **Games Table (Updated):**
+### **Games Table:**
 ```sql
-games.video_url          -- VEO URL (if VEO upload)
-games.s3_key            -- S3 file path (if file upload) ← NEW
-games.original_filename  -- Original file name ← NEW
-games.file_size         -- File size in bytes ← NEW
-games.file_type         -- "veo" or "upload" ← NEW
-games.status            -- 'pending' → 'analyzed'  
-games.ai_analysis       -- JSONB from VM analysis
+games.video_url          -- VEO URL (user uploads)
+games.s3_key            -- S3 video path (company uploads)
+games.status            -- 'pending' or 'analyzed'
+games.ai_analysis       -- JSON from VM analysis
 games.team_id           -- Team association
-games.uploaded_by       -- User who uploaded
-```
-
-### **S3 Storage Structure:**
-```
-bucket-name/
-├── games/
-│   ├── uuid-1/
-│   │   └── original.mp4     (2GB file)
-│   ├── uuid-2/
-│   │   └── original.mov     (1.5GB file)
-│   └── uuid-3/
-│       └── original.mp4     (3GB file)
+games.uploaded_by       -- User who uploaded VEO URL
 ```
 
 ---
 
-## 🎨 **REVISED UI COMPONENTS**
+## 🎨 **MODERN UI COMPONENTS** *(Taken from clannai-frontend)*
 
-### **Core Components (9 Total):**
-1. **Header** - Navigation with auth state
-2. **GameCard** - Display game with download button  
-3. **UploadModal** - VEO URL OR file upload tabs **← UPDATED**
-4. **FileUpload** - Drag/drop file upload component **← NEW**
-5. **VideoPlayer** - VEO embed OR S3 video with events timeline
-6. **EventsList** - Click to jump to timestamp
-7. **StatusBadge** - PENDING/ANALYZED pills
-8. **DownloadButton** - S3 signed URL download **← NEW**
-9. **JSONUpload** - Company file upload button
+### **From shadcn/ui (Ready-Made):**
+✅ **Button, Card, Dialog, Dropdown, Form**  
+✅ **Input, Label, Select, Table, Tabs**  
+✅ **Badge, Avatar, Progress, Skeleton**  
+✅ **Sidebar, Sheet, Drawer, Tooltip**  
 
-### **Upload Modal Design:**
-```
-┌─────────────────────────────────────┐
-│ Upload Game Footage                 │
-├─────────────────────────────────────┤
-│ [VEO URL] [File Upload]             │
-├─────────────────────────────────────┤
-│ VEO: Paste URL here                 │
-│ File: [Drag files here] Max 5GB     │
-│ Supported: MP4, MOV, AVI            │
-├─────────────────────────────────────┤
-│ [Cancel] [Upload]                   │
-└─────────────────────────────────────┘
-```
+### **Advanced Video Player (Copy from clannai-frontend):**
+✅ **VideoPlayerWithEvents** - 16KB component with HLS.js  
+✅ **adaptive-video-player** - Smart resolution switching  
+✅ **video-overlay-timeline** - Events timeline on video  
+✅ **sidebar-events-list** - Filterable events with click-to-jump  
+
+### **Auth Components (Copy from clannai-frontend):**
+✅ **sign-in-form** - Professional login with validation  
+✅ **sign-up-form** - Registration with form validation  
+
+### **Landing Components (Copy from clannai-frontend):**
+✅ **hero-section** - Professional hero with animations  
+✅ **TypingEffect** - Dynamic text animation  
+
+### **Custom Components (Build New - 15 mins total):**
+1. **VEOUploadModal** - Simple URL input dialog  
+2. **S3UploadButton** - Company file upload  
+3. **JSONUploadButton** - Analysis upload  
+
+**Result: Professional UI in 1.5 hours instead of 2+ hours!**
 
 ---
 
-## ⚡ **REVISED BUILD ORDER & TIMING**
+## ⚡ **SIMPLIFIED BUILD ORDER & TIMING**
 
-### **Phase 1: Foundation (45 mins)**
+### **Phase 1: Foundation (30 mins)**
 1. **Database setup** (15 mins)
-   - Run schema.sql (updated with file fields)
+   - Run schema.sql
    - Load demo data with 5 teams
 
-2. **Backend core + S3** (30 mins)
+2. **Backend core** (15 mins)
    - Express server setup
    - Database connection
-   - S3 SDK configuration
    - Basic auth middleware
 
-### **Phase 2: Core APIs (90 mins)** *(+30 for S3)*
-1. **Auth endpoints** (20 mins)
+### **Phase 2: Core APIs (60 mins)**
+1. **Auth endpoints** (15 mins)
    - POST /auth/register, /auth/login
    - GET /auth/me
 
-2. **Games endpoints** (35 mins) *(+10 for files)*
+2. **Games endpoints** (25 mins)
    - GET /games (user's games)
-   - POST /games (VEO upload)
+   - POST /games (VEO URL upload)
    - GET /games/:id (with JSON)
 
-3. **File upload endpoints** (35 mins) **← NEW**
-   - POST /games/upload (multipart to S3)
-   - GET /games/:id/download (signed URLs)
-   - File validation (size, type)
+3. **Company endpoints** (20 mins)
+   - GET /company/games (all games)
+   - POST /games/:id/upload-video (S3 upload)
+   - POST /games/:id/analysis (JSON upload)
 
-### **Phase 3: Frontend Core (120 mins)** *(+30 for file handling)*
-1. **Auth pages** (30 mins)
-   - Landing page + login/register
+### **Phase 3: Modern Frontend (90 mins)**
+1. **Copy clannai-frontend components** (15 mins)
+   - Video player + auth forms + hero section
+   - shadcn/ui setup + TypeScript config
 
-2. **Dashboard** (60 mins) *(+20 for file features)*
-   - Games tab + upload modal (VEO + file)
-   - Download buttons on game cards
-   - Team tab + join codes
+2. **Landing/Login page** (25 mins)
+   - Copy hero-section + sign-in/up-form components
+   - Adapt to simple JWT backend
 
-3. **Game view** (30 mins) *(+10 for download)*
-   - Video player (VEO or S3)
-   - Events display + download button
+3. **Dashboard** (30 mins)
+   - Games tab with copied UI components
+   - Team tab + VEO upload modal
 
-### **Phase 4: Company Features (45 mins)** *(+15 for file access)*
-1. **Company dashboard** (30 mins)
-   - List all games (VEO + files)
-   - JSON upload button
-   - Download access for all files
+4. **Game view** (20 mins)
+   - Copy VideoPlayerWithEvents component
+   - Connect to PostgreSQL JSON data
 
-2. **Integration test** (15 mins)
-   - Full workflow test (VEO + file)
+### **Phase 4: Company Features (40 mins)**
+1. **Company dashboard** (40 mins)
+   - List all VEO URLs
+   - S3 upload + JSON upload buttons
+   - Status management
 
 ### **Phase 5: Demo Data (15 mins)**
-1. **Load demo data** (10 mins)
-   - 5 teams with mixed VEO + uploaded files
-   - Test download functionality
-
-2. **Final polish** (5 mins)
-   - Fix obvious bugs
+1. **Load demo data** (15 mins)
+   - 5 teams with VEO URLs
+   - Some analyzed with S3 videos
 
 ---
 
@@ -248,67 +226,70 @@ bucket-name/
 ### **End of Today Demo Flow:**
 1. **Landing page** → professional, clean
 2. **Register/Login** → works smoothly
-3. **Upload VEO URL** → creates game (pending)
-4. **Upload video file** → stores in S3, creates game **← NEW**
-5. **Download original** → signed S3 URL works **← NEW**
-6. **Company uploads JSON** → game becomes analyzed
-7. **View game** → video + events timeline
-8. **5 demo teams** → mix of VEO + uploaded files
+3. **Upload VEO URL** → creates pending game
+4. **Company dashboard** → sees all VEO URLs
+5. **Company uploads** → S3 video + JSON analysis
+6. **User views** → analyzed game with events
+7. **Team join codes** → ARS269, CHE277, etc. work
 
 ### **Must Work For Meeting:**
 ✅ **VEO URL upload** workflow  
-✅ **Video file upload** to S3 **← NEW**  
-✅ **File download** functionality **← NEW**  
+✅ **Company S3 upload** (manual)  
 ✅ **JSON analysis upload** (company only)  
 ✅ **Events timeline** display  
 ✅ **Team join codes** functionality  
-✅ **Company can see/download all**  
+✅ **Clean, professional** UI  
 
 ---
 
-## 💰 **INFRASTRUCTURE NEEDED**
+## 🛠️ **MODERN TECH STACK**
 
-### **AWS S3 Setup:**
-```bash
-# Create S3 bucket
-aws s3 mb s3://clann-game-videos
+### **Frontend (Modern):**
+✅ **Next.js 15.3.4** + **React 19** + **TypeScript**  
+✅ **Tailwind CSS v4** (latest)  
+✅ **shadcn/ui** (29 ready-made components)  
+✅ **Advanced video player** with HLS.js + events timeline  
+✅ **React Query** for API state management  
+✅ **React Hook Form** + **Zod** validation  
+✅ **Framer Motion** animations  
+✅ **Hero section** with typing effects  
 
-# Set CORS for uploads
-aws s3api put-bucket-cors --bucket clann-game-videos
+### **Backend (Simple & Reliable):**
+✅ **Express.js** + **Node.js** (proven, fast)  
+✅ **PostgreSQL** (reliable SQL database)  
+✅ **JWT authentication** (no AWS dependency)  
+✅ **bcrypt** password hashing  
+✅ **Raw SQL queries** (no ORM complexity)  
+✅ **Simple file uploads** to S3  
 
-# Environment variables
-AWS_ACCESS_KEY_ID=xxx
-AWS_SECRET_ACCESS_KEY=xxx  
-AWS_REGION=us-east-1
-S3_BUCKET=clann-game-videos
-```
-
-### **File Limits:**
-- **Max file size**: 5GB per upload
-- **Allowed formats**: MP4, MOV, AVI, MKV
-- **Storage**: Pay per GB (starts cheap)
+### **Deployment:**
+✅ **Frontend**: Vercel (Next.js optimized)  
+✅ **Backend**: Railway/Heroku (simple deploy)  
+✅ **Database**: PostgreSQL on Railway/Supabase  
 
 ---
 
-## 🚀 **REVISED TIME ESTIMATE**
+## 🚀 **UPDATED TIME ESTIMATE**
 
-**Backend: 2.5 hours** *(+1 for S3 integration)*  
-**Frontend: 3 hours** *(+1 for file handling)*  
-**Integration: 45 mins** *(+15 for file testing)*  
-**Total: 6.25 hours** *(realistic with file features)*
+**Backend: 1.5 hours** (Express + PostgreSQL - proven approach)  
+**Frontend: 1.5 hours** (using clannai-frontend components saves 30 mins)  
+**Integration: 30 mins** (test + polish)  
+**Total: 3.5 hours** (even faster with modern components!)
 
 **Start Time: Now**  
-**End Time: ~7pm** *(later finish)*  
+**End Time: ~3:30pm**  
 **Demo Ready: Tonight**  
 
 ---
 
-## 🔥 **REVISED PLAN LOCKED**
+## 🔥 **HYBRID PLAN LOCKED**
 
-**Full file handling + VEO support**
+**Modern VEO URL workflow:**
 
-**User can:** Upload VEO OR video file, download originals  
-**Company can:** Access all files, upload analysis  
-**Demo shows:** Complete file management system  
+**Frontend:** Next.js 15 + clannai-frontend components (professional UI)  
+**Backend:** Express.js + PostgreSQL (simple, reliable)  
+**User:** Upload VEO URL only  
+**Company:** Manual VM process → S3 upload → JSON upload  
+**Result:** Advanced video player + events timeline + professional UI  
 
-**More complex, longer timeline, but full feature set! 🚀** 
+**Modern frontend + Simple backend = Fast build + Professional demo! 🚀** 
