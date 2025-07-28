@@ -1,0 +1,26 @@
+{
+  "true_positives": {
+    "block": 0,
+    "goal": 2,
+    "save": 4,
+    "shot": 7
+  },
+  "false_negatives": {
+    "block": 6,
+    "goal": 8,
+    "save": 7,
+    "shot": 25
+  },
+  "false_positives": {
+    "block": 0,
+    "goal": 21,
+    "save": 7,
+    "shot": 17
+  },
+  "total_manual": {
+    "block": 6,
+    "goal": 10,
+    "save": 11,
+    "shot": 32
+  }
+}

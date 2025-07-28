@@ -1,0 +1,142 @@
+============================================================
+AI vs. Manual Annotation - Detailed Comparison Log
+============================================================
+
+--- ACCURACY SUMMARY ---
+GOAL: Recall=50.0%, Precision=2.4%
+SAVE: Recall=80.0%, Precision=66.7%
+SHOT: Recall=70.0%, Precision=16.3%
+
+============================================================
+
+--- MANUAL EVENT: SAVE @ 0;40 (40.00s) ---
+  Description: skip
+  Match Decision: True
+  Nearby AI Events:
+  - 33.00s: [shot_on_target] Player in purple shoots towards the LEFT GOAL.
+  - 33.00s: [goalkeeper_saves] Goalkeeper saves the shot on the LEFT GOAL.
+  - 35.00s: [shot_on_target] Player in purple shoots towards the RIGHT GOAL.
+  - 36.00s: [goalkeeper_saves] Goalkeeper saves the shot on target at the RIGHT GOAL.
+  - 48.00s: [goal] Player in purple scores a goal at the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 0;40 (40.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 33.00s: [shot_on_target] Player in purple shoots towards the LEFT GOAL.
+  - 33.00s: [goalkeeper_saves] Goalkeeper saves the shot on the LEFT GOAL.
+  - 35.00s: [shot_on_target] Player in purple shoots towards the RIGHT GOAL.
+  - 36.00s: [goalkeeper_saves] Goalkeeper saves the shot on target at the RIGHT GOAL.
+  - 48.00s: [goal] Player in purple scores a goal at the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL @ 0;48 (48.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 48.00s: [goal] Player in purple scores a goal at the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 0;48 (48.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+  - 48.00s: [goal] Player in purple scores a goal at the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 2;52 (172.00s) ---
+  Description: skip
+  Match Decision: False
+  Nearby AI Events:
+  - 179.00s: [other] Shot on target - Player in black and purple shoots towards the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 2;52 (172.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+  - 179.00s: [other] Shot on target - Player in black and purple shoots towards the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL @ 3;06 (186.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 179.00s: [other] Shot on target - Player in black and purple shoots towards the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 3;06 (186.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+  - 179.00s: [other] Shot on target - Player in black and purple shoots towards the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 4;25 (265.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 262.00s: [shot_on_target] Player in black and purple shoots towards the RIGHT GOAL.
+  - 263.00s: [goalkeeper_save] Goalkeeper saves the shot at the RIGHT GOAL.
+  - 272.00s: [other] Shot on target - Player in maroon shoots towards the RIGHT GOAL
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 4;25 (265.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 262.00s: [shot_on_target] Player in black and purple shoots towards the RIGHT GOAL.
+  - 263.00s: [goalkeeper_save] Goalkeeper saves the shot at the RIGHT GOAL.
+  - 272.00s: [other] Shot on target - Player in maroon shoots towards the RIGHT GOAL
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 5;28 (328.00s) ---
+  Description: skip
+  Match Decision: True
+  Nearby AI Events:
+  - 322.00s: [skills] Player in purple and black performs a stepover skill move.
+  - 328.00s: [goal] Player in black and purple scores a goal at the RIGHT GOAL.
+  - 332.00s: [shot_on_target] Player in white shoots towards the RIGHT GOAL.
+  - 332.00s: [goalkeeper_save] Goalkeeper saves the shot on the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 7;19 (439.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 436.00s: [shot_on_target] Player in white shoots towards the LEFT GOAL.
+  - 437.00s: [goalkeeper_saves] Goalkeeper in green saves the shot at the LEFT GOAL.
+  - 447.00s: [other] Shot on target - Player in black and pink shoots towards the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 7;19 (439.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 436.00s: [shot_on_target] Player in white shoots towards the LEFT GOAL.
+  - 437.00s: [goalkeeper_saves] Goalkeeper in green saves the shot at the LEFT GOAL.
+  - 447.00s: [other] Shot on target - Player in black and pink shoots towards the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 7;43 (463.00s) ---
+  Description: skip
+  Match Decision: True
+  Nearby AI Events:
+  - 470.00s: [shot_on_target] Player in pink shoes takes a shot on the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 11;00 (660.00s) ---
+  Description: skip
+  Match Decision: True
+  Nearby AI Events:
+  - 652.00s: [shot_on_target] Player in dark blue shoots towards the RIGHT GOAL.
+  - 653.00s: [goalkeeper_saves] Goalkeeper in green saves the shot at the RIGHT GOAL.
+  - 663.00s: [skills] Player in black and purple dribbles past two players with good footwork.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 11;00 (660.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 652.00s: [shot_on_target] Player in dark blue shoots towards the RIGHT GOAL.
+  - 653.00s: [goalkeeper_saves] Goalkeeper in green saves the shot at the RIGHT GOAL.
+  - 663.00s: [skills] Player in black and purple dribbles past two players with good footwork.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 13;17 (797.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 791.00s: [skills] Player in dark blue and purple jersey performs a stepover.
+  - 794.00s: [shot_on_target] Player in dark blue and purple jersey takes a shot on goal. The outcome is not clear. The shot is towards the LEFT GOAL.
+  - 797.00s: [goal] Player in white shoots and scores at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: END @ 15;17 (917.00s) ---
+  Description: End of video!
+  Match Decision: False
+  Nearby AI Events:
+  - 910.00s: [shot_on_target] Player in black and purple shoots the ball towards the LEFT GOAL.
+  - 911.00s: [goalkeeper_saves] Goalkeeper in red makes a save at the LEFT GOAL.
+  - 913.00s: [shot_on_target] Player in black and purple shoots towards the LEFT GOAL.
+  - 914.00s: [goalkeeper_saves] Goalkeeper in black makes a save at the LEFT GOAL.
+------------------------------------------------------------

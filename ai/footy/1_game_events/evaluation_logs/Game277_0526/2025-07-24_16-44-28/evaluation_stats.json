@@ -1,0 +1,42 @@
+{
+  "true_positives": {
+    "block": 0,
+    "celebration": 0,
+    "goal": 1,
+    "replay": 0,
+    "save": 4,
+    "shot": 8,
+    "tackle": 0,
+    "yellow card": 0
+  },
+  "false_negatives": {
+    "block": 2,
+    "celebration": 1,
+    "goal": 3,
+    "replay": 3,
+    "save": 0,
+    "shot": 4,
+    "tackle": 4,
+    "yellow card": 4
+  },
+  "false_positives": {
+    "block": 3,
+    "celebration": 0,
+    "goal": 108,
+    "replay": 0,
+    "save": 6,
+    "shot": 101,
+    "tackle": 0,
+    "yellow card": 0
+  },
+  "total_manual": {
+    "block": 2,
+    "celebration": 1,
+    "goal": 4,
+    "replay": 3,
+    "save": 4,
+    "shot": 12,
+    "tackle": 4,
+    "yellow card": 4
+  }
+}

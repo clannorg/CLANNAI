@@ -1,0 +1,377 @@
+============================================================
+AI vs. Manual Annotation - Detailed Comparison Log
+============================================================
+
+--- ACCURACY SUMMARY ---
+BLOCK: Recall=0.0%, Precision=0.0%
+GOAL: Recall=20.0%, Precision=8.7%
+SAVE: Recall=36.4%, Precision=36.4%
+SHOT: Recall=21.9%, Precision=29.2%
+
+============================================================
+
+--- MANUAL EVENT: SHOT @ 01;17 (77.00s) ---
+  Description: Skip
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 4;53 (293.00s) ---
+  Description: Skip
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 07;06 (426.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 07;06 (426.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 9;03 (543.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 544.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 544.00s: [goalkeeper_saves] Goalkeeper saves the shot at the LEFT GOAL.
+  - 544.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL, saved by the goalkeeper.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 10;10 (610.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 610.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 611.00s: [goalkeeper_save] Goalkeeper in black saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 12;47 (767.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 15;50 (950.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 15;50 (950.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (left) @ 16;08 (968.00s) ---
+  Description: Left
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 16;08 (968.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 17;55 (1075.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 1074.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 1074.00s: [goalkeeper_save] Goalkeeper saves the shot on the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 17;55 (1075.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 1074.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 1074.00s: [goalkeeper_save] Goalkeeper saves the shot on the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (right) @ 20;05 (1205.00s) ---
+  Description: Right
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 20;05 (1205.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (right) @ 21;23 (1283.00s) ---
+  Description: Right
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 21;23 (1283.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 22;43 (1363.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 1364.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 1364.00s: [goalkeeper_save] Goalkeeper in black saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (right) @ 23;23 (1403.00s) ---
+  Description: Right
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 23;23 (1403.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 25;21 (1521.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 25;21 (1521.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 29;52 (1792.00s) ---
+  Description: Skip
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 30;09 (1809.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 34;32 (2072.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 34;32 (2072.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 36;03 (2163.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 36;54 (2214.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 40;23 (2423.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 2413.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 2414.00s: [goalkeeper_save] Goalkeeper in orange makes a save at the LEFT GOAL.
+  - 2418.00s: [goalkeeper_saves] Goalkeeper in orange saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 40;23 (2423.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 2413.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 2414.00s: [goalkeeper_save] Goalkeeper in orange makes a save at the LEFT GOAL.
+  - 2418.00s: [goalkeeper_saves] Goalkeeper in orange saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 40;55 (2455.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (left) @ 42;23 (2543.00s) ---
+  Description: Left
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 42;23 (2543.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (left) @ 44;12 (2652.00s) ---
+  Description: Left
+  Match Decision: True
+  Nearby AI Events:
+  - 2651.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 2651.00s: [goalkeeper_save] Goalkeeper in blue makes a save at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 44;12 (2652.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: True
+  Nearby AI Events:
+  - 2651.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 2651.00s: [goalkeeper_save] Goalkeeper in blue makes a save at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 44;45 (2685.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (left) @ 45;55 (2755.00s) ---
+  Description: Left
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 45;55 (2755.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 47;08 (2828.00s) ---
+  Description: Skip
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 47;08 (2828.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 51;49 (3109.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 3106.00s: [shot_on_target] Player in red shoots towards the RIGHT GOAL, saved by the goalkeeper.
+  - 3114.00s: [shot_on_target] Player in blue shoots towards the RIGHT GOAL, saved by the goalkeeper.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 53;52 (3232.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 55;36 (3336.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 3338.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 3338.00s: [goalkeeper_save] Goalkeeper in red makes a save at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 55;36 (3336.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 3338.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 3338.00s: [goalkeeper_save] Goalkeeper in red makes a save at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 56;37 (3397.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 59;23 (3563.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;00;46 (3646.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 1;02;07 (3727.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;02;07 (3727.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (left) @ 1;02;45 (3765.00s) ---
+  Description: Left
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;02;45 (3765.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 01;04;02 (3842.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 3833.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 3833.00s: [goalkeeper_save] Goalkeeper in blue saves the shot.
+  - 3833.00s: [other] The ball is cleared out of the LEFT GOAL area.
+  - 3834.00s: [goalkeeper_save] Goalkeeper in red makes a save at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 01;04;02 (3842.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 3833.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 3833.00s: [goalkeeper_save] Goalkeeper in blue saves the shot.
+  - 3833.00s: [other] The ball is cleared out of the LEFT GOAL area.
+  - 3834.00s: [goalkeeper_save] Goalkeeper in red makes a save at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (left) @ 1;04;57 (3897.00s) ---
+  Description: Left
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;04;57 (3897.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL (left) @ 1;08;43 (4123.00s) ---
+  Description: Left
+  Match Decision: True
+  Nearby AI Events:
+  - 4114.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 4114.00s: [goalkeeper_save] Goalkeeper in blue saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;08;43 (4123.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: True
+  Nearby AI Events:
+  - 4114.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 4114.00s: [goalkeeper_save] Goalkeeper in blue saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 01;10;35 (4235.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 01;10;35 (4235.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: END @ 01;13;39 (4419.00s) ---
+  Description: End of video!
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: END @ 1;14;08 (4448.00s) ---
+  Description: End of video!
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------

@@ -102,7 +102,7 @@ class FootballEventsAnalyzer:
         - Utilise the clip's audio to improve event identification.
         - The language of the clip will typically be in english or hindi.
         - Use crowd reactions (cheers etc) to fine-tune key moments like goals, shots or saves.
-        - Use the referee's whistle (if present) to identify match decisions likegoals, corner kicks, penalties, etc. 
+        - Use the referee's whistle (if present) to identify match decisions like goals, corner kicks, penalties, etc. 
 
         ACTIVE PLAYERS: People actively participating in competitive gameplay
         - Engaged in the actual football game with other players
@@ -167,7 +167,7 @@ class FootballEventsAnalyzer:
         - [Summary of major events]
 
         **MATCH FLOW:**
-        - [Brief tactical overview]
+        - [Complete overview of all events that occurred in the clip]
         ```
 
         **TIMESTAMP FORMAT:**
@@ -177,7 +177,6 @@ class FootballEventsAnalyzer:
 
         **IMPORTANT:**
         - Only report events you are confident about
-        - If unsure about a foul/card/penalty, don't call it
         - Focus on clear, significant moments
         - Be conservative - quality over quantity
         - If there are no events, state that explicitly.
@@ -350,7 +349,7 @@ def main():
     # Update paths to be game-specific and include the run timestamp
     base_data_dir = Path.cwd() / "data"
     clips_dir = base_data_dir / args.game_name / "clips"
-    analyzer.output_dir = Path.cwd() / "1_game_events" / "output" / args.game_name / args.run_timestamp
+    analyzer.output_dir = Path.cwd() / "experiments" / "output" / args.game_name / args.run_timestamp #Path.cwd() / "1_game_events" / "output" / args.game_name / args.run_timestamp
     analyzer.output_dir.mkdir(parents=True, exist_ok=True)
     
     # Create and set prompts directory

@@ -101,22 +101,6 @@ app.post('/api/create-checkout-session', async (req, res) => {
 app.use('/analysis-images', express.static(path.join(__dirname, '../public/analysis-images')));
 app.use('/analysis-images', express.static(path.join(__dirname, '../storage/analysis-images')));
 
-// Serve React build files (including videos, images, etc.)
-// Add debugging and explicit MIME type handling
-app.use((req, res, next) => {
-    console.log('Static request:', req.url);
-    next();
-});
-
-app.use(express.static(path.join(__dirname, '../client/build'), {
-    setHeaders: (res, path) => {
-        console.log('Serving static file:', path);
-        if (path.endsWith('.mp4')) {
-            res.setHeader('Content-Type', 'video/mp4');
-        }
-    }
-}));
-
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/sessions', sessionsRoutes);
@@ -127,18 +111,6 @@ app.post('/teams/:teamId/revert-premium', teamsController.revertPremiumStatus);
 app.post('/api/teams/:teamId/billing-portal', (req, res, next) => {
     console.log('🎯 Billing portal route hit:', req.params);
     teamsController.createBillingPortalSession(req, res, next);
-});
-
-// Catch-all handler: send back React's index.html file for any non-API routes
-app.get('*', (req, res) => {
-    // Don't intercept API routes or static assets
-    if (req.path.startsWith('/api/') ||
-        req.path.startsWith('/videos/') ||
-        req.path.startsWith('/static/') ||
-        req.path.includes('.')) {
-        return res.status(404).send('Not found');
-    }
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 // Error handling middleware

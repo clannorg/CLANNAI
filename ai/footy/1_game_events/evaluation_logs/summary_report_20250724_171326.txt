@@ -1,0 +1,113 @@
+================================================================================
+📊 OVERALL EVALUATION SUMMARY REPORT
+Generated on: 2025-07-24 17:13:26
+================================================================================
+
+--- INDIVIDUAL GAME PERFORMANCE (LATEST RUN) ---
+
+Game: Game269_0511
+  - BLOCK: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:12, FN:2)
+  - CELEBRATION: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - GOAL : Recall: 100.0%, Precision:   3.6%  (TP:5, FP:134, FN:0)
+  - REPLAY: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - SAVE : Recall: 100.0%, Precision:  75.0%  (TP:6, FP:2, FN:0)
+  - SHOT : Recall:  58.8%, Precision:   9.6%  (TP:10, FP:94, FN:7)
+  - SKILL: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:20, FN:1)
+  - TACKLE: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - YELLOW CARD: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:1)
+
+Game: Game277_0526
+  - BLOCK: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:3, FN:2)
+  - CELEBRATION: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:1)
+  - GOAL : Recall:  25.0%, Precision:   0.9%  (TP:1, FP:108, FN:3)
+  - REPLAY: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:3)
+  - SAVE : Recall: 100.0%, Precision:  40.0%  (TP:4, FP:6, FN:0)
+  - SHOT : Recall:  66.7%, Precision:   7.3%  (TP:8, FP:101, FN:4)
+  - SKILL: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - TACKLE: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:4)
+  - YELLOW CARD: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:4)
+
+Game: Game297_0616
+  - BLOCK: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:6)
+  - CELEBRATION: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - GOAL : Recall:  20.0%, Precision:   8.7%  (TP:2, FP:21, FN:8)
+  - REPLAY: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - SAVE : Recall:  36.4%, Precision:  36.4%  (TP:4, FP:7, FN:7)
+  - SHOT : Recall:  21.9%, Precision:  29.2%  (TP:7, FP:17, FN:25)
+  - SKILL: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - TACKLE: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - YELLOW CARD: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+
+Game: Game298_0601
+  - BLOCK: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - CELEBRATION: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - GOAL : Recall:  50.0%, Precision:   2.4%  (TP:1, FP:41, FN:1)
+  - REPLAY: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - SAVE : Recall:  80.0%, Precision:  66.7%  (TP:4, FP:2, FN:1)
+  - SHOT : Recall:  70.0%, Precision:  16.3%  (TP:7, FP:36, FN:3)
+  - SKILL: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - TACKLE: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - YELLOW CARD: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+
+Game: Game304_0618
+  - BLOCK: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:3, FN:2)
+  - CELEBRATION: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - GOAL : Recall:  14.3%, Precision:   5.1%  (TP:3, FP:56, FN:18)
+  - REPLAY: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - SAVE : Recall:  16.7%, Precision:  50.0%  (TP:1, FP:1, FN:5)
+  - SHOT : Recall:  18.8%, Precision:  10.3%  (TP:6, FP:52, FN:26)
+  - SKILL: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - TACKLE: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+  - YELLOW CARD: Recall:   0.0%, Precision:   0.0%  (TP:0, FP:0, FN:0)
+
+================================================================================
+
+--- OVERALL AGGREGATE PERFORMANCE ---
+(Aggregated across 5 games)
+
+--- BLOCK ---
+  Overall Recall:    0.00% (0/12 detected)
+  Overall Precision: 0.00% (0 correct / 18 total AI detections)
+  (Total TP: 0, Total FP: 18, Total FN: 12)
+
+--- CELEBRATION ---
+  Overall Recall:    0.00% (0/1 detected)
+  Overall Precision: 0.00% (0 correct / 0 total AI detections)
+  (Total TP: 0, Total FP: 0, Total FN: 1)
+
+--- GOAL ---
+  Overall Recall:    28.57% (12/42 detected)
+  Overall Precision: 3.23% (12 correct / 372 total AI detections)
+  (Total TP: 12, Total FP: 360, Total FN: 30)
+
+--- REPLAY ---
+  Overall Recall:    0.00% (0/3 detected)
+  Overall Precision: 0.00% (0 correct / 0 total AI detections)
+  (Total TP: 0, Total FP: 0, Total FN: 3)
+
+--- SAVE ---
+  Overall Recall:    59.38% (19/32 detected)
+  Overall Precision: 51.35% (19 correct / 37 total AI detections)
+  (Total TP: 19, Total FP: 18, Total FN: 13)
+
+--- SHOT ---
+  Overall Recall:    36.89% (38/103 detected)
+  Overall Precision: 11.24% (38 correct / 338 total AI detections)
+  (Total TP: 38, Total FP: 300, Total FN: 65)
+
+--- SKILL ---
+  Overall Recall:    0.00% (0/1 detected)
+  Overall Precision: 0.00% (0 correct / 20 total AI detections)
+  (Total TP: 0, Total FP: 20, Total FN: 1)
+
+--- TACKLE ---
+  Overall Recall:    0.00% (0/4 detected)
+  Overall Precision: 0.00% (0 correct / 0 total AI detections)
+  (Total TP: 0, Total FP: 0, Total FN: 4)
+
+--- YELLOW CARD ---
+  Overall Recall:    0.00% (0/5 detected)
+  Overall Precision: 0.00% (0 correct / 0 total AI detections)
+  (Total TP: 0, Total FP: 0, Total FN: 5)
+
+================================================================================

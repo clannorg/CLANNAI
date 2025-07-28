@@ -37,6 +37,9 @@ console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setFormatter(log_formatter)
 logger.addHandler(console_handler)
 
+# Generate a single timestamp for the entire pipeline run
+pipeline_run_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+logger.info(f"====== STARTING PIPELINE RUN: {pipeline_run_timestamp} ======")
 
 # Define paths to the scripts that will be executed
 SEGMENTATION_SCRIPT = BASE_DIR / "0_utils" / "video_segmentation.py"
@@ -78,60 +81,51 @@ def main():
         return
 
     # Find all game directories in the data folder
-    if args.game_name:
-        game_folders = [DATA_DIR / args.game_name]
-        if not game_folders[0].exists():
-            logger.error(f"Specified game folder not found: {game_folders[0]}")
-            return
-    else:
-        game_folders = [d for d in DATA_DIR.iterdir() if d.is_dir()]
-    
-    if not game_folders:
-        logger.warning(f"No game folders found in {DATA_DIR}. Nothing to process.")
+    try:
+        # Ensure we always have a list to iterate over
+        game_folders = [DATA_DIR / args.game_name] if args.game_name else sorted([d for d in DATA_DIR.iterdir() if d.is_dir()])
+    except FileNotFoundError:
+        logger.error(f"The specified game directory '{args.game_name}' was not found in '{DATA_DIR}'.")
         return
-
-    logger.info(f"Found {len(game_folders)} games to process: {[g.name for g in game_folders]}")
     
     total_games = len(game_folders)
+
+    # --- Main Pipeline Loop ---
     for i, game_dir in enumerate(game_folders, 1):
         game_name = game_dir.name
-        run_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        logger.info(f"\n====== PROCESSING GAME {i}/{total_games}: {game_name} (RUN ID: {run_timestamp}) ======")
+        logger.info(f"\n====== PROCESSING GAME {i}/{total_games}: {game_name} ======")
 
-        # --- STEP 1: Video Segmentation ---
-        logger.info(f"--- Step 1: Video Segmentation for {game_name} ---")
-        segment_command = [PYTHON_EXECUTABLE, str(SEGMENTATION_SCRIPT), "--game_name", game_name]
+        # --- 1. Video Segmentation ---
+        segment_command = [
+            PYTHON_EXECUTABLE, str(SEGMENTATION_SCRIPT),
+            "--game_name", game_name
+        ]
         if not run_step(segment_command):
             logger.error(f"Skipping further processing for {game_name} due to segmentation failure.")
             continue
 
-        # --- STEP 2: Event Analysis ---
-        logger.info(f"\n--- Step 2: Event Analysis for {game_name} ---")
+        # --- 2. Event Analysis ---
         analyze_command = [
             PYTHON_EXECUTABLE, str(ANALYZER_SCRIPT),
             "--game_name", game_name,
-            "--run_timestamp", run_timestamp
+            "--run_timestamp", pipeline_run_timestamp
         ]
         if args.force:
             analyze_command.append("--force")
         
-        # We now allow this step to "fail" (i.e., return a non-zero exit code)
-        # if only a few clips are unsuccessful. The analysis script itself will log the errors.
-        # We will proceed to synthesis regardless, to get a report on the successful clips.
+        # We run analysis but don't stop the pipeline if it fails,
+        # so that synthesis can still run on partially successful results.
         run_step(analyze_command)
 
-        # --- STEP 3: Event Synthesis ---
-        logger.info(f"\n--- Step 3: Event Synthesis for {game_name} ---")
+        # --- 3. Event Synthesis ---
         synthesis_command = [
             PYTHON_EXECUTABLE, str(SYNTHESIS_SCRIPT),
             "--game_name", game_name,
-            "--run_timestamp", run_timestamp
+            "--run_timestamp", pipeline_run_timestamp
         ]
         run_step(synthesis_command)
 
-        logger.info(f"====== ✅ FINISHED PROCESSING GAME: {game_name} ======")
-
-    logger.info("\n====== 🎉 PIPELINE COMPLETE 🎉 ======")
+    logger.info("====== PIPELINE RUN FINISHED ======")
 
 if __name__ == "__main__":
     main() 

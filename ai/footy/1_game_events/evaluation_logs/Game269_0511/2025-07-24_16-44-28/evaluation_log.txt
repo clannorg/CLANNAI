@@ -1,0 +1,307 @@
+============================================================
+AI vs. Manual Annotation - Detailed Comparison Log
+============================================================
+
+--- ACCURACY SUMMARY ---
+BLOCK: Recall=0.0%, Precision=0.0%
+GOAL: Recall=100.0%, Precision=3.6%
+SAVE: Recall=100.0%, Precision=75.0%
+SHOT: Recall=58.8%, Precision=9.6%
+SKILL: Recall=0.0%, Precision=0.0%
+YELLOW CARD: Recall=0.0%, Precision=0.0%
+
+============================================================
+
+--- MANUAL EVENT: INTRO @ 0;09 (9.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------
+--- MANUAL EVENT: WALK @ 2;04 (124.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 130.00s: [start_of_match] Players from both teams line up on the field for the start of the match. The referee is present.
+------------------------------------------------------------
+--- MANUAL EVENT: WAVE @ 2;17 (137.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 130.00s: [start_of_match] Players from both teams line up on the field for the start of the match. The referee is present.
+  - 140.00s: [start_of_match] Players from two teams (one in white/blue and one in red) line up for the start of the match. The referee in yellow is present.
+  - 143.00s: [end_of_match] Players from both teams walk off the field.
+------------------------------------------------------------
+--- MANUAL EVENT: SKILL @ 9;33 (573.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 564.00s: [shot_on_target] Player in yellow takes a shot on goal at the LEFT GOAL. The shot is missed.
+  - 573.00s: [shot_on_target] Player in white takes a shot on goal at the LEFT GOAL.
+  - 574.00s: [block] Player in red blocks the shot.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 23;24 (1404.00s) ---
+  Description: Skip
+  Match Decision: True
+  Nearby AI Events:
+  - 1400.00s: [shot_on_target] Player in white shoots towards the LEFT GOAL.
+  - 1400.00s: [goalkeeper_saves] Goalkeeper in yellow saves the shot at the LEFT GOAL.
+  - 1413.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 1414.00s: [goalkeeper_saves] Goalkeeper in white saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 23;24 (1404.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 1400.00s: [shot_on_target] Player in white shoots towards the LEFT GOAL.
+  - 1400.00s: [goalkeeper_saves] Goalkeeper in yellow saves the shot at the LEFT GOAL.
+  - 1413.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 1414.00s: [goalkeeper_saves] Goalkeeper in white saves the shot at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 29;19 (1759.00s) ---
+  Description: Skip
+  Match Decision: False
+  Nearby AI Events:
+  - 1751.00s: [shot_on_target] Player in white shoots towards the LEFT GOAL.
+  - 1751.00s: [goalkeeper_saves] Goalkeeper saves the shot.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 32;48 (1968.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 1969.00s: [goalkeeper_saves] Player in red shoots towards the LEFT GOAL and the goalkeeper in yellow makes a save.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 34;44 (2084.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 2086.00s: [goalkeeper_saves] Player in red shoots towards the LEFT GOAL and the goalkeeper makes a save.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 49;57 (2997.00s) ---
+  Description: Skip
+  Match Decision: True
+  Nearby AI Events:
+  - 2992.00s: [shot_on_target] Player in white shoots towards the LEFT GOAL, saved by the goalkeeper.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 49;57 (2997.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+  - 2992.00s: [shot_on_target] Player in white shoots towards the LEFT GOAL, saved by the goalkeeper.
+------------------------------------------------------------
+--- MANUAL EVENT: BLOCK @ 52;18 (3138.00s) ---
+  Description: Skip
+  Match Decision: False
+  Nearby AI Events:
+  - 3130.00s: [other] CORNER KICK awarded - Player in blue prepares to take a corner kick at the LEFT GOAL. The referee is present.
+  - 3138.00s: [turnover] Player in red gains possession.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 55;42 (3342.00s) ---
+  Description: Skip
+  Match Decision: True
+  Nearby AI Events:
+  - 3343.00s: [goalkeeper_saves] Goalkeeper in yellow makes a save from a shot on target. RIGHT GOAL
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 55;42 (3342.00s) ---
+  Description: (Implied from Save)
+  Match Decision: False
+  Nearby AI Events:
+  - 3343.00s: [goalkeeper_saves] Goalkeeper in yellow makes a save from a shot on target. RIGHT GOAL
+------------------------------------------------------------
+--- MANUAL EVENT: YELLOW CARD @ 59;00 (3540.00s) ---
+  Description: Skip
+  Match Decision: False
+  Nearby AI Events:
+  - 3534.00s: [other] Turnover - Player in red loses possession to player in blue.
+  - 3541.00s: [substitution] A player wearing a fluorescent yellow bib enters the field, replacing a player wearing red.
+  - 3547.00s: [major_foul] Referee in fluorescent yellow is talking to two players in red jerseys and writing in his notepad.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 59;50 (3590.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 3583.00s: [goalkeeper_saves] Goalkeeper in red makes a save at the LEFT GOAL.
+  - 3590.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 3590.00s: [goalkeeper_saves] Goalkeeper in black makes a save.
+  - 3600.00s: [goalkeeper_save] Goalkeeper in green makes a save.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 59;50 (3590.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 3583.00s: [goalkeeper_saves] Goalkeeper in red makes a save at the LEFT GOAL.
+  - 3590.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 3590.00s: [goalkeeper_saves] Goalkeeper in black makes a save.
+  - 3600.00s: [goalkeeper_save] Goalkeeper in green makes a save.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;06;32 (3992.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 3992.00s: [goalkeeper_save] Goalkeeper in green makes a save from a shot by a player in white. RIGHT GOAL
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;15;04 (4504.00s) ---
+  Match Decision: True
+  Nearby AI Events:
+  - 4503.00s: [shot_on_target] Player in blue takes a shot on goal from the corner kick.
+  - 4503.00s: [corner_kick] Player in light blue takes a corner kick from the LEFT GOAL.
+  - 4504.00s: [blocked] The shot is blocked by a player in red.
+  - 4504.00s: [turnover] Player in light blue loses possession.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL @ 1;22;25 (4945.00s) ---
+  Description: Penalty Kick
+  Match Decision: True
+  Nearby AI Events:
+  - 4940.00s: [goalkick] Player in red takes a goal kick from the LEFT GOAL.
+  - 4940.00s: [referee] Referee is standing on the left side of the LEFT GOAL.
+  - 4946.00s: [goal] Player in red #4 takes a shot and scores a goal at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;22;25 (4945.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: False
+  Nearby AI Events:
+  - 4940.00s: [goalkick] Player in red takes a goal kick from the LEFT GOAL.
+  - 4940.00s: [referee] Referee is standing on the left side of the LEFT GOAL.
+  - 4946.00s: [goal] Player in red #4 takes a shot and scores a goal at the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 1;23;57 (5037.00s) ---
+  Description: Penalty Save
+  Match Decision: True
+  Nearby AI Events:
+  - 5030.00s: [referee] Referee raises the corner flag to signal a corner kick.
+  - 5031.00s: [corner_kick] Player from Stride Sports FC takes a corner kick at the LEFT GOAL.
+  - 5036.00s: [shot_on_target] Player in white and blue shoots towards the LEFT GOAL.
+  - 5037.00s: [goalkeeper_saves] Goalkeeper in green dives and saves the shot at the LEFT GOAL.
+  - 5041.00s: [goalkick] Goalkeeper in green kicks the ball away from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;23;57 (5037.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 5030.00s: [referee] Referee raises the corner flag to signal a corner kick.
+  - 5031.00s: [corner_kick] Player from Stride Sports FC takes a corner kick at the LEFT GOAL.
+  - 5036.00s: [shot_on_target] Player in white and blue shoots towards the LEFT GOAL.
+  - 5037.00s: [goalkeeper_saves] Goalkeeper in green dives and saves the shot at the LEFT GOAL.
+  - 5041.00s: [goalkick] Goalkeeper in green kicks the ball away from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SAVE @ 1;25;03 (5103.00s) ---
+  Description: Penalty Save
+  Match Decision: True
+  Nearby AI Events:
+  - 5094.00s: [penalty] Player in red and black (#11) takes a penalty shot at the LEFT GOAL.
+  - 5096.00s: [goalkeeper_save] Goalkeeper in yellow makes a save.
+  - 5103.00s: [goalkeeper_save] The goalkeeper dives to his left and blocks the shot.
+  - 5103.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 5104.00s: [goalkeeper_saves] Goalkeeper in yellow dives and saves the shot.
+  - 5113.00s: [goalkick] Player in yellow takes a goal kick from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;25;03 (5103.00s) ---
+  Description: (Implied from Save)
+  Match Decision: True
+  Nearby AI Events:
+  - 5094.00s: [penalty] Player in red and black (#11) takes a penalty shot at the LEFT GOAL.
+  - 5096.00s: [goalkeeper_save] Goalkeeper in yellow makes a save.
+  - 5103.00s: [goalkeeper_save] The goalkeeper dives to his left and blocks the shot.
+  - 5103.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 5104.00s: [goalkeeper_saves] Goalkeeper in yellow dives and saves the shot.
+  - 5113.00s: [goalkick] Player in yellow takes a goal kick from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL @ 1;25;51 (5151.00s) ---
+  Description: Penalty Kick
+  Match Decision: True
+  Nearby AI Events:
+  - 5141.00s: [goalkeeper_saves] Goalkeeper from Rush Academy saves the shot from the corner kick at the LEFT GOAL.
+  - 5151.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 5152.00s: [goalkeeper_saves] Goalkeeper in green dives to his left and saves the shot at the LEFT GOAL.
+  - 5160.00s: [referee] The referee, wearing a green shirt, walks towards the center of the field.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;25;51 (5151.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: True
+  Nearby AI Events:
+  - 5141.00s: [goalkeeper_saves] Goalkeeper from Rush Academy saves the shot from the corner kick at the LEFT GOAL.
+  - 5151.00s: [shot_on_target] Player in blue shoots towards the LEFT GOAL.
+  - 5152.00s: [goalkeeper_saves] Goalkeeper in green dives to his left and saves the shot at the LEFT GOAL.
+  - 5160.00s: [referee] The referee, wearing a green shirt, walks towards the center of the field.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL @ 1;26;34 (5194.00s) ---
+  Description: Penalty Kick
+  Match Decision: True
+  Nearby AI Events:
+  - 5192.00s: [shot_on_target] Player number 7 in red shoots the ball towards the LEFT GOAL.
+  - 5193.00s: [goalkeeper_saves] The goalkeeper in yellow dives to his right and saves the shot at the LEFT GOAL.
+  - 5196.00s: [goalkick] Player in red takes a goalkick from the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;26;34 (5194.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: True
+  Nearby AI Events:
+  - 5192.00s: [shot_on_target] Player number 7 in red shoots the ball towards the LEFT GOAL.
+  - 5193.00s: [goalkeeper_saves] The goalkeeper in yellow dives to his right and saves the shot at the LEFT GOAL.
+  - 5196.00s: [goalkick] Player in red takes a goalkick from the RIGHT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL @ 1;27;32 (5252.00s) ---
+  Description: Penalty Kick
+  Match Decision: True
+  Nearby AI Events:
+  - 5250.00s: [shot_on_target] Player in light blue shoots the ball towards the LEFT GOAL.
+  - 5251.00s: [goalkeeper_save] Goalkeeper in green dives to his left and makes a save.
+  - 5252.00s: [shot_on_target] Player in blue/white shoots towards the LEFT GOAL.
+  - 5252.00s: [goalkeeper_saves] Goalkeeper in green dives to his right and saves the shot at the LEFT GOAL.
+  - 5261.00s: [turnover] Player in light blue loses possession of the ball to the goalkeeper in yellow.
+  - 5261.00s: [goalkick] Goalkeeper in yellow kicks the ball from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;27;32 (5252.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: True
+  Nearby AI Events:
+  - 5250.00s: [shot_on_target] Player in light blue shoots the ball towards the LEFT GOAL.
+  - 5251.00s: [goalkeeper_save] Goalkeeper in green dives to his left and makes a save.
+  - 5252.00s: [shot_on_target] Player in blue/white shoots towards the LEFT GOAL.
+  - 5252.00s: [goalkeeper_saves] Goalkeeper in green dives to his right and saves the shot at the LEFT GOAL.
+  - 5261.00s: [turnover] Player in light blue loses possession of the ball to the goalkeeper in yellow.
+  - 5261.00s: [goalkick] Goalkeeper in yellow kicks the ball from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;28;16 (5296.00s) ---
+  Description: Penalty Miss
+  Match Decision: True
+  Nearby AI Events:
+  - 5295.00s: [shot_on_target] Player in red shoots towards the LEFT GOAL.
+  - 5296.00s: [goalkeeper_saves] Goalkeeper in yellow dives and saves the shot at the LEFT GOAL.
+  - 5297.00s: [turnover] The goalkeeper secures the ball, resulting in a turnover.
+------------------------------------------------------------
+--- MANUAL EVENT: GOAL @ 1;28;57 (5337.00s) ---
+  Description: Penalty Kick
+  Match Decision: True
+  Nearby AI Events:
+  - 5330.00s: [shot_on_target] Player in blue shoots the ball towards the RIGHT GOAL.
+  - 5331.00s: [goalkeeper_save] Goalkeeper in green saves the shot at the RIGHT GOAL.
+  - 5336.00s: [shot_on_target] Player in white shoots the ball towards the LEFT GOAL.
+  - 5337.00s: [goalkeeper_save] Goalkeeper in green makes a diving save, blocking the shot.
+  - 5338.00s: [goalkick] Goalkeeper kicks the ball away from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;28;57 (5337.00s) ---
+  Description: (Implied from Goal)
+  Match Decision: True
+  Nearby AI Events:
+  - 5330.00s: [shot_on_target] Player in blue shoots the ball towards the RIGHT GOAL.
+  - 5331.00s: [goalkeeper_save] Goalkeeper in green saves the shot at the RIGHT GOAL.
+  - 5336.00s: [shot_on_target] Player in white shoots the ball towards the LEFT GOAL.
+  - 5337.00s: [goalkeeper_save] Goalkeeper in green makes a diving save, blocking the shot.
+  - 5338.00s: [goalkick] Goalkeeper kicks the ball away from the LEFT GOAL.
+------------------------------------------------------------
+--- MANUAL EVENT: SHOT @ 1;29;43 (5383.00s) ---
+  Description: Penalty Miss
+  Match Decision: False
+  Nearby AI Events:
+  - 5378.00s: [goal] Player in red scores a goal at the LEFT GOAL. The goalkeeper in yellow raises his arms in the air.
+  - 5380.00s: [goalkeeper_save] Goalkeeper in yellow makes a save on the LEFT GOAL.
+  - 5384.00s: [goalkeeper_save] Player in yellow saves a shot on the LEFT GOAL.
+  - 5390.00s: [goal] Players from Stride Sports FC celebrate a goal at the LEFT GOAL. The referee is present.
+------------------------------------------------------------
+--- MANUAL EVENT: FULLTIME @ 1;32;46 (5566.00s) ---
+  Match Decision: False
+  Nearby AI Events:
+  - 5560.00s: [skills] Player in yellow jersey performs a backflip in front of a team of players in blue and white jerseys.
+  - 5567.00s: [skills] The team in blue and white jerseys lie on the ground and lift their legs in the air. The player in the yellow jersey jumps over them.
+  - 5570.00s: [celebration] Team in light blue and black celebrate with a player in yellow.
+  - 5573.00s: [skills] The team in blue and white jerseys gather around the player in the yellow jersey and hug.
+------------------------------------------------------------
+--- MANUAL EVENT: END @ 1;33;49 (5629.00s) ---
+  Description: End of video!
+  Match Decision: False
+  Nearby AI Events:
+    >> No AI-generated events found within the time window.
+------------------------------------------------------------

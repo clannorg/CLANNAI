@@ -1,0 +1,22 @@
+{
+  "true_positives": {
+    "goal": 1,
+    "save": 4,
+    "shot": 7
+  },
+  "false_negatives": {
+    "goal": 1,
+    "save": 1,
+    "shot": 3
+  },
+  "false_positives": {
+    "goal": 41,
+    "save": 2,
+    "shot": 36
+  },
+  "total_manual": {
+    "goal": 2,
+    "save": 5,
+    "shot": 10
+  }
+}
