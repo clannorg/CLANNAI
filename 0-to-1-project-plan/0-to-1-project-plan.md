@@ -30,6 +30,7 @@
 - AWS infrastructure setup
 - Customer dashboard
 - Video processing pipeline integration
+- **Download highlights button** - Allow clubs to download their match highlight videos
 
 ### **Ram (AI/ML Development)**
 - Gemini integration for event detection
