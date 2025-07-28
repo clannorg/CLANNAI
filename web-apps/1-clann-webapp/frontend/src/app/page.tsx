@@ -195,9 +195,7 @@ export default function Home() {
                   value={veoUrl}
                   onChange={(e) => setVeoUrl(e.target.value)}
                   placeholder="e.g. https://app.veo.co/matches/527e6a4e-f323-4524..."
-                  className="w-full bg-gray-900/70 text-white px-4 py-4 rounded-lg border border-gray-700/50 
-                            focus:border-green-500/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none
-                            placeholder-gray-400 text-lg"
+                  className="w-full bg-gray-900/70 text-white px-4 py-4 rounded-lg border border-gray-700/50 focus:border-green-500/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none placeholder-gray-400 text-lg"
                 />
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <p className="text-sm text-gray-400">
@@ -205,9 +203,7 @@ export default function Home() {
                   </p>
                   <button 
                     onClick={handleAnalyzeClick}
-                    className="px-8 py-4 rounded-lg font-medium text-white transition-all duration-200 
-                              hover:shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 
-                              focus:ring-offset-2 focus:ring-offset-gray-900"
+                    className="px-8 py-4 rounded-lg font-medium text-white transition-all duration-200 hover:shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900"
                     style={{ 
                       backgroundColor: 'var(--clann-green)',
                       boxShadow: '0 4px 20px rgba(1, 111, 50, 0.3)'
