@@ -472,60 +472,78 @@ export default function Home() {
 
       {/* Auth Modal */}
       {showAuthModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-30">
-          <div className="bg-gray-800/95 rounded-xl p-8 border border-gray-700/50 max-w-md w-full mx-4">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-bold text-white">
+        <div className="fixed inset-0 flex items-center justify-center z-30" style={{ pointerEvents: 'none' }}>
+                     <div className="rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl" style={{ backgroundColor: 'rgba(0, 0, 0, 0.95)', border: '1px solid rgba(75, 85, 99, 0.5)', pointerEvents: 'auto' }}>
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-2xl font-semibold text-white">
                 {isLogin ? 'Sign In' : 'Create Account'}
               </h2>
-              <button 
-                onClick={handleClose}
-                className="text-gray-400 hover:text-white"
-              >
+                              <button 
+                  onClick={handleClose}
+                  className="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center rounded-full hover:bg-black/50 transition-all"
+                >
                 ✕
               </button>
             </div>
 
             {error && (
-              <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded mb-6">
+              <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-4 rounded-xl mb-6 backdrop-blur-sm">
                 {error}
               </div>
             )}
 
-            <form onSubmit={handleAuthSubmit} className="space-y-4">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
-                required
-              />
-              
-              {!isLogin && (
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Phone Number"
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
+            <form onSubmit={handleAuthSubmit} className="space-y-5">
+                              <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                  className="w-full rounded-xl px-5 py-4 text-white placeholder-gray-400 focus:outline-none transition-all"
+                  style={{ 
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+                    border: '1px solid rgba(75, 85, 99, 0.5)'
+                  }}
+                  onFocus={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'}
+                  onBlur={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'}
                   required
                 />
+              
+              {!isLogin && (
+                                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="Phone Number"
+                    className="w-full rounded-xl px-5 py-4 text-white placeholder-gray-400 focus:outline-none transition-all"
+                    style={{ 
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+                      border: '1px solid rgba(75, 85, 99, 0.5)'
+                    }}
+                    onFocus={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'}
+                    onBlur={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'}
+                    required
+                  />
               )}
               
               <div className="relative">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
-                  required
-                />
+                                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    className="w-full rounded-xl px-5 py-4 text-white placeholder-gray-400 focus:outline-none transition-all"
+                    style={{ 
+                      backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+                      border: '1px solid rgba(75, 85, 99, 0.5)'
+                    }}
+                    onFocus={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'}
+                    onBlur={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'}
+                    required
+                  />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400"
+                  className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-300 transition-colors"
                 >
                   {showPassword ? '🙈' : '👁️'}
                 </button>
@@ -533,43 +551,48 @@ export default function Home() {
               
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 mt-6"
+                style={{ backgroundColor: 'var(--clann-green)' }}
+                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#015928'}
+                onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'var(--clann-green)'}
               >
                 {isLogin ? 'Sign In' : 'Create Account'}
               </button>
             </form>
 
             {!isLogin && (
-              <div className="mt-4">
+              <div className="mt-6">
                 <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={termsAccepted}
-                    onChange={(e) => setTermsAccepted(e.target.checked)}
-                    className="mt-1 rounded border-gray-600 bg-gray-700 text-green-500"
-                  />
-                  <span className="text-sm text-gray-300">
-                    I accept the <a href="/terms" className="text-green-500 hover:underline" target="_blank">Terms & Conditions</a> and
-                    <a href="/privacy" className="text-green-500 hover:underline" target="_blank"> Privacy Policy</a>
+                                      <input
+                      type="checkbox"
+                      checked={termsAccepted}
+                      onChange={(e) => setTermsAccepted(e.target.checked)}
+                      className="mt-1 rounded border-gray-800 bg-black text-green-500 focus:ring-green-500/30"
+                    />
+                  <span className="text-sm text-gray-300 leading-relaxed">
+                    I accept the <a href="/terms" className="text-green-400 hover:text-green-300 transition-colors" target="_blank">Terms & Conditions</a> and
+                    <a href="/privacy" className="text-green-400 hover:text-green-300 transition-colors" target="_blank"> Privacy Policy</a>
                   </span>
                 </label>
               </div>
             )}
 
-            <div className="mt-6 text-center">
+            <div className="mt-8 text-center">
               <button
                 onClick={() => setIsLogin(!isLogin)}
-                className="text-sm text-green-500 hover:underline transition-colors"
+                className="text-sm text-green-400 hover:text-green-300 transition-colors font-medium"
               >
                 {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
               </button>
             </div>
 
             {/* Demo Credentials */}
-            <div className="mt-6 p-4 bg-gray-700/50 rounded-lg">
-              <p className="text-xs text-gray-400 mb-2">Demo Credentials:</p>
-              <p className="text-xs text-gray-300">User: arsenal@demo.com / demo123</p>
-              <p className="text-xs text-gray-300">Company: admin@clann.ai / demo123</p>
+            <div className="mt-6 p-4 bg-black/40 rounded-xl border border-gray-800/30">
+              <p className="text-xs text-gray-400 mb-3 font-medium">Demo Credentials:</p>
+              <div className="space-y-1">
+                <p className="text-xs text-gray-300">User: arsenal@demo.com / demo123</p>
+                <p className="text-xs text-gray-300">Company: admin@clann.ai / demo123</p>
+              </div>
             </div>
           </div>
         </div>
