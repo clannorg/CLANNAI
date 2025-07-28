@@ -108,7 +108,7 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center">
               <Image
-                src="/clann-logo.png"
+                src="/clann-logo-white.png"
                 alt="ClannAI"
                 width={120}
                 height={40}
@@ -218,6 +218,17 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Platform Integration */}
+          <div className="text-center mb-16">
+            <Image
+              src="/veo-trace-spiideo.png"
+              alt="Supported Platforms: Veo, Trace, Spiideo"
+              width={400}
+              height={100}
+              className="mx-auto opacity-80"
+            />
+          </div>
+
           {/* Features Showcase */}
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -229,6 +240,69 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {/* Team Position Tracking */}
+              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-green-500/30 transition-all duration-300 hover:transform hover:scale-105">
+                <div className="mb-6">
+                  <Image
+                    src="/clann-position.png"
+                    alt="Team Position Analysis"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Team Position Tracking</h3>
+                <p className="text-gray-400 leading-relaxed">Real-time tactical positioning analysis and heat mapping</p>
+              </div>
+
+              {/* Heat Map Analysis */}
+              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300">
+                <div className="mb-6">
+                  <Image
+                    src="/heatmap_team_0.png"
+                    alt="Heat Map Analysis"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Heat Map Analysis</h3>
+                <p className="text-gray-400 leading-relaxed">Visualize player activity zones and field coverage patterns</p>
+              </div>
+
+              {/* Sprint Analysis */}
+              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
+                <div className="mb-6">
+                  <Image
+                    src="/sprint_diagram_team_0_distance.png"
+                    alt="Sprint Analysis"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Sprint Analysis</h3>
+                <p className="text-gray-400 leading-relaxed">Automatic sprint detection and energy expenditure metrics</p>
+              </div>
+            </div>
+
+            {/* Additional Analysis Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
+              {/* Activity Analysis */}
+              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300">
+                <div className="mb-6">
+                  <Image
+                    src="/team_0_activity.png"
+                    alt="Team Activity Analysis"
+                    width={300}
+                    height={200}
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Activity Analysis</h3>
+                <p className="text-gray-400 leading-relaxed">Track team intensity and movement patterns throughout the match</p>
+              </div>
+
               {/* Free Trial */}
               <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-green-500/30 transition-all duration-300 hover:transform hover:scale-105">
                 <div className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4"
@@ -265,20 +339,6 @@ export default function Home() {
                 >
                   Start Free Trial
                 </button>
-              </div>
-
-              {/* Team Analysis */}
-              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300">
-                <div className="text-4xl mb-4">📈</div>
-                <h3 className="text-xl font-bold text-white mb-3">Team Position Tracking</h3>
-                <p className="text-gray-400 leading-relaxed">Real-time tactical positioning analysis and heat mapping</p>
-              </div>
-
-              {/* Sprint Analysis */}
-              <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-yellow-500/30 transition-all duration-300">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-xl font-bold text-white mb-3">Sprint Analysis</h3>
-                <p className="text-gray-400 leading-relaxed">Automatic sprint detection and energy expenditure metrics</p>
               </div>
             </div>
 
