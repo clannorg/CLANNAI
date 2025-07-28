@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import apiClient from '@/lib/api-client'
 
 interface Game {
   id: string
@@ -26,6 +27,10 @@ export default function Dashboard() {
   const [showUploadModal, setShowUploadModal] = useState(false)
   const [showJoinModal, setShowJoinModal] = useState(false)
   const [showCreateTeamModal, setShowCreateTeamModal] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+  const [joinTeamCode, setJoinTeamCode] = useState('')
+  const [joinTeamLoading, setJoinTeamLoading] = useState(false)
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
@@ -33,14 +38,62 @@ export default function Dashboard() {
       setUser(JSON.parse(userData))
     }
     
-    // TODO: Load real data from API
-    // loadUserData()
+    loadUserData()
   }, [])
+
+  const loadUserData = async () => {
+    try {
+      setLoading(true)
+      setError('')
+      
+      // Load games and teams in parallel
+      const [gamesResponse, teamsResponse] = await Promise.all([
+        apiClient.getUserGames(),
+        apiClient.getUserTeams()
+      ])
+      
+      setGames(gamesResponse.games || [])
+      setTeams(teamsResponse.teams || [])
+    } catch (err: any) {
+      console.error('Failed to load user data:', err)
+      setError(err.message || 'Failed to load data')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const handleLogout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     window.location.href = '/'
+  }
+
+  const handleJoinTeam = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!joinTeamCode.trim()) return
+
+    try {
+      setJoinTeamLoading(true)
+      setError('')
+      
+      await apiClient.joinTeam(joinTeamCode.trim().toUpperCase())
+      
+      // Reload teams after joining
+      const teamsResponse = await apiClient.getUserTeams()
+      setTeams(teamsResponse.teams || [])
+      
+      // Close modal and reset form
+      setShowJoinModal(false)
+      setJoinTeamCode('')
+      
+      // Switch to teams tab to show the joined team
+      setActiveTab('teams')
+    } catch (err: any) {
+      console.error('Failed to join team:', err)
+      setError(err.message || 'Failed to join team')
+    } finally {
+      setJoinTeamLoading(false)
+    }
   }
 
   return (
@@ -139,9 +192,24 @@ export default function Dashboard() {
                 Upload VEO URL
               </button>
             </div>
-            <div className="p-6">
+                          <div className="p-6">
 
-            {games.length === 0 ? (
+                {loading ? (
+                  <div className="text-center py-12">
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
+                    <p className="mt-2 text-gray-500">Loading your games...</p>
+                  </div>
+                ) : error ? (
+                  <div className="bg-red-50 rounded-lg p-6 text-center">
+                    <p className="text-red-600 mb-4">{error}</p>
+                    <button
+                      onClick={loadUserData}
+                      className="bg-[#016F32] text-white px-4 py-2 rounded-lg hover:bg-[#016F32]/90 transition-colors"
+                    >
+                      Try Again
+                    </button>
+                  </div>
+                ) : games.length === 0 ? (
               <div className="bg-gray-50 rounded-lg p-12 text-center">
                 <div className="text-gray-400 mb-4">
                   <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -204,9 +272,24 @@ export default function Dashboard() {
                 Join Team
               </button>
             </div>
-            <div className="p-6">
+                          <div className="p-6">
 
-            {teams.length === 0 ? (
+                {loading ? (
+                  <div className="text-center py-12">
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
+                    <p className="mt-2 text-gray-500">Loading your teams...</p>
+                  </div>
+                ) : error ? (
+                  <div className="bg-red-50 rounded-lg p-6 text-center">
+                    <p className="text-red-600 mb-4">{error}</p>
+                    <button
+                      onClick={loadUserData}
+                      className="bg-[#016F32] text-white px-4 py-2 rounded-lg hover:bg-[#016F32]/90 transition-colors"
+                    >
+                      Try Again
+                    </button>
+                  </div>
+                ) : teams.length === 0 ? (
               <div className="bg-gray-50 rounded-lg p-12 text-center">
                 <div className="text-gray-400 mb-4">
                   <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -303,39 +386,60 @@ export default function Dashboard() {
         </div>
       )}
 
-      {/* Join Team Modal */}
-      {showJoinModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Join Team</h3>
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-600 mb-1">Team Code</label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
-                  placeholder="e.g., ARS269"
-                />
-              </div>
-              <div className="flex justify-end space-x-3">
-                <button
-                  type="button"
-                  onClick={() => setShowJoinModal(false)}
-                  className="px-6 py-2.5 text-gray-600 hover:text-gray-800 transition-colors"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors"
-                >
-                  Join
-                </button>
-              </div>
-            </form>
+              {/* Join Team Modal */}
+        {showJoinModal && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Join Team</h3>
+              
+              {error && (
+                <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-600 text-sm">{error}</p>
+                </div>
+              )}
+              
+              <form onSubmit={handleJoinTeam} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-600 mb-1">Team Code</label>
+                  <input
+                    type="text"
+                    value={joinTeamCode}
+                    onChange={(e) => setJoinTeamCode(e.target.value)}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
+                    placeholder="e.g., ARS269"
+                    required
+                    disabled={joinTeamLoading}
+                  />
+                </div>
+                <div className="text-xs text-gray-500">
+                  <p className="mb-1">Try these demo codes:</p>
+                  <p>ARS269, CHE277, LIV297, MCI298, MUN304</p>
+                </div>
+                <div className="flex justify-end space-x-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowJoinModal(false)
+                      setJoinTeamCode('')
+                      setError('')
+                    }}
+                    className="px-6 py-2.5 text-gray-600 hover:text-gray-800 transition-colors"
+                    disabled={joinTeamLoading}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={joinTeamLoading || !joinTeamCode.trim()}
+                    className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {joinTeamLoading ? 'Joining...' : 'Join Team'}
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
       {/* Create Team Modal */}
       {showCreateTeamModal && (
