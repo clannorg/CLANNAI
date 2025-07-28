@@ -214,10 +214,25 @@ games.uploaded_by       -- User who uploaded VEO URL
    - S3 upload + JSON upload buttons
    - Status management
 
-### **Phase 5: Demo Data (15 mins)**
-1. **Load demo data** (15 mins)
-   - 5 teams with VEO URLs
-   - Some analyzed with S3 videos
+### **Phase 5: AWS Production Deploy (45 mins)**
+1. **AWS RDS setup** (15 mins)
+   - Create PostgreSQL RDS instance
+   - Load schema + demo data
+   - Configure security groups
+
+2. **S3 bucket setup** (10 mins)
+   - Create S3 bucket for videos
+   - Configure CORS + public read access
+   - Upload demo video files
+
+3. **Backend deploy** (15 mins)
+   - Container build + push to ECR
+   - Deploy to ECS/Fargate
+   - Configure environment variables
+
+4. **Frontend deploy** (5 mins)
+   - Deploy to Vercel
+   - Configure API endpoint URLs
 
 ---
 
@@ -262,23 +277,26 @@ games.uploaded_by       -- User who uploaded VEO URL
 ✅ **Raw SQL queries** (no ORM complexity)  
 ✅ **Simple file uploads** to S3  
 
-### **Deployment:**
+### **Deployment (FULL AWS PRODUCTION):**
 ✅ **Frontend**: Vercel (Next.js optimized)  
-✅ **Backend**: Railway/Heroku (simple deploy)  
-✅ **Database**: PostgreSQL on Railway/Supabase  
+✅ **Backend**: AWS ECS/Fargate (containerized)  
+✅ **Database**: AWS RDS PostgreSQL (managed)  
+✅ **Storage**: AWS S3 (video files)  
+✅ **Domain**: Live production URL  
 
 ---
 
-## 🚀 **UPDATED TIME ESTIMATE**
+## 🚀 **PRODUCTION TIME ESTIMATE**
 
 **Backend: 1.5 hours** (Express + PostgreSQL - proven approach)  
 **Frontend: 1.5 hours** (using clannai-frontend components saves 30 mins)  
+**AWS Production Deploy: 45 mins** (RDS + S3 + ECS + Vercel)  
 **Integration: 30 mins** (test + polish)  
-**Total: 3.5 hours** (even faster with modern components!)
+**Total: 4.25 hours** (LIVE production website!)
 
 **Start Time: Now**  
-**End Time: ~3:30pm**  
-**Demo Ready: Tonight**  
+**End Time: ~4:15pm**  
+**LIVE Website: Tonight → clannai.com**  
 
 ---
 
