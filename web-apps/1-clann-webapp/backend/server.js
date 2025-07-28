@@ -8,6 +8,7 @@ dotenv.config();
 
 // Create Express app
 const app = express();
+
 const PORT = process.env.PORT || 3002;
 
 // Database connection
