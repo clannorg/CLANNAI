@@ -18,7 +18,7 @@ export default function Home() {
       const Typed = (await import('typed.js')).default
       
       if (typedRef.current) {
-        new Typed(typedRef.current, {
+        const typed = new Typed(typedRef.current, {
           strings: [
             'distance covered',
             'sprint speeds', 
@@ -35,6 +35,10 @@ export default function Home() {
           showCursor: true,
           cursorChar: '|'
         })
+
+        return () => {
+          typed.destroy()
+        }
       }
     }
     
@@ -102,7 +106,7 @@ export default function Home() {
       `}</style>
 
       {/* Header Navigation */}
-      <header className="relative z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
+      <header className="relative z-50 bg-gray-900/20 backdrop-blur-sm border-b border-gray-800/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
