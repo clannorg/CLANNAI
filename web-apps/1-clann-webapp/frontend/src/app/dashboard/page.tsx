@@ -34,6 +34,10 @@ export default function Dashboard() {
   const [createTeamName, setCreateTeamName] = useState('')
   const [createTeamDescription, setCreateTeamDescription] = useState('')
   const [createTeamLoading, setCreateTeamLoading] = useState(false)
+  const [uploadGameTitle, setUploadGameTitle] = useState('')
+  const [uploadGameDescription, setUploadGameDescription] = useState('')
+  const [uploadGameUrl, setUploadGameUrl] = useState('')
+  const [uploadGameLoading, setUploadGameLoading] = useState(false)
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
@@ -129,6 +133,50 @@ export default function Dashboard() {
       setError(err.message || 'Failed to create team')
     } finally {
       setCreateTeamLoading(false)
+    }
+  }
+
+  const handleUploadGame = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!uploadGameTitle.trim() || !uploadGameUrl.trim()) return
+
+    // Check if user has teams
+    if (teams.length === 0) {
+      setError('Please join or create a team first before uploading games')
+      return
+    }
+
+    // Use the first team by default (could be enhanced with team selection)
+    const selectedTeam = teams[0]
+
+    try {
+      setUploadGameLoading(true)
+      setError('')
+      
+      await apiClient.createGame({
+        title: uploadGameTitle.trim(),
+        description: uploadGameDescription.trim() || undefined,
+        videoUrl: uploadGameUrl.trim(),
+        teamId: selectedTeam.id
+      })
+      
+      // Reload games after uploading
+      const gamesResponse = await apiClient.getUserGames()
+      setGames(gamesResponse.games || [])
+      
+      // Close modal and reset form
+      setShowUploadModal(false)
+      setUploadGameTitle('')
+      setUploadGameDescription('')
+      setUploadGameUrl('')
+      
+      // Switch to games tab to show the new game
+      setActiveTab('games')
+    } catch (err: any) {
+      console.error('Failed to upload game:', err)
+      setError(err.message || 'Failed to upload game')
+    } finally {
+      setUploadGameLoading(false)
     }
   }
 
@@ -385,36 +433,75 @@ export default function Dashboard() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Upload VEO URL</h3>
-            <form className="space-y-4">
+            
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-600 text-sm">{error}</p>
+              </div>
+            )}
+            
+            <form onSubmit={handleUploadGame} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-600 mb-1">Game Title</label>
                 <input
                   type="text"
+                  value={uploadGameTitle}
+                  onChange={(e) => setUploadGameTitle(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
                   placeholder="e.g., Arsenal vs Brighton - July 28th"
+                  required
+                  disabled={uploadGameLoading}
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-600 mb-1">VEO URL</label>
                 <input
                   type="url"
+                  value={uploadGameUrl}
+                  onChange={(e) => setUploadGameUrl(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
                   placeholder="https://veo.co/watch/..."
+                  required
+                  disabled={uploadGameLoading}
                 />
               </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-600 mb-1">Description (Optional)</label>
+                <textarea
+                  value={uploadGameDescription}
+                  onChange={(e) => setUploadGameDescription(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
+                  placeholder="Brief description of the game"
+                  rows={3}
+                  disabled={uploadGameLoading}
+                />
+              </div>
+              {teams.length > 0 && (
+                <div className="text-xs text-gray-500">
+                  <p>Will be uploaded to team: <strong>{teams[0].name}</strong></p>
+                </div>
+              )}
               <div className="flex justify-end space-x-3">
                 <button
                   type="button"
-                  onClick={() => setShowUploadModal(false)}
+                  onClick={() => {
+                    setShowUploadModal(false)
+                    setUploadGameTitle('')
+                    setUploadGameDescription('')
+                    setUploadGameUrl('')
+                    setError('')
+                  }}
                   className="px-6 py-2.5 text-gray-600 hover:text-gray-800 transition-colors"
+                  disabled={uploadGameLoading}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors"
+                  disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim()}
+                  className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Upload
+                  {uploadGameLoading ? 'Uploading...' : 'Upload Game'}
                 </button>
               </div>
             </form>
