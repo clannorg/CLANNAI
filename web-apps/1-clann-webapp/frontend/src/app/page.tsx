@@ -61,9 +61,15 @@ export default function Home() {
     const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
     const body = isLogin 
       ? { email, password }
-        : { email, password, phone }
+        : { 
+            email, 
+            password, 
+            phone,
+            // Auto-detect company role for @clann.ai emails
+            ...(email.endsWith('@clann.ai') && { role: 'company' })
+          }
 
-      const response = await fetch(`http://localhost:3001${endpoint}`, {
+              const response = await fetch(`http://localhost:3002${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
