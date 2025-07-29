@@ -41,6 +41,60 @@ router.get('/', authenticateToken, async (req, res) => {
   }
 });
 
+// Get single game by ID (for game viewing page)
+router.get('/:id', authenticateToken, async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+    
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+    
+    // Check if user has access to this game (their game or team member)
+    const userGames = await getUserGames(req.user.id);
+    const hasAccess = userGames.some(g => g.id === gameId);
+    
+    if (!hasAccess) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+    
+    // Convert S3 URL to HTTPS format for browser compatibility
+    let s3Url = game.s3_key || game.video_url;
+    if (s3Url && s3Url.startsWith('s3://')) {
+      // Convert s3://bucket-name/path to https://bucket-name.s3.region.amazonaws.com/path
+      const s3Match = s3Url.match(/^s3:\/\/([^\/]+)\/(.*)$/);
+      if (s3Match) {
+        const bucketName = s3Match[1];
+        const objectKey = s3Match[2];
+        const region = process.env.AWS_REGION || 'eu-west-1';
+        s3Url = `https://${bucketName}.s3.${region}.amazonaws.com/${objectKey}`;
+      }
+    }
+
+    res.json({ 
+      game: {
+        id: game.id,
+        title: game.title,
+        description: game.description,
+        video_url: game.video_url,
+        s3_key: game.s3_key,
+        status: game.status,
+        ai_analysis: game.ai_analysis,
+        team_id: game.team_id,
+        team_name: game.team_name,
+        team_color: game.team_color,
+        created_at: game.created_at,
+        // Video player needs browser-compatible HTTPS URL
+        s3Url: s3Url
+      }
+    });
+  } catch (error) {
+    console.error('Get game error:', error);
+    res.status(500).json({ error: 'Failed to get game' });
+  }
+});
+
 // Upload VEO URL (create new game)
 router.post('/', authenticateToken, async (req, res) => {
   try {

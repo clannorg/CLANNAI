@@ -10,6 +10,7 @@ interface Game {
   title: string
   description: string
   video_url: string
+  s3_key?: string
   status: string
   team_name: string
   uploaded_by_name: string
@@ -171,11 +172,26 @@ export default function CompanyDashboard() {
     }
   }
 
+  const handleMarkPending = async (game: Game) => {
+    try {
+      setError('')
+      
+      await apiClient.updateGameAnalysis(game.id, {
+        status: 'pending'
+      })
+      
+      await loadDashboardData()
+    } catch (err: any) {
+      console.error('Failed to mark as pending:', err)
+      setError(err.message || 'Failed to mark as pending')
+    }
+  }
+
   if (!user) {
     return <div className="min-h-screen bg-[#F7F6F1] flex items-center justify-center">
       <div className="text-center">
         <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
-        <p className="mt-2 text-gray-500">Loading...</p>
+        <p className="mt-2 text-gray-900">Loading...</p>
       </div>
     </div>
   }
@@ -195,20 +211,20 @@ export default function CompanyDashboard() {
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Company Dashboard</h1>
-                <p className="text-sm text-gray-600">Welcome, {user.email}</p>
+                <p className="text-base font-semibold text-gray-900">Welcome, {user.email}</p>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
               <a
                 href="/dashboard"
-                className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                className="border border-gray-300 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 User Dashboard
               </a>
               <button
                 onClick={handleLogout}
-                className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors"
+                className="border border-gray-300 text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Logout
               </button>
@@ -228,19 +244,19 @@ export default function CompanyDashboard() {
         {stats && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-sm font-medium text-gray-500">Total Games</h3>
+              <h3 className="text-sm font-medium text-gray-900">Total Games</h3>
               <p className="text-3xl font-bold text-gray-900">{stats.total_games}</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-sm font-medium text-gray-500">Pending</h3>
+              <h3 className="text-sm font-medium text-gray-900">Pending</h3>
               <p className="text-3xl font-bold text-orange-600">{stats.pending_games}</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-sm font-medium text-gray-500">Analyzed</h3>
+              <h3 className="text-sm font-medium text-gray-900">Analyzed</h3>
               <p className="text-3xl font-bold text-green-600">{stats.analyzed_games}</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-sm font-medium text-gray-500">Teams</h3>
+              <h3 className="text-sm font-medium text-gray-900">Teams</h3>
               <p className="text-3xl font-bold text-blue-600">{stats.teams_count}</p>
             </div>
           </div>
@@ -259,7 +275,7 @@ export default function CompanyDashboard() {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                       statusFilter === filter
                         ? 'bg-[#016F32] text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                     }`}
                   >
                     {filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -273,11 +289,11 @@ export default function CompanyDashboard() {
             {loading ? (
               <div className="text-center py-12">
                 <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
-                <p className="mt-2 text-gray-500">Loading games...</p>
+                <p className="mt-2 text-gray-900">Loading games...</p>
               </div>
             ) : games.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-gray-500">No games found</p>
+                <p className="text-gray-900">No games found</p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -296,7 +312,7 @@ export default function CompanyDashboard() {
                           </span>
                         </div>
                         
-                        <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                        <div className="grid grid-cols-2 gap-4 text-base font-semibold text-gray-900">
                           <div>
                             <p><strong>Team:</strong> {game.team_name}</p>
                             <p><strong>Uploaded by:</strong> {game.uploaded_by_name}</p>
@@ -307,16 +323,27 @@ export default function CompanyDashboard() {
                           </div>
                         </div>
                         
-                        <div className="mt-3">
-                          <p className="text-sm text-gray-600"><strong>VEO URL:</strong></p>
-                          <a 
-                            href={game.video_url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-sm text-blue-600 hover:text-blue-800 break-all"
-                          >
-                            {game.video_url}
-                          </a>
+                        <div className="mt-3 space-y-2">
+                          <div>
+                            <p className="text-base font-semibold text-gray-900"><strong>VEO URL:</strong></p>
+                            <a 
+                              href={game.video_url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-sm text-blue-600 hover:text-blue-800 break-all"
+                            >
+                              {game.video_url}
+                            </a>
+                          </div>
+                          
+                          {game.s3_key && (
+                            <div>
+                              <p className="text-base font-semibold text-gray-900"><strong>Current S3 Location:</strong></p>
+                              <p className="text-sm text-green-700 font-mono bg-green-50 px-2 py-1 rounded break-all">
+                                {game.s3_key}
+                              </p>
+                            </div>
+                          )}
                         </div>
                       </div>
                       
@@ -341,6 +368,14 @@ export default function CompanyDashboard() {
                             Mark Analyzed
                           </button>
                         )}
+                        {game.status === 'analyzed' && (
+                          <button
+                            onClick={() => handleMarkPending(game)}
+                            className="bg-orange-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-700 transition-colors"
+                          >
+                            Mark as Pending
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -356,7 +391,7 @@ export default function CompanyDashboard() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Add S3 Video URL</h3>
-            <p className="text-sm text-gray-600 mb-4">Game: {selectedGame.title}</p>
+            <p className="text-base font-semibold text-gray-900 mb-4">Game: {selectedGame.title}</p>
             
             {error && (
               <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
@@ -366,13 +401,13 @@ export default function CompanyDashboard() {
             
             <form onSubmit={handleSubmitVideo} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-1">S3 Video URL</label>
+                <label className="block text-sm font-medium text-gray-900 mb-1">S3 Video URL</label>
                 <input
                   type="url"
                   value={videoUrl}
                   onChange={(e) => setVideoUrl(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
-                  placeholder="s3://bucket/game-id/full-game.mp4"
+                  placeholder="games/game-id/full-game.mp4 or s3://clannai-video-storage/games/game-id/full-game.mp4"
                   required
                   disabled={updating}
                 />
@@ -386,7 +421,7 @@ export default function CompanyDashboard() {
                     setSelectedGame(null)
                     setError('')
                   }}
-                  className="px-6 py-2.5 text-gray-600 hover:text-gray-800 transition-colors"
+                  className="px-6 py-2.5 text-gray-900 hover:text-gray-900 transition-colors"
                   disabled={updating}
                 >
                   Cancel
@@ -409,7 +444,7 @@ export default function CompanyDashboard() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-2xl shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Add Analysis JSON</h3>
-            <p className="text-sm text-gray-600 mb-4">Game: {selectedGame.title}</p>
+            <p className="text-base font-semibold text-gray-900 mb-4">Game: {selectedGame.title}</p>
             
             {error && (
               <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
@@ -419,7 +454,7 @@ export default function CompanyDashboard() {
             
             <form onSubmit={handleSubmitJson} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-1">Events JSON</label>
+                <label className="block text-sm font-medium text-gray-900 mb-1">Events JSON</label>
                 <textarea
                   value={jsonData}
                   onChange={(e) => setJsonData(e.target.value)}
@@ -430,7 +465,7 @@ export default function CompanyDashboard() {
                   disabled={updating}
                 />
               </div>
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-gray-900">
                 <p>This will mark the game as "analyzed" and update the status.</p>
               </div>
               <div className="flex justify-end space-x-3">
@@ -442,7 +477,7 @@ export default function CompanyDashboard() {
                     setSelectedGame(null)
                     setError('')
                   }}
-                  className="px-6 py-2.5 text-gray-600 hover:text-gray-800 transition-colors"
+                  className="px-6 py-2.5 text-gray-900 hover:text-gray-900 transition-colors"
                   disabled={updating}
                 >
                   Cancel
@@ -461,4 +496,4 @@ export default function CompanyDashboard() {
       )}
     </div>
   )
-} 
+} /* Cache bust: Mon Jul 28 23:42:50 BST 2025 */

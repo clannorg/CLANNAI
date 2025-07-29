@@ -125,9 +125,19 @@ class ApiClient {
     status?: string
   }) {
     if (data.videoUrl) {
+      // Extract S3 key from full S3 URL if provided
+      let s3Key = data.videoUrl
+      if (data.videoUrl.startsWith('s3://')) {
+        s3Key = data.videoUrl.replace('s3://clannai-video-storage/', '')
+      } else if (data.videoUrl.includes('amazonaws.com')) {
+        // Handle HTTPS S3 URLs
+        const urlParts = data.videoUrl.split('clannai-video-storage/')
+        s3Key = urlParts[1] || data.videoUrl
+      }
+      
       await this.request(`/api/games/${gameId}/upload-video`, {
         method: 'POST',
-        body: JSON.stringify({ videoUrl: data.videoUrl })
+        body: JSON.stringify({ s3Key })
       })
     }
     
@@ -144,6 +154,11 @@ class ApiClient {
         body: JSON.stringify({ status: data.status })
       })
     }
+  }
+
+  // Get single game for viewing
+  async getGame(gameId: string) {
+    return this.request(`/api/games/${gameId}`);
   }
 }
 
