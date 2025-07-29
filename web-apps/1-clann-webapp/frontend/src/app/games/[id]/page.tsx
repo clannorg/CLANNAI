@@ -232,7 +232,7 @@ export default function GameView() {
                 <AdaptiveVideoPlayer
                   src={game.s3Url}
                   title={game.title}
-                  events={game.ai_analysis}
+                  events={game.ai_analysis || []}
                   onTimeUpdate={handleTimeUpdate}
                   onDurationChange={(dur) => setDuration(dur)}
                   onPlay={() => setIsPlaying(true)}
