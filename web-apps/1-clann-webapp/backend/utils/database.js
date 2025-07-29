@@ -1,4 +1,8 @@
 const { Pool } = require('pg');
+const dotenv = require('dotenv');
+
+// Load environment variables
+dotenv.config();
 
 const isAWSRDS = process.env.DATABASE_URL && process.env.DATABASE_URL.includes('rds.amazonaws.com');
 const pool = new Pool({

@@ -7,3 +7,11 @@ cd web-apps/video-player/local-video-player && npm run dev
 cd 1-clann-webapp/backend && npm start
 
 cd 1-clann-webapp/frontend && npm run dev
+
+
+
+cd /Users/thomasbradley/CLANNAI/web-apps/1-clann-webapp/backend
+npm run dev
+
+cd /Users/thomasbradley/CLANNAI/web-apps/1-clann-webapp/frontend
+npm run dev
