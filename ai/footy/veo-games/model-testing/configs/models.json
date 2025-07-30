@@ -1,0 +1,44 @@
+{
+  "models": {
+    "gemini-2.5-flash": {
+      "description": "Latest stable model",
+      "expected_speed": "fast",
+      "expected_accuracy": "high"
+    },
+    "gemini-2.5-pro": {
+      "description": "Most powerful model", 
+      "expected_speed": "slow",
+      "expected_accuracy": "highest"
+    },
+    "gemini-2.0-flash": {
+      "description": "Current stable 2.0",
+      "expected_speed": "fast", 
+      "expected_accuracy": "good"
+    },
+    "gemini-1.5-pro": {
+      "description": "Proven reliable",
+      "expected_speed": "medium",
+      "expected_accuracy": "high"
+    },
+    "gemini-1.5-flash": {
+      "description": "Fast & efficient",
+      "expected_speed": "fastest",
+      "expected_accuracy": "medium"
+    }
+  },
+  "clip_settings": {
+    "target_clips": 60,
+    "clip_duration_seconds": 15,
+    "total_analysis_time_minutes": 15,
+    "clip_quality": "original_high_quality",
+    "avg_clip_size_mb": 8.6,
+    "clips_directory": "clips/"
+  },
+  "veo_ground_truth": {
+    "goals": 2,
+    "goals_timestamps": ["0:37", "12:51"],
+    "shots_on_goal": 3,
+    "total_events": 5,
+    "time_range": "0:00-15:00"
+  }
+} 

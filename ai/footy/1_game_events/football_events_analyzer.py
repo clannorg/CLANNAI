@@ -133,18 +133,18 @@ class FootballEventsAnalyzer:
         - Do not include any text not requested by ANALYSIS FORMAT.
 
         **CRITICAL FOOTBALL EVENT TYPES:**
-        - GOALS (with team and player if visible)
+        - GOAL (with team and player if visible)
         - GOALKICK
-        - GOALKEEPER SAVES 
-        - TURNOVERS (possession changes, interceptions, clear possession switches)
-        - SHOTS ON TARGET (saved/blocked/missed)
-        - PENALTIES awarded or taken
-        - RED/YELLOW CARDS shown
-        - MAJOR FOULS (that result in free kicks/penalties)
-        - CORNER KICKS awarded
-        - SUBSTITUTIONS
-        - BLOCKS 
-        - SKILLS football skills like stepovers, rabonas, bicycle kicks, etc. or long solo dribbles through several (3 or more) players.
+        - GOALKEEPER SAVE 
+        - TURNOVER (possession changes, interceptions, clear possession switches)
+        - SHOT (saved/blocked/missed)
+        - PENALTY awarded or taken
+        - RED/YELLOW CARD shown
+        - MAJOR FOUL (that result in free kicks/penalties)
+        - CORNER KICK awarded
+        - SUBSTITUTION
+        - BLOCK 
+        - SKILL football skills like stepovers, rabonas, bicycle kicks, etc. or long solo dribbles through several (3 or more) players.
 
         **ALWAYS IGNORE:**
         - Routine passes

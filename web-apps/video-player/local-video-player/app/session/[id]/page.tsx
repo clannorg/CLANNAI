@@ -22,7 +22,7 @@ interface Event {
   id: number;
   timestamp: string;
   seconds: number;
-  team: 'team_a' | 'team_b';
+  team: 'team_a' | 'team_b' | 'bystander';
   player: string;
   jersey: string;
   team_color: string;
@@ -34,6 +34,7 @@ interface Event {
   description: string;
   coordinates?: { x: number; y: number };
   bystander: boolean;
+  source: 'ai' | 'veo';
 }
 
 interface MatchInfo {
@@ -78,58 +79,136 @@ export default function SessionPage({ params }: { params: { id: string } }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [footballData, setFootballData] = useState<FootballData | null>(null);
-  const [currentEventIndex, setCurrentEventIndex] = useState(-1);
+  const [veoEvents, setVeoEvents] = useState<Event[]>([]);
+  const [activeEventSource, setActiveEventSource] = useState<'ai' | 'veo'>('ai');
+  const [currentEvent, setCurrentEvent] = useState<Event | null>(null);
   const [showEvents, setShowEvents] = useState(true);
   const [teamFilters, setTeamFilters] = useState<('team_a' | 'team_b' | 'bystander')[]>(['team_a', 'team_b', 'bystander']);
   const [outcomeFilters, setOutcomeFilters] = useState<('scored' | 'blocked' | 'saved')[]>(['scored', 'blocked', 'saved']);
-  const [eventTypeFilters, setEventTypeFilters] = useState<('goal' | 'shot_on_target' | 'pass' | 'dribble' | 'foul' | 'turnover')[]>(['goal', 'shot_on_target', 'pass', 'dribble', 'foul', 'turnover']);
+  const [eventTypeFilters, setEventTypeFilters] = useState<string[]>(['goal', 'shot_on_target', 'pass', 'dribble', 'foul', 'turnover', 'free_kick']);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Mock session data (in real app, this would come from API/database)
-  const session: SessionData = {
-    id: '1',
-    name: 'Football Game Analysis - Game298_0601',
-    videoFile: '/videos/Game298_0601_p1.mp4', // Your actual football video
-    eventsFile: 'footy-events.json',
-    duration: '14:12',
-    eventCount: 43
+  const timestampToSeconds = (ts: string): number => {
+    if (!ts) return 0;
+    const parts = ts.split(':').map(Number);
+    if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+        return parts[0] * 60 + parts[1];
+    }
+    return 0;
   };
 
   // Load football data from JSON file
   useEffect(() => {
     const loadFootballData = async () => {
       try {
-        const response = await fetch('/data/footy-events.json');
+        const response = await fetch('/data/web_format.json'); // <-- 1. LOAD CORRECT FILE
         const data = await response.json();
-        setFootballData(data);
-        console.log('Loaded football data:', data);
+        
+        // 2. NORMALIZE DATA
+        const rawEvents = (data.goals || []).concat(data.key_events || []);
+        const normalizedEvents = rawEvents.map((e: any, index: number): Event => ({
+            id: index,
+            timestamp: e.timestamp,
+            seconds: timestampToSeconds(e.timestamp),
+            team: e.team?.toLowerCase().includes('black') ? 'team_a' : (e.team?.toLowerCase().includes('red') ? 'team_b' : 'bystander'),
+            player: 'N/A',
+            jersey: 'N/A',
+            team_color: 'N/A',
+            event_type: (e.type || 'unknown').toLowerCase().replace(/ /g, '_'),
+            description: e.description,
+            bystander: !e.team?.toLowerCase().includes('black') && !e.team?.toLowerCase().includes('red'),
+            outcome: e.outcome,
+            source: 'ai',
+        }));
+
+        const normalizedData: FootballData = {
+            match_info: {
+                title: data.match_id || "Football Game Analysis",
+                duration: "N/A",
+                time_range: "Full Match",
+                total_events: normalizedEvents.length
+            },
+            teams: {
+                team_a: { name: 'Black Team', color: 'cyan', score: 0, shots_made: 0, shots_missed: 0, rebounds: 0, players: {} },
+                team_b: { name: 'Red Team', color: 'red', score: 0, shots_made: 0, shots_missed: 0, rebounds: 0, players: {} }
+            },
+            events: normalizedEvents.sort((a: Event, b: Event) => a.seconds - b.seconds),
+            analysis: { 
+                possession_changes: 0, fast_breaks: 0, three_pointers: 0, layups: 0, free_throws: 0, turnovers: 0, steals: 0
+            }
+        };
+
+        setFootballData(normalizedData);
+        console.log('Loaded and normalized football data:', normalizedData);
+
       } catch (error) {
         console.error('Failed to load football data:', error);
       }
     };
 
+    const loadVeoData = async () => {
+      try {
+        const response = await fetch('/data/veo_ground_truth.json');
+        if (!response.ok) {
+          throw new Error(`File not found: ${response.statusText}`);
+        }
+        const data = await response.json();
+        // The previous fix assumed `data.events`, let's be more robust
+        const events = Array.isArray(data) ? data : data.events || [];
+        const normalizedVeoEvents = events.map((e: any, index: number): Event => ({
+            id: index + 1000, // Offset IDs to prevent key collisions
+            timestamp: e.timestamp,
+            seconds: e.timestamp_seconds,
+            team: 'bystander',
+            player: 'N/A',
+            jersey: 'N/A',
+            team_color: 'N/A',
+            event_type: e.event_type?.toLowerCase() || 'unknown',
+            description: e.event_type || 'Veo Event',
+            bystander: true,
+            source: 'veo',
+            outcome: undefined,
+            shot_type: undefined,
+            basket: undefined,
+            rebound_type: undefined,
+            coordinates: undefined
+        }));
+        setVeoEvents(normalizedVeoEvents);
+        console.log('Loaded and normalized Veo data:', normalizedVeoEvents);
+      } catch (error) {
+          console.warn('Could not load Veo ground truth data. It may be missing. This is not a critical error.', error);
+          setVeoEvents([]); // Ensure veoEvents is an empty array on failure
+      }
+    };
+
     loadFootballData();
+    loadVeoData();
   }, []);
 
   // Filter events based on current filters
   const getFilteredEvents = () => {
-    if (!footballData) return [];
-    
-    return footballData.events.filter(event => {
-      // Team filter - check if event matches any selected team filter
-      const eventTeam = event.bystander ? 'bystander' : event.team;
-      if (!teamFilters.includes(eventTeam as any)) return false;
-      
+    const sourceEvents = activeEventSource === 'ai' ? footballData?.events : veoEvents;
+    if (!sourceEvents) return [];
+
+    return sourceEvents.filter(event => {
+      // Team filter
+      if (activeEventSource === 'ai') {
+        const eventTeam = event.bystander ? 'bystander' : event.team;
+        if (!teamFilters.includes(eventTeam)) return false;
+      } else { // For 'veo', only show if 'bystander' is selected
+        if (!teamFilters.includes('bystander')) return false;
+      }
+
       // Event type filter
       if (eventTypeFilters.length > 0) {
-        if (!eventTypeFilters.includes(event.event_type as any)) return false;
+        if (!eventTypeFilters.includes(event.event_type)) return false;
       }
-      
-      // Outcome filter (for football events)
-      if (outcomeFilters.length > 0 && event.outcome) {
+
+      // Outcome filter (only for AI events)
+      if (activeEventSource === 'ai' && outcomeFilters.length > 0 && event.outcome) {
         if (!outcomeFilters.includes(event.outcome as any)) return false;
       }
-      
+
       return true;
     });
   };
@@ -138,18 +217,18 @@ export default function SessionPage({ params }: { params: { id: string } }) {
 
   // Update current event based on video time (using filtered events)
   useEffect(() => {
-    if (!filteredEvents || filteredEvents.length === 0) return;
-
-    // Find the current event based on video time in filtered events
-    const currentEvent = filteredEvents.findIndex(event => event.seconds > currentTime);
-    const newIndex = currentEvent === -1 ? filteredEvents.length - 1 : Math.max(0, currentEvent - 1);
-    
-    // Update the current event index to match the original events array
-    const originalIndex = footballData?.events.indexOf(filteredEvents[newIndex]) || -1;
-    if (originalIndex !== currentEventIndex) {
-      setCurrentEventIndex(originalIndex);
+    if (!filteredEvents || filteredEvents.length === 0) {
+      setCurrentEvent(null);
+      return;
     }
-  }, [currentTime, filteredEvents, currentEventIndex, footballData]);
+    // Find the current event based on video time in filtered events
+    const currentIndex = filteredEvents.findIndex(event => event.seconds > currentTime);
+    const newEvent = currentIndex === -1 ? filteredEvents[filteredEvents.length - 1] : filteredEvents[Math.max(0, currentIndex - 1)];
+    
+    if (newEvent?.id !== currentEvent?.id) {
+      setCurrentEvent(newEvent);
+    }
+  }, [currentTime, filteredEvents, currentEvent]);
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -197,11 +276,11 @@ export default function SessionPage({ params }: { params: { id: string } }) {
   };
 
   const handlePreviousEvent = () => {
-    if (filteredEvents.length === 0) return;
+    if (filteredEvents.length === 0 || !currentEvent) return;
     
     // Find current event in filtered events
     const currentFilteredIndex = filteredEvents.findIndex(event => 
-      footballData?.events.indexOf(event) === currentEventIndex
+      event.id === currentEvent.id
     );
     
     if (currentFilteredIndex > 0) {
@@ -211,11 +290,11 @@ export default function SessionPage({ params }: { params: { id: string } }) {
   };
 
   const handleNextEvent = () => {
-    if (filteredEvents.length === 0) return;
+    if (filteredEvents.length === 0 || !currentEvent) return;
     
     // Find current event in filtered events
     const currentFilteredIndex = filteredEvents.findIndex(event => 
-      footballData?.events.indexOf(event) === currentEventIndex
+      event.id === currentEvent.id
     );
     
     if (currentFilteredIndex < filteredEvents.length - 1) {
@@ -264,7 +343,8 @@ export default function SessionPage({ params }: { params: { id: string } }) {
     return `${minutes}:${seconds.toString().padStart(2, '0')}`;
   };
 
-  const getEventColor = (team: string, isBystander: boolean = false) => {
+  const getEventColor = (team: 'team_a' | 'team_b' | 'bystander', isBystander: boolean, source: 'ai' | 'veo') => {
+    if (source === 'veo') return 'bg-green-500';
     if (!footballData) return 'bg-gray-500';
     
     if (isBystander) {
@@ -312,12 +392,11 @@ export default function SessionPage({ params }: { params: { id: string } }) {
     return { teamAScore, teamBScore };
   };
 
-  const currentEvent = footballData?.events[currentEventIndex] || null;
 
   // Auto-scroll to current event in sidebar
   useEffect(() => {
-    if (currentEventIndex >= 0 && showEvents) {
-      const eventElement = document.getElementById(`event-${currentEventIndex}`);
+    if (currentEvent && showEvents) {
+      const eventElement = document.getElementById(`event-${currentEvent.id}`);
       if (eventElement) {
         eventElement.scrollIntoView({
           behavior: 'smooth',
@@ -326,7 +405,7 @@ export default function SessionPage({ params }: { params: { id: string } }) {
         });
       }
     }
-  }, [currentEventIndex, showEvents]);
+  }, [currentEvent, showEvents]);
 
   // Toggle filter functions
   const toggleTeamFilter = (team: 'team_a' | 'team_b' | 'bystander') => {
@@ -345,7 +424,7 @@ export default function SessionPage({ params }: { params: { id: string } }) {
     );
   };
 
-  const toggleEventTypeFilter = (eventType: 'goal' | 'shot_on_target' | 'pass' | 'dribble' | 'foul' | 'turnover') => {
+  const toggleEventTypeFilter = (eventType: string) => {
     setEventTypeFilters(prev => 
       prev.includes(eventType) 
         ? prev.filter(e => e !== eventType)
@@ -395,8 +474,7 @@ export default function SessionPage({ params }: { params: { id: string } }) {
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
         >
-                        <source src="/videos/Game298_0601_p1.mp4" type="video/mp4" />
-          <source src="/data/Game298_0601_p1.mp4" type="video/mp4" />
+          <source src="/videos/ballyclare-20250111.mp4" type="video/mp4" />
           <div className="flex items-center justify-center w-full h-full bg-gray-900 text-white">
             <div className="text-center">
               <div className="text-6xl mb-4">⚽</div>
@@ -413,25 +491,27 @@ export default function SessionPage({ params }: { params: { id: string } }) {
         <div className="absolute bottom-0 left-0 right-0 z-40">
           <div className="bg-transparent">
             {/* Timeline Dots Overlay */}
-            {footballData?.events && footballData.events.length > 0 && (
+            {(footballData || veoEvents) && (
               <div className="relative h-12 px-4 pt-3 pointer-events-none z-5">
-                {footballData.events.map((event, index) => {
+                {[...(footballData?.events || []), ...veoEvents].map((event, index) => {
                   // Use the last event's seconds as fallback duration if video duration isn't loaded
-                  const effectiveDuration = duration > 0 ? duration : (footballData.events[footballData.events.length - 1]?.seconds || 600);
+                  const effectiveDuration = duration > 0 ? duration : (footballData?.events[footballData.events.length - 1]?.seconds || 600);
                   const position = (event.seconds / effectiveDuration) * 100;
-                  const isCurrent = index === currentEventIndex;
+                  const isCurrent = event.id === currentEvent?.id;
                   
                   // Check if this event is in the filtered events
                   const isFiltered = filteredEvents.some(filteredEvent => 
-                    footballData.events.indexOf(filteredEvent) === index
+                    filteredEvent.id === event.id
                   );
                   
                   return (
                     <button
-                      key={index}
+                      key={event.id}
                       onClick={() => handleEventClick(event)}
-                      className={`absolute top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 hover:scale-200 hover:shadow-xl pointer-events-auto ${
-                        getEventColor(event.team, event.bystander)
+                      className={`absolute top-1/2 transform -translate-y-1/2 w-2.5 h-2.5 transition-all duration-300 hover:scale-200 hover:shadow-xl pointer-events-auto ${
+                        event.source === 'veo' ? 'rounded-sm' : 'rounded-full'
+                      } ${
+                        getEventColor(event.team, event.bystander, event.source)
                       } ${isCurrent ? 'ring-3 ring-yellow-400 ring-offset-2 ring-offset-black shadow-xl scale-125' : 'hover:ring-2 hover:ring-white/70'} ${
                         !isFiltered ? 'opacity-30' : ''
                       }`}
@@ -534,10 +614,10 @@ export default function SessionPage({ params }: { params: { id: string } }) {
 
                   {/* Current Event Display - Centered */}
                   <div className="text-white/90 text-xs font-medium min-w-[140px] text-center flex items-center justify-center">
-                    {currentEventIndex >= 0 && footballData?.events[currentEventIndex] ? (
+                    {currentEvent ? (
                       <div className="flex items-center justify-center space-x-1">
-                        <span>{footballData.events[currentEventIndex].bystander ? '●' : (footballData.events[currentEventIndex].team === 'team_a' ? '●' : '●')}</span>
-                        <span>{getTeamName(footballData.events[currentEventIndex].team)} {footballData.events[currentEventIndex].event_type}</span>
+                        <span>{currentEvent.bystander ? '●' : (currentEvent.team === 'team_a' ? '●' : '●')}</span>
+                        <span>{getTeamName(currentEvent.team)} {currentEvent.event_type}</span>
                       </div>
                     ) : (
                       <span>No event</span>
@@ -576,11 +656,11 @@ export default function SessionPage({ params }: { params: { id: string } }) {
       </div>
 
       {/* Events Sidebar */}
-      {showEvents && footballData && (
+      {showEvents && (footballData || veoEvents) && (
         <div className="absolute top-0 right-0 h-full w-80 bg-black/90 backdrop-blur-sm border-l border-gray-700 flex flex-col">
           {/* Sticky Header */}
-          <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
-            <div className="flex items-center justify-between">
+          <div className="sticky top-0 bg-black/90 backdrop-blur-sm p-4 z-10">
+            <div className="flex items-center justify-between mb-4">
               <button
                 onClick={() => setShowEvents(false)}
                 className="text-gray-300 hover:text-white text-xl font-bold"
@@ -590,10 +670,27 @@ export default function SessionPage({ params }: { params: { id: string } }) {
               </button>
               <h2 className="text-white font-semibold">Events ({filteredEvents.length})</h2>
             </div>
+            {/* Source Toggles */}
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => setActiveEventSource('ai')}
+                className={`w-full py-2 text-sm font-medium rounded-md transition-colors ${activeEventSource === 'ai' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+              >
+                AI Analysis
+              </button>
+              {veoEvents.length > 0 && (
+                <button
+                  onClick={() => setActiveEventSource('veo')}
+                  className={`w-full py-2 text-sm font-medium rounded-md transition-colors ${activeEventSource === 'veo' ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+                >
+                  Veo Ground Truth
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Filter Section */}
-          <div className="border-b border-gray-700 p-4">
+          <div className="border-b border-t border-gray-700 p-4">
             <h3 className="text-white font-medium mb-3">Filters</h3>
             
             {/* Team Filters */}
@@ -654,13 +751,14 @@ export default function SessionPage({ params }: { params: { id: string } }) {
                   { key: 'pass', label: 'Pass' },
                   { key: 'dribble', label: 'Dribble' },
                   { key: 'foul', label: 'Foul' },
-                  { key: 'turnover', label: 'Turnover' }
+                  { key: 'turnover', label: 'Turnover' },
+                  { key: 'free_kick', label: 'Free Kick' }
                 ].map(filter => (
                   <button
                     key={filter.key}
-                    onClick={() => toggleEventTypeFilter(filter.key as any)}
+                    onClick={() => toggleEventTypeFilter(filter.key as string)}
                     className={`px-3 py-1.5 rounded text-xs font-medium transition-colors ${
-                      eventTypeFilters.includes(filter.key as any) 
+                      eventTypeFilters.includes(filter.key as string) 
                         ? 'bg-blue-600 text-white' 
                         : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                     }`}
@@ -675,20 +773,20 @@ export default function SessionPage({ params }: { params: { id: string } }) {
           {/* Scrollable Events List */}
           <div className="flex-1 overflow-y-auto p-4">
             <div className="space-y-2">
-              {filteredEvents.map((event, index) => (
+              {filteredEvents.map((event) => (
                 <button
-                  key={index}
-                  id={`event-${index}`}
+                  key={event.id}
+                  id={`event-${event.id}`}
                   onClick={() => handleEventClick(event)}
                   className={`w-full text-left p-3 rounded-lg transition-colors ${
-                    footballData.events.indexOf(event) === currentEventIndex 
+                    event.id === currentEvent?.id 
                       ? 'bg-blue-600 text-white' 
                       : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <span>{event.bystander ? '🟡' : (event.team === 'team_a' ? '🔴' : '🔵')}</span>
+                      <span>{event.source === 'veo' ? '🟩' : (event.bystander ? '🟡' : (event.team === 'team_a' ? '🔴' : '🔵'))}</span>
                       <span className="text-sm">
                         {event.bystander ? 'Bystander' : getTeamName(event.team)} {event.event_type}
                       </span>

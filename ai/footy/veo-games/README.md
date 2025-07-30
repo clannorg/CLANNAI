@@ -44,7 +44,7 @@ veo-games/
 2. **Download Video**: Downloads match video from Veo
 3. **Generate Clips**: Ultra-fast stream copying (no re-encoding) - ~2 minutes
 4. **Compress Clips**: Parallel compression for API efficiency - ~5 minutes
-5. **Gemini Analysis**: Batch processing with rate limiting - ~40 minutes
+5. **Gemini Analysis**: Batch processing with gemini-2.5-pro for 100% accuracy - ~40 minutes
 6. **Synthesis**: Combines all clip analyses into match timeline
 7. **Web Formatter**: Converts timeline to website JSON
 8. **Accuracy Evaluation**: Compares AI vs Veo results
