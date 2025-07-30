@@ -414,14 +414,7 @@ export default function GameView() {
         <div className="absolute top-0 left-0 h-full w-full md:w-80 bg-black/90 backdrop-blur-sm border-r border-gray-700 flex flex-col z-30">
           <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-white font-semibold flex items-center space-x-2">
-                <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                  <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                </div>
-                <span>AI Coach</span>
-              </h2>
+
               <button
                 onClick={() => setShowChat(false)}
                 className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 border border-white/10 hover:border-white/20"
@@ -620,13 +613,6 @@ export default function GameView() {
           </button>
         </div>
 
-        <div className={`px-4 py-2 rounded-xl text-xs font-semibold border backdrop-blur-sm shadow-lg ${
-          game.status === 'analyzed'
-            ? 'bg-green-500/20 text-green-300 border-green-400/40'
-            : 'bg-orange-500/20 text-orange-300 border-orange-400/40'
-        }`}>
-          {game.status.toUpperCase()}
-        </div>
       </div>
 
       {/* Video Container - with dynamic margins for sidebars */}
@@ -853,14 +839,7 @@ export default function GameView() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <h2 className="text-white font-semibold flex items-center space-x-2">
-                <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
-                  <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <span>Events ({events.length}/{allEvents.length})</span>
-              </h2>
+
               <button
                 onClick={() => setShowFilters(!showFilters)}
                 className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
