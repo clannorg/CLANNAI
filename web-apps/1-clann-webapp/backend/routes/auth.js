@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { getUserByEmail, createUser, getUserById } = require('../utils/database');
 const { authenticateToken } = require('../middleware/auth');
@@ -66,28 +66,38 @@ router.post('/register', async (req, res) => {
 // Login user
 router.post('/login', async (req, res) => {
   try {
+    console.log('🔐 Login attempt:', { email: req.body.email, hasPassword: !!req.body.password });
     const { email, password } = req.body;
 
     // Validation
     if (!email || !password) {
+      console.log('❌ Missing email or password');
       return res.status(400).json({ error: 'Email and password are required' });
     }
 
     // Get user by email (including password hash)
     const user = await getUserByEmail(email);
     if (!user) {
+      console.log('❌ User not found:', email);
       return res.status(401).json({ error: 'Invalid email or password' });
     }
 
     if (!user.is_active) {
+      console.log('❌ Account deactivated:', email);
       return res.status(401).json({ error: 'Account is deactivated' });
     }
 
     // Check password
+    console.log('🔓 Checking password for:', email);
+    console.log('📝 Password received:', `"${password}" (length: ${password.length})`);
+    console.log('📝 Password chars:', password.split('').map(c => `'${c}'(${c.charCodeAt(0)})`).join(', '));
     const passwordMatch = await bcrypt.compare(password, user.password_hash);
     if (!passwordMatch) {
+      console.log('❌ Password mismatch for:', email);
       return res.status(401).json({ error: 'Invalid email or password' });
     }
+    
+    console.log('✅ Login successful for:', email);
 
     // Generate JWT token
     const token = jwt.sign(
