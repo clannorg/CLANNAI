@@ -77,7 +77,20 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '22222222-2222-2222-2222-222222222222',
    'analyzed',
    5400,
-   '{"total_events": 52, "goals": 2, "shots": 24, "saves": 11, "analysis_date": "2025-07-24T16:44:28", "event_types": {"shot_on_target": 24, "goalkeeper_save": 11, "goal": 2, "turnover": 10, "major_foul": 5}}'::jsonb);
+   '[
+     {"type": "shot", "timestamp": 67, "description": "Early pressure shot", "player": "Mount #19", "team": "blue"},
+     {"type": "goal", "timestamp": 69, "description": "Clinical finish", "player": "Mount #19", "team": "blue"},
+     {"type": "shot", "timestamp": 234, "description": "Counter attack shot", "player": "Hudson-Odoi #20", "team": "blue"},
+     {"type": "save", "timestamp": 236, "description": "Goalkeeper save", "player": "Steele #1", "team": "red"},
+     {"type": "corner", "timestamp": 420, "description": "Corner kick", "player": "James #24", "team": "blue"},
+     {"type": "shot", "timestamp": 465, "description": "Header from corner", "player": "Chalobah #14", "team": "blue"},
+     {"type": "foul", "timestamp": 890, "description": "Midfield challenge", "player": "Gallagher #23", "team": "blue"},
+     {"type": "yellow_card", "timestamp": 895, "description": "Caution for foul", "player": "Gallagher #23", "team": "blue"},
+     {"type": "shot", "timestamp": 1234, "description": "Free kick attempt", "player": "Reece #24", "team": "blue"},
+     {"type": "substitution", "timestamp": 2700, "description": "Fresh legs", "player": "Broja #18 for Mount #19", "team": "blue"},
+     {"type": "shot", "timestamp": 3456, "description": "Late shot", "player": "Broja #18", "team": "blue"},
+     {"type": "goal", "timestamp": 3458, "description": "Sealed the win", "player": "Broja #18", "team": "blue"}
+   ]'::jsonb);
 
 -- Game 3: Liverpool Reserves (Game297_0616)
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
@@ -89,7 +102,24 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '33333333-3333-3333-3333-333333333333',
    'analyzed',
    5400,
-   '{"total_events": 67, "goals": 4, "shots": 31, "saves": 20, "analysis_date": "2025-07-24T16:44:28", "event_types": {"shot_on_target": 31, "goalkeeper_save": 20, "goal": 4, "turnover": 7, "major_foul": 5}}'::jsonb);
+   '[
+     {"type": "shot", "timestamp": 45, "description": "Derby opener", "player": "Salah Jr #11", "team": "red"},
+     {"type": "goal", "timestamp": 47, "description": "Liverpool strikes first", "player": "Salah Jr #11", "team": "red"},
+     {"type": "foul", "timestamp": 123, "description": "Tough tackle", "player": "Gordon #7", "team": "black"},
+     {"type": "yellow_card", "timestamp": 125, "description": "Derby intensity", "player": "Gordon #7", "team": "black"},
+     {"type": "shot", "timestamp": 289, "description": "Everton response", "player": "Gordon #7", "team": "black"},
+     {"type": "goal", "timestamp": 291, "description": "Equalizer", "player": "Gordon #7", "team": "black"},
+     {"type": "shot", "timestamp": 567, "description": "Liverpool pressure", "player": "Elliott #19", "team": "red"},
+     {"type": "save", "timestamp": 569, "description": "Great save", "player": "Pickford Jr #1", "team": "black"},
+     {"type": "corner", "timestamp": 890, "description": "Corner kick", "player": "Robertson Jr #26", "team": "red"},
+     {"type": "shot", "timestamp": 920, "description": "Header chance", "player": "Van Dijk Jr #4", "team": "red"},
+     {"type": "goal", "timestamp": 922, "description": "Liverpool lead", "player": "Van Dijk Jr #4", "team": "red"},
+     {"type": "substitution", "timestamp": 2700, "description": "Tactical change", "player": "Calvert-Lewin Jr #9 for Gordon #7", "team": "black"},
+     {"type": "shot", "timestamp": 3245, "description": "Late equalizer attempt", "player": "Calvert-Lewin Jr #9", "team": "black"},
+     {"type": "goal", "timestamp": 3247, "description": "Derby drama", "player": "Calvert-Lewin Jr #9", "team": "black"},
+     {"type": "shot", "timestamp": 4567, "description": "Winner attempt", "player": "Nunez Jr #27", "team": "red"},
+     {"type": "goal", "timestamp": 4569, "description": "Liverpool wins derby", "player": "Nunez Jr #27", "team": "red"}
+   ]'::jsonb);
 
 -- Game 4: City Development (Game298_0601)
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
@@ -101,7 +131,21 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '44444444-4444-4444-4444-444444444444', 
    'analyzed',
    917, -- 15 minutes (shorter game)
-   '{"total_events": 49, "goals": 2, "shots": 33, "saves": 14, "analysis_date": "2025-07-24T16:44:28", "event_types": {"shot_on_target": 33, "goalkeeper_save": 14, "goal": 2, "turnover": 0, "major_foul": 0}}'::jsonb);
+   '[
+     {"type": "shot", "timestamp": 34, "description": "Early chance", "player": "Foden Jr #47", "team": "blue"},
+     {"type": "shot", "timestamp": 67, "description": "Quick follow up", "player": "Palmer #80", "team": "blue"},
+     {"type": "goal", "timestamp": 69, "description": "City takes lead", "player": "Palmer #80", "team": "blue"},
+     {"type": "shot", "timestamp": 145, "description": "Newcastle response", "player": "Isak Jr #14", "team": "black"},
+     {"type": "save", "timestamp": 147, "description": "Keeper denies", "player": "Ortega #18", "team": "blue"},
+     {"type": "corner", "timestamp": 234, "description": "Corner to Newcastle", "player": "Bruno Jr #39", "team": "black"},
+     {"type": "shot", "timestamp": 267, "description": "Header from corner", "player": "Burn Jr #33", "team": "black"},
+     {"type": "goal", "timestamp": 269, "description": "Newcastle equalizes", "player": "Burn Jr #33", "team": "black"},
+     {"type": "shot", "timestamp": 456, "description": "City counter", "player": "Alvarez #19", "team": "blue"},
+     {"type": "shot", "timestamp": 567, "description": "Long range effort", "player": "De Bruyne Jr #17", "team": "blue"},
+     {"type": "substitution", "timestamp": 600, "description": "Fresh legs", "player": "Haaland Jr #9 for Alvarez #19", "team": "blue"},
+     {"type": "shot", "timestamp": 789, "description": "Haaland chance", "player": "Haaland Jr #9", "team": "blue"},
+     {"type": "goal", "timestamp": 791, "description": "Winner from Haaland", "player": "Haaland Jr #9", "team": "blue"}
+   ]'::jsonb);
 
 -- Game 5: United U21s (Game304_0618)
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
@@ -113,7 +157,21 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '55555555-5555-5555-5555-555555555555',
    'analyzed', 
    5400,
-   '{"total_events": 58, "goals": 3, "shots": 28, "saves": 15, "analysis_date": "2025-07-24T16:44:28", "event_types": {"shot_on_target": 28, "goalkeeper_save": 15, "goal": 3, "turnover": 8, "major_foul": 4}}'::jsonb);
+   '[
+     {"type": "shot", "timestamp": 89, "description": "United pressure", "player": "Rashford Jr #10", "team": "red"},
+     {"type": "goal", "timestamp": 91, "description": "Early United goal", "player": "Rashford Jr #10", "team": "red"},
+     {"type": "foul", "timestamp": 234, "description": "Tough challenge", "player": "Romero Jr #17", "team": "black"},
+     {"type": "yellow_card", "timestamp": 236, "description": "Booked for foul", "player": "Romero Jr #17", "team": "black"},
+     {"type": "shot", "timestamp": 567, "description": "Spurs response", "player": "Kane Jr #9", "team": "black"},
+     {"type": "save", "timestamp": 569, "description": "De Gea Jr save", "player": "De Gea Jr #1", "team": "red"},
+     {"type": "corner", "timestamp": 890, "description": "Spurs corner", "player": "Son Jr #7", "team": "black"},
+     {"type": "shot", "timestamp": 923, "description": "Header chance", "player": "Kane Jr #9", "team": "black"},
+     {"type": "goal", "timestamp": 925, "description": "Spurs equalizer", "player": "Kane Jr #9", "team": "black"},
+     {"type": "substitution", "timestamp": 2700, "description": "Tactical switch", "player": "Antony Jr #21 for Sancho Jr #25", "team": "red"},
+     {"type": "shot", "timestamp": 3456, "description": "United chance", "player": "Antony Jr #21", "team": "red"},
+     {"type": "shot", "timestamp": 4123, "description": "Late pressure", "player": "Martial Jr #9", "team": "red"},
+     {"type": "goal", "timestamp": 4125, "description": "United winner", "player": "Martial Jr #9", "team": "red"}
+   ]'::jsonb);
 
 -- Add some pending games to demonstrate company workflow
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration) VALUES

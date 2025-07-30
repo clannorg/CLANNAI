@@ -89,8 +89,6 @@ router.post('/login', async (req, res) => {
 
     // Check password
     console.log('🔓 Checking password for:', email);
-    console.log('📝 Password received:', `"${password}" (length: ${password.length})`);
-    console.log('📝 Password chars:', password.split('').map(c => `'${c}'(${c.charCodeAt(0)})`).join(', '));
     const passwordMatch = await bcrypt.compare(password, user.password_hash);
     if (!passwordMatch) {
       console.log('❌ Password mismatch for:', email);
