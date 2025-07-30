@@ -10,7 +10,7 @@ cd 1-clann-webapp/frontend && npm run dev
 
 
 
-cd /Users/thomasbradley/CLANNAI/web-apps/1-clann-wevm todbapp/backend
+cd /Users/thomasbradley/CLANNAI/web-apps/1-clann-webapp/backend
 npm run dev
 
 cd /Users/thomasbradley/CLANNAI/web-apps/1-clann-webapp/frontend
