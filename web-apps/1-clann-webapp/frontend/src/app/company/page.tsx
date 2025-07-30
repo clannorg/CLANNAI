@@ -306,11 +306,11 @@ export default function CompanyDashboard() {
               <div className="space-y-4">
                 {games.map((game) => (
                   <div key={game.id} className="border border-gray-200 rounded-lg p-6">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-3">
-                          <h3 className="text-lg font-medium text-gray-900">{game.title}</h3>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+                      <div className="flex-1 mb-4 lg:mb-0">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 mb-3">
+                          <h3 className="text-lg font-medium text-gray-900 mb-2 sm:mb-0">{game.title}</h3>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium w-fit ${
                             game.status === 'analyzed'
                               ? 'bg-green-100 text-green-800'
                               : 'bg-orange-100 text-orange-800'
@@ -319,7 +319,7 @@ export default function CompanyDashboard() {
                           </span>
                         </div>
                         
-                        <div className="grid grid-cols-2 gap-4 text-base font-semibold text-gray-900">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base font-semibold text-gray-900">
                           <div>
                             <p><strong>Team:</strong> {game.team_name}</p>
                             <p><strong>Uploaded by:</strong> {game.uploaded_by_name}</p>
@@ -354,7 +354,7 @@ export default function CompanyDashboard() {
                         </div>
                       </div>
                       
-                      <div className="flex flex-col space-y-2 ml-6">
+                      <div className="flex flex-col lg:flex-row lg:flex-wrap gap-2 lg:ml-6">
                         <button
                           onClick={() => handleAddVideo(game)}
                           className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"

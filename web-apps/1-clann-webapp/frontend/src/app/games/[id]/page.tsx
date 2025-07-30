@@ -322,7 +322,7 @@ export default function GameView() {
       console.error('Chat error:', error)
       const errorMessage = {
         role: 'assistant' as const,
-        content: 'Sorry, I encountered an error. Please try again.',
+        content: '⚠️ Sorry, I encountered an error connecting to the AI service. Please check your connection and try again.',
         timestamp: new Date().toISOString()
       }
       setChatMessages(prev => [...prev, errorMessage])
@@ -411,19 +411,25 @@ export default function GameView() {
     <div className="h-screen bg-black relative overflow-hidden">
       {/* AI Chat Sidebar - LEFT SIDE */}
       {showChat && (
-        <div className="absolute top-0 left-0 h-full w-80 bg-black/90 backdrop-blur-sm border-r border-gray-700 flex flex-col z-30">
+        <div className="absolute top-0 left-0 h-full w-full md:w-80 bg-black/90 backdrop-blur-sm border-r border-gray-700 flex flex-col z-30">
           <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-white font-semibold flex items-center space-x-2">
-                <span>🤖</span>
+                <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                  <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
                 <span>AI Coach</span>
               </h2>
               <button
                 onClick={() => setShowChat(false)}
-                className="text-gray-300 hover:text-white text-xl font-bold"
+                className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 border border-white/10 hover:border-white/20"
                 title="Hide Chat"
               >
-                ×
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
             </div>
             <p className="text-xs text-gray-400">
@@ -494,7 +500,7 @@ export default function GameView() {
           
           {/* Chat Input */}
           <div className="sticky bottom-0 bg-black/90 backdrop-blur-sm border-t border-gray-700 p-4">
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               <input
                 type="text"
                 placeholder="Ask the AI coach..."
@@ -502,23 +508,32 @@ export default function GameView() {
                 onChange={(e) => setChatInput(e.target.value)}
                 onKeyPress={handleChatKeyPress}
                 disabled={chatLoading}
-                className="flex-1 bg-gray-800 text-white text-sm p-3 rounded-lg border border-gray-600 focus:border-blue-500 focus:outline-none disabled:opacity-50"
+                className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 backdrop-blur-sm transition-all duration-200 disabled:opacity-50"
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!chatInput.trim() || chatLoading}
-                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white px-4 py-3 rounded-lg transition-colors"
+                className="flex items-center justify-center w-12 h-12 bg-blue-500 hover:bg-blue-600 disabled:bg-white/10 disabled:text-white/40 text-white rounded-xl font-medium disabled:cursor-not-allowed transition-all duration-200 border border-blue-400 disabled:border-white/10 shadow-lg"
                 title="Send Message"
               >
-                {chatLoading ? '⏳' : '📤'}
+                {chatLoading ? (
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                )}
               </button>
             </div>
             {chatMessages.length > 0 && (
               <button
                 onClick={() => setChatMessages([])}
-                className="text-xs text-gray-400 hover:text-gray-300 mt-2 transition-colors"
+                className="flex items-center space-x-1 text-xs text-white/60 hover:text-white/80 mt-3 px-2 py-1 rounded-lg hover:bg-white/5 transition-all duration-200"
               >
-                Clear conversation
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+                <span>Clear conversation</span>
               </button>
             )}
           </div>
@@ -526,52 +541,89 @@ export default function GameView() {
       )}
 
       {/* Top Header - Back Button and Game Info */}
-      <div className={`absolute top-4 z-50 flex items-center space-x-4 transition-all duration-300 ${
-        showChat ? 'left-[336px]' : 'left-4'
+      <div className={`absolute top-4 z-50 flex items-center space-x-2 md:space-x-4 transition-all duration-300 ${
+        showChat ? 'md:left-[336px] left-4' : 'left-4'
       }`}>
         <Link 
           href="/dashboard" 
-          className="bg-black/80 backdrop-blur-sm rounded-lg px-4 py-2 text-white hover:text-gray-300 transition-colors"
+          className="group flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl px-4 py-2.5 text-white transition-all duration-200 border border-white/20 hover:border-white/30 shadow-lg"
         >
-          ← Back to Dashboard
+          <svg className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="font-medium">Dashboard</span>
         </Link>
         
-        <div className="bg-black/80 backdrop-blur-sm rounded-lg px-6 py-2">
-          <div className="flex items-center space-x-6 text-white">
-            <span className="font-bold">{game.team_name}</span>
-            <span className="text-gray-300">|</span>
-            <span className="font-bold text-red-400">Red: {teamScores.red}</span>
-            <span className="text-gray-300">-</span>
-            <span className="font-bold text-blue-400">Black: {teamScores.black}</span>
-            <span className="text-gray-300">|</span>
-            <span className="font-medium">{game.title}</span>
-            <span className="text-gray-300">|</span>
-            <span>{formatTime(currentTime)}</span>
+        <div className="bg-white/10 backdrop-blur-lg rounded-xl px-6 py-2.5 border border-white/20 shadow-lg">
+          <div className="flex items-center space-x-4 text-white">
+            <span className="font-semibold text-sm">{game.team_name}</span>
+            <div className="w-px h-4 bg-white/30"></div>
+            <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                <span className="font-bold text-sm">{teamScores.red}</span>
+              </div>
+              <span className="text-white/60 font-medium">-</span>
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                <span className="font-bold text-sm">{teamScores.black}</span>
+              </div>
+            </div>
+            <div className="w-px h-4 bg-white/30"></div>
+            <span className="font-medium text-sm text-white/90">{game.title}</span>
+            <div className="w-px h-4 bg-white/30"></div>
+            <span className="font-mono text-sm text-white/80">{formatTime(currentTime)}</span>
           </div>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-3">
           <button
-            onClick={() => setShowChat(!showChat)}
-            className="bg-black/80 backdrop-blur-sm rounded-lg px-3 py-2 text-white hover:text-gray-300 transition-colors"
+            onClick={() => {
+              setShowChat(!showChat)
+              // On mobile, close events when opening chat
+              if (window.innerWidth < 768 && !showChat) {
+                setShowEvents(false)
+              }
+            }}
+            className={`group flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 border shadow-lg ${
+              showChat 
+                ? 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/40 text-blue-200' 
+                : 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
+            }`}
             title="Toggle AI Chat"
           >
-            🤖 AI Coach
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <span>AI Coach</span>
           </button>
           
           <button
-            onClick={() => setShowEvents(!showEvents)}
-            className="bg-black/80 backdrop-blur-sm rounded-lg px-3 py-2 text-white hover:text-gray-300 transition-colors"
+            onClick={() => {
+              setShowEvents(!showEvents)
+              // On mobile, close chat when opening events
+              if (window.innerWidth < 768 && !showEvents) {
+                setShowChat(false)
+              }
+            }}
+            className={`group flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 border shadow-lg ${
+              showEvents 
+                ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/40 text-green-200' 
+                : 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
+            }`}
             title="Toggle Events"
           >
-            📊 Events
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span>Events</span>
           </button>
         </div>
 
-        <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+        <div className={`px-4 py-2 rounded-xl text-xs font-semibold border backdrop-blur-sm shadow-lg ${
           game.status === 'analyzed'
-            ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-            : 'bg-orange-500/20 text-orange-400 border border-orange-500/30'
+            ? 'bg-green-500/20 text-green-300 border-green-400/40'
+            : 'bg-orange-500/20 text-orange-300 border-orange-400/40'
         }`}>
           {game.status.toUpperCase()}
         </div>
@@ -579,9 +631,9 @@ export default function GameView() {
 
       {/* Video Container - with dynamic margins for sidebars */}
       <div className={`relative h-full flex items-center justify-center transition-all duration-300 ${
-        showChat ? 'ml-80' : ''
+        showChat ? 'md:ml-80' : ''
       } ${
-        showEvents ? 'mr-80' : ''
+        showEvents ? 'md:mr-80' : ''
       }`}>
         {/* Video Element */}
         <video
@@ -593,6 +645,10 @@ export default function GameView() {
           onLoadedMetadata={handleTimeUpdate}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
+          onError={(e) => {
+            console.error('Video loading error:', e)
+            // Could add error state here
+          }}
           preload="metadata"
         />
 
@@ -623,85 +679,143 @@ export default function GameView() {
             )}
 
             {/* Progress/Scrub Bar */}
-            <div className="relative px-4 pb-4">
-              <input
-                type="range"
-                min="0"
-                max={duration || 0}
-                step="0.1"
-                value={currentTime}
-                onChange={handleSeek}
-                className="w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer range-slider"
-                style={{
-                  background: `linear-gradient(to right, #016F32 0%, #016F32 ${(currentTime / (duration || 1)) * 100}%, #374151 ${(currentTime / (duration || 1)) * 100}%, #374151 100%)`
-                }}
-              />
+            <div className="relative px-4 pb-6">
+              <div className="relative">
+                <input
+                  type="range"
+                  min="0"
+                  max={duration || 0}
+                  step="0.1"
+                  value={currentTime}
+                  onChange={handleSeek}
+                  className="w-full h-2 bg-white/20 rounded-full appearance-none cursor-pointer range-slider hover:h-3 transition-all duration-150"
+                  style={{
+                    background: `linear-gradient(to right, #016F32 0%, #016F32 ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) 100%)`
+                  }}
+                />
+                {/* Progress indicator thumb */}
+                <div 
+                  className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-lg transform -translate-y-1/2 pointer-events-none border-2 border-[#016F32] transition-all duration-150"
+                  style={{ left: `calc(${(currentTime / (duration || 1)) * 100}% - 8px)` }}
+                />
+              </div>
             </div>
 
             {/* Video Controls */}
-            <div className="bg-black/80 backdrop-blur-sm mx-4 mb-4 rounded-lg">
-              <div className="flex items-center justify-between p-4">
+            <div className="bg-black/95 backdrop-blur-xl mx-4 mb-4 rounded-2xl border border-white/10 shadow-2xl">
+              <div className="flex items-center justify-between px-6 py-4">
                 {/* Left Side - Main Controls */}
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-6">
                   <button
                     onClick={handlePlayPause}
-                    className="text-white hover:text-gray-300 transition-colors text-2xl"
+                    className="group flex items-center justify-center w-12 h-12 bg-white/15 hover:bg-white/25 rounded-full transition-all duration-200 border border-white/20 hover:border-white/30 shadow-lg"
                   >
-                    {isPlaying ? '⏸' : '▶'}
+                    {isPlaying ? (
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                      </svg>
+                    ) : (
+                      <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    )}
                   </button>
 
-                  <button
-                    onClick={handleJumpBackward}
-                    className="text-white/90 hover:text-white transition-colors"
-                    title="Jump back 5s"
-                  >
-                    ⏪
-                  </button>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={handleJumpBackward}
+                      className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
+                      title="Jump back 5s"
+                    >
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.334 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
+                      </svg>
+                    </button>
 
-                  <button
-                    onClick={handleJumpForward}
-                    className="text-white/90 hover:text-white transition-colors"
-                    title="Jump forward 5s"
-                  >
-                    ⏩
-                  </button>
+                    <button
+                      onClick={handleJumpForward}
+                      className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
+                      title="Jump forward 5s"
+                    >
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
+                      </svg>
+                    </button>
 
-                  <button
-                    onClick={handleMuteToggle}
-                    className="text-white/90 hover:text-white transition-colors"
-                    title={isMuted ? 'Unmute' : 'Mute'}
-                  >
-                    {isMuted ? '🔇' : '🔊'}
-                  </button>
+                    <button
+                      onClick={handleMuteToggle}
+                      className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
+                      title={isMuted ? 'Unmute' : 'Mute'}
+                    >
+                      {isMuted ? (
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                        </svg>
+                      ) : (
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+
+                  <div className="flex items-center space-x-3 text-white/90">
+                    <div className="font-mono text-sm">
+                      {formatTime(currentTime)}
+                    </div>
+                    <div className="w-px h-4 bg-white/20"></div>
+                    <div className="font-mono text-sm text-white/60">
+                      {formatTime(duration)}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Right Side - Event Navigation */}
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={handlePreviousEvent}
-                    className="text-white/90 hover:text-white transition-colors p-2"
-                    title="Previous Event"
-                    disabled={events.length === 0}
-                  >
-                    ◀
-                  </button>
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={handlePreviousEvent}
+                      disabled={events.length === 0}
+                      className={`group flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
+                        events.length > 0
+                          ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
+                          : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
+                      }`}
+                      title="Previous Event"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                      <span>Prev</span>
+                    </button>
 
-                  <div className="text-white/90 text-xs font-medium min-w-[140px] text-center flex items-center justify-center">
-                    {currentEventIndex >= 0 && allEvents[currentEventIndex] ? (
-                      <span>{allEvents[currentEventIndex].type}</span>
-                    ) : (
-                      <span>No event</span>
-                    )}
+                    <div className="px-4 py-2 bg-white/5 rounded-xl border border-white/10 min-w-[120px] text-center">
+                      <div className="text-white/90 text-xs font-medium">
+                        {currentEventIndex >= 0 && allEvents[currentEventIndex] ? (
+                          <span className="capitalize">{allEvents[currentEventIndex].type}</span>
+                        ) : (
+                          <span className="text-white/60">No event</span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleNextEvent}
+                      disabled={events.length === 0}
+                      className={`group flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
+                        events.length > 0
+                          ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
+                          : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
+                      }`}
+                      title="Next Event"
+                    >
+                      <span>Next</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
                   </div>
-
-                  <button
-                    onClick={handleNextEvent}
-                    className="text-white/90 hover:text-white transition-colors p-2"
-                    title="Next Event"
-                    disabled={events.length === 0}
-                  >
-                    ▶
-                  </button>
 
                   <button
                     onClick={() => {
@@ -711,10 +825,12 @@ export default function GameView() {
                         document.documentElement.requestFullscreen()
                       }
                     }}
-                    className="text-white/90 hover:text-white transition-colors p-2"
+                    className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
                     title="Toggle Fullscreen"
                   >
-                    ⛶
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                    </svg>
                   </button>
                 </div>
               </div>
@@ -725,23 +841,39 @@ export default function GameView() {
 
       {/* Events Sidebar - RIGHT SIDE */}
       {showEvents && allEvents.length > 0 && (
-        <div className="absolute top-0 right-0 h-full w-80 bg-black/90 backdrop-blur-sm border-l border-gray-700 flex flex-col z-30">
+        <div className="absolute top-0 right-0 h-full w-full md:w-80 bg-black/90 backdrop-blur-sm border-l border-gray-700 flex flex-col z-30">
           <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
             <div className="flex items-center justify-between mb-3">
               <button
                 onClick={() => setShowEvents(false)}
-                className="text-gray-300 hover:text-white text-xl font-bold"
+                className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 border border-white/10 hover:border-white/20"
                 title="Hide Events"
               >
-                ×
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </button>
-              <h2 className="text-white font-semibold">Events ({events.length}/{allEvents.length})</h2>
+              <h2 className="text-white font-semibold flex items-center space-x-2">
+                <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <span>Events ({events.length}/{allEvents.length})</span>
+              </h2>
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="text-gray-300 hover:text-white text-sm px-2 py-1 rounded border border-gray-600"
+                className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
+                  showFilters 
+                    ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/40 text-green-200' 
+                    : 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
+                }`}
                 title="Toggle Filters"
               >
-                🔍 Filters
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
+                </svg>
+                <span>Filters</span>
               </button>
             </div>
 

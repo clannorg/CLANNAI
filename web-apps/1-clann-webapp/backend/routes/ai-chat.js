@@ -109,7 +109,7 @@ Guidelines:
     conversationText += `Human: ${message}\n\nAssistant: `
 
     // Get Gemini model and generate response
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" })
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" })
     
     const result = await model.generateContent(conversationText)
     const aiResponse = result.response.text()

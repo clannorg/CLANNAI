@@ -430,7 +430,7 @@ export default function Dashboard() {
                           <div className="space-y-3">
                             <div className="bg-white rounded-lg border border-gray-200 p-3">
                               <p className="text-xs text-gray-600 mb-2">Shareable URL:</p>
-                              <div className="flex items-center space-x-2">
+                              <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
                                 <input
                                   type="text"
                                   value={`${typeof window !== 'undefined' ? window.location.origin : 'localhost:3000'}/join/${team.team_code}`}
@@ -451,7 +451,7 @@ export default function Dashboard() {
                                       button.className = button.className.replace('bg-green-600', 'bg-[#016F32]');
                                     }, 2000);
                                   }}
-                                  className="text-xs bg-[#016F32] text-white px-4 py-2 rounded-md hover:bg-[#014d24] transition-all duration-200 transform hover:scale-105 font-medium shadow-sm"
+                                  className="text-xs bg-[#016F32] text-white px-4 py-2 rounded-md hover:bg-[#014d24] transition-all duration-200 transform hover:scale-105 font-medium shadow-sm w-full sm:w-auto"
                                 >
                                   Copy
                                 </button>
