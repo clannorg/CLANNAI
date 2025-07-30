@@ -10,6 +10,16 @@ import json
 from pathlib import Path
 from datetime import datetime
 
+def timestamp_to_seconds(ts: str) -> int:
+    """Convert MM:SS or M:SS to seconds"""
+    try:
+        parts = ts.split(':')
+        minutes = int(parts[0])
+        seconds = int(parts[1])
+        return minutes * 60 + seconds
+    except (ValueError, IndexError):
+        return -1 # Invalid format
+
 def evaluate_accuracy(match_id):
     """Compare AI predictions vs Veo ground truth"""
     print(f"⚖️ Step 7: Evaluating AI accuracy for {match_id}")
@@ -40,8 +50,9 @@ def evaluate_accuracy(match_id):
     
     # Extract AI events by type
     ai_events = {}
-    for event in ai_timeline["events"]:
-        event_type = event["type"]
+    analysis = ai_timeline.get("intelligent_analysis", {})
+    for event in analysis.get("key_events", []):
+        event_type = event["type"].lower() # Normalize to lowercase
         if event_type not in ai_events:
             ai_events[event_type] = []
         ai_events[event_type].append(event)
@@ -50,14 +61,16 @@ def evaluate_accuracy(match_id):
     veo_events = {}
     for event in veo_data.get("events", []):
         # Map Veo event types to AI types
-        veo_type = event.get("type", "")
-        if "Goal" in veo_type:
-            mapped_type = "GOAL"
-        elif "Shot" in veo_type:
-            mapped_type = "SHOT_ON_GOAL"
-        else:
-            mapped_type = veo_type.upper()
+        veo_type = event.get("event_type", "").lower()
         
+        mapped_type = "unknown"
+        if "goal" in veo_type:
+            mapped_type = "goal"
+        elif "shot" in veo_type:
+            mapped_type = "shot"
+        elif "kickoff" in veo_type or "kick-off" in veo_type:
+            mapped_type = "kickoff"
+
         if mapped_type not in veo_events:
             veo_events[mapped_type] = []
         veo_events[mapped_type].append(event)
@@ -66,7 +79,8 @@ def evaluate_accuracy(match_id):
     evaluation = {
         "match_id": match_id,
         "evaluation_timestamp": datetime.now().isoformat(),
-        "ai_total_events": ai_timeline["total_events"],
+        "decision_log": [], # To store detailed logs
+        "ai_total_events": len(analysis.get("key_events", [])),
         "veo_total_events": veo_data.get("total_events", 0),
         "by_event_type": {},
         "overall_metrics": {
@@ -86,14 +100,52 @@ def evaluate_accuracy(match_id):
     all_false_positives = 0
     all_false_negatives = 0
     
-    for event_type in set(list(ai_events.keys()) + list(veo_events.keys())):
-        ai_count = len(ai_events.get(event_type, []))
-        veo_count = len(veo_events.get(event_type, []))
+    # Define a set of event types to evaluate
+    event_types_to_evaluate = set(ai_events.keys()) | set(veo_events.keys())
+    event_types_to_evaluate.discard("unknown") # Do not evaluate unknown types
+    
+    for event_type in event_types_to_evaluate:
+        ai_events_list = ai_events.get(event_type, [])
+        veo_events_list = veo_events.get(event_type, [])
         
-        # Simple comparison (for real implementation, need timestamp matching)
-        true_positives = min(ai_count, veo_count)
-        false_positives = max(0, ai_count - veo_count)
-        false_negatives = max(0, veo_count - ai_count)
+        ai_timestamps_secs = sorted([(e, timestamp_to_seconds(e['timestamp'])) for e in ai_events_list], key=lambda x: x[1])
+        veo_timestamps_secs = sorted([(e, e['timestamp_seconds']) for e in veo_events_list if 'timestamp_seconds' in e], key=lambda x: x[1])
+        
+        # Timestamp-based matching
+        matched_veo_indices = set()
+        
+        for ai_event, ai_ts in ai_timestamps_secs:
+            if ai_ts == -1: continue
+            
+            match_found = False
+            for i, (veo_event, veo_ts) in enumerate(veo_timestamps_secs):
+                if i in matched_veo_indices:
+                    continue
+                
+                if abs(ai_ts - veo_ts) <= 30: # 30-second tolerance
+                    matched_veo_indices.add(i)
+                    match_found = True
+                    evaluation['decision_log'].append({
+                        "ai_event": ai_event,
+                        "status": "MATCH",
+                        "veo_event": veo_event,
+                        "details": f"AI event at {ai_ts}s matched Veo event at {veo_ts}s (tolerance: 30s)"
+                    })
+                    break
+            
+            if not match_found:
+                evaluation['decision_log'].append({
+                    "ai_event": ai_event,
+                    "status": "NO_MATCH (False Positive)",
+                    "details": f"No matching Veo event found for AI event at {ai_ts}s"
+                })
+
+        true_positives = len(matched_veo_indices)
+        ai_count = len(ai_events_list)
+        veo_count = len(veo_events_list)
+        
+        false_positives = ai_count - true_positives
+        false_negatives = veo_count - true_positives
         
         precision = true_positives / ai_count if ai_count > 0 else 0
         recall = true_positives / veo_count if veo_count > 0 else 0
@@ -115,8 +167,12 @@ def evaluate_accuracy(match_id):
         all_false_negatives += false_negatives
     
     # Calculate overall metrics
-    overall_precision = all_true_positives / (all_true_positives + all_false_positives) if (all_true_positives + all_false_positives) > 0 else 0
-    overall_recall = all_true_positives / (all_true_positives + all_false_negatives) if (all_true_positives + all_false_negatives) > 0 else 0
+    # Note: Use total counts for overall metrics, not sum of per-type
+    total_ai_events = sum(len(v) for v in ai_events.values())
+    total_veo_events = sum(len(v) for v in veo_events.values())
+    
+    overall_precision = all_true_positives / total_ai_events if total_ai_events > 0 else 0
+    overall_recall = all_true_positives / total_veo_events if total_veo_events > 0 else 0
     overall_f1 = 2 * (overall_precision * overall_recall) / (overall_precision + overall_recall) if (overall_precision + overall_recall) > 0 else 0
     
     evaluation["overall_metrics"] = {
@@ -146,6 +202,6 @@ if __name__ == "__main__":
     success = evaluate_accuracy(match_id)
     
     if success:
-        print(f"🎉 Pipeline Complete! All results in data/{match_id}/")
+        print(f"�� Pipeline Complete! All results in data/{match_id}/")
     else:
         sys.exit(1) 

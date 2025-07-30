@@ -51,8 +51,8 @@ def get_video_duration(video_path):
         return 5400  # 90 minutes default
 
 def generate_clips(match_id):
-    """Generate 15-second clips from FIRST 15 MINUTES ONLY using time-based naming"""
-    print(f"✂️ Step 3: Generating clips for {match_id} (FIRST 15 MINUTES ONLY)")
+    """Generate 15-second clips from FULL GAME using time-based naming"""
+    print(f"✂️ Step 3: Generating clips for {match_id} (FULL GAME)")
     
     data_dir = Path("../data") / match_id
     video_path = data_dir / "video.mp4"
@@ -73,15 +73,14 @@ def generate_clips(match_id):
     video_duration = get_video_duration(video_path)
     print(f"📊 Full video duration: {video_duration/60:.1f} minutes")
     
-    # LIMIT TO FIRST 15 MINUTES (900 seconds)
-    max_duration = 900  # 15 minutes in seconds
-    processing_duration = min(video_duration, max_duration)
+    # PROCESS FULL GAME (no time limit)
+    processing_duration = video_duration
     
-    # Calculate number of clips (exactly 60 for 15 minutes)
+    # Calculate number of clips for full game
     clip_duration = 15
     num_clips = int(processing_duration // clip_duration)
     
-    print(f"🎯 Processing ONLY first {processing_duration/60:.1f} minutes")
+    print(f"🎯 Processing FULL GAME: {processing_duration/60:.1f} minutes")
     print(f"📊 Will create {num_clips} clips of {clip_duration} seconds each")
     print()
     
@@ -171,7 +170,7 @@ def generate_clips(match_id):
     with open(clips_dir / "segments.json", 'w') as f:
         json.dump(clips_info, f, indent=2)
     
-    print("\n⚡ FIRST 15 MINUTES CLIPPING COMPLETE!")
+    print("\n⚡ FULL GAME CLIPPING COMPLETE!")
     print("=" * 50)
     print(f"✅ Created {successful_clips}/{num_clips} clips")
     print(f"🎯 Coverage: 0:00 to {processing_duration//60:02.0f}:{processing_duration%60:02.0f}")
