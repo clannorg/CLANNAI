@@ -665,7 +665,7 @@ export default function GameView() {
             )}
 
             {/* Progress/Scrub Bar */}
-            <div className="relative px-4 pb-6">
+            <div className="relative px-4 pb-3">
               <div className="relative">
                 <input
                   type="range"
@@ -688,10 +688,10 @@ export default function GameView() {
             </div>
 
             {/* Video Controls */}
-            <div className="bg-black/95 backdrop-blur-xl mx-4 mb-4 rounded-2xl border border-white/10 shadow-2xl">
-              <div className="flex items-center justify-between px-6 py-4">
+            <div className="bg-black/60 backdrop-blur-md mx-6 mb-3 rounded-lg border border-white/5 shadow-md">
+              <div className="flex items-center justify-between px-4 py-3">
                 {/* Left Side - Main Controls */}
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-4">
                   <button
                     onClick={handlePlayPause}
                     className="group flex items-center justify-center w-12 h-12 bg-white/15 hover:bg-white/25 rounded-full transition-all duration-200 border border-white/20 hover:border-white/30 shadow-lg"
@@ -708,31 +708,31 @@ export default function GameView() {
                   </button>
 
                   <div className="flex items-center space-x-2">
-                    <button
-                      onClick={handleJumpBackward}
+                  <button
+                    onClick={handleJumpBackward}
                       className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
                       title="Jump back 5s"
-                    >
+                  >
                       <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.334 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
                       </svg>
-                    </button>
+                  </button>
 
-                    <button
-                      onClick={handleJumpForward}
+                  <button
+                    onClick={handleJumpForward}
                       className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
                       title="Jump forward 5s"
-                    >
+                  >
                       <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
                       </svg>
-                    </button>
+                  </button>
 
-                    <button
-                      onClick={handleMuteToggle}
+                  <button
+                    onClick={handleMuteToggle}
                       className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
-                      title={isMuted ? 'Unmute' : 'Mute'}
-                    >
+                    title={isMuted ? 'Unmute' : 'Mute'}
+                  >
                       {isMuted ? (
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
@@ -743,9 +743,9 @@ export default function GameView() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                         </svg>
                       )}
-                    </button>
+                  </button>
                   </div>
-
+                  
                   <div className="flex items-center space-x-3 text-white/90">
                     <div className="font-mono text-sm">
                       {formatTime(currentTime)}
@@ -758,23 +758,23 @@ export default function GameView() {
                 </div>
 
                 {/* Right Side - Event Navigation */}
-                <div className="flex items-center space-x-4">
+                                <div className="flex items-center space-x-3">
                   <div className="flex items-center space-x-2">
-                    <button
-                      onClick={handlePreviousEvent}
+                  <button
+                    onClick={handlePreviousEvent}
                       disabled={events.length === 0}
                       className={`group flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
                         events.length > 0
                           ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
                           : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
                       }`}
-                      title="Previous Event"
-                    >
+                    title="Previous Event"
+                  >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                       </svg>
                       <span>Prev</span>
-                    </button>
+                  </button>
 
                     <div className="px-4 py-2 bg-white/5 rounded-xl border border-white/10 min-w-[120px] text-center">
                       <div className="text-white/90 text-xs font-medium">
@@ -784,23 +784,23 @@ export default function GameView() {
                           <span className="text-white/60">No event</span>
                         )}
                       </div>
-                    </div>
-                    
-                    <button
-                      onClick={handleNextEvent}
+                  </div>
+
+                  <button
+                    onClick={handleNextEvent}
                       disabled={events.length === 0}
                       className={`group flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
                         events.length > 0
                           ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
                           : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
                       }`}
-                      title="Next Event"
-                    >
+                    title="Next Event"
+                  >
                       <span>Next</span>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </button>
+                  </button>
                   </div>
 
                   <button
@@ -962,20 +962,20 @@ export default function GameView() {
               {events.map((event, index) => {
                 const originalIndex = allEvents.indexOf(event)
                 return (
-                  <button
+                <button
                     key={`${event.timestamp}-${event.type}-${index}`}
                     id={`event-${originalIndex}`}
-                    onClick={() => handleEventClick(event)}
-                    className={`w-full text-left p-3 rounded-lg transition-colors ${
+                  onClick={() => handleEventClick(event)}
+                  className={`w-full text-left p-3 rounded-lg transition-colors ${
                       originalIndex === currentEventIndex 
-                        ? 'bg-blue-600 text-white' 
-                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <div className={`w-2 h-2 rounded-full ${getEventColor(event.type)}`} />
-                        <span className="text-sm font-medium">{event.type}</span>
+                      ? 'bg-blue-600 text-white' 
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className={`w-2 h-2 rounded-full ${getEventColor(event.type)}`} />
+                      <span className="text-sm font-medium">{event.type}</span>
                         {event.team && (
                           <span className={`text-xs px-1 py-0.5 rounded ${
                             event.team === 'red' ? 'bg-red-600' : 'bg-blue-600'
@@ -983,16 +983,16 @@ export default function GameView() {
                             {event.team}
                           </span>
                         )}
-                      </div>
-                      <span className="text-xs text-gray-400">{formatTime(event.timestamp)}</span>
                     </div>
-                    {event.description && (
-                      <div className="text-xs text-gray-400 mt-1">{event.description}</div>
-                    )}
-                    {event.player && (
-                      <div className="text-xs text-gray-400 mt-1">{event.player}</div>
-                    )}
-                  </button>
+                    <span className="text-xs text-gray-400">{formatTime(event.timestamp)}</span>
+                  </div>
+                  {event.description && (
+                    <div className="text-xs text-gray-400 mt-1">{event.description}</div>
+                  )}
+                  {event.player && (
+                    <div className="text-xs text-gray-400 mt-1">{event.player}</div>
+                  )}
+                </button>
                 )
               })}
             </div>
