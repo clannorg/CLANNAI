@@ -53,6 +53,57 @@ router.post('/create', authenticateToken, async (req, res) => {
 });
 
 // Join team by code
+// Join team by invite code
+router.post('/join-by-code', authenticateToken, async (req, res) => {
+  try {
+    const { inviteCode } = req.body;
+
+    if (!inviteCode) {
+      return res.status(400).json({ error: 'Invite code is required' });
+    }
+
+    // Find team by invite code
+    const teamResult = await pool.query(
+      'SELECT id, name, invite_code FROM teams WHERE invite_code = $1',
+      [inviteCode]
+    );
+
+    if (teamResult.rows.length === 0) {
+      return res.status(404).json({ error: 'Invalid invite code' });
+    }
+
+    const team = teamResult.rows[0];
+
+    // Check if user is already a member
+    const memberResult = await pool.query(
+      'SELECT id FROM team_members WHERE team_id = $1 AND user_id = $2',
+      [team.id, req.user.id]
+    );
+
+    if (memberResult.rows.length > 0) {
+      return res.status(400).json({ error: 'You are already a member of this team' });
+    }
+
+    // Add user to team
+    await pool.query(
+      'INSERT INTO team_members (team_id, user_id) VALUES ($1, $2)',
+      [team.id, req.user.id]
+    );
+
+    res.json({
+      message: 'Successfully joined team',
+      team: {
+        id: team.id,
+        name: team.name,
+        invite_code: team.invite_code
+      }
+    });
+  } catch (error) {
+    console.error('Join team by code error:', error);
+    res.status(500).json({ error: 'Failed to join team' });
+  }
+});
+
 router.post('/join', authenticateToken, async (req, res) => {
   try {
     const { teamCode } = req.body;

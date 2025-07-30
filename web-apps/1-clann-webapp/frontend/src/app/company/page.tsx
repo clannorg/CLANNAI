@@ -138,7 +138,14 @@ export default function CompanyDashboard() {
       setUpdating(true)
       setError('')
       
-      const events = JSON.parse(jsonData.trim())
+      const parsedData = JSON.parse(jsonData.trim())
+      
+      // Handle both {"events": [...]} and [...] formats
+      const events = Array.isArray(parsedData) ? parsedData : parsedData.events
+      
+      if (!events || !Array.isArray(events)) {
+        throw new Error('Invalid JSON format. Expected an array or an object with "events" property.')
+      }
       
       await apiClient.updateGameAnalysis(selectedGame.id, {
         events,

@@ -63,7 +63,8 @@ app.get('/api', (req, res) => {
       auth: '/api/auth/*',
       games: '/api/games/*',
       teams: '/api/teams/*',
-      company: '/api/company/*'
+      company: '/api/company/*',
+      aiChat: '/api/ai-chat/*'
     }
   });
 });
@@ -73,12 +74,14 @@ const authRoutes = require('./routes/auth');
 const gamesRoutes = require('./routes/games');
 const teamsRoutes = require('./routes/teams');
 const companyRoutes = require('./routes/company');
+const aiChatRoutes = require('./routes/ai-chat');
 
 // Register routes
 app.use('/api/auth', authRoutes);
 app.use('/api/games', gamesRoutes);
 app.use('/api/teams', teamsRoutes);
 app.use('/api/company', companyRoutes);
+app.use('/api/ai-chat', aiChatRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

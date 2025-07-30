@@ -144,7 +144,7 @@ class ApiClient {
     if (data.events) {
       await this.request(`/api/games/${gameId}/analysis`, {
         method: 'POST',
-        body: JSON.stringify(data.events)
+        body: JSON.stringify({ analysis: data.events })
       })
     }
     
@@ -159,6 +159,26 @@ class ApiClient {
   // Get single game for viewing
   async getGame(gameId: string) {
     return this.request(`/api/games/${gameId}`);
+  }
+
+  // Join team by invite code
+  async joinTeamByCode(inviteCode: string) {
+    return this.request<{ team: any }>('/api/teams/join-by-code', {
+      method: 'POST',
+      body: JSON.stringify({ inviteCode })
+    })
+  }
+
+  // AI Chat
+  async chatWithAI(gameId: string, message: string, chatHistory: any[] = []) {
+    return this.request<{
+      response: string
+      gameStats: any
+      timestamp: string
+    }>(`/api/ai-chat/game/${gameId}`, {
+      method: 'POST',
+      body: JSON.stringify({ message, chatHistory })
+    })
   }
 }
 

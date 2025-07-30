@@ -415,12 +415,59 @@ export default function Dashboard() {
               {teams.map((team: any) => (
                   <div key={team.id} className="bg-gray-50 rounded-lg p-6">
                   <div className="flex items-center justify-between">
-                    <div>
+                    <div className="flex-1">
                         <h3 className="text-lg font-medium text-gray-900 mb-2">{team.name}</h3>
-                        <p className="text-gray-600 text-sm">Join Code: {team.team_code}</p>
+                        <p className="text-gray-600 text-sm mb-3">Join Code: {team.team_code}</p>
+                        
+                        {/* Team Invite URL Section */}
+                        <div className="bg-gradient-to-r from-[#016F32]/5 to-[#016F32]/10 rounded-lg p-4 border border-[#016F32]/20">
+                          <div className="flex items-center space-x-2 mb-3">
+                            <svg className="w-4 h-4 text-[#016F32]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                            </svg>
+                            <p className="text-sm font-semibold text-[#016F32]">Share Team Invite</p>
+                          </div>
+                          <div className="space-y-3">
+                            <div className="bg-white rounded-lg border border-gray-200 p-3">
+                              <p className="text-xs text-gray-600 mb-2">Shareable URL:</p>
+                              <div className="flex items-center space-x-2">
+                                <input
+                                  type="text"
+                                  value={`${typeof window !== 'undefined' ? window.location.origin : 'localhost:3000'}/join/${team.team_code}`}
+                                  readOnly
+                                  className="text-xs bg-gray-50 border border-gray-100 rounded-md px-3 py-2 flex-1 font-mono text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#016F32]/20"
+                                />
+                                <button
+                                  onClick={(e) => {
+                                    const inviteUrl = `${typeof window !== 'undefined' ? window.location.origin : 'localhost:3000'}/join/${team.team_code}`;
+                                    navigator.clipboard.writeText(inviteUrl);
+                                    // Enhanced feedback
+                                    const button = e.target as HTMLButtonElement;
+                                    const originalText = button.textContent;
+                                    button.textContent = '✓ Copied!';
+                                    button.className = button.className.replace('bg-[#016F32]', 'bg-green-600');
+                                    setTimeout(() => {
+                                      button.textContent = originalText || 'Copy';
+                                      button.className = button.className.replace('bg-green-600', 'bg-[#016F32]');
+                                    }, 2000);
+                                  }}
+                                  className="text-xs bg-[#016F32] text-white px-4 py-2 rounded-md hover:bg-[#014d24] transition-all duration-200 transform hover:scale-105 font-medium shadow-sm"
+                                >
+                                  Copy
+                                </button>
+                              </div>
+                            </div>
+                            <div className="flex items-center space-x-2 text-xs text-gray-600">
+                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span>Share this link with players to join instantly</span>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                     <div
-                      className="w-12 h-12 rounded-full"
+                      className="w-12 h-12 rounded-full ml-4"
                       style={{ backgroundColor: team.color }}
                     ></div>
                   </div>

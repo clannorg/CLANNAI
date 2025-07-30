@@ -80,7 +80,15 @@ export default function Home() {
       if (response.ok) {
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.user))
-        window.location.href = '/dashboard'
+        
+        // Check for pending invite code
+        const pendingInviteCode = localStorage.getItem('pendingInviteCode')
+        if (pendingInviteCode) {
+          localStorage.removeItem('pendingInviteCode')
+          window.location.href = `/join/${pendingInviteCode}`
+        } else {
+          window.location.href = '/dashboard'
+        }
       } else {
         setError(data.error || 'Authentication failed')
       }

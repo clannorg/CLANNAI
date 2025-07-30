@@ -29,17 +29,43 @@ INSERT INTO team_members (team_id, user_id) VALUES
   ('eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee', '55555555-5555-5555-5555-555555555555');
 
 -- Insert demo games with AI analysis results
--- Game 1: Arsenal FC Academy (Game269_0511)
-INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+-- Game 1: Arsenal FC Academy (Game269_0511) - Updated with detailed event timeline
+INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_by, status, duration, ai_analysis) VALUES
   ('11111111-1269-0511-0000-000000000000', 
    'Arsenal vs Local Academy - May 11th', 
    'Competitive youth match with tactical focus',
-   'https://demo-videos.clann.ai/game269_0511.mp4',
+   'https://veo.co/watch/demo-match-arsenal-academy',
+   'games/arsenal-academy/full-game.mp4',
    'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
    '11111111-1111-1111-1111-111111111111',
    'analyzed',
    5400, -- 90 minutes
-   '{"total_events": 45, "goals": 3, "shots": 18, "saves": 8, "analysis_date": "2025-07-24T16:44:28", "event_types": {"shot_on_target": 18, "goalkeeper_save": 8, "goal": 3, "turnover": 12, "major_foul": 4}}'::jsonb);
+   '[
+     {"type": "shot", "timestamp": 37, "description": "Shot on goal", "player": "Smith #9"},
+     {"type": "goal", "timestamp": 37, "description": "Goal scored", "player": "Smith #9"},
+     {"type": "shot", "timestamp": 269, "description": "Shot on goal", "player": "Jones #11"},
+     {"type": "shot", "timestamp": 559, "description": "Shot on goal", "player": "Wilson #7"},
+     {"type": "shot", "timestamp": 769, "description": "Shot on goal", "player": "Brown #10"},
+     {"type": "goal", "timestamp": 771, "description": "Goal scored", "player": "Brown #10"},
+     {"type": "shot", "timestamp": 876, "description": "Shot on goal", "player": "Davis #8"},
+     {"type": "foul", "timestamp": 1200, "description": "Defensive foul", "player": "Miller #3"},
+     {"type": "yellow_card", "timestamp": 1205, "description": "Cautioned for foul", "player": "Miller #3"},
+     {"type": "shot", "timestamp": 1893, "description": "Shot on goal", "player": "Taylor #6"},
+     {"type": "corner", "timestamp": 2100, "description": "Corner kick", "player": "Wilson #7"},
+     {"type": "shot", "timestamp": 2199, "description": "Shot on goal", "player": "Evans #5"},
+     {"type": "shot", "timestamp": 2282, "description": "Shot on goal", "player": "Johnson #4"},
+     {"type": "substitution", "timestamp": 2700, "description": "Player substitution", "player": "Rodriguez #12 for Smith #9"},
+     {"type": "shot", "timestamp": 3575, "description": "Shot on goal", "player": "Anderson #14"},
+     {"type": "shot", "timestamp": 3986, "description": "Shot on goal", "player": "Thomas #13"},
+     {"type": "shot", "timestamp": 4075, "description": "Shot on goal", "player": "Lee #15"},
+     {"type": "goal", "timestamp": 4075, "description": "Goal scored", "player": "Lee #15"},
+     {"type": "shot", "timestamp": 4594, "description": "Shot on goal", "player": "Garcia #16"},
+     {"type": "shot", "timestamp": 5160, "description": "Shot on goal", "player": "Martinez #17"},
+     {"type": "shot", "timestamp": 5227, "description": "Shot on goal", "player": "Lopez #18"},
+     {"type": "shot", "timestamp": 5786, "description": "Shot on goal", "player": "Clark #19"},
+     {"type": "goal", "timestamp": 5788, "description": "Goal scored", "player": "Clark #19"},
+     {"type": "shot", "timestamp": 6240, "description": "Shot on goal", "player": "White #20"}
+   ]'::jsonb);
 
 -- Game 2: Chelsea Youth (Game277_0526)  
 INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
@@ -107,6 +133,37 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '22222222-2222-2222-2222-222222222222',
    'pending',
    5400);
+
+-- Test Game with Working Video URL for immediate testing
+INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+  ('99999999-9999-9999-9999-999999999999',
+   'Demo Video - Test Video Player', 
+   'Test game with working video for video player testing',
+   'https://veo.co/watch/demo-test',
+   'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+   'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
+   '11111111-1111-1111-1111-111111111111',
+   'analyzed',
+   596, -- ~10 minutes  
+   '[
+     {"type": "shot", "timestamp": 15, "description": "Early shot attempt", "player": "Bunny #1"},
+     {"type": "goal", "timestamp": 17, "description": "Opening goal", "player": "Bunny #1"},
+     {"type": "foul", "timestamp": 45, "description": "Defensive challenge", "player": "Rodent #3"},
+     {"type": "yellow_card", "timestamp": 47, "description": "Caution for rough play", "player": "Rodent #3"},
+     {"type": "shot", "timestamp": 120, "description": "Long range effort", "player": "Squirrel #7"},
+     {"type": "corner", "timestamp": 180, "description": "Corner kick awarded", "player": "Bird #5"},
+     {"type": "shot", "timestamp": 240, "description": "Header from corner", "player": "Bear #9"},
+     {"type": "goal", "timestamp": 242, "description": "Goal from header", "player": "Bear #9"},
+     {"type": "substitution", "timestamp": 300, "description": "Tactical change", "player": "Fox #11 for Squirrel #7"},
+     {"type": "shot", "timestamp": 360, "description": "Counter attack shot", "player": "Fox #11"},
+     {"type": "foul", "timestamp": 420, "description": "Midfield foul", "player": "Rabbit #2"},
+     {"type": "shot", "timestamp": 480, "description": "Final shot", "player": "Bunny #1"},
+     {"type": "goal", "timestamp": 485, "description": "Winning goal", "player": "Bunny #1"}
+   ]'::jsonb);
+
+-- Add demo user to Arsenal team for testing
+INSERT INTO team_members (team_id, user_id) VALUES
+  ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', '99999999-9999-9999-9999-999999999999');
 
 -- Verify data inserted
 SELECT 'Demo data loaded successfully!' as message;
