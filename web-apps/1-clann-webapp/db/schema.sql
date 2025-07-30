@@ -17,6 +17,7 @@ CREATE TABLE users (
   email VARCHAR(255) UNIQUE NOT NULL,
   password_hash VARCHAR(255) NOT NULL,
   name VARCHAR(255) NOT NULL,
+  role VARCHAR(50) DEFAULT 'user',  -- 'user' (regular) or 'company' (analyst)
   avatar_url VARCHAR(500),
   is_active BOOLEAN DEFAULT true,
   created_at TIMESTAMP DEFAULT NOW(),
@@ -69,6 +70,7 @@ CREATE TABLE games (
 
 -- Indexes for performance
 CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_users_role ON users(role);
 CREATE INDEX idx_teams_team_code ON teams(team_code);
 CREATE INDEX idx_teams_owner_id ON teams(owner_id);
 CREATE INDEX idx_team_members_team_id ON team_members(team_id);

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* ClannAI Brand Colors */
+  --clann-green: #016F32;
+  --clann-blue: #4EC2CA;
+  --clann-bright-green: #D1FB7A;
+  --clann-light-blue: #B9E8EB;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* ClannAI Theme Colors */
+  --color-clann-green: var(--clann-green);
+  --color-clann-blue: var(--clann-blue);
+  --color-clann-bright-green: var(--clann-bright-green);
+  --color-clann-light-blue: var(--clann-light-blue);
+  --color-primary: var(--clann-green);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

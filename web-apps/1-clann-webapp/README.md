@@ -2,7 +2,7 @@
 
 **Professional football analysis platform with AI-powered event detection**
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Local Development)
 
 ```bash
 # 1. Setup database
@@ -13,6 +13,21 @@ cd backend && npm install && npm start
 
 # 3. Start frontend
 cd frontend && npm install && npm run dev
+```
+
+## 🌐 Production Deployment (AWS)
+
+```bash
+# Full AWS production deployment
+# See aws-setup.md for complete guide
+
+# 1. Deploy to AWS (RDS + S3 + ECS)
+./deploy-aws.sh
+
+# 2. Deploy frontend to Vercel
+cd frontend && vercel --prod
+
+# Result: https://clannai.com LIVE!
 ```
 
 ## 📁 Structure
@@ -30,6 +45,6 @@ cd frontend && npm install && npm run dev
 
 ## 🎯 Goal
 
-**Demo ready tonight → 5 paying customers at $5/game**
+**LIVE WEBSITE at clannai.com → 5 paying customers at $5/game**
 
-**Meeting tomorrow ✅** 
+**Professional production demo → Meeting tomorrow ✅** 

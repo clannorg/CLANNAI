@@ -1,0 +1,104 @@
+{
+  "events": [
+    {
+      "timestamp": 37,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 37,
+      "type": "goal",
+      "description": "Goal scored"
+    },
+    {
+      "timestamp": 269,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 559,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 769,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 771,
+      "type": "goal",
+      "description": "Goal scored"
+    },
+    {
+      "timestamp": 876,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 1893,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 2199,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 2282,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 3575,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 3986,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 4075,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 4075,
+      "type": "goal",
+      "description": "Goal scored"
+    },
+    {
+      "timestamp": 4594,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 5160,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 5227,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 5786,
+      "type": "shot",
+      "description": "Shot on goal"
+    },
+    {
+      "timestamp": 5788,
+      "type": "goal",
+      "description": "Goal scored"
+    },
+    {
+      "timestamp": 6240,
+      "type": "shot",
+      "description": "Shot on goal"
+    }
+  ]
+} 
