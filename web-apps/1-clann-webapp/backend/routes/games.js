@@ -280,6 +280,34 @@ router.post('/:id/analysis', [authenticateToken, requireCompanyRole], async (req
   }
 });
 
+// Add S3 analysis files for a game (company only)
+router.post('/:id/analysis-files', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { s3AnalysisFiles } = req.body; // JSON object of S3 URLs
+
+    if (!s3AnalysisFiles || typeof s3AnalysisFiles !== 'object') {
+      return res.status(400).json({ error: 's3AnalysisFiles JSON object required' });
+    }
+
+    const updatedGame = await updateGame(gameId, {
+      s3_analysis_files: s3AnalysisFiles
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      message: 'Analysis files updated',
+      s3_analysis_files: updatedGame.s3_analysis_files
+    });
+  } catch (error) {
+    console.error('Update analysis files error:', error);
+    res.status(500).json({ error: 'Failed to update analysis files' });
+  }
+});
+
 // Mark game as analyzed (company only)
 router.put('/:id/status', [authenticateToken, requireCompanyRole], async (req, res) => {
   try {
