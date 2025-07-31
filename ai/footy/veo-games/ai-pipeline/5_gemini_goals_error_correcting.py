@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-5. Intelligent Gemini Synthesis
-Uses Gemini 2.5 Pro to intelligently synthesize all clip analyses into match timeline
+5. Gemini Goals & Shots Error-Correcting Detection
+Uses Gemini 2.5 Pro to detect goals and shots with strict validation logic
 """
 
 import sys
@@ -43,11 +43,11 @@ class IntelligentMatchSynthesizer:
             all_clips_text += "\n"
         
         return f"""
-🧠 INTELLIGENT FOOTBALL MATCH SYNTHESIS
-=========================================
+🧠 GOALS & SHOTS DETECTION WITH ERROR CORRECTION
+==============================================
 
-You are an expert football analyst reviewing 52 clips (13 minutes) from a match.
-Each clip below shows 15 seconds of footage with AI analysis.
+You are an expert football analyst reviewing clips from a match.
+Focus ONLY on detecting GOALS and SHOTS with strict validation.
 
 🚨 ULTRA-STRICT GOAL DETECTION (NO FALSE POSITIVES):
 
@@ -65,10 +65,9 @@ RULE 3: LOGICAL VALIDATION
 - If BLACK scores → RED takes kickoff  
 - Same team kickoff = CONTRADICTION = NOT A GOAL
 
-RULE 4: TEMPORAL VALIDATION (NEW!)
+RULE 4: TEMPORAL VALIDATION
 - Cannot have 2 kickoffs within 60 seconds by same team
 - Cannot have 2 goals within 30 seconds (extremely rare)
-- Check for impossible sequences (kickoff at 5:45 + goal at 6:00 = suspicious)
 
 📊 YOUR TASKS:
 
@@ -77,19 +76,15 @@ RULE 4: TEMPORAL VALIDATION (NEW!)
    - Check next clip for CENTER CIRCLE kickoff by OPPOSING team
    - REJECT if scoring team takes kickoff (breaks football rules)
 
-2. **EVENT TIMELINE** (Priority #2):
-   - Create chronological list of significant events
-   - Include: goals, shots, key passes, fouls, cards, corners
-   - Filter out routine passes and minor events
+2. **SHOT DETECTION**:
+   - Find all attempts at goal: "shot", "strike", "effort"
+   - Classify outcome: "goal", "saved", "off_target", "blocked"
+   - Include team and approximate timing
 
-3. **TEAM ANALYSIS** (Priority #3):
-   - Identify which team scored (jersey colors, field position)
-   - Track possession changes and attacking patterns
-
-4. **CONFIDENCE ASSESSMENT**:
-   - HIGH: Explicit "GOAL" statement + opposing team kickoff validation
-   - MEDIUM: Clear goal but kickoff issues (flag as suspicious)
-   - REJECT: No goal statement OR same team kickoff OR no kickoff found
+3. **CONFIDENCE ASSESSMENT**:
+   - HIGH: Explicit statement + clear evidence
+   - MEDIUM: Clear action but some uncertainty
+   - LOW: Possible but unclear
 
 🔍 CLIP ANALYSES TO SYNTHESIZE:
 {all_clips_text}
@@ -106,49 +101,59 @@ RULE 4: TEMPORAL VALIDATION (NEW!)
       "source_clips": ["clip_0011", "clip_0012"]
     }}
   ],
+  "shots_detected": [
+    {{
+      "timestamp": "1:23",
+      "team": "team in red jerseys",
+      "outcome": "saved",
+      "description": "Long range shot saved by goalkeeper",
+      "confidence": "HIGH",
+      "source_clips": ["clip_0005"]
+    }},
+    {{
+      "timestamp": "8:12",
+      "team": "team in blue jerseys", 
+      "outcome": "off_target",
+      "description": "Shot from edge of box goes wide",
+      "confidence": "MEDIUM",
+      "source_clips": ["clip_0032"]
+    }}
+  ],
   "rejected_false_positives": [
     {{
       "timestamp": "4:45",
+      "type": "goal",
       "reason": "Scoring team took kickoff - violates football rules",
       "original_description": "Shot from free kick"
     }}
   ],
-  "key_events": [
-    {{
-      "timestamp": "1:23", 
-      "type": "shot",
-      "description": "Long range shot saved by goalkeeper",
-      "confidence": "HIGH"
-    }}
-  ],
-  "match_summary": {{
-    "total_real_goals": 2,
-    "total_false_positives_rejected": 6,
-    "validation_method": "Ultra-strict detection with kickoff validation",
-    "key_moments": ["Only kickoff-validated goals included"],
-    "possession_flow": "Even possession with dangerous attacks from both teams"
-  }},
   "kickoff_analysis": [
     {{
       "kickoff_time": "2:50",
       "inferred_goal_time": "2:45", 
       "evidence": "Teams lined up after celebration"
     }}
-  ]
+  ],
+  "summary": {{
+    "total_goals": 1,
+    "total_shots": 7,
+    "total_false_positives_rejected": 2,
+    "validation_method": "Ultra-strict detection with kickoff validation"
+  }}
 }}
 
 🚨 CRITICAL REMINDER: 
-- REJECT if no explicit "GOAL" statement  
-- REJECT if same team takes kickoff (rule violation)
-- REJECT if kickoffs too close together (impossible timing)
-- REJECT if multiple goals within 30 seconds (extremely rare)
+- GOALS: REJECT if no explicit "GOAL" statement  
+- GOALS: REJECT if same team takes kickoff (rule violation)
+- GOALS: REJECT if kickoffs too close together (impossible timing)
+- SHOTS: Include all clear attempts at goal, classify outcome accurately
 - BETTER TO MISS than create FALSE POSITIVES
 - Conservative detection = accurate results!
 """
 
     def synthesize_intelligently(self, match_id: str) -> dict:
         """Use Gemini 2.5 Pro to intelligently synthesize match timeline"""
-        print(f"🧠 Step 5: Intelligent synthesis using Gemini 2.5 Pro for {match_id}")
+        print(f"🧠 Step 5: Goals & Shots detection using Gemini 2.5 Pro for {match_id}")
         
         data_dir = Path("../data") / match_id
         analyses_dir = data_dir / "clip_analyses"
@@ -204,23 +209,26 @@ RULE 4: TEMPORAL VALIDATION (NEW!)
                     "processing_note": "Response was text, not JSON"
                 }
             
-            # Create comprehensive timeline
-            match_timeline = {
+            # Create goals and shots data
+            goals_shots_data = {
                 "match_id": match_id,
-                "synthesis_timestamp": datetime.now().isoformat(),
-                "synthesis_method": "intelligent_gemini_2.5_pro",
+                "analysis_timestamp": datetime.now().isoformat(),
+                "analysis_method": "gemini_goals_error_correcting",
                 "clips_analyzed": len(clip_analyses),
                 "processing_time_seconds": processing_time,
-                "intelligent_analysis": intelligent_analysis,
-                "source_clips": [f"clip_{i+4:04d}" for i in range(len(clip_analyses))]  # Starting from 0004
+                "goals_detected": intelligent_analysis.get("goals_detected", []),
+                "shots_detected": intelligent_analysis.get("shots_detected", []),
+                "rejected_false_positives": intelligent_analysis.get("rejected_false_positives", []),
+                "kickoff_analysis": intelligent_analysis.get("kickoff_analysis", []),
+                "summary": intelligent_analysis.get("summary", {})
             }
             
-            # Save match timeline
-            timeline_path = data_dir / "intelligent_match_timeline.json"
-            with open(timeline_path, 'w') as f:
-                json.dump(match_timeline, f, indent=2)
+            # Save goals and shots to dedicated file
+            goals_shots_path = data_dir / "goals_shots_detected.json"
+            with open(goals_shots_path, 'w') as f:
+                json.dump(goals_shots_data, f, indent=2)
             
-            print(f"✅ Intelligent synthesis complete!")
+            print(f"✅ Goals & shots detection complete!")
             print(f"⏱️  Processing time: {processing_time:.1f}s")
             
             # Print summary
@@ -230,13 +238,20 @@ RULE 4: TEMPORAL VALIDATION (NEW!)
                 for goal in goals:
                     print(f"   🥅 {goal.get('timestamp', 'Unknown')} - {goal.get('description', 'Goal')}")
             
-            if "key_events" in intelligent_analysis:
-                events = intelligent_analysis["key_events"]
-                print(f"📊 Key events: {len(events)}")
-                
-            print(f"💾 Saved to: {timeline_path}")
+            if "shots_detected" in intelligent_analysis:
+                shots = intelligent_analysis["shots_detected"]
+                print(f"🎯 Shots detected: {len(shots)}")
+                for shot in shots:
+                    outcome = shot.get('outcome', 'unknown')
+                    print(f"   🏹 {shot.get('timestamp', 'Unknown')} - {outcome}")
             
-            return match_timeline
+            if "rejected_false_positives" in intelligent_analysis:
+                rejected = intelligent_analysis["rejected_false_positives"]
+                print(f"❌ False positives rejected: {len(rejected)}")
+                
+            print(f"🎯 Saved to: {goals_shots_path}")
+            
+            return goals_shots_data
             
         except Exception as e:
             print(f"❌ Error in intelligent synthesis: {e}")
@@ -254,7 +269,7 @@ def synthesize_match(match_id):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python 5_gemini_synthesis.py <match-id>")
+        print("Usage: python 5_gemini_goals_error_correcting.py <match-id>")
         sys.exit(1)
     
     match_id = sys.argv[1]
