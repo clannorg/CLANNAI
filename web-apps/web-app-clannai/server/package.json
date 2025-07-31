@@ -6,7 +6,8 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:s3": "node src/tests/s3-connection.test.js"
+    "test:s3": "node src/tests/s3-connection.test.js",
+    "build": "echo 'No build step needed'"
   },
   "keywords": [],
   "author": "",
