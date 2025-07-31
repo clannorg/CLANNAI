@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-07-28T15:03:36.072518",
+  "pricing": {
+    "gemini-2.0-flash": {
+      "input_cost_per_1m": 0.1,
+      "output_cost_per_1m": 0.4,
+      "speed": "Fast",
+      "video_support": true,
+      "free_tier": "50 requests/day",
+      "description": "Fastest, cheapest for video analysis"
+    },
+    "gemini-2.0-flash-exp": {
+      "input_cost_per_1m": 0.1,
+      "output_cost_per_1m": 0.4,
+      "speed": "Fast",
+      "video_support": true,
+      "free_tier": "50 requests/day",
+      "description": "Experimental version, potentially better video understanding"
+    },
+    "gemini-2.5-flash": {
+      "input_cost_per_1m": 0.3,
+      "output_cost_per_1m": 2.5,
+      "speed": "Fast",
+      "video_support": true,
+      "free_tier": "50 requests/day",
+      "description": "Better accuracy, 2.5x more expensive input, 6x output"
+    },
+    "gemini-2.5-flash-exp": {
+      "input_cost_per_1m": 0.3,
+      "output_cost_per_1m": 2.5,
+      "speed": "Fast",
+      "video_support": true,
+      "free_tier": "50 requests/day",
+      "description": "Experimental 2.5, potentially best video understanding"
+    },
+    "gemini-2.5-pro": {
+      "input_cost_per_1m": 1.5,
+      "output_cost_per_1m": 7.5,
+      "speed": "Slow",
+      "video_support": true,
+      "free_tier": "50 requests/day",
+      "description": "Highest quality, best for synthesis/insights"
+    }
+  },
+  "token_estimates": {
+    "video_analysis_prompt": 1000,
+    "video_tokens_per_clip": 2000,
+    "typical_response": 150,
+    "detailed_response": 300
+  },
+  "match_analysis": {
+    "match_duration_minutes": 90.0,
+    "total_clips": 360,
+    "model_comparison": {
+      "gemini-2.0-flash": {
+        "cost_per_clip": 0.00036,
+        "total_match_cost": 0.12960000000000002,
+        "processing_time_hours": 1.125,
+        "cost_per_hour": 0.11520000000000002,
+        "free_tier_clips": 50,
+        "paid_cost_after_free": 0.11160000000000002,
+        "description": "Fastest, cheapest for video analysis"
+      },
+      "gemini-2.0-flash-exp": {
+        "cost_per_clip": 0.00036,
+        "total_match_cost": 0.12960000000000002,
+        "processing_time_hours": 1.125,
+        "cost_per_hour": 0.11520000000000002,
+        "free_tier_clips": 50,
+        "paid_cost_after_free": 0.11160000000000002,
+        "description": "Experimental version, potentially better video understanding"
+      },
+      "gemini-2.5-flash": {
+        "cost_per_clip": 0.0012749999999999999,
+        "total_match_cost": 0.45899999999999996,
+        "processing_time_hours": 1.125,
+        "cost_per_hour": 0.408,
+        "free_tier_clips": 50,
+        "paid_cost_after_free": 0.39525,
+        "description": "Better accuracy, 2.5x more expensive input, 6x output"
+      },
+      "gemini-2.5-flash-exp": {
+        "cost_per_clip": 0.0012749999999999999,
+        "total_match_cost": 0.45899999999999996,
+        "processing_time_hours": 1.125,
+        "cost_per_hour": 0.408,
+        "free_tier_clips": 50,
+        "paid_cost_after_free": 0.39525,
+        "description": "Experimental 2.5, potentially best video understanding"
+      },
+      "gemini-2.5-pro": {
+        "cost_per_clip": 0.005625000000000001,
+        "total_match_cost": 2.0250000000000004,
+        "processing_time_hours": 1.5,
+        "cost_per_hour": 1.3500000000000003,
+        "free_tier_clips": 50,
+        "paid_cost_after_free": 1.7437500000000004,
+        "description": "Highest quality, best for synthesis/insights"
+      }
+    }
+  },
+  "recommendations": {
+    "cost_optimized": {
+      "priority": "cost",
+      "budget": null,
+      "primary_model": "gemini-2.0-flash-exp",
+      "synthesis_model": "gemini-2.5-flash"
+    },
+    "accuracy_optimized": {
+      "priority": "accuracy",
+      "budget": null,
+      "primary_model": "gemini-2.5-flash-exp",
+      "synthesis_model": "gemini-2.5-pro"
+    },
+    "hybrid": {
+      "priority": "hybrid",
+      "budget": null,
+      "screening_model": "gemini-2.0-flash-exp",
+      "analysis_model": "gemini-2.5-flash-exp",
+      "synthesis_model": "gemini-2.5-pro"
+    }
+  }
+}

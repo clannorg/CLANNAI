@@ -45,6 +45,17 @@ export default function CompanyDashboard() {
   const [jsonData, setJsonData] = useState('')
   const [updating, setUpdating] = useState(false)
 
+  // Add to state at the top of CompanyDashboard
+  const [showS3FilesModal, setShowS3FilesModal] = useState(false);
+  const [s3Files, setS3Files] = useState({
+    video: '',
+    events: '',
+    tactics: '',
+    commentary: ''
+  });
+  const [s3LocationsUrl, setS3LocationsUrl] = useState('');
+  const [autoFillError, setAutoFillError] = useState('');
+
   useEffect(() => {
     const userData = localStorage.getItem('user')
     if (!userData) {
@@ -193,6 +204,71 @@ export default function CompanyDashboard() {
       setError(err.message || 'Failed to mark as pending')
     }
   }
+
+  // Handler for opening the modal
+  const handleAddS3Files = (game: Game) => {
+    setSelectedGame(game);
+    setS3Files({ video: '', events: '', tactics: '', commentary: '' });
+    setS3LocationsUrl('');
+    setAutoFillError('');
+    setShowS3FilesModal(true);
+  };
+
+  // Handler for input changes
+  const handleS3FileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setS3Files({ ...s3Files, [e.target.name]: e.target.value });
+  };
+
+  // Handler for auto-filling from s3_locations.json
+  const handleS3LocationsUrlChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const url = e.target.value;
+    setS3LocationsUrl(url);
+    setAutoFillError('');
+    if (url && url.startsWith('http')) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Failed to fetch JSON');
+        const data = await response.json();
+        if (data.s3_urls) {
+          setS3Files((prev) => ({
+            ...prev,
+            video: data.s3_urls['video.mp4']?.url || prev.video,
+            events: data.s3_urls['web_events.json']?.url || prev.events,
+            tactics: data.s3_urls['tactical_coaching_insights.json']?.url || prev.tactics,
+            commentary: data.s3_urls['match_commentary.md']?.url || prev.commentary
+          }));
+        } else {
+          setAutoFillError('No s3_urls key found in JSON');
+        }
+      } catch (err) {
+        setAutoFillError('Failed to fetch or parse s3_locations.json');
+      }
+    }
+  };
+
+  // Handler for submitting S3 files
+  const handleSubmitS3Files = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setUpdating(true);
+    try {
+      await fetch(`/api/games/${selectedGame?.id}/analysis-files`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
+        body: JSON.stringify({ s3AnalysisFiles: s3Files })
+      });
+      setShowS3FilesModal(false);
+      setS3Files({ video: '', events: '', tactics: '', commentary: '' });
+      setS3LocationsUrl('');
+      setAutoFillError('');
+      setSelectedGame(null);
+      setError('');
+      loadDashboardData();
+    } catch (err) {
+      setError('Failed to update S3 file locations');
+    } finally {
+      setUpdating(false);
+    }
+  };
 
   if (!user) {
     return <div className="min-h-screen bg-[#F7F6F1] flex items-center justify-center">
@@ -367,6 +443,13 @@ export default function CompanyDashboard() {
                         >
                           Add Analysis
                         </button>
+                        {/* Add S3 Analysis Files Button */}
+                        <button
+                          className="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 ml-2"
+                          onClick={() => handleAddS3Files(game)}
+                        >
+                          Add S3 Analysis Files
+                        </button>
                         {game.status === 'pending' && (
                           <button
                             onClick={() => handleMarkAnalyzed(game)}
@@ -495,6 +578,52 @@ export default function CompanyDashboard() {
                   className="bg-purple-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {updating ? 'Adding...' : 'Add Analysis'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* S3 Analysis Files Modal (AI-generated) */}
+      {showS3FilesModal && selectedGame && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Add S3 Analysis File Locations</h3>
+            <form onSubmit={handleSubmitS3Files} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1">s3_locations.json URL (auto-fill)</label>
+                <input
+                  name="s3LocationsUrl"
+                  type="url"
+                  value={s3LocationsUrl}
+                  onChange={handleS3LocationsUrlChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                  placeholder="Paste S3 URL for s3_locations.json (optional)"
+                  disabled={updating}
+                />
+                {autoFillError && <div className="text-red-600 text-xs mt-1">{autoFillError}</div>}
+              </div>
+              {['video', 'events', 'tactics', 'commentary'].map((type) => (
+                <div key={type}>
+                  <label className="block text-sm font-medium text-gray-900 mb-1">
+                    {type.charAt(0).toUpperCase() + type.slice(1)} S3 URL
+                  </label>
+                  <input
+                    name={type}
+                    type="url"
+                    value={s3Files[type]}
+                    onChange={handleS3FileChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                    placeholder={`S3 URL for ${type}`}
+                    disabled={updating}
+                  />
+                </div>
+              ))}
+              <div className="flex justify-end space-x-3">
+                <button type="button" onClick={() => setShowS3FilesModal(false)} className="px-6 py-2.5 text-gray-900">Cancel</button>
+                <button type="submit" disabled={updating} className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-blue-700">
+                  {updating ? 'Saving...' : 'Save'}
                 </button>
               </div>
             </form>

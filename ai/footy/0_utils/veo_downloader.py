@@ -12,6 +12,7 @@ from pathlib import Path
 import logging
 from urllib.parse import urlparse, parse_qs
 import re
+from typing import Optional
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -38,7 +39,7 @@ class VeoDownloader:
             'Upgrade-Insecure-Requests': '1',
         })
     
-    def extract_match_id(self, url: str) -> str | None:
+    def extract_match_id(self, url: str) -> Optional[str]:
         """
         Extract match ID from Veo URL
         """
@@ -65,7 +66,7 @@ class VeoDownloader:
             logger.error(f"Error extracting match ID: {e}")
             return None
     
-    def extract_highlight_id(self, url: str) -> str | None:
+    def extract_highlight_id(self, url: str) -> Optional[str]:
         """
         Extract highlight ID from Veo URL
         """
@@ -83,7 +84,7 @@ class VeoDownloader:
             logger.error(f"Error extracting highlight ID: {e}")
             return None
     
-    def get_video_url(self, match_id: str, highlight_id: str | None = None) -> str | None:
+    def get_video_url(self, match_id: str, highlight_id: Optional[str] = None) -> Optional[str]:
         """
         Get direct video URL from Veo API
         """
@@ -114,7 +115,7 @@ class VeoDownloader:
             logger.error(f"Error getting video URL: {e}")
             return None
     
-    def download_video(self, url: str, filename: str | None = None) -> str | None:
+    def download_video(self, url: str, filename: Optional[str] = None) -> Optional[str]:
         """
         Download video from Veo URL
         """
@@ -171,7 +172,7 @@ class VeoDownloader:
             logger.error(f"Error downloading video: {e}")
             return None
     
-    def download_with_yt_dlp(self, url: str, filename: str | None = None) -> str | None:
+    def download_with_yt_dlp(self, url: str, filename: Optional[str] = None) -> Optional[str]:
         """
         Alternative download method using yt-dlp
         """
