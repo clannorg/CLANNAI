@@ -31,14 +31,33 @@ class FootballClipAnalyzer:
 
 
     def get_football_analysis_prompt(self) -> str:
-        return """
-You are an expert football analyst. Given a 15-second football video clip, write a concise, step-by-step description of the key events that occur. Focus on the main actions, players, and outcomes. Be logical, chronological, and avoid unnecessary commentary.
+        """Enhanced prompt with precise timing estimation - WINNING APPROACH + TIMING!"""
+        return """🏟️ FOOTBALL MATCH CLIP ANALYSIS (15 seconds)
 
-Example:
-"Red winger sprints down the far wing, dribbles past a defender, and delivers a low cross into the box. The striker receives the ball and takes a shot, but the goalkeeper saves comfortably."
+Analyze this 15-second football clip and provide:
+1. **Main action description** (1-2 sentences)
+2. **Key timing estimates** within the 15-second window
 
-If no significant events occur, write: "No significant events."
-"""
+🎯 FOCUS ON RED vs BLACK TEAMS:
+- Ball possession and which team controls it
+- Key ball connections (passes, shots, tackles, saves)
+- Player movements and team formations
+- Precise timing of major events
+
+⏱️ TIMING FORMAT:
+Estimate when key events happen within the 15-second clip:
+- "2s: Red player receives pass in midfield"
+- "7s: Black defender tackles, ball goes out"
+- "12s: Red team shoots, goalkeeper saves"
+
+🏟️ EXAMPLE OUTPUT:
+"Red team attacks down the left wing, black team defends deep.
+2s: Red winger receives ball on left touchline
+6s: Cross delivered into penalty area  
+9s: Black defender heads clear to midfield
+13s: Both teams compete for loose ball"
+
+Focus on the most significant ball connections and team actions with timing estimates."""
 
     def analyze_football_clip(self, compressed_clip_path: str, clip_info: dict) -> dict:
         """Analyze a single compressed football clip using WINNING FILE UPLOAD approach"""
@@ -190,7 +209,7 @@ def analyze_clips(match_id):
     
     results = []
     
-    # SMART RATE LIMITING ARCHITECTURE
+    # SMART RATE LIMITING ARCHITECTURE  
     GEMINI_LIMIT_PER_MINUTE = 150
     clip_count = len(clip_pairs)
     
