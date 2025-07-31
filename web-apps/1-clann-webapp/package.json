@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@devopness/cli": "^1.27.0",
+    "@devopness/sdk-js": "^2.164.5"
+  }
+}
