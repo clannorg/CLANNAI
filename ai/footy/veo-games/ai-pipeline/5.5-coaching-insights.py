@@ -7,13 +7,20 @@ Outputs coaching insights in format ready for AI coach interface
 
 import json
 import re
+import os
 from pathlib import Path
 from collections import defaultdict, Counter
 from datetime import datetime
+import google.generativeai as genai
+from dotenv import load_dotenv
 
 class TacticalAnalyzer:
     def __init__(self):
-        """Initialize with coaching effectiveness patterns"""
+        """Initialize Gemini AI and load environment"""
+        # Load environment and configure Gemini
+        load_dotenv()
+        genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+        self.model = genai.GenerativeModel('gemini-2.5-pro')
         
         # What's WORKING patterns
         self.effective_patterns = {
@@ -83,6 +90,127 @@ class TacticalAnalyzer:
             })
         
         return events
+    
+    def analyze_with_gemini(self, commentary_text: str) -> dict:
+        """Use Gemini to intelligently analyze match commentary for professional insights"""
+        
+        # Split commentary if too long (keep under 100k chars)
+        max_chars = 100000
+        if len(commentary_text) > max_chars:
+            commentary_text = commentary_text[:max_chars] + "\n[Commentary truncated for analysis...]"
+        
+        prompt = f"""
+You are a professional football analyst. Analyze this match commentary and provide detailed tactical insights.
+
+MATCH COMMENTARY:
+{commentary_text}
+
+Provide analysis in the following JSON format:
+
+{{
+    "set_pieces": {{
+        "corner_kicks": {{
+            "total_attempts": 0,
+            "on_target": 0,
+            "goals": 0,
+            "analysis": "Assessment of corner kick effectiveness"
+        }},
+        "free_kicks": {{
+            "close_range_attempts": 0,
+            "long_range_attempts": 0,
+            "goals": 0,
+            "analysis": "Free kick effectiveness breakdown"
+        }},
+        "penalties": {{
+            "awarded": 0,
+            "scored": 0,
+            "missed": 0,
+            "analysis": "Penalty situation analysis"
+        }},
+        "throw_ins": {{
+            "attacking_third": 0,
+            "possession_retained": 0,
+            "analysis": "Throw-in effectiveness"
+        }}
+    }},
+    "tactical_patterns": {{
+        "red_team": {{
+            "dominant_formation": "Formation observed",
+            "attacking_style": "Direct/Possession/Counter/Mixed",
+            "defensive_style": "High press/Mid block/Deep/Mixed",
+            "strengths": ["List key strengths with evidence"],
+            "weaknesses": ["List key weaknesses with evidence"],
+            "key_players": ["Notable performances without names"]
+        }},
+        "black_team": {{
+            "dominant_formation": "Formation observed", 
+            "attacking_style": "Direct/Possession/Counter/Mixed",
+            "defensive_style": "High press/Mid block/Deep/Mixed",
+            "strengths": ["List key strengths with evidence"],
+            "weaknesses": ["List key weaknesses with evidence"],
+            "key_players": ["Notable performances without names"]
+        }}
+    }},
+    "match_flow": {{
+        "periods_of_dominance": ["Which team dominated when"],
+        "momentum_shifts": ["Key moments that changed the game"],
+        "intensity_levels": ["High/medium/low intensity periods"]
+    }},
+    "spatial_analysis": {{
+        "most_active_areas": ["Which areas of pitch saw most action"],
+        "attacking_patterns": ["Common attack routes"],
+        "defensive_vulnerabilities": ["Areas where teams were exposed"]
+    }},
+    "coaching_recommendations": {{
+        "red_team": ["Specific actionable advice"],
+        "black_team": ["Specific actionable advice"],
+        "general": ["Overall match insights"]
+    }}
+}}
+
+IMPORTANT: Provide specific evidence from the commentary for all insights. Be detailed and professional.
+"""
+        
+        try:
+            response = self.model.generate_content(prompt)
+            # Parse JSON response
+            analysis_text = response.text.strip()
+            
+            # Clean up the response if it has markdown formatting
+            if '```json' in analysis_text:
+                # Extract JSON from markdown code block
+                start = analysis_text.find('```json') + 7
+                end = analysis_text.rfind('```')
+                if end > start:
+                    analysis_text = analysis_text[start:end].strip()
+            
+            analysis = json.loads(analysis_text)
+            return analysis
+            
+        except Exception as e:
+            print(f"⚠️ Gemini analysis failed: {e}")
+            # Fallback to basic analysis
+            return self.fallback_analysis()
+    
+    def fallback_analysis(self) -> dict:
+        """Fallback analysis if Gemini fails"""
+        return {
+            "set_pieces": {
+                "corner_kicks": {"total_attempts": 0, "analysis": "Analysis unavailable"},
+                "free_kicks": {"close_range_attempts": 0, "analysis": "Analysis unavailable"},
+                "penalties": {"awarded": 0, "analysis": "Analysis unavailable"},
+                "throw_ins": {"attacking_third": 0, "analysis": "Analysis unavailable"}
+            },
+            "tactical_patterns": {
+                "red_team": {"strengths": ["Analysis unavailable"], "weaknesses": ["Analysis unavailable"]},
+                "black_team": {"strengths": ["Analysis unavailable"], "weaknesses": ["Analysis unavailable"]}
+            },
+            "coaching_recommendations": {
+                "red_team": ["Detailed analysis unavailable - using fallback"],
+                "black_team": ["Detailed analysis unavailable - using fallback"],
+                "general": ["Professional analysis requires Gemini API"]
+            }
+        }
     
     def count_pattern_matches(self, text: str, patterns: list) -> int:
         """Count how many times any pattern matches in text"""
@@ -212,10 +340,10 @@ class TacticalAnalyzer:
 
     
     def generate_coaching_insights(self, match_id: str) -> dict:
-        """Generate tactical effectiveness insights for coaches from match commentary"""
-        print(f"🏆 Analyzing tactical effectiveness for {match_id}")
+        """Generate professional tactical insights using Gemini AI analysis"""
+        print(f"🏆 AI-Powered Tactical Analysis for {match_id}")
         
-        # Load match commentary instead of individual clips
+        # Load match commentary
         data_dir = Path("../data") / match_id
         commentary_file = data_dir / "match_commentary.md"
         
@@ -227,55 +355,116 @@ class TacticalAnalyzer:
         with open(commentary_file, 'r', encoding='utf-8') as f:
             commentary_text = f.read()
         
-        print(f"📊 Analyzing match commentary for tactical effectiveness...")
+        print(f"🤖 Analyzing with Gemini 2.5 Pro for professional insights...")
         
-        # Extract tactical effectiveness from commentary
-        effectiveness = self.analyze_tactical_effectiveness_from_commentary(commentary_text)
+        # Use Gemini for intelligent analysis
+        gemini_analysis = self.analyze_with_gemini(commentary_text)
         
         # Calculate key metrics from commentary
         event_lines = [line for line in commentary_text.split('\n') if line.startswith('**') and '**' in line[2:]]
         total_events = len(event_lines)
         
-        # Create web-app ready coaching content
-        red_strengths = self.get_top_strengths(effectiveness['red_team']['what_works'])
-        black_strengths = self.get_top_strengths(effectiveness['black_team']['what_works'])
-        red_weaknesses = self.get_top_weaknesses(effectiveness['red_team']['what_doesnt_work'])
-        black_weaknesses = self.get_top_weaknesses(effectiveness['black_team']['what_doesnt_work'])
+        # Format professional analysis content
+        current_analysis_content = self.format_professional_analysis(gemini_analysis)
         
-        recommendations = self.generate_tactical_recommendations(effectiveness)
-        key_insights = self.generate_key_insights(effectiveness)
-        
-        # Format for web app left panel
-        current_analysis_content = self.format_analysis_content(
-            red_strengths, black_strengths, red_weaknesses, black_weaknesses, key_insights
-        )
-        
+        # Extract coaching recommendations
         coaching_points = []
-        coaching_points.extend(recommendations.get('red_team', []))
-        coaching_points.extend(recommendations.get('black_team', []))
+        if 'coaching_recommendations' in gemini_analysis:
+            coaching_points.extend(gemini_analysis['coaching_recommendations'].get('red_team', []))
+            coaching_points.extend(gemini_analysis['coaching_recommendations'].get('black_team', []))
+            coaching_points.extend(gemini_analysis['coaching_recommendations'].get('general', []))
         
-        # Web app format
+        # Professional web app format
         ai_coach_content = {
             'current_analysis': {
-                'title': 'Tactical Analysis Summary',
+                'title': 'Professional Tactical Analysis',
                 'content': current_analysis_content
             },
-            'coaching_points': coaching_points[:5],  # Top 5 recommendations
-            'chat_context': f'Analysis based on {total_events} match events to help improve tactical effectiveness',
+            'coaching_points': coaching_points[:8],  # More detailed recommendations
+            'detailed_analysis': gemini_analysis,  # Full Gemini analysis
+            'chat_context': f'Professional AI analysis of {total_events} match events with tactical insights, set piece analysis, and coaching recommendations',
             'metadata': {
                 'match_id': match_id,
                 'analysis_timestamp': datetime.now().isoformat(),
-                'total_events_analyzed': total_events
+                'total_events_analyzed': total_events,
+                'analysis_engine': 'Gemini 2.5 Pro'
             }
         }
         
-        # Save web-app ready coaching content
+        # Save enhanced coaching content
         output_path = data_dir / "ai_coach_content.json"
         with open(output_path, 'w') as f:
             json.dump(ai_coach_content, f, indent=2)
         
-        print(f"✅ AI coach content saved to: {output_path}")
+        print(f"✅ Professional AI coach content saved to: {output_path}")
         return ai_coach_content
+    
+    def format_professional_analysis(self, gemini_analysis: dict) -> str:
+        """Format Gemini analysis into professional coaching content"""
+        content_parts = []
+        
+        # Set Pieces Analysis
+        if 'set_pieces' in gemini_analysis:
+            set_pieces = gemini_analysis['set_pieces']
+            content_parts.append("## 🎯 Set Piece Analysis")
+            
+            if 'corner_kicks' in set_pieces:
+                ck = set_pieces['corner_kicks']
+                content_parts.append(f"**Corner Kicks:** {ck.get('total_attempts', 0)} attempts, {ck.get('on_target', 0)} on target, {ck.get('goals', 0)} goals")
+                content_parts.append(f"- {ck.get('analysis', 'No analysis available')}")
+            
+            if 'free_kicks' in set_pieces:
+                fk = set_pieces['free_kicks']
+                content_parts.append(f"**Free Kicks:** {fk.get('close_range_attempts', 0)} close-range, {fk.get('long_range_attempts', 0)} long-range, {fk.get('goals', 0)} goals")
+                content_parts.append(f"- {fk.get('analysis', 'No analysis available')}")
+            
+            if 'penalties' in set_pieces:
+                pen = set_pieces['penalties']
+                content_parts.append(f"**Penalties:** {pen.get('awarded', 0)} awarded, {pen.get('scored', 0)} scored, {pen.get('missed', 0)} missed")
+                content_parts.append(f"- {pen.get('analysis', 'No analysis available')}")
+        
+        # Team Tactical Analysis
+        if 'tactical_patterns' in gemini_analysis:
+            content_parts.append("\n## ⚔️ Tactical Analysis")
+            
+            for team_color in ['red_team', 'black_team']:
+                if team_color in gemini_analysis['tactical_patterns']:
+                    team_data = gemini_analysis['tactical_patterns'][team_color]
+                    team_name = team_color.replace('_', ' ').title()
+                    
+                    content_parts.append(f"\n**{team_name}:**")
+                    content_parts.append(f"- Formation: {team_data.get('dominant_formation', 'Unknown')}")
+                    content_parts.append(f"- Attack Style: {team_data.get('attacking_style', 'Unknown')}")
+                    content_parts.append(f"- Defense Style: {team_data.get('defensive_style', 'Unknown')}")
+                    
+                    strengths = team_data.get('strengths', [])
+                    if strengths:
+                        content_parts.append("- **Strengths:**")
+                        for strength in strengths[:3]:  # Top 3
+                            content_parts.append(f"  • {strength}")
+                    
+                    weaknesses = team_data.get('weaknesses', [])
+                    if weaknesses:
+                        content_parts.append("- **Areas for Improvement:**")
+                        for weakness in weaknesses[:3]:  # Top 3
+                            content_parts.append(f"  • {weakness}")
+        
+        # Spatial Analysis
+        if 'spatial_analysis' in gemini_analysis:
+            spatial = gemini_analysis['spatial_analysis']
+            content_parts.append("\n## 🗺️ Spatial Analysis")
+            
+            active_areas = spatial.get('most_active_areas', [])
+            if active_areas:
+                content_parts.append(f"**Most Active Areas:** {', '.join(active_areas[:3])}")
+            
+            attack_patterns = spatial.get('attacking_patterns', [])
+            if attack_patterns:
+                content_parts.append("**Attack Patterns:**")
+                for pattern in attack_patterns[:2]:
+                    content_parts.append(f"- {pattern}")
+        
+        return "\n".join(content_parts)
     
     def format_analysis_content(self, red_strengths, black_strengths, red_weaknesses, black_weaknesses, key_insights):
         """Format analysis for web app display"""

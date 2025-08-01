@@ -151,24 +151,12 @@ def analyze_clips(match_id):
     clip_pairs = []
     original_clips = sorted(list(clips_dir.glob("clip_*.mp4")))
     
-    # LIMIT TO FIRST 15 MINUTES ONLY (60 clips)
-    first_15_min_clips = []
-    for original_clip in original_clips:
-        # Extract timing to check if it's within first 15 minutes
-        filename_base = original_clip.stem  # clip_00m00s
-        time_part = filename_base.replace("clip_", "")  # 00m00s
-        try:
-            minutes = int(time_part.split('m')[0])
-            if minutes < 15:  # Only first 15 minutes
-                first_15_min_clips.append(original_clip)
-        except (ValueError, IndexError):
-            continue
-    
-    print(f"🎯 FOCUSED ANALYSIS: First 15 minutes only")
+    # FULL MATCH ANALYSIS (all clips)
+    print(f"🎯 FULL MATCH ANALYSIS: Processing all clips")
     print(f"📊 Total clips available: {len(original_clips)}")
-    print(f"🎯 First 15 min clips: {len(first_15_min_clips)}")
+    print(f"🚀 Ready to process COMPLETE MATCH")
     
-    for original_clip in first_15_min_clips:
+    for original_clip in original_clips:
         # Extract timing from filename: clip_00m00s.mp4 -> 00m00s
         filename_base = original_clip.stem  # clip_00m00s
         original_filename = f"{filename_base}.mp4"  # clip_00m00s.mp4

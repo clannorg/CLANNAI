@@ -27,8 +27,8 @@ class IntelligentMatchSynthesizer:
         # Use 2.5 Pro for intelligent synthesis
         self.model = genai.GenerativeModel('gemini-2.5-pro')
         
-    def get_intelligent_synthesis_prompt(self, clip_analyses: list) -> str:
-        """Generate prompt for intelligent match synthesis"""
+    def get_intelligent_synthesis_prompt(self, clip_analyses: list, batch_num: int, total_batches: int) -> str:
+        """Generate prompt for intelligent match synthesis with batch info"""
         
         # Combine all clip analyses into one context
         all_clips_text = ""
@@ -38,16 +38,18 @@ class IntelligentMatchSynthesizer:
             seconds = clip_time % 60
             timestamp = f"{minutes:02.0f}:{seconds:02.0f}"
             
-            all_clips_text += f"\n--- CLIP {i+1} ({timestamp} - {timestamp}) ---\n"
+            all_clips_text += f"\n--- CLIP {i+1} ({timestamp}) ---\n"
             all_clips_text += analysis['events_analysis']
             all_clips_text += "\n"
         
         return f"""
 🧠 GOALS & SHOTS DETECTION WITH ERROR CORRECTION
 ==============================================
+📦 BATCH {batch_num}/{total_batches} - SEQUENTIAL PROCESSING
 
 You are an expert football analyst reviewing clips from a match.
 Focus ONLY on detecting GOALS and SHOTS with strict validation.
+This is batch {batch_num} of {total_batches} - extract ALL events from these clips.
 
 🚨 ULTRA-STRICT GOAL DETECTION (NO FALSE POSITIVES):
 
@@ -151,9 +153,93 @@ RULE 4: TEMPORAL VALIDATION
 - Conservative detection = accurate results!
 """
 
+    def process_batch_and_append(self, clip_batch: list, match_id: str, batch_num: int, total_batches: int) -> bool:
+        """Process a batch of clips and append events to output file"""
+        data_dir = Path("../data") / match_id
+        output_file = data_dir / "all_match_events.json"
+        
+        print(f"📦 Processing batch {batch_num}/{total_batches} ({len(clip_batch)} clips)...")
+        
+        # Generate prompt for this batch
+        prompt = self.get_intelligent_synthesis_prompt(clip_batch, batch_num, total_batches)
+        
+        try:
+            start_time = time.time()
+            
+            # Call Gemini 2.5 Pro for this batch
+            response = self.model.generate_content(prompt)
+            processing_time = time.time() - start_time
+            
+            # Parse response
+            response_text = response.text.strip()
+            if "```json" in response_text:
+                json_start = response_text.find("```json") + 7
+                json_end = response_text.find("```", json_start)
+                json_text = response_text[json_start:json_end].strip()
+            else:
+                json_text = response_text
+            
+            try:
+                batch_analysis = json.loads(json_text)
+            except json.JSONDecodeError:
+                print(f"⚠️  Batch {batch_num} response wasn't valid JSON")
+                return False
+            
+            # Load existing events or create new file
+            if output_file.exists():
+                with open(output_file, 'r') as f:
+                    data = json.load(f)
+            else:
+                data = {
+                    "match_id": match_id,
+                    "processing_method": "sequential_batch_processing",
+                    "events": []
+                }
+            
+            # Extract events from this batch and append
+            new_events = []
+            
+            # Add goals as events
+            for goal in batch_analysis.get("goals_detected", []):
+                new_events.append({
+                    "timestamp": goal.get("timestamp"),
+                    "type": "goal",
+                    "team": goal.get("scoring_team"),
+                    "description": goal.get("description"),
+                    "confidence": goal.get("confidence"),
+                    "source_batch": batch_num
+                })
+            
+            # Add shots as events  
+            for shot in batch_analysis.get("shots_detected", []):
+                new_events.append({
+                    "timestamp": shot.get("timestamp"),
+                    "type": "shot",
+                    "team": shot.get("team"),
+                    "outcome": shot.get("outcome"),
+                    "description": shot.get("description"),
+                    "confidence": shot.get("confidence"),
+                    "source_batch": batch_num
+                })
+            
+            # Append new events
+            data["events"].extend(new_events)
+            data[f"batch_{batch_num}_processing_time"] = processing_time
+            
+            # Save back to file
+            with open(output_file, 'w') as f:
+                json.dump(data, f, indent=2)
+            
+            print(f"✅ Batch {batch_num} complete - {len(new_events)} events added ({processing_time:.1f}s)")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Error processing batch {batch_num}: {e}")
+            return False
+
     def synthesize_intelligently(self, match_id: str) -> dict:
-        """Use Gemini 2.5 Pro to intelligently synthesize match timeline"""
-        print(f"🧠 Step 5: Goals & Shots detection using Gemini 2.5 Pro for {match_id}")
+        """Use Gemini 2.5 Pro to process all clips in sequential batches"""
+        print(f"🧠 Step 5: Sequential Goals & Shots detection using Gemini 2.5 Pro for {match_id}")
         
         data_dir = Path("../data") / match_id
         analyses_dir = data_dir / "clip_analyses"
@@ -176,86 +262,47 @@ RULE 4: TEMPORAL VALIDATION
                 analysis = json.load(f)
                 clip_analyses.append(analysis)
         
-        print(f"🚀 Sending to Gemini 2.5 Pro for intelligent synthesis...")
+        # Split into batches of 60 clips max
+        BATCH_SIZE = 60
+        batches = [clip_analyses[i:i + BATCH_SIZE] for i in range(0, len(clip_analyses), BATCH_SIZE)]
+        total_batches = len(batches)
         
-        # Generate intelligent synthesis prompt
-        prompt = self.get_intelligent_synthesis_prompt(clip_analyses)
+        print(f"🚀 Processing {len(clip_analyses)} clips in {total_batches} batches (max {BATCH_SIZE} clips per batch)")
         
-        try:
-            start_time = time.time()
+        # Process each batch sequentially
+        success_count = 0
+        for i, batch in enumerate(batches, 1):
+            success = self.process_batch_and_append(batch, match_id, i, total_batches)
+            if success:
+                success_count += 1
             
-            # Call Gemini 2.5 Pro for intelligent analysis
-            response = self.model.generate_content(prompt)
+            # Add delay between batches to respect rate limits
+            if i < total_batches:
+                print(f"⏳ Waiting 10 seconds before next batch...")
+                time.sleep(10)
+        
+        print(f"✅ Sequential processing complete!")
+        print(f"📊 Processed {success_count}/{total_batches} batches successfully")
+        
+        # Load final results
+        output_file = data_dir / "all_match_events.json"
+        if output_file.exists():
+            with open(output_file, 'r') as f:
+                final_data = json.load(f)
             
-            processing_time = time.time() - start_time
+            total_events = len(final_data.get("events", []))
+            goals = [e for e in final_data["events"] if e.get("type") == "goal"]
+            shots = [e for e in final_data["events"] if e.get("type") == "shot"]
             
-            # Parse the response (should be JSON)
-            response_text = response.text.strip()
+            print(f"🎯 Final Results:")
+            print(f"   📊 Total events: {total_events}")
+            print(f"   ⚽ Goals: {len(goals)}")
+            print(f"   🏹 Shots: {len(shots)}")
+            print(f"💾 Saved to: {output_file}")
             
-            # Try to extract JSON from response
-            if "```json" in response_text:
-                json_start = response_text.find("```json") + 7
-                json_end = response_text.find("```", json_start)
-                json_text = response_text[json_start:json_end].strip()
-            else:
-                json_text = response_text
-            
-            try:
-                intelligent_analysis = json.loads(json_text)
-            except json.JSONDecodeError:
-                print("⚠️  Response wasn't valid JSON, saving as text")
-                intelligent_analysis = {
-                    "raw_analysis": response_text,
-                    "processing_note": "Response was text, not JSON"
-                }
-            
-            # Create goals and shots data
-            goals_shots_data = {
-                "match_id": match_id,
-                "analysis_timestamp": datetime.now().isoformat(),
-                "analysis_method": "gemini_goals_error_correcting",
-                "clips_analyzed": len(clip_analyses),
-                "processing_time_seconds": processing_time,
-                "goals_detected": intelligent_analysis.get("goals_detected", []),
-                "shots_detected": intelligent_analysis.get("shots_detected", []),
-                "rejected_false_positives": intelligent_analysis.get("rejected_false_positives", []),
-                "kickoff_analysis": intelligent_analysis.get("kickoff_analysis", []),
-                "summary": intelligent_analysis.get("summary", {})
-            }
-            
-            # Save goals and shots to dedicated file
-            goals_shots_path = data_dir / "goals_shots_detected.json"
-            with open(goals_shots_path, 'w') as f:
-                json.dump(goals_shots_data, f, indent=2)
-            
-            print(f"✅ Goals & shots detection complete!")
-            print(f"⏱️  Processing time: {processing_time:.1f}s")
-            
-            # Print summary
-            if "goals_detected" in intelligent_analysis:
-                goals = intelligent_analysis["goals_detected"]
-                print(f"⚽ Goals detected: {len(goals)}")
-                for goal in goals:
-                    print(f"   🥅 {goal.get('timestamp', 'Unknown')} - {goal.get('description', 'Goal')}")
-            
-            if "shots_detected" in intelligent_analysis:
-                shots = intelligent_analysis["shots_detected"]
-                print(f"🎯 Shots detected: {len(shots)}")
-                for shot in shots:
-                    outcome = shot.get('outcome', 'unknown')
-                    print(f"   🏹 {shot.get('timestamp', 'Unknown')} - {outcome}")
-            
-            if "rejected_false_positives" in intelligent_analysis:
-                rejected = intelligent_analysis["rejected_false_positives"]
-                print(f"❌ False positives rejected: {len(rejected)}")
-                
-            print(f"🎯 Saved to: {goals_shots_path}")
-            
-            return goals_shots_data
-            
-        except Exception as e:
-            print(f"❌ Error in intelligent synthesis: {e}")
-            return None
+            return final_data
+        
+        return None
 
 def synthesize_match(match_id):
     """Main synthesis function using intelligent analysis"""

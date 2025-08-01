@@ -102,32 +102,150 @@ Generate the factual event timeline now:"""
 
         return prompt
     
-    def generate_commentary(self, analyses):
-        """Generate match commentary using Gemini"""
+    def create_sequential_commentary_prompt(self, analyses, batch_num, total_batches, last_timestamp):
+        """Create prompt for sequential batch processing"""
+        
+        # Prepare the clip summaries for the prompt
+        clip_summaries = []
+        for i, analysis in enumerate(analyses):
+            start_seconds = analysis.get("start_seconds", i * 15)
+            events = analysis.get("events_analysis", "No events detected")
+            
+            # Convert timestamp to MM:SS format
+            minutes = start_seconds // 60
+            seconds = start_seconds % 60
+            time_str = f"{minutes}:{seconds:02d}"
+            
+            clip_summaries.append(f"{time_str} - {events}")
+        
+        context_info = ""
+        if batch_num > 1:
+            context_info = f"""
+CONTEXT: This is batch {batch_num} of {total_batches}. Continue the timeline seamlessly from the previous batch.
+Previous batch ended around {last_timestamp}. Maintain consistent team naming (Red team/Black team).
+"""
+        
+        prompt = f"""You are creating a factual match event timeline from football clip analyses.
+{context_info}
+Transform these clip analyses into a clean, chronological event log. Focus on FACTS ONLY - what actually happened in each clip.
+
+CLIP ANALYSES (chronological order):
+{chr(10).join(clip_summaries)}
+
+REQUIREMENTS:
+1. **Factual Only**: Report exactly what's described in each clip analysis
+2. **No Drama**: Avoid commentary language like "OH MY WORD!" or "UNBELIEVABLE!"
+3. **No Invention**: Don't add events not mentioned in the source clips
+4. **Team Colors**: Use "Red team" and "Black team" consistently
+5. **Key Events**: Focus on goals, shots, passes, tackles, fouls, saves
+6. **Concise**: Brief, clear descriptions suitable for data analysis
+7. **Sequential**: {'Continue timeline from previous batch' if batch_num > 1 else 'Start the timeline'}
+
+OUTPUT FORMAT (events only, no headers):
+**Time** - Brief factual description
+
+EXAMPLE STYLE:
+**0:15** - Black team plays long ball up right flank
+**0:23** - Cross delivered into penalty area
+**0:31** - Red goalkeeper punches ball clear
+
+Generate the factual event timeline now:"""
+
+        return prompt
+    
+    def process_batch_and_append(self, batch, batch_num, total_batches, output_path, match_id):
+        """Process a batch and append commentary to file"""
+        print(f"📦 Processing batch {batch_num}/{total_batches} ({len(batch)} clips)...")
+        
+        # Generate context-aware prompt for this batch
+        last_timestamp = ""
+        if batch_num > 1:
+            # Get last timestamp from previous batch
+            if batch:
+                prev_seconds = batch[0].get("start_seconds", 0) - 15
+                prev_minutes = prev_seconds // 60
+                prev_secs = prev_seconds % 60
+                last_timestamp = f"{prev_minutes}:{prev_secs:02d}"
+        
+        prompt = self.create_sequential_commentary_prompt(batch, batch_num, total_batches, last_timestamp)
+        
+        try:
+            print("⏳ Sending request to Gemini API...")
+            response = self.model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    temperature=0.3,
+                    top_p=0.8,
+                    top_k=40,
+                    max_output_tokens=8192,
+                )
+            )
+            
+            if response.text:
+                # Extract just the event lines (skip headers if present)
+                commentary_text = response.text.strip()
+                if "# MATCH EVENT TIMELINE" in commentary_text:
+                    lines = commentary_text.split('\n')
+                    # Find first event line (starts with **)
+                    event_lines = []
+                    for line in lines:
+                        if line.strip().startswith('**') and '**' in line[2:]:
+                            event_lines.append(line)
+                    commentary_text = '\n'.join(event_lines)
+                
+                # Append to file
+                with open(output_path, 'a', encoding='utf-8') as f:
+                    if batch_num == 1:
+                        # First batch - add header
+                        f.write(f"# MATCH EVENT TIMELINE - {match_id.upper()}\n\n")
+                        f.write(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                        f.write(f"**AI Model:** Gemini 2.5 Pro (Sequential Processing)\n\n")
+                        f.write("---\n\n")
+                    
+                    f.write(commentary_text + '\n\n')
+                
+                event_count = len([line for line in commentary_text.split('\n') if line.strip().startswith('**')])
+                print(f"✅ Batch {batch_num} complete - {event_count} events added")
+                return True
+        else:
+                print(f"❌ No commentary generated for batch {batch_num}")
+                return False
+                
+        except Exception as e:
+            print(f"❌ Error processing batch {batch_num}: {e}")
+            return False
+
+    def generate_commentary(self, analyses, output_path, match_id):
+        """Generate match commentary using sequential batch processing"""
         print("📊 Generating factual event timeline with Gemini 2.5 Pro...")
         
-        # Split into smaller batches if too many clips
-        if len(analyses) > 30:
-            print(f"🔄 {len(analyses)} clips detected - splitting into batches for better reliability")
-            batch_size = 30
-            all_events = []
+        # Use 60-clip batches (same as error-correcting script)
+        batch_size = 60
+        batches = [analyses[i:i + batch_size] for i in range(0, len(analyses), batch_size)]
+        total_batches = len(batches)
+        
+        print(f"🚀 Processing {len(analyses)} clips in {total_batches} batches (max {batch_size} clips per batch)")
+        
+        # Remove existing file if it exists
+        if output_path.exists():
+            output_path.unlink()
+        
+        # Process each batch sequentially
+        success_count = 0
+        for i, batch in enumerate(batches, 1):
+            success = self.process_batch_and_append(batch, i, total_batches, output_path, match_id)
+            if success:
+                success_count += 1
             
-            for i in range(0, len(analyses), batch_size):
-                batch = analyses[i:i+batch_size]
-                batch_num = (i // batch_size) + 1
-                total_batches = (len(analyses) + batch_size - 1) // batch_size
-                
-                print(f"📦 Processing batch {batch_num}/{total_batches} ({len(batch)} clips)")
-                batch_events = self.generate_batch_commentary(batch)
-                if batch_events:
-                    all_events.append(batch_events)
-                    
-            # Combine all batch results
-            combined_events = "\n\n".join(all_events)
-            return f"# MATCH EVENT TIMELINE\n\n{combined_events}"
-        else:
-            # Single batch processing
-            return self.generate_batch_commentary(analyses)
+            # Add delay between batches
+            if i < total_batches:
+                print(f"⏳ Waiting 5 seconds before next batch...")
+                time.sleep(5)
+        
+        print(f"✅ Sequential commentary generation complete!")
+        print(f"📊 Processed {success_count}/{total_batches} batches successfully")
+        
+        return success_count == total_batches
     
     def generate_batch_commentary(self, analyses):
         """Generate commentary for a batch of analyses"""
@@ -228,15 +346,14 @@ def main():
         
         # Generate commentary
         print("🎤 Generating live match commentary...")
-        commentary = generator.generate_commentary(analyses)
+        success = generator.generate_commentary(analyses, output_path, match_id)
         
-        if not commentary:
+        if not success:
             print("❌ Failed to generate commentary!")
             sys.exit(1)
         
-        # Save commentary
-        print("💾 Saving match commentary...")
-        if generator.save_commentary(commentary, output_path):
+        # Commentary already saved during processing
+        if output_path.exists():
             print()
             print("🎉 SUCCESS! Match commentary generated!")
             print(f"📄 Output: {output_path}")
