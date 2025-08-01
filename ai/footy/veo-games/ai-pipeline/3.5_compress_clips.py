@@ -35,8 +35,8 @@ def compress_clip_for_api(input_path, output_path):
         return False
 
 def compress_clips(match_id):
-    """Compress all 15-second clips for Gemini API processing using parallel processing"""
-    print(f"🗜️ Step 3.5: Compressing clips for {match_id}")
+    """SKIP COMPRESSION - Use original clips directly for now"""
+    print(f"⏭️  Step 3.5: Skipping compression for {match_id}")
     
     data_dir = Path("../data") / match_id
     clips_dir = data_dir / "clips"
@@ -57,7 +57,7 @@ def compress_clips(match_id):
     with open(segments_file, 'r') as f:
         segments_data = json.load(f)
     
-    # Create compressed clips directory
+    # Create compressed clips directory (but use symlinks to originals)
     compressed_dir.mkdir(exist_ok=True)
     
     # Get all clip files
@@ -68,12 +68,39 @@ def compress_clips(match_id):
         print(f"❌ No clip files found in {clips_dir}")
         return False
     
-    print(f"📹 Found {len(clip_files)} clips to compress")
-    print(f"📁 Output: {compressed_dir}")
-    print("🚀 Using parallel processing (4 threads)")
-    print("🎯 Optimizing for Gemini API: 640x480, CRF 23")
+    print(f"📹 Found {len(clip_files)} clips")
+    print(f"📁 Creating links in: {compressed_dir}")
+    print("🚀 Using original clips directly (no compression)")
     print()
     
+    # Create symlinks to original clips with "compressed_" prefix
+    successful_links = 0
+    for clip_file in clip_files:
+        link_file = compressed_dir / f"compressed_{clip_file.name}"
+        
+        # Remove existing link if it exists
+        if link_file.exists() or link_file.is_symlink():
+            link_file.unlink()
+        
+        try:
+            # Create symlink to original
+            link_file.symlink_to(clip_file)
+            successful_links += 1
+            print(f"🔗 Linked: {link_file.name} -> {clip_file.name}")
+        except Exception as e:
+            print(f"❌ Failed to link {clip_file.name}: {e}")
+    
+    print(f"\n✅ COMPRESSION SKIPPED!")
+    print("=" * 50)
+    print(f"✅ Created {successful_links}/{len(clip_files)} links")
+    print(f"📁 Using original clips from: {clips_dir}")
+    print(f"📁 Accessible via: {compressed_dir}")
+    print("⚡ Ready for Gemini analysis with full quality clips")
+    
+    return successful_links > 0
+    
+    # COMMENTED OUT - Full compression code for later use
+    """
     # Thread-safe counters
     successful_compressions = 0
     total_original_size = 0
@@ -81,7 +108,7 @@ def compress_clips(match_id):
     lock = threading.Lock()
     
     def compress_single_clip(clip_file):
-        """Compress a single clip with progress tracking"""
+        # Compress a single clip with progress tracking
         nonlocal successful_compressions, total_original_size, total_compressed_size
         
         # Create compressed filename
@@ -176,6 +203,7 @@ def compress_clips(match_id):
     print(f"📊 Metadata saved: {compressed_dir}/compression_info.json")
     
     return successful_compressions > 0
+    """
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
