@@ -84,17 +84,22 @@ def upload_match_to_s3(match_id):
         "web_events.json": {
             "s3_folder": "analysis-data",
             "content_type": "application/json",
-            "description": "Clean web events timeline"
+            "description": "Web app compatible events timeline"
         },
-        "tactical_coaching_insights.json": {
-            "s3_folder": "analysis-data", 
-            "content_type": "application/json",
-            "description": "Tactical coaching analysis"
-        },
-        "intelligent_match_timeline.json": {
+        "web_events_array.json": {
             "s3_folder": "analysis-data",
             "content_type": "application/json", 
-            "description": "Synthesized match timeline"
+            "description": "Direct events array for web app"
+        },
+        "6_validated_timeline.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "AI validated match timeline (text)"
+        },
+        "goals_and_shots_timeline.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json", 
+            "description": "Goals and shots analysis"
         },
         "ai_coach_content.json": {
             "s3_folder": "analysis-data", 
@@ -106,9 +111,9 @@ def upload_match_to_s3(match_id):
             "content_type": "text/markdown",
             "description": "Match event commentary"
         },
-        "accuracy_evaluation.json": {
+        "7_accuracy_comparison.txt": {
             "s3_folder": "analysis-data",
-            "content_type": "application/json",
+            "content_type": "text/plain",
             "description": "AI accuracy validation"
         },
         # Large files (upload last)
@@ -191,11 +196,51 @@ def upload_match_to_s3(match_id):
     # Show key URLs for easy access
     if s3_locations["s3_urls"]:
         print(f"\n🔗 Key S3 URLs:")
-        priority_files = ["web_events.json", "tactical_coaching_insights.json", "video.mp4"]
+        priority_files = ["web_events_array.json", "web_events.json", "video.mp4"]
         for key_file in priority_files:
             if key_file in s3_locations["s3_urls"]:
                 url = s3_locations["s3_urls"][key_file]["url"]
                 print(f"   📄 {key_file}: {url}")
+    
+    # Company Dashboard Instructions
+    if s3_locations["s3_urls"]:
+        print(f"\n🎯 COMPANY DASHBOARD INSTRUCTIONS:")
+        print(f"   📋 Copy-paste the following into ClannAI company dashboard:")
+        print(f"")
+        
+        # Video URL
+        if "video.mp4" in s3_locations["s3_urls"]:
+            video_url = s3_locations["s3_urls"]["video.mp4"]["url"]
+            print(f"   🎬 1. CLICK 'Add S3 Video' → Paste this URL:")
+            print(f"      {video_url}")
+            print(f"")
+        
+        # Events JSON
+        if "web_events_array.json" in s3_locations["s3_urls"]:
+            events_url = s3_locations["s3_urls"]["web_events_array.json"]["url"]
+            print(f"   🎮 2. CLICK 'Add Analysis' → Download and paste JSON content:")
+            print(f"      curl -s {events_url}")
+            print(f"      (Or download: {events_url})")
+            print(f"")
+        
+        # Analysis files  
+        analysis_files = ["6_validated_timeline.txt", "goals_and_shots_timeline.json", "ai_coach_content.json"]
+        analysis_urls = {}
+        for file_name in analysis_files:
+            if file_name in s3_locations["s3_urls"]:
+                analysis_urls[file_name] = s3_locations["s3_urls"][file_name]["url"]
+        
+        if analysis_urls:
+            print(f"   📊 3. CLICK 'Add S3 Analysis Files' → Paste this JSON:")
+            print(f"      {{")
+            for i, (file_name, url) in enumerate(analysis_urls.items()):
+                comma = "," if i < len(analysis_urls) - 1 else ""
+                print(f'        "{file_name}": "{url}"{comma}')
+            print(f"      }}")
+            print(f"")
+        
+        print(f"   ✅ 4. CLICK 'Mark Analyzed' to enable user access")
+        print(f"   🌐 Users can now view the game with interactive timeline!")
     
     # Update source.json with cloud status
     try:
