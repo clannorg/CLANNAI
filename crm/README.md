@@ -1,134 +1,66 @@
-# ClannAI Sports Analytics CRM
+# CRM Lead Generation Pipeline
 
-## 🎯 Vision: Complete Sports Analytics CRM Platform
+Clean, organized CRM workflow for identifying and contacting Veo club prospects.
 
-### **Current State:**
-- **5,682 clubs** from Veo's directory (needs expansion to 100k+)
-- **Basic data:** Club name, recordings, teams
-- **Contact discovery** for sales outreach
-- **Target lists** by region and activity level
+## 🎯 Objective
+Find and contact Northern Ireland football clubs using Veo cameras for potential sales opportunities.
 
----
-
-## 🏗️ **What a Proper CRM Should Look Like:**
-
-### **1. Data Collection & Enrichment**
+## 📁 Project Structure
 ```
-📊 Lead Sources:
-├── Veo Directory (100k+ clubs)
-├── Social Media Scraping (LinkedIn, Twitter)
-├── Sports Federation Databases
-├── Event Registrations
-├── Website Analytics
-└── Referral Tracking
+crm/
+├── scripts/           # Core processing scripts
+├── data/
+│   ├── raw/          # Original datasets
+│   ├── processed/    # Categorized/filtered data  
+│   └── contacts/     # Contact information
+└── logs/             # Process logs and progress files
 ```
 
-### **2. Contact Management**
-```
-👥 Contact Database:
-├── Primary Contacts (Decision Makers)
-├── Secondary Contacts (Technical Users)
-├── Contact History & Interactions
-├── Communication Preferences
-├── Social Media Profiles
-└── Relationship Mapping
-```
+## 🔄 Workflow
 
-### **3. Lead Scoring & Qualification**
-```
-🎯 Scoring Criteria:
-├── Activity Level (Recordings/Teams)
-├── Budget Indicators
-├── Technology Adoption
-├── Geographic Location
-├── Sport Type & Level
-├── Decision Timeline
-└── Pain Points Identified
-```
+### 0. Original Data Collection (FOUNDATION)
+**Scripts:** `scripts/veo_clubs_scraper.py`, `scripts/enhanced_scraper.py`, `scripts/infinite_scroll_scraper.py`
+- ✅ **COMPLETED**: Scraped 27,676 clubs from Veo platform
+- Input: Veo website club directory
+- Output: `data/raw/veo_clubs_2.csv`
+- Result: Complete dataset of all Veo clubs with recording counts
 
-### **4. Sales Pipeline Management**
-```
-🔄 Pipeline Stages:
-├── Prospect (Discovered)
-├── Lead (Contacted)
-├── Qualified (Interested)
-├── Proposal (Evaluating)
-├── Negotiation (Pricing)
-├── Closed Won (Customer)
-└── Closed Lost (Rejected)
-```
+### 1. Club Categorization
+**Script:** `scripts/categorize_clubs_by_country.py`
+- ✅ **COMPLETED**: Processed 27,676 clubs using Gemini 1.5 Flash API
+- Input: `data/raw/veo_clubs_2.csv` 
+- Output: `data/processed/all_clubs_by_country.csv`
+- Result: Successfully categorized all clubs by country
 
-### **5. Analytics & Reporting**
-```
-📈 Key Metrics:
-├── Lead Conversion Rates
-├── Sales Cycle Length
-├── Revenue by Source
-├── Regional Performance
-├── Product Adoption
-├── Customer Lifetime Value
-└── Churn Analysis
-```
+### 2. Regional Filtering  
+**Script:** `scripts/filter_football_clubs.py`
+- ✅ **COMPLETED**: Filtered to 65 Northern Ireland football clubs
+- Input: Extracted NI clubs from categorized data
+- Output: `data/contacts/ni_clubs/ni_football_clubs_only.csv`
+- Excluded: Rugby, GAA, hockey, schools
 
-### **6. Integration Capabilities**
-```
-🔗 System Integrations:
-├── Email Marketing (Mailchimp, HubSpot)
-├── Calendar (Google, Outlook)
-├── Video Analytics (Your Platform)
-├── Payment Processing
-├── Social Media APIs
-└── Web Analytics
-```
+### 3. Contact Scraping
+**Script:** `scripts/duckduckgo_ni_scraper.py` 
+- 🔄 **IN PROGRESS**: Scraping contact information
+- Input: 65 NI football clubs
+- Output: `data/contacts/ni_clubs/ni_clubs_with_contacts.csv`
+- Status: Successfully found contacts for first few clubs, encountering timeouts
 
----
+## 📊 Current Data
+- **Total Veo Clubs**: 27,676 (categorized by country)
+- **UK/Ireland Clubs**: ~1,000+ identified  
+- **Northern Ireland**: 162 clubs with cameras
+- **NI Football Only**: 65 clubs (target list)
+- **Contacts Found**: ~5-10 clubs (partial due to scraping issues)
 
-## 🚀 **Next 1-Hour Development Plan:**
+## 🚀 Next Steps
+1. Resolve DuckDuckGo timeout issues in contact scraper
+2. Complete contact collection for all 65 NI football clubs  
+3. Expand to other UK regions (Scotland, England, Wales)
+4. Build outreach campaign templates
 
-### **Phase 1: Enhanced Data Collection (30 min)**
-- [ ] Improve Veo scraper to get 100k+ clubs
-- [ ] Add contact discovery (LinkedIn, websites)
-- [ ] Implement lead scoring algorithm
-- [ ] Create data validation & cleaning
-
-### **Phase 2: Basic CRM Interface (30 min)**
-- [ ] Simple web dashboard for viewing prospects
-- [ ] Filter and search functionality
-- [ ] Export to CSV/Excel
-- [ ] Contact management forms
-
-### **Phase 3: Integration Foundation**
-- [ ] API endpoints for your analytics platform
-- [ ] Email template system
-- [ ] Automated follow-up sequences
-- [ ] Sales activity tracking
-
----
-
-## 🎯 **Success Metrics:**
-- **10,000+ qualified leads** in database
-- **500+ active prospects** in pipeline
-- **50+ customer conversions** per quarter
-- **$100k+ revenue** from CRM-driven sales
-
----
-
-## 🛠️ **Tech Stack:**
-- **Backend:** Python (FastAPI/Flask)
-- **Database:** PostgreSQL
-- **Frontend:** React/Vue.js
-- **Email:** SendGrid/Mailgun
-- **Analytics:** Your existing platform
-- **Deployment:** Docker + Cloud
-
----
-
-## 📋 **Current Scripts (Cleaned):**
-- `scraper.py` - Veo directory scraper
-- `contact_finder.py` - Contact discovery
-- `analyze_clubs.py` - Club analysis
-- `filter_customers.py` - Lead filtering
-- `generate_target_lists.py` - Target list creation
-- `find_all_contacts.py` - Comprehensive contact search
-
-**Ready to build the next generation sports analytics CRM!** 🚀 
+## 🛠 Dependencies
+See `requirements.txt` for Python packages including:
+- requests, beautifulsoup4 (web scraping)
+- google-generativeai (Gemini API)
+- pandas, csv (data processing)
