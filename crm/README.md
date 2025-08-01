@@ -53,11 +53,24 @@ crm/
 - **NI Football Only**: 65 clubs (target list)
 - **Contacts Found**: ~5-10 clubs (partial due to scraping issues)
 
-## 🚀 Next Steps
-1. Resolve DuckDuckGo timeout issues in contact scraper
-2. Complete contact collection for all 65 NI football clubs  
-3. Expand to other UK regions (Scotland, England, Wales)
-4. Build outreach campaign templates
+## 🚀 AWS VM Deployment (Current Priority)
+
+**Goal**: Get complete Veo dataset (100k+ clubs) faster than local machine
+
+**Setup**:
+1. Launch AWS EC2 (t3.large, Ubuntu 22.04)
+2. `git clone` this repo 
+3. Install Chrome + Python deps
+4. Run: `python3 scripts/enhanced_scraper.py`
+
+**Expected**: 3-5 hours for complete dataset vs 15+ hours locally
+
+**Output**: `data/raw/all_veo_clubs.csv` (complete global dataset)
+
+## 🔄 Next Steps After VM
+1. Re-run categorization on complete dataset
+2. Expand filtering to all UK/Ireland regions  
+3. Scale contact scraping to larger target lists
 
 ## 🛠 Dependencies
 See `requirements.txt` for Python packages including:
