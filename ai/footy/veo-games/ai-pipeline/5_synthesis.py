@@ -60,8 +60,8 @@ def synthesize_timeline(match_id: str) -> bool:
     print(f"📝 Synthesizing timeline for {match_id}")
     
     data_dir = Path("../data") / match_id
-    descriptions_dir = data_dir / "clip_descriptions"
-    output_path = data_dir / "complete_timeline.txt"
+    descriptions_dir = data_dir / "4_clip_descriptions"
+    output_path = data_dir / "5_complete_timeline.txt"
     
     if not descriptions_dir.exists():
         print(f"❌ Clip descriptions directory not found: {descriptions_dir}")

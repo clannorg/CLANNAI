@@ -94,8 +94,8 @@ Be precise with numbers, timestamps, and percentages. Use football knowledge to 
         print(f"⚖️ AI-Powered Accuracy Evaluation for {match_id}")
         
         data_dir = Path("../data") / match_id
-        validator_output_path = data_dir / "validated_timeline.txt"
-        veo_truth_path = data_dir / "veo_ground_truth.json"
+        validator_output_path = data_dir / "6_validated_timeline.txt"
+        veo_truth_path = data_dir / "1_veo_ground_truth.json"
         
         if not validator_output_path.exists():
             print(f"❌ Validator output not found: {validator_output_path}")
@@ -134,7 +134,7 @@ Be precise with numbers, timestamps, and percentages. Use football knowledge to 
             comparison_result = response.text.strip()
             
             # Save detailed comparison
-            comparison_path = data_dir / "ai_accuracy_comparison.txt"
+            comparison_path = data_dir / "7_accuracy_comparison.txt"
             with open(comparison_path, 'w') as f:
                 f.write(f"# AI-Powered Accuracy Comparison\n")
                 f.write(f"# Match: {match_id}\n")

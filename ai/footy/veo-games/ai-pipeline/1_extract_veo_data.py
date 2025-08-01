@@ -67,7 +67,7 @@ def extract_veo_data(veo_url):
     
     # Extract Veo events
     extractor = VeoEventExtractor()
-    result = extractor.extract_and_save(veo_url, str(data_dir / "veo_ground_truth.json"))
+    result = extractor.extract_and_save(veo_url, str(data_dir / "1_veo_ground_truth.json"))
     
     if result:
         # Create source.json with both IDs and rich metadata
@@ -103,7 +103,7 @@ def extract_veo_data(veo_url):
         except:
             pass  # If metadata extraction fails, that's okay
         
-        with open(data_dir / "source.json", 'w') as f:
+        with open(data_dir / "1_source.json", 'w') as f:
             import json
             json.dump(source_data, f, indent=2)
         

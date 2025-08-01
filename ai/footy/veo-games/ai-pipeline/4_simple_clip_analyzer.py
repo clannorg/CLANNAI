@@ -99,7 +99,7 @@ Keep it concise but informative. Only use timestamps 00:00 to 00:15 for events w
         
         data_dir = Path("../data") / match_id
         clips_dir = data_dir / "clips"  # Use original clips directly
-        output_dir = data_dir / "clip_descriptions"
+        output_dir = data_dir / "4_clip_descriptions"
         
         if not clips_dir.exists():
             print(f"❌ Clips directory not found: {clips_dir}")

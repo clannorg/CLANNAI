@@ -89,8 +89,8 @@ Be strict - only validate events with strong supporting evidence. Provide detail
         print(f"🎯 Using Gemini 2.5 Pro to error-correct fallible clip descriptions")
         
         data_dir = Path("../data") / match_id
-        timeline_path = data_dir / "complete_timeline.txt"
-        output_path = data_dir / "validated_timeline.txt"
+        timeline_path = data_dir / "5_complete_timeline.txt"
+        output_path = data_dir / "6_validated_timeline.txt"
         
         if not timeline_path.exists():
             print(f"❌ Timeline file not found: {timeline_path}")
