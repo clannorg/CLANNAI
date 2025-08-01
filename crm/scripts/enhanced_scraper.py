@@ -15,12 +15,12 @@ class EnhancedVeoScraper:
     def __init__(self):
         self.setup_logging()
         self.clubs = []
-        self.progress_file = Path('data/scraper_progress.json')
+        self.progress_file = Path('logs/enhanced_scraper_progress.json')
         self.load_progress()
         
     def setup_logging(self):
         logging.basicConfig(
-            filename='data/enhanced_scraper.log',
+            filename='logs/enhanced_scraper.log',
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s'
         )
@@ -246,7 +246,7 @@ class EnhancedVeoScraper:
         if self.clubs:
             df = pd.DataFrame(self.clubs)
             df = df.sort_values(['Activity_Score', 'Teams', 'Recordings'], ascending=[False, False, False])
-            df.to_csv('data/veo_clubs_enhanced.csv', index=False)
+            df.to_csv('data/raw/all_veo_clubs.csv', index=False)
             print(f"Saved {len(self.clubs)} clubs to file")
             
     def scrape_all_clubs(self):
