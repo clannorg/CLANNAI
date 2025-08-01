@@ -10,10 +10,19 @@ import json
 import re
 from pathlib import Path
 from datetime import datetime
+import google.generativeai as genai
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 class WebFormatConverter:
     def __init__(self):
-        """Initialize converter with web app event format specifications"""
+        """Initialize converter with Gemini AI and web app event format specifications"""
+        # Initialize Gemini
+        genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+        self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        
         # Web app event types with colors (from VIDEO_PLAYER_JSON_FORMAT.md)
         self.supported_event_types = {
             'goal': 'Goals scored',
@@ -27,7 +36,7 @@ class WebFormatConverter:
             'offside': 'Offside call'
         }
         
-        print(f"🔄 Web Format Converter initialized")
+        print(f"🔄 Web Format Converter initialized with Gemini AI")
 
     def parse_timestamp_to_seconds(self, timestamp_str):
         """Convert timestamp string (MM:SS or HH:MM:SS) to seconds"""
@@ -69,6 +78,62 @@ class WebFormatConverter:
             
         return None
 
+    def get_web_format_prompt(self, timeline_content):
+        """Create prompt for Gemini to convert timeline to web format JSON"""
+        return f"""You are a football match data converter. Your task is to extract goals and shots from the validated timeline text and convert them to a specific JSON format for a web video player.
+
+INPUT: AI-Validated Timeline Text
+{timeline_content}
+
+TASK: Extract ALL goals and shots, convert timestamps to seconds, and output ONLY a JSON array in this exact format:
+
+[
+  {{
+    "type": "goal",
+    "timestamp": 330,
+    "description": "Brief description of the goal",
+    "team": "red"
+  }},
+  {{
+    "type": "shot", 
+    "timestamp": 450,
+    "description": "Brief description of the shot",
+    "team": "yellow"
+  }}
+]
+
+RULES:
+1. Convert timestamps (MM:SS) to total seconds (05:30 = 330 seconds)
+2. Use "type": "goal" for all goals, "type": "shot" for all shots
+3. Extract team: "red", "yellow", "black", "blue" (lowercase)
+4. Keep descriptions concise (max 80 characters)
+5. Sort by timestamp (earliest first)
+6. Output ONLY the JSON array, no explanation or markdown
+
+Extract from the VALIDATED GOALS and VALIDATED SHOTS sections."""
+
+    def convert_with_gemini(self, timeline_content):
+        """Use Gemini to convert timeline to web format JSON"""
+        try:
+            prompt = self.get_web_format_prompt(timeline_content)
+            response = self.model.generate_content(prompt)
+            
+            # Parse the JSON response
+            json_text = response.text.strip()
+            
+            # Remove markdown code blocks if present
+            if json_text.startswith('```'):
+                json_text = json_text.split('```')[1]
+                if json_text.startswith('json'):
+                    json_text = json_text[4:]
+            
+            events = json.loads(json_text)
+            return events
+            
+        except Exception as e:
+            print(f"❌ Gemini conversion failed: {e}")
+            return []
+
     def parse_validated_timeline(self, timeline_path):
         """Parse the AI-validated timeline text file"""
         events = []
@@ -80,21 +145,29 @@ class WebFormatConverter:
             print(f"❌ Failed to read timeline file: {e}")
             return events
 
-        # Parse goals section
-        goals_section = re.search(r'### VALIDATED GOALS\s*\n(.*?)(?=### |$)', content, re.DOTALL)
+        # Parse goals section - simpler approach
+        goals_section = re.search(r'### \*\*VALIDATED GOALS\*\*|### VALIDATED GOALS(.*?)(?=### |$)', content, re.DOTALL)
         if goals_section:
-            goals_text = goals_section.group(1)
+            goals_text = goals_section.group(1) if goals_section.group(1) else content.split('### VALIDATED GOALS')[1].split('###')[0]
             
-            # Extract individual goals
-            goal_matches = re.finditer(r'\*\*Timestamp:\*\*\s*(\d{2}:\d{2})\s*\n.*?\*\*Scoring Team:\*\*\s*(.*?)\n.*?\*\*Description:\*\*\s*(.*?)(?=\n.*?\*\*|$)', goals_text, re.DOTALL)
+            # Find timestamp patterns
+            timestamp_matches = re.finditer(r'(\d+)\.\s+\*\*Timestamp:\*\*\s*(\d{2}:\d{2})(.*?)(?=\d+\.\s+\*\*Timestamp:|$)', goals_text, re.DOTALL)
             
-            for match in goal_matches:
-                timestamp_str = match.group(1)
-                team_info = match.group(2).strip()
-                description = match.group(3).strip()
+            for match in timestamp_matches:
+                goal_number = match.group(1)
+                timestamp_str = match.group(2)
+                goal_content = match.group(3)
+                
+                # Extract team
+                team_match = re.search(r'\*\*Team:\*\*\s*(.*?)(?=\n|$)', goal_content)
+                team_info = team_match.group(1).strip() if team_match else ""
+                
+                # Extract description
+                desc_match = re.search(r'\*\*Description:\*\*\s*(.*?)(?=\n\s*\*\s*\*\*|$)', goal_content, re.DOTALL)
+                description = desc_match.group(1).strip() if desc_match else f"Goal {goal_number}"
                 
                 # Clean up description
-                description = re.sub(r'\n.*?\*\*.*?\*\*.*', '', description, flags=re.DOTALL).strip()
+                description = re.sub(r'\n.*', '', description).strip()
                 
                 # Convert timestamp to seconds
                 timestamp_seconds = self.parse_timestamp_to_seconds(timestamp_str)
@@ -225,14 +298,23 @@ class WebFormatConverter:
             print(f"❌ Data directory not found: {data_dir}")
             return False
 
-        # Try validated timeline first (most accurate)
+        # Try validated timeline first (most accurate) with Gemini
         validated_timeline_path = data_dir / "6_validated_timeline.txt"
         events = []
         
         if validated_timeline_path.exists():
             print(f"📖 Reading validated timeline: {validated_timeline_path}")
-            events = self.parse_validated_timeline(validated_timeline_path)
-            print(f"✅ Extracted {len(events)} events from validated timeline")
+            try:
+                with open(validated_timeline_path, 'r', encoding='utf-8') as f:
+                    timeline_content = f.read()
+                print(f"🤖 Converting with Gemini AI...")
+                events = self.convert_with_gemini(timeline_content)
+                print(f"✅ Extracted {len(events)} events using Gemini")
+            except Exception as e:
+                print(f"❌ Gemini conversion failed: {e}")
+                print(f"🔄 Falling back to regex parsing...")
+                events = self.parse_validated_timeline(validated_timeline_path)
+                print(f"✅ Extracted {len(events)} events from fallback parsing")
         else:
             # Fallback to JSON format
             json_timeline_path = data_dir / "goals_and_shots_timeline.json"
