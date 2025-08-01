@@ -27,24 +27,24 @@ class SimpleClipAnalyzer:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-2.5-pro')
 
-    def get_simple_analysis_prompt(self, match_timestamp: str) -> str:
-        """Enhanced prompt for clip analysis with timing"""
-        return f"""Analyze this 15-second football clip starting at {match_timestamp} and provide a description with internal timing.
+    def get_simple_analysis_prompt(self) -> str:
+        """Simple prompt for clip analysis with internal timing only"""
+        return """Analyze this 15-second football clip and describe what happens with internal timing.
 
 Format your response as:
-"{match_timestamp} - [Main action description]. Key events: [timing within clip if significant events occur]"
+"[Main action description]. Key events: [timing within the 15-second clip if significant events occur]"
 
 Examples:
-- "05:30 - Black team builds attack from midfield. Key events: 05:33 shot taken, 05:35 saved by keeper"
-- "12:45 - Red team takes corner kick. Key events: 12:47 header attempt, 12:48 goal scored"
-- "20:15 - Black team maintains possession in own half under pressure"
+- "Black team builds attack from midfield. Key events: 00:03 shot taken, 00:05 saved by keeper"
+- "Red team takes corner kick. Key events: 00:02 header attempt, 00:04 goal scored"
+- "Black team maintains possession in own half under pressure"
 
 Focus on:
 - Which team has possession (Red or Black)  
 - Main action happening
-- If there are significant events (shots, goals, fouls), note the approximate timing within the match
+- If there are significant events (shots, goals, fouls), note the timing within this 15-second clip (00:00 to 00:15)
 
-Keep it concise but informative."""
+Keep it concise but informative. Only use timestamps 00:00 to 00:15 for events within this clip."""
 
     def analyze_single_clip(self, clip_path: Path) -> tuple:
         """Analyze a single clip and return timestamp + description"""
@@ -78,7 +78,7 @@ Keep it concise but informative."""
             # Generate analysis
             response = self.model.generate_content([
                 uploaded_file,
-                self.get_simple_analysis_prompt(timestamp)
+                self.get_simple_analysis_prompt()
             ])
             
             # Clean up uploaded file
@@ -108,17 +108,30 @@ Keep it concise but informative."""
         # Create output directory
         output_dir.mkdir(exist_ok=True)
         
-        # Get all clip files  
-        clip_files = sorted(clips_dir.glob("clip_*.mp4"))
+        # Get all clip files and sort by timestamp
+        def extract_time_for_sorting(clip_path):
+            """Extract timestamp for proper numerical sorting"""
+            try:
+                filename = clip_path.stem
+                if 'clip_' in filename:
+                    time_part = filename.replace('clip_', '').replace('m', ':').replace('s', '')
+                    if ':' in time_part:
+                        parts = time_part.split(':')
+                        minutes = int(parts[0])
+                        seconds = int(parts[1])
+                        return minutes * 60 + seconds  # Convert to total seconds for sorting
+                return 0
+            except:
+                return 0
+        
+        clip_files = sorted(clips_dir.glob("clip_*.mp4"), key=extract_time_for_sorting)
         
         if not clip_files:
             print(f"❌ No clips found in {clips_dir}")
             return False
         
-        # TESTING: Limit to first 15 minutes (60 clips = 15 minutes)
-        if len(clip_files) > 60:
-            print(f"🧪 TESTING MODE: Limiting to first 15 minutes (60 clips)")
-            clip_files = clip_files[:60]
+        # Process all clips for full match analysis
+        print(f"⚽ FULL MATCH MODE: Processing all {len(clip_files)} clips")
         
         print(f"📊 Found {len(clip_files)} clips to analyze")
         print(f"🎯 Using parallel processing with Gemini 2.5 Pro")
@@ -126,7 +139,7 @@ Keep it concise but informative."""
         # Process clips in parallel
         successful_analyses = 0
         
-        with ThreadPoolExecutor(max_workers=10) as executor:
+        with ThreadPoolExecutor(max_workers=20) as executor:
             # Submit all tasks
             future_to_clip = {
                 executor.submit(self.analyze_single_clip, clip_path): clip_path 

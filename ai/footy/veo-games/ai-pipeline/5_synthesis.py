@@ -31,6 +31,30 @@ def format_timestamp(minutes: int, seconds: int) -> str:
     """Format timestamp as MM:SS"""
     return f"{minutes:02d}:{seconds:02d}"
 
+def parse_and_adjust_timings(description: str, clip_start_minutes: int, clip_start_seconds: int) -> str:
+    """Parse internal clip timings and adjust them to match timestamps"""
+    import re
+    
+    # Find all timestamps in format 00:XX within the description
+    timestamp_pattern = r'00:(\d{2})'
+    
+    def replace_timestamp(match):
+        clip_seconds = int(match.group(1))
+        
+        # Calculate total seconds from start of match
+        total_seconds = (clip_start_minutes * 60) + clip_start_seconds + clip_seconds
+        
+        # Convert back to MM:SS format
+        final_minutes = total_seconds // 60
+        final_seconds = total_seconds % 60
+        
+        return f"{final_minutes:02d}:{final_seconds:02d}"
+    
+    # Replace all 00:XX timestamps with match timestamps
+    adjusted_description = re.sub(timestamp_pattern, replace_timestamp, description)
+    
+    return adjusted_description
+
 def synthesize_timeline(match_id: str) -> bool:
     """Combine all clip descriptions into one timeline file"""
     print(f"📝 Synthesizing timeline for {match_id}")
@@ -61,12 +85,15 @@ def synthesize_timeline(match_id: str) -> bool:
             minutes, seconds = extract_timestamp_from_filename(file_path.name)
             timestamp = format_timestamp(minutes, seconds)
             
-            # Read description
+            # Read the simple description (no timestamp prefix expected)
             with open(file_path, 'r') as f:
                 description = f.read().strip()
             
-            # Add to timeline
-            timeline_entries.append((minutes * 60 + seconds, timestamp, description))
+            # Adjust any internal clip timings (00:XX) to match timestamps
+            adjusted_description = parse_and_adjust_timings(description, minutes, seconds)
+            
+            # Add to timeline with filename timestamp + adjusted events
+            timeline_entries.append((minutes * 60 + seconds, timestamp, adjusted_description))
             
         except Exception as e:
             print(f"⚠️ Warning: Could not process {file_path.name}: {str(e)}")
