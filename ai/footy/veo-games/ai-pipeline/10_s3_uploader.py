@@ -116,6 +116,32 @@ def upload_match_to_s3(match_id):
             "content_type": "text/plain",
             "description": "AI accuracy validation"
         },
+        # Tactical Analysis Files (THE GOLDMINE 🔥)
+        "8_tactical_analysis_red_team.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Red team tactical analysis, strengths, weaknesses"
+        },
+        "8_tactical_analysis_yellow_team.txt": {
+            "s3_folder": "analysis-data", 
+            "content_type": "text/plain",
+            "description": "Yellow team tactical analysis, strengths, weaknesses"
+        },
+        "8_tactical_match_summary.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain", 
+            "description": "Combined tactical match summary and coaching insights"
+        },
+        "5_complete_timeline.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Complete detailed play-by-play timeline"
+        },
+        "1_veo_ground_truth.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Original Veo ground truth data for comparison"
+        },
         # Large files (upload last)
         "video.mp4": {
             "s3_folder": "analysis-videos",
@@ -196,7 +222,7 @@ def upload_match_to_s3(match_id):
     # Show key URLs for easy access
     if s3_locations["s3_urls"]:
         print(f"\n🔗 Key S3 URLs:")
-        priority_files = ["web_events_array.json", "web_events.json", "video.mp4"]
+        priority_files = ["web_events_array.json", "web_events.json", "8_tactical_match_summary.txt", "video.mp4"]
         for key_file in priority_files:
             if key_file in s3_locations["s3_urls"]:
                 url = s3_locations["s3_urls"][key_file]["url"]
@@ -224,7 +250,7 @@ def upload_match_to_s3(match_id):
             print(f"")
         
         # Analysis files  
-        analysis_files = ["6_validated_timeline.txt", "goals_and_shots_timeline.json", "ai_coach_content.json"]
+        analysis_files = ["6_validated_timeline.txt", "8_tactical_match_summary.txt", "8_tactical_analysis_red_team.txt", "8_tactical_analysis_yellow_team.txt", "5_complete_timeline.txt"]
         analysis_urls = {}
         for file_name in analysis_files:
             if file_name in s3_locations["s3_urls"]:
