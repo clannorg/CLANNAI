@@ -1,16 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const { GoogleGenerativeAI } = require('@google/generative-ai')
-const { Pool } = require('pg')
 const { authenticateToken } = require('../middleware/auth')
-
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-})
+const { getGameById } = require('../utils/database')
 
 // Initialize Gemini client
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
@@ -26,19 +18,11 @@ router.post('/game/:gameId', authenticateToken, async (req, res) => {
     }
 
     // Get game details with events
-    const gameQuery = `
-      SELECT g.*, t.name as team_name
-      FROM games g
-      LEFT JOIN teams t ON g.team_id = t.id
-      WHERE g.id = $1
-    `
-    const gameResult = await pool.query(gameQuery, [gameId])
+    const game = await getGameById(gameId)
     
-    if (gameResult.rows.length === 0) {
+    if (!game) {
       return res.status(404).json({ error: 'Game not found' })
     }
-
-    const game = gameResult.rows[0]
     
     // Parse events from ai_analysis
     let events = []
