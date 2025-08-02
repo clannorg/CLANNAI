@@ -116,6 +116,11 @@ def upload_match_to_s3(match_id):
             "content_type": "text/plain",
             "description": "AI accuracy validation"
         },
+        "13_manager_insights.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Complete manager insights (timeline + ground truth + validated goals)"
+        },
         # Tactical Analysis Files (THE GOLDMINE 🔥)
         "8_tactical_analysis_red_team.txt": {
             "s3_folder": "analysis-data",

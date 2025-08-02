@@ -127,7 +127,7 @@ Be strict - only validate events with strong supporting evidence. Provide detail
             print("="*60)
             print(validation_result)
             print("="*60)
-            
+        
             return True
             
         except Exception as e:
