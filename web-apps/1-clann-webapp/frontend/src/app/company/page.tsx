@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
+
 interface Game {
   id: string
   title: string
@@ -135,8 +137,8 @@ export default function CompanyDashboard() {
       const urlLower = url.toLowerCase();
       
       if (urlLower.includes('video') || urlLower.includes('.mp4')) {
-        // Video file
-        await fetch(`/api/games/${game.id}/upload-video`, {
+        // Video file - use correct backend endpoint
+        await fetch(`${API_BASE_URL}/api/games/${game.id}/upload-video`, {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json', 
@@ -152,13 +154,13 @@ export default function CompanyDashboard() {
         console.log('✅ Video URL saved');
         
       } else if (urlLower.includes('events') || urlLower.includes('web_events')) {
-        // Events file - fetch and process
+        // Events file - fetch and process, use correct endpoint
         const eventsResponse = await fetch(url);
         if (eventsResponse.ok) {
           const eventsData = await eventsResponse.json();
           const events = Array.isArray(eventsData) ? eventsData : eventsData.events || [];
           
-          await fetch(`/api/games/${game.id}/upload-analysis`, {
+          await fetch(`${API_BASE_URL}/api/games/${game.id}/analysis`, {
             method: 'POST',
             headers: { 
               'Content-Type': 'application/json', 
@@ -174,7 +176,7 @@ export default function CompanyDashboard() {
         
       } else {
         // General analysis file
-        await fetch(`/api/games/${game.id}/analysis-files`, {
+        await fetch(`${API_BASE_URL}/api/games/${game.id}/analysis-files`, {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json', 
