@@ -250,18 +250,35 @@ router.post('/:id/upload-events', [authenticateToken, requireCompanyRole], async
       return res.status(400).json({ error: 'S3 key is required' });
     }
 
-    // Fetch events from S3 URL
-    const eventsResponse = await fetch(s3Key);
-    if (!eventsResponse.ok) {
-      return res.status(400).json({ error: 'Could not fetch events file from S3' });
+    // Fetch events from S3 URL using axios (already imported in the project)
+    const axios = require('axios');
+    const eventsResponse = await axios.get(s3Key, {
+      responseType: 'text' // Get as text first to avoid auto-parsing issues
+    });
+    
+    let eventsData = eventsResponse.data;
+    
+    // Handle different response types - sometimes S3 returns string, sometimes object
+    if (typeof eventsData === 'string') {
+      try {
+        eventsData = JSON.parse(eventsData);
+      } catch (parseError) {
+        console.error('Failed to parse JSON string:', parseError);
+        return res.status(400).json({ error: 'Invalid JSON format in S3 file' });
+      }
     }
-
-    const eventsData = await eventsResponse.json();
+    
     const events = Array.isArray(eventsData) ? eventsData : eventsData.events || [];
-
-    // Update game with events
+    
+    console.log(`📊 Fetched ${events.length} events from ${s3Key}`);
+    console.log('📋 Sample event:', events[0]);
+    
+    // Convert events to JSON string for PostgreSQL JSONB storage
+    console.log('📝 About to store events in database...');
+    console.log('📝 First few events:', JSON.stringify(events.slice(0, 2), null, 2));
+    
     const updatedGame = await updateGame(gameId, {
-      ai_analysis: events,
+      ai_analysis: JSON.stringify(events), // Convert to JSON string for PostgreSQL
       status: 'analyzed'
     });
 
@@ -281,7 +298,10 @@ router.post('/:id/upload-events', [authenticateToken, requireCompanyRole], async
     });
   } catch (error) {
     console.error('Upload events error:', error);
-    res.status(500).json({ error: 'Failed to upload events' });
+    if (error.response) {
+      console.error('HTTP Error:', error.response.status, error.response.statusText);
+    }
+    res.status(500).json({ error: 'Failed to upload events: ' + error.message });
   }
 });
 
