@@ -37,28 +37,8 @@ export default function CompanyDashboard() {
   const [error, setError] = useState('')
   const [statusFilter, setStatusFilter] = useState<string>('all')
   
-  // Modal states
-  const [showVideoModal, setShowVideoModal] = useState(false)
-  const [showJsonModal, setShowJsonModal] = useState(false)
-  const [selectedGame, setSelectedGame] = useState<Game | null>(null)
-  const [videoUrl, setVideoUrl] = useState('')
-  const [jsonData, setJsonData] = useState('')
+  // Simplified state
   const [updating, setUpdating] = useState(false)
-
-  // Add to state at the top of CompanyDashboard
-  const [showS3FilesModal, setShowS3FilesModal] = useState(false);
-  const [s3Files, setS3Files] = useState({
-    video: '',
-    events: '',
-    tactics: '',
-    commentary: ''
-  });
-  const [s3LocationsUrl, setS3LocationsUrl] = useState('');
-  const [autoFillError, setAutoFillError] = useState('');
-
-  // VM File List state
-  const [showVMUploadModal, setShowVMUploadModal] = useState(false);
-  const [vmFileList, setVmFileList] = useState('');
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
@@ -109,75 +89,7 @@ export default function CompanyDashboard() {
     router.push('/')
   }
 
-  const handleAddVideo = (game: Game) => {
-    setSelectedGame(game)
-    setVideoUrl('')
-    setShowVideoModal(true)
-  }
 
-  const handleAddJson = (game: Game) => {
-    setSelectedGame(game)
-    setJsonData('')
-    setShowJsonModal(true)
-  }
-
-  const handleSubmitVideo = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!selectedGame || !videoUrl.trim()) return
-
-    try {
-      setUpdating(true)
-      setError('')
-      
-      await apiClient.updateGameAnalysis(selectedGame.id, {
-        videoUrl: videoUrl.trim()
-      })
-      
-      setShowVideoModal(false)
-      setVideoUrl('')
-      setSelectedGame(null)
-      await loadDashboardData()
-    } catch (err: any) {
-      console.error('Failed to update video:', err)
-      setError(err.message || 'Failed to update video')
-    } finally {
-      setUpdating(false)
-    }
-  }
-
-  const handleSubmitJson = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!selectedGame || !jsonData.trim()) return
-
-    try {
-      setUpdating(true)
-      setError('')
-      
-      const parsedData = JSON.parse(jsonData.trim())
-      
-      // Handle both {"events": [...]} and [...] formats
-      const events = Array.isArray(parsedData) ? parsedData : parsedData.events
-      
-      if (!events || !Array.isArray(events)) {
-        throw new Error('Invalid JSON format. Expected an array or an object with "events" property.')
-      }
-      
-      await apiClient.updateGameAnalysis(selectedGame.id, {
-        events,
-        status: 'analyzed'
-      })
-      
-      setShowJsonModal(false)
-      setJsonData('')
-      setSelectedGame(null)
-      await loadDashboardData()
-    } catch (err: any) {
-      console.error('Failed to update analysis:', err)
-      setError(err.message || 'Failed to update analysis')
-    } finally {
-      setUpdating(false)
-    }
-  }
 
   const handleMarkAnalyzed = async (game: Game) => {
     try {
@@ -209,124 +121,88 @@ export default function CompanyDashboard() {
     }
   }
 
-  // Handler for opening the modal
-  const handleAddS3Files = (game: Game) => {
-    setSelectedGame(game);
-    setS3Files({ video: '', events: '', tactics: '', commentary: '' });
-    setS3LocationsUrl('');
-    setAutoFillError('');
-    setShowS3FilesModal(true);
-  };
 
-  // Handler for input changes
-  const handleS3FileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setS3Files({ ...s3Files, [e.target.name]: e.target.value });
-  };
 
-  // Handler for auto-filling from s3_locations.json
-  const handleS3LocationsUrlChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const url = e.target.value;
-    setS3LocationsUrl(url);
-    setAutoFillError('');
-    if (url && url.startsWith('http')) {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch JSON');
-        const data = await response.json();
-        if (data.s3_urls) {
-          setS3Files((prev) => ({
-            ...prev,
-            video: data.s3_urls['video.mp4']?.url || prev.video,
-            events: data.s3_urls['web_events.json']?.url || prev.events,
-            tactics: data.s3_urls['tactical_coaching_insights.json']?.url || prev.tactics,
-            commentary: data.s3_urls['match_commentary.md']?.url || prev.commentary
-          }));
-        } else {
-          setAutoFillError('No s3_urls key found in JSON');
-        }
-      } catch (err) {
-        setAutoFillError('Failed to fetch or parse s3_locations.json');
-      }
-    }
-  };
-
-  // Handler for submitting S3 files
-  const handleSubmitS3Files = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setUpdating(true);
-    try {
-      await fetch(`/api/games/${selectedGame?.id}/analysis-files`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('token')}` },
-        body: JSON.stringify({ s3AnalysisFiles: s3Files })
-      });
-      setShowS3FilesModal(false);
-      setS3Files({ video: '', events: '', tactics: '', commentary: '' });
-      setS3LocationsUrl('');
-      setAutoFillError('');
-      setSelectedGame(null);
-      setError('');
-      loadDashboardData();
-    } catch (err) {
-      setError('Failed to update S3 file locations');
-    } finally {
-      setUpdating(false);
-    }
-  };
-
-  // VM File List handlers
-  const handleAddVMFiles = (game: Game) => {
-    setSelectedGame(game);
-    setVmFileList('');
-    setShowVMUploadModal(true);
-  };
-
-  const parseVMFileList = (fileList: string) => {
-    const files: Record<string, string> = {};
-    const lines = fileList.split('\n').filter(line => line.includes('='));
-    
-    lines.forEach(line => {
-      const [filename, url] = line.split('=');
-      if (filename && url) {
-        files[filename.trim()] = url.trim();
-      }
-    });
-    
-    return files;
-  };
-
-  const handleSubmitVMFiles = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!selectedGame || !vmFileList.trim()) return;
-
+  // Quick S3 URL save handler
+  const handleQuickS3Save = async (game: Game, url: string) => {
     try {
       setUpdating(true);
       setError('');
       
-      // Parse the VM file list
-      const fileMap = parseVMFileList(vmFileList.trim());
+      console.log('🔗 Quick S3 Save:', { gameId: game.id, url });
       
-      // For now, just store as S3 analysis files
-      await fetch(`/api/games/${selectedGame.id}/analysis-files`, {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json', 
-          'Authorization': `Bearer ${localStorage.getItem('token')}` 
-        },
-        body: JSON.stringify({ s3AnalysisFiles: fileMap })
-      });
+      // Smart detection based on URL content
+      const urlLower = url.toLowerCase();
       
-      setShowVMUploadModal(false);
-      setVmFileList('');
-      setSelectedGame(null);
+      if (urlLower.includes('video') || urlLower.includes('.mp4')) {
+        // Video file
+        await fetch(`/api/games/${game.id}/upload-video`, {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json', 
+            'Authorization': `Bearer ${localStorage.getItem('token')}` 
+          },
+          body: JSON.stringify({ 
+            s3Key: url,
+            originalFilename: 'video.mp4',
+            fileSize: 0,
+            duration: 0
+          })
+        });
+        console.log('✅ Video URL saved');
+        
+      } else if (urlLower.includes('events') || urlLower.includes('web_events')) {
+        // Events file - fetch and process
+        const eventsResponse = await fetch(url);
+        if (eventsResponse.ok) {
+          const eventsData = await eventsResponse.json();
+          const events = Array.isArray(eventsData) ? eventsData : eventsData.events || [];
+          
+          await fetch(`/api/games/${game.id}/upload-analysis`, {
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json', 
+              'Authorization': `Bearer ${localStorage.getItem('token')}` 
+            },
+            body: JSON.stringify({ 
+              events,
+              status: 'analyzed'
+            })
+          });
+          console.log('✅ Events processed and saved');
+        }
+        
+      } else {
+        // General analysis file
+        await fetch(`/api/games/${game.id}/analysis-files`, {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json', 
+            'Authorization': `Bearer ${localStorage.getItem('token')}` 
+          },
+          body: JSON.stringify({ 
+            s3AnalysisFiles: {
+              [url.split('/').pop() || 'analysis_file']: url
+            }
+          })
+        });
+        console.log('✅ Analysis file URL saved');
+      }
+      
+      // Reload dashboard
       await loadDashboardData();
+      
     } catch (err: any) {
-      console.error('Failed to upload VM files:', err);
-      setError(err.message || 'Failed to upload VM file list');
+      console.error('Failed to save S3 URL:', err);
+      setError(err.message || 'Failed to save S3 URL');
     } finally {
       setUpdating(false);
     }
   };
+
+
+
+
 
   if (!user) {
     return <div className="min-h-screen bg-[#F7F6F1] flex items-center justify-center">
@@ -488,49 +364,122 @@ export default function CompanyDashboard() {
                         </div>
                       </div>
                       
-                      <div className="flex flex-col lg:flex-row lg:flex-wrap gap-2 lg:ml-6">
+                      <div className="space-y-3 lg:ml-6">
+                        {/* Video URL Input */}
+                        <div className="flex items-center space-x-2">
+                          <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                            Video:
+                          </label>
+                          <input
+                            type="url"
+                            placeholder="Paste video S3 URL..."
+                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                            onKeyPress={(e) => {
+                              if (e.key === 'Enter') {
+                                const input = e.target as HTMLInputElement;
+                                if (input.value.trim()) {
+                                  handleQuickS3Save(game, input.value.trim());
+                                  input.value = '';
+                                }
+                              }
+                            }}
+                          />
                         <button
-                          onClick={() => handleAddVideo(game)}
-                          className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
-                        >
-                          Add S3 Video
-                        </button>
-                        <button
-                          onClick={() => handleAddJson(game)}
-                          className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-purple-700 transition-colors"
-                        >
-                          Add Analysis
-                        </button>
-                        {/* Add S3 Analysis Files Button */}
-                        <button
-                          className="bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 ml-2"
-                          onClick={() => handleAddS3Files(game)}
-                        >
-                          Add S3 Analysis Files
-                        </button>
-                        {/* Add VM File List Button */}
-                        <button
-                          className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg"
-                          onClick={() => handleAddVMFiles(game)}
-                        >
-                          🧠 VM File List
-                        </button>
-                        {game.status === 'pending' && (
-                          <button
-                            onClick={() => handleMarkAnalyzed(game)}
-                            className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
+                            className="bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                            onClick={(e) => {
+                              const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                              if (input?.value.trim()) {
+                                handleQuickS3Save(game, input.value.trim());
+                                input.value = '';
+                              }
+                            }}
                           >
-                            Mark Analyzed
-                          </button>
-                        )}
-                        {game.status === 'analyzed' && (
-                          <button
-                            onClick={() => handleMarkPending(game)}
-                            className="bg-orange-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-700 transition-colors"
+                            Save
+                        </button>
+                        </div>
+
+                        {/* Events URL Input */}
+                        <div className="flex items-center space-x-2">
+                          <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                            Events:
+                          </label>
+                          <input
+                            type="url"
+                            placeholder="Paste events JSON URL..."
+                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                            onKeyPress={(e) => {
+                              if (e.key === 'Enter') {
+                                const input = e.target as HTMLInputElement;
+                                if (input.value.trim()) {
+                                  handleQuickS3Save(game, input.value.trim());
+                                  input.value = '';
+                                }
+                              }
+                            }}
+                          />
+                        <button
+                            className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
+                            onClick={(e) => {
+                              const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                              if (input?.value.trim()) {
+                                handleQuickS3Save(game, input.value.trim());
+                                input.value = '';
+                              }
+                            }}
                           >
-                            Mark as Pending
+                            Save
+                        </button>
+                        </div>
+
+                        {/* Analysis URL Input */}
+                        <div className="flex items-center space-x-2">
+                          <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                            Analysis:
+                          </label>
+                          <input
+                            type="url"
+                            placeholder="Paste analysis file URL..."
+                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500"
+                            onKeyPress={(e) => {
+                              if (e.key === 'Enter') {
+                                const input = e.target as HTMLInputElement;
+                                if (input.value.trim()) {
+                                  handleQuickS3Save(game, input.value.trim());
+                                  input.value = '';
+                                }
+                              }
+                            }}
+                          />
+                          <button
+                            className="bg-purple-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-purple-700 transition-colors"
+                            onClick={(e) => {
+                              const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                              if (input?.value.trim()) {
+                                handleQuickS3Save(game, input.value.trim());
+                                input.value = '';
+                              }
+                            }}
+                          >
+                            Save
                           </button>
-                        )}
+                        </div>
+
+                        {/* Status Toggle */}
+                        <div className="flex items-center space-x-2">
+                          <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                            Status:
+                          </label>
+                          <button
+                            onClick={() => game.status === 'pending' ? handleMarkAnalyzed(game) : handleMarkPending(game)}
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                              game.status === 'analyzed'
+                                ? 'bg-orange-600 text-white hover:bg-orange-700'
+                                : 'bg-green-600 text-white hover:bg-green-700'
+                            }`}
+                          >
+                            Mark as {game.status === 'pending' ? 'Analyzed' : 'Pending'}
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -540,232 +489,6 @@ export default function CompanyDashboard() {
           </div>
         </div>
       </div>
-
-      {/* Add Video Modal */}
-      {showVideoModal && selectedGame && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Add S3 Video URL</h3>
-            <p className="text-base font-semibold text-gray-900 mb-4">Game: {selectedGame.title}</p>
-            
-            {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-sm">{error}</p>
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmitVideo} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1">S3 Video URL</label>
-                <input
-                  type="url"
-                  value={videoUrl}
-                  onChange={(e) => setVideoUrl(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32]"
-                  placeholder="games/game-id/full-game.mp4 or s3://clannai-video-storage/games/game-id/full-game.mp4"
-                  required
-                  disabled={updating}
-                />
-              </div>
-              <div className="flex justify-end space-x-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowVideoModal(false)
-                    setVideoUrl('')
-                    setSelectedGame(null)
-                    setError('')
-                  }}
-                  className="px-6 py-2.5 text-gray-900 hover:text-gray-900 transition-colors"
-                  disabled={updating}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={updating || !videoUrl.trim()}
-                  className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {updating ? 'Adding...' : 'Add Video'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* Add JSON Modal */}
-      {showJsonModal && selectedGame && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-2xl shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Add Analysis JSON</h3>
-            <p className="text-base font-semibold text-gray-900 mb-4">Game: {selectedGame.title}</p>
-            
-            {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-sm">{error}</p>
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmitJson} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1">Events JSON</label>
-                <textarea
-                  value={jsonData}
-                  onChange={(e) => setJsonData(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32] font-mono text-sm"
-                  placeholder='{"events": [{"type": "goal", "timestamp": 245.5, "player": "Smith #9"}]}'
-                  rows={10}
-                  required
-                  disabled={updating}
-                />
-              </div>
-              <div className="text-xs text-gray-900">
-                <p>This will mark the game as "analyzed" and update the status.</p>
-              </div>
-              <div className="flex justify-end space-x-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowJsonModal(false)
-                    setJsonData('')
-                    setSelectedGame(null)
-                    setError('')
-                  }}
-                  className="px-6 py-2.5 text-gray-900 hover:text-gray-900 transition-colors"
-                  disabled={updating}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={updating || !jsonData.trim()}
-                  className="bg-purple-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {updating ? 'Adding...' : 'Add Analysis'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* S3 Analysis Files Modal (AI-generated) */}
-      {showS3FilesModal && selectedGame && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Add S3 Analysis File Locations</h3>
-            <form onSubmit={handleSubmitS3Files} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1">s3_locations.json URL (auto-fill)</label>
-                <input
-                  name="s3LocationsUrl"
-                  type="url"
-                  value={s3LocationsUrl}
-                  onChange={handleS3LocationsUrlChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-                  placeholder="Paste S3 URL for s3_locations.json (optional)"
-                  disabled={updating}
-                />
-                {autoFillError && <div className="text-red-600 text-xs mt-1">{autoFillError}</div>}
-              </div>
-              {['video', 'events', 'tactics', 'commentary'].map((type) => (
-                <div key={type}>
-                  <label className="block text-sm font-medium text-gray-900 mb-1">
-                    {type.charAt(0).toUpperCase() + type.slice(1)} S3 URL
-                  </label>
-                  <input
-                    name={type}
-                    type="url"
-                    value={s3Files[type]}
-                    onChange={handleS3FileChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-                    placeholder={`S3 URL for ${type}`}
-                    disabled={updating}
-                  />
-                </div>
-              ))}
-              <div className="flex justify-end space-x-3">
-                <button type="button" onClick={() => setShowS3FilesModal(false)} className="px-6 py-2.5 text-gray-900">Cancel</button>
-                <button type="submit" disabled={updating} className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-blue-700">
-                  {updating ? 'Saving...' : 'Save'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {/* VM File List Upload Modal */}
-      {showVMUploadModal && selectedGame && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-3xl shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Upload VM Analysis Files</h3>
-            <p className="text-base text-gray-700 mb-4">
-              Paste your VM analysis file list below. Each line should be in format: filename=S3_URL
-            </p>
-            
-            {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-sm">{error}</p>
-              </div>
-            )}
-            
-            <form onSubmit={handleSubmitVMFiles} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1">
-                  VM File List (copy from your VM output)
-                </label>
-                <textarea
-                  value={vmFileList}
-                  onChange={(e) => setVmFileList(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 font-mono text-xs"
-                  placeholder={`1_veo_ground_truth.json=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-1_veo_ground_truth-json.json
-5_complete_timeline.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-5_complete_timeline-txt.txt
-web_events.json=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-web_events-json.json
-video.mp4=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/f323-527e6a4e-video-mp4.mp4`}
-                  rows={12}
-                  required
-                  disabled={updating}
-                />
-              </div>
-              
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-blue-900 mb-2">What happens:</h4>
-                <ul className="text-sm text-blue-800 space-y-1">
-                  <li>✅ All file URLs are stored for this game</li>
-                  <li>✅ Files are accessible for processing later</li>
-                  <li>✅ Format: filename=url (one per line)</li>
-                  <li>⏳ Next: We'll add automatic processing of these files</li>
-                </ul>
-              </div>
-              
-              <div className="flex justify-end space-x-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowVMUploadModal(false)
-                    setVmFileList('')
-                    setSelectedGame(null)
-                    setError('')
-                  }}
-                  className="px-6 py-2.5 text-gray-900 hover:text-gray-900 transition-colors"
-                  disabled={updating}
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={updating || !vmFileList.trim()}
-                  className="bg-purple-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {updating ? 'Uploading...' : 'Upload File List'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   )
 } /* Cache bust: Mon Jul 28 23:42:50 BST 2025 */

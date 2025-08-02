@@ -382,27 +382,7 @@ export default function GameView() {
     )
   }
 
-  if (game.status === 'pending') {
-    return (
-      <div className="h-screen bg-black flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h2 className="text-2xl font-bold text-white mb-2">Analysis In Progress</h2>
-          <p className="text-gray-400">This game is being processed by our AI analysis system.</p>
-          <Link
-            href="/dashboard"
-            className="mt-4 inline-block bg-[#016F32] text-white px-6 py-2 rounded-lg hover:bg-[#014d24] transition-colors"
-          >
-            Back to Dashboard
-          </Link>
-        </div>
-      </div>
-    )
-  }
+
 
   // Handle both direct array format and {events: [...]} format
   const events = filteredEvents

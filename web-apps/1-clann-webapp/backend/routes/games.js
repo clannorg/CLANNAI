@@ -280,7 +280,7 @@ router.post('/:id/analysis', [authenticateToken, requireCompanyRole], async (req
   }
 });
 
-// Add S3 analysis files for a game (company only)
+// Add S3 analysis files for a game (company only) - Enhanced VM Processing
 router.post('/:id/analysis-files', [authenticateToken, requireCompanyRole], async (req, res) => {
   try {
     const gameId = req.params.id;
@@ -290,17 +290,74 @@ router.post('/:id/analysis-files', [authenticateToken, requireCompanyRole], asyn
       return res.status(400).json({ error: 's3AnalysisFiles JSON object required' });
     }
 
-    const updatedGame = await updateGame(gameId, {
+    console.log('🧠 Processing VM analysis files:', Object.keys(s3AnalysisFiles));
+
+    // Enhanced VM Processing: Extract key files for video player
+    let gameUpdates = {
       s3_analysis_files: s3AnalysisFiles
-    });
+    };
+
+    // 1. Extract video URL
+    const videoFile = Object.keys(s3AnalysisFiles).find(key => 
+      key.includes('video.mp4') || key.includes('.mp4')
+    );
+    if (videoFile && s3AnalysisFiles[videoFile]) {
+      gameUpdates.s3_key = s3AnalysisFiles[videoFile];
+      console.log('✅ Found video URL:', s3AnalysisFiles[videoFile]);
+    }
+
+    // 2. Process events from web_events.json or web_events_array.json  
+    const eventsFile = Object.keys(s3AnalysisFiles).find(key => 
+      key.includes('web_events') && key.includes('.json')
+    );
+    
+    if (eventsFile && s3AnalysisFiles[eventsFile]) {
+      try {
+        console.log('📥 Fetching events from:', s3AnalysisFiles[eventsFile]);
+        const eventsResponse = await fetch(s3AnalysisFiles[eventsFile]);
+        
+        if (eventsResponse.ok) {
+          const eventsData = await eventsResponse.json();
+          
+          // Handle both array and {events: [...]} formats
+          const events = Array.isArray(eventsData) ? eventsData : eventsData.events || [];
+          
+          if (events.length > 0) {
+            gameUpdates.ai_analysis = events;
+            console.log(`✅ Loaded ${events.length} events for video player`);
+          }
+        } else {
+          console.log('⚠️ Could not fetch events file (non-critical)');
+        }
+      } catch (fetchError) {
+        console.log('⚠️ Error fetching events (non-critical):', fetchError.message);
+      }
+    }
+
+    // 3. Auto-mark as analyzed if we have video + events
+    if (gameUpdates.s3_key && gameUpdates.ai_analysis) {
+      gameUpdates.status = 'analyzed';
+      console.log('🎉 Auto-marking game as analyzed (has video + events)');
+    }
+
+    const updatedGame = await updateGame(gameId, gameUpdates);
 
     if (!updatedGame) {
       return res.status(404).json({ error: 'Game not found' });
     }
 
     res.json({
-      message: 'Analysis files updated',
-      s3_analysis_files: updatedGame.s3_analysis_files
+      message: 'VM analysis files processed successfully',
+      filesProcessed: Object.keys(s3AnalysisFiles).length,
+      hasVideo: !!gameUpdates.s3_key,
+      hasEvents: !!gameUpdates.ai_analysis,
+      autoAnalyzed: gameUpdates.status === 'analyzed',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        status: updatedGame.status,
+        s3_analysis_files: updatedGame.s3_analysis_files
+      }
     });
   } catch (error) {
     console.error('Update analysis files error:', error);

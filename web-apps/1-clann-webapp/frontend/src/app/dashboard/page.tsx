@@ -45,12 +45,22 @@ export default function Dashboard() {
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
-    if (userData) {
-      setUser(JSON.parse(userData))
+    if (!userData) {
+      router.push('/')
+      return
+    }
+
+    const parsedUser = JSON.parse(userData)
+    
+    // Redirect company users to company dashboard
+    if (parsedUser.role === 'company') {
+      router.push('/company')
+      return
     }
     
+    setUser(parsedUser)
     loadUserData()
-  }, [])
+  }, [router])
 
   const loadUserData = async () => {
     try {
