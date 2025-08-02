@@ -239,7 +239,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F6F1]">
+    <div className="min-h-screen bg-white">
       {/* Top Navigation - Match UserDashboard.js exactly */}
       <nav className="border-b border-gray-200/10 bg-white">
         <div className="max-w-7xl mx-auto px-4 py-4">
@@ -287,7 +287,8 @@ export default function Dashboard() {
       </nav>
 
       {/* User Profile Section - Match UserDashboard.js exactly */}
-      <div className="max-w-7xl mx-auto px-8 py-12">
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-8 py-12">
         <div className="flex items-center gap-6 mb-12">
           <div className="flex items-center gap-8">
             <div>
@@ -317,10 +318,13 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
+        </div>
       </div>
 
-      {/* Tab Navigation - centered like old app */}
-      <div className="bg-white border-b border-gray-200/10">
+      {/* Bottom section with cream background */}
+      <div className="bg-[#F7F6F1] min-h-screen">
+        {/* Tab Navigation - centered like old app */}
+        <div className="bg-[#F7F6F1] border-b border-gray-200/10">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center overflow-x-auto scrollbar-hide">
             <button
@@ -800,6 +804,7 @@ export default function Dashboard() {
           {error}
         </div>
       )}
+      </div>
       </div>
     </div>
   )
