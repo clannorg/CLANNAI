@@ -290,34 +290,6 @@ export default function Dashboard() {
         </div>
       </nav>
 
-      {/* Tab Navigation - centered like old app */}
-      <div className="bg-white border-b border-gray-200/10">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-center overflow-x-auto scrollbar-hide">
-            <button
-              onClick={() => setActiveTab('games')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'games'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              Games
-            </button>
-            <button
-              onClick={() => setActiveTab('teams')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'teams'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              Teams
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* User Profile Section */}
       <div className="max-w-7xl mx-auto px-8 py-12">
         <div className="flex items-center gap-6 mb-12">
@@ -347,6 +319,34 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Tab Navigation - centered like old app */}
+      <div className="bg-white border-b border-gray-200/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-center overflow-x-auto scrollbar-hide">
+            <button
+              onClick={() => setActiveTab('games')}
+              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
+                activeTab === 'games'
+                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Games
+            </button>
+            <button
+              onClick={() => setActiveTab('teams')}
+              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
+                activeTab === 'teams'
+                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Teams
+            </button>
           </div>
         </div>
       </div>
