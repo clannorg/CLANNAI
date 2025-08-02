@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
+
 export default function Home() {
   const [isLogin, setIsLogin] = useState(true)
   const [showAuthModal, setShowAuthModal] = useState(false)
@@ -69,7 +71,7 @@ export default function Home() {
             ...(email.endsWith('@clann.ai') && { role: 'company' })
           }
 
-              const response = await fetch(`http://localhost:3002${endpoint}`, {
+              const response = await fetch(`${API_BASE_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
