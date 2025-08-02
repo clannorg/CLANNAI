@@ -29,6 +29,7 @@ export default function Dashboard() {
   const [showUploadModal, setShowUploadModal] = useState(false)
   const [showJoinModal, setShowJoinModal] = useState(false)
   const [showCreateTeamModal, setShowCreateTeamModal] = useState(false)
+  const [showSettingsModal, setShowSettingsModal] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [joinTeamCode, setJoinTeamCode] = useState('')
@@ -239,58 +240,53 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-[#F7F6F1]">
-      {/* Professional Header */}
-      <nav className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="flex items-center">
+      {/* Top Navigation - Match UserDashboard.js exactly */}
+      <nav className="border-b border-gray-200/10 bg-white">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          {/* Mobile layout - stacked vertically */}
+          <div className="flex flex-col items-center md:flex-row md:justify-between md:items-center">
+            {/* Logo - centered on mobile, left-aligned on desktop */}
+            <div className="mb-4 md:mb-0">
               <Image 
                 src="/clann-logo-green.png" 
-                alt="ClannAI" 
+                alt="Clann" 
                 width={120} 
-                height={40}
-                className="h-10 w-auto"
+                height={32}
+                className="h-8"
               />
             </div>
             
-            {/* Right side - Auth like landing page */}
-            <div className="flex items-center gap-4">
-              {user?.role === 'company' && (
-                <a
-                  href="/company"
-                  className="bg-[#016F32] text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-[#016F32]/90 transition-colors"
-                >
-                  Company Dashboard
-                </a>
-              )}
+            {/* Action buttons - stacked on mobile, horizontal on desktop */}
+            <div className="flex flex-col w-full md:flex-row md:w-auto md:items-center gap-3 md:gap-4">
+              <button 
+                onClick={() => setShowUploadModal(true)}
+                className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
+              >
+                Upload Match
+              </button>
               
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-[#016F32] rounded-full flex items-center justify-center">
-                    <span className="text-white font-medium text-sm">
-                      {user?.email?.[0]?.toUpperCase() || 'U'}
-                    </span>
-                  </div>
-                  <span className="text-sm text-gray-700 font-medium">{user?.email || 'Demo User'}</span>
-                  {user?.role === 'company' && (
-                    <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-700 font-medium">Company</span>
-                  )}
-                </div>
-                
-                <button
-                  onClick={handleLogout}
-                  className="text-sm text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all font-medium"
-                >
-                  Logout
-                </button>
-              </div>
+              <button 
+                onClick={() => setShowJoinModal(true)}
+                className="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
+              >
+                Join Team
+              </button>
+              
+              <button 
+                onClick={() => setShowSettingsModal(true)}
+                className="flex items-center justify-center gap-2 text-gray-700 px-6 py-2.5 rounded-lg font-medium border border-gray-300 w-full md:w-auto"
+              >
+                <span>Settings</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* User Profile Section */}
+      {/* User Profile Section - Match UserDashboard.js exactly */}
       <div className="max-w-7xl mx-auto px-8 py-12">
         <div className="flex items-center gap-6 mb-12">
           <div className="flex items-center gap-8">
@@ -298,17 +294,17 @@ export default function Dashboard() {
               <h1 className="text-3xl font-bold mb-2">
                 {teams.length > 0 ? teams[0].name : 
                   <div className="flex items-center gap-2 text-gray-500">
-                    Create your first team
+                    Upload footage to create a team
                     <button 
-                      onClick={() => setShowCreateTeamModal(true)}
+                      onClick={() => setShowUploadModal(true)}
                       className="text-sm px-3 py-1 bg-[#016F32]/10 text-[#016F32] rounded-lg hover:bg-[#016F32]/20"
                     >
-                      Create Team →
+                      Upload Now →
                     </button>
                   </div>
                 }
-                <span className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400">
-                  FREE TIER
+                <span className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400 hover:bg-green-400/10 hover:text-green-400 cursor-pointer">
+                  FREE TIER - Upgrade
                 </span>
               </h1>
               <div className="flex items-center gap-2 text-gray-600">
@@ -758,6 +754,42 @@ export default function Dashboard() {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Settings Modal - Match UserDashboard.js exactly */}
+      {showSettingsModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">Settings</h2>
+              <button
+                onClick={() => setShowSettingsModal(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Add email display */}
+            <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+              <p className="text-sm text-gray-500">Account Email</p>
+              <p className="text-gray-900 font-medium">{user?.email || 'demo@clann.ai'}</p>
+            </div>
+
+            <div className="space-y-4">
+              <button
+                onClick={() => {
+                  localStorage.removeItem('auth_token')
+                  localStorage.removeItem('user')
+                  router.push('/')
+                }}
+                className="w-full text-left px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg"
+              >
+                Sign Out
+              </button>
+            </div>
           </div>
         </div>
       )}
