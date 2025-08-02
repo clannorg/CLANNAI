@@ -364,6 +364,83 @@ router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], asy
   }
 });
 
+// Get tactical analysis content for a game
+router.get('/:id/tactical-analysis', authenticateToken, async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    const metadata = game.metadata || {};
+    const tacticalFiles = metadata.tactical_files || {};
+    const analysisFiles = metadata.analysis_files || {};
+
+    // Fetch content from tactical files
+    const tacticalContent = {};
+    
+    for (const [type, fileInfo] of Object.entries(tacticalFiles)) {
+      if (fileInfo && fileInfo.url) {
+        try {
+          const axios = require('axios');
+          const response = await axios.get(fileInfo.url, { responseType: 'text' });
+          tacticalContent[type] = {
+            content: response.data,
+            filename: fileInfo.filename,
+            uploaded_at: fileInfo.uploaded_at
+          };
+        } catch (error) {
+          console.error(`Failed to fetch tactical file ${type}:`, error);
+          tacticalContent[type] = {
+            content: `Error loading content: ${error.message}`,
+            filename: fileInfo.filename,
+            uploaded_at: fileInfo.uploaded_at
+          };
+        }
+      }
+    }
+
+    // Also fetch analysis files content 
+    const analysisContent = {};
+    for (const [type, fileInfo] of Object.entries(analysisFiles)) {
+      if (fileInfo && fileInfo.url) {
+        try {
+          const axios = require('axios');
+          const response = await axios.get(fileInfo.url, { responseType: 'text' });
+          analysisContent[type] = {
+            content: response.data,
+            filename: fileInfo.filename,
+            uploaded_at: fileInfo.uploaded_at
+          };
+        } catch (error) {
+          console.error(`Failed to fetch analysis file ${type}:`, error);
+          analysisContent[type] = {
+            content: `Error loading content: ${error.message}`,
+            filename: fileInfo.filename,
+            uploaded_at: fileInfo.uploaded_at
+          };
+        }
+      }
+    }
+
+    res.json({
+      tactical: tacticalContent,
+      analysis: analysisContent,
+      game: {
+        id: game.id,
+        title: game.title,
+        team_name: game.team_name
+      }
+    });
+
+  } catch (error) {
+    console.error('Get tactical analysis error:', error);
+    res.status(500).json({ error: 'Failed to get tactical analysis' });
+  }
+});
+
 // Upload S3 analysis file (company only) - for timeline, accuracy, ground truth, etc.
 router.post('/:id/upload-analysis-file', [authenticateToken, requireCompanyRole], async (req, res) => {
   try {
