@@ -5,6 +5,7 @@ import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import apiClient from '@/lib/api-client'
 import TacticalInsights from '../../../components/games/TacticalInsights'
+import { AIChatProvider, AIChatSidebar, ChatToggleButton, useAIChat } from '../../../components/ai-chat'
 
 interface GameEvent {
   type: string
@@ -21,19 +22,20 @@ interface Game {
   s3Url: string
   status: string
   ai_analysis: GameEvent[] | { events: GameEvent[] } | null
+  tactical_analysis: {
+    tactical: Record<string, { content: string, filename: string, uploaded_at: string }>
+    analysis: Record<string, { content: string, filename: string, uploaded_at: string }>
+  } | null
   team_name: string
   team_color: string
   created_at: string
 }
 
-export default function GameView() {
+const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
+  const { isOpen: showChat, toggleChat } = useAIChat()
   const router = useRouter()
   const params = useParams()
   const gameId = params.id as string
-  
-  const [game, setGame] = useState<Game | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState('')
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -58,15 +60,7 @@ export default function GameView() {
   const [searchText, setSearchText] = useState('')
   const [showFilters, setShowFilters] = useState(false)
   
-  // Chat state
-  const [showChat, setShowChat] = useState(false)
-  const [chatMessages, setChatMessages] = useState<Array<{
-    role: 'user' | 'assistant'
-    content: string
-    timestamp: string
-  }>>([])
-  const [chatInput, setChatInput] = useState('')
-  const [chatLoading, setChatLoading] = useState(false)
+  // Chat state is now handled by AIChatProvider
   
   // Tactical analysis state
   const [tacticalData, setTacticalData] = useState<{
@@ -76,17 +70,6 @@ export default function GameView() {
   const [tacticalLoading, setTacticalLoading] = useState(false)
   
   const videoRef = useRef<HTMLVideoElement>(null)
-  const chatContainerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const userData = localStorage.getItem('user')
-    if (!userData) {
-      router.push('/')
-      return
-    }
-    
-    loadGame()
-  }, [gameId, router])
 
   // Initialize time range when game is loaded
   useEffect(() => {
@@ -95,47 +78,23 @@ export default function GameView() {
     }
   }, [game, duration])
 
-  const loadGame = async () => {
-    try {
-      setLoading(true)
-      setError('')
-      
-      const response = await apiClient.getGame(gameId) as { game: Game }
-      setGame(response.game)
-      
-      // Also load tactical data
-      loadTacticalData()
-    } catch (err: any) {
-      console.error('Failed to load game:', err)
-      setError(err.message || 'Failed to load game')
-    } finally {
-      setLoading(false)
+  // Load tactical data from game
+  useEffect(() => {
+    setTacticalLoading(true)
+    if (game.tactical_analysis) {
+      setTacticalData(game.tactical_analysis)
+      console.log('📊 Tactical data loaded from game:', 
+        Object.keys(game.tactical_analysis.tactical || {}), 
+        Object.keys(game.tactical_analysis.analysis || {})
+      )
+    } else {
+      console.log('No tactical analysis data available')
+      setTacticalData(null)
     }
-  }
+    setTacticalLoading(false)
+  }, [game])
 
-  const loadTacticalData = async () => {
-    try {
-      setTacticalLoading(true)
-      const token = localStorage.getItem('token')
-      const response = await fetch(`http://localhost:3002/api/games/${gameId}/tactical-analysis`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        setTacticalData(data)
-        console.log('📊 Tactical data loaded:', Object.keys(data.tactical || {}), Object.keys(data.analysis || {}))
-      } else {
-        console.log('No tactical analysis data available')
-      }
-    } catch (err: any) {
-      console.error('Error loading tactical data:', err)
-    } finally {
-      setTacticalLoading(false)
-    }
-  }
+
 
   // Filter events based on current filter settings
   const filterEvents = (events: GameEvent[]) => {
@@ -315,107 +274,7 @@ export default function GameView() {
     }
   }
 
-  // Chat functionality
-  const handleSendMessage = async () => {
-    if (!chatInput.trim() || chatLoading || !game) return
-
-    const userMessage = {
-      role: 'user' as const,
-      content: chatInput.trim(),
-      timestamp: new Date().toISOString()
-    }
-
-    // Add user message immediately
-    setChatMessages(prev => [...prev, userMessage])
-    setChatInput('')
-    setChatLoading(true)
-
-    try {
-      // Send to AI with chat history
-      const response = await apiClient.chatWithAI(
-        game.id,
-        userMessage.content,
-        chatMessages.map(msg => ({ role: msg.role, content: msg.content }))
-      )
-
-      const aiMessage = {
-        role: 'assistant' as const,
-        content: response.response,
-        timestamp: response.timestamp
-      }
-
-      setChatMessages(prev => [...prev, aiMessage])
-
-      // Scroll to bottom of chat
-      setTimeout(() => {
-        if (chatContainerRef.current) {
-          chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
-        }
-      }, 100)
-
-    } catch (error) {
-      console.error('Chat error:', error)
-      const errorMessage = {
-        role: 'assistant' as const,
-        content: '⚠️ Sorry, I encountered an error connecting to the AI service. Please check your connection and try again.',
-        timestamp: new Date().toISOString()
-      }
-      setChatMessages(prev => [...prev, errorMessage])
-    } finally {
-      setChatLoading(false)
-    }
-  }
-
-  const handleChatKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      handleSendMessage()
-    }
-  }
-
-  if (loading) {
-    return (
-      <div className="h-screen bg-black flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
-          <p className="mt-2 text-white">Loading game...</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="h-screen bg-black flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">Error</h1>
-          <p className="text-red-400 mb-4">{error}</p>
-          <Link
-            href="/dashboard"
-            className="bg-[#016F32] text-white px-6 py-2 rounded-lg hover:bg-[#014d24] transition-colors"
-          >
-            Back to Dashboard
-          </Link>
-        </div>
-      </div>
-    )
-  }
-
-  if (!game) {
-    return (
-      <div className="h-screen bg-black flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">Game Not Found</h1>
-          <Link
-            href="/dashboard"
-            className="bg-[#016F32] text-white px-6 py-2 rounded-lg hover:bg-[#014d24] transition-colors"
-          >
-            Back to Dashboard
-          </Link>
-        </div>
-      </div>
-    )
-  }
+  // Chat functionality now handled by AIChatProvider
 
 
 
@@ -423,130 +282,11 @@ export default function GameView() {
   const events = filteredEvents
 
   return (
-    <div className="h-screen bg-black relative overflow-hidden">
-      {/* AI Chat Sidebar - LEFT SIDE */}
-      {showChat && (
-        <div className="absolute top-0 left-0 h-full w-full md:w-80 bg-black/90 backdrop-blur-sm border-r border-gray-700 flex flex-col z-30">
-          <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
-            <div className="flex items-center justify-between mb-3">
-
-              <button
-                onClick={() => setShowChat(false)}
-                className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 border border-white/10 hover:border-white/20"
-                title="Hide Chat"
-              >
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <p className="text-xs text-gray-400">
-              Ask questions about tactics, player performance, or get coaching advice based on this game.
-            </p>
-          </div>
-          
-          {/* Chat Messages */}
-          <div 
-            ref={chatContainerRef}
-            className="flex-1 overflow-y-auto p-4 space-y-3"
-          >
-            {chatMessages.length === 0 && (
-              <div className="text-center text-gray-400 text-sm mt-8">
-                <div className="mb-4 text-4xl">🤖</div>
-                <p className="mb-2">Welcome to AI Coach!</p>
-                <p className="text-xs">Try asking:</p>
-                <div className="text-xs mt-2 space-y-1">
-                  <div>• "How did we perform in the first half?"</div>
-                  <div>• "What should we improve?"</div>
-                  <div>• "Analyze our goal scoring"</div>
-                </div>
-              </div>
-            )}
-            
-            {chatMessages.map((message, index) => (
-              <div
-                key={index}
-                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[85%] p-3 rounded-lg text-sm ${
-                    message.role === 'user'
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-800 text-gray-300'
-                  }`}
-                >
-                  {message.role === 'assistant' && (
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>🤖</span>
-                      <span className="text-xs text-gray-400">AI Coach</span>
-                    </div>
-                  )}
-                  <div className="whitespace-pre-wrap">{message.content}</div>
-                  <div className="text-xs opacity-60 mt-1">
-                    {new Date(message.timestamp).toLocaleTimeString()}
-                  </div>
-                </div>
-              </div>
-            ))}
-            
-            {chatLoading && (
-              <div className="flex justify-start">
-                <div className="bg-gray-800 text-gray-300 p-3 rounded-lg text-sm">
-                  <div className="flex items-center space-x-2">
-                    <span>🤖</span>
-                    <span className="text-xs text-gray-400">AI Coach</span>
-                  </div>
-                  <div className="flex items-center space-x-1 mt-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-          
-          {/* Chat Input */}
-          <div className="sticky bottom-0 bg-black/90 backdrop-blur-sm border-t border-gray-700 p-4">
-            <div className="flex space-x-3">
-              <input
-                type="text"
-                placeholder="Ask the AI coach..."
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                onKeyPress={handleChatKeyPress}
-                disabled={chatLoading}
-                className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 backdrop-blur-sm transition-all duration-200 disabled:opacity-50"
-              />
-              <button
-                onClick={handleSendMessage}
-                disabled={!chatInput.trim() || chatLoading}
-                className="flex items-center justify-center w-12 h-12 bg-blue-500 hover:bg-blue-600 disabled:bg-white/10 disabled:text-white/40 text-white rounded-xl font-medium disabled:cursor-not-allowed transition-all duration-200 border border-blue-400 disabled:border-white/10 shadow-lg"
-                title="Send Message"
-              >
-                {chatLoading ? (
-                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
-                )}
-              </button>
-            </div>
-            {chatMessages.length > 0 && (
-              <button
-                onClick={() => setChatMessages([])}
-                className="flex items-center space-x-1 text-xs text-white/60 hover:text-white/80 mt-3 px-2 py-1 rounded-lg hover:bg-white/5 transition-all duration-200"
-              >
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-                <span>Clear conversation</span>
-              </button>
-            )}
-          </div>
-        </div>
-      )}
+    <div className="min-h-screen bg-black">
+      {/* Video Section */}
+      <div className="h-screen bg-black relative overflow-hidden">
+      {/* AI Chat Sidebar - Now componentized */}
+      <AIChatSidebar />
 
       {/* Top Header - Back Button and Game Info */}
       <div className={`absolute top-4 z-50 flex items-center space-x-2 md:space-x-4 transition-all duration-300 ${
@@ -585,35 +325,12 @@ export default function GameView() {
         </div>
 
         <div className="flex items-center space-x-3">
-          <button
-            onClick={() => {
-              setShowChat(!showChat)
-              // On mobile, close events when opening chat
-              if (window.innerWidth < 768 && !showChat) {
-                setShowEvents(false)
-              }
-            }}
-            className={`group flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 border shadow-lg ${
-              showChat 
-                ? 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/40 text-blue-200' 
-                : 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
-            }`}
-            title="Toggle AI Chat"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-            <span style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>AI Coach</span>
-          </button>
+          <ChatToggleButton 
+            className="mobile-chat-toggle"
+          />
           
           <button
-            onClick={() => {
-              setShowEvents(!showEvents)
-              // On mobile, close chat when opening events
-              if (window.innerWidth < 768 && !showEvents) {
-                setShowChat(false)
-              }
-            }}
+            onClick={() => setShowEvents(!showEvents)}
             className={`group flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 border shadow-lg ${
               showEvents 
                 ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/40 text-green-200' 
@@ -1025,21 +742,93 @@ export default function GameView() {
           >
             📊 Events ({allEvents.length})
           </button>
-          <button
-            onClick={() => setShowChat(true)}
-            className="block bg-black/80 backdrop-blur-sm rounded-lg p-3 text-white hover:text-gray-300 transition-colors"
-            title="Show AI Chat"
-          >
-            🤖 AI Coach
-          </button>
+          <ChatToggleButton variant="floating" />
         </div>
       )}
 
-      {/* Game Insights Section - Below Video */}
-      <TacticalInsights 
-        tacticalData={tacticalData} 
-        tacticalLoading={tacticalLoading} 
-      />
+      </div>
+
+      {/* Game Insights Section - Separate scrollable section below video */}
+      <div className="bg-gray-900 min-h-screen">
+        <div className="container mx-auto px-6 py-8">
+          <h2 className="text-3xl font-bold text-white mb-6">Game Insights</h2>
+          <TacticalInsights 
+            tacticalData={tacticalData} 
+            tacticalLoading={tacticalLoading} 
+          />
+        </div>
+      </div>
     </div>
   )
-} 
+}
+
+export default function GameView() {
+  const router = useRouter()
+  const params = useParams()
+  const gameId = params.id as string
+  
+  const [game, setGame] = useState<Game | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    const userData = localStorage.getItem('user')
+    if (!userData) {
+      router.push('/')
+      return
+    }
+    
+    loadGame()
+  }, [gameId, router])
+
+  const loadGame = async () => {
+    try {
+      setLoading(true)
+      setError('')
+      
+      const response = await apiClient.getGame(gameId) as { game: Game }
+      setGame(response.game)
+    } catch (err: any) {
+      console.error('Failed to load game:', err)
+      setError(err.message || 'Failed to load game')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="h-screen bg-black flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+          <p className="mt-2 text-white">Loading game...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error || !game) {
+    return (
+      <div className="h-screen bg-black flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-white mb-4">
+            {error ? 'Error' : 'Game Not Found'}
+          </h1>
+          <p className="text-red-400 mb-4">{error || 'The requested game could not be found'}</p>
+          <Link
+            href="/dashboard"
+            className="bg-[#016F32] text-white px-6 py-2 rounded-lg hover:bg-[#014d24] transition-colors"
+          >
+            Back to Dashboard
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <AIChatProvider game={game}>
+      <GameViewContent game={game} />
+    </AIChatProvider>
+  )
+}

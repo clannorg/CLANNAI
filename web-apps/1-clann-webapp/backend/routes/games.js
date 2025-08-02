@@ -81,6 +81,7 @@ router.get('/:id', authenticateToken, async (req, res) => {
         s3_key: game.s3_key,
         status: game.status,
         ai_analysis: game.ai_analysis,
+        tactical_analysis: game.tactical_analysis,
         team_id: game.team_id,
         team_name: game.team_name,
         team_color: game.team_color,
@@ -190,6 +191,7 @@ router.get('/:id', authenticateToken, async (req, res) => {
         uploaded_by_name: game.uploaded_by_name,
         uploaded_by_email: game.uploaded_by_email,
         ai_analysis: game.ai_analysis,
+        tactical_analysis: game.tactical_analysis,
         metadata: game.metadata,
         created_at: game.created_at,
         updated_at: game.updated_at
