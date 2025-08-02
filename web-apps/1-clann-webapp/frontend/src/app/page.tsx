@@ -69,7 +69,8 @@ export default function Home() {
             ...(email.endsWith('@clann.ai') && { role: 'company' })
           }
 
-              const response = await fetch(`http://localhost:3002${endpoint}`, {
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
