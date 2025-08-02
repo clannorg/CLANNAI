@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import apiClient from '@/lib/api-client'
+import TacticalInsights from '../../../components/games/TacticalInsights'
 
 interface GameEvent {
   type: string
@@ -1035,105 +1036,10 @@ export default function GameView() {
       )}
 
       {/* Game Insights Section - Below Video */}
-      <div className="absolute bottom-0 left-0 right-0 max-h-40 bg-black/95 backdrop-blur-sm border-t border-gray-700 overflow-y-auto">
-        <div className="p-4">
-          <h3 className="text-white text-lg font-bold mb-4 flex items-center">
-            🧠 Game Insights
-          </h3>
-          
-          {tacticalLoading ? (
-            <div className="text-gray-400 text-sm">Loading tactical analysis...</div>
-          ) : tacticalData ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {/* Red Team Analysis */}
-              {tacticalData.tactical.red_team && (
-                <div className="bg-red-900/30 border border-red-700/50 rounded-lg p-3">
-                  <h4 className="text-red-400 font-semibold mb-2 flex items-center text-sm">
-                    🔴 Red Team Analysis
-                  </h4>
-                  <div className="text-gray-300 text-xs max-h-24 overflow-y-auto">
-                    {tacticalData.tactical.red_team.content.split('\n').slice(0, 5).map((line, i) => (
-                      <div key={i} className="mb-1">{line}</div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Yellow Team Analysis */}
-              {tacticalData.tactical.yellow_team && (
-                <div className="bg-yellow-900/30 border border-yellow-700/50 rounded-lg p-3">
-                  <h4 className="text-yellow-400 font-semibold mb-2 flex items-center text-sm">
-                    🟡 Yellow Team Analysis
-                  </h4>
-                  <div className="text-gray-300 text-xs max-h-24 overflow-y-auto">
-                    {tacticalData.tactical.yellow_team.content.split('\n').slice(0, 5).map((line, i) => (
-                      <div key={i} className="mb-1">{line}</div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Match Summary */}
-              {tacticalData.tactical.match_summary && (
-                <div className="bg-blue-900/30 border border-blue-700/50 rounded-lg p-3">
-                  <h4 className="text-blue-400 font-semibold mb-2 flex items-center text-sm">
-                    📊 Match Summary
-                  </h4>
-                  <div className="text-gray-300 text-xs max-h-24 overflow-y-auto">
-                    {tacticalData.tactical.match_summary.content.split('\n').slice(0, 5).map((line, i) => (
-                      <div key={i} className="mb-1">{line}</div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Coaching Insights */}
-              {tacticalData.tactical.coaching_insights && (
-                <div className="bg-green-900/30 border border-green-700/50 rounded-lg p-3">
-                  <h4 className="text-green-400 font-semibold mb-2 flex items-center text-sm">
-                    🎯 Coaching Insights
-                  </h4>
-                  <div className="text-gray-300 text-xs max-h-24 overflow-y-auto">
-                    {tacticalData.tactical.coaching_insights.content.split('\n').slice(0, 5).map((line, i) => (
-                      <div key={i} className="mb-1">{line}</div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Timeline Analysis */}
-              {tacticalData.analysis.complete_timeline && (
-                <div className="bg-purple-900/30 border border-purple-700/50 rounded-lg p-3">
-                  <h4 className="text-purple-400 font-semibold mb-2 flex items-center text-sm">
-                    ⏱️ Timeline Analysis
-                  </h4>
-                  <div className="text-gray-300 text-xs max-h-24 overflow-y-auto">
-                    {tacticalData.analysis.complete_timeline.content.split('\n').slice(0, 5).map((line, i) => (
-                      <div key={i} className="mb-1">{line}</div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Accuracy Comparison */}
-              {tacticalData.analysis.accuracy_comparison && (
-                <div className="bg-orange-900/30 border border-orange-700/50 rounded-lg p-3">
-                  <h4 className="text-orange-400 font-semibold mb-2 flex items-center text-sm">
-                    🎯 Accuracy Analysis
-                  </h4>
-                  <div className="text-gray-300 text-xs max-h-24 overflow-y-auto">
-                    {tacticalData.analysis.accuracy_comparison.content.split('\n').slice(0, 5).map((line, i) => (
-                      <div key={i} className="mb-1">{line}</div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="text-gray-500 text-sm">No tactical analysis available for this game.</div>
-          )}
-        </div>
-      </div>
+      <TacticalInsights 
+        tacticalData={tacticalData} 
+        tacticalLoading={tacticalLoading} 
+      />
     </div>
   )
 } 
