@@ -207,14 +207,14 @@ export default function Dashboard() {
     }
 
     try {
-      if (!setUploadGameLoading) setUploadGameLoading(true)
+      setUploadGameLoading(true)
       setError('')
       
       await apiClient.createGame({
         title: uploadGameTitle.trim(),
         description: uploadGameDescription.trim() || undefined,
         videoUrl: uploadGameUrl.trim(),
-        teamId: selectedTeam.id
+        teamId: 'id' in selectedTeam ? selectedTeam.id : selectedTeam.team.id
       })
       
       // Reload games after uploading
@@ -849,12 +849,13 @@ export default function Dashboard() {
         </div>
       )}
 
-      {/* Clean Feedback Toast like old app */}
-      {error && (
-        <div className="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-50 text-red-600 max-w-md">
-          {error}
+        {/* Clean Feedback Toast like old app */}
+        {error && (
+          <div className="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-50 text-red-600 max-w-md">
+            {error}
+          </div>
+        )}
         </div>
-      )}
       </div>
     </div>
   )
