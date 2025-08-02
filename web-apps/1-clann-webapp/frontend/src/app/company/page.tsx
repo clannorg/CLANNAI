@@ -167,8 +167,7 @@ export default function CompanyDashboard() {
               'Authorization': `Bearer ${localStorage.getItem('token')}` 
             },
             body: JSON.stringify({ 
-              events,
-              status: 'analyzed'
+              analysis: events  // Fix: wrap events in "analysis" field
             })
           });
           console.log('✅ Events processed and saved');
