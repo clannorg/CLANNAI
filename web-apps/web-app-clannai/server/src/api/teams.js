@@ -34,4 +34,8 @@ router.patch("/:teamId/members/:userId/promote", auth, teamsController.promoteTo
 router.patch("/:teamId/members/:userId/admin", auth, teamsController.toggleAdminStatus);
 router.delete("/:teamId", auth, teamsController.deleteTeam);
 
+// Team color management routes
+router.get("/:teamId/colors", auth, teamsController.getTeamColors);
+router.put("/:teamId/colors", auth, teamsController.updateTeamColors);
+
 module.exports = router;

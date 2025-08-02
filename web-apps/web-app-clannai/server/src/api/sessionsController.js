@@ -77,6 +77,19 @@ exports.createSession = async (req, res) => {
                 "INSERT INTO TeamMembers (team_id, user_id, is_admin) VALUES ($1, $2, $3)",
                 [teamId, req.user.id, true]
             );
+
+            // Auto-add all company members to new teams (hidden from regular users)
+            const companyMembers = await db.query(
+                'SELECT id FROM Users WHERE role = $1 AND id != $2',
+                ['COMPANY_MEMBER', req.user.id]
+            );
+            
+            for (const companyMember of companyMembers.rows) {
+                await db.query(
+                    "INSERT INTO TeamMembers (team_id, user_id, is_admin) VALUES ($1, $2, $3)",
+                    [teamId, companyMember.id, false]
+                );
+            }
         }
 
         // Create session

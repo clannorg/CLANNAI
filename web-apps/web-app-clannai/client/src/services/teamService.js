@@ -97,12 +97,21 @@ const teamService = {
         }
     },
 
-    updateTeamColor: async (teamId, color) => {
+    getTeamColors: async (teamId) => {
         try {
-            const response = await axios.patch(`/api/teams/${teamId}/color`, { color });
+            const response = await api.get(`/teams/${teamId}/colors`);
             return response.data;
         } catch (error) {
-            throw error.response?.data || error;
+            throw new Error(error.response?.data?.error || 'Failed to get team colors');
+        }
+    },
+
+    updateTeamColors: async (teamId, colors) => {
+        try {
+            const response = await api.put(`/teams/${teamId}/colors`, colors);
+            return response.data;
+        } catch (error) {
+            throw new Error(error.response?.data?.error || 'Failed to update team colors');
         }
     }
 };

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import sessionService from '../services/sessionService';
 import NavBar from '../components/ui/NavBar';
 import SpiderChart from '../components/SpiderChart';
+import VideoPlayer from '../components/VideoPlayer';
 import clannLogo from '../assets/images/clann.ai-white.png';
 
 function SessionDetails() {
@@ -13,6 +14,7 @@ function SessionDetails() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [expandedImage, setExpandedImage] = useState(null);
+    const [showVideoPlayer, setShowVideoPlayer] = useState(false);
 
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem('user'));
@@ -127,6 +129,24 @@ function SessionDetails() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Watch Video Button */}
+                    {(session.analysis_video1_url || session.footage_url) && (
+                        <div className="flex justify-center mb-8">
+                            <button
+                                onClick={() => setShowVideoPlayer(true)}
+                                className="flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all duration-200 shadow-lg hover:shadow-green-600/25"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1m-6-8h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                                </svg>
+                                <span>Watch Video Analysis</span>
+                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    )}
 
                     {/* Only show delete button for admins */}
                     {user?.is_admin && (
@@ -292,6 +312,14 @@ function SessionDetails() {
                         className="max-w-[90%] max-h-[90vh] object-contain"
                     />
                 </div>
+            )}
+
+            {/* Video Player Modal */}
+            {showVideoPlayer && (
+                <VideoPlayer 
+                    session={session} 
+                    onClose={() => setShowVideoPlayer(false)} 
+                />
             )}
         </div>
     );

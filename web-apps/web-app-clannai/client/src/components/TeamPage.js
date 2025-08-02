@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import teamService from '../services/teamService';
+import TeamColorManager from './TeamColorManager';
 
 function TeamPage({ 
   sessions, 
@@ -10,26 +11,12 @@ function TeamPage({
   copyInviteMessage 
 }) {
   const teamName = sessions[0]?.team_name;
-  const [teamColor, setTeamColor] = useState(sessions[0]?.team_color || '#D1FB7A');
-  const [showColorModal, setShowColorModal] = useState(false);
-
-  const colorOptions = [
-    { name: 'Team Green', value: '#016F32' },  // Deep team green
-    { name: 'Navy', value: '#1B365D' },        // Classic football navy
-    { name: 'Maroon', value: '#7A263A' },      // Traditional team maroon
-    { name: 'Royal Blue', value: '#0047AB' },  // Classic royal blue
-    { name: 'Forest Green', value: '#228B22' }, // Forest green
-    { name: 'Deep Purple', value: '#4B0082' }  // Deep purple
-  ];
-
-  const handleColorChange = async (color) => {
-    try {
-      setTeamColor(color);
-      await teamService.updateTeamColor(sessions[0]?.team_id, color);
-    } catch (err) {
-      console.error('Failed to update team color:', err);
-    }
-  };
+  const teamId = sessions[0]?.team_id;
+  
+  // Check if current user is admin
+  const user = JSON.parse(localStorage.getItem('user'));
+  const currentUserMember = teamMembers.find(member => member.user_id === user?.id);
+  const isAdmin = currentUserMember?.is_admin || false;
 
   const handleCopyTeamCode = () => {
     if (sessions[0]?.team_code) {
@@ -148,6 +135,18 @@ function TeamPage({
           ))}
         </div>
       </div>
+
+      {/* Team Color Management */}
+      {teamId && (
+        <TeamColorManager 
+          teamId={teamId}
+          isAdmin={isAdmin}
+          onColorsUpdated={(updatedTeam) => {
+            // Handle color updates if needed
+            console.log('Team colors updated:', updatedTeam);
+          }}
+        />
+      )}
     </div>
   );
 }

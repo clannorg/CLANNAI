@@ -6,6 +6,7 @@ import TopNav from '../components/navigation/TopNav';
 import { Link, useNavigate } from 'react-router-dom';
 import SessionCard from '../components/SessionCard';
 import Header from '../components/ui/Header';
+import VideoPlayer from '../components/VideoPlayer';
 
 const getSourceType = (url) => {
   try {
@@ -42,6 +43,8 @@ function Sessions() {
   const [sessions, setSessions] = useState([]);
   const [teamCode, setTeamCode] = useState('');
   const [selectedAnalyses, setSelectedAnalyses] = useState({});
+  const [showVideoPlayer, setShowVideoPlayer] = useState(false);
+  const [selectedSession, setSelectedSession] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -166,6 +169,12 @@ function Sessions() {
       });
       setSessions([]);
     }
+  };
+
+  const handleWatchVideo = (session, e) => {
+    e.stopPropagation(); // Prevent navigation to session details
+    setSelectedSession(session);
+    setShowVideoPlayer(true);
   };
 
   const handleDelete = async (sessionId) => {
@@ -383,6 +392,19 @@ function Sessions() {
                         {session.status === 'REVIEWED' && <span className="text-lg">→</span>}
                       </div>
 
+                      {/* Watch Video Button */}
+                      {(session.analysis_video1_url || session.footage_url) && (
+                        <button
+                          onClick={(e) => handleWatchVideo(session, e)}
+                          className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 whitespace-nowrap"
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                          Watch Video
+                        </button>
+                      )}
+
                       {session.status === 'REVIEWED' && (
                         <span className="text-sm text-gray-500 whitespace-nowrap">
                           Analyzed: {getRelativeTime(session.updated_at)}
@@ -397,6 +419,17 @@ function Sessions() {
         </div>
       </div>
       <NavBar />
+
+      {/* Video Player Modal */}
+      {showVideoPlayer && selectedSession && (
+        <VideoPlayer 
+          session={selectedSession} 
+          onClose={() => {
+            setShowVideoPlayer(false);
+            setSelectedSession(null);
+          }} 
+        />
+      )}
     </div>
   );
 }

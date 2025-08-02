@@ -6,7 +6,7 @@ const DEMO_TEAM_ID = '63bf8bce-72c4-4533-b090-e4c0be7c593e';
 
 const generateToken = (user) => {
     return jwt.sign(
-        { id: user.id, email: user.email },
+        { id: user.id, email: user.email, role: user.role },
         process.env.JWT_SECRET,
         { expiresIn: '24h' }
     );
@@ -20,8 +20,15 @@ exports.login = async (req, res) => {
         const user = result.rows[0];
         
         if (user && await bcrypt.compare(password, user.password_hash)) {
+            // Get user's primary team (most recent team they joined)
+            const teamResult = await db.query(
+                `SELECT team_id FROM TeamMembers WHERE user_id = $1 ORDER BY joined_at DESC LIMIT 1`,
+                [user.id]
+            );
+            const teamId = teamResult.rows[0]?.team_id || null;
+            
             const token = jwt.sign(
-                { id: user.id, email: user.email, role: user.role },
+                { id: user.id, email: user.email, role: user.role, teamId },
                 process.env.JWT_SECRET,
                 { expiresIn: '24h' }
             );
@@ -30,7 +37,8 @@ exports.login = async (req, res) => {
                 token,
                 id: user.id,
                 email: user.email,
-                role: user.role
+                role: user.role,
+                teamId
             });
         } else {
             res.status(401).json({ error: "Invalid credentials" });
@@ -42,7 +50,11 @@ exports.login = async (req, res) => {
 
 exports.register = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, termsAccepted } = req.body;
+        
+        if (!termsAccepted) {
+            return res.status(400).json({ error: 'Terms & Conditions must be accepted' });
+        }
 
         await db.query('BEGIN');
 
@@ -64,9 +76,11 @@ exports.register = async (req, res) => {
                 {
                     id: newUser.rows[0].id,
                     email: newUser.rows[0].email,
+                    role: newUser.rows[0].role,
                     teamId: DEMO_TEAM_ID
                 },
-                process.env.JWT_SECRET
+                process.env.JWT_SECRET,
+                { expiresIn: '24h' }
             );
 
             res.status(201).json({

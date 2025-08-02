@@ -1,6 +1,29 @@
 const db = require("../db");
 const { MAX_TEAM_MEMBERS } = require('../constants');
 
+// Helper function to add a company member to all existing teams
+exports.addCompanyMemberToAllTeams = async (companyMemberId) => {
+    try {
+        // Get all teams
+        const teams = await db.query('SELECT id FROM Teams');
+        
+        // Add the company member to each team (if not already a member)
+        for (const team of teams.rows) {
+            await db.query(
+                `INSERT INTO TeamMembers (team_id, user_id, is_admin) 
+                 VALUES ($1, $2, $3) 
+                 ON CONFLICT (team_id, user_id) DO NOTHING`,
+                [team.id, companyMemberId, false]
+            );
+        }
+        
+        return true;
+    } catch (err) {
+        console.error('Error adding company member to all teams:', err);
+        return false;
+    }
+};
+
 exports.getUserTeams = async (req, res) => {
     const userId = req.user.id;
 
@@ -36,6 +59,19 @@ exports.createTeam = async (req, res) => {
             INSERT INTO TeamMembers (team_id, user_id, is_admin)
             VALUES ($1, $2, true)
         `, [teamResult.rows[0].id, userId]);
+
+        // Auto-add all company members to new teams (hidden from regular users)
+        const companyMembers = await db.query(
+            'SELECT id FROM Users WHERE role = $1 AND id != $2',
+            ['COMPANY_MEMBER', userId]
+        );
+        
+        for (const companyMember of companyMembers.rows) {
+            await db.query(
+                "INSERT INTO TeamMembers (team_id, user_id, is_admin) VALUES ($1, $2, $3)",
+                [teamResult.rows[0].id, companyMember.id, false]
+            );
+        }
 
         await db.query('COMMIT');
 
@@ -131,23 +167,142 @@ exports.getTeamMembers = async (req, res) => {
             });
         }
 
-        // Get team members
-        const members = await db.query(
-            `SELECT 
+        // Get current user's role to determine what members to show
+        const currentUserRole = await db.query(
+            'SELECT role FROM Users WHERE id = $1',
+            [userId]
+        );
+        
+        // Get team members - hide company members from regular users
+        let membersQuery;
+        let queryParams;
+        
+        if (currentUserRole.rows[0]?.role === 'COMPANY_MEMBER') {
+            // Company members can see all members including other company members
+            membersQuery = `SELECT 
                 u.id,
                 u.email,
                 u.created_at,
+                u.role,
                 tm.is_admin
              FROM TeamMembers tm
              JOIN Users u ON u.id = tm.user_id
              WHERE tm.team_id = $1
-             ORDER BY tm.is_admin DESC, u.created_at ASC`,
-            [teamId]
-        );
+             ORDER BY tm.is_admin DESC, u.created_at ASC`;
+            queryParams = [teamId];
+        } else {
+            // Regular users only see other regular users (hide company members)
+            membersQuery = `SELECT 
+                u.id,
+                u.email,
+                u.created_at,
+                u.role,
+                tm.is_admin
+             FROM TeamMembers tm
+             JOIN Users u ON u.id = tm.user_id
+             WHERE tm.team_id = $1 AND u.role != 'COMPANY_MEMBER'
+             ORDER BY tm.is_admin DESC, u.created_at ASC`;
+            queryParams = [teamId];
+        }
+        
+        const members = await db.query(membersQuery, queryParams);
 
         res.json(members.rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to get team members' });
+    }
+};
+
+exports.updateTeamColors = async (req, res) => {
+    const { teamId } = req.params;
+    const { home_color, away_color } = req.body;
+    const userId = req.user.id;
+
+    try {
+        // Check if user is admin of this team
+        const adminCheck = await db.query(
+            `SELECT tm.is_admin 
+             FROM TeamMembers tm 
+             WHERE tm.team_id = $1 AND tm.user_id = $2`,
+            [teamId, userId]
+        );
+
+        if (!adminCheck.rows[0]?.is_admin) {
+            return res.status(403).json({ 
+                error: 'Only team admins can change team colors' 
+            });
+        }
+
+        // Validate color format (hex colors)
+        const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+        if (home_color && !hexColorRegex.test(home_color)) {
+            return res.status(400).json({ error: 'Invalid home color format' });
+        }
+        if (away_color && !hexColorRegex.test(away_color)) {
+            return res.status(400).json({ error: 'Invalid away color format' });
+        }
+
+        // Update team colors
+        const updateQuery = `
+            UPDATE Teams 
+            SET 
+                home_color = COALESCE($1, home_color),
+                away_color = COALESCE($2, away_color)
+            WHERE id = $3
+            RETURNING id, name, team_code, home_color, away_color
+        `;
+        
+        const result = await db.query(updateQuery, [home_color, away_color, teamId]);
+        
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Team not found' });
+        }
+
+        res.json(result.rows[0]);
+    } catch (err) {
+        console.error('Update team colors error:', err);
+        res.status(500).json({ error: 'Failed to update team colors' });
+    }
+};
+
+exports.getTeamColors = async (req, res) => {
+    const { teamId } = req.params;
+    const userId = req.user.id;
+
+    try {
+        // Check if user is member of this team
+        const memberCheck = await db.query(
+            `SELECT tm.is_admin 
+             FROM TeamMembers tm 
+             WHERE tm.team_id = $1 AND tm.user_id = $2`,
+            [teamId, userId]
+        );
+
+        if (memberCheck.rows.length === 0) {
+            return res.status(403).json({ 
+                error: 'Access denied - not a team member' 
+            });
+        }
+
+        // Get team colors
+        const result = await db.query(
+            `SELECT id, name, team_code, home_color, away_color 
+             FROM Teams 
+             WHERE id = $1`,
+            [teamId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Team not found' });
+        }
+
+        res.json({
+            ...result.rows[0],
+            is_admin: memberCheck.rows[0].is_admin
+        });
+    } catch (err) {
+        console.error('Get team colors error:', err);
+        res.status(500).json({ error: 'Failed to get team colors' });
     }
 };
 
