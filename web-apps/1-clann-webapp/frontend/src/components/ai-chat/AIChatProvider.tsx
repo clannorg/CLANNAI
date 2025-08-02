@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 import apiClient from '@/lib/api-client'
 import { ChatMessage, Game, AIChatContextType } from './types'
 
@@ -59,6 +59,53 @@ export const AIChatProvider: React.FC<AIChatProviderProps> = ({ children, game }
 
   const toggleChat = () => setIsOpen(prev => !prev)
   const clearMessages = () => setMessages([])
+
+  // Listen for insight card clicks and check for dashboard context
+  useEffect(() => {
+    // Check for context from dashboard on component mount
+    const dashboardContext = sessionStorage.getItem('aiCoachContext')
+    if (dashboardContext) {
+      try {
+        const { type, details, gameTitle } = JSON.parse(dashboardContext)
+        
+        // Clear the stored context
+        sessionStorage.removeItem('aiCoachContext')
+        
+        // Open the chat and send contextual message
+        setIsOpen(true)
+        
+        const contextMessage = `I came from the dashboard to discuss the ${type} for ${gameTitle}. ${details ? `Specifically: ${details}` : ''}`
+        
+        setTimeout(() => {
+          sendMessage(contextMessage)
+        }, 1000) // Give more time for page to load
+      } catch (error) {
+        console.error('Error parsing dashboard context:', error)
+      }
+    }
+
+    const handleAICoachContext = async (event: Event) => {
+      const customEvent = event as CustomEvent
+      const { context, details } = customEvent.detail
+      
+      // Open the chat
+      setIsOpen(true)
+      
+      // Send a contextual message to the AI
+      const contextMessage = `I'd like to discuss the ${context}. ${details ? `Specifically: ${details}` : ''}`
+      
+      // Wait a moment for the chat to open, then send the message
+      setTimeout(() => {
+        sendMessage(contextMessage)
+      }, 500)
+    }
+
+    window.addEventListener('openAICoachWithContext', handleAICoachContext)
+    
+    return () => {
+      window.removeEventListener('openAICoachWithContext', handleAICoachContext)
+    }
+  }, [sendMessage])
 
   const contextValue: AIChatContextType = {
     messages,

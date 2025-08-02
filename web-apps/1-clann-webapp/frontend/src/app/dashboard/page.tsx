@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
+import DashboardInsights from '@/components/dashboard/DashboardInsights'
 
 interface Game {
   id: string
@@ -335,6 +336,16 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center overflow-x-auto scrollbar-hide">
             <button
+              onClick={() => setActiveTab('insights')}
+              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
+                activeTab === 'insights'
+                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              AI Insights
+            </button>
+            <button
               onClick={() => setActiveTab('games')}
               className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
                 activeTab === 'games'
@@ -363,6 +374,13 @@ export default function Dashboard() {
 
         {/* Content Area */}
         <div className="space-y-4">
+
+        {/* AI Insights Tab */}
+        {activeTab === 'insights' && (
+          <div className="bg-white rounded-xl shadow-sm p-6">
+            <DashboardInsights />
+          </div>
+        )}
 
         {/* Games Tab */}
         {activeTab === 'games' && (

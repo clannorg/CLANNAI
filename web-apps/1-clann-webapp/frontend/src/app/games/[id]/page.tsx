@@ -754,7 +754,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           <h2 className="text-3xl font-bold text-white mb-6">Game Insights</h2>
           <TacticalInsights 
             tacticalData={tacticalData} 
-            tacticalLoading={tacticalLoading} 
+            tacticalLoading={tacticalLoading}
+            gameId={gameId}
           />
         </div>
       </div>
