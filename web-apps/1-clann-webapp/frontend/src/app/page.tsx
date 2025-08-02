@@ -182,9 +182,16 @@ export default function Home() {
               loop
               muted
               playsInline
+              preload="auto"
+              poster="/clann-logo-white.png"
               className="absolute inset-0 w-full h-full object-cover opacity-80"
+              onError={(e) => console.error('Video failed to load:', e)}
+              onLoadStart={() => console.log('Video loading started')}
+              onCanPlay={() => console.log('Video can play')}
             >
               <source src="/hero-video.mp4" type="video/mp4" />
+              <source src="/hero-video.mp4" type="video/webm" />
+              Your browser does not support the video tag.
             </video>
 
             {/* Gradient Overlay */}
