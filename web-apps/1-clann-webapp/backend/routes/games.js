@@ -2,6 +2,7 @@ const express = require('express');
 const { authenticateToken, requireCompanyRole } = require('../middleware/auth');
 const { 
   getUserGames, 
+  getAllGames,
   getGameById, 
   createGame, 
   updateGame,
@@ -11,10 +12,13 @@ const {
 
 const router = express.Router();
 
-// Get user's games
+// Get user's games (or all games for company admins)
 router.get('/', authenticateToken, async (req, res) => {
   try {
-    const games = await getUserGames(req.user.id);
+    // Company users see all games, regular users see only their team's games
+    const games = req.user.role === 'company' 
+      ? await getAllGames() 
+      : await getUserGames(req.user.id);
 
     res.json({
       games: games.map(game => ({
@@ -30,6 +34,11 @@ router.get('/', authenticateToken, async (req, res) => {
         team_id: game.team_id,
         team_name: game.team_name,
         team_color: game.team_color,
+        // Include uploader info for company admins (discretely)
+        ...(req.user.role === 'company' && {
+          uploaded_by_name: game.uploaded_by_name,
+          uploaded_by_email: game.uploaded_by_email
+        }),
         created_at: game.created_at,
         updated_at: game.updated_at,
         has_analysis: !!game.ai_analysis
@@ -51,12 +60,14 @@ router.get('/:id', authenticateToken, async (req, res) => {
       return res.status(404).json({ error: 'Game not found' });
     }
     
-    // Check if user has access to this game (their game or team member)
-    const userGames = await getUserGames(req.user.id);
-    const hasAccess = userGames.some(g => g.id === gameId);
-    
-    if (!hasAccess) {
-      return res.status(403).json({ error: 'Access denied' });
+    // Check if user has access to this game (their game, team member, or company admin)
+    if (req.user.role !== 'company') {
+      const userGames = await getUserGames(req.user.id);
+      const hasAccess = userGames.some(g => g.id === gameId);
+      
+      if (!hasAccess) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
     }
     
     // Convert S3 URL to HTTPS format for browser compatibility
