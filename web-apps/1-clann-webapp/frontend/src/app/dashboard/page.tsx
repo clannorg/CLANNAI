@@ -238,7 +238,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F7F6F1]">
       {/* Professional Header */}
       <nav className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4">
@@ -291,12 +291,12 @@ export default function Dashboard() {
       </nav>
 
       {/* Tab Navigation - centered like old app */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white border-b border-gray-200/10">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-center">
+          <div className="flex justify-center overflow-x-auto scrollbar-hide">
             <button
               onClick={() => setActiveTab('games')}
-              className={`px-8 py-3 font-medium text-sm ${
+              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
                 activeTab === 'games'
                   ? 'text-[#016F32] border-b-2 border-[#016F32]'
                   : 'text-gray-500 hover:text-gray-700'
@@ -306,7 +306,7 @@ export default function Dashboard() {
             </button>
             <button
               onClick={() => setActiveTab('teams')}
-              className={`px-8 py-3 font-medium text-sm ${
+              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
                 activeTab === 'teams'
                   ? 'text-[#016F32] border-b-2 border-[#016F32]'
                   : 'text-gray-500 hover:text-gray-700'
@@ -318,7 +318,40 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Simple Content */}
+      {/* User Profile Section */}
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="flex items-center gap-6 mb-12">
+          <div className="flex items-center gap-8">
+            <div>
+              <h1 className="text-3xl font-bold mb-2">
+                {teams.length > 0 ? teams[0].name : 
+                  <div className="flex items-center gap-2 text-gray-500">
+                    Create your first team
+                    <button 
+                      onClick={() => setShowCreateTeamModal(true)}
+                      className="text-sm px-3 py-1 bg-[#016F32]/10 text-[#016F32] rounded-lg hover:bg-[#016F32]/20"
+                    >
+                      Create Team →
+                    </button>
+                  </div>
+                }
+                <span className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400">
+                  FREE TIER
+                </span>
+              </h1>
+              <div className="flex items-center gap-2 text-gray-600">
+                <span>⚽</span>
+                <div>
+                  <p className="text-lg text-gray-500">Team Member:</p>
+                  <p className="text-lg">{user?.email || 'demo@clann.ai'}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
       <div className="max-w-4xl mx-auto px-8 py-8">
 
         {/* Content Area */}
