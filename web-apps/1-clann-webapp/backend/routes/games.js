@@ -240,6 +240,169 @@ router.post('/:id/upload-video', [authenticateToken, requireCompanyRole], async 
   }
 });
 
+// Upload S3 events file (company only)
+router.post('/:id/upload-events', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { s3Key, originalFilename } = req.body;
+
+    if (!s3Key) {
+      return res.status(400).json({ error: 'S3 key is required' });
+    }
+
+    // Fetch events from S3 URL
+    const eventsResponse = await fetch(s3Key);
+    if (!eventsResponse.ok) {
+      return res.status(400).json({ error: 'Could not fetch events file from S3' });
+    }
+
+    const eventsData = await eventsResponse.json();
+    const events = Array.isArray(eventsData) ? eventsData : eventsData.events || [];
+
+    // Update game with events
+    const updatedGame = await updateGame(gameId, {
+      ai_analysis: events,
+      status: 'analyzed'
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      message: 'Events uploaded successfully',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        status: updatedGame.status,
+        events_count: events.length,
+        updated_at: updatedGame.updated_at
+      }
+    });
+  } catch (error) {
+    console.error('Upload events error:', error);
+    res.status(500).json({ error: 'Failed to upload events' });
+  }
+});
+
+// Upload S3 tactical file (company only) 
+router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { s3Key, originalFilename, fileType } = req.body;
+
+    if (!s3Key) {
+      return res.status(400).json({ error: 'S3 key is required' });
+    }
+
+    // Store tactical file URL in metadata
+    const currentGame = await getGameById(gameId);
+    if (!currentGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    const currentMetadata = currentGame.metadata || {};
+    const tacticalFiles = currentMetadata.tactical_files || {};
+    
+    // Determine file type from filename or explicit type
+    let tacticalType = fileType;
+    if (!tacticalType) {
+      const filename = originalFilename?.toLowerCase() || s3Key.toLowerCase();
+      if (filename.includes('red_team')) tacticalType = 'red_team';
+      else if (filename.includes('yellow_team')) tacticalType = 'yellow_team';
+      else if (filename.includes('coaching') || filename.includes('insights')) tacticalType = 'coaching_insights';
+      else if (filename.includes('summary')) tacticalType = 'match_summary';
+      else tacticalType = 'general';
+    }
+
+    tacticalFiles[tacticalType] = {
+      url: s3Key,
+      filename: originalFilename,
+      uploaded_at: new Date().toISOString()
+    };
+
+    const updatedGame = await updateGame(gameId, {
+      metadata: {
+        ...currentMetadata,
+        tactical_files: tacticalFiles
+      }
+    });
+
+    res.json({
+      message: 'Tactical file uploaded successfully',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        status: updatedGame.status,
+        tactical_type: tacticalType,
+        updated_at: updatedGame.updated_at
+      }
+    });
+  } catch (error) {
+    console.error('Upload tactical error:', error);
+    res.status(500).json({ error: 'Failed to upload tactical file' });
+  }
+});
+
+// Upload S3 analysis file (company only) - for timeline, accuracy, ground truth, etc.
+router.post('/:id/upload-analysis-file', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { s3Key, originalFilename, fileType } = req.body;
+
+    if (!s3Key) {
+      return res.status(400).json({ error: 'S3 key is required' });
+    }
+
+    // Store analysis file URL in metadata
+    const currentGame = await getGameById(gameId);
+    if (!currentGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    const currentMetadata = currentGame.metadata || {};
+    const analysisFiles = currentMetadata.analysis_files || {};
+    
+    // Determine file type from filename or explicit type
+    let analysisType = fileType;
+    if (!analysisType) {
+      const filename = originalFilename?.toLowerCase() || s3Key.toLowerCase();
+      if (filename.includes('ground_truth')) analysisType = 'ground_truth';
+      else if (filename.includes('complete_timeline')) analysisType = 'complete_timeline';
+      else if (filename.includes('validated_timeline')) analysisType = 'validated_timeline';
+      else if (filename.includes('accuracy')) analysisType = 'accuracy_comparison';
+      else analysisType = 'general';
+    }
+
+    analysisFiles[analysisType] = {
+      url: s3Key,
+      filename: originalFilename,
+      uploaded_at: new Date().toISOString()
+    };
+
+    const updatedGame = await updateGame(gameId, {
+      metadata: {
+        ...currentMetadata,
+        analysis_files: analysisFiles
+      }
+    });
+
+    res.json({
+      message: 'Analysis file uploaded successfully',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        status: updatedGame.status,
+        analysis_type: analysisType,
+        updated_at: updatedGame.updated_at
+      }
+    });
+  } catch (error) {
+    console.error('Upload analysis file error:', error);
+    res.status(500).json({ error: 'Failed to upload analysis file' });
+  }
+});
+
 // Upload analysis JSON (company only)
 router.post('/:id/analysis', [authenticateToken, requireCompanyRole], async (req, res) => {
   try {
@@ -250,14 +413,30 @@ router.post('/:id/analysis', [authenticateToken, requireCompanyRole], async (req
       return res.status(400).json({ error: 'Analysis data is required' });
     }
 
-    // Validate analysis structure (basic check)
-    if (typeof analysis !== 'object') {
-      return res.status(400).json({ error: 'Analysis must be a valid JSON object' });
+    // Validate and clean analysis structure
+    let cleanAnalysis;
+    if (typeof analysis === 'string') {
+      try {
+        cleanAnalysis = JSON.parse(analysis);
+      } catch (e) {
+        return res.status(400).json({ error: 'Analysis string is not valid JSON: ' + e.message });
+      }
+    } else if (typeof analysis === 'object') {
+      cleanAnalysis = analysis;
+    } else {
+      return res.status(400).json({ error: 'Analysis must be a valid JSON object or string' });
+    }
+
+    // Additional validation - ensure it's serializable
+    try {
+      JSON.stringify(cleanAnalysis);
+    } catch (e) {
+      return res.status(400).json({ error: 'Analysis contains non-serializable data: ' + e.message });
     }
 
     // Update game with analysis
     const updatedGame = await updateGame(gameId, {
-      ai_analysis: analysis
+      ai_analysis: cleanAnalysis
     });
 
     if (!updatedGame) {
@@ -294,7 +473,8 @@ router.post('/:id/analysis-files', [authenticateToken, requireCompanyRole], asyn
 
     // Enhanced VM Processing: Extract key files for video player
     let gameUpdates = {
-      s3_analysis_files: s3AnalysisFiles
+      // Note: s3_analysis_files column doesn't exist, storing in metadata instead
+      metadata: { s3_analysis_files: s3AnalysisFiles }
     };
 
     // 1. Extract video URL

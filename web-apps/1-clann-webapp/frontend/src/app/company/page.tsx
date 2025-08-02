@@ -125,77 +125,97 @@ export default function CompanyDashboard() {
 
 
 
-  // Quick S3 URL save handler
-  const handleQuickS3Save = async (game: Game, url: string) => {
+  // Video upload handler
+  const handleVideoSave = async (game: Game, url: string) => {
     try {
       setUpdating(true);
       setError('');
       
-      console.log('🔗 Quick S3 Save:', { gameId: game.id, url });
-      
-      // Smart detection based on URL content
-      const urlLower = url.toLowerCase();
-      
-      if (urlLower.includes('video') || urlLower.includes('.mp4')) {
-        // Video file - use correct backend endpoint
-        await fetch(`${API_BASE_URL}/api/games/${game.id}/upload-video`, {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json', 
-            'Authorization': `Bearer ${localStorage.getItem('token')}` 
-          },
-          body: JSON.stringify({ 
-            s3Key: url,
-            originalFilename: 'video.mp4',
-            fileSize: 0,
-            duration: 0
-          })
-        });
-        console.log('✅ Video URL saved');
-        
-      } else if (urlLower.includes('events') || urlLower.includes('web_events')) {
-        // Events file - fetch and process, use correct endpoint
-        const eventsResponse = await fetch(url);
-        if (eventsResponse.ok) {
-          const eventsData = await eventsResponse.json();
-          const events = Array.isArray(eventsData) ? eventsData : eventsData.events || [];
-          
-          await fetch(`${API_BASE_URL}/api/games/${game.id}/analysis`, {
-            method: 'POST',
-            headers: { 
-              'Content-Type': 'application/json', 
-              'Authorization': `Bearer ${localStorage.getItem('token')}` 
-            },
-            body: JSON.stringify({ 
-              analysis: events  // Fix: wrap events in "analysis" field
-            })
-          });
-          console.log('✅ Events processed and saved');
-        }
-        
-      } else {
-        // General analysis file
-        await fetch(`${API_BASE_URL}/api/games/${game.id}/analysis-files`, {
-          method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json', 
-            'Authorization': `Bearer ${localStorage.getItem('token')}` 
-          },
-          body: JSON.stringify({ 
-            s3AnalysisFiles: {
-              [url.split('/').pop() || 'analysis_file']: url
-            }
-          })
-        });
-        console.log('✅ Analysis file URL saved');
-      }
-      
-      // Reload dashboard
+      await fetch(`${API_BASE_URL}/api/games/${game.id}/upload-video`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${localStorage.getItem('token')}` 
+        },
+        body: JSON.stringify({ 
+          s3Key: url,
+          originalFilename: url.split('/').pop() || 'video.mp4',
+          fileSize: 0,
+          duration: 0
+        })
+      });
+      console.log('✅ Video URL saved');
       await loadDashboardData();
       
     } catch (err: any) {
-      console.error('Failed to save S3 URL:', err);
-      setError(err.message || 'Failed to save S3 URL');
+      console.error('Failed to save video URL:', err);
+      setError(err.message || 'Failed to save video URL');
+    } finally {
+      setUpdating(false);
+    }
+  };
+
+  // Events upload handler  
+  const handleEventsSave = async (game: Game, url: string) => {
+    try {
+      setUpdating(true);
+      setError('');
+      
+      await fetch(`${API_BASE_URL}/api/games/${game.id}/upload-events`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${localStorage.getItem('token')}` 
+        },
+        body: JSON.stringify({ 
+          s3Key: url,
+          originalFilename: url.split('/').pop() || 'events.json'
+        })
+      });
+      console.log('✅ Events processed and saved');
+      await loadDashboardData();
+      
+    } catch (err: any) {
+      console.error('Failed to save events URL:', err);
+      setError(err.message || 'Failed to save events URL');
+    } finally {
+      setUpdating(false);
+    }
+  };
+
+  // Analysis upload handler (for tactical, timeline, etc.)
+  const handleAnalysisSave = async (game: Game, url: string) => {
+    try {
+      setUpdating(true);
+      setError('');
+      
+      const filename = url.split('/').pop() || 'analysis.txt';
+      const urlLower = url.toLowerCase();
+      
+      // Determine if it's tactical or general analysis
+      const isTactical = urlLower.includes('tactical') || urlLower.includes('coaching') || 
+                        urlLower.includes('red_team') || urlLower.includes('yellow_team') ||
+                        urlLower.includes('summary');
+      
+      const endpoint = isTactical ? 'upload-tactical' : 'upload-analysis-file';
+      
+      await fetch(`${API_BASE_URL}/api/games/${game.id}/${endpoint}`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${localStorage.getItem('token')}` 
+        },
+        body: JSON.stringify({ 
+          s3Key: url,
+          originalFilename: filename
+        })
+      });
+      console.log(`✅ ${isTactical ? 'Tactical' : 'Analysis'} file saved`);
+      await loadDashboardData();
+      
+    } catch (err: any) {
+      console.error('Failed to save analysis URL:', err);
+      setError(err.message || 'Failed to save analysis URL');
     } finally {
       setUpdating(false);
     }
@@ -366,7 +386,7 @@ export default function CompanyDashboard() {
                       </div>
                       
                       <div className="space-y-3 lg:ml-6">
-                        {/* Video URL Input */}
+                                                {/* Video URL Input */}
                         <div className="flex items-center space-x-2">
                           <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
                             Video:
@@ -379,24 +399,24 @@ export default function CompanyDashboard() {
                               if (e.key === 'Enter') {
                                 const input = e.target as HTMLInputElement;
                                 if (input.value.trim()) {
-                                  handleQuickS3Save(game, input.value.trim());
+                                  handleVideoSave(game, input.value.trim());
                                   input.value = '';
                                 }
                               }
                             }}
                           />
-                        <button
+                          <button
                             className="bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
                             onClick={(e) => {
                               const input = e.currentTarget.previousElementSibling as HTMLInputElement;
                               if (input?.value.trim()) {
-                                handleQuickS3Save(game, input.value.trim());
+                                handleVideoSave(game, input.value.trim());
                                 input.value = '';
                               }
                             }}
                           >
                             Save
-                        </button>
+                          </button>
                         </div>
 
                         {/* Events URL Input */}
@@ -412,24 +432,24 @@ export default function CompanyDashboard() {
                               if (e.key === 'Enter') {
                                 const input = e.target as HTMLInputElement;
                                 if (input.value.trim()) {
-                                  handleQuickS3Save(game, input.value.trim());
+                                  handleEventsSave(game, input.value.trim());
                                   input.value = '';
                                 }
                               }
                             }}
                           />
-                        <button
+                          <button
                             className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
                             onClick={(e) => {
                               const input = e.currentTarget.previousElementSibling as HTMLInputElement;
                               if (input?.value.trim()) {
-                                handleQuickS3Save(game, input.value.trim());
+                                handleEventsSave(game, input.value.trim());
                                 input.value = '';
                               }
                             }}
                           >
                             Save
-                        </button>
+                          </button>
                         </div>
 
                         {/* Analysis URL Input */}
@@ -445,7 +465,7 @@ export default function CompanyDashboard() {
                               if (e.key === 'Enter') {
                                 const input = e.target as HTMLInputElement;
                                 if (input.value.trim()) {
-                                  handleQuickS3Save(game, input.value.trim());
+                                  handleAnalysisSave(game, input.value.trim());
                                   input.value = '';
                                 }
                               }
@@ -456,7 +476,7 @@ export default function CompanyDashboard() {
                             onClick={(e) => {
                               const input = e.currentTarget.previousElementSibling as HTMLInputElement;
                               if (input?.value.trim()) {
-                                handleQuickS3Save(game, input.value.trim());
+                                handleAnalysisSave(game, input.value.trim());
                                 input.value = '';
                               }
                             }}
