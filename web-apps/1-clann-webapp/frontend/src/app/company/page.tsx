@@ -56,6 +56,10 @@ export default function CompanyDashboard() {
   const [s3LocationsUrl, setS3LocationsUrl] = useState('');
   const [autoFillError, setAutoFillError] = useState('');
 
+  // VM File List state
+  const [showVMUploadModal, setShowVMUploadModal] = useState(false);
+  const [vmFileList, setVmFileList] = useState('');
+
   useEffect(() => {
     const userData = localStorage.getItem('user')
     if (!userData) {
@@ -270,6 +274,60 @@ export default function CompanyDashboard() {
     }
   };
 
+  // VM File List handlers
+  const handleAddVMFiles = (game: Game) => {
+    setSelectedGame(game);
+    setVmFileList('');
+    setShowVMUploadModal(true);
+  };
+
+  const parseVMFileList = (fileList: string) => {
+    const files: Record<string, string> = {};
+    const lines = fileList.split('\n').filter(line => line.includes('='));
+    
+    lines.forEach(line => {
+      const [filename, url] = line.split('=');
+      if (filename && url) {
+        files[filename.trim()] = url.trim();
+      }
+    });
+    
+    return files;
+  };
+
+  const handleSubmitVMFiles = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedGame || !vmFileList.trim()) return;
+
+    try {
+      setUpdating(true);
+      setError('');
+      
+      // Parse the VM file list
+      const fileMap = parseVMFileList(vmFileList.trim());
+      
+      // For now, just store as S3 analysis files
+      await fetch(`/api/games/${selectedGame.id}/analysis-files`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${localStorage.getItem('token')}` 
+        },
+        body: JSON.stringify({ s3AnalysisFiles: fileMap })
+      });
+      
+      setShowVMUploadModal(false);
+      setVmFileList('');
+      setSelectedGame(null);
+      await loadDashboardData();
+    } catch (err: any) {
+      console.error('Failed to upload VM files:', err);
+      setError(err.message || 'Failed to upload VM file list');
+    } finally {
+      setUpdating(false);
+    }
+  };
+
   if (!user) {
     return <div className="min-h-screen bg-[#F7F6F1] flex items-center justify-center">
       <div className="text-center">
@@ -450,6 +508,13 @@ export default function CompanyDashboard() {
                         >
                           Add S3 Analysis Files
                         </button>
+                        {/* Add VM File List Button */}
+                        <button
+                          className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-lg text-sm hover:from-purple-700 hover:to-indigo-700 transition-all shadow-lg"
+                          onClick={() => handleAddVMFiles(game)}
+                        >
+                          🧠 VM File List
+                        </button>
                         {game.status === 'pending' && (
                           <button
                             onClick={() => handleMarkAnalyzed(game)}
@@ -624,6 +689,77 @@ export default function CompanyDashboard() {
                 <button type="button" onClick={() => setShowS3FilesModal(false)} className="px-6 py-2.5 text-gray-900">Cancel</button>
                 <button type="submit" disabled={updating} className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-blue-700">
                   {updating ? 'Saving...' : 'Save'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* VM File List Upload Modal */}
+      {showVMUploadModal && selectedGame && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-3xl shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Upload VM Analysis Files</h3>
+            <p className="text-base text-gray-700 mb-4">
+              Paste your VM analysis file list below. Each line should be in format: filename=S3_URL
+            </p>
+            
+            {error && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-600 text-sm">{error}</p>
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmitVMFiles} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1">
+                  VM File List (copy from your VM output)
+                </label>
+                <textarea
+                  value={vmFileList}
+                  onChange={(e) => setVmFileList(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 font-mono text-xs"
+                  placeholder={`1_veo_ground_truth.json=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-1_veo_ground_truth-json.json
+5_complete_timeline.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-5_complete_timeline-txt.txt
+web_events.json=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-web_events-json.json
+video.mp4=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/f323-527e6a4e-video-mp4.mp4`}
+                  rows={12}
+                  required
+                  disabled={updating}
+                />
+              </div>
+              
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-blue-900 mb-2">What happens:</h4>
+                <ul className="text-sm text-blue-800 space-y-1">
+                  <li>✅ All file URLs are stored for this game</li>
+                  <li>✅ Files are accessible for processing later</li>
+                  <li>✅ Format: filename=url (one per line)</li>
+                  <li>⏳ Next: We'll add automatic processing of these files</li>
+                </ul>
+              </div>
+              
+              <div className="flex justify-end space-x-3">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowVMUploadModal(false)
+                    setVmFileList('')
+                    setSelectedGame(null)
+                    setError('')
+                  }}
+                  className="px-6 py-2.5 text-gray-900 hover:text-gray-900 transition-colors"
+                  disabled={updating}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={updating || !vmFileList.trim()}
+                  className="bg-purple-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {updating ? 'Uploading...' : 'Upload File List'}
                 </button>
               </div>
             </form>

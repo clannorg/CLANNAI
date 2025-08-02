@@ -69,8 +69,7 @@ export default function Home() {
             ...(email.endsWith('@clann.ai') && { role: 'company' })
           }
 
-    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+              const response = await fetch(`http://localhost:3002${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
@@ -183,16 +182,9 @@ export default function Home() {
               loop
               muted
               playsInline
-              preload="auto"
-              poster="/clann-logo-white.png"
               className="absolute inset-0 w-full h-full object-cover opacity-80"
-              onError={(e) => console.error('Video failed to load:', e)}
-              onLoadStart={() => console.log('Video loading started')}
-              onCanPlay={() => console.log('Video can play')}
             >
               <source src="/hero-video.mp4" type="video/mp4" />
-              <source src="/hero-video.mp4" type="video/webm" />
-              Your browser does not support the video tag.
             </video>
 
             {/* Gradient Overlay */}

@@ -1,3 +1,5 @@
+import { VMFileMap, EnhancedAnalysis } from '@/types/analysis'
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
 
 interface ApiResponse<T = any> {
@@ -179,6 +181,73 @@ class ApiClient {
       method: 'POST',
       body: JSON.stringify({ message, chatHistory })
     })
+  }
+
+  // VM Analysis Processing
+  async processVMAnalysis(gameId: string, vmFiles: VMFileMap) {
+    return this.request<{
+      message: string
+      filesProcessed: number
+      game: any
+    }>(`/api/games/${gameId}/vm-analysis`, {
+      method: 'POST',
+      body: JSON.stringify({ vmFiles })
+    })
+  }
+
+  // Parse VM file list format into file map
+  parseVMFileList(fileList: string): VMFileMap {
+    const files: VMFileMap = {}
+    const lines = fileList.split('\n').filter(line => line.includes('='))
+    
+    lines.forEach(line => {
+      const [filename, url] = line.split('=')
+      if (filename && url) {
+        files[filename.trim()] = url.trim()
+      }
+    })
+    
+    return files
+  }
+
+  // Enhanced analysis file management
+  async updateAnalysisFiles(gameId: string, s3AnalysisFiles: Record<string, string>) {
+    return this.request(`/api/games/${gameId}/analysis-files`, {
+      method: 'POST',
+      body: JSON.stringify({ s3AnalysisFiles })
+    })
+  }
+
+  // Fetch and preview S3 content for validation
+  async previewS3Content(s3Url: string, maxLength: number = 1000) {
+    try {
+      const response = await fetch(s3Url)
+      if (!response.ok) throw new Error(`Failed to fetch: ${response.status}`)
+      
+      const contentType = response.headers.get('content-type') || ''
+      
+      if (contentType.includes('application/json')) {
+        const json = await response.json()
+        return {
+          type: 'json',
+          preview: JSON.stringify(json, null, 2).substring(0, maxLength),
+          size: JSON.stringify(json).length
+        }
+      } else {
+        const text = await response.text()
+        return {
+          type: 'text',
+          preview: text.substring(0, maxLength),
+          size: text.length
+        }
+      }
+    } catch (error) {
+      return {
+        type: 'error',
+        preview: `Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
+        size: 0
+      }
+    }
   }
 }
 

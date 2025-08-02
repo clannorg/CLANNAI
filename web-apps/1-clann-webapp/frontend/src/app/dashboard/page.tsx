@@ -142,6 +142,7 @@ export default function Dashboard() {
 
   const handleUploadGame = async (e: React.FormEvent) => {
     e.preventDefault()
+    console.log('🎯 Form submitted!', { uploadGameUrl, uploadTeamName, uploadGameTitle })
     if (!uploadGameTitle.trim() || !uploadGameUrl.trim()) return
 
     let selectedTeam
@@ -221,15 +222,11 @@ export default function Dashboard() {
       const gamesResponse = await apiClient.getUserGames()
       setGames(gamesResponse.games || [])
       
-      // Close modal and reset form
-      setShowUploadModal(false)
+      // Reset form
       setUploadGameTitle('')
       setUploadGameDescription('')
       setUploadGameUrl('')
       setUploadTeamName('')
-      
-      // Switch to games tab to show the new game
-      setActiveTab('games')
     } catch (err: any) {
       console.error('Failed to upload game:', err)
       setError(err.message || 'Failed to upload game')
@@ -360,18 +357,21 @@ export default function Dashboard() {
         {/* Games Tab */}
         {activeTab === 'games' && (
           <div className="space-y-6">
-            {/* Upload Matches Component */}
+            {/* Upload New Match - WORKING VERSION */}
             <div className="bg-white rounded-xl shadow-sm">
               <div className="p-6 border-b border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Upload New Match</h2>
                 <div className="bg-gray-50 rounded-lg p-6">
-                  <form className="space-y-4">
+                  <form onSubmit={handleUploadGame} className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">VEO URL</label>
                       <input
                         type="url"
+                        value={uploadGameUrl}
+                        onChange={(e) => setUploadGameUrl(e.target.value)}
                         placeholder="Paste your VEO URL here..."
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                        required
                       />
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -379,25 +379,32 @@ export default function Dashboard() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
                         <input
                           type="text"
+                          value={uploadTeamName}
+                          onChange={(e) => setUploadTeamName(e.target.value)}
                           placeholder="Enter team name"
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          required
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Match Title</label>
                         <input
                           type="text"
+                          value={uploadGameTitle}
+                          onChange={(e) => setUploadGameTitle(e.target.value)}
                           placeholder="Enter match title"
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          required
                         />
                       </div>
                     </div>
                     <div className="flex justify-end">
                       <button
                         type="submit"
-                        className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors"
+                        disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim() || !uploadTeamName.trim()}
+                        className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Upload Match
+                        {uploadGameLoading ? 'Adding...' : 'Upload Match'}
                       </button>
                     </div>
                   </form>
@@ -427,51 +434,12 @@ export default function Dashboard() {
                     </button>
                   </div>
                 ) : games.length === 0 ? (
-              <div className="bg-white rounded-lg border p-6 max-w-lg mx-auto">
-                <h2 className="text-xl font-bold text-gray-900 mb-6">Add VEO URL</h2>
-                
-                <form onSubmit={handleUploadGame} className="space-y-4">
-                  <div>
-                    <input
-                      type="url"
-                      value={uploadGameUrl}
-                      onChange={(e) => setUploadGameUrl(e.target.value)}
-                      placeholder="Paste your VEO URL here..."
-                      className="w-full px-4 py-3 text-lg border-2 rounded-lg text-gray-900 placeholder-gray-500 bg-white focus:border-[#016F32]"
-                      required
-                    />
+                  <div className="text-center py-12">
+                    <div className="mb-4 text-6xl">⚽</div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">No matches yet</h3>
+                    <p className="text-gray-500">Upload your first VEO match using the form above</p>
                   </div>
-                  
-                  <div className="flex gap-3">
-                    <input
-                      type="text"
-                      value={uploadTeamName}
-                      onChange={(e) => setUploadTeamName(e.target.value)}
-                      placeholder="Team"
-                      className="flex-1 px-3 py-2 border rounded-lg text-gray-900 placeholder-gray-500 bg-white"
-                      required
-                    />
-                    
-                    <input
-                      type="text"
-                      value={uploadGameTitle}
-                      onChange={(e) => setUploadGameTitle(e.target.value)}
-                      placeholder="Game title"
-                      className="flex-1 px-3 py-2 border rounded-lg text-gray-900 placeholder-gray-500 bg-white"
-                      required
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim() || !uploadTeamName.trim()}
-                    className="w-full bg-[#016F32] text-white py-3 rounded-lg font-medium text-lg hover:bg-[#016F32]/90 disabled:opacity-50"
-                  >
-                    {uploadGameLoading ? 'Adding...' : 'Add Team'}
-                  </button>
-                </form>
-              </div>
-            ) : (
+                ) : (
               <div className="space-y-4">
                 {games.map((game: any) => (
                   <div
