@@ -359,9 +359,59 @@ export default function Dashboard() {
 
         {/* Games Tab */}
         {activeTab === 'games' && (
-          <div className="bg-white rounded-xl shadow-sm">
-            <div className="p-6">
-              {loading ? (
+          <div className="space-y-6">
+            {/* Upload Matches Component */}
+            <div className="bg-white rounded-xl shadow-sm">
+              <div className="p-6 border-b border-gray-100">
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Upload New Match</h2>
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <form className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">VEO URL</label>
+                      <input
+                        type="url"
+                        placeholder="Paste your VEO URL here..."
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
+                        <input
+                          type="text"
+                          placeholder="Enter team name"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Match Title</label>
+                        <input
+                          type="text"
+                          placeholder="Enter match title"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <button
+                        type="submit"
+                        className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors"
+                      >
+                        Upload Match
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            {/* Matches List */}
+            <div className="bg-white rounded-xl shadow-sm">
+              <div className="p-6 border-b border-gray-100">
+                <h2 className="text-xl font-bold text-gray-900">Your Matches</h2>
+              </div>
+              <div className="p-6">
+                {loading ? (
                   <div className="text-center py-12">
                     <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
                     <p className="mt-2 text-gray-500">Loading your games...</p>
@@ -483,6 +533,7 @@ export default function Dashboard() {
               </div>
             )}
             </div>
+          </div>
           </div>
         )}
 
@@ -804,7 +855,6 @@ export default function Dashboard() {
           {error}
         </div>
       )}
-      </div>
       </div>
     </div>
   )
