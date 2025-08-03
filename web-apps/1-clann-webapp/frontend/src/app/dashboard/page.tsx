@@ -101,7 +101,7 @@ export default function Dashboard() {
       setJoinTeamLoading(true)
       setError('')
       
-      await apiClient.joinTeam(joinTeamCode.trim().toUpperCase())
+      await apiClient.joinTeamByCode(joinTeamCode.trim().toUpperCase())
       
       // Reload teams after joining
       const teamsResponse = await apiClient.getUserTeams()
@@ -229,7 +229,7 @@ export default function Dashboard() {
         title: uploadGameTitle.trim(),
         description: uploadGameDescription.trim() || undefined,
         videoUrl: uploadGameUrl.trim(),
-        teamId: selectedTeam.team ? selectedTeam.team.id : selectedTeam.id
+        teamId: (selectedTeam as any).team?.id || (selectedTeam as any).id
       })
       
       // Reload games after uploading
@@ -250,7 +250,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-20">
       {/* Top Navigation - Match UserDashboard.js exactly */}
       <nav className="border-b border-gray-200/10 bg-white">
         <div className="max-w-7xl mx-auto px-4 py-4">
@@ -348,44 +348,7 @@ export default function Dashboard() {
 
       {/* Bottom section with cream background */}
       <div className="bg-[#F7F6F1] min-h-screen">
-        {/* Tab Navigation - centered like old app */}
-        <div className="bg-[#F7F6F1] border-b border-gray-200/10">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-center overflow-x-auto scrollbar-hide">
-            <button
-              onClick={() => setActiveTab('games')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'games'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              My Games
-            </button>
-            <button
-              onClick={() => setActiveTab('insights')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'insights'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              AI Insights
-            </button>
 
-            <button
-              onClick={() => setActiveTab('teams')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'teams'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              Teams
-            </button>
-          </div>
-        </div>
-      </div>
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-8 py-8">
@@ -576,57 +539,113 @@ export default function Dashboard() {
                 {games.map((game: any) => (
                   <div
                     key={game.id}
-                    onClick={() => router.push(`/games/${game.id}`)}
-                    className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-[#016F32]/30 transition-all cursor-pointer"
+                    className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-[#016F32]/30 transition-all"
                   >
-                    <div className="flex justify-between items-start">
-                      <div className="space-y-3 min-w-0 flex-1 mr-4">
-                        <h3 className="text-xl font-bold truncate">{game.title}</h3>
-                        
-                        <div className="space-y-2 text-sm text-gray-600">
-                          <div className="flex items-center gap-2">
-                            <span className="flex-shrink-0">⚽</span>
-                            <span className="truncate">Team: {game.team_name}</span>
-                          </div>
+                    <div className="space-y-4">
+                      <div 
+                        onClick={() => router.push(`/games/${game.id}`)}
+                        className="flex justify-between items-start cursor-pointer"
+                      >
+                        <div className="space-y-3 min-w-0 flex-1 mr-4">
+                          <h3 className="text-xl font-bold truncate">{game.title}</h3>
                           
-                          <div className="flex items-center gap-2">
-                            <span className="flex-shrink-0">📅</span>
-                            <span className="truncate">{new Date(game.created_at).toLocaleDateString()}</span>
-                          </div>
-                          
-                          {game.video_url && (
+                          <div className="space-y-2 text-sm text-gray-600">
                             <div className="flex items-center gap-2">
-                              <span className="flex-shrink-0">🎥</span>
-                              <a
-                                href={game.video_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[#016F32] hover:underline truncate"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                VEO Footage
-                              </a>
+                              <span className="flex-shrink-0">⚽</span>
+                              <span className="truncate">Team: {game.team_name}</span>
                             </div>
+                            
+                            <div className="flex items-center gap-2">
+                              <span className="flex-shrink-0">📅</span>
+                              <span className="truncate">{new Date(game.created_at).toLocaleDateString()}</span>
+                            </div>
+                            
+                            {game.video_url && (
+                              <div className="flex items-center gap-2">
+                                <span className="flex-shrink-0">🎥</span>
+                                <a
+                                  href={game.video_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[#016F32] hover:underline truncate"
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  VEO Footage
+                                </a>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                        
+                        <div className="flex-shrink-0 flex flex-col items-end gap-2">
+                          <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${
+                            game.status === 'analyzed'
+                              ? 'bg-green-500/20 text-green-600 border border-green-500/30'
+                              : 'bg-yellow-500/20 text-yellow-600 border border-yellow-500/30'
+                          }`}>
+                            {game.status.toUpperCase()}
+                            {game.status === 'analyzed' && <span className="text-lg">→</span>}
+                          </div>
+                          
+                          {game.status === 'analyzed' && (
+                            <span className="text-sm text-gray-500 whitespace-nowrap">
+                              Click to view analysis
+                            </span>
                           )}
                         </div>
                       </div>
-                      
-                      <div className="flex-shrink-0 flex flex-col items-end gap-2">
-                        <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${
-                          game.status === 'analyzed'
-                            ? 'bg-green-500/20 text-green-600 border border-green-500/30'
-                            : 'bg-yellow-500/20 text-yellow-600 border border-yellow-500/30'
-                        }`}>
-                          {game.status.toUpperCase()}
-                          {game.status === 'analyzed' && <span className="text-lg">→</span>}
+
+                      {/* AI Conversation Starters for Analyzed Games */}
+                      {game.status === 'analyzed' && (
+                        <div className="border-t border-gray-200 pt-4">
+                          <p className="text-sm font-medium text-gray-700 mb-3">💬 Start AI coaching conversation:</p>
+                          <div className="grid grid-cols-2 gap-2">
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What drills should we focus on based on this match?")}`)
+                              }}
+                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                            >
+                              <span>🏃</span>
+                              <span>Training Drills</span>
+                            </button>
+                            
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What style of play did we use in this match?")}`)
+                              }}
+                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                            >
+                              <span>⚽</span>
+                              <span>Playing Style</span>
+                            </button>
+                            
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What were the key moments that decided this match?")}`)
+                              }}
+                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                            >
+                              <span>⭐</span>
+                              <span>Key Moments</span>
+                            </button>
+                            
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How can we improve our performance for the next match?")}`)
+                              }}
+                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                            >
+                              <span>📈</span>
+                              <span>Improvements</span>
+                            </button>
+                          </div>
                         </div>
-                        
-                        {game.status === 'analyzed' && (
-                          <span className="text-sm text-gray-500 whitespace-nowrap">
-                            Click to view analysis
-                          </span>
-                        )}
-                      </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -715,7 +734,37 @@ export default function Dashboard() {
                 {teams.map((team: any) => (
                   <div key={team.id} className="bg-gray-50 rounded-lg p-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">{team.name}</h3>
-                    <p className="text-gray-600 text-sm">Join Code: <code className="bg-gray-200 px-2 py-1 rounded">{team.team_code}</code></p>
+                    <div className="space-y-3">
+                      <p className="text-gray-600 text-sm">Join Code: <code className="bg-gray-200 px-2 py-1 rounded">{team.team_code}</code></p>
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1">
+                          <p className="text-xs text-gray-500 mb-1">Share this link:</p>
+                          <input
+                            type="text"
+                            value={`https://clannai.com/join/${team.team_code}`}
+                            readOnly
+                            className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
+                          />
+                        </div>
+                        <button
+                          onClick={() => {
+                            navigator.clipboard.writeText(`https://clannai.com/join/${team.team_code}`)
+                            // Show temporary success feedback
+                            const button = document.activeElement as HTMLButtonElement
+                            const originalText = button.textContent
+                            button.textContent = 'Copied!'
+                            button.classList.add('bg-green-600', 'text-white')
+                            setTimeout(() => {
+                              button.textContent = originalText
+                              button.classList.remove('bg-green-600', 'text-white')
+                            }, 2000)
+                          }}
+                          className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium whitespace-nowrap"
+                        >
+                          Copy Link
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -957,6 +1006,27 @@ export default function Dashboard() {
             {error}
           </div>
         )}
+        </div>
+      </div>
+
+      {/* Bottom Tab Navigation */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200/20">
+        <div className="flex justify-center">
+          <div className="flex">
+            {(['games', 'insights', 'teams'] as const).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
+                  activeTab === tab
+                    ? 'text-[#016F32] border-t-2 border-[#016F32]'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {tab === 'games' ? 'My Games' : tab === 'insights' ? 'AI Insights' : 'Teams'}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
