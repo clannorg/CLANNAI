@@ -492,7 +492,7 @@ export default function Dashboard() {
                       </div>
                     ) : (
                       <div className="space-y-4">
-                        {demoGames.slice(0, 3).map((game: Game) => (
+                        {demoGames.slice(0, 1).map((game: Game) => (
                           <div key={game.id} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors cursor-pointer" 
                                onClick={() => router.push(`/games/${game.id}`)}>
                             <div className="flex justify-between items-start">
