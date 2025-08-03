@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { getUserByEmail, createUser, getUserById } = require('../utils/database');
+const { getUserByEmail, createUser, getUserById, addUserToTeam } = require('../utils/database');
 const { authenticateToken } = require('../middleware/auth');
 
 const router = express.Router();
@@ -38,6 +38,23 @@ router.post('/register', async (req, res) => {
 
     // Create user
     const newUser = await createUser(email, passwordHash, phone, userRole);
+
+    // Auto-join user to all public teams (so they can see demo games)
+    try {
+      const { Pool } = require('pg');
+      const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+      
+      const publicTeamsResult = await pool.query('SELECT id FROM teams WHERE is_public = true');
+      
+      for (const team of publicTeamsResult.rows) {
+        await addUserToTeam(newUser.id, team.id);
+      }
+      
+      console.log(`Auto-joined new user ${email} to ${publicTeamsResult.rows.length} public teams`);
+    } catch (error) {
+      console.error('Error auto-joining user to public teams:', error);
+      // Don't fail registration if this fails
+    }
 
     // Generate JWT token
     const token = jwt.sign(
