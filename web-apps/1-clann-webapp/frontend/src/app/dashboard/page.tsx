@@ -25,6 +25,7 @@ export default function Dashboard() {
   const router = useRouter()
   const [user, setUser] = useState<any>(null)
   const [games, setGames] = useState<Game[]>([])
+  const [demoGames, setDemoGames] = useState<Game[]>([])
   const [teams, setTeams] = useState<Team[]>([])
   const [activeTab, setActiveTab] = useState('games')
   const [showUploadModal, setShowUploadModal] = useState(false)
@@ -68,13 +69,15 @@ export default function Dashboard() {
       setLoading(true)
       setError('')
       
-      // Load games and teams in parallel
-      const [gamesResponse, teamsResponse] = await Promise.all([
+      // Load games, demo games, and teams in parallel
+      const [gamesResponse, demoGamesResponse, teamsResponse] = await Promise.all([
         apiClient.getUserGames(),
+        apiClient.getDemoGames(),
         apiClient.getUserTeams()
       ])
       
       setGames(gamesResponse.games || [])
+      setDemoGames(demoGamesResponse.games || [])
       setTeams(teamsResponse.teams || [])
     } catch (err: any) {
       console.error('Failed to load user data:', err)
@@ -212,8 +215,8 @@ export default function Dashboard() {
             return
           }
         }
-      } else {
-        // Use first existing team
+              } else {
+        // Use first existing team if user didn't specify team name
         selectedTeam = teams[0]
       }
     }
@@ -226,7 +229,7 @@ export default function Dashboard() {
         title: uploadGameTitle.trim(),
         description: uploadGameDescription.trim() || undefined,
         videoUrl: uploadGameUrl.trim(),
-        teamId: 'id' in selectedTeam ? selectedTeam.id : selectedTeam.team.id
+        teamId: selectedTeam.team ? selectedTeam.team.id : selectedTeam.id
       })
       
       // Reload games after uploading
@@ -257,20 +260,21 @@ export default function Dashboard() {
             <div className="mb-4 md:mb-0">
               <Image 
                 src="/clann-logo-green.png" 
-                alt="Clann" 
-                width={120} 
-                height={32}
-                className="h-8"
+                alt="ClannAI" 
+                width={160} 
+                height={42}
+                className="h-10 w-auto"
+                priority
               />
             </div>
             
             {/* Action buttons - stacked on mobile, horizontal on desktop */}
             <div className="flex flex-col w-full md:flex-row md:w-auto md:items-center gap-3 md:gap-4">
               <button 
-                onClick={() => setShowUploadModal(true)}
+                onClick={() => setActiveTab('games')}
                 className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
               >
-                Upload Match
+                Upload VEO URL
               </button>
               
               <button 
@@ -366,8 +370,9 @@ export default function Dashboard() {
                   : 'text-gray-500 hover:text-gray-700'
               }`}
             >
-              Games
+              My Games
             </button>
+
             <button
               onClick={() => setActiveTab('teams')}
               className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
@@ -442,7 +447,7 @@ export default function Dashboard() {
                     <div className="flex justify-end">
                       <button
                         type="submit"
-                        disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim() || !uploadTeamName.trim()}
+                        disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim()}
                         className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {uploadGameLoading ? 'Adding...' : 'Upload Match'}
@@ -475,10 +480,46 @@ export default function Dashboard() {
                     </button>
                   </div>
                 ) : games.length === 0 ? (
-                  <div className="text-center py-12">
-                    <div className="mb-4 text-6xl">⚽</div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">No matches yet</h3>
-                    <p className="text-gray-500">Upload your first VEO match using the form above</p>
+                  <div className="space-y-6">
+                    <div className="text-center py-6 border-b border-gray-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Here's a demo game to get you started</h3>
+                      <p className="text-gray-500">See what ClannAI analysis looks like, then upload your first VEO match above</p>
+                    </div>
+                    
+                    {demoGames.length === 0 ? (
+                      <div className="text-center py-8">
+                        <div className="text-gray-500">Loading demo content...</div>
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        {demoGames.slice(0, 3).map((game: Game) => (
+                          <div key={game.id} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors cursor-pointer" 
+                               onClick={() => router.push(`/games/${game.id}`)}>
+                            <div className="flex justify-between items-start">
+                              <div className="flex-1">
+                                <h3 className="font-medium text-gray-900">{game.title}</h3>
+                                <p className="text-sm text-gray-600 mt-1">Team: {game.team_name}</p>
+                                <p className="text-xs text-gray-500 mt-2">
+                                  {new Date(game.created_at).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: 'numeric'
+                                  })}
+                                </p>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                  ✨ Demo
+                                </span>
+                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                  Analyzed
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ) : (
               <div className="space-y-4">
@@ -545,6 +586,8 @@ export default function Dashboard() {
           </div>
           </div>
         )}
+
+
 
         {/* Teams Tab */}
         {activeTab === 'teams' && (

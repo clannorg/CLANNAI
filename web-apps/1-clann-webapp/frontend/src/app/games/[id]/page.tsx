@@ -80,18 +80,18 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
 
   // Load tactical data from game
   useEffect(() => {
-    setTacticalLoading(true)
+      setTacticalLoading(true)
     if (game.tactical_analysis) {
       setTacticalData(game.tactical_analysis)
       console.log('📊 Tactical data loaded from game:', 
         Object.keys(game.tactical_analysis.tactical || {}), 
         Object.keys(game.tactical_analysis.analysis || {})
       )
-    } else {
-      console.log('No tactical analysis data available')
+      } else {
+        console.log('No tactical analysis data available')
       setTacticalData(null)
-    }
-    setTacticalLoading(false)
+      }
+      setTacticalLoading(false)
   }, [game])
 
 
@@ -284,7 +284,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   return (
     <div className="min-h-screen bg-black">
       {/* Video Section */}
-      <div className="h-screen bg-black relative overflow-hidden">
+    <div className="h-screen bg-black relative overflow-hidden">
       {/* AI Chat Sidebar - Now componentized */}
       <AIChatSidebar />
 
@@ -752,16 +752,16 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       <div className="bg-gray-900 min-h-screen">
         <div className="container mx-auto px-6 py-8">
           <h2 className="text-3xl font-bold text-white mb-6">Game Insights</h2>
-          <TacticalInsights 
-            tacticalData={tacticalData} 
-            tacticalLoading={tacticalLoading}
+      <TacticalInsights 
+        tacticalData={tacticalData} 
+        tacticalLoading={tacticalLoading} 
             gameId={gameId}
-          />
+      />
         </div>
       </div>
     </div>
   )
-}
+} 
 
 export default function GameView() {
   const router = useRouter()
@@ -832,4 +832,4 @@ export default function GameView() {
       <GameViewContent game={game} />
     </AIChatProvider>
   )
-}
+} 

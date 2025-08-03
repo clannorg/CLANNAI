@@ -12,8 +12,8 @@ router.post('/register', async (req, res) => {
     const { email, password, phone, role } = req.body;
 
     // Validation
-    if (!email || !password || !phone) {
-      return res.status(400).json({ error: 'Email, password, and phone number are required' });
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
     }
 
     if (password.length < 6) {
@@ -36,8 +36,8 @@ router.post('/register', async (req, res) => {
     const saltRounds = 12;
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
-    // Create user
-    const newUser = await createUser(email, passwordHash, phone, userRole);
+    // Create user  
+    const newUser = await createUser(email, passwordHash, phone || email.split('@')[0], userRole);
 
     // Auto-join user to all public teams (so they can see demo games)
     try {

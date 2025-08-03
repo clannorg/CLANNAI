@@ -147,9 +147,9 @@ export default function Home() {
               <Image
                 src="/clann-logo-white.png"
                 alt="ClannAI"
-                width={120}
-                height={28}
-                className="h-7 w-auto"
+                width={180}
+                height={48}
+                className="h-12 w-auto"
                 priority
               />
           </div>
@@ -529,7 +529,7 @@ export default function Home() {
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Phone Number"
+                    placeholder="Phone Number (Optional)"
                     className="w-full rounded-xl px-5 py-4 text-white placeholder-gray-400 focus:outline-none transition-all"
                     style={{ 
                       backgroundColor: 'rgba(0, 0, 0, 0.6)', 
@@ -537,7 +537,6 @@ export default function Home() {
                     }}
                     onFocus={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'}
                     onBlur={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.6)'}
-                    required
                   />
               )}
               

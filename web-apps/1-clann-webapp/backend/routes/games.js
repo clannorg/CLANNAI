@@ -3,6 +3,7 @@ const { authenticateToken, requireCompanyRole } = require('../middleware/auth');
 const { 
   getUserGames, 
   getAllGames,
+  getDemoGames,
   getGameById, 
   createGame, 
   updateGame,
@@ -50,6 +51,37 @@ router.get('/', authenticateToken, async (req, res) => {
   }
 });
 
+// Get demo games (visible to all users)
+router.get('/demo', authenticateToken, async (req, res) => {
+  try {
+    const demoGames = await getDemoGames();
+
+    res.json({
+      games: demoGames.map(game => ({
+        id: game.id,
+        title: game.title,
+        description: game.description,
+        video_url: game.video_url,
+        s3_key: game.s3_key,
+        thumbnail_url: game.thumbnail_url,
+        duration: game.duration,
+        status: game.status,
+        file_type: game.file_type,
+        team_id: game.team_id,
+        team_name: game.team_name,
+        team_color: game.team_color,
+        is_demo: true,
+        created_at: game.created_at,
+        updated_at: game.updated_at,
+        has_analysis: !!game.ai_analysis
+      }))
+    });
+  } catch (error) {
+    console.error('Get demo games error:', error);
+    res.status(500).json({ error: 'Failed to get demo games' });
+  }
+});
+
 // Get single game by ID (for game viewing page)
 router.get('/:id', authenticateToken, async (req, res) => {
   try {
@@ -60,8 +92,8 @@ router.get('/:id', authenticateToken, async (req, res) => {
       return res.status(404).json({ error: 'Game not found' });
     }
     
-    // Check if user has access to this game (their game, team member, or company admin)
-    if (req.user.role !== 'company') {
+    // Check if user has access to this game (their game, team member, company admin, or demo game)
+    if (req.user.role !== 'company' && !game.is_demo) {
       const userGames = await getUserGames(req.user.id);
       const hasAccess = userGames.some(g => g.id === gameId);
       

@@ -63,6 +63,10 @@ class ApiClient {
     return this.request<{ games: any[] }>('/api/games')
   }
 
+  async getDemoGames() {
+    return this.request<{ games: any[] }>('/api/games/demo')
+  }
+
   async createGame(gameData: {
     title: string
     description?: string

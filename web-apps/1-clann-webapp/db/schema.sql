@@ -62,6 +62,7 @@ CREATE TABLE games (
   team_id UUID REFERENCES teams(id),
   uploaded_by UUID REFERENCES users(id),
   status VARCHAR(50) DEFAULT 'pending', -- 'pending' or 'analyzed'
+  is_demo BOOLEAN DEFAULT false,       -- Demo games visible to all users
   ai_analysis JSONB,                   -- Store VM analysis JSON
   metadata JSONB,                      -- Additional metadata
   created_at TIMESTAMP DEFAULT NOW(),
@@ -80,6 +81,7 @@ CREATE INDEX idx_games_uploaded_by ON games(uploaded_by);
 CREATE INDEX idx_games_status ON games(status);
 CREATE INDEX idx_games_created_at ON games(created_at);
 CREATE INDEX idx_games_file_type ON games(file_type);
+CREATE INDEX idx_games_is_demo ON games(is_demo);
 
 -- Add updated_at trigger function
 CREATE OR REPLACE FUNCTION update_updated_at_column()

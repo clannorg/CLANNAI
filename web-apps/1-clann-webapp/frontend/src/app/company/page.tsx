@@ -242,7 +242,12 @@ export default function CompanyDashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <Image 
-                src="/clann-logo-green.png" 
+                src="/clann-logo-green.png"
+                alt="ClannAI"
+                width={160}
+                height={42}
+                className="h-10 w-auto"
+                priority 
                 alt="ClannAI" 
                 width={48} 
                 height={48}

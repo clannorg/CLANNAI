@@ -30,7 +30,7 @@ INSERT INTO team_members (team_id, user_id) VALUES
 
 -- Insert demo games with AI analysis results
 -- Game 1: Arsenal FC Academy (Game269_0511) - Updated with detailed event timeline
-INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_by, status, duration, is_demo, ai_analysis) VALUES
   ('11111111-1269-0511-0000-000000000000', 
    'Arsenal vs Local Academy - May 11th', 
    'Competitive youth match with tactical focus',
@@ -40,6 +40,7 @@ INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_
    '11111111-1111-1111-1111-111111111111',
    'analyzed',
    5400, -- 90 minutes
+   true, -- Demo game visible to all users
    '[
      {"type": "shot", "timestamp": 37, "description": "Shot on goal", "player": "Smith #9"},
      {"type": "goal", "timestamp": 37, "description": "Goal scored", "player": "Smith #9"},
@@ -68,7 +69,7 @@ INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_
    ]'::jsonb);
 
 -- Game 2: Chelsea Youth (Game277_0526)  
-INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, is_demo, ai_analysis) VALUES
   ('22222222-2277-0526-0000-000000000000',
    'Chelsea Youth vs Brighton Academy - May 26th',
    'High-intensity academy match',
@@ -77,6 +78,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '22222222-2222-2222-2222-222222222222',
    'analyzed',
    5400,
+   true, -- Demo game visible to all users
    '[
      {"type": "shot", "timestamp": 67, "description": "Early pressure shot", "player": "Mount #19", "team": "blue"},
      {"type": "goal", "timestamp": 69, "description": "Clinical finish", "player": "Mount #19", "team": "blue"},
@@ -93,7 +95,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    ]'::jsonb);
 
 -- Game 3: Liverpool Reserves (Game297_0616)
-INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, is_demo, ai_analysis) VALUES
   ('33333333-3297-0616-0000-000000000000',
    'Liverpool Reserves vs Everton U21 - June 16th',
    'Merseyside derby at reserve level',
@@ -102,6 +104,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '33333333-3333-3333-3333-333333333333',
    'analyzed',
    5400,
+   true, -- Demo game visible to all users
    '[
      {"type": "shot", "timestamp": 45, "description": "Derby opener", "player": "Salah Jr #11", "team": "red"},
      {"type": "goal", "timestamp": 47, "description": "Liverpool strikes first", "player": "Salah Jr #11", "team": "red"},
@@ -122,7 +125,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    ]'::jsonb);
 
 -- Game 4: City Development (Game298_0601)
-INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, is_demo, ai_analysis) VALUES
   ('44444444-4298-0601-0000-000000000000',
    'City Development vs Newcastle Academy - June 1st',
    'Development squad friendly',
@@ -131,6 +134,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '44444444-4444-4444-4444-444444444444', 
    'analyzed',
    917, -- 15 minutes (shorter game)
+   true, -- Demo game visible to all users
    '[
      {"type": "shot", "timestamp": 34, "description": "Early chance", "player": "Foden Jr #47", "team": "blue"},
      {"type": "shot", "timestamp": 67, "description": "Quick follow up", "player": "Palmer #80", "team": "blue"},
@@ -148,7 +152,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    ]'::jsonb);
 
 -- Game 5: United U21s (Game304_0618)
-INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, status, duration, is_demo, ai_analysis) VALUES
   ('55555555-5304-0618-0000-000000000000',
    'United U21s vs Tottenham Development - June 18th', 
    'Competitive U21 league match',
@@ -157,6 +161,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    '55555555-5555-5555-5555-555555555555',
    'analyzed', 
    5400,
+   true, -- Demo game visible to all users
    '[
      {"type": "shot", "timestamp": 89, "description": "United pressure", "player": "Rashford Jr #10", "team": "red"},
      {"type": "goal", "timestamp": 91, "description": "Early United goal", "player": "Rashford Jr #10", "team": "red"},
@@ -193,7 +198,7 @@ INSERT INTO games (id, title, description, video_url, team_id, uploaded_by, stat
    5400);
 
 -- Test Game with Working Video URL for immediate testing
-INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_by, status, duration, ai_analysis) VALUES
+INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_by, status, duration, is_demo, ai_analysis) VALUES
   ('99999999-9999-9999-9999-999999999999',
    'Demo Video - Test Video Player', 
    'Test game with working video for video player testing',
@@ -202,7 +207,8 @@ INSERT INTO games (id, title, description, video_url, s3_key, team_id, uploaded_
    'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa',
    '11111111-1111-1111-1111-111111111111',
    'analyzed',
-   596, -- ~10 minutes  
+   596, -- ~10 minutes
+   true, -- Demo game visible to all users  
    '[
      {"type": "shot", "timestamp": 15, "description": "Early shot attempt", "player": "Bunny #1"},
      {"type": "goal", "timestamp": 17, "description": "Opening goal", "player": "Bunny #1"},
