@@ -353,16 +353,6 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center overflow-x-auto scrollbar-hide">
             <button
-              onClick={() => setActiveTab('insights')}
-              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                activeTab === 'insights'
-                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              AI Insights
-            </button>
-            <button
               onClick={() => setActiveTab('games')}
               className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
                 activeTab === 'games'
@@ -371,6 +361,16 @@ export default function Dashboard() {
               }`}
             >
               My Games
+            </button>
+            <button
+              onClick={() => setActiveTab('insights')}
+              className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
+                activeTab === 'insights'
+                  ? 'text-[#016F32] border-b-2 border-[#016F32]'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              AI Insights
             </button>
 
             <button
