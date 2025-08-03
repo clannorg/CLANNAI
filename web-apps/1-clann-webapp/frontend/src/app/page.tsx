@@ -173,8 +173,7 @@ export default function Home() {
   const handleAnalyzeClick = () => {
     const token = localStorage.getItem('token')
     if (!token) {
-      setShowAuthModal(true)
-      setIsLogin(true)
+      openGetStarted()
     } else {
       window.location.href = '/dashboard'
     }
@@ -188,6 +187,17 @@ export default function Home() {
 
   const openSignUp = () => {
     setIsLogin(false)
+    setShowAuthModal(true)
+    setError(null)
+  }
+
+  const openGetStarted = () => {
+    // If there's a join code, open in sign-up mode
+    if (joinCode) {
+      setIsLogin(false)
+    } else {
+      setIsLogin(false) // Default to sign-up for new users
+    }
     setShowAuthModal(true)
     setError(null)
   }
@@ -234,7 +244,7 @@ export default function Home() {
                 Sign in
               </button>
               <button
-                onClick={openSignUp}
+                onClick={openGetStarted}
                 className="bg-black px-6 py-2.5 rounded-lg text-base font-medium text-white hover:bg-gray-900 text-[15px]"
               >
                 Get started
@@ -244,37 +254,10 @@ export default function Home() {
             </div>
       </header>
 
-      {/* Join Team Banner */}
-      {joinCode && (
-        <div className="fixed top-20 left-0 right-0 z-40 bg-[#016F32] text-white py-3 px-4 shadow-lg">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.196-2.121M9 6a3 3 0 106 0 3 3 0 00-6 0zM12 14a6 6 0 00-6 6v2h12v-2a6 6 0 00-6-6z" />
-                </svg>
-              </div>
-              <div>
-                <p className="font-semibold">
-                  🎉 You're invited to join {teamName || 'a team'}!
-                </p>
-                <p className="text-sm text-white/80">
-                  Team code: <code className="bg-white/20 px-1 rounded">{joinCode}</code> - Sign up to automatically join
-                </p>
-              </div>
-            </div>
-            <button
-              onClick={() => setShowAuthModal(true)}
-              className="bg-white text-[#016F32] px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-            >
-              Get Started
-            </button>
-          </div>
-        </div>
-      )}
+
 
       {/* Main Content Container */}
-      <div className="relative z-10" style={{ marginTop: joinCode ? '60px' : '0' }}>
+      <div className="relative z-10">
         <div className="relative min-h-screen">
           
           {/* Hero Video Background - Fixed Position */}
@@ -448,7 +431,7 @@ export default function Home() {
                     </li>
                   </ul>
                   <button
-                    onClick={openSignUp}
+                    onClick={openGetStarted}
                     className="w-full px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
                     style={{ 
                       backgroundColor: 'var(--clann-green)',

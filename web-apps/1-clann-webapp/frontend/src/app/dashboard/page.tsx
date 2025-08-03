@@ -487,7 +487,7 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Analyze our defensive shape during goal attempts and suggest specific training drills to improve our defensive structure and pressing triggers")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What specific training drills should we focus on to improve our defensive shape and pressing after this match?")}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -498,7 +498,7 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Break down our attacking patterns - what worked best and what tactical adjustments should we make for future matches? Include set piece analysis")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What attacking patterns worked best and what tactical adjustments should we make for our next match?")}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -509,7 +509,7 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Identify our top 3 individual performances and our weakest links - give me specific feedback for each player with areas to improve")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Who were our best and worst performers in this match and what should each player work on?")}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -520,7 +520,7 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Based on this match analysis, create a detailed preparation plan for our next opponent including set pieces, key focus areas, and formation recommendations")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How should we prepare for our next opponent based on this match analysis and what formation should we use?")}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -603,7 +603,7 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Analyze our defensive shape during goal attempts and suggest specific training drills to improve our defensive structure and pressing triggers")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What specific training drills should we focus on to improve our defensive shape and pressing after this match?")}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
@@ -614,7 +614,7 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Break down our attacking patterns - what worked best and what tactical adjustments should we make for future matches? Include set piece analysis")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What attacking patterns worked best and what tactical adjustments should we make for our next match?")}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
@@ -625,7 +625,7 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Identify our top 3 individual performances and our weakest links - give me specific feedback for each player with areas to improve")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Who were our best and worst performers in this match and what should each player work on?")}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
@@ -636,7 +636,7 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Based on this match analysis, create a detailed preparation plan for our next opponent including set pieces, key focus areas, and formation recommendations")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How should we prepare for our next opponent based on this match analysis and what formation should we use?")}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
