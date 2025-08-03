@@ -88,3 +88,18 @@ SELECT title, is_demo, status FROM games WHERE is_demo = true;
 3. Displays 3 demo games including the newmills game
 4. User clicks demo game → Sees full analysis with video, events, AI chat
 5. User uploads their own VEO URL → Demo games are replaced with their content
+
+---
+
+## 🤖 **AI Chat Made SUPER Discoverable!** ✅ 
+
+- ✅ **Purple gradient callout:** "💬 Chat with AI Coach!" on demo game cards
+- ✅ **Auto-opens chat** for demo games after 1.5s
+- ✅ **Special welcome** with example questions for demo users
+- ✅ **Rich AI context:** Can discuss all 44 events + tactical insights
+
+**Demo users can't miss the AI chat - it's front and center! 🔥**
+
+
+
+also chat functionality needs to be faster

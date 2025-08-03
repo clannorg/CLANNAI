@@ -8,6 +8,7 @@ export interface Game {
   id: string
   title: string
   team_name: string
+  is_demo?: boolean
 }
 
 export interface AIChatContextType {
@@ -19,4 +20,5 @@ export interface AIChatContextType {
   toggleChat: () => void
   clearMessages: () => void
   setInputValue: (value: string) => void
+  game: Game
 }

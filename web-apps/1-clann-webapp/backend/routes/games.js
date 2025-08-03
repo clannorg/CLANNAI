@@ -123,6 +123,7 @@ router.get('/:id', authenticateToken, async (req, res) => {
         video_url: game.video_url,
         s3_key: game.s3_key,
         status: game.status,
+        is_demo: game.is_demo || false,
         ai_analysis: game.ai_analysis,
         tactical_analysis: game.tactical_analysis,
         team_id: game.team_id,

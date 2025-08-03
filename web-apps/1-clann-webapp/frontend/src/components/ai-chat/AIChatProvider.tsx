@@ -115,7 +115,8 @@ export const AIChatProvider: React.FC<AIChatProviderProps> = ({ children, game }
     sendMessage,
     toggleChat,
     clearMessages,
-    setInputValue
+    setInputValue,
+    game
   }
 
   return (

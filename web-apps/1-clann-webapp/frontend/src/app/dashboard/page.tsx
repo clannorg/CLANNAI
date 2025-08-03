@@ -493,27 +493,77 @@ export default function Dashboard() {
                     ) : (
                       <div className="space-y-4">
                         {demoGames.slice(0, 1).map((game: Game) => (
-                          <div key={game.id} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors cursor-pointer" 
-                               onClick={() => router.push(`/games/${game.id}`)}>
-                            <div className="flex justify-between items-start">
-                              <div className="flex-1">
-                                <h3 className="font-medium text-gray-900">{game.title}</h3>
-                                <p className="text-sm text-gray-600 mt-1">Team: {game.team_name}</p>
-                                <p className="text-xs text-gray-500 mt-2">
-                                  {new Date(game.created_at).toLocaleDateString('en-US', {
-                                    year: 'numeric',
-                                    month: 'short',
-                                    day: 'numeric'
-                                  })}
-                                </p>
+                          <div key={game.id} className="bg-gray-50 rounded-lg p-4 transition-colors">
+                            <div className="space-y-4">
+                              <div className="flex justify-between items-start">
+                                <div>
+                                  <h3 className="font-medium text-gray-900">{game.title}</h3>
+                                  <p className="text-sm text-gray-600 mt-1">Team: {game.team_name}</p>
+                                  <p className="text-xs text-gray-500 mt-1">
+                                    {new Date(game.created_at).toLocaleDateString('en-US', {
+                                      year: 'numeric',
+                                      month: 'short',
+                                      day: 'numeric'
+                                    })}
+                                  </p>
+                                </div>
+                                <div className="flex flex-col items-end space-y-2">
+                                  <div className="flex items-center space-x-2">
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                      ✨ Demo
+                                    </span>
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                      Analyzed
+                                    </span>
+                                  </div>
+                                  <p className="text-xs text-gray-400 text-right">44 events • AI insights available</p>
+                                </div>
                               </div>
-                              <div className="flex items-center space-x-2">
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                  ✨ Demo
-                                </span>
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                  Analyzed
-                                </span>
+                              
+                              <div className="grid grid-cols-2 gap-2">
+                                <button 
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What drills should we focus on based on this match?")}`)
+                                  }}
+                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                >
+                                  <span>🏃</span>
+                                  <span>Training Drills</span>
+                                </button>
+                                
+                                <button 
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What style of play did we use in this match?")}`)
+                                  }}
+                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                >
+                                  <span>⚽</span>
+                                  <span>Playing Style</span>
+                                </button>
+                                
+                                <button 
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What were the key moments that decided this match?")}`)
+                                  }}
+                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                >
+                                  <span>⭐</span>
+                                  <span>Key Moments</span>
+                                </button>
+                                
+                                <button 
+                                  onClick={(e) => {
+                                    e.stopPropagation()
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How can we improve our performance for the next match?")}`)
+                                  }}
+                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                >
+                                  <span>📈</span>
+                                  <span>Improvements</span>
+                                </button>
                               </div>
                             </div>
                           </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useRouter, useParams } from 'next/navigation'
+import { useRouter, useParams, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import apiClient from '@/lib/api-client'
 import TacticalInsights from '../../../components/games/TacticalInsights'
@@ -21,6 +21,7 @@ interface Game {
   description: string
   s3Url: string
   status: string
+  is_demo?: boolean
   ai_analysis: GameEvent[] | { events: GameEvent[] } | null
   tactical_analysis: {
     tactical: Record<string, { content: string, filename: string, uploaded_at: string }>
@@ -32,9 +33,10 @@ interface Game {
 }
 
 const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
-  const { isOpen: showChat, toggleChat } = useAIChat()
+  const { isOpen: showChat, toggleChat, sendMessage } = useAIChat()
   const router = useRouter()
   const params = useParams()
+  const searchParams = useSearchParams()
   const gameId = params.id as string
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
@@ -93,6 +95,25 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       }
       setTacticalLoading(false)
   }, [game])
+
+  // Auto-open AI chat and start conversation for demo games
+  useEffect(() => {
+    const autoChat = searchParams.get('autoChat')
+    const customMessage = searchParams.get('message')
+    
+    if (game && game.is_demo && !showChat && autoChat === 'true') {
+      console.log('🤖 Auto-opening AI chat and starting conversation for demo game')
+      // Delay slightly to let the page load
+      setTimeout(() => {
+        toggleChat()
+        // Send custom message or default welcome message
+        setTimeout(() => {
+          const messageToSend = customMessage || "Hi! I'm new to ClannAI. Can you tell me about this match and what insights you can provide?"
+          sendMessage(messageToSend)
+        }, 800)
+      }, 1500)
+    }
+  }, [game, showChat, toggleChat, sendMessage, searchParams])
 
 
 

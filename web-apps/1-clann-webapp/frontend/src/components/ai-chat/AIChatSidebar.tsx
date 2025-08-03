@@ -4,7 +4,7 @@ import React from 'react'
 import { useAIChat } from './AIChatProvider'
 
 const AIChatSidebar: React.FC = () => {
-  const { isOpen, toggleChat, messages, isLoading, inputValue, setInputValue, sendMessage, clearMessages } = useAIChat()
+  const { isOpen, toggleChat, messages, isLoading, inputValue, setInputValue, sendMessage, clearMessages, game } = useAIChat()
 
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return
@@ -55,8 +55,49 @@ const AIChatSidebar: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </div>
-            <h4 className="text-white font-medium mb-2">Welcome to AI Coach!</h4>
-            <p className="text-gray-400 text-sm">Try asking about game analysis</p>
+            {game?.is_demo ? (
+              <>
+                <h4 className="text-white font-medium mb-2">✨ Let's start your coaching session!</h4>
+                <p className="text-gray-400 text-sm mb-4">I've analyzed this match and I'm ready to help</p>
+                
+                <div className="space-y-2">
+                  <p className="text-xs text-gray-400 mb-2">Try these questions:</p>
+                  
+                  <button 
+                    onClick={() => setInputValue("What were the key moments in this match?")}
+                    className="w-full text-left text-xs text-gray-300 bg-white/5 hover:bg-white/10 rounded p-2 transition-all cursor-pointer"
+                  >
+                    💬 What were the key moments?
+                  </button>
+                  
+                  <button 
+                    onClick={() => setInputValue("How can the team improve their attacking?")}
+                    className="w-full text-left text-xs text-gray-300 bg-white/5 hover:bg-white/10 rounded p-2 transition-all cursor-pointer"
+                  >
+                    ⚽ How can we improve attacking?
+                  </button>
+                  
+                  <button 
+                    onClick={() => setInputValue("What training should we focus on?")}
+                    className="w-full text-left text-xs text-gray-300 bg-white/5 hover:bg-white/10 rounded p-2 transition-all cursor-pointer"
+                  >
+                    📊 What training priorities?
+                  </button>
+                  
+                  <button 
+                    onClick={() => setInputValue("Analyze the defensive performance")}
+                    className="w-full text-left text-xs text-gray-300 bg-white/5 hover:bg-white/10 rounded p-2 transition-all cursor-pointer"
+                  >
+                    🛡️ How was our defending?
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <h4 className="text-white font-medium mb-2">Welcome to AI Coach!</h4>
+                <p className="text-gray-400 text-sm">Try asking about game analysis</p>
+              </>
+            )}
           </div>
         ) : (
           messages.map((message, index) => (
