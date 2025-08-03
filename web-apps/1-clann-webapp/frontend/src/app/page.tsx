@@ -1,11 +1,13 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
 
 export default function Home() {
+  const searchParams = useSearchParams()
   const [isLogin, setIsLogin] = useState(true)
   const [showAuthModal, setShowAuthModal] = useState(false)
   const [email, setEmail] = useState('')
@@ -15,6 +17,8 @@ export default function Home() {
   const [termsAccepted, setTermsAccepted] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [joinCode, setJoinCode] = useState<string | null>(null)
+  const [teamName, setTeamName] = useState<string | null>(null)
   const typedRef = useRef(null)
 
   // Typed.js animation
@@ -50,6 +54,46 @@ export default function Home() {
     loadTyped()
   }, [])
 
+  // Check for join parameters in URL
+  useEffect(() => {
+    const join = searchParams.get('join')
+    const autoJoin = searchParams.get('autoJoin')
+    const errorMsg = searchParams.get('error')
+
+    if (join) {
+      setJoinCode(join)
+      
+      // Fetch team info for the banner
+      fetchTeamInfo(join)
+      
+      // Auto-open auth modal if autoJoin is true
+      if (autoJoin === 'true') {
+        setIsLogin(false) // Set to sign-up mode FIRST
+        setShowAuthModal(true) // Then open modal
+      }
+      
+      // Show error if provided (but only if not auto-opening)
+      if (errorMsg && autoJoin !== 'true') {
+        setError(decodeURIComponent(errorMsg))
+      }
+    }
+  }, [searchParams])
+
+  const fetchTeamInfo = async (code: string) => {
+    try {
+      // Get demo team info to display team name
+      const response = await fetch(`${API_BASE_URL}/api/teams/codes/demo`)
+      const data = await response.json()
+      
+      const team = data.codes?.find((t: any) => t.code === code)
+      if (team) {
+        setTeamName(team.team)
+      }
+    } catch (error) {
+      console.error('Failed to fetch team info:', error)
+    }
+  }
+
   const handleAuthSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
@@ -83,13 +127,40 @@ export default function Home() {
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.user))
         
-        // Check for pending invite code
-        const pendingInviteCode = localStorage.getItem('pendingInviteCode')
-        if (pendingInviteCode) {
-          localStorage.removeItem('pendingInviteCode')
-          window.location.href = `/join/${pendingInviteCode}`
+        // Check for join code in URL parameters first
+        if (joinCode) {
+          // Auto-join the team
+          try {
+            const joinResponse = await fetch(`${API_BASE_URL}/api/teams/join-by-code`, {
+              method: 'POST',
+              headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${data.token}`
+              },
+              body: JSON.stringify({ inviteCode: joinCode })
+            })
+            
+            if (joinResponse.ok) {
+              // Successfully joined, go to dashboard
+              window.location.href = '/dashboard'
+            } else {
+              // Failed to join, still go to dashboard but show error
+              const joinError = await joinResponse.json()
+              window.location.href = `/dashboard?error=${encodeURIComponent(joinError.error || 'Failed to join team')}`
+            }
+          } catch (error) {
+            // Error joining, go to dashboard
+            window.location.href = `/dashboard?error=${encodeURIComponent('Failed to join team')}`
+          }
         } else {
-          window.location.href = '/dashboard'
+          // Check for legacy pending invite code
+          const pendingInviteCode = localStorage.getItem('pendingInviteCode')
+          if (pendingInviteCode) {
+            localStorage.removeItem('pendingInviteCode')
+            window.location.href = `/join/${pendingInviteCode}`
+          } else {
+            window.location.href = '/dashboard'
+          }
         }
       } else {
         setError(data.error || 'Authentication failed')
@@ -173,8 +244,37 @@ export default function Home() {
             </div>
       </header>
 
+      {/* Join Team Banner */}
+      {joinCode && (
+        <div className="fixed top-20 left-0 right-0 z-40 bg-[#016F32] text-white py-3 px-4 shadow-lg">
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.196-2.121M9 6a3 3 0 106 0 3 3 0 00-6 0zM12 14a6 6 0 00-6 6v2h12v-2a6 6 0 00-6-6z" />
+                </svg>
+              </div>
+              <div>
+                <p className="font-semibold">
+                  🎉 You're invited to join {teamName || 'a team'}!
+                </p>
+                <p className="text-sm text-white/80">
+                  Team code: <code className="bg-white/20 px-1 rounded">{joinCode}</code> - Sign up to automatically join
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => setShowAuthModal(true)}
+              className="bg-white text-[#016F32] px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Main Content Container */}
-      <div className="relative z-10">
+      <div className="relative z-10" style={{ marginTop: joinCode ? '60px' : '0' }}>
         <div className="relative min-h-screen">
           
           {/* Hero Video Background - Fixed Position */}
@@ -501,6 +601,23 @@ export default function Home() {
                 ✕
               </button>
             </div>
+
+            {/* Join Team Message */}
+            {joinCode && (
+              <div className="bg-[#016F32]/10 border border-[#016F32]/30 text-[#D1FB7A] px-5 py-4 rounded-xl mb-6 backdrop-blur-sm">
+                <div className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-[#016F32]/20 rounded-full flex items-center justify-center">
+                    <svg className="w-3 h-3 text-[#D1FB7A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.196-2.121M9 6a3 3 0 106 0 3 3 0 00-6 0zM12 14a6 6 0 00-6 6v2h12v-2a6 6 0 00-6-6z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium">You'll automatically join {teamName || 'the team'}</p>
+                    <p className="text-sm text-white/60">Team code: {joinCode}</p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {error && (
               <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-5 py-4 rounded-xl mb-6 backdrop-blur-sm">

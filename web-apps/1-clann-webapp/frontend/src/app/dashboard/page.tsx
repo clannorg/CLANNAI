@@ -487,9 +487,9 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What drills should we focus on based on this match?")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Analyze our defensive shape during goal attempts and suggest specific training drills to improve our defensive structure and pressing triggers")}`)
                                   }}
-                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                  className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
                                   <span>🏃</span>
                                   <span>Training Drills</span>
@@ -498,34 +498,34 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What style of play did we use in this match?")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Break down our attacking patterns - what worked best and what tactical adjustments should we make for future matches? Include set piece analysis")}`)
                                   }}
-                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                  className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
                                   <span>⚽</span>
-                                  <span>Playing Style</span>
+                                  <span>Tactics</span>
                                 </button>
                                 
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What were the key moments that decided this match?")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Identify our top 3 individual performances and our weakest links - give me specific feedback for each player with areas to improve")}`)
                                   }}
-                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                  className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
                                   <span>⭐</span>
-                                  <span>Key Moments</span>
+                                  <span>Player Analysis</span>
                                 </button>
                                 
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How can we improve our performance for the next match?")}`)
+                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Based on this match analysis, create a detailed preparation plan for our next opponent including set pieces, key focus areas, and formation recommendations")}`)
                                   }}
-                                  className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                                  className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
                                   <span>📈</span>
-                                  <span>Improvements</span>
+                                  <span>Next Match Prep</span>
                                 </button>
                               </div>
                             </div>
@@ -603,9 +603,9 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What drills should we focus on based on this match?")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Analyze our defensive shape during goal attempts and suggest specific training drills to improve our defensive structure and pressing triggers")}`)
                               }}
-                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                              className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
                               <span>🏃</span>
                               <span>Training Drills</span>
@@ -614,34 +614,34 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What style of play did we use in this match?")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Break down our attacking patterns - what worked best and what tactical adjustments should we make for future matches? Include set piece analysis")}`)
                               }}
-                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                              className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
                               <span>⚽</span>
-                              <span>Playing Style</span>
+                              <span>Tactics</span>
                             </button>
                             
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What were the key moments that decided this match?")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Identify our top 3 individual performances and our weakest links - give me specific feedback for each player with areas to improve")}`)
                               }}
-                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                              className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
                               <span>⭐</span>
-                              <span>Key Moments</span>
+                              <span>Player Analysis</span>
                             </button>
                             
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How can we improve our performance for the next match?")}`)
+                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Based on this match analysis, create a detailed preparation plan for our next opponent including set pieces, key focus areas, and formation recommendations")}`)
                               }}
-                              className="flex items-center space-x-2 bg-white hover:bg-blue-50 border border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-700 px-3 py-2 rounded-lg text-sm transition-all"
+                              className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
                               <span>📈</span>
-                              <span>Improvements</span>
+                              <span>Next Match Prep</span>
                             </button>
                           </div>
                         </div>
