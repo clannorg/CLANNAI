@@ -1,0 +1,3 @@
+The Red team shoots from inside the penalty area, but the attempt goes wide. Key events:
+- 00:01: A Red team player takes a shot on goal.
+- 00:02: The shot goes wide of the post for a goal kick.

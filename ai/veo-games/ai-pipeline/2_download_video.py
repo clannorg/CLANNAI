@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 
 # Import the working VeoDownloader from the original file
-sys.path.append('../../0_utils')
+sys.path.append('../../superseded/footy-legacy/0_utils')
 from veo_downloader import VeoDownloader
 
 def create_readable_match_id(veo_match_id, veo_url=""):
@@ -44,7 +44,7 @@ def create_readable_match_id(veo_match_id, veo_url=""):
         return veo_match_id
 
 def download_video(veo_url, match_id=None):
-    """Download video from Veo URL"""
+    """Download video using direct CDN URL - exactly like the working bash command"""
     print(f"📥 Step 2: Downloading video from {veo_url}")
     
     if not match_id:
@@ -70,34 +70,29 @@ def download_video(veo_url, match_id=None):
     
     print(f"📹 Downloading video to {video_path}")
     
-    # Use the working VeoDownloader
-    downloader = VeoDownloader(output_dir=str(data_dir))
+    # Direct CDN URL (exactly what worked with wget)
+    cdn_url = "https://c.veocdn.com/1d3c2587-0e9e-403d-a5c0-bb560d279c0c/standard/machine/32b61fa1/video.mp4"
     
-    # Try download with the working implementation
-    print("🔄 Attempting download with working VeoDownloader...")
-    result = downloader.download_video(veo_url, filename="video.mp4")
+    print(f"🎯 Using direct CDN URL: {cdn_url}")
     
-    if result:
-        # Check if file was actually downloaded and has content
+    # Use wget exactly like the working bash command
+    import subprocess
+    try:
+        result = subprocess.run([
+            'wget', '-O', str(video_path), cdn_url
+        ], check=True)
+        
         if video_path.exists() and video_path.stat().st_size > 0:
             size_mb = video_path.stat().st_size / (1024 * 1024)
-            print(f"✅ Step 2 complete: Video ready at {video_path} ({size_mb:.1f}MB)")
+            print(f"✅ Step 2 complete: Video ready ({size_mb:.1f}MB)")
             return True
         else:
-            print(f"❌ Downloaded file is empty or missing: {video_path}")
+            print("❌ Download failed - file missing or empty")
             return False
-    else:
-        # Try yt-dlp fallback
-        print("🔄 Trying yt-dlp fallback...")
-        result = downloader.download_with_yt_dlp(veo_url, filename="video.mp4")
-        
-        if result and video_path.exists() and video_path.stat().st_size > 0:
-            size_mb = video_path.stat().st_size / (1024 * 1024)
-            print(f"✅ Step 2 complete: Video ready at {video_path} ({size_mb:.1f}MB)")
-            return True
-        else:
-            print("❌ Download failed. Veo may require authentication or the URL format has changed.")
-            return False
+            
+    except subprocess.CalledProcessError as e:
+        print(f"❌ wget failed: {e}")
+        return False
 
 if __name__ == "__main__":
     if len(sys.argv) not in [2, 3]:

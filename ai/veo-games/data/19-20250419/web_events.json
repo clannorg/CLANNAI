@@ -1,0 +1,314 @@
+{
+  "match_id": "19-20250419",
+  "generated_timestamp": "2025-08-04T22:30:15.622304",
+  "events_count": 51,
+  "source": "clann_ai_pipeline",
+  "events": [
+    {
+      "type": "pre_match",
+      "timestamp": 0,
+      "description": "Pre-match handshake",
+      "team": "N/A"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 90,
+      "description": "Light blue attack from throw-in on right wing",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 105,
+      "description": "Claret team builds play from throw-in on right",
+      "team": "claret"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 120,
+      "description": "Blue team long throw-in from right sideline",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 161,
+      "description": "Foul against Claret, free kick to Light Blue",
+      "team": "claret"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 270,
+      "description": "Blue team creates scoring chance from throw-in",
+      "team": "blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 304,
+      "description": "Red team long throw-in into the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 326,
+      "description": "Handball against the attacking red player",
+      "team": "red"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 330,
+      "description": "Claret team long free kick from their own half",
+      "team": "claret"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 375,
+      "description": "Light Blue clears ball out of play for throw-in",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 390,
+      "description": "Light Blue team builds attack from throw-in on left",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 405,
+      "description": "Light Blue defends attack, winning a throw-in",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 420,
+      "description": "Light blue team attack from throw-in, loses ball",
+      "team": "light blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 474,
+      "description": "Red player fouled during aerial challenge",
+      "team": "blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 483,
+      "description": "Red team takes throw-in from left sideline",
+      "team": "red"
+    },
+    {
+      "type": "tackle_miss",
+      "timestamp": 517,
+      "description": "Red player misses slide tackle, Blue attack continues",
+      "team": "red"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 540,
+      "description": "Light blue free-kick results in header over the goal",
+      "team": "light blue"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 570,
+      "description": "Red team initiates attack from a goal kick",
+      "team": "red"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 630,
+      "description": "Light Blue throw-in leads to aerial battle",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 645,
+      "description": "Red team throw-in and builds attack on the left",
+      "team": "red"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 750,
+      "description": "Red team takes free kick cleared by Black defence",
+      "team": "red"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 765,
+      "description": "Blue team takes a free kick from the right wing",
+      "team": "blue"
+    },
+    {
+      "type": "dribbling",
+      "timestamp": 790,
+      "description": "Player dribbles past a Blue team defender",
+      "team": "red"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 840,
+      "description": "Blue team sets up for a goal kick",
+      "team": "blue"
+    },
+    {
+      "type": "header",
+      "timestamp": 855,
+      "description": "Blue player wins header near center circle",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 872,
+      "description": "Light blue team intercepts a forward pass and a tackle is made",
+      "team": "light blue"
+    },
+    {
+      "type": "tackle",
+      "timestamp": 936,
+      "description": "Red player is tackled, team retains ball",
+      "team": "light blue"
+    },
+    {
+      "type": "tackle",
+      "timestamp": 951,
+      "description": "Red defender makes sliding tackle",
+      "team": "red"
+    },
+    {
+      "type": "tackle_foul",
+      "timestamp": 1033,
+      "description": "Blue attacker brought down outside penalty box",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1039,
+      "description": "Free kick awarded following a foul on a Red player",
+      "team": "blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1050,
+      "description": "Light Blue team throw-in on right wing",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1065,
+      "description": "Light Blue team attacks from throw-in on right",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1080,
+      "description": "Red team takes throw-in in their own half",
+      "team": "red"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1140,
+      "description": "Claret goalkeeper launches long ball",
+      "team": "claret"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1185,
+      "description": "Light Blue long throw-in from left sideline",
+      "team": "light blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1200,
+      "description": "Claret team long throw-in from sideline",
+      "team": "claret"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1321,
+      "description": "Foul by Blue team, free kick to Red team",
+      "team": "blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1365,
+      "description": "Light blue attack broken down, claret throw-in",
+      "team": "claret"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1380,
+      "description": "Light Blue team throw-in, maintains possession",
+      "team": "light blue"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1395,
+      "description": "Maroon team builds play from goalkeeper",
+      "team": "maroon"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1438,
+      "description": "Red player brings down Light Blue player",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1440,
+      "description": "Foul on light blue player in center circle",
+      "team": "light blue"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1440,
+      "description": "Light blue team restarts play with free kick",
+      "team": "light blue"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1470,
+      "description": "Red team free kick into the box, cleared by blue",
+      "team": "red"
+    },
+    {
+      "type": "tackle_foul",
+      "timestamp": 1530,
+      "description": "Player brought down on counter-attack",
+      "team": "red"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1545,
+      "description": "Light Blue to take free kick just outside box",
+      "team": "light blue"
+    },
+    {
+      "type": "stoppage",
+      "timestamp": 1560,
+      "description": "Blue team takes a break and team talk",
+      "team": "blue"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1680,
+      "description": "Red team takes a free kick from the left flank",
+      "team": "red"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1695,
+      "description": "Red team long throw-in into penalty box",
+      "team": "red"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1740,
+      "description": "Claret team builds attack from goal kick",
+      "team": "claret"
+    },
+    {
+      "type": "interception",
+      "timestamp": 1766,
+      "description": "Pass intercepted by a Blue defender",
+      "team": "blue"
+    }
+  ]
+}

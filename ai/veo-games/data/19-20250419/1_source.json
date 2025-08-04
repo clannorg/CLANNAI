@@ -1,0 +1,12 @@
+{
+  "url": "https://app.veo.co/matches/20250419-19-apr-2025-224536-01ff86a0/",
+  "match_id": "19-20250419",
+  "veo_match_id": "20250419-19-apr-2025-224536-01ff86a0",
+  "extracted_at": "2025-08-04T21:47:38.709751",
+  "total_events": 29,
+  "extraction_method": "veo_api_highlights",
+  "status": "ready_for_analysis",
+  "date": "2025-04-19",
+  "primary_team": "19",
+  "venue": "19"
+}

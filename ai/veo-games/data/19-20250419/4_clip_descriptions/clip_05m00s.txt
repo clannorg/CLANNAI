@@ -1,0 +1,5 @@
+Red team scores a goal from a long throw-in. Key events:
+- **00:04**: A long throw-in is taken by the Red team into the penalty area.
+- **00:05**: A Red player heads the ball towards the goal.
+- **00:11**: Following a failed clearance, a Red player takes a shot.
+- **00:12**: Goal scored by the Red team.
