@@ -31,4 +31,7 @@
     "aws-sdk": "^2.1692.0",
     "nodemon": "^3.1.10"
   }
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
