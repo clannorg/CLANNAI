@@ -75,7 +75,6 @@ const gamesRoutes = require('./routes/games');
 const teamsRoutes = require('./routes/teams');
 const companyRoutes = require('./routes/company');
 const aiChatRoutes = require('./routes/ai-chat');
-const uploadRoutes = require('./routes/upload');
 
 // Register routes
 app.use('/api/auth', authRoutes);
@@ -83,7 +82,6 @@ app.use('/api/games', gamesRoutes);
 app.use('/api/teams', teamsRoutes);
 app.use('/api/company', companyRoutes);
 app.use('/api/ai-chat', aiChatRoutes);
-app.use('/api/upload', uploadRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

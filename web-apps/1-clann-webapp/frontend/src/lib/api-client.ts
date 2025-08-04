@@ -106,33 +106,6 @@ class ApiClient {
     return this.request<{ codes: any[] }>('/api/teams/codes/demo')
   }
 
-  // Upload methods
-  async getUploadUrl(data: {
-    filename: string
-    fileType: string
-    teamId: string
-  }) {
-    return this.request<{ uploadUrl: string; key: string }>('/api/upload/presigned-url', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-  }
-
-  async createGameFromUpload(data: {
-    title: string
-    description: string
-    s3Key: string
-    originalFilename: string
-    fileSize: number
-    fileType: string
-    teamId: string
-  }) {
-    return this.request<{ game: any }>('/api/upload/create-game', {
-      method: 'POST',
-      body: JSON.stringify(data)
-    })
-  }
-
   // Health check
   async healthCheck() {
     return this.request<{ status: string }>('/health')
