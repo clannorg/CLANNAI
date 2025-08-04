@@ -1,13 +1,76 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
 
-export default function Home() {
+// Component that handles search params logic
+function SearchParamsHandler({ 
+  setJoinCode, 
+  setTeamName, 
+  setIsLogin, 
+  setShowAuthModal, 
+  setError 
+}: {
+  setJoinCode: (code: string | null) => void
+  setTeamName: (name: string | null) => void  
+  setIsLogin: (login: boolean) => void
+  setShowAuthModal: (show: boolean) => void
+  setError: (error: string | null) => void
+}) {
   const searchParams = useSearchParams()
+
+  // Check for join parameters in URL
+  useEffect(() => {
+    const join = searchParams.get('join')
+    const autoJoin = searchParams.get('autoJoin')
+    const errorMsg = searchParams.get('error')
+
+    if (join) {
+      console.log('🔗 Join code detected in URL:', join, 'autoJoin:', autoJoin)
+      setJoinCode(join)
+      
+      // Fetch team info for the banner
+      fetchTeamInfo(join)
+      
+      // Auto-open auth modal if autoJoin is true OR just join code exists
+      // Small delay to ensure everything is loaded
+      setTimeout(() => {
+        if (autoJoin === 'true' || join) {
+          console.log('🎯 Auto-opening registration modal for join code:', join)
+          setIsLogin(false) // Set to sign-up mode FIRST
+          setShowAuthModal(true) // Then open modal
+        }
+      }, 100)
+      
+      // Show error if provided (but only if not auto-opening)
+      if (errorMsg && autoJoin !== 'true') {
+        setError(decodeURIComponent(errorMsg))
+      }
+    }
+  }, [searchParams, setJoinCode, setTeamName, setIsLogin, setShowAuthModal, setError])
+
+  const fetchTeamInfo = async (code: string) => {
+    try {
+      // Get demo team info to display team name
+      const response = await fetch(`${API_BASE_URL}/api/teams/codes/demo`)
+      const data = await response.json()
+      
+      const team = data.codes?.find((t: any) => t.code === code)
+      if (team) {
+        setTeamName(team.team)
+      }
+    } catch (error) {
+      console.error('Failed to fetch team info:', error)
+    }
+  }
+
+  return null // This component doesn't render anything
+}
+
+function HomePage() {
   const [isLogin, setIsLogin] = useState(true)
   const [showAuthModal, setShowAuthModal] = useState(false)
   const [email, setEmail] = useState('')
@@ -53,51 +116,6 @@ export default function Home() {
     
     loadTyped()
   }, [])
-
-  // Check for join parameters in URL
-  useEffect(() => {
-    const join = searchParams.get('join')
-    const autoJoin = searchParams.get('autoJoin')
-    const errorMsg = searchParams.get('error')
-
-    if (join) {
-      console.log('🔗 Join code detected in URL:', join, 'autoJoin:', autoJoin)
-      setJoinCode(join)
-      
-      // Fetch team info for the banner
-      fetchTeamInfo(join)
-      
-      // Auto-open auth modal if autoJoin is true OR just join code exists
-      // Small delay to ensure everything is loaded
-      setTimeout(() => {
-        if (autoJoin === 'true' || join) {
-          console.log('🎯 Auto-opening registration modal for join code:', join)
-          setIsLogin(false) // Set to sign-up mode FIRST
-          setShowAuthModal(true) // Then open modal
-        }
-      }, 100)
-      
-      // Show error if provided (but only if not auto-opening)
-      if (errorMsg && autoJoin !== 'true') {
-        setError(decodeURIComponent(errorMsg))
-      }
-    }
-  }, [searchParams])
-
-  const fetchTeamInfo = async (code: string) => {
-    try {
-      // Get demo team info to display team name
-      const response = await fetch(`${API_BASE_URL}/api/teams/codes/demo`)
-      const data = await response.json()
-      
-      const team = data.codes?.find((t: any) => t.code === code)
-      if (team) {
-        setTeamName(team.team)
-      }
-    } catch (error) {
-      console.error('Failed to fetch team info:', error)
-    }
-  }
 
   const handleAuthSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -221,6 +239,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+      {/* Handle URL search parameters */}
+      <Suspense fallback={null}>
+        <SearchParamsHandler 
+          setJoinCode={setJoinCode}
+          setTeamName={setTeamName}
+          setIsLogin={setIsLogin}
+          setShowAuthModal={setShowAuthModal}
+          setError={setError}
+        />
+      </Suspense>
+
       <style jsx global>{`
         :root {
           --clann-green: #016F32;
@@ -724,4 +753,9 @@ export default function Home() {
       )}
     </div>
   )
+}
+
+// Main export with proper naming
+export default function Home() {
+  return <HomePage />
 }
