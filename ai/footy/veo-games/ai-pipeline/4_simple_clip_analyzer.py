@@ -130,16 +130,36 @@ Keep it concise but informative. Only use timestamps 00:00 to 00:15 for events w
             print(f"❌ No clips found in {clips_dir}")
             return False
         
-        # Process all clips for full match analysis
-        print(f"⚽ FULL MATCH MODE: Processing all {len(clip_files)} clips")
+        # Filter out clips that already have description files (to avoid API waste)
+        unprocessed_clips = []
+        for clip_path in clip_files:
+            # Generate expected output filename
+            clip_name = clip_path.stem  # e.g., "clip_05m30s"
+            timestamp = clip_name.replace('clip_', '').replace('m', ':').replace('s', '')
+            output_filename = f"clip_{timestamp.replace(':', 'm')}s.txt"
+            output_path = output_dir / output_filename
+            
+            if not output_path.exists():
+                unprocessed_clips.append(clip_path)
+            else:
+                print(f"⏭️  Skipping {clip_path.name} (already analyzed)")
+        
+        clip_files = unprocessed_clips
+        
+        if not clip_files:
+            print(f"✅ All clips already analyzed!")
+            return True
+        
+        # Process remaining clips in parallel
+        print(f"⚽ RESUMING ANALYSIS: Processing {len(clip_files)} remaining clips")
         
         print(f"📊 Found {len(clip_files)} clips to analyze")
-        print(f"🎯 Using parallel processing with Gemini 2.5 Pro")
+        print(f"🎯 Using parallel processing with Gemini 2.5 Pro (30 workers)")
         
         # Process clips in parallel
         successful_analyses = 0
         
-        with ThreadPoolExecutor(max_workers=20) as executor:
+        with ThreadPoolExecutor(max_workers=30) as executor:
             # Submit all tasks
             future_to_clip = {
                 executor.submit(self.analyze_single_clip, clip_path): clip_path 

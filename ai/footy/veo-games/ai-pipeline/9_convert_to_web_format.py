@@ -80,12 +80,12 @@ class WebFormatConverter:
 
     def get_web_format_prompt(self, timeline_content):
         """Create prompt for Gemini to convert timeline to web format JSON"""
-        return f"""You are a football match data converter. Your task is to extract goals and shots from the validated timeline text and convert them to a specific JSON format for a web video player.
+        return f"""You are a football match data converter. Your task is to extract ALL football events from the definite events text and convert them to a specific JSON format for a web video player.
 
-INPUT: AI-Validated Timeline Text
+INPUT: Definite Events (VEO-validated) + Other Events Text
 {timeline_content}
 
-TASK: Extract ALL goals and shots, convert timestamps to seconds, and output ONLY a JSON array in this exact format:
+TASK: Extract ALL events (goals, shots, fouls, cards, corners, etc.) and convert to JSON array format:
 
 [
   {{
@@ -99,18 +99,34 @@ TASK: Extract ALL goals and shots, convert timestamps to seconds, and output ONL
     "timestamp": 450,
     "description": "Brief description of the shot",
     "team": "yellow"
+  }},
+  {{
+    "type": "foul",
+    "timestamp": 520,
+    "description": "Free kick awarded",
+    "team": "red"
   }}
 ]
 
+SUPPORTED EVENT TYPES:
+- "goal" - Goals scored
+- "shot" - Shot attempts
+- "foul" - Fouls and free kicks
+- "yellow_card" - Yellow cards
+- "red_card" - Red cards  
+- "corner" - Corner kicks
+- "substitution" - Player changes
+- "offside" - Offside calls
+
 RULES:
-1. Convert timestamps (MM:SS) to total seconds (05:30 = 330 seconds)
-2. Use "type": "goal" for all goals, "type": "shot" for all shots
-3. Extract team: "red", "yellow", "black", "blue" (lowercase)
-4. Keep descriptions concise (max 80 characters)
-5. Sort by timestamp (earliest first)
+1. Convert timestamps to total seconds (86:39 = 5199 seconds, 22:04 = 1324 seconds)
+2. Extract team: "red", "yellow", "black", "blue" (lowercase)
+3. Keep descriptions concise but descriptive (max 80 characters)
+4. Sort by timestamp (earliest first)
+5. Include ALL events from both definite events and other events sections
 6. Output ONLY the JSON array, no explanation or markdown
 
-Extract from the VALIDATED GOALS and VALIDATED SHOTS sections."""
+Extract events from ALL sections: goals, shots, fouls, cards, corners, substitutions, etc."""
 
     def convert_with_gemini(self, timeline_content):
         """Use Gemini to convert timeline to web format JSON"""
@@ -298,33 +314,57 @@ Extract from the VALIDATED GOALS and VALIDATED SHOTS sections."""
             print(f"❌ Data directory not found: {data_dir}")
             return False
 
-        # Try validated timeline first (most accurate) with Gemini
-        validated_timeline_path = data_dir / "6_validated_timeline.txt"
+        # Try definite events first (VEO-validated with AI descriptions)
+        definite_events_path = data_dir / "7.5_definite_events.txt"
+        other_events_path = data_dir / "8.5_other_events.txt"
         events = []
         
-        if validated_timeline_path.exists():
-            print(f"📖 Reading validated timeline: {validated_timeline_path}")
+        # Combine definite events and other events
+        combined_content = ""
+        
+        if definite_events_path.exists():
+            print(f"📖 Reading definite events: {definite_events_path}")
+            with open(definite_events_path, 'r', encoding='utf-8') as f:
+                combined_content += f.read() + "\n\n"
+        
+        if other_events_path.exists():
+            print(f"📖 Reading other events: {other_events_path}")
+            with open(other_events_path, 'r', encoding='utf-8') as f:
+                combined_content += f.read()
+        
+        if combined_content.strip():
             try:
-                with open(validated_timeline_path, 'r', encoding='utf-8') as f:
-                    timeline_content = f.read()
-                print(f"🤖 Converting with Gemini AI...")
-                events = self.convert_with_gemini(timeline_content)
+                print(f"🤖 Converting combined events with Gemini AI...")
+                events = self.convert_with_gemini(combined_content)
                 print(f"✅ Extracted {len(events)} events using Gemini")
             except Exception as e:
                 print(f"❌ Gemini conversion failed: {e}")
-                print(f"🔄 Falling back to regex parsing...")
-                events = self.parse_validated_timeline(validated_timeline_path)
-                print(f"✅ Extracted {len(events)} events from fallback parsing")
+                print(f"🔄 No fallback available for new format")
         else:
-            # Fallback to JSON format
-            json_timeline_path = data_dir / "goals_and_shots_timeline.json"
-            if json_timeline_path.exists():
-                print(f"📖 Reading JSON timeline: {json_timeline_path}")
-                events = self.parse_goals_shots_json(json_timeline_path)
-                print(f"✅ Extracted {len(events)} events from JSON timeline")
-            else:
-                print(f"❌ No timeline files found in {data_dir}")
-                return False
+            # Fallback to old format if new files don't exist
+            validated_timeline_path = data_dir / "6_validated_timeline.txt"
+            if validated_timeline_path.exists():
+                print(f"📖 Falling back to old validated timeline: {validated_timeline_path}")
+                try:
+                    with open(validated_timeline_path, 'r', encoding='utf-8') as f:
+                        timeline_content = f.read()
+                    print(f"🤖 Converting with Gemini AI...")
+                    events = self.convert_with_gemini(timeline_content)
+                    print(f"✅ Extracted {len(events)} events using Gemini")
+                except Exception as e:
+                    print(f"❌ Gemini conversion failed: {e}")
+                    print(f"🔄 Falling back to regex parsing...")
+                    events = self.parse_validated_timeline(validated_timeline_path)
+                    print(f"✅ Extracted {len(events)} events from fallback parsing")
+                # Fallback to JSON format
+                json_timeline_path = data_dir / "goals_and_shots_timeline.json"
+                if json_timeline_path.exists():
+                    print(f"📖 Reading JSON timeline: {json_timeline_path}")
+                    events = self.parse_goals_shots_json(json_timeline_path)
+                    print(f"✅ Extracted {len(events)} events from JSON timeline")
+                else:
+                    print(f"❌ No timeline files found in {data_dir}")
+                    return False
 
         if not events:
             print(f"⚠️  No events found to convert")

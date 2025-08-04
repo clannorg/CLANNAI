@@ -32,22 +32,94 @@
 |------|--------|---------|---------|
 | **5** | `5_synthesis.py` | **📋 CONCATENATION** - Combine all descriptions | `complete_timeline.txt` (451 lines) |
 
-### ⚽ **Intelligence Stage - Smart Analysis**
-| Step | Script | Purpose | Output |
-|------|--------|---------|---------|
-| **6** | `6_goals_shots_validator.py` | **🎯 GOALS & SHOTS** - Error correction with kickoff validation | `validated_events.json` |
-| **7** | `7_coaching_insights.py` | **📊 TACTICAL ANALYSIS** - Coaching insights from timeline | `coaching_analysis.json` |
+### ⚽ **Events Timeline System - Validated Accuracy** 🎯
 
-### 🎮 **Output Stage - Web Ready**
-| Step | Script | Purpose | Output |
-|------|--------|---------|---------|
-| **8** | `8_web_formatter.py` | **🌐 WEB FORMAT** - Everything → display-ready JSON | `web_ready.json` |
+**Philosophy**: VEO Truth + AI Descriptions = Zero False Positives
 
-### 📊 **Validation Stage - Quality Assurance**
-| Step | Script | Purpose | Output |
-|------|--------|---------|---------|
-| **9** | `9_accuracy_evaluator.py` | Compare AI results vs VEO ground truth | `accuracy_evaluation.json` |
-| **10** | `10_s3_uploader.py` | Deploy to cloud storage | Cloud deployment |
+| Step | Script | Purpose | Output | Format |
+|------|--------|---------|---------|---------|
+| **6** | `6_goals_shots_validator.py` | **🧠 AI VALIDATION** - Football rules + kickoff logic | `validated_timeline.txt` | Text |
+| **7** | `7_accuracy_evaluator.py` | **✅ VEO COMPARISON** - Compare AI vs ground truth | `accuracy_comparison.txt` | Text |
+| **7.5** | `7.5_definite_events_builder.py` | **🎯 CROSS-REFERENCE** - Only VEO-confirmed events | `definite_events.txt` | Text |
+| **8.5** | `8.5_other_events_extractor.py` | **📋 OTHER EVENTS** - Fouls, cards, corners | `other_events.txt` | Text |
+
+#### **🔄 Event Validation Flow:**
+```
+Raw Timeline (451 clips) 
+    ↓
+AI Validation (football rules) → ~45 events with descriptions
+    ↓  
+VEO Comparison (ground truth) → Identifies 15-20 validated events
+    ↓
+Cross-Reference → Only events that match VEO ±30 seconds + AI descriptions
+    ↓
+Final JSON → Clean, accurate timeline for web player
+```
+
+#### **🎯 Quality Control Strategy:**
+- **Text Until End**: Gemini processes everything in natural language
+- **VEO Validation**: Only events confirmed by official VEO timestamps  
+- **Rich Descriptions**: AI context for validated events only
+- **Zero False Positives**: Quality over quantity approach
+
+#### **📝 Text vs JSON Strategy:**
+```
+Steps 1-8.5: Everything stays in TEXT format
+    ↓ 
+Why: Gemini excels at natural language reasoning
+    ↓
+Cross-referencing: "Match VEO goal at 86:24 with AI description at 86:39"
+    ↓
+Steps 9-9.5: Convert to JSON only at the very end
+    ↓
+Result: Clean, validated JSON for website consumption
+```
+
+**Key Insight**: Gemini can reason about temporal relationships and context much better with text than rigid JSON structures.
+
+#### **🔄 Current vs New Approach:**
+
+**❌ OLD APPROACH:**
+```
+AI Validation → 45 events → web_events.json (includes false positives)
+```
+
+**✅ NEW APPROACH:**  
+```
+AI Validation (45 events) + VEO Truth (25 events) → Cross-Reference → 15-20 validated events → definite_events.json
+```
+
+**Result**: Higher quality, more accurate events with rich AI descriptions for every confirmed event.
+
+### 🌐 **Web Output Stage - Final JSON Conversion**
+| Step | Script | Purpose | Output | Usage |
+|------|--------|---------|---------|---------|
+| **9** | `9_convert_to_web_format.py` | **📱 DEFINITE EVENTS** - Text → JSON for video player | `definite_events.json` | Website timeline |
+| **9.5** | `9.5_complete_timeline_builder.py` | **📋 ALL EVENTS** - Combine validated events | `web_timeline.json` | Video player |
+| **10** | `10_s3_uploader.py` | **☁️ CLOUD DEPLOY** - Upload all analysis files | S3 URLs | Website integration |
+
+#### **📤 Website Receives (JSON Files):**
+```json
+// definite_events.json - Core validated events
+{
+  "goals": [{"timestamp": 5199, "description": "Goal from left wing cross", "team": "red"}],
+  "shots": [{"timestamp": 1392, "description": "Shot saved by goalkeeper", "team": "yellow"}]
+}
+
+// web_timeline.json - Complete timeline for video player  
+{
+  "events": [
+    {"type": "goal", "timestamp": 5199, "description": "...", "team": "red"},
+    {"type": "shot", "timestamp": 1392, "description": "...", "team": "yellow"}
+  ]
+}
+```
+
+#### **🎯 Key Benefits:**
+- **15-20 validated events** (vs 45 with false positives)
+- **Rich AI descriptions** for each confirmed event
+- **Zero false positives** - only VEO-confirmed events
+- **Ready for video player** - clean JSON format
 
 ---
 

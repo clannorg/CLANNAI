@@ -121,6 +121,21 @@ def upload_match_to_s3(match_id):
             "content_type": "application/json",
             "description": "Complete manager insights (timeline + ground truth + validated goals)"
         },
+        "9.5_match_summary.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Complete match summary with team mapping and display metadata"
+        },
+        "7.5_definite_events.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "VEO-validated definite events with AI descriptions"
+        },
+        "8.5_other_events.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Other significant events (fouls, cards, corners, etc.)"
+        },
         # Tactical Analysis Files (THE GOLDMINE 🔥)
         "8_tactical_analysis_red_team.txt": {
             "s3_folder": "analysis-data",
