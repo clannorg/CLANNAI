@@ -61,17 +61,21 @@ export default function Home() {
     const errorMsg = searchParams.get('error')
 
     if (join) {
-      console.log('🔗 Join code detected in URL:', join)
+      console.log('🔗 Join code detected in URL:', join, 'autoJoin:', autoJoin)
       setJoinCode(join)
       
       // Fetch team info for the banner
       fetchTeamInfo(join)
       
-      // Auto-open auth modal if autoJoin is true
-      if (autoJoin === 'true') {
-        setIsLogin(false) // Set to sign-up mode FIRST
-        setShowAuthModal(true) // Then open modal
-      }
+      // Auto-open auth modal if autoJoin is true OR just join code exists
+      // Small delay to ensure everything is loaded
+      setTimeout(() => {
+        if (autoJoin === 'true' || join) {
+          console.log('🎯 Auto-opening registration modal for join code:', join)
+          setIsLogin(false) // Set to sign-up mode FIRST
+          setShowAuthModal(true) // Then open modal
+        }
+      }, 100)
       
       // Show error if provided (but only if not auto-opening)
       if (errorMsg && autoJoin !== 'true') {

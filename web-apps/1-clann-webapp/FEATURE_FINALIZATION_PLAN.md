@@ -21,6 +21,10 @@
 **Target:** Clean, optimized, professional
 
 #### Implementation:
+- [ ] **WhatsApp sharing fix** - proper Open Graph meta tags instead of Next.js content
+- [ ] **Favicon/icon setup** - fix favicon display across browsers and mobile
+- [ ] **Join links functionality** - ensure join links are fully functional
+- [ ] **Logo/favicon in browser tab** - proper favicon showing in top part
 - [ ] **Dashboard layout refinements** - cleaner button organization
 - [ ] **Mobile optimization** - responsive design fixes  
 - [ ] **Database performance** - query optimization, indexing
@@ -29,6 +33,10 @@
 - [ ] **Error handling** - proper error states and messages
 
 #### Files to modify:
+- `frontend/src/app/layout.tsx` - Open Graph meta tags for WhatsApp sharing
+- `frontend/src/app/favicon.ico` - Fix favicon display  
+- `frontend/public/` - Add proper icon files
+- `frontend/src/app/join/[inviteCode]/page.tsx` - Ensure join links work
 - `frontend/src/app/dashboard/page.tsx` - Layout improvements
 - `db/schema.sql` - Schema optimization
 - `backend/utils/database.js` - Query performance
@@ -43,6 +51,12 @@
 **Target:** Shots, passes, tackles, cards, subs + AI descriptions
 
 #### Implementation:
+- [ ] **AI input files structure** - proper file hierarchy for AI analysis:
+  - `1_events.json` (required) - timeline events
+  - `2_match_summary.txt` (recommended) - high-level overview  
+  - `3_team_analysis.txt` (recommended) - strengths/weaknesses
+  - `4_tactical_insights.json` (advanced) - structured coaching data
+  - `5_training_plan.txt` (optional) - ready-to-use sessions
 - [ ] **Expand event types** beyond goals:
   - Shots (on target, off target, blocked)
   - Passes (successful, failed, key passes)  
