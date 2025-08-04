@@ -108,22 +108,34 @@ TASK: Extract ALL events (goals, shots, fouls, cards, corners, etc.) and convert
   }}
 ]
 
-SUPPORTED EVENT TYPES:
+SUPPORTED EVENT TYPES (USE THESE EXACT STRINGS ONLY):
 - "goal" - Goals scored
-- "shot" - Shot attempts
-- "foul" - Fouls and free kicks
-- "yellow_card" - Yellow cards
-- "red_card" - Red cards  
-- "corner" - Corner kicks
-- "substitution" - Player changes
-- "offside" - Offside calls
+- "shot" - Shot attempts, headers towards goal  
+- "save" - Goalkeeper saves
+- "foul" - ALL fouls, free kicks, handballs, tackles, slide tackles
+- "yellow_card" - Yellow cards only
+- "red_card" - Red cards only
+- "corner" - Corner kicks, throw-ins near goal
+- "substitution" - Player changes only
+
+CRITICAL MAPPING RULES:
+- Foul/Free kick → "foul"
+- Tackle/Slide tackle → "foul"  
+- Handball → "foul"
+- Throw-in → "corner" (if near goal) or "foul" (if general play)
+- Interception → "foul"
+- Header (towards goal) → "shot"
+- Header (general play) → "foul"
+- Goal kick → ignore (not supported)
+- Pre-match → ignore (not supported)  
+- Offside → ignore (not supported)
 
 RULES:
 1. Convert timestamps to total seconds (86:39 = 5199 seconds, 22:04 = 1324 seconds)
-2. Extract team: "red", "yellow", "black", "blue" (lowercase)
-3. Keep descriptions concise but descriptive (max 80 characters)
+2. Extract team: "red", "yellow", "black", "blue", "claret", "light blue" (lowercase, replace spaces with _)
+3. Keep descriptions concise but descriptive (max 80 characters)  
 4. Sort by timestamp (earliest first)
-5. Include ALL events from both definite events and other events sections
+5. Map ALL events to supported types - DO NOT use unsupported types
 6. Output ONLY the JSON array, no explanation or markdown
 
 Extract events from ALL sections: goals, shots, fouls, cards, corners, substitutions, etc."""

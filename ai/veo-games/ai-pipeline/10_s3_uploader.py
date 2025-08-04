@@ -18,18 +18,28 @@ load_dotenv()
 class S3MatchUploader:
     def __init__(self):
         """Initialize S3 client with environment credentials"""
-        # Use environment variables for security (no hardcoded keys)
-        self.s3_client = boto3.client(
-            's3',
-            region_name=os.getenv('AWS_REGION', 'eu-west-1'),
-            aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
-            aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY')
-        )
+        # Try environment variables first, then AWS CLI/profile
+        if os.getenv('AWS_ACCESS_KEY_ID'):
+            self.s3_client = boto3.client(
+                's3',
+                region_name=os.getenv('AWS_REGION', 'eu-west-1'),
+                aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+                aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY')
+            )
+        else:
+            # Use default AWS profile/credentials
+            self.s3_client = boto3.client('s3', region_name='eu-west-1')
         self.bucket_name = os.getenv('AWS_BUCKET_NAME', 'end-nov-webapp-clann')
         
-        # Validate credentials are available
-        if not all([os.getenv('AWS_ACCESS_KEY_ID'), os.getenv('AWS_SECRET_ACCESS_KEY')]):
-            raise Exception("Missing AWS credentials in environment variables. Please set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY")
+        # Validate credentials are available (try a test call)
+        try:
+            self.s3_client.head_bucket(Bucket=self.bucket_name)
+            print(f"✅ AWS credentials valid")
+        except Exception as e:
+            if "NoSuchBucket" in str(e):
+                print(f"✅ AWS credentials valid (bucket may not exist yet)")
+            else:
+                raise Exception(f"AWS credentials not found. Either set AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY or run 'aws configure'")
         
         print(f"🌩️  Connected to S3 bucket: {self.bucket_name} ({os.getenv('AWS_REGION', 'eu-west-1')})")
 
@@ -73,7 +83,7 @@ def upload_match_to_s3(match_id):
         return False
     
     # Define paths
-    data_dir = Path("../data") / match_id
+    data_dir = Path("data") / match_id
     if not data_dir.exists():
         print(f"❌ Data directory not found: {data_dir}")
         return False

@@ -1,12 +1,11 @@
 {
   "match_id": "19-20250419",
-  "upload_timestamp": "2025-08-04T22:30:17.937828",
+  "upload_timestamp": "2025-08-05T00:13:02.992495",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "core_files": {
     "web_events_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-web_events-json.json",
     "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-web_events_array-json.json",
-    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/19-20250419-video-mp4.mp4",
     "other_events_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-8-5_other_events-txt.txt"
   }
 }
