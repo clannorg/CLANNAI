@@ -1,0 +1,3 @@
+The light blue team scores a goal from a corner kick. Key events:
+- **00:00**: Following a corner, a header is taken by a light blue player.
+- **00:02**: The header results in a goal.

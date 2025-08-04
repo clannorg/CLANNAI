@@ -1,0 +1,4 @@
+Black team's attack is saved by the Red team's goalkeeper, who then initiates a counter-attack. Key events:
+- **00:01**: Black team player takes a shot on goal.
+- **00:02**: Red team's goalkeeper makes a save.
+- **00:11**: Red team's goalkeeper clears the ball with a long kick upfield.

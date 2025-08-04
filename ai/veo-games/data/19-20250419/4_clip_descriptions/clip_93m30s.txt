@@ -1,0 +1,5 @@
+The blue team wins the ball from the kick-off and launches a quick attack. Key events:
+- **00:03**: The red team kicks off to start the game.
+- **00:05**: The blue team wins possession in the center circle.
+- **00:11**: A blue player takes a shot from outside the penalty area.
+- **00:12**: The shot goes wide of the goal.

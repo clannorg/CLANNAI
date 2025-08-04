@@ -1,0 +1,129 @@
+{
+  "match_info": {
+    "match_id": "19-20250419",
+    "title": "Match at Venue 19",
+    "date": "2025-04-19",
+    "venue": "19",
+    "duration_minutes": 90,
+    "status": "completed"
+  },
+  "team_mapping": {
+    "red": {
+      "display_name": "Red Team",
+      "color": "#FF0000",
+      "is_home": true
+    },
+    "blue": {
+      "display_name": "Blue Team",
+      "color": "#0000FF",
+      "is_home": false
+    },
+    "light_blue": {
+      "display_name": "Light Blue Team",
+      "color": "#ADD8E6",
+      "is_home": false
+    },
+    "claret": {
+      "display_name": "Claret Team",
+      "color": "#800020",
+      "is_home": false
+    }
+  },
+  "score_line": {
+    "red": 0,
+    "blue": 0,
+    "light_blue": 1,
+    "claret": 0,
+    "final_score": "0-1",
+    "result": "light_blue_win"
+  },
+  "event_statistics": {
+    "total_events": 42,
+    "goals": 1,
+    "shots": 0,
+    "fouls": 27,
+    "cards": 2,
+    "corners": 7,
+    "substitutions": 1
+  },
+  "key_moments": [
+    {
+      "timestamp": 2415,
+      "time_display": "40:15",
+      "type": "penalty",
+      "description": "Red attack blocked, penalty awarded",
+      "team": "light_blue",
+      "importance": "high"
+    },
+    {
+      "timestamp": 3855,
+      "time_display": "64:15",
+      "type": "yellow_card",
+      "description": "Yellow card to Claret player for foul",
+      "team": "claret",
+      "importance": "medium"
+    },
+    {
+      "timestamp": 5160,
+      "time_display": "86:00",
+      "type": "red_card",
+      "description": "Red card issued to Red team player",
+      "team": "red",
+      "importance": "high"
+    },
+    {
+      "timestamp": 6540,
+      "time_display": "109:00",
+      "type": "goal",
+      "description": "Light blue team scores a goal from corner",
+      "team": "light_blue",
+      "importance": "high"
+    }
+  ],
+  "match_narrative": {
+    "opening_phase": "The match started with both teams battling for possession in midfield, with several fouls disrupting the flow of the game. Red team looked to build from the back, while Light Blue aimed for quick counter-attacks.",
+    "key_turning_point": "The red card issued to a Red team player in the second half dramatically shifted the momentum. Light Blue capitalized on this advantage.",
+    "closing_phase": "Light Blue secured a late goal from a corner to seal the victory. Red struggled to mount a comeback with ten men.",
+    "match_summary": "A hard-fought match defined by numerous fouls and a late Light Blue goal. Red's red card proved pivotal, allowing Light Blue to take control and ultimately win the game. "
+  },
+  "tactical_overview": {
+    "dominant_team": "light_blue",
+    "game_style": "counter-attacking",
+    "key_patterns": [
+      "Attacking free kicks",
+      "Quick transitions after turnovers"
+    ],
+    "momentum_shifts": [
+      "After Red card at 5160",
+      "Light Blue goal from corner at 6540"
+    ]
+  },
+  "display_metadata": {
+    "primary_color": "#FF0000",
+    "secondary_color": "#ADD8E6",
+    "highlight_events": [
+      2415,
+      3855,
+      5160,
+      6540
+    ],
+    "recommended_clips": [
+      {
+        "start": 6520,
+        "end": 6560,
+        "title": "Light Blue Goal"
+      },
+      {
+        "start": 5140,
+        "end": 5180,
+        "title": "Red Card Incident"
+      }
+    ]
+  },
+  "generation_info": {
+    "generated_at": "2025-08-04T23:28:29.665141",
+    "generator": "clann_ai_match_summary",
+    "version": "1.0",
+    "source_events": 42
+  }
+}

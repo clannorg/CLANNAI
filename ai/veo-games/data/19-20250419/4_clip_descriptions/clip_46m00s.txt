@@ -1,0 +1,4 @@
+The blue team takes a corner kick from the right side. Key events:
+- 00:11: The corner is kicked into the penalty area.
+- 00:13: A blue player attempts a header.
+- 00:14: The header goes over the crossbar for a goal kick.

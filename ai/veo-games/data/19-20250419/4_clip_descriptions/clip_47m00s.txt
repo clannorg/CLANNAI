@@ -1,0 +1,4 @@
+The Red team is awarded a free kick in their own half immediately after the Blue team's kick-off. Key events:
+- **00:01**: The Blue team kicks off to start the match.
+- **00:04**: The referee stops play and signals for a free kick to the Red team.
+- **00:09**: The Red team's goalkeeper places the ball to take the free kick.

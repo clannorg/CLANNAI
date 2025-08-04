@@ -1,0 +1,3 @@
+Red team attempts to build an attack which is broken up by the Blue team, who then regain possession. Key events:
+- 00:05: Red team attempts a through ball towards the penalty area.
+- 00:07: The Blue team intercepts the pass and starts to build from the back.

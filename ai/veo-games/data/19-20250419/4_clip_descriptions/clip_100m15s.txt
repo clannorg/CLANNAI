@@ -1,0 +1,3 @@
+The red team's goalkeeper takes a long goal kick down the center of the pitch. Key events:
+- 00:10: The goalkeeper kicks the ball long.
+- 00:14: A light blue player wins the header near the center circle.

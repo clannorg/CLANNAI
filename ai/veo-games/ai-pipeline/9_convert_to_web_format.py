@@ -119,24 +119,24 @@ SUPPORTED EVENT TYPES (USE THESE EXACT STRINGS ONLY):
 - "substitution" - Player changes only
 
 CRITICAL MAPPING RULES:
-- Foul/Free kick → "foul"
-- Tackle/Slide tackle → "foul"  
-- Handball → "foul"
-- Throw-in → "corner" (if near goal) or "foul" (if general play)
-- Interception → "foul"
-- Header (towards goal) → "shot"
-- Header (general play) → "foul"
+- "scores a goal" / "goal scored" → "goal" (ALWAYS!)
+- Shot/header towards goal → "shot"
+- Foul/Free kick/Tackle → "foul"
+- Corner kick → "corner"
+- Throw-in → "corner" (only if near penalty area)
+- Interception → ignore (normal play)
 - Goal kick → ignore (not supported)
 - Pre-match → ignore (not supported)  
 - Offside → ignore (not supported)
 
 RULES:
-1. Convert timestamps to total seconds (86:39 = 5199 seconds, 22:04 = 1324 seconds)
-2. Extract team: "red", "yellow", "black", "blue", "claret", "light blue" (lowercase, replace spaces with _)
-3. Keep descriptions concise but descriptive (max 80 characters)  
-4. Sort by timestamp (earliest first)
-5. Map ALL events to supported types - DO NOT use unsupported types
-6. Output ONLY the JSON array, no explanation or markdown
+1. **GOAL DETECTION**: If description contains "scores", "goal scored", "goal from", ALWAYS use type "goal"
+2. Convert timestamps to total seconds (86:39 = 5199 seconds, 22:04 = 1324 seconds)
+3. Extract team: "red", "yellow", "black", "blue", "claret", "light blue" (lowercase, replace spaces with _)
+4. Keep descriptions concise but descriptive (max 80 characters)  
+5. Sort by timestamp (earliest first)
+6. Map ALL events to supported types - DO NOT use unsupported types
+7. Output ONLY the JSON array, no explanation or markdown
 
 Extract events from ALL sections: goals, shots, fouls, cards, corners, substitutions, etc."""
 
@@ -375,15 +375,16 @@ Extract events from ALL sections: goals, shots, fouls, cards, corners, substitut
                     print(f"🔄 Falling back to regex parsing...")
                     events = self.parse_validated_timeline(validated_timeline_path)
                     print(f"✅ Extracted {len(events)} events from fallback parsing")
-                # Fallback to JSON format
-                json_timeline_path = data_dir / "goals_and_shots_timeline.json"
-                if json_timeline_path.exists():
-                    print(f"📖 Reading JSON timeline: {json_timeline_path}")
-                    events = self.parse_goals_shots_json(json_timeline_path)
-                    print(f"✅ Extracted {len(events)} events from JSON timeline")
-                else:
-                    print(f"❌ No timeline files found in {data_dir}")
-                    return False
+                # Don't fallback to JSON if we already have events from validated timeline
+                if not events:
+                    json_timeline_path = data_dir / "goals_and_shots_timeline.json"
+                    if json_timeline_path.exists():
+                        print(f"📖 Reading JSON timeline: {json_timeline_path}")
+                        events = self.parse_goals_shots_json(json_timeline_path)
+                        print(f"✅ Extracted {len(events)} events from JSON timeline")
+                    else:
+                        print(f"❌ No timeline files found in {data_dir}")
+                        return False
 
         if not events:
             print(f"⚠️  No events found to convert")

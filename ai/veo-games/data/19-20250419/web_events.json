@@ -1,313 +1,631 @@
 {
   "match_id": "19-20250419",
-  "generated_timestamp": "2025-08-04T22:30:15.622304",
-  "events_count": 51,
+  "generated_timestamp": "2025-08-04T23:44:37.776714",
+  "events_count": 104,
   "source": "clann_ai_pipeline",
   "events": [
     {
-      "type": "pre_match",
-      "timestamp": 0,
-      "description": "Pre-match handshake",
-      "team": "N/A"
+      "type": "shot",
+      "timestamp": 213,
+      "description": "Shot from outside the box. Missed (Over the goal)",
+      "team": "red"
     },
     {
-      "type": "throw_in",
-      "timestamp": 90,
-      "description": "Light blue attack from throw-in on right wing",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 105,
-      "description": "Claret team builds play from throw-in on right",
-      "team": "claret"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 120,
-      "description": "Blue team long throw-in from right sideline",
+      "type": "shot",
+      "timestamp": 282,
+      "description": "Header towards goal from a long throw-in. Saved",
       "team": "blue"
     },
     {
-      "type": "foul",
-      "timestamp": 161,
-      "description": "Foul against Claret, free kick to Light Blue",
-      "team": "claret"
+      "type": "save",
+      "timestamp": 282,
+      "description": "Goalkeeper makes a save",
+      "team": "red"
     },
     {
-      "type": "throw_in",
-      "timestamp": 270,
-      "description": "Blue team creates scoring chance from throw-in",
+      "type": "shot",
+      "timestamp": 288,
+      "description": "Shot from outside the box. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 288,
+      "description": "Goalkeeper makes a diving save",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 447,
+      "description": "Header from a cross. Missed (Wide)",
       "team": "blue"
     },
     {
-      "type": "throw_in",
-      "timestamp": 304,
-      "description": "Red team long throw-in into the penalty area",
-      "team": "red"
-    },
-    {
-      "type": "foul",
-      "timestamp": 326,
-      "description": "Handball against the attacking red player",
-      "team": "red"
-    },
-    {
-      "type": "free_kick",
-      "timestamp": 330,
-      "description": "Claret team long free kick from their own half",
-      "team": "claret"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 375,
-      "description": "Light Blue clears ball out of play for throw-in",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 390,
-      "description": "Light Blue team builds attack from throw-in on left",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 405,
-      "description": "Light Blue defends attack, winning a throw-in",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 420,
-      "description": "Light blue team attack from throw-in, loses ball",
-      "team": "light blue"
-    },
-    {
-      "type": "foul",
-      "timestamp": 474,
-      "description": "Red player fouled during aerial challenge",
+      "type": "shot",
+      "timestamp": 553,
+      "description": "Header from a free-kick cross. Missed (Over)",
       "team": "blue"
     },
     {
-      "type": "throw_in",
-      "timestamp": 483,
-      "description": "Red team takes throw-in from left sideline",
+      "type": "shot",
+      "timestamp": 557,
+      "description": "Shot from inside the penalty area. Missed (Wide)",
       "team": "red"
     },
     {
-      "type": "tackle_miss",
-      "timestamp": 517,
-      "description": "Red player misses slide tackle, Blue attack continues",
-      "team": "red"
-    },
-    {
-      "type": "free_kick",
-      "timestamp": 540,
-      "description": "Light blue free-kick results in header over the goal",
-      "team": "light blue"
-    },
-    {
-      "type": "goal_kick",
-      "timestamp": 570,
-      "description": "Red team initiates attack from a goal kick",
-      "team": "red"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 630,
-      "description": "Light Blue throw-in leads to aerial battle",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 645,
-      "description": "Red team throw-in and builds attack on the left",
-      "team": "red"
-    },
-    {
-      "type": "free_kick",
-      "timestamp": 750,
-      "description": "Red team takes free kick cleared by Black defence",
-      "team": "red"
-    },
-    {
-      "type": "free_kick",
-      "timestamp": 765,
-      "description": "Blue team takes a free kick from the right wing",
+      "type": "shot",
+      "timestamp": 613,
+      "description": "One-on-one shot from inside the penalty area. Saved",
       "team": "blue"
     },
     {
-      "type": "dribbling",
-      "timestamp": 790,
-      "description": "Player dribbles past a Blue team defender",
+      "type": "save",
+      "timestamp": 613,
+      "description": "The goalkeeper makes a diving save",
       "team": "red"
     },
     {
-      "type": "goal_kick",
-      "timestamp": 840,
-      "description": "Blue team sets up for a goal kick",
+      "type": "shot",
+      "timestamp": 684,
+      "description": "Header attempt from a cross. Missed (Over)",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 737,
+      "description": "Shot from just outside the penalty area. Blocked",
       "team": "blue"
     },
     {
-      "type": "header",
-      "timestamp": 855,
-      "description": "Blue player wins header near center circle",
+      "type": "shot",
+      "timestamp": 779,
+      "description": "Header from a free kick. Saved",
       "team": "blue"
     },
     {
-      "type": "foul",
-      "timestamp": 872,
-      "description": "Light blue team intercepts a forward pass and a tackle is made",
-      "team": "light blue"
-    },
-    {
-      "type": "tackle",
-      "timestamp": 936,
-      "description": "Red player is tackled, team retains ball",
-      "team": "light blue"
-    },
-    {
-      "type": "tackle",
-      "timestamp": 951,
-      "description": "Red defender makes sliding tackle",
+      "type": "save",
+      "timestamp": 779,
+      "description": "Goalkeeper makes the save",
       "team": "red"
     },
     {
-      "type": "tackle_foul",
-      "timestamp": 1033,
-      "description": "Blue attacker brought down outside penalty box",
+      "type": "shot",
+      "timestamp": 820,
+      "description": "Shot from inside the penalty area. Saved",
       "team": "red"
     },
     {
-      "type": "foul",
-      "timestamp": 1039,
-      "description": "Free kick awarded following a foul on a Red player",
+      "type": "save",
+      "timestamp": 820,
+      "description": "The goalkeeper makes a diving save to his right",
       "team": "blue"
     },
     {
-      "type": "throw_in",
-      "timestamp": 1050,
-      "description": "Light Blue team throw-in on right wing",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 1065,
-      "description": "Light Blue team attacks from throw-in on right",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 1080,
-      "description": "Red team takes throw-in in their own half",
-      "team": "red"
-    },
-    {
-      "type": "goal_kick",
-      "timestamp": 1140,
-      "description": "Claret goalkeeper launches long ball",
-      "team": "claret"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 1185,
-      "description": "Light Blue long throw-in from left sideline",
-      "team": "light blue"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 1200,
-      "description": "Claret team long throw-in from sideline",
-      "team": "claret"
-    },
-    {
-      "type": "foul",
-      "timestamp": 1321,
-      "description": "Foul by Blue team, free kick to Red team",
+      "type": "shot",
+      "timestamp": 836,
+      "description": "Shot from outside the box. Saved",
       "team": "blue"
     },
     {
-      "type": "throw_in",
-      "timestamp": 1365,
-      "description": "Light blue attack broken down, claret throw-in",
-      "team": "claret"
-    },
-    {
-      "type": "throw_in",
-      "timestamp": 1380,
-      "description": "Light Blue team throw-in, maintains possession",
-      "team": "light blue"
-    },
-    {
-      "type": "goal_kick",
-      "timestamp": 1395,
-      "description": "Maroon team builds play from goalkeeper",
-      "team": "maroon"
-    },
-    {
-      "type": "foul",
-      "timestamp": 1438,
-      "description": "Red player brings down Light Blue player",
+      "type": "save",
+      "timestamp": 836,
+      "description": "Saved by the goalkeeper",
       "team": "red"
     },
     {
-      "type": "foul",
-      "timestamp": 1440,
-      "description": "Foul on light blue player in center circle",
-      "team": "light blue"
-    },
-    {
-      "type": "free_kick",
-      "timestamp": 1440,
-      "description": "Light blue team restarts play with free kick",
-      "team": "light blue"
-    },
-    {
-      "type": "free_kick",
-      "timestamp": 1470,
-      "description": "Red team free kick into the box, cleared by blue",
+      "type": "shot",
+      "timestamp": 989,
+      "description": "Shot from inside the box. Saved",
       "team": "red"
     },
     {
-      "type": "tackle_foul",
-      "timestamp": 1530,
-      "description": "Player brought down on counter-attack",
-      "team": "red"
-    },
-    {
-      "type": "free_kick",
-      "timestamp": 1545,
-      "description": "Light Blue to take free kick just outside box",
-      "team": "light blue"
-    },
-    {
-      "type": "stoppage",
-      "timestamp": 1560,
-      "description": "Blue team takes a break and team talk",
+      "type": "save",
+      "timestamp": 989,
+      "description": "Saved by the goalkeeper",
       "team": "blue"
     },
     {
-      "type": "free_kick",
-      "timestamp": 1680,
-      "description": "Red team takes a free kick from the left flank",
+      "type": "shot",
+      "timestamp": 1421,
+      "description": "Shot from a direct attack. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 1421,
+      "description": "Shot is saved by the goalkeeper",
       "team": "red"
     },
     {
-      "type": "throw_in",
-      "timestamp": 1695,
-      "description": "Red team long throw-in into penalty box",
+      "type": "shot",
+      "timestamp": 1694,
+      "description": "Header on goal from a free kick. Saved",
       "team": "red"
     },
     {
-      "type": "goal_kick",
-      "timestamp": 1740,
-      "description": "Claret team builds attack from goal kick",
-      "team": "claret"
+      "type": "save",
+      "timestamp": 1694,
+      "description": "Goalkeeper catches the ball",
+      "team": "blue"
     },
     {
-      "type": "interception",
-      "timestamp": 1766,
-      "description": "Pass intercepted by a Blue defender",
+      "type": "shot",
+      "timestamp": 1736,
+      "description": "Shot from the penalty area. Missed (Wide)",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1804,
+      "description": "Shot from the edge of the box. Blocked",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1871,
+      "description": "Acrobatic overhead/volley shot from a cross. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 1871,
+      "description": "The goalkeeper makes a diving save",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1894,
+      "description": "First shot from inside the box during a scramble. Blocked",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1896,
+      "description": "Follow-up shot on the rebound. Blocked",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2048,
+      "description": "Shot on a counter-attack. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 2048,
+      "description": "The blue team's goalkeeper makes a save",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2240,
+      "description": "Shot from a one-on-one situation. Saved (Blocked by keeper)",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 2240,
+      "description": "The red team's goalkeeper comes out to block the shot",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2339,
+      "description": "Header from a long pass. Missed (Over)",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2480,
+      "description": "Shot from outside the box. Missed (Wide)",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2675,
+      "description": "Shot from outside the penalty area. Missed (Wide)",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2774,
+      "description": "Header from a corner kick. Missed (Over)",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2774,
+      "description": "Header from a corner kick",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2783,
+      "description": "Shot from inside the penalty area. Missed (Wide)",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2849,
+      "description": "Shot from inside the box. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 2849,
+      "description": "The red goalkeeper saves the shot",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2908,
+      "description": "Shot from a headed cross. Missed (Over)",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2916,
+      "description": "Header on goal from a cross. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 2916,
+      "description": "Save by the Blue team's goalkeeper",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2977,
+      "description": "Penalty Kick. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 2977,
+      "description": "Penalty kick taken, saved by the goalkeeper",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3682,
+      "description": "Shot from outside the box. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 3682,
+      "description": "The goalkeeper makes a diving save to their right",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4071,
+      "description": "Shot from outside the box. Missed (Over)",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4094,
+      "description": "Header from a free kick. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 4094,
+      "description": "The Red team's goalkeeper makes a save",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4159,
+      "description": "Diving header on goal. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 4159,
+      "description": "Keeper makes the save",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4244,
+      "description": "Shot from outside the box. Blocked",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4281,
+      "description": "Volley shot. Missed (Over)",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4354,
+      "description": "First shot in the penalty area. Blocked",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4357,
+      "description": "Follow-up shot on the rebound. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 4357,
+      "description": "The red team's goalkeeper makes a diving save",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4611,
+      "description": "Shot from inside the box. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 4611,
+      "description": "The claret team's goalkeeper makes a save",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4798,
+      "description": "Volleyed shot from outside the penalty area. Blocked",
+      "team": "blue"
+    },
+    {
+      "type": "goal",
+      "timestamp": 4813,
+      "description": "A goal scored from an attack down the left wing",
+      "team": "blue_black"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4942,
+      "description": "Penalty Kick. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 4942,
+      "description": "Penalty is taken, the goalkeeper makes a save",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5094,
+      "description": "Shot from just outside the box. Blocked",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5104,
+      "description": "Direct free kick on goal. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 5104,
+      "description": "Goalkeeper catches the ball",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5142,
+      "description": "Long-range shot. Missed (Over)",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5380,
+      "description": "First-time shot from inside the box. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 5380,
+      "description": "The shot is saved by the goalkeeper",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5407,
+      "description": "Header on goal. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 5407,
+      "description": "The light blue team's goalkeeper makes a comfortable save",
+      "team": "light_blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5473,
+      "description": "Penalty Kick. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 5473,
+      "description": "Light Blue goalkeeper dives to their left and saves the shot",
+      "team": "light_blue"
+    },
+    {
+      "type": "goal",
+      "timestamp": 5562,
+      "description": "Scored from a loose ball inside the penalty area",
+      "team": "red_claret"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5622,
+      "description": "Shot from outside the penalty area. Missed (Wide)",
+      "team": "blue"
+    },
+    {
+      "type": "goal",
+      "timestamp": 5704,
+      "description": "A goal scored from a shot outside the penalty box",
+      "team": "blue_black"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5756,
+      "description": "Shot on goal. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 5756,
+      "description": "Saved by keeper",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5788,
+      "description": "Shot from the edge of the box. Blocked",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5855,
+      "description": "First shot from outside the box. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 5855,
+      "description": "The goalkeeper makes a diving save",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5859,
+      "description": "Follow-up shot on the rebound. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 5859,
+      "description": "The keeper makes a second save",
+      "team": "blue"
+    },
+    {
+      "type": "goal",
+      "timestamp": 6007,
+      "description": "A successfully converted penalty kick",
+      "team": "red_claret"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6193,
+      "description": "Shot from inside the box. Missed (Wide)",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6267,
+      "description": "Free kick on goal. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 6267,
+      "description": "Goalkeeper punches the ball clear",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6279,
+      "description": "Direct free kick. Missed (Over)",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6491,
+      "description": "Shot from outside the box. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 6491,
+      "description": "The shot is saved by the goalkeeper",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6647,
+      "description": "Shot on goal. Saved",
+      "team": "blue_black"
+    },
+    {
+      "type": "save",
+      "timestamp": 6647,
+      "description": "Red team's goalkeeper makes a save",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6758,
+      "description": "Low free kick shot. Saved",
+      "team": "blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 6758,
+      "description": "The red team's goalkeeper dives to their right and saves the shot",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6813,
+      "description": "Shot from the edge of the penalty area. Blocked",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6830,
+      "description": "Direct free kick. Missed (Over)",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6857,
+      "description": "First shot in the box. Blocked",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6860,
+      "description": "Follow-up shot. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 6860,
+      "description": "Follow-up shot saved by the goalkeeper",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6901,
+      "description": "Shot inside the penalty box. Blocked",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6996,
+      "description": "Shot from outside the box. Saved",
+      "team": "red"
+    },
+    {
+      "type": "save",
+      "timestamp": 6996,
+      "description": "Goalkeeper makes a diving save",
       "team": "blue"
     }
   ]

@@ -1,0 +1,3 @@
+The red team builds an attack, switching the play from left to right. Key events:
+- 00:12: A cross is played into the box from the right wing.
+- 00:14: The light blue team clears the cross with a header.
