@@ -274,7 +274,7 @@ export default function Dashboard() {
                 onClick={() => setActiveTab('games')}
                 className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
               >
-                Upload VEO URL
+                📹 Upload Video
               </button>
               
               <button 

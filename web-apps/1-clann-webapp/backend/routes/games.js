@@ -92,8 +92,10 @@ router.get('/:id', authenticateToken, async (req, res) => {
       return res.status(404).json({ error: 'Game not found' });
     }
     
-    // Check if user has access to this game (their game, team member, company admin, or demo game)
-    if (req.user.role !== 'company' && !game.is_demo) {
+    // Check if user has access to this game (their game, team member, company admin, demo game, or newmills)
+    const isNewmillsGame = game.team_name === 'newmills';
+    
+    if (req.user.role !== 'company' && !game.is_demo && !isNewmillsGame) {
       const userGames = await getUserGames(req.user.id);
       const hasAccess = userGames.some(g => g.id === gameId);
       

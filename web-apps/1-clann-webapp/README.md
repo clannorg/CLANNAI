@@ -31,14 +31,7 @@ cd frontend && npm run dev
 
 ## 🔗 **Join Teams**
 
-**Newmills Team**: `https://clannai.com/join/TQJ1Q5`
-
-**Other Demo Teams:**
-- Arsenal FC Academy: `ARS269`
-- Chelsea Youth: `CHE277` 
-- Liverpool Reserves: `LIV297`
-- City Development: `MCI298`
-- United U21s: `MUN304`
+**Main Demo Team**: `https://clannai.com/join/TQJ1Q5` (Newmills with real footage)
 
 ## 🏗️ **Tech Stack**
 
