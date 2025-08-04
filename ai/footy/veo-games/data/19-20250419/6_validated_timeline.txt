@@ -1,0 +1,130 @@
+# AI-Validated Timeline - 19-20250419
+# Generated: 2025-08-04T18:00:49.740176
+# Method: Gemini 2.5 Pro intelligent validation
+# Context: Error-correcting fallible clip descriptions
+
+Excellent. As a football analyst, I will apply my expertise and the provided validation rules to error-correct the AI's timeline. My focus is on identifying verifiable goals and shots based on strong contextual evidence.
+
+Here is my detailed analysis of the match timeline.
+
+***
+
+### **VALIDATED GOALS**
+
+Based on the strict validation rule requiring a kickoff from the center circle after a goal, only one goal can be confirmed.
+
+*   **Goal 1**
+    *   **Timestamp:** 85:56
+    *   **Team:** Red Team
+    *   **Description:** The goal resulted from a set-piece routine. Following a throw-in from the left wing (85:48), a header was played across the face of the goal (85:53), allowing a second Red team player to score with a decisive header at the back post.
+    *   **Supporting Evidence:** The subsequent timeline entry at **86:00** provides definitive proof: "The Blue team restarts the game from the center circle after what appears to be a goal. Key events: 86:07 The ball is kicked off from the center spot." This is the only instance in the entire timeline where a goal claim is followed by a confirmed kickoff.
+    *   **Confidence Level:** High
+
+### **VALIDATED SHOTS**
+
+The following are shots that had a clear outcome described (saved, missed, or blocked) and are considered actual events. The "Black" team is assumed to be the "Blue/Light Blue" team based on context.
+
+*   **01:08** - **Light Blue Team** - Shot on goal following a long throw-in. **Outcome: Saved**. (Evidence: "01:10 Goalkeeper makes a save.")
+*   **04:27** - **Blue Team** - Shot from outside the box following a cross from the left wing. **Outcome: Missed**. (Evidence: "goes wide of the goal.")
+*   **05:08** - **Blue Team** - Shot from outside the penalty area. **Outcome: Saved**. (Evidence: "05:10: The goalkeeper makes a diving save.")
+*   **05:22** - **Red Team** - Long-range shot from outside the penalty area. **Outcome: Saved**. (Evidence: "05:25: The goalkeeper makes a diving save.")
+*   **05:50** - **Red Team** - Shot from the left side of the penalty area. **Outcome: Missed**. (Evidence: "goes high and wide.")
+*   **06:09** - **Red Team** - Shot from the left side of the box. **Outcome: Saved**. (Evidence: "06:10 the goalkeeper makes a save.")
+*   **06:23** - **Blue Team** - Shot from distance. **Outcome: Saved**. (Evidence: "06:25 saved by keeper.")
+*   **08:55** - **Blue Team** - Shot from inside the penalty area. **Outcome: Saved**. (Evidence: "08:56 saved by the goalkeeper.")
+*   **09:06** - **Light Blue Team** - Direct free-kick near the penalty area. **Outcome: Saved**. (Evidence: "the initial shot is saved by the goalkeeper.")
+*   **09:25** - **Red Team** - Shot from inside the box. **Outcome: Saved**. (Evidence: "09:26 saved by the goalkeeper.")
+*   **10:08** - **Blue Team** - Shot from the left side of the penalty box. **Outcome: Saved**. (Evidence: "10:10: The red team's goalkeeper makes a diving save.")
+*   **10:25** - **Red Team** - Long-range shot. **Outcome: Saved**. (Evidence: "10:26 saved by the Blue team's goalkeeper.")
+*   **11:20** - **Red Team** - Shot from distance. **Outcome: Saved**. (Evidence: "11:22 the goalkeeper makes a diving save.")
+*   **12:55** - **Blue Team** - Shot following a throw-in. **Outcome: Blocked**. (Evidence: "12:56 shot blocked by a Red defender.")
+*   **14:13** - **Red Team** - Header from a cross. **Outcome: Missed**. (Evidence: "header from the cross goes wide of the goal.")
+*   **17:28** - **Red Team** - Shot from outside the area following a cross. **Outcome: Blocked**. (Evidence: "17:29 shot is blocked by a defender.")
+*   **17:41** - **Light Blue Team** - Shot on goal. **Outcome: Saved**. (Evidence: "17:42 saved by the Red team's goalkeeper.")
+*   **20:56** - **Red Team** - Shot from outside the box following a long throw-in. **Outcome: Missed**. (Evidence: "20:57 the shot goes wide of the goal.")
+*   **21:10** - **Red Team** - Shot from inside the box. **Outcome: Saved**. (Evidence: "21:11: Goalkeeper makes a diving save.")
+*   **22:19** - **Red Team** - Direct free kick on goal. **Outcome: Saved**. (Evidence: "22:22 the goalkeeper makes a diving save.")
+*   **24:22** - **Light Blue Team** - Shot from inside the box. **Outcome: Saved**. (Evidence: "24:23 saved by the goalkeeper.")
+*   **29:57** - **Red Team** - Long-range shot. **Outcome: Missed**. (Evidence: "goes wide of the goal.")
+*   **30:35** - **Blue Team** - Shot from inside the penalty area. **Outcome: Saved**. (Evidence: "30:36 saved by the red team's goalkeeper.")
+*   **30:57** - **Red Team** - Shot from inside the penalty area. **Outcome: Blocked**. (Evidence: "blocked by a defender.")
+*   **33:22** - **Light Blue Team** - Long-range shot from outside the box. **Outcome: Saved**. (Evidence: "33:23: The Red team's goalkeeper makes a diving save.")
+*   **35:26** - **Light Blue Team** - Shot from the center of the box. **Outcome: Blocked**. (Evidence: "35:27: The shot is blocked by a red team defender.")
+*   **35:49** - **Light Blue Team** - Diving header from a cross. **Outcome: Missed**. (Evidence: "35:51 the header goes wide of the goal.")
+*   **38:57** - **Red Team** - Shot from outside the box. **Outcome: Missed**. (Evidence: "goes wide of the goal.")
+*   **39:11** - **Light Blue Team** - Shot from distance. **Outcome: Missed**. (Evidence: "39:13 ball goes over the crossbar.")
+*   **39:33** - **Red Team** - Shot from outside the box. **Outcome: Saved**. (Evidence: "39:34 saved by the keeper.")
+*   **39:56** - **Red Team** - Shot from inside the box. **Outcome: Saved**. (Evidence: "39:57 saved by the light blue goalkeeper.")
+*   **41:23** - **Light Blue Team** - Shot from outside the box. **Outcome: Saved**. (Evidence: "41:24 keeper makes a diving save.")
+*   **43:10** - **Red Team** - Long-range shot. **Outcome: Missed**. (Evidence: "43:11 shot goes over the bar.")
+*   **45:37** - **Red Team** - Shot from outside the box. **Outcome: Blocked**. (Evidence: "45:38 shot blocked by a defender.")
+*   **48:52** - **Red Team** - Long-range shot. **Outcome: Saved**. (Evidence: "48:54 saved by the keeper.")
+*   **50:16** - **Red Team** - Shot from the edge of the box. **Outcome: Saved**. (Evidence: "50:17: The goalkeeper makes a diving save.")
+*   **50:36** - **Red Team** - Shot from outside the box. **Outcome: Saved**. (Evidence: "50:37 the black goalkeeper makes a diving save.")
+*   **52:28** - **Black Team** - Shot from outside the box. **Outcome: Saved**. (Evidence: "52:29 saved by the red team's goalkeeper.")
+*   **52:43** - **Red Team** - Shot from distance after an interception. **Outcome: Missed**. (Evidence: "52:44 The shot goes wide of the goal.")
+*   **53:37** - **Red Team** - Direct free kick on the edge of the box. **Outcome: Saved**. (Evidence: "53:39 keeper makes a save tipping it over the bar.")
+*   **54:05** - **Black Team** - Shot on goal. **Outcome: Saved**. (Evidence: "54:06 saved by keeper.")
+*   **55:34** - **Black Team** - Shot from the right wing. **Outcome: Missed**. (Evidence: "55:36 shot goes wide.")
+*   **58:01** - **Red Team** - Shot on goal. **Outcome: Saved**. (Evidence: "58:02 goalkeeper makes a diving save.")
+*   **58:56** - **Red Team** - Shot following a cleared cross. **Outcome: Saved**. (Evidence: "58:58 save made by the black team's goalkeeper.")
+*   **59:12** - **Black Team** - Shot from inside the box. **Outcome: Saved**. (Evidence: "59:13: The shot is saved by the red team's goalkeeper.")
+*   **60:23** - **Black Team** - Shot following a defensive error. **Outcome: Saved**. (Evidence: "60:24 Red goalkeeper makes a diving save.")
+*   **61:11** - **Light Blue Team** - Shot from outside the area. **Outcome: Saved**. (Evidence: "61:12 the goalkeeper makes a diving save.")
+*   **68:22** - **Red Team** - Direct free-kick. **Outcome: Missed**. (Evidence: "68:23 the ball goes over the crossbar.")
+*   **68:52** - **Blue Team** - Shot from inside the box during a goalmouth scramble. **Outcome: Blocked**. (Evidence: "68:53: The shot is blocked by the red team's defense.")
+*   **69:08** - **Blue Team** - Shot from inside the penalty area. **Outcome: Saved**. (Evidence: "69:09 saved by the Red team's goalkeeper.")
+*   **70:27** - **Red Team** - Shot from inside the area after a defensive header. **Outcome: Saved**. (Evidence: "70:28: The shot is saved by the goalkeeper.")
+*   **78:30** - **Blue Team** - Long-range shot. **Outcome: Goal**. (Evidence: "78:33: The ball goes into the top corner of the net for a goal."). **Note: This is listed as a shot and also in the rejected goals section. While described as a goal, there is NO subsequent kickoff, meaning it cannot be validated as an actual goal under the strict rules.**
+*   **79:13** - **Red Team** - Shot following a cross and header. **Outcome: Blocked**. (Evidence: "79:14 shot is blocked by a defender.")
+*   **80:02** - **Red Team** - Long-range shot. **Outcome: Missed**. (Evidence: "80:03 Ball goes over the bar.")
+*   **80:24** - **Claret Team** - Shot from a cross. **Outcome: Saved**. (Evidence: "80:25: The shot is saved by the light blue team's goalkeeper.")
+*   **80:33** - **Light Blue Team** - Powerful long-range shot. **Outcome: Missed (hit crossbar)**. (Evidence: "80:34 shot hits the crossbar.")
+*   **82:10** - **Blue Team** - Shot from outside the penalty area. **Outcome: Saved**. (Evidence: "82:12: The Red team's goalkeeper makes a diving save.")
+*   **84:20** - **Red Team** - Shot from inside the box. **Outcome: Saved**. (Evidence: "84:21 keeper makes a save.")
+*   **84:25** - **Red Team** - Second shot from the edge of the area. **Outcome: Missed**. (Evidence: "goes wide.")
+*   **88:22** - **Light Blue Team** - Shot from a cross. **Outcome: Saved**. (Evidence: "88:24: The red team's goalkeeper makes a diving save.")
+*   **88:39** - **Red Team** - Header on goal from a cross. **Outcome: Missed**. (Evidence: "88:40: The shot goes over the crossbar.")
+*   **92:29** - **Blue Team** - Shot from the penalty area. **Outcome: Unspecified but implied attempt.** (This is borderline, but the context of a pass into the area followed by a shot is strong.)
+*   **93:25** - **Light Blue Team** - Free kick shot. **Outcome: Saved**. (Evidence: "93:27 saved by the Red team's goalkeeper.")
+*   **93:58** - **Light Blue Team** - Shot from the right side of the box. **Outcome: Saved**. (Evidence: "93:59 goalkeeper makes a save.")
+*   **94:10** - **Red Team** - Long-range shot. **Outcome: Saved**. (Evidence: "94:13 saved by the goalkeeper.")
+*   **94:48** - **Light Blue Team** - Shot from inside the box. **Outcome: Blocked**. (Evidence: "shot from inside the box is blocked.")
+*   **94:58** - **Light Blue Team** - Follow-up shot from the edge of the area. **Outcome: Missed**. (Evidence: "goes over the bar.")
+*   **96:25** - **Red Team** - Shot from outside the box. **Outcome: Saved**. (Evidence: "96:26 saved by the goalkeeper.")
+*   **100:23** - **Red Team** - Free kick shot. **Outcome: Saved**. (Evidence: "100:24 saved by the goalkeeper.")
+*   **101:04** - **Light Blue Team** - Shot on goal. **Outcome: Saved**. (Evidence: "101:05: The red team's goalkeeper makes a diving save.")
+*   **104:08** - **Red Team** - Direct free kick. **Outcome: Goal**. (Evidence: "104:09 goal scored"). **Note: Also in rejected goals due to no kickoff.**
+*   **105:24** - **Light Blue Team** - Direct free-kick. **Outcome: Saved**. (Evidence: "105:26 the goalkeeper makes a diving save.")
+*   **108:10** - **Light Blue Team** - Shot from a cross. **Outcome: Goal**. (Evidence: "108:12 goal scored"). **Note: Also in rejected goals due to no kickoff.**
+*   **113:33** - **Red Team** - Header toward goal. **Outcome: Saved**. (Evidence: "113:34: The Blue team's goalkeeper makes a diving save.")
+*   **114:47** - **Red Team** - Header from a cross. **Outcome: Goal**. (Evidence: "114:49 goal scored"). **Note: Also in rejected goals due to no kickoff.**
+*   **115:06** - **Light Blue Team** - Shot from close range. **Outcome: Saved**. (Evidence: "115:07 the goalkeeper makes a crucial save.")
+*   **115:30** - **Red Team** - Header from a long throw-in. **Outcome: Goal**. (Evidence: "115:38: A Red player heads the ball into the net"). **Note: Also in rejected goals due to no kickoff.**
+*   **118:05** - **Light Blue Team** - Shot on goal. **Outcome: Saved**. (Evidence: "118:06 saved by the Red team's goalkeeper.")
+*   **118:37** - **Blue Team** - Shot from outside the penalty area. **Outcome: Saved**. (Evidence: "118:39 the Red team's goalkeeper makes a diving save.")
+
+### **REJECTED CLAIMS**
+
+The AI frequently hallucinated goals. The following claims were **rejected** because they were not followed by a kickoff from the center circle, a mandatory event in football.
+
+*   **REJECTED GOALS:** 05:40, 09:08, 27:26, 27:57, 28:59, 33:12, 45:55, 46:12, 47:18, 53:46, 54:27, 55:13, 57:06, 57:21, 58:36, 68:02, 78:33, 85:56 (This is the one *validated* goal, listed here for completeness of other claims), 104:09, 105:09, 108:12, 114:49, 115:38, 116:52, 117:04, 117:17, 118:12.
+    *   **Reasoning:** In every one of these cases, the subsequent timeline clip describes continuous play (e.g., an attack, a throw-in, midfield possession) rather than a mandatory restart from the center circle. This violates Rule #1 and Rule #2.
+
+*   **REJECTED SHOTS:** A number of shots were mentioned without a clear outcome (saved, missed, blocked). These are rejected as they lack sufficient evidence.
+    *   **Examples:** 00:12, 06:59, 10:57, 28:14, 40:21, 66:06, 77:13, 77:39, 78:10, 81:37, 83:12, 88:14, 99:22, 107:56.
+
+### **ANALYSIS SUMMARY**
+
+The AI-generated timeline describes a hard-fought match primarily between a **Red Team** and a **Blue/Light Blue/Black Team**. Despite the AI hallucinating over two dozen goals, a rigorous analysis confirms only **one actual goal**.
+
+*   **Final Validated Score:** Red Team 1 - 0 Black/Blue Team.
+
+*   **Key Match Events:**
+    *   The decisive moment of the match occurred late, at **85:56**, when the **Red Team** scored from a well-worked set-piece, involving a throw-in and two headers.
+    *   The match was characterized by numerous shots from both sides, with goalkeepers from both teams making multiple crucial saves to keep the scoreline low.
+    *   The Red team appeared to have a slight edge in terms of clear-cut chances and shots on target.
+    *   The AI's primary weakness was its inability to distinguish between a shot that results in a goal and a shot that is saved or missed, leading it to invent goals that were not followed by the necessary kickoff. Its ability to identify shots, saves, blocks, and misses, however, was quite reliable.
+    *   The match also featured some unusual incidents, including a dog on the pitch (20:39) and a collision between a player and the referee (65:41).
+
+This analysis demonstrates the critical importance of applying expert human knowledge and strict validation rules to interpret AI-generated sports data. Without this oversight, the resulting summary would be wildly inaccurate.

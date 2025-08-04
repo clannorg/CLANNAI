@@ -1,0 +1,9 @@
+{
+  "match_id": "19-20250419",
+  "upload_timestamp": "2025-08-04T18:02:13.125227",
+  "bucket": "end-nov-webapp-clann",
+  "region": "eu-west-1",
+  "core_files": {
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/19-20250419-video-mp4.mp4"
+  }
+}

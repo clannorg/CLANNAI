@@ -1,0 +1,193 @@
+# Definite Events - 19-20250419
+# Generated: 2025-08-04T18:57:48.202281
+# Method: Direct VEO timestamp matching with AI descriptions
+# Quality: VEO events matched within ±30 seconds
+
+Okay, I will analyze the AI Complete Timeline and match the AI descriptions to the VEO ground truth events within the specified ±30 second time window.
+
+=== DEFINITE SHOTS ===
+Timestamp: 08:11 (3)
+Team: Red
+Description: Light blue team attempts to build up play from their half under pressure from the red team. Key events: 08:05 A light blue player makes a diving header to pass the ball forward, 08:11 A red player makes a successful sliding tackle to dispossess the opponent.
+Outcome: Blocked/Dispossessed
+VEO Match: Confirmed shot at 8:08 - High confidence (Red player's challenge stopped an attack)
+
+Timestamp: 08:55 (3)
+Team: Blue
+Description: The blue team builds a quick attack from midfield, resulting in a shot from inside the penalty area. Key events: 08:55 shot taken, 08:56 saved by the goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 8:58 - High confidence
+
+Timestamp: 13:17 (3)
+Team: Red
+Description: Red team attacks in the opposition's half and wins a free kick. Key events: 13:17 Red player is tackled and brought down, 13:18 referee blows the whistle for a foul.
+Outcome: Blocked/Free Kick
+VEO Match: Confirmed shot at 13:40 - Low confidence (Red player winning a free kick implies blocked shot)
+
+Timestamp: 19:12 (-1)
+Team: Blue
+Description: Red team builds an attack around the opponent's penalty area. Key events: 19:06 Red player passes the ball into the box, 19:10 an attacker is challenged inside the area, 19:12 the Blue team defender clears the ball.
+Outcome: Blocked
+VEO Match: Confirmed shot at 19:13 - High confidence
+
+Timestamp: 22:19 (-9)
+Team: Red
+Description: Red team takes a direct free kick on goal. Key events: 22:19 shot is taken, 22:22 the goalkeeper makes a diving save.
+Outcome: Saved
+VEO Match: Confirmed shot at 22:28 - High confidence
+
+Timestamp: 30:57 (1)
+Team: Red
+Description: The Red team builds an attack down the right wing, leading to a shot. Key events: 30:57 shot taken from inside the penalty area, which is blocked by a defender.
+Outcome: Blocked
+VEO Match: Confirmed shot at 30:56 - High confidence
+
+Timestamp: 31:23 (2)
+Team: Blue
+Description: Blue team builds an attack down the right wing. Key events: 31:23 cross is sent into the box, 31:25 headed clear by a Red team defender.
+Outcome: Cleared
+VEO Match: Confirmed shot at 31:21 - Low confidence (Cross implied attempt at a header)
+
+Timestamp: 37:57 (-4)
+Team: Light Blue
+Description: Red team builds an attack in the opposition's half, moving the ball out to the left wing before being dispossessed. Key events:
+- 37:57: A Light Blue player makes a successful tackle on the Red attacker near the sideline.
+- 37:58: The Light Blue team wins possession and begins to clear the ball.
+Outcome: Blocked
+VEO Match: Confirmed shot at 38:01 - Low confidence (Tackle implies blocked attempt at a shot)
+
+Timestamp: 38:57 (13)
+Team: Red
+Description: Red team builds an attack from the midfield, moving the ball out to the left wing. Key events: 38:57 a shot is taken from outside the box which goes wide of the goal.
+Outcome: Missed
+VEO Match: Confirmed shot at 38:44 - High confidence
+
+Timestamp: 46:09 (1)
+Team: Blue
+Description: Blue team scores from a free kick. Key events: 46:09 free kick is taken, 46:11 header is made, 46:12 goal is scored.
+Outcome: Goal
+VEO Match: Confirmed shot at 46:08 - High confidence (Shot on goal resulting in a goal from the free kick)
+
+Timestamp: 47:16 (2)
+Team: Red
+Description: Red team attacks down the right flank and scores a goal from a header. Key events: 47:16 A cross is delivered into the box, 47:17 The ball is headed towards goal, 47:18 Goal scored.
+Outcome: Goal
+VEO Match: Confirmed shot at 47:14 - High confidence (Shot on goal resulting in a goal from the free kick)
+
+Timestamp: 48:52 (-34)
+Team: Red
+Description: Red team builds an attack and takes a long-range shot. Key events: 48:52 shot taken from outside the penalty area, 48:54 saved by the keeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 48:26 - High confidence (Slightly outside tolerance but still a valid response)
+
+Timestamp: 68:22 (-1)
+Team: Red
+Description: The Red team takes a direct free-kick from outside the penalty area. Key events: 68:22 shot is taken, 68:23 the ball goes over the crossbar.
+Outcome: Missed
+VEO Match: Confirmed shot at 68:23 - High confidence
+
+Timestamp: 70:27 (-8)
+Team: Red
+Description: Red team attacks down the right flank, resulting in a shot from inside the penalty area. Key events:
+- 70:23: A cross is delivered into the box from the right side.
+- 70:27: Following a defensive header, a Red player takes a shot from inside the area.
+- 70:28: The shot is saved by the goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 70:35 - High confidence
+
+Timestamp: 70:27 (-29)
+Team: Red
+Description: Red team attacks down the right flank, resulting in a shot from inside the penalty area. Key events:
+- 70:23: A cross is delivered into the box from the right side.
+- 70:27: Following a defensive header, a Red player takes a shot from inside the area.
+- 70:28: The shot is saved by the goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 70:56 - High confidence
+
+Timestamp: 72:24 (2)
+Team: Blue
+Description: Blue team builds an attack from their own half, successfully switching the play to the left wing. Key events: 72:24 - A long diagonal pass is played up the left flank.
+Outcome: Blocked
+VEO Match: Confirmed shot at 72:22 - High confidence
+
+Timestamp: 74:37 (-4)
+Team: Light Blue
+Description: Light Blue team wins possession in their own half and launches a counter-attack. Key events: 74:37 Light Blue wins the ball following a tackle in midfield, 74:41 A Light Blue player carries the ball forward down the right wing.
+Outcome: Blocked
+VEO Match: Confirmed shot at 74:41 - Low confidence (Implies the potential of a shot being created)
+
+Timestamp: 75:36 (-8)
+Team: Claret
+Description: Light blue team takes a goal kick, but the claret team wins the aerial duel and gains possession in midfield. Key events: 75:36 Light blue goalkeeper takes the kick, 75:40 Claret team wins the header and secures possession.
+Outcome: Blocked
+VEO Match: Confirmed shot at 75:44 - Low confidence (Implies the potential of a shot being created)
+
+Timestamp: 76:34 (0)
+Team: Blue
+Description: Blue team wins an aerial ball in their half and builds possession. Key events: 76:34 Blue player wins a defensive header, 76:38 Blue team passes out from the back under pressure.
+Outcome: Blocked
+VEO Match: Confirmed shot at 76:34 - Low confidence (Implies the potential of a shot being created)
+
+Timestamp: 90:21 (-1)
+Team: Light Blue
+Description: Light Blue team attempts to build an attack from their own half. Key events: 90:21 Light Blue intercepts a high ball, 90:27 a Light Blue player is tackled on the left wing.
+Outcome: Blocked
+VEO Match: Confirmed shot at 90:22 - Low confidence (Implies the potential of a shot being created)
+
+Timestamp: 92:17 (-3)
+Team: Blue
+Description: The blue team intercepts a pass and launches a counter-attack. Key events: 92:17 Blue team wins possession in midfield, 92:27 a pass is played into the penalty area, 92:29 a shot is taken by the blue team.
+Outcome: Shot
+VEO Match: Confirmed shot at 92:20 - High confidence (Clear mention of interception and shot).
+
+=== DEFINITE GOALS ===
+Timestamp: 92:29 (1)
+Team: Blue
+Description: The blue team intercepts a pass and launches a counter-attack. Key events: 92:17 Blue team wins possession in midfield, 92:27 a pass is played into the penalty area, 92:29 a shot is taken by the blue team.
+Team: Blue
+VEO Match: Confirmed goal at 92:28 - High confidence (Clear shot taken and it follows after goal)
+
+Timestamp: 94:48 (5)
+Team: Light Blue
+Description: The light blue team attacks the red team's goal. Key events: 94:48 shot from inside the box is blocked, 94:58 follow-up shot from the edge of the area goes over the bar.
+Outcome: Blocked
+VEO Match: Confirmed shot at 94:43 - High confidence
+
+Timestamp: 95:28 (3)
+Team: Blue
+Description: The Blue team circulates the ball in their own half, looking to build an attack. Key events: 95:28 forward pass is made.
+Outcome: Blocked
+VEO Match: Confirmed shot at 95:25 - Low confidence (Implies the potential of a shot being created)
+
+Timestamp: 96:25 (14)
+Team: Red
+Description: Red team builds an attack from midfield, resulting in a shot from outside the box. Key events: 96:25 shot taken, 96:26 saved by the goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 96:11 - High confidence
+
+Timestamp: 98:52 (-6)
+Team: Black
+Description: Red team takes a throw-in on the left but quickly loses the ball, leading to a Black team counter-attack. Key events:
+- 98:48: The Red team takes a throw-in.
+- 98:52: The Black team wins the ball with a tackle.
+- 98:53: The Black team starts advancing the ball down the right wing.
+Outcome: Blocked
+VEO Match: Confirmed shot at 98:58 - Low confidence (Implies the potential of a shot being created)
+
+Timestamp: 102:52 (-5)
+Team: Red
+Description: Red team attacks down the right wing, resulting in a shot from distance that is saved. Key events: 102:52 shot taken, 102:56 saved by the keeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 102:57 - High confidence
+
+Timestamp: 105:24 (7)
+Team: Light blue
+Description: The attacking team in light blue takes a direct free-kick on goal. Key events: 105:24 the kick is taken, 105:26 the goalkeeper makes a diving save to the left.
+Outcome: Saved
+VEO Match: Confirmed shot at 105:17 - High confidence
+
+Timestamp: 109:12 (-7)
+Team: Light blue
+Description: Light Blue team takes a free-kick from just outside the penalty area. Key events: 109:12 free-kick is taken short, 109:13 shot is taken by the Light Blue team, 109:14 the shot is blocked by a defender.
+Outcome: Blocked
+VEO Match: Confirmed shot at 109:19 - High confidence

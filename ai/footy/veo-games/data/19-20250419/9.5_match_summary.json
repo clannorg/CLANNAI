@@ -1,0 +1,149 @@
+{
+  "match_info": {
+    "match_id": "19-20250419",
+    "title": "Match between Team 19 and an unnamed opponent",
+    "date": "2025-04-19",
+    "venue": "19",
+    "duration_minutes": 120,
+    "status": "completed"
+  },
+  "team_mapping": {
+    "red": {
+      "display_name": "Team 19",
+      "color": "#FF0000",
+      "is_home": true
+    },
+    "blue": {
+      "display_name": "Opponent Team (Blue)",
+      "color": "#0000FF",
+      "is_home": false
+    },
+    "light blue": {
+      "display_name": "Opponent Team (Light Blue)",
+      "color": "#ADD8E6",
+      "is_home": false
+    },
+    "claret": {
+      "display_name": "Opponent Team (Claret)",
+      "color": "#722F37",
+      "is_home": false
+    },
+    "unknown": {
+      "display_name": "Unknown Team",
+      "color": "#808080",
+      "is_home": false
+    },
+    "black": {
+      "display_name": "Opponent Team (Black)",
+      "color": "#000000",
+      "is_home": false
+    }
+  },
+  "score_line": {
+    "red": 1,
+    "blue": 2,
+    "final_score": "1-2",
+    "result": "blue_win"
+  },
+  "event_statistics": {
+    "total_events": 66,
+    "goals": 2,
+    "shots": 27,
+    "fouls": 31,
+    "cards": 1,
+    "corners": 1,
+    "substitutions": 1
+  },
+  "key_moments": [
+    {
+      "timestamp": 2768,
+      "time_display": "46:08",
+      "type": "goal",
+      "description": "Blue team scores a stunning free-kick goal!",
+      "team": "blue",
+      "importance": "high"
+    },
+    {
+      "timestamp": 2834,
+      "time_display": "47:14",
+      "type": "goal",
+      "description": "Red team equalizes with a powerful header!",
+      "team": "red",
+      "importance": "high"
+    },
+    {
+      "timestamp": 1230,
+      "time_display": "20:30",
+      "type": "stoppage in play",
+      "description": "Play is temporarily halted by a pitch invader (dog).",
+      "team": "none",
+      "importance": "medium"
+    },
+    {
+      "timestamp": 5548,
+      "time_display": "92:28",
+      "type": "goal",
+      "description": "Blue team intercepts a pass and launches a counter-attack resulting in a goal!",
+      "team": "blue",
+      "importance": "high"
+    },
+    {
+      "timestamp": 5475,
+      "time_display": "91:15",
+      "type": "yellow_card",
+      "description": "Blue player receives a yellow card for a sliding tackle.",
+      "team": "blue",
+      "importance": "medium"
+    }
+  ],
+  "match_narrative": {
+    "opening_phase": "The match began with both teams cautiously feeling each other out, trading possession in midfield. Several early fouls disrupted the flow of the game.",
+    "key_turning_point": "The Blue team's go-ahead goal from a set-piece injected new energy, while red team equalizes with a powerful header!",
+    "closing_phase": "Red team mounted a late comeback attempt but were unable to break down a resilient Blue defense. Blue team intercepts a pass and launches a counter-attack resulting in a goal!",
+    "match_summary": "A tightly contested affair saw Blue emerge victorious against Red, capitalizing on set-piece opportunities and solid defense. Red will rue missed chances and defensive lapses."
+  },
+  "tactical_overview": {
+    "dominant_team": "blue",
+    "game_style": "defensive",
+    "key_patterns": [
+      "Set-piece goals",
+      "Counter-attacking threat"
+    ],
+    "momentum_shifts": [
+      "Blue team's opening goal",
+      "Red team's sustained pressure in the second half"
+    ]
+  },
+  "display_metadata": {
+    "primary_color": "#FF0000",
+    "secondary_color": "#0000FF",
+    "highlight_events": [
+      2768,
+      2834,
+      5548
+    ],
+    "recommended_clips": [
+      {
+        "start": 2748,
+        "end": 2788,
+        "title": "Blue Free Kick Goal"
+      },
+      {
+        "start": 2814,
+        "end": 2854,
+        "title": "Red Header Goal"
+      },
+      {
+        "start": 5528,
+        "end": 5568,
+        "title": "Blue Counter-Attack Goal"
+      }
+    ]
+  },
+  "generation_info": {
+    "generated_at": "2025-08-04T18:58:51.266126",
+    "generator": "clann_ai_match_summary",
+    "version": "1.0",
+    "source_events": 66
+  }
+}

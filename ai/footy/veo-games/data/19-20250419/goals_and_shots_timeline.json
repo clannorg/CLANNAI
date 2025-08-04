@@ -1,0 +1,156 @@
+{
+  "goals": [
+    {
+      "timestamp": "85:56",
+      "timestamp_seconds": 5156,
+      "team": "Red Team",
+      "description": "The goal resulted from a set-piece routine. Following a throw-in from the left wing (85:48), a header was played across the face of the goal (85:53), allowing a second Red team player to score with a decisive header at the back post.",
+      "veo_match": "Goal at 92:28",
+      "confidence": "low"
+    }
+  ],
+  "shots": [
+    {
+      "timestamp": "08:55",
+      "timestamp_seconds": 535,
+      "team": "Blue Team",
+      "description": "Shot from inside the penalty area.",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 8:08",
+      "confidence": "low"
+    },
+    {
+      "timestamp": "08:55",
+      "timestamp_seconds": 535,
+      "team": "Blue Team",
+      "description": "Shot from inside the penalty area.",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 8:58",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "14:13",
+      "timestamp_seconds": 853,
+      "team": "Red Team",
+      "description": "Header from a cross.",
+      "outcome": "missed",
+      "veo_match": "Shot on goal at 13:40",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "20:56",
+      "timestamp_seconds": 1256,
+      "team": "Red Team",
+      "description": "Shot from outside the box following a long throw-in.",
+      "outcome": "missed",
+      "veo_match": "Shot on goal at 19:13",
+      "confidence": "low"
+    },
+    {
+      "timestamp": "22:19",
+      "timestamp_seconds": 1339,
+      "team": "Red Team",
+      "description": "Direct free kick on goal.",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 22:28",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "30:57",
+      "timestamp_seconds": 1857,
+      "team": "Red Team",
+      "description": "Shot from inside the penalty area.",
+      "outcome": "blocked",
+      "veo_match": "Shot on goal at 30:56",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "30:35",
+      "timestamp_seconds": 1835,
+      "team": "Blue Team",
+      "description": "Shot from inside the penalty area.",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 30:56",
+      "confidence": "low"
+    },
+    {
+      "timestamp": "38:01",
+      "timestamp_seconds": 2281,
+      "team": "Red Team",
+      "description": "Shot from outside the box.",
+      "outcome": "missed",
+      "veo_match": "Shot on goal at 38:01",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "38:57",
+      "timestamp_seconds": 2337,
+      "team": "Red Team",
+      "description": "Shot from outside the box.",
+      "outcome": "missed",
+      "veo_match": "Shot on goal at 38:44",
+      "confidence": "medium"
+    },
+    {
+      "timestamp": "46:08",
+      "timestamp_seconds": 2768,
+      "team": "Red Team",
+      "description": "Shot from outside the box.  Outcome: Blocked",
+      "outcome": "blocked",
+      "veo_match": "Shot on goal at 46:08",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "47:14",
+      "timestamp_seconds": 2834,
+      "team": "Red Team",
+      "description": "Shot on goal.  Outcome: Saved",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 47:14",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "48:52",
+      "timestamp_seconds": 2932,
+      "team": "Red Team",
+      "description": "Long-range shot.",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 48:26",
+      "confidence": "medium"
+    },
+    {
+      "timestamp": "68:22",
+      "timestamp_seconds": 4082,
+      "team": "Red Team",
+      "description": "Direct free-kick.",
+      "outcome": "missed",
+      "veo_match": "Shot on goal at 68:23",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "70:27",
+      "timestamp_seconds": 4227,
+      "team": "Red Team",
+      "description": "Shot from inside the area after a defensive header.",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 70:35",
+      "confidence": "high"
+    },
+    {
+      "timestamp": "70:27",
+      "timestamp_seconds": 4227,
+      "team": "Red Team",
+      "description": "Shot from inside the area after a defensive header.",
+      "outcome": "saved",
+      "veo_match": "Shot on goal at 70:56",
+      "confidence": "low"
+    }
+  ],
+  "summary": {
+    "total_events": 16,
+    "goals_confirmed": 0,
+    "shots_confirmed": 15,
+    "veo_goals_total": 1,
+    "veo_shots_total": 28
+  }
+}

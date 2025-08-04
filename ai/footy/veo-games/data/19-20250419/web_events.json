@@ -1,0 +1,399 @@
+{
+  "match_id": "19-20250419",
+  "generated_timestamp": "2025-08-04T18:58:34.554613",
+  "events_count": 66,
+  "source": "clann_ai_pipeline",
+  "events": [
+    {
+      "type": "foul",
+      "timestamp": 168,
+      "description": "Red player brought down, free kick",
+      "team": "light blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 420,
+      "description": "Light blue attacker brought down, free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 488,
+      "description": "Red player dispossessed, blocked shot",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 538,
+      "description": "Shot saved by the goalkeeper",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 575,
+      "description": "Red player fouled at throw-in, free kick",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 797,
+      "description": "Red player tackled, free kick awarded",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 820,
+      "description": "Red player wins free kick, blocked shot",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 867,
+      "description": "Red player tackled in midfield, free kick",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 976,
+      "description": "Foul, free kick to red/blue team",
+      "team": "unknown"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1153,
+      "description": "Blue team defender clears the ball",
+      "team": "blue"
+    },
+    {
+      "type": "stoppage in play",
+      "timestamp": 1230,
+      "description": "Play interrupted by a pitch invader (dog)"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1348,
+      "description": "Red team free kick saved by keeper",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1437,
+      "description": "Blue player fouls Red player in midfield",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1544,
+      "description": "Red team commits foul on left wing",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1896,
+      "description": "Red shot blocked by defender",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2089,
+      "description": "Red player fouls Light Blue player",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2160,
+      "description": "Foul occurred, claret and light blue player down",
+      "team": "unknown"
+    },
+    {
+      "type": "stoppage in play",
+      "timestamp": 2175,
+      "description": "Play stopped for injury to Red/Claret players"
+    },
+    {
+      "type": "stoppage in play",
+      "timestamp": 2205,
+      "description": "Play stopped for injury to Red/Claret players"
+    },
+    {
+      "type": "offside",
+      "timestamp": 2250,
+      "description": "Offside called against Light Blue team",
+      "team": "light blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2281,
+      "description": "Red team attack blocked by tackle",
+      "team": "light blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2324,
+      "description": "Red shot goes wide of the goal",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2415,
+      "description": "Red player commits foul on Light Blue player",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2430,
+      "description": "Claret player tackles Light Blue player",
+      "team": "claret"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2625,
+      "description": "Red player tackled, foul awarded",
+      "team": "unknown"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2768,
+      "description": "Blue team scores from a free kick",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2827,
+      "description": "Red team player commits a foul",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2834,
+      "description": "Red team scores a goal from a header",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2886,
+      "description": "Red team long-range shot saved",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3844,
+      "description": "Free kick to the Blue team",
+      "team": "unknown"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3854,
+      "description": "Claret player trips Blue player, free kick",
+      "team": "claret"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3855,
+      "description": "Red/Claret player commits a foul",
+      "team": "red/claret"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3893,
+      "description": "Red team commits a foul",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3915,
+      "description": "Light Blue player makes a sliding tackle",
+      "team": "light blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4027,
+      "description": "Corner kick awarded to Red team",
+      "team": "red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 4027,
+      "description": "Blue tackle results in corner for Red",
+      "team": "unknown"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4103,
+      "description": "Red team free kick goes over bar",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4235,
+      "description": "Red shot saved by the goalkeeper",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4256,
+      "description": "Red shot saved by the goalkeeper",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4342,
+      "description": "Blue team attack on the left wing is blocked",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4402,
+      "description": "Light blue wins ball, launches a counter-attack",
+      "team": "light blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4544,
+      "description": "Light blue kick, Claret wins aerial duel",
+      "team": "claret"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4594,
+      "description": "Blue wins aerial ball, builds possession",
+      "team": "blue"
+    },
+    {
+      "type": "stoppage in play",
+      "timestamp": 4665,
+      "description": "Game paused for an injury to light blue team"
+    },
+    {
+      "type": "foul",
+      "timestamp": 4875,
+      "description": "Light blue player tackles Red player",
+      "team": "light blue"
+    },
+    {
+      "type": "chaotic midfield sequence.",
+      "timestamp": 4995,
+      "description": "A chaotic sequence of tackles occurs in midfield."
+    },
+    {
+      "type": "shot",
+      "timestamp": 5422,
+      "description": "Light blue builds an attack",
+      "team": "light blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5458,
+      "description": "Blue attacker brought down by Red defender",
+      "team": "red"
+    },
+    {
+      "type": "yellow_card",
+      "timestamp": 5475,
+      "description": "Yellow card for Blue player for foul",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5475,
+      "description": "Blue player makes a sliding tackle",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5540,
+      "description": "Confirmed Shot - Blue Team",
+      "team": "blue"
+    },
+    {
+      "type": "goal",
+      "timestamp": 5548,
+      "description": "Confirmed Goal - Blue Team",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5550,
+      "description": "Red player tackled outside penalty area",
+      "team": "unknown"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5683,
+      "description": "Light Blue team shot is blocked",
+      "team": "light blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5725,
+      "description": "Blue team circulates the ball",
+      "team": "blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5771,
+      "description": "Red team shot saved by keeper",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5938,
+      "description": "Black team wins tackle on throw-in",
+      "team": "black"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5976,
+      "description": "Red team fouls Light Blue player",
+      "team": "red"
+    },
+    {
+      "type": "substitution",
+      "timestamp": 5985,
+      "description": "Substitution made by Light Blue team",
+      "team": "light blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6037,
+      "description": "Blue player fouled outside penalty area",
+      "team": "unknown"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6177,
+      "description": "Red team shot from distance is saved",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6317,
+      "description": "Light blue free kick saved by keeper",
+      "team": "light blue"
+    },
+    {
+      "type": "defensive error/fortunate event",
+      "timestamp": 6435,
+      "description": "Red player advances after defender slips",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6559,
+      "description": "Light blue free kick blocked by defender",
+      "team": "light blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6593,
+      "description": "Blue player fouls Red player",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6690,
+      "description": "Red team wins free kick after foul",
+      "team": "blue"
+    }
+  ]
+}
