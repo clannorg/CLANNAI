@@ -301,7 +301,7 @@ export default function Dashboard() {
                 onClick={() => setShowJoinModal(true)}
                 className="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
               >
-                {teams.length > 0 ? `Join: ${teams[0].team_code}` : 'Join Team'}
+                Join Team
               </button>
                 
                 <button
