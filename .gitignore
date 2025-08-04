@@ -111,3 +111,5 @@ cache/
 temp/
 tmp/
 web-apps/video-player/local-video-player/public/videos/
+# CRM Data Files
+crm/data/
