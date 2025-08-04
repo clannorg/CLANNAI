@@ -301,16 +301,16 @@ export default function Dashboard() {
               >
                 {teams.length > 0 ? `Join: ${teams[0].team_code}` : 'Join Team'}
               </button>
-              
-              <button 
+                
+                <button
                 onClick={() => setShowSettingsModal(true)}
                 className="flex items-center justify-center gap-2 text-gray-700 px-6 py-2.5 rounded-lg font-medium border border-gray-300 w-full md:w-auto"
-              >
+                >
                 <span>Settings</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                 </svg>
-              </button>
+                </button>
 
               {/* Company Tools - Only show for company users */}
               {user?.role === 'company' && (
@@ -339,12 +339,12 @@ export default function Dashboard() {
                 {teams.length > 0 ? teams[0].name : 
                   <div className="flex items-center gap-2 text-gray-500">
                     Upload footage to create a team
-                    <button 
+            <button
                       onClick={() => setShowUploadModal(true)}
                       className="text-sm px-3 py-1 bg-[#016F32]/10 text-[#016F32] rounded-lg hover:bg-[#016F32]/20"
                     >
                       Upload Now →
-                    </button>
+            </button>
                   </div>
                 }
                 <span className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400 hover:bg-green-400/10 hover:text-green-400 cursor-pointer">
@@ -360,7 +360,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
         </div>
       </div>
 
@@ -378,11 +378,24 @@ export default function Dashboard() {
         {activeTab === 'games' && (
           <div className="space-y-6">
             {/* Matches List - CONTENT FIRST */}
-            <div className="bg-white rounded-xl shadow-sm">
-              <div className="p-6 border-b border-gray-100">
-                <h2 className="text-xl font-bold text-gray-900">Your Matches</h2>
-              </div>
-              <div className="p-6">
+          <div className="bg-white rounded-xl shadow-sm">
+              {/* Tab Navigation */}
+              <div className="flex justify-center border-b border-gray-200">
+                {(['games', 'teams'] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-6 py-4 font-medium text-sm ${
+                      activeTab === tab
+                        ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
+                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    {tab === 'games' ? 'My Games' : 'Teams'}
+                  </button>
+                ))}
+            </div>
+                          <div className="p-6">
                 {loading ? (
                   <div className="text-center py-12">
                     <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
@@ -415,7 +428,7 @@ export default function Dashboard() {
                           <div key={game.id} className="bg-gray-50 rounded-lg p-4 transition-colors">
                             <div className="space-y-4">
                               <div className="flex justify-between items-start">
-                                <div>
+                  <div>
                                   <h3 className="font-medium text-gray-900">{game.title}</h3>
                                   <p className="text-sm text-gray-600 mt-1">Team: {game.team_name}</p>
                                   <p className="text-xs text-gray-500 mt-1">
@@ -437,8 +450,8 @@ export default function Dashboard() {
                                   </div>
                                   <p className="text-xs text-gray-400 text-right">44 events • AI insights available</p>
                                 </div>
-                              </div>
-                              
+                  </div>
+                  
                               <div className="grid grid-cols-2 gap-2">
                                 <button 
                                   onClick={(e) => {
@@ -461,8 +474,8 @@ export default function Dashboard() {
                                   <span>⚽</span>
                                   <span>Tactics</span>
                                 </button>
-                                
-                                <button 
+
+                  <button
                                   onClick={(e) => {
                                     e.stopPropagation()
                                     router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Who were our best and worst performers in this match and what should each player work on?")}`)
@@ -471,7 +484,7 @@ export default function Dashboard() {
                                 >
                                   <span>⭐</span>
                                   <span>Player Analysis</span>
-                                </button>
+                  </button>
                                 
                                 <button 
                                   onClick={(e) => {
@@ -489,8 +502,8 @@ export default function Dashboard() {
                         ))}
                       </div>
                     )}
-                  </div>
-                ) : (
+              </div>
+            ) : (
               <div className="space-y-4">
                 {games.map((game: any) => (
                   <div
@@ -549,7 +562,7 @@ export default function Dashboard() {
                           </span>
                         )}
                       </div>
-                      </div>
+                    </div>
 
                       {/* AI Conversation Starters for Analyzed Games */}
                       {game.status === 'analyzed' && (
@@ -599,14 +612,14 @@ export default function Dashboard() {
                               <span>📈</span>
                               <span>Next Match Prep</span>
                             </button>
-                          </div>
-                        </div>
-                      )}
-                    </div>
                   </div>
-                ))}
               </div>
             )}
+            </div>
+                  </div>
+                ))}
+          </div>
+        )}
             </div>
 
             {/* Upload New Match - Moved to Bottom */}
@@ -630,8 +643,8 @@ export default function Dashboard() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
-                        <input
-                          type="text"
+                                         <input
+                       type="text"
                           value={uploadTeamName}
                           onChange={(e) => setUploadTeamName(e.target.value)}
                           placeholder="Enter team name"
@@ -652,14 +665,14 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="flex justify-end">
-                      <button
+                    <button
                         type="submit"
                         disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim()}
                         className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
+                    >
                         {uploadGameLoading ? 'Adding...' : 'Upload Match'}
-                      </button>
-                    </div>
+                    </button>
+                  </div>
                   </form>
                 </div>
               </div>
@@ -673,6 +686,22 @@ export default function Dashboard() {
         {/* Teams Tab - Simplified for Sharing */}
         {activeTab === 'teams' && (
           <div className="bg-white rounded-xl shadow-sm">
+            {/* Tab Navigation */}
+            <div className="flex justify-center border-b border-gray-200">
+              {(['games', 'teams'] as const).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-6 py-4 font-medium text-sm ${
+                    activeTab === tab
+                      ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
+                      : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {tab === 'games' ? 'My Games' : 'Teams'}
+                </button>
+              ))}
+            </div>
             <div className="p-6 border-b border-gray-100">
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Team Sharing</h2>
               <p className="text-gray-600">Share your team codes to invite others</p>
@@ -694,14 +723,14 @@ export default function Dashboard() {
                         </div>
                         <div className="flex items-center gap-3">
                           <div className="flex-1">
-                            <input
-                              type="text"
+                                         <input
+                       type="text"
                               value={`${window.location.origin}/join/${team.team_code}`}
                               readOnly
                               className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
                             />
                           </div>
-                          <button
+                    <button
                             onClick={() => {
                               navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
                               const button = document.activeElement as HTMLButtonElement
@@ -716,12 +745,12 @@ export default function Dashboard() {
                             className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium"
                           >
                             Copy Link
-                          </button>
-                        </div>
-                      </div>
-                    ))}
+                    </button>
                   </div>
                 </div>
+                    ))}
+              </div>
+            </div>
               )}
               
               {/* Quick Actions */}
@@ -742,24 +771,7 @@ export default function Dashboard() {
                   </button>
                 </div>
                 
-                {/* Demo codes for easy discovery */}
-                <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                  <p className="text-sm text-blue-700 font-medium mb-1">Try these demo teams:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {['ARS269', 'CHE277', 'LIV297', 'TQJ105'].map(code => (
-                      <button
-                        key={code}
-                        onClick={() => {
-                          setJoinTeamCode(code)
-                          setShowJoinModal(true)
-                        }}
-                        className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded font-mono hover:bg-blue-200"
-                      >
-                        {code}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -993,35 +1005,16 @@ export default function Dashboard() {
         </div>
       )}
 
-        {/* Clean Feedback Toast like old app */}
-        {error && (
-          <div className="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-50 text-red-600 max-w-md">
-            {error}
-          </div>
-        )}
+      {/* Clean Feedback Toast like old app */}
+      {error && (
+        <div className="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-50 text-red-600 max-w-md">
+          {error}
         </div>
+      )}
+      </div>
       </div>
 
-      {/* Bottom Tab Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200/20">
-        <div className="flex justify-center">
-          <div className="flex">
-            {(['games', 'teams'] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                  activeTab === tab
-                    ? 'text-[#016F32] border-t-2 border-[#016F32]'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {tab === 'games' ? 'My Games' : 'Teams'}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+
     </div>
   )
 } 
