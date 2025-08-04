@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
@@ -23,6 +23,7 @@ interface Team {
 
 export default function Dashboard() {
   const router = useRouter()
+  const veoUrlInputRef = useRef<HTMLInputElement>(null)
   const [user, setUser] = useState<any>(null)
   const [games, setGames] = useState<Game[]>([])
   const [demoGames, setDemoGames] = useState<Game[]>([])
@@ -91,6 +92,23 @@ export default function Dashboard() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     window.location.href = '/'
+  }
+
+  const handleUploadVideoClick = () => {
+    // Switch to games tab first
+    setActiveTab('games')
+    
+    // Use setTimeout to ensure the tab content is rendered before scrolling
+    setTimeout(() => {
+      if (veoUrlInputRef.current) {
+        // Scroll to the input and focus it
+        veoUrlInputRef.current.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        })
+        veoUrlInputRef.current.focus()
+      }
+    }, 100)
   }
 
   const handleJoinTeam = async (e: React.FormEvent) => {
@@ -271,7 +289,7 @@ export default function Dashboard() {
             {/* Action buttons - stacked on mobile, horizontal on desktop */}
             <div className="flex flex-col w-full md:flex-row md:w-auto md:items-center gap-3 md:gap-4">
               <button 
-                onClick={() => setActiveTab('games')}
+                onClick={handleUploadVideoClick}
                 className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
               >
                 📹 Upload Video
@@ -607,6 +625,7 @@ export default function Dashboard() {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">VEO URL</label>
                       <input
+                        ref={veoUrlInputRef}
                         type="url"
                         value={uploadGameUrl}
                         onChange={(e) => setUploadGameUrl(e.target.value)}
