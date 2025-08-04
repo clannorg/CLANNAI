@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_60m00s.mp4",
+  "start_seconds": 3600,
+  "end_seconds": 3615,
+  "duration": 15,
+  "timestamp": "60:00",
+  "analysis_timestamp": "2025-07-31T20:29:21.582930",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe black team takes a dangerous free-kick which is headed clear by the red defence. The clearance falls to a black player on the edge of the box, whose follow-up shot is immediately blocked.\n\n**Key Timing Estimates**\n*   **1s:** The black team prepares to take a free-kick from the left of the penalty area, with the red team setting up a defensive wall.\n*   **8s:** The black player delivers an in-swinging cross into the box.\n*   **9s:** A red defender meets the cross and heads the ball clear from near the penalty spot.\n*   **11s:** Another black player controls the cleared ball at the edge of the penalty area.\n*   **12s:** The black player takes a shot towards goal.\n*   **13s:** A red defender makes a crucial sliding block, deflecting the ball.",
+  "processing_time_seconds": 26.030975580215454,
+  "status": "success"
+}

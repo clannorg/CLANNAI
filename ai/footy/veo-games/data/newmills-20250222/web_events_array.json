@@ -1,0 +1,638 @@
+[
+  {
+    "type": "external_factor",
+    "timestamp": 300,
+    "description": "Red team rondo, coach kicks ball in.",
+    "team": null
+  },
+  {
+    "type": "injury_stoppage",
+    "timestamp": 1110,
+    "description": "Injury to a player on the White team.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1365,
+    "description": "Red team attacks into the penalty area, leading to a foul.",
+    "team": null
+  },
+  {
+    "type": "shot",
+    "timestamp": 1392,
+    "description": "Shot from inside the penalty area, saved by the Red goalkeeper.",
+    "team": "white"
+  },
+  {
+    "type": "offside",
+    "timestamp": 1515,
+    "description": "Red team long ball, play called back for offside.",
+    "team": "red"
+  },
+  {
+    "type": "offside",
+    "timestamp": 1545,
+    "description": "White team regains possession after an offside call",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1605,
+    "description": "White team loses possession, foul, free kick for Red.",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1800,
+    "description": "Low cross, cleared, corner kick.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1830,
+    "description": "Red player commits a foul with a sliding tackle.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1875,
+    "description": "Red team loses possession, foul called against them.",
+    "team": "red"
+  },
+  {
+    "type": "tackle",
+    "timestamp": 1881,
+    "description": "Red player tackled by White player.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1882,
+    "description": "Referee blows whistle for a foul.",
+    "team": "red"
+  },
+  {
+    "type": "offside",
+    "timestamp": 2055,
+    "description": "Offside against the black team.",
+    "team": "black"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2115,
+    "description": "Play stopped for a foul, free kick for white team.",
+    "team": null
+  },
+  {
+    "type": "tackle",
+    "timestamp": 2130,
+    "description": "Red team wins the ball with a successful tackle.",
+    "team": "red"
+  },
+  {
+    "type": "tackle",
+    "timestamp": 2134,
+    "description": "White team wins possession back with a counter-tackle.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2145,
+    "description": "White player fouled by a Red player, on the ground.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2152,
+    "description": "Referee stops play for the foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2340,
+    "description": "Black team attack stopped by a foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2430,
+    "description": "White team wins possession, fouled during counter-attack.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2460,
+    "description": "White team wins free-kick, puts cross into the box.",
+    "team": "red"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 2550,
+    "description": "White team takes a free-kick from the left side",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2633,
+    "description": "White attacker fouled outside penalty box, advantage played.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2640,
+    "description": "White team awarded a penalty kick after foul in box.",
+    "team": "red"
+  },
+  {
+    "type": "injury_stoppage",
+    "timestamp": 2670,
+    "description": "Stoppage in play, white team player down.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2775,
+    "description": "Red team long throw-in, foul, free-kick to Red team.",
+    "team": null
+  },
+  {
+    "type": "foul",
+    "timestamp": 2985,
+    "description": "Black team attack, Red foul in area, penalty.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 3000,
+    "description": "Foul by the black team near the red team's area",
+    "team": "black"
+  },
+  {
+    "type": "attacking_free_kick",
+    "timestamp": 3015,
+    "description": "White team takes free-kick from edge of the area",
+    "team": "white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 3029,
+    "description": "Direct free-kick, saved by the goalkeeper.",
+    "team": "white"
+  },
+  {
+    "type": "set_piece",
+    "timestamp": 3030,
+    "description": "White team executes set-piece routine from free kick",
+    "team": "white"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 3045,
+    "description": "Black team takes a free kick from the right side",
+    "team": "black"
+  },
+  {
+    "type": "shot",
+    "timestamp": 3193,
+    "description": "Shot from close range, saved by the goalkeeper.",
+    "team": "white"
+  },
+  {
+    "type": "stoppage_in_play",
+    "timestamp": 3195,
+    "description": "Stoppage in play following incident in penalty area.",
+    "team": null
+  },
+  {
+    "type": "injury",
+    "timestamp": 3240,
+    "description": "Game stopped, injury to a White team player.",
+    "team": "white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 3284,
+    "description": "Direct free-kick, saved by the goalkeeper.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 3825,
+    "description": "White attacks, red player tackled, just outside area",
+    "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 3901,
+    "description": "Direct free-kick, caught by the White goalkeeper.",
+    "team": "red"
+  },
+  {
+    "type": "throw_in",
+    "timestamp": 4680,
+    "description": "Red team takes throw-in from the right sideline.",
+    "team": "red"
+  },
+  {
+    "type": "injury",
+    "timestamp": 4710,
+    "description": "Red team kicks off, immediately halted due to injury.",
+    "team": "red"
+  },
+  {
+    "type": "external_factor",
+    "timestamp": 4755,
+    "description": "Red team passing, a dog runs onto the pitch.",
+    "team": null
+  },
+  {
+    "type": "foul",
+    "timestamp": 4785,
+    "description": "Red team attempt, stopped by a foul.",
+    "team": null
+  },
+  {
+    "type": "foul",
+    "timestamp": 4795,
+    "description": "A red player is tackled and brought down",
+    "team": null
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 4800,
+    "description": "Red team takes free kick, builds attack down the right",
+    "team": "red"
+  },
+  {
+    "type": "kick_off",
+    "timestamp": 4875,
+    "description": "White team kicks off to start the match.",
+    "team": "white"
+  },
+  {
+    "type": "long_pass",
+    "timestamp": 4890,
+    "description": "White team builds attack with a long pass",
+    "team": "white"
+  },
+  {
+    "type": "through_ball",
+    "timestamp": 4905,
+    "description": "Red team counter-attack with a through ball",
+    "team": "red"
+  },
+  {
+    "type": "through_ball",
+    "timestamp": 4910,
+    "description": "Red team counter-attack with a through ball",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4995,
+    "description": "Black team attack through midfield halted by foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5009,
+    "description": "Red player sliding tackle on black player, foul.",
+    "team": "red"
+  },
+  {
+    "type": "injury",
+    "timestamp": 5010,
+    "description": "Game stopped due to injury to a Red team player.",
+    "team": "red"
+  },
+  {
+    "type": "injury",
+    "timestamp": 5055,
+    "description": "Match stopped, injury to a Red team player.",
+    "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 5208,
+    "description": "Shot from outside the penalty box, saved by the Red goalkeeper.",
+    "team": "white"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 5295,
+    "description": "White team plays a long free kick forward",
+    "team": "white"
+  },
+  {
+    "type": "throw_in",
+    "timestamp": 5340,
+    "description": "Red team throw-in, followed by free kick",
+    "team": "red"
+  },
+  {
+    "type": "throw_in",
+    "timestamp": 5355,
+    "description": "White team prepares for a long throw-in",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5610,
+    "description": "Red team possession stopped by foul.",
+    "team": null
+  },
+  {
+    "type": "tackle",
+    "timestamp": 5621,
+    "description": "Red player tackled, referee whistles for foul.",
+    "team": null
+  },
+  {
+    "type": "foul",
+    "timestamp": 5655,
+    "description": "Red team builds attack, Red player fouled by white team.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5685,
+    "description": "White attacks down right, foul, penalty.",
+    "team": "red"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5715,
+    "description": "White team takes a corner kick.",
+    "team": "white"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 5730,
+    "description": "Black team takes a short free kick",
+    "team": "black"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5880,
+    "description": "Foul committed by the Red team in their own half.",
+    "team": "red"
+  },
+  {
+    "type": "throw_in",
+    "timestamp": 6000,
+    "description": "Red team throw-in deep in their own half.",
+    "team": "red"
+  },
+  {
+    "type": "cross",
+    "timestamp": 6045,
+    "description": "Red team builds attack, delivers cross.",
+    "team": "red"
+  },
+  {
+    "type": "pause",
+    "timestamp": 6120,
+    "description": "Game paused, both teams waiting.",
+    "team": null
+  },
+  {
+    "type": "foul",
+    "timestamp": 6390,
+    "description": "Possession changes, Red player commits tackle, foul.",
+    "team": "red"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 6495,
+    "description": "Red team takes free kick into penalty area.",
+    "team": "red"
+  },
+  {
+    "type": "save",
+    "timestamp": 6510,
+    "description": "Black Team goalkeeper saves a header",
+    "team": "black team"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6540,
+    "description": "Red team's attack stopped by foul.",
+    "team": "white"
+  },
+  {
+    "type": "yellow_card",
+    "timestamp": 6554,
+    "description": "Referee shows a yellow card to the white team player.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6615,
+    "description": "Black long ball, attacker brought down by Red defender.",
+    "team": "red"
+  },
+  {
+    "type": "goal_kick",
+    "timestamp": 6675,
+    "description": "White Team takes a goal kick",
+    "team": "white"
+  },
+  {
+    "type": "throw_in",
+    "timestamp": 6735,
+    "description": "Black team attacks down right wing, throw-in.",
+    "team": "black"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6765,
+    "description": "Scramble, foul in center circle.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6810,
+    "description": "White build attack, foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6855,
+    "description": "White attack stopped by foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6990,
+    "description": "Red team player is fouled in the penalty box",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7035,
+    "description": "Free kick cleared, counter-attack stopped by foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7170,
+    "description": "White plays long ball, attacker fouled outside area.",
+    "team": "red"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 7200,
+    "description": "White team takes a free kick from the left",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 7275,
+    "description": "White team takes a corner kick.",
+    "team": "white"
+  },
+  {
+    "type": "blocked_free_kick",
+    "timestamp": 7290,
+    "description": "Red team free kick blocked.",
+    "team": "red"
+  },
+  {
+    "type": "attack",
+    "timestamp": 7335,
+    "description": "Red team builds attack down the right wing",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7410,
+    "description": "The Red team attacks down the right wing, resulting in a corner kick",
+    "team": "red"
+  },
+  {
+    "type": "corner",
+    "timestamp": 7410,
+    "description": "The Red team attacks down the right wing, resulting in a corner kick",
+    "team": "red"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 7425,
+    "description": "White team free kick played low, scramble for possession.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7440,
+    "description": "White team attacks from outside the box, leading to a foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7452,
+    "description": "The White Team takes a shot from outside the box, leading to a foul by the red team.",
+    "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 7482,
+    "description": "Header attempt from a free-kick, caught by the goalkeeper.",
+    "team": "black"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7515,
+    "description": "Red attack stopped by foul, sliding tackle.",
+    "team": "white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7555,
+    "description": "White maintains possession, stopped by referee.",
+    "team": "red"
+  },
+  {
+    "type": "offside",
+    "timestamp": 7575,
+    "description": "White quick counter, shot hits bar, offside.",
+    "team": "white"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 7605,
+    "description": "Red team takes short free kick from the midfield.",
+    "team": "red"
+  },
+  {
+    "type": "free_kick",
+    "timestamp": 7620,
+    "description": "Red team takes short free kick, maintains possession",
+    "team": "red"
+  },
+  {
+    "type": "goal",
+    "timestamp": 7748,
+    "description": "Goal scored from an attack down the left side",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 7860,
+    "description": "Red attacks wins free kick near the penalty area",
+    "team": "black"
+  },
+  {
+    "type": "shot",
+    "timestamp": 7909,
+    "description": "Direct free-kick from the edge of the box, saved by the Red goalkeeper.",
+    "team": "white"
+  },
+  {
+    "type": "goal",
+    "timestamp": 7933,
+    "description": "Goal scored from a direct free kick.",
+    "team": "black"
+  },
+  {
+    "type": "foul",
+    "timestamp": 8040,
+    "description": "White attempts attack, fouled near sideline.",
+    "team": "white"
+  },
+  {
+    "type": "throw_in",
+    "timestamp": 8055,
+    "description": "Red team takes a throw-in from the sideline.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 8070,
+    "description": "The White team launches a counter-attack from their own half",
+    "team": "white"
+  },
+  {
+    "type": "throw_in",
+    "timestamp": 8085,
+    "description": "White long throw-in, right sideline into area.",
+    "team": "white"
+  },
+  {
+    "type": "substitution",
+    "timestamp": 8100,
+    "description": "Player out → Player in",
+    "team": "red"
+  },
+  {
+    "type": "walk_around",
+    "timestamp": 8130,
+    "description": "Players from both teams walk around the center of the pitch",
+    "team": "red and white team"
+  },
+  {
+    "type": "end",
+    "timestamp": 8145,
+    "description": "Players from both teams walk off the field after the conclusion",
+    "team": "red and white team"
+  }
+]

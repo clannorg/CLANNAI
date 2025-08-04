@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_70m15s.mp4",
+  "start_seconds": 4215,
+  "end_seconds": 4230,
+  "duration": 15,
+  "timestamp": "70:15",
+  "analysis_timestamp": "2025-07-31T20:29:35.265638",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here's a breakdown of the football clip.\n\n### **Analysis of the Football Match**\n\n**Main Action Description:**\nThe play begins with the black team in possession near the center circle, but they are immediately fouled by a red player. The referee stops the game and issues a yellow card to the red player for the late challenge.\n\n**Key Timing Estimates:**\n\n*   **2s:** A player in red (#25) commits a foul by tackling a player in black from behind.\n*   **3s:** The referee immediately blows the whistle, awarding a free-kick to the black team.\n*   **6s:** The referee shows a yellow card to the red player (#25) who committed the foul.\n*   **8s:** The black team begins setting up to take the free-kick from their own half.\n*   **13s:** Players from both teams continue to reposition as they await the restart of play.",
+  "processing_time_seconds": 16.30709934234619,
+  "status": "success"
+}

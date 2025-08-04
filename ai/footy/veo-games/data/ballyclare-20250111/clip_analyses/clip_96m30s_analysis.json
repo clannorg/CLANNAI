@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_96m30s.mp4",
+  "start_seconds": 5790,
+  "end_seconds": 5805,
+  "duration": 15,
+  "timestamp": "96:30",
+  "analysis_timestamp": "2025-07-31T20:32:38.585698",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n### Main Action\nThe black team capitalizes on a loose ball in the midfield, launching a quick attack down the left wing. A low cross into the box is met by a forward who scores with a first-time shot.\n\n### Key Timings\n*   **5s:** A red player's forward pass is intercepted by the black team in the center of the pitch.\n*   **7s:** The ball breaks to a black attacker on the left flank after a challenge.\n*   **9s:** The black player delivers a low, driven cross into the penalty area.\n*   **10s:** A black forward runs onto the cross and scores a goal with a right-footed shot.\n*   **11s:** The black team begins to celebrate the goal.",
+  "processing_time_seconds": 25.921175479888916,
+  "status": "success"
+}

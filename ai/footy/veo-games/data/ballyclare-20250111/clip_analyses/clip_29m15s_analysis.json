@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_29m15s.mp4",
+  "start_seconds": 1755,
+  "end_seconds": 1770,
+  "duration": 15,
+  "timestamp": "29:15",
+  "analysis_timestamp": "2025-07-31T20:26:24.855886",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team attempts to play a pass into midfield from their own half but is quickly dispossessed. The red team wins the ball and immediately starts building an attack through the center of the pitch.\n\n**Key Timing Estimates:**\n*   **2s:** A black player passes the ball forward from the left side into the center circle.\n*   **6s:** A red player pressures and intercepts the ball from the black midfielder, winning possession.\n*   **8s:** The red player who won possession passes the ball forward to a teammate in the attacking half.\n*   **11s:** The receiving red player lays the ball off to another advancing teammate.\n*   **14s:** The red team continues to carry the ball forward in the midfield under pressure from the black team.",
+  "processing_time_seconds": 20.963499784469604,
+  "status": "success"
+}

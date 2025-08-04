@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_32m00s.mp4",
+  "start_seconds": 1920,
+  "end_seconds": 1935,
+  "duration": 15,
+  "timestamp": "32:00",
+  "analysis_timestamp": "2025-07-31T20:26:41.138981",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe Red team sets up for a free-kick in an attacking position on the left side of the field. The Black team organizes a defensive wall and marks players inside the penalty area as both sides prepare for the set piece.\n\n- **2s:** A Red player carefully places the ball for the free-kick.\n- **6s:** The Red players near the ball finish their discussion and begin to move into their run-up positions.\n- **9s:** The Black team's four-man defensive wall is set and holding its ground.\n- **14s:** Both teams are in position, awaiting the referee's signal for the kick to be taken.",
+  "processing_time_seconds": 17.26362633705139,
+  "status": "success"
+}

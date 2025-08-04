@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_25m00s.mp4",
+  "start_seconds": 1500,
+  "end_seconds": 1515,
+  "duration": 15,
+  "timestamp": "25:00",
+  "analysis_timestamp": "2025-07-31T20:26:23.680158",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip, focusing on the main actions and key timings.\n\nThe Black team sets up for and executes a long free kick from deep inside their own half. The Red team organizes their defensive line to prepare for the incoming aerial ball.\n\n*   **0s - 11s**: Players from both teams get into position for the Black team's free kick.\n*   **11s**: The referee blows the whistle to signal for the kick to be taken.\n*   **13s**: A Black team player takes the long free kick, sending the ball upfield.\n*   **14s**: The ball travels high in the air towards the Red team's penalty area as the clip ends.",
+  "processing_time_seconds": 19.903900146484375,
+  "status": "success"
+}

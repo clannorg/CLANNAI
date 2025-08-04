@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_82m30s.mp4",
+  "start_seconds": 4950,
+  "end_seconds": 4965,
+  "duration": 15,
+  "timestamp": "82:30",
+  "analysis_timestamp": "2025-07-31T20:30:15.412760",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in this video clip.\n\n**Main action description:**\nThe black team maintains possession, circulating the ball from the back before attempting a long diagonal pass. The red team's defense remains organized, successfully intercepting the forward pass and winning back the ball.\n\n**Key timing estimates:**\n*   **3s:** A black team defender plays the ball to their left-back.\n*   **6s:** The black team plays a pass forward along the left touchline.\n*   **8s:** The black winger, facing pressure, plays the ball back to a central midfielder.\n*   **11s:** The black midfielder launches a long, diagonal switch of play towards the right side.\n*   **14s:** A red defender positioned on the far side intercepts the long pass with a header.\n*   **15s:** The red team gains control of the loose ball in their defensive half.",
+  "processing_time_seconds": 22.694862127304077,
+  "status": "success"
+}

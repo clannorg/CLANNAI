@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_75m15s.mp4",
+  "start_seconds": 4515,
+  "end_seconds": 4530,
+  "duration": 15,
+  "timestamp": "75:15",
+  "analysis_timestamp": "2025-07-31T20:29:59.129648",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe Black team starts a slow build-up from their goalkeeper, moving the ball into the midfield. The Red team remains organized in their defensive half, applying light pressure without over-committing.\n\n**Key Timing Estimates**\n*   **1s:** The Black team's goalkeeper plays a pass to a defender on the left side of the pitch.\n*   **6s:** The Black defender dribbles the ball forward, approaching the halfway line.\n*   **13s:** The Black player passes the ball to a central teammate positioned near the center circle.\n*   **15s:** The receiving Black player controls the pass and begins to turn towards the Red team's goal as the clip concludes.",
+  "processing_time_seconds": 25.661953449249268,
+  "status": "success"
+}

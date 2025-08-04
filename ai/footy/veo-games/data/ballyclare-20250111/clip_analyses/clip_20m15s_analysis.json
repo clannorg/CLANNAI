@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_20m15s.mp4",
+  "start_seconds": 1215,
+  "end_seconds": 1230,
+  "duration": 15,
+  "timestamp": "20:15",
+  "analysis_timestamp": "2025-07-31T20:24:49.738749",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football clip.\n\nThe black team launches a direct attack from their own half with a long pass over the red team's defense. A black forward successfully brings the ball down inside the penalty area, creating a significant threat before being challenged.\n\n- **2s:** A black midfielder receives the ball near the center circle.\n- **8s:** The black team plays a long, direct pass forward into the opposition's half.\n- **11s:** A black forward (#11) controls the long pass, taking his first touch inside the red team's penalty area.\n- **14s:** The black forward is put under immediate pressure by a closing red defender.",
+  "processing_time_seconds": 18.379135131835938,
+  "status": "success"
+}

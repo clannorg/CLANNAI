@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_31m45s.mp4",
+  "start_seconds": 1905,
+  "end_seconds": 1920,
+  "duration": 15,
+  "timestamp": "31:45",
+  "analysis_timestamp": "2025-07-31T20:26:41.091705",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team attacks, moving the ball into the penalty area where their initial shot is blocked by the red team's defense. The red team's clearance is brief, as they quickly commit a foul just outside the box, resulting in a free kick for the black team.\n\n**Key Timing Estimates:**\n\n*   **2s:** The black player passes the ball into the left side of the penalty area.\n*   **5s:** The ball is laid off to a black player at the top of the penalty arc.\n*   **6s:** The black player takes a shot towards the goal.\n*   **7s:** A red defender successfully blocks the shot.\n*   **9s:** A red player heads the looping ball clear of the immediate danger zone.\n*   **12s:** A red player tackles a black player, resulting in a foul.\n*   **13s:** The referee blows the whistle and awards a free kick to the black team.",
+  "processing_time_seconds": 17.411123514175415,
+  "status": "success"
+}

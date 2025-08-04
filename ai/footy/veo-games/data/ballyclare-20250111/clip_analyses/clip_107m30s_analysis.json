@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_107m30s.mp4",
+  "start_seconds": 6450,
+  "end_seconds": 6465,
+  "duration": 15,
+  "timestamp": "107:30",
+  "analysis_timestamp": "2025-07-31T20:24:13.025500",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team initiates an attack, moving the ball into the penalty area from the right wing. The red team's defense effectively contains the initial run before the black team recycles the ball for a second-phase attack just inside the box.\n\n**Key Timing Estimates:**\n*   **3s:** A black team player makes a forward pass to a teammate running into the right side of the penalty area.\n*   **7s:** The player with the ball is forced wide towards the sideline by a red defender.\n*   **11s:** The black player passes the ball back infield from near the sideline.\n*   **13s:** A teammate (number 99) receives the pass just inside the penalty area and is immediately put under pressure.",
+  "processing_time_seconds": 18.698810338974,
+  "status": "success"
+}

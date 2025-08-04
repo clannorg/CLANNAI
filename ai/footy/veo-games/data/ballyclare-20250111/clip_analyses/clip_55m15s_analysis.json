@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_55m15s.mp4",
+  "start_seconds": 3315,
+  "end_seconds": 3330,
+  "duration": 15,
+  "timestamp": "55:15",
+  "analysis_timestamp": "2025-07-31T20:27:45.372851",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe clip shows a pre-match warm-up with players on the pitch. The camera pans from left to right, eventually focusing on a small group of players in orange bibs performing a passing drill near the center circle.\n\n**Key Timing Estimates:**\n- **0s:** The camera is positioned at the halfway line, showing two players in green and red kits on the left.\n- **3s:** The camera pans right to reveal a group of players in orange bibs beginning a warm-up.\n- **6s:** Three players in orange bibs are seen performing a close-control passing drill (rondo).\n- **12s:** The camera pan slows, settling on the warm-up drill taking place on the right side of the pitch.",
+  "processing_time_seconds": 21.80368423461914,
+  "status": "success"
+}

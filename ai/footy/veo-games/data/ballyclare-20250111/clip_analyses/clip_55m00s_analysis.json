@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_55m00s.mp4",
+  "start_seconds": 3300,
+  "end_seconds": 3315,
+  "duration": 15,
+  "timestamp": "55:00",
+  "analysis_timestamp": "2025-07-31T20:27:41.317525",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe clip shows players from the red and black teams warming up before a match. The red team's players are casually passing the ball amongst themselves in their own half while the camera slowly pans from left to right across the pitch.\n\n**Key Timing Estimates:**\n\n*   **1s:** A red player makes a short pass to a teammate positioned centrally.\n*   **3s:** The central red player controls the ball and immediately passes it back to the first player.\n*   **6s:** The first red player receives the return pass.\n*   **7s - 15s:** The players remain in their warm-up positions with no further significant ball action as the camera continues its pan across the stadium and center circle.",
+  "processing_time_seconds": 18.130440711975098,
+  "status": "success"
+}

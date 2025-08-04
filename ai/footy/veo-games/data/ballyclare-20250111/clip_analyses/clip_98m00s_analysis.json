@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_98m00s.mp4",
+  "start_seconds": 5880,
+  "end_seconds": 5895,
+  "duration": 15,
+  "timestamp": "98:00",
+  "analysis_timestamp": "2025-07-31T20:32:41.292974",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe clip begins with the referee's whistle for kick-off. The black team starts the match, passing the ball backward to their defenders to build possession from their own half while the red team organizes its defensive shape.\n\n**Key Timing Estimates:**\n*   **1s:** The referee blows the whistle, and the black team's player #10 takes the kick-off.\n*   **3s:** The ball is passed back to a black central defender just inside their own half.\n*   **6s:** The black team passes the ball sideways across their defensive line to maintain possession.\n*   **10s:** The referee signals as the black team continues to move the ball in their half.\n*   **14s:** A black midfielder receives a pass and turns, looking for forward options.",
+  "processing_time_seconds": 28.577354907989502,
+  "status": "success"
+}

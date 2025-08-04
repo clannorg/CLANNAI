@@ -1,0 +1,13 @@
+# Complete S3 Analysis Files - f323-527e6a4e
+# All files uploaded and ready for web app
+
+1_veo_ground_truth.json=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-1_veo_ground_truth-json.json (0.0MB)
+5_complete_timeline.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-5_complete_timeline-txt.txt (0.1MB)
+6_validated_timeline.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-6_validated_timeline-txt.txt (0.0MB)
+7_accuracy_comparison.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-7_accuracy_comparison-txt.txt (0.0MB)
+8_tactical_analysis_red_team.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_analysis_red_team-txt.txt (0.0MB)
+8_tactical_analysis_yellow_team.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_analysis_yellow_team-txt.txt (0.0MB)
+8_tactical_match_summary.txt=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_match_summary-txt.txt
+video.mp4=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/f323-527e6a4e-video-mp4.mp4 (3688.4MB)
+web_events.json=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-web_events-json.json (0.0MB)
+web_events_array.json=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-web_events_array-json.json (0.0MB)

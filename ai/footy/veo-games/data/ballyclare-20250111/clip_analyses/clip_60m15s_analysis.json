@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_60m15s.mp4",
+  "start_seconds": 3615,
+  "end_seconds": 3630,
+  "duration": 15,
+  "timestamp": "60:15",
+  "analysis_timestamp": "2025-07-31T20:29:13.810237",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is a breakdown of the football clip:\n\nThe black team takes an inswinging free kick from the left flank, delivering the ball into the penalty area. The referee immediately blows the whistle and awards a penalty kick, seemingly for a handball by a defending red player during the aerial challenge.\n\n- **3s:** The black team player strikes the ball from a free kick, sending a cross into the box.\n- **5s:** The ball arrives in the penalty area, where players from both teams challenge for it in the air.\n- **6s:** The referee blows the whistle and decisively points to the penalty spot.\n- **8s:** The referee's penalty signal is clearly visible as the black team players begin to celebrate the decision.",
+  "processing_time_seconds": 18.256540298461914,
+  "status": "success"
+}

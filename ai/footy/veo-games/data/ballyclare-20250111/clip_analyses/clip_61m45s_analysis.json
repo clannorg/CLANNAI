@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_61m45s.mp4",
+  "start_seconds": 3705,
+  "end_seconds": 3720,
+  "duration": 15,
+  "timestamp": "61:45",
+  "analysis_timestamp": "2025-07-31T20:29:19.082093",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\nThe black team wins possession in midfield with a successful tackle and proceeds to build an attack from their own half. They circulate the ball across their backline and into midfield, calmly bypassing the red team's initial press.\n\n*   **1s:** A black team player tackles the red team player in possession, winning the ball in midfield.\n*   **4s:** The black team secures the loose ball and plays a pass back towards their central defender.\n*   **7s:** The black defender, under light pressure, passes the ball sideways to a teammate near the corner of their own penalty area.\n*   **11s:** A forward pass is played from the defense into a central midfielder for the black team.\n*   **13s:** The black midfielder receives the ball and turns, establishing controlled possession as they look to move upfield.",
+  "processing_time_seconds": 23.487487077713013,
+  "status": "success"
+}

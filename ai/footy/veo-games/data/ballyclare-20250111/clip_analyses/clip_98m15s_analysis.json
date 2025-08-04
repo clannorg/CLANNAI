@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_98m15s.mp4",
+  "start_seconds": 5895,
+  "end_seconds": 5910,
+  "duration": 15,
+  "timestamp": "98:15",
+  "analysis_timestamp": "2025-07-31T20:32:49.462128",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the football clip:\n\nThe Black team launches a direct attack from a long goalkeeper kick, winning the first aerial duel in midfield, but the Red team's defense intercepts the second header to regain possession.\n\n*   **7s**: The Black team's goalkeeper launches a long kick upfield towards the center circle.\n*   **11s**: A Black player wins the initial header, flicking the ball forward into the Red team's half.\n*   **13s**: A second Black player attempts to head the ball onward into the path of an attacker.\n*   **14s**: A Red defender positions himself well to intercept the second header and regain possession for his team.",
+  "processing_time_seconds": 36.7368061542511,
+  "status": "success"
+}

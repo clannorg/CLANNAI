@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_78m00s.mp4",
+  "start_seconds": 4680,
+  "end_seconds": 4695,
+  "duration": 15,
+  "timestamp": "78:00",
+  "analysis_timestamp": "2025-07-31T20:29:52.962415",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the 15-second football clip.\n\n### **Football Match Analysis**\n\nThe black team takes a long free kick from deep inside their own half, aiming to launch an attack. The red team's defense effectively deals with the high ball, leading to a midfield battle for possession.\n\n*   **4s:** A player from the black team takes a long, high free kick from their defensive third.\n*   **8s:** The red team's defender (#14) jumps near the halfway line and wins the aerial duel, heading the ball away.\n*   **10s:** A black player and a red player immediately challenge for the second ball in the midfield.\n*   **13s:** The ball remains loose and is contested by several players from both teams as the clip concludes.",
+  "processing_time_seconds": 15.442537307739258,
+  "status": "success"
+}

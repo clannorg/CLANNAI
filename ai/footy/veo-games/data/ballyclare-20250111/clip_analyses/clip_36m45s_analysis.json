@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_36m45s.mp4",
+  "start_seconds": 2205,
+  "end_seconds": 2220,
+  "duration": 15,
+  "timestamp": "36:45",
+  "analysis_timestamp": "2025-07-31T20:26:52.310898",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description**\n\nThe Black team launches a swift attack with a long through-ball from the center circle, bypassing the Red team's midfield. The resulting one-on-one chance leads to a shot from inside the box, which is well-saved by the Red team's goalkeeper, resulting in a corner kick.\n\n**Key Timing Estimates**\n\n*   **2s:** A Black player in the center circle plays a long, diagonal through-ball into the attacking third.\n*   **5s:** The Black attacker controls the pass on the right-hand side, just outside the penalty area.\n*   **9s:** After carrying the ball into the box, the Black attacker takes a right-footed shot across the goal.\n*   **10s:** The Red team's goalkeeper makes a low, diving save to his right, parrying the ball away.\n*   **12s:** The play concludes as the referee awards a corner kick to the attacking Black team.",
+  "processing_time_seconds": 22.628926038742065,
+  "status": "success"
+}

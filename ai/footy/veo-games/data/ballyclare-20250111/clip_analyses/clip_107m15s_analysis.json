@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_107m15s.mp4",
+  "start_seconds": 6435,
+  "end_seconds": 6450,
+  "duration": 15,
+  "timestamp": "107:15",
+  "analysis_timestamp": "2025-07-31T20:24:12.782371",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\nThe black team controls possession in their own half, attempting to build an attack from the back. The red team holds a compact mid-block, successfully cutting off passing lanes and winning the ball back in the center of the pitch.\n\n- **0s:** The black team has possession of the ball in their defensive half.\n- **9s:** A black player makes a forward pass towards the center circle.\n- **13s:** A red midfielder steps in to intercept the pass.\n- **14s:** Possession is turned over as the ball deflects off the red player and becomes loose in midfield.",
+  "processing_time_seconds": 18.561692237854004,
+  "status": "success"
+}

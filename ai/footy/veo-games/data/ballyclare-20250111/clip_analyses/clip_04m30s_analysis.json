@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_04m30s.mp4",
+  "start_seconds": 270,
+  "end_seconds": 285,
+  "duration": 15,
+  "timestamp": "04:30",
+  "analysis_timestamp": "2025-07-31T20:23:33.940309",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is an analysis of the football clip.\n\nThe black team takes a free kick from just outside the penalty box. The red team's defensive wall effectively deals with the threat, heading the ball clear of danger.\n\n- **0-12s:** The black team sets up to take a free kick, with the red team forming a defensive wall and marking players.\n- **13s:** The black player strikes the ball toward the penalty area.\n- **14s:** A red defender in the wall jumps and heads the ball away, clearing it from the immediate goal area.",
+  "processing_time_seconds": 17.054619550704956,
+  "status": "success"
+}

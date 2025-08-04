@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_83m00s.mp4",
+  "start_seconds": 4980,
+  "end_seconds": 4995,
+  "duration": 15,
+  "timestamp": "83:00",
+  "analysis_timestamp": "2025-07-31T20:30:11.136612",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team's attack from a set piece is intercepted by the red team's goalkeeper. The goalkeeper then quickly distributes the ball to a midfielder, launching a counter-attack as the clip concludes.\n\n**Key Timing Estimates:**\n\n*   **2s:** A black player heads the ball toward the goal from the center of the penalty area.\n*   **3s:** The red team's goalkeeper catches the ball cleanly to end the threat.\n*   **9s:** After assessing his options, the goalkeeper throws the ball to a red midfielder near the center of the pitch.\n*   **13s:** The red midfielder controls the ball and begins to dribble forward, initiating the counter-attack.",
+  "processing_time_seconds": 17.972768306732178,
+  "status": "success"
+}

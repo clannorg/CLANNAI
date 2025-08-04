@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_40m00s.mp4",
+  "start_seconds": 2400,
+  "end_seconds": 2415,
+  "duration": 15,
+  "timestamp": "40:00",
+  "analysis_timestamp": "2025-07-31T20:26:58.506691",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team takes a corner kick from the right side. The red team's defense effectively clears the initial cross at the near post and then blocks the follow-up shot from outside the penalty area.\n\n### Key Timing Estimates\n*   **3s:** The black team player delivers the corner kick into the box.\n*   **5s:** A red defender heads the ball clear from the near post area.\n*   **10s:** A player from the black team attempts a volley on the cleared ball from outside the penalty box.\n*   **11s:** The volley is immediately blocked by a red defender.\n*   **13s:** Both teams challenge for the resulting loose ball.",
+  "processing_time_seconds": 17.414856433868408,
+  "status": "success"
+}

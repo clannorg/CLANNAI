@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_77m30s.mp4",
+  "start_seconds": 4650,
+  "end_seconds": 4665,
+  "duration": 15,
+  "timestamp": "77:30",
+  "analysis_timestamp": "2025-07-31T20:29:58.727649",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team initiates a swift attack with a long through-ball from midfield, releasing their forward into the box. A sliding challenge from a red defender brings the attacker down, leading the referee to immediately award a penalty kick.\n\n**Key Timing Estimates:**\n\n*   **2s:** A player from the black team, positioned near the halfway line, plays a long, diagonal pass forward.\n*   **5s:** A black attacker makes a well-timed run to receive the pass just inside the penalty area.\n*   **7s:** A red defender attempts a sliding tackle and fouls the black attacker, who goes to the ground.\n*   **8s:** The referee decisively points to the penalty spot, signaling a penalty for the black team.\n*   **12s:** Players from the red team begin to approach and protest the referee's decision.",
+  "processing_time_seconds": 21.880866765975952,
+  "status": "success"
+}

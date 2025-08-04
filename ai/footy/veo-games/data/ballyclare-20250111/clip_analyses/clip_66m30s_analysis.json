@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_66m30s.mp4",
+  "start_seconds": 3990,
+  "end_seconds": 4005,
+  "duration": 15,
+  "timestamp": "66:30",
+  "analysis_timestamp": "2025-07-31T20:29:36.418194",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts an attack on the left side of the penalty area, but the red team's defense holds strong. After a couple of successful tackles inside the box, the red team clears the ball and regains possession in their own half.\n\n**Key Timing Estimates:**\n*   **3s:** A black player on the edge of the box passes the ball to a teammate running inside.\n*   **5s:** A red defender immediately tackles the black attacker as he receives the ball.\n*   **8s:** The loose ball is picked up by another black player inside the penalty area.\n*   **10s:** A red defender pokes the ball away, clearing it out of the penalty box.\n*   **12s:** A red midfielder gains control of the cleared ball, ending the black team's attack.",
+  "processing_time_seconds": 22.131473541259766,
+  "status": "success"
+}

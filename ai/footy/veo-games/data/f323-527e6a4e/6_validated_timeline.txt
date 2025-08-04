@@ -1,0 +1,165 @@
+# AI-Validated Timeline - f323-527e6a4e
+# Generated: 2025-08-01T12:19:08.997826
+# Method: Gemini 2.5 Pro intelligent validation
+# Context: Error-correcting fallible clip descriptions
+
+Excellent. Based on the provided AI-generated timeline and strict validation rules, here is the corrected analysis of actual goals and shots for the match.
+
+### **VALIDATED GOALS**
+
+1.  **Timestamp:** 05:30
+    *   **Team:** Red Team
+    *   **Description:** Goal from a set-piece. A free kick was taken at 05:33, and a header from that free kick resulted in a goal at 05:36.
+    *   **Supporting Evidence:** The goal claim is strongly supported by the subsequent clip at 05:45 describing the Red team celebrating and walking back for the restart. The restart is confirmed by a kick-off from the center circle at 06:00.
+    *   **Confidence:** High
+
+2.  **Timestamp:** 07:30
+    *   **Team:** Red Team
+    *   **Description:** Goal from open play. An attack down the left wing resulted in a shot and goal at 07:32.
+    *   **Supporting Evidence:** The goal is immediately validated by the next clip at 07:45, which explicitly states "Yellow team takes the kick-off".
+    *   **Confidence:** High
+
+3.  **Timestamp:** 23:30
+    *   **Team:** Red Team
+    *   **Description:** Goal scored directly from a free kick.
+    *   **Supporting Evidence:** While the next clip (23:45) incorrectly identifies a goal kick, a clear kick-off from the center circle by the Red team is logged at 24:00, validating the preceding goal.
+    *   **Confidence:** Medium (Slight delay and one contradictory clip, but the kickoff is present).
+
+4.  **Timestamp:** 24:30
+    *   **Team:** Yellow Team
+    *   **Description:** A goal scored from a shot at the edge of the penalty area.
+    *   **Supporting Evidence:** Although the immediate next clips describe corner kicks, a clear kick-off is logged at 26:30 ("Kick-off taken by the red team"), which serves as the restart for this goal.
+    *   **Confidence:** Medium
+
+5.  **Timestamp:** 41:30
+    *   **Team:** Yellow Team
+    *   **Description:** Goal scored from a penalty kick.
+    *   **Supporting Evidence:** The penalty goal at 41:44 is validated by the kick-off described at 42:45 ("The red team takes the kick-off").
+    *   **Confidence:** High
+
+6.  **Timestamp:** 43:00
+    *   **Team:** Red Team
+    *   **Description:** Goal from open play. An attack down the left wing led to a pass across the goal, which was scored at 43:11.
+    *   **Supporting Evidence:** Extremely strong evidence. The next three clips (43:15, 43:30, 43:45) all describe the preparation for and execution of the subsequent kick-off.
+    *   **Confidence:** High
+
+7.  **Timestamp:** 63:30
+    *   **Team:** Yellow Team
+    *   **Description:** Goal from open play, confirmed by team celebration.
+    *   **Supporting Evidence:** The clip explicitly mentions the Yellow team celebrating a goal. This is immediately confirmed by two consecutive clips describing the Red team taking the kick-off (63:45, 64:00).
+    *   **Confidence:** High
+
+8.  **Timestamp:** 79:45
+    *   **Team:** Red Team
+    *   **Description:** Goal from open play, confirmed by team celebration.
+    *   **Supporting Evidence:** The clip states "The red team scores and begins celebrating." This is validated by the subsequent kick-offs taken by the Yellow team at 80:00 and 80:15.
+    *   **Confidence:** High
+
+9.  **Timestamp:** 82:00
+    *   **Team:** Yellow Team
+    *   **Description:** Goal scored from a long ball into the penalty box.
+    *   **Supporting Evidence:** The goal at 82:05 is validated by the immediate next clip at 82:15, which states, "Yellow team starts with a kick-off from the center circle."
+    *   **Confidence:** High
+
+10. **Timestamp:** 90:15
+    *   **Team:** Red Team
+    *   **Description:** Goal scored from a header following a corner kick.
+    *   **Supporting Evidence:** The corner kick goal is validated by two consecutive kick-off events immediately following it at 90:30 and 90:45.
+    *   **Confidence:** High
+
+11. **Timestamp:** 96:15
+    *   **Team:** Yellow Team
+    *   **Description:** Goal scored from a fast attack down the left flank, ending in a low cross and a tap-in.
+    *   **Supporting Evidence:** The goal at 96:28 is validated by the restart from the center circle described at 98:45. The intervening clips show continuous play, which is consistent.
+    *   **Confidence:** Medium
+
+---
+### **VALIDATED SHOTS**
+
+*   **02:15** | Red Team | Low shot from the left side of the penalty area | **Missed** (Goes wide)
+*   **02:45** | Yellow Team | Unspecified shot | **Blocked** (Red team recovers)
+*   **04:00** | Red Team | Shot from the left side of the box | **Missed** (Goes wide)
+*   **05:00** | Red Team | Header from a corner kick | **Saved** (By goalkeeper)
+*   **05:15** | Red Team | Shot from a free kick | **Blocked/Deflected** (For a corner)
+*   **07:15** | Red Team | Header from a cross | **Saved** (Tipped over the crossbar)
+*   **13:45** | Red Team | Shot from the edge of the box | **Missed** (Over the bar)
+*   **15:15** | Red Team | Direct free kick | **Saved** (Diving save by goalkeeper)
+*   **15:45** | Red Team | Shot from a free kick cross | **Blocked** (By a defender)
+*   **19:30** | Red Team | Direct free kick | **Hit Crossbar**
+*   **19:45** | Red Team | Header from a free kick cross | **Missed** (Over the goal)
+*   **20:00** | Red Team | Header from a set piece | **Blocked** (Cleared by defense)
+*   **21:00** | Red Team | Shot from outside the penalty area | **Saved** (By goalkeeper)
+*   **24:45** | Yellow Team | Header from a corner kick | **Missed** (Over the crossbar)
+*   **25:15** | Red Team | Low shot from left of the penalty area | **Missed** (Wide of the far post)
+*   **27:15** | Red Team | Unspecified shot | **Saved** (Goalkeeper makes diving save at attacker's feet)
+*   **30:00** | Yellow Team | Shot from the edge of the box | **Blocked** (By red defense)
+*   **30:15** | Red Team | Shot from open play | **Missed** (Wide of the far post)
+*   **30:45** | Red Team | Low shot from a free kick | **Blocked** (By a defender)
+*   **31:00** | Yellow Team | Shot from inside the penalty area | **Saved** (Diving save by red goalkeeper)
+*   **32:30** | Red Team | Direct free kick | **Missed** (Over the crossbar)
+*   **36:30** | Red Team | Shot from outside the penalty area | **Missed** (Over the crossbar)
+*   **37:45** | Red Team | Header from a free kick | **Saved** (Caught by goalkeeper)
+*   **38:30** | Red Team | Shot from a free kick | **Missed** (Wide of the goal)
+*   **45:30** | Red Team | Shot from inside the penalty area | **Saved** (By yellow goalkeeper)
+*   **62:15** | Yellow Team | Shot from inside the penalty area | **Blocked** (By a red defender)
+*   **62:30** | Red Team | Header on goal | **Saved** (Caught by goalkeeper)
+*   **63:00** | Red Team | Shot from a cross | **Saved** (By goalkeeper)
+*   **66:30** | Yellow Team | Shot from an indirect free kick | **Blocked** (By Red defense)
+*   **67:45** | Yellow Team | Shot from the right flank | **Saved** (By keeper)
+*   **68:30** | Red Team | Shot from the edge of the box | **Saved** (Diving save by goalkeeper)
+*   **70:45** | Red Team | Direct free kick | **Saved** (By keeper)
+*   **74:45** | Yellow Team | Shot from inside the box | **Blocked** (By a red defender)
+*   **76:30** | Yellow Team | Direct free kick | **Blocked** (By the defensive wall)
+*   **77:30** | Yellow Team | Follow-up shot after a tackle | **Saved** (By goalkeeper)
+*   **77:45** | Yellow Team | Penalty kick | **Missed**
+*   **78:30** | Red Team | Shot from inside the box | **Blocked** (By a yellow defender)
+*   **80:45** | Red Team | Long-range shot | **Missed** (Wide of the post)
+*   **82:30** | Red Team | Shot from inside the penalty area | **Missed** (Wide of the goal)
+*   **82:45** | Red Team | Shot from inside the box | **Saved** (By keeper)
+*   **83:45** | Red Team | Penalty kick | **Saved** (By goalkeeper)
+*   **84:45** | Yellow Team | Shot from a cross | **Blocked/Deflected** (For a corner)
+*   **85:00** | Yellow Team | Shot from a free kick | **Blocked** (By a defender)
+*   **88:45** | Red Team | Shot from inside the attacking half | **Saved** (By yellow goalkeeper)
+*   **91:45** | Red Team | Direct free kick | **Missed** (Over the crossbar)
+*   **92:00** | Red Team | Direct free kick | **Hit Crossbar**
+*   **93:30** | Yellow Team | Shot from inside the penalty area | **Saved** (By red goalkeeper)
+*   **95:15** | Yellow Team | Volleyed shot from outside the box | **Blocked** (By red defense)
+*   **97:30** | Yellow Team | Shot from inside the penalty area | **Missed** (Wide of the goal)
+*   **98:30** | Yellow Team | Shot from distance | **Missed** (Wide)
+*   **100:00**| Yellow Team | Shot from inside the box | **Blocked** (By a red defender)
+*   **100:15**| Yellow Team | Low shot from a free kick | **Saved** (Diving save by red goalkeeper)
+*   **101:30**| Red Team | Shot from inside the penalty area | **Blocked** (By the defense)
+*   **102:00**| Red Team | Unspecified shot | **Missed** (Confirmed by goal kick signal)
+*   **102:15**| Red Team | Header from a free kick | **Saved** (Caught by goalkeeper)
+*   **102:30**| Red Team | Header from a cross | **Saved** (Caught by goalkeeper)
+*   **103:45**| Red Team | Long-range shot | **Missed** (Over the crossbar)
+
+---
+### **REJECTED CLAIMS**
+
+This is a list of significant goal claims made by the AI that were found to be false upon review.
+
+*   **10:00 (Red Goal):** Rejected. The following clip at 10:15 describes a contradictory event (a Yellow team corner kick), and there is no subsequent kick-off.
+*   **13:30 & 14:30 (Red Goals):** Rejected. Two goals are claimed without a kick-off in between, violating Rule #2. The kick-off at 16:30 is too delayed and ambiguous to validate either claim.
+*   **17:30 (Red Goal):** Rejected. The event immediately following the supposed goal is a goal kick (17:45), not a kick-off.
+*   **28:15 (Red Goal):** Rejected. Despite a detailed description, the very next clip (28:30) describes a different type of restart (a free kick in the center circle), directly contradicting a goal having been scored.
+*   **37:15, 37:30, 38:15, 38:45 (Red Goals):** Rejected. A cluster of four goals are claimed in rapid succession with no kick-offs in between, a clear AI hallucination.
+*   **45:15 (Yellow Own Goal) & 46:00 (Yellow Goal):** Rejected. Two goals claimed before the next valid kick-off (46:30), violating Rule #2. The cluster of "start of play" kick-offs makes it impossible to validate either.
+*   **76:00 (Yellow Goal):** Rejected. The following clip at 76:30 describes the same free kick being blocked by the wall, a direct contradiction.
+*   **81:30 (Red Penalty Goal):** Rejected. The subsequent event is a goal kick (81:45), not a kick-off.
+*   **86:15 (Red Goal):** Rejected. The next clip (86:30) describes the same free kick being defended and cleared, contradicting the goal claim.
+*   **89:45 & 90:15 (Red Goals):** 89:45 is rejected because a second goal is claimed at 90:15 before any kick-off. The goal at 90:15 is validated by the kick-offs at 90:30 and 90:45.
+*   **92:15, 93:00, 94:15, 95:00, 106:15 (Various Goals):** All rejected due to a lack of a subsequent, validating kick-off from the center circle as required by the rules.
+
+---
+### **ANALYSIS SUMMARY**
+
+The match was a high-scoring and intensely contested affair between the Red and Yellow teams, ending in a **6-5 victory for the Red team**.
+
+The AI's analysis suffered from significant hallucinations, frequently inventing goals that were not supported by the game's flow, especially evident in clusters of "goals" claimed without the required kick-off restart. However, by strictly applying the rule that a goal must be followed by a center-circle kick-off, a clear and logical sequence of events emerges.
+
+**Key Moments:**
+*   **Red Team's Dominance:** Red team controlled large portions of the match, scoring from open play, a free-kick header, a direct free kick, a penalty, and a corner.
+*   **Yellow Team's Resilience:** Yellow fought back with five goals of their own, including a penalty and goals from both open play and set-pieces, keeping the match competitive until the end.
+*   **Key Saves and Misses:** The match featured numerous other chances, including two saved penalties (one for each team), a missed penalty, and two shots hitting the crossbar, indicating the scoreline could have been even higher.
+*   **AI Fallibility:** The AI correctly identified team colors for most of the match but occasionally introduced "Black" or "Blue" teams. It was most unreliable in identifying consecutive events, often describing a goal and then immediately describing a contradictory outcome (e.g., a save or block) from the same play.

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_81m30s.mp4",
+  "start_seconds": 4890,
+  "end_seconds": 4905,
+  "duration": 15,
+  "timestamp": "81:30",
+  "analysis_timestamp": "2025-07-31T20:30:12.608544",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team initiates play from a throw-in, circulating the ball before switching play with a long pass to the right wing. Their subsequent attempt to play a pass into the final third is intercepted and cleared by a black team defender.\n\n**Key Timing Estimates:**\n*   **2s:** The red team takes a throw-in on the left touchline.\n*   **6s:** A red player plays a long, diagonal switch pass across the field.\n*   **9s:** The red winger on the right side controls the long pass.\n*   **10s:** The winger passes the ball inside to a central red player.\n*   **12s:** The central player attempts a forward pass towards the penalty area.\n*   **13s:** A black defender steps in to intercept the pass and clears the ball.",
+  "processing_time_seconds": 21.41341519355774,
+  "status": "success"
+}

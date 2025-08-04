@@ -1,0 +1,124 @@
+{
+  "team_name": "Yellow Team",
+  "match_id": "newmills-20250222",
+  "generated_at": "2025-08-02T18:24:39.516690",
+  "summary": {
+    "overall_rating": "C+",
+    "key_identity": "The Yellow team struggled to maintain consistent control and conceded crucial set-piece opportunities.",
+    "match_outcome_assessment": "Loss, primarily due to defensive vulnerabilities in set-piece situations and an inability to convert chances created from open play."
+  },
+  "strengths": [
+    {
+      "title": "Free Kick Threat",
+      "description": "The Yellow team demonstrated a consistent ability to win free kicks in dangerous areas and deliver threatening shots on goal, particularly in the later stages of the game.",
+      "evidence_timestamps": [
+        "114:55",
+        "117:05",
+        "131:49",
+        "133:37"
+      ],
+      "impact_score": 70,
+      "key_evidence": "Multiple saved free kicks from the edge of the box in the second half and extra time indicate a strong set-piece threat."
+    }
+  ],
+  "weaknesses": [
+    {
+      "title": "Defensive Set Piece Vulnerability",
+      "description": "The Yellow team conceded a goal from a direct free kick and struggled to defend other set-piece opportunities effectively.",
+      "evidence_timestamps": [
+        "132:13",
+        "38:52",
+        "50:53"
+      ],
+      "severity_score": 80,
+      "cost_analysis": "Conceding goals from set pieces directly impacts the team's ability to secure positive results and maintain defensive stability."
+    },
+    {
+      "title": "Goalkeeper saves distribution",
+      "description": "The provided timeline indicates the yellow team goalkeeper made several saves, showing both a high level of activity and indicating the need for more protection for their keeper.",
+      "evidence_timestamps": [
+        "22:04",
+        "23:12",
+        "23:43",
+        "23:57",
+        "27:33",
+        "28:48",
+        "42:36",
+        "43:29",
+        "45:49",
+        "50:29",
+        "53:13",
+        "54:44",
+        "65:01",
+        "81:54",
+        "85:18",
+        "86:48",
+        "99:28",
+        "114:55",
+        "117:05",
+        "124:42",
+        "127:26",
+        "132:17",
+        "133:37"
+      ],
+      "severity_score": 90,
+      "cost_analysis": "A keeper making many saves will eventually miss some. Defensively protecting the keeper is key."
+    }
+  ],
+  "training_drills": [
+    {
+      "focus_area": "Defensive Set Piece Organization",
+      "drill_name": "Set Piece Wall Positioning",
+      "description": "Players practice positioning the defensive wall to effectively block free kicks from various angles and distances. Focus on communication, spacing, and jumping technique.",
+      "duration": "20 minutes",
+      "equipment": "Footballs, cones, mannequins",
+      "success_metrics": "Reduced number of shots on target from free kicks and improved wall organization during set-piece situations."
+    },
+    {
+      "focus_area": "Defensive pressure on the keeper",
+      "drill_name": "Shield the keeper",
+      "description": "Focusing on defense with a tight defensive line to protect the keeper.",
+      "duration": "30 minutes",
+      "equipment": "Footballs, cones, goals",
+      "success_metrics": "Successful deflection of shots by the defensive line."
+    }
+  ],
+  "key_moments": [
+    {
+      "timestamp": "~44:04",
+      "event_type": "goal",
+      "description": "The White/Black team scored a penalty after a foul just outside the box.",
+      "tactical_significance": "The penalty put the team ahead but also highlighted a potential vulnerability in their defensive transitions, leading to the foul.",
+      "learning_point": "Improve defensive discipline to avoid giving away cheap fouls in dangerous areas."
+    },
+    {
+      "timestamp": "132:13",
+      "event_type": "goal",
+      "description": "The Black/White team scored from a direct free kick.",
+      "tactical_significance": "This demonstrates the team's free kick ability and provides the need for improved defensive work.",
+      "learning_point": "Improved offensive capabilities."
+    }
+  ],
+  "performance_metrics": {
+    "attacking": {
+      "goals_scored": 2,
+      "shots_total": 22,
+      "conversion_rate": "9.09%",
+      "set_piece_threat": "Medium"
+    },
+    "defending": {
+      "goals_conceded": 3,
+      "saves_required": 17,
+      "defensive_actions": "Reactive",
+      "set_piece_vulnerability": "High"
+    }
+  },
+  "next_match_focus": [
+    {
+      "priority": "High",
+      "area": "Defensive Set Pieces",
+      "action": "Wall positioning drills and zonal marking assignments.",
+      "expected_improvement": "Reduce free kick goals conceded and improve overall defensive organization during set pieces."
+    }
+  ]
+}

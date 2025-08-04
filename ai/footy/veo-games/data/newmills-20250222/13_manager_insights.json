@@ -1,0 +1,60 @@
+{
+  "match_summary": {
+    "key_tactical_story": "The match was a tightly contested affair decided by set-pieces, with both teams scoring penalties and free kicks. Red Team exploited crosses from the left wing, while Black/White team struggled to defend set pieces effectively.",
+    "result_factors": [
+      "Set piece conversion",
+      "Defensive vulnerability to crosses",
+      "Goalkeeping performance"
+    ]
+  },
+  "your_team_analysis": {
+    "strengths_to_keep": [
+      {
+        "area": "Set pieces",
+        "evidence": "Scored 1 penalty at 44:04 and a direct free-kick goal at 132:13",
+        "keep_doing": "Continue practicing set-piece routines, especially free-kicks from promising locations. Analyze free kick locations to understand placement of strike."
+      }
+    ],
+    "weaknesses_to_fix": [
+      {
+        "area": "Penalty Conceding",
+        "evidence": "Conceded penalties at 116:35",
+        "training_focus": "Defensive positioning in the box, discipline in tackles, especially when a player is turned around, in our own 18 yard box. Emphasize avoiding unnecessary fouls in dangerous areas."
+      }
+    ]
+  },
+  "opposition_analysis": {
+    "their_threats": [
+      {
+        "pattern": "Left wing crosses",
+        "evidence": "Goals at 86:39, 129:08 from left side crosses",
+        "how_to_defend": "Assign a dedicated player to track and pressure the left winger, provide additional defensive cover with a second player. Focus on cutting the crossing angle at the source (fullback) as the point of defence."
+      }
+    ],
+    "their_weaknesses": [
+      {
+        "vulnerability": "Set piece defending",
+        "evidence": "Conceded penalty at 44:04, and numerous free kicks near the box.",
+        "how_to_exploit": "Draw fouls in attacking third, utilize players skilled at winning free kicks, especially in wide areas. Practice crossing set-piece plays as they may be unorganized in their defence."
+      }
+    ]
+  },
+  "training_priorities": [
+    {
+      "priority": 1,
+      "focus": "Defending crosses from the left wing",
+      "drill": "Defensive drills focusing on tracking wingers, double-teaming, and cutting off crossing angles.",
+      "duration": "25 minutes",
+      "measure": "Reduce number of crosses completed and shots taken from crosses."
+    }
+  ],
+  "next_match_tactics": [
+    {
+      "if_facing_similar_opponent": "Prioritize double-marking the opponent's left winger. Instruct the right fullback to remain compact to mitigate crossing oportunities.",
+      "set_piece_focus": "Spend extra time on defensive set piece drills, focusing on wall positioning and marking assignments. Watch video on defensive organisation of set-pieces.",
+      "attacking_plan": "Focus on winning free kicks in the attacking third, particularly in wide areas, to exploit their set-piece vulnerability. Consider playing an extra player to exploit runs from set pieces."
+    }
+  ],
+  "match_id": "newmills-20250222",
+  "generated_at": "2025-08-02T18:29:08.532809"
+}

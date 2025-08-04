@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_53m15s.mp4",
+  "start_seconds": 3195,
+  "end_seconds": 3210,
+  "duration": 15,
+  "timestamp": "53:15",
+  "analysis_timestamp": "2025-07-31T20:27:45.329579",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\nThe video shows two teams warming up on the pitch before a match. The primary action is a group of players in orange bibs performing a \"rondo\" (keep-away) passing drill, while players in green kits warm up individually elsewhere on the field.\n\n- **0s - 15s:** Four players in orange bibs maintain possession in a continuous one-touch passing drill ('rondo'), while a fifth player in the middle tries to intercept the ball.\n- **3s:** A player in a green kit, positioned near the halfway line, takes a touch and passes the ball.\n- **8s:** Another player in a green kit, located on the far-left side of the pitch, kicks a long ball towards the center.\n- **12s:** The players in the orange rondo drill complete another quick pass across their circle.",
+  "processing_time_seconds": 26.568642139434814,
+  "status": "success"
+}

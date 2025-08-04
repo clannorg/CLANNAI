@@ -339,7 +339,14 @@ Extract events from ALL sections: goals, shots, fouls, cards, corners, substitut
                 print(f"✅ Extracted {len(events)} events using Gemini")
             except Exception as e:
                 print(f"❌ Gemini conversion failed: {e}")
-                print(f"🔄 No fallback available for new format")
+                print(f"🔄 Trying JSON fallback...")
+                # Try JSON fallback
+                json_timeline_path = data_dir / "goals_and_shots_timeline.json"
+                if json_timeline_path.exists():
+                    events = self.parse_goals_shots_json(json_timeline_path)
+                    print(f"✅ Extracted {len(events)} events from JSON fallback")
+                else:
+                    print(f"🔄 No JSON fallback available")
         else:
             # Fallback to old format if new files don't exist
             validated_timeline_path = data_dir / "6_validated_timeline.txt"

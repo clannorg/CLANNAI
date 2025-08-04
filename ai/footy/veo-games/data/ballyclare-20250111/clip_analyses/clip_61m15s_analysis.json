@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_61m15s.mp4",
+  "start_seconds": 3675,
+  "end_seconds": 3690,
+  "duration": 15,
+  "timestamp": "61:15",
+  "analysis_timestamp": "2025-07-31T20:29:16.761758",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team attempts to build an attack in the red team's half but is dispossessed by a strong tackle. The red team then immediately clears the ball long upfield to relieve the pressure.\n\n- **2s:** A black player receives a pass just inside the red team's half and turns toward the goal.\n- **4s:** The black player makes a short pass to a teammate who is quickly closed down.\n- **9s:** A red defender makes a successful sliding tackle to dispossess the black attacker.\n- **11s:** A second red player collects the loose ball and makes a long, high clearance up the field.",
+  "processing_time_seconds": 21.186100482940674,
+  "status": "success"
+}

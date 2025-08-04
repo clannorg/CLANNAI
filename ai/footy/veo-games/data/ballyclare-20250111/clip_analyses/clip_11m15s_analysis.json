@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_11m15s.mp4",
+  "start_seconds": 675,
+  "end_seconds": 690,
+  "duration": 15,
+  "timestamp": "11:15",
+  "analysis_timestamp": "2025-07-31T20:24:30.460612",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the video clip.\n\n**Main Action Description:**\nThe black team initiates a rapid counter-attack from their own half. A player from a deep position launches a long, accurate through-ball over the top, sending a forward clear into the opposition's penalty area.\n\n**Key Timing Estimates:**\n*   **1s:** The black team secures possession in the center of the pitch.\n*   **6s:** A black player plays a long, lofted through-ball from deep inside his own half over the red team's defense.\n*   **9s:** A black forward makes a well-timed run to get on the end of the long pass, breaking in behind the red defenders.\n*   **12s:** The black forward controls the ball inside the left side of the penalty area as the attack develops.",
+  "processing_time_seconds": 19.071762800216675,
+  "status": "success"
+}

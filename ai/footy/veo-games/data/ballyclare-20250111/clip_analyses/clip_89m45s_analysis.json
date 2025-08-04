@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_89m45s.mp4",
+  "start_seconds": 5385,
+  "end_seconds": 5400,
+  "duration": 15,
+  "timestamp": "89:45",
+  "analysis_timestamp": "2025-07-31T20:30:32.511911",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe black team attempts to play out from their defensive half but loses possession to the red team's press. The red team then takes control, circulating the ball through the midfield to build an attack.\n\n**Key Timing Estimates**\n*   **2s:** The black defender on the left passes the ball forward.\n*   **5s:** A red player wins the ball from a black player just inside the black team's half.\n*   **8s:** The red team plays a pass from the left side back into the center of the pitch.\n*   **13s:** A red midfielder receives a pass and advances the ball into the opposition's half.",
+  "processing_time_seconds": 21.47606086730957,
+  "status": "success"
+}

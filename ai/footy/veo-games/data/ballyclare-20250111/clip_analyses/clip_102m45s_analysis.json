@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_102m45s.mp4",
+  "start_seconds": 6165,
+  "end_seconds": 6180,
+  "duration": 15,
+  "timestamp": "102:45",
+  "analysis_timestamp": "2025-07-31T20:23:56.232434",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "The black team, starting deep in their half, plays the ball back to the goalkeeper. The goalkeeper then launches a long ball up the field toward the halfway line to start an attack.\n\n- **1s:** A player from the black team on the left passes the ball back towards his own goal.\n- **4s:** The black team's goalkeeper receives the pass inside the penalty area.\n- **6s:** After a brief setup, the goalkeeper kicks a long clearance upfield.\n- **14s:** The long ball travels towards the center circle, where players from both teams converge to challenge for it.",
+  "processing_time_seconds": 18.074114322662354,
+  "status": "success"
+}

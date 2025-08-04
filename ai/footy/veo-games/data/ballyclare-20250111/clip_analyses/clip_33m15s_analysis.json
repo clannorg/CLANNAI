@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_33m15s.mp4",
+  "start_seconds": 1995,
+  "end_seconds": 2010,
+  "duration": 15,
+  "timestamp": "33:15",
+  "analysis_timestamp": "2025-07-31T20:26:39.086696",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team, in possession in their defensive half, is pressed by the red team. They attempt a long ball forward down the right side, but the pass is overhit and goes out of play.\n\n**Key Timing Estimates:**\n*   **3s:** The black team's midfielder passes the ball back towards his defense under pressure.\n*   **6s:** A black defender on the right side of his own penalty area receives the pass.\n*   **8s:** The black defender clears the ball with a long, high pass down the right flank.\n*   **13s:** The ball bounces out of play for a red team throw-in.",
+  "processing_time_seconds": 14.529834032058716,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_02m30s.mp4",
+  "start_seconds": 150,
+  "end_seconds": 165,
+  "duration": 15,
+  "timestamp": "02:30",
+  "analysis_timestamp": "2025-07-31T20:23:42.255996",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThis clip highlights an intense midfield battle, primarily within the center circle. The black team's attempt to build up play is shut down by the red team's aggressive pressing, resulting in a turnover of possession.\n\n**Key Timing Estimates:**\n\n*   **3s:** The black team plays a pass into the center circle.\n*   **6s:** A black midfielder receives the ball but is immediately put under pressure by the red team.\n*   **9s:** A red player makes a strong tackle, winning the ball in the center of the pitch as the black player goes to ground.\n*   **11s:** The red team secures possession from the tackle and starts to move forward.\n*   **13s:** Another black player attempts a sliding tackle, but the red team maintains possession and continues their attack.",
+  "processing_time_seconds": 25.373740434646606,
+  "status": "success"
+}

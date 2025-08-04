@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_108m00s.mp4",
+  "start_seconds": 6480,
+  "end_seconds": 6495,
+  "duration": 15,
+  "timestamp": "108:00",
+  "analysis_timestamp": "2025-07-31T20:24:12.041831",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Certainly! Here's a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team scores a spectacular goal directly from a free kick. The player curls the ball over the red team's defensive wall and into the top corner of the goal.\n\n**Key Timing Estimates:**\n- **0s:** The black team is positioned for a free kick on the right side of the pitch, just outside the penalty area. The red team forms a defensive wall.\n- **3s:** The black team's player strikes the ball.\n- **4s:** The ball sails over the wall and into the top left corner of the net for a goal.\n- **5s:** The goalscorer and his teammates begin to celebrate.\n- **8s:** The black team's players celebrate together near the centre circle.",
+  "processing_time_seconds": 16.8287513256073,
+  "status": "success"
+}

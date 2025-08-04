@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_104m30s.mp4",
+  "start_seconds": 6270,
+  "end_seconds": 6285,
+  "duration": 15,
+  "timestamp": "104:30",
+  "analysis_timestamp": "2025-07-31T20:23:58.032463",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe black team's attacking free-kick is defended by the red team. The red goalkeeper collects the ball and quickly distributes it to a defender to start a counter-attack.\n\n*   **6s:** The black team takes a low, driven free-kick into the penalty area.\n*   **7s:** A red defender blocks the initial ball, which deflects high into the air.\n*   **8s:** A black team attacker heads the looping ball towards the goal.\n*   **9s:** The red team's goalkeeper safely catches the header.\n*   **11s:** The goalkeeper rolls the ball out to a teammate near the halfway line.\n*   **13s:** The red player receives the ball and is immediately pressured by a black team player.",
+  "processing_time_seconds": 15.776192665100098,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_51m45s.mp4",
+  "start_seconds": 3105,
+  "end_seconds": 3120,
+  "duration": 15,
+  "timestamp": "51:45",
+  "analysis_timestamp": "2025-07-31T20:27:41.208234",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThis clip shows a pre-match warm-up scene. Players from two different teams are on opposite sides of the pitch, casually passing the ball within their small groups in preparation for the game.\n\n**Key Timing Estimates:**\n\n*   **1s:** A player from the green team (on the left) passes the ball from the touchline towards a teammate.\n*   **4s:** On the right side of the pitch, a player in an orange bib passes the ball to a teammate.\n*   **8s:** A green team player near the halfway line passes the ball back toward the left touchline.\n*   **12s:** The green team player on the left receives the pass and immediately plays a longer pass back towards the center of the pitch.",
+  "processing_time_seconds": 24.269071340560913,
+  "status": "success"
+}

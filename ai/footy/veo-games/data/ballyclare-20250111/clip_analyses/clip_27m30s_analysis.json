@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_27m30s.mp4",
+  "start_seconds": 1650,
+  "end_seconds": 1665,
+  "duration": 15,
+  "timestamp": "27:30",
+  "analysis_timestamp": "2025-07-31T20:26:26.862419",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts to launch an attack with a long free-kick into the red team's half. The red team's defense effectively clears the initial danger, intercepts a subsequent pass, and begins to transition into a counter-attack.\n\n**Key Timing Estimates:**\n\n*   **5s:** The black team plays a long, aerial free-kick from their own half toward the opposition's penalty area.\n*   **8s:** A red defender jumps and heads the ball away, clearing it back towards midfield.\n*   **10s:** A black player controls the cleared ball in the center of the pitch.\n*   **12s:** The red team's #21 intercepts a forward pass from the black team near the halfway line.\n*   **14s:** The red player turns with the ball and starts dribbling forward, initiating an attack.",
+  "processing_time_seconds": 23.020087480545044,
+  "status": "success"
+}

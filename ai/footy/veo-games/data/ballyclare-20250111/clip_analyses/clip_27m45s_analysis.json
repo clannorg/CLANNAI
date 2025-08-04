@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_27m45s.mp4",
+  "start_seconds": 1665,
+  "end_seconds": 1680,
+  "duration": 15,
+  "timestamp": "27:45",
+  "analysis_timestamp": "2025-07-31T20:26:23.995714",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team initiates play from the center circle with a long, direct ball forward. The red team's defense effectively contests the aerial ball, and a foul is committed by the black team, leading to a free-kick for the red team in their own half.\n\n### Key Timing Estimates\n*   **2s:** The black team kicks off the match from the center circle.\n*   **4s:** A black player plays a long, aerial pass forward into the red team's half.\n*   **7s:** A red defender successfully heads the ball clear during an aerial challenge with a black attacker.\n*   **13s:** The referee blows the whistle, awarding a free-kick to the red team after a foul by a black player.",
+  "processing_time_seconds": 20.15772581100464,
+  "status": "success"
+}

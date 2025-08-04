@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_08m30s.mp4",
+  "start_seconds": 510,
+  "end_seconds": 525,
+  "duration": 15,
+  "timestamp": "08:30",
+  "analysis_timestamp": "2025-07-31T20:23:55.351237",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe red team maintains possession in the middle of the park, patiently passing the ball while looking for an opening. The black team holds a compact defensive shape, successfully intercepts a forward pass, and begins to transition into an attack.\n\n**Key Timing Estimates:**\n*   **1s:** A red player near the center circle makes a short forward pass.\n*   **4s:** After facing pressure, the red team passes the ball backward to reset their attack.\n*   **7s:** The red team circulates possession, moving the ball towards the left side of the field.\n*   **11s:** A black player steps in to intercept a vertical pass from the red team's midfield.\n*   **12s:** The black team secures possession and immediately plays a forward pass to launch a counter.\n*   **14s:** A black player carries the ball across the halfway line into the red team's half.",
+  "processing_time_seconds": 20.40641450881958,
+  "status": "success"
+}

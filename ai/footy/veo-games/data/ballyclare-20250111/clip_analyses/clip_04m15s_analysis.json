@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_04m15s.mp4",
+  "start_seconds": 255,
+  "end_seconds": 270,
+  "duration": 15,
+  "timestamp": "04:15",
+  "analysis_timestamp": "2025-07-31T20:23:35.896300",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's an analysis of the football clip.\n\n**Main Action Description:**\nThe black team takes a direct free-kick from outside the penalty area. The shot is aimed at the goal but is successfully defended and cleared by the red team.\n\n**Key Timing Estimates:**\n*   **0-8s:** The black team sets up for a free kick while the red team forms a defensive wall and marks players.\n*   **9s:** A player from the black team takes the free-kick with their right foot.\n*   **11s:** The shot is blocked or saved by the red team's defense near the goal line.\n*   **12s:** The ball is cleared out of the penalty area by a red defender.",
+  "processing_time_seconds": 19.011049509048462,
+  "status": "success"
+}

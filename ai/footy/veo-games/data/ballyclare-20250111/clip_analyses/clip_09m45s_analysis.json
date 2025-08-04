@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_09m45s.mp4",
+  "start_seconds": 585,
+  "end_seconds": 600,
+  "duration": 15,
+  "timestamp": "09:45",
+  "analysis_timestamp": "2025-07-31T20:23:59.105054",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe black team controls possession in their own half, patiently building an attack from the back. They circulate the ball between a midfielder and their goalkeeper under minimal pressure from the red team, who are holding their defensive shape.\n\n**Key Timing Estimates**\n*   **1s**: A black team player possesses the ball just inside his own half near the center.\n*   **5s**: The player makes a simple back-pass towards his own goalkeeper.\n*   **7s**: The goalkeeper comes out of the penalty area to control the pass.\n*   **10s**: After assessing his options, the goalkeeper plays a short pass back to the same central player.\n*   **12s**: The black player receives the return pass and looks upfield for an attacking option.",
+  "processing_time_seconds": 23.208624362945557,
+  "status": "success"
+}

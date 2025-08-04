@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_82m15s.mp4",
+  "start_seconds": 4935,
+  "end_seconds": 4950,
+  "duration": 15,
+  "timestamp": "82:15",
+  "analysis_timestamp": "2025-07-31T20:30:08.579491",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe video shows a break in play during a football match. The teams are positioned on the field, with the black team ready for kick-off, awaiting the restart after a substitution.\n\n**Key Timing Estimates:**\n*   **1s:** Teams are set up for a restart, with the black team at the center circle.\n*   **11s:** An announcement for a substitution is heard over the stadium's PA system, indicating a stoppage in play.",
+  "processing_time_seconds": 16.060903549194336,
+  "status": "success"
+}

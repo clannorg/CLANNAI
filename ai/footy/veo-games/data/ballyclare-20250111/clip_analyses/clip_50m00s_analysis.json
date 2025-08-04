@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_50m00s.mp4",
+  "start_seconds": 3000,
+  "end_seconds": 3015,
+  "duration": 15,
+  "timestamp": "50:00",
+  "analysis_timestamp": "2025-07-31T20:27:27.052108",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This is a pre-match warm-up scene, not an active game. The team in orange bibs is casually passing and stretching on the pitch as the camera pans slowly from right to left.\n\n- **0-15s**: The camera continuously pans from the right side of the pitch towards the left.\n- **1s**: A player in an orange bib is on the ground stretching near the center circle for the entire duration of the clip.\n- **4s**: A player in a yellow bib, likely a goalkeeper, stands near the right-hand penalty area.\n- **7s**: Two players in orange bibs casually pass the ball near the center circle.\n- **12s**: Another player in an orange bib enters the frame from the right, jogging with a ball at his feet.",
+  "processing_time_seconds": 20.092356204986572,
+  "status": "success"
+}

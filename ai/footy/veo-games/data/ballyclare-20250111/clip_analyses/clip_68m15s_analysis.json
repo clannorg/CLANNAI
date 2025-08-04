@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_68m15s.mp4",
+  "start_seconds": 4095,
+  "end_seconds": 4110,
+  "duration": 15,
+  "timestamp": "68:15",
+  "analysis_timestamp": "2025-07-31T20:29:33.135291",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the provided football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe clip captures the aftermath of a goal scored by the black team. The black team's players celebrate and walk back towards their own half while the red team gets into position to restart the match from the center circle.\n\n**Key Timing Estimates:**\n\n*   **0s:** The black team is seen celebrating a goal inside the red team's penalty area.\n*   **3s:** A black player runs from the penalty box towards the halfway line, celebrating with his arms outstretched.\n*   **6s:** The camera pans right, revealing the red team has already placed the ball on the center spot, ready for kick-off.\n*   **10s:** The black team's players continue to walk back into their own half to prepare for the restart.\n*   **14s:** A black player with number 29 on his back walks into his position in the black team's half.",
+  "processing_time_seconds": 17.065431118011475,
+  "status": "success"
+}

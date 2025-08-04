@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_111m30s.mp4",
+  "start_seconds": 6690,
+  "end_seconds": 6705,
+  "duration": 15,
+  "timestamp": "111:30",
+  "analysis_timestamp": "2025-07-31T20:24:25.140160",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This clip shows a wide, panning view of an empty football pitch at night, likely before a match or during a major break. There is no active game play, and only one player is visible on the field.\n\n**Key Timing Estimates:**\n- **1s:** A single player in a dark kit is seen walking near the penalty area on the right side of the pitch.\n- **5s:** The camera begins a slow, continuous pan from right to left across the field.\n- **9s:** The camera's view passes over the center circle of the pitch.\n- **14s:** The pan continues, showcasing the empty left side of the field under the floodlights.",
+  "processing_time_seconds": 19.768495559692383,
+  "status": "success"
+}

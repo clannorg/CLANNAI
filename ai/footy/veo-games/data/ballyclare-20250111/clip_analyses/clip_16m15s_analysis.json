@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_16m15s.mp4",
+  "start_seconds": 975,
+  "end_seconds": 990,
+  "duration": 15,
+  "timestamp": "16:15",
+  "analysis_timestamp": "2025-07-31T20:24:41.200442",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team sustains an attack, probing around the red team's penalty area. After a pass into the box is partially cleared by the red defense, the black team quickly recovers the loose ball to maintain pressure.\n\n**Key Timing Estimates:**\n*   **3s:** A black player receives a pass on the right wing, near the corner of the penalty box.\n*   **6s:** The black team plays a pass into the left side of the penalty area for an attacking run.\n*   **9s:** A red defender makes a crucial block, sending the ball back out of the immediate danger zone.\n*   **13s:** A black player controls the cleared ball at the top of the penalty area to restart the attack.",
+  "processing_time_seconds": 21.787533283233643,
+  "status": "success"
+}

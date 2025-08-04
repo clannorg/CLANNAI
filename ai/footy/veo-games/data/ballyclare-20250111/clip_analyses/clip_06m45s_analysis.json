@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_06m45s.mp4",
+  "start_seconds": 405,
+  "end_seconds": 420,
+  "duration": 15,
+  "timestamp": "06:45",
+  "analysis_timestamp": "2025-07-31T20:23:36.972013",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe Black team controls possession in their own half, patiently circulating the ball across the midfield. They probe for an opening against the Red team, who maintain a compact and organized defensive structure.\n\n**Key Timing Estimates:**\n*   **4s:** A Black player passes the ball backward from the left side of the field toward the center circle.\n*   **7s:** A Black midfielder receives the ball near the halfway line and turns to face the opposition's goal.\n*   **11s:** The ball is passed forward into a teammate positioned inside the center circle.\n*   **14s:** The player in the center circle lays the ball off with one touch to a teammate moving into space on the right flank.",
+  "processing_time_seconds": 20.081064224243164,
+  "status": "success"
+}

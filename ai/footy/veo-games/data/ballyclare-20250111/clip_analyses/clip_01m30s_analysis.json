@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_01m30s.mp4",
+  "start_seconds": 90,
+  "end_seconds": 105,
+  "duration": 15,
+  "timestamp": "01:30",
+  "analysis_timestamp": "2025-07-31T20:23:36.023504",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team kicks off from the center circle to start the game. They play a long ball forward, which is immediately challenged and headed away by the red team's defense.\n\n**Key Timing Estimates:**\n*   **8s:** The black team takes the kick-off from the center spot.\n*   **11s:** A black team defender plays a long, aerial pass into the red team's half.\n*   **13s:** A red team defender positions themself under the ball and heads it clear.\n*   **15s:** A black team player and a red team player converge to challenge for the second ball in the midfield.",
+  "processing_time_seconds": 19.143502712249756,
+  "status": "success"
+}

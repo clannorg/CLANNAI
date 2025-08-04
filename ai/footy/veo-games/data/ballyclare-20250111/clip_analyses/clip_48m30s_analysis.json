@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_48m30s.mp4",
+  "start_seconds": 2910,
+  "end_seconds": 2925,
+  "duration": 15,
+  "timestamp": "48:30",
+  "analysis_timestamp": "2025-07-31T20:27:24.908427",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\nThe video shows two teams conducting pre-game warm-ups on opposite sides of the pitch. The Red team is casually passing the ball on the left, while the Orange team performs light drills on the right.\n\n- **1s**: A Red team player on the left passes the ball towards the center circle.\n- **4s**: On the right, a player in an orange bib, who was stretching on the ground, gets up to join a drill.\n- **6s**: A Red team player receives a pass on the far left side of the pitch.\n- **9s**: The Red team player passes the ball back towards the midfield.\n- **13s**: Players in orange bibs continue a light passing and movement drill on the right side of the field.",
+  "processing_time_seconds": 23.55708122253418,
+  "status": "success"
+}

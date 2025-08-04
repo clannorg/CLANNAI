@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_94m30s.mp4",
+  "start_seconds": 5670,
+  "end_seconds": 5685,
+  "duration": 15,
+  "timestamp": "94:30",
+  "analysis_timestamp": "2025-07-31T20:32:50.755203",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team prepares for and takes a free kick from the right flank, aimed toward the red team's penalty area. The referee manages the defensive wall before the kick is taken, and the clip concludes as the ball is in mid-air.\n\n### Key Timing Estimates\n*   **1s:** A player from the black team (number 15) stands over the ball, preparing for a free kick.\n*   **5s:** The referee is actively managing the red team's defensive wall, ensuring it is at the correct distance.\n*   **9s:** The referee blows his whistle, signaling for the free kick to be taken.\n*   **11s:** The black team player strikes the ball, sending it towards the penalty box.\n*   **13s:** The ball is in flight, heading towards the goal area as players from both teams begin to move to challenge for it.",
+  "processing_time_seconds": 38.147223472595215,
+  "status": "success"
+}

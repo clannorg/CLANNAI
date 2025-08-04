@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_41m00s.mp4",
+  "start_seconds": 2460,
+  "end_seconds": 2475,
+  "duration": 15,
+  "timestamp": "41:00",
+  "analysis_timestamp": "2025-07-31T20:26:59.582936",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in the football clip.\n\n**Main Action Description**\nThe black team executes a free-kick, delivering the ball into the box. A player from the black team connects with a header to score a goal against the red team.\n\n**Key Timing Estimates**\n*   **4s:** The black team takes the free-kick, lofting the ball into the penalty area.\n*   **8s:** A player from the black team jumps and heads the ball toward the goal.\n*   **9s:** The ball crosses the goal line, resulting in a goal for the black team.\n*   **11s:** The black team players run to the corner of the box to celebrate the goal.",
+  "processing_time_seconds": 17.7595272064209,
+  "status": "success"
+}

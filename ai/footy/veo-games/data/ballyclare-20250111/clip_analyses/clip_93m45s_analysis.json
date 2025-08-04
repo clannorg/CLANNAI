@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_93m45s.mp4",
+  "start_seconds": 5625,
+  "end_seconds": 5640,
+  "duration": 15,
+  "timestamp": "93:45",
+  "analysis_timestamp": "2025-07-31T20:32:53.610827",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\nThe black team controls possession in the midfield, patiently building an attack. They circulate the ball with short passes while the red team maintains a compact defensive shape, waiting to press.\n\n- **4s:** A player in a black kit gains possession on the right side of the field.\n- **6s:** The black player dribbles towards the center and passes forward to a teammate.\n- **9s:** The central midfielder lays the ball off to another black player positioned on the left.\n- **13s:** The black team circulates the ball back into the center of the pitch, maintaining possession and probing the red team's defense.",
+  "processing_time_seconds": 41.011393308639526,
+  "status": "success"
+}

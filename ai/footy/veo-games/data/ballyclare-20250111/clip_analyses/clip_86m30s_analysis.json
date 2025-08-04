@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_86m30s.mp4",
+  "start_seconds": 5190,
+  "end_seconds": 5205,
+  "duration": 15,
+  "timestamp": "86:30",
+  "analysis_timestamp": "2025-07-31T20:30:19.846516",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course, here is a breakdown of the football clip.\n\n### Main Action\nThe black team attempts to play out from their defense with a long forward pass, but it is intercepted in the midfield by the red team. The red team then secures possession in the center of the pitch, effectively turning over play.\n\n### Key Timings\n*   **2s:** The black player on the far left passes the ball back to a central defender.\n*   **7s:** The black central defender plays a long pass forward towards the center circle.\n*   **9s:** A red player intercepts the pass in the middle of the field.\n*   **13s:** The red player, now in possession, makes a short pass to a nearby teammate to maintain control.",
+  "processing_time_seconds": 18.332972288131714,
+  "status": "success"
+}

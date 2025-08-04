@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_78m15s.mp4",
+  "start_seconds": 4695,
+  "end_seconds": 4710,
+  "duration": 15,
+  "timestamp": "78:15",
+  "analysis_timestamp": "2025-07-31T20:29:57.793094",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nFollowing a poor clearance by the red team's goalkeeper, the black team launches a quick attack through the center of the pitch. The red team's defense recovers to intercept a forward pass and regain possession.\n\n- **3s:** The red team's goalkeeper passes the ball directly to a black team player on the left wing.\n- **6s:** The black player makes a first-time pass into the center circle to a teammate.\n- **9s:** The ball is quickly moved to another black player who begins to drive at the red defense.\n- **13s:** The black player's attempted through-ball is intercepted by a red defender, ending the attack.",
+  "processing_time_seconds": 20.058542251586914,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_87m45s.mp4",
+  "start_seconds": 5265,
+  "end_seconds": 5280,
+  "duration": 15,
+  "timestamp": "87:45",
+  "analysis_timestamp": "2025-07-31T20:30:23.753605",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe black team's goalkeeper takes a long goal kick downfield, leading to an aerial duel in midfield. The red team wins the initial header, but the black team's defense quickly recovers to win the ball back.\n\n**Key Timing Estimates**\n*   **4s:** The black team's goalkeeper takes a long goal kick.\n*   **9s:** A red player wins the header near the halfway line, flicking the ball forward to a teammate.\n*   **12s:** A black defender immediately pressures and successfully tackles the red attacker who received the header.\n*   **14s:** The ball becomes loose, and both teams compete for possession in the central midfield area.",
+  "processing_time_seconds": 16.86139726638794,
+  "status": "success"
+}

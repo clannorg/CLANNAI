@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_32m30s.mp4",
+  "start_seconds": 1950,
+  "end_seconds": 1965,
+  "duration": 15,
+  "timestamp": "32:30",
+  "analysis_timestamp": "2025-07-31T20:26:40.591445",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course, here is a breakdown of the football clip.\n\nThe black team maintains possession in their own half, calmly circulating the ball to build an attack. The red team holds a compact, mid-block defensive shape, content to let the opposition have the ball deep in their own territory.\n\n- **2s:** A black player on the right side of the pitch passes the ball infield.\n- **8s:** A central black midfielder makes a long, switched pass across the pitch to the left flank.\n- **11s:** The black left-back (number 3) receives the cross-field pass.\n- **14s:** The left-back controls the ball and begins to move forward as the clip concludes.",
+  "processing_time_seconds": 16.42921471595764,
+  "status": "success"
+}

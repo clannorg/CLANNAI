@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_91m30s.mp4",
+  "start_seconds": 5490,
+  "end_seconds": 5505,
+  "duration": 15,
+  "timestamp": "91:30",
+  "analysis_timestamp": "2025-07-31T20:30:35.259990",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "The clip shows a stoppage in play due to an apparent injury near the penalty area. Players from both the red and black teams are waiting for the game to resume as the injured player receives attention.\n\n- **0s**: The scene opens on a paused match, with players scattered and a group gathered near the red team's penalty box.\n- **3s**: A player is seen on the ground inside the penalty area, being attended to by others, confirming an injury stoppage.\n- **8s**: Most players remain stationary on the pitch, waiting for play to continue.\n- **12s**: The player on the ground is helped back to their feet by teammates.",
+  "processing_time_seconds": 20.90782642364502,
+  "status": "success"
+}

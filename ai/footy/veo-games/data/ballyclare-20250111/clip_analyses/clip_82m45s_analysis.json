@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_82m45s.mp4",
+  "start_seconds": 4965,
+  "end_seconds": 4980,
+  "duration": 15,
+  "timestamp": "82:45",
+  "analysis_timestamp": "2025-07-31T20:30:14.352037",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main action description:**\nThe black team initiates an attack from deep within their own half, moving the ball into the opposition's territory. A black winger on the right successfully dribbles past a defender to create a dangerous attacking opportunity.\n\n**Key timing estimates:**\n*   **2s:** The black team's #11 passes the ball from the left flank into central midfield.\n*   **6s:** A black midfielder plays a forward pass to a teammate on the right wing.\n*   **9s:** The black winger on the right side receives the ball and begins to dribble at a red defender.\n*   **11s:** The winger successfully beats the red defender and advances down the flank.\n*   **14s:** The black player continues his run towards the corner of the red team's penalty area.",
+  "processing_time_seconds": 21.389499187469482,
+  "status": "success"
+}

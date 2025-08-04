@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_54m30s.mp4",
+  "start_seconds": 3270,
+  "end_seconds": 3285,
+  "duration": 15,
+  "timestamp": "54:30",
+  "analysis_timestamp": "2025-07-31T20:27:41.107181",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe team in orange bibs is performing a casual passing warm-up drill in their half of the pitch. They are circulating the ball amongst themselves without any pressure from an opposition team.\n\n**Key Timing Estimates:**\n*   **4s:** A player in an orange bib passes the ball forward from the halfway line to a teammate.\n*   **11s:** Another player in an orange bib makes a one-touch pass to a teammate positioned to the right.\n*   **13s:** The receiving player passes the ball on to another teammate in an orange bib.",
+  "processing_time_seconds": 18.740597248077393,
+  "status": "success"
+}

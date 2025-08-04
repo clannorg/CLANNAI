@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_27m15s.mp4",
+  "start_seconds": 1635,
+  "end_seconds": 1650,
+  "duration": 15,
+  "timestamp": "27:15",
+  "analysis_timestamp": "2025-07-31T20:26:23.653083",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the 15-second football clip.\n\n**Main Action Description:**\nThe black team initiates the game from the center circle with a kickoff. They play the ball back to their defense, who then launches a long aerial pass downfield into the red team's territory.\n\n**Key Timing Estimates:**\n*   **1s:** The black team kicks off, passing the ball backwards.\n*   **3s:** The ball is played back to a black defender (number 3) deep in their own half.\n*   **6s:** The black defender executes a long forward pass over the top of the midfield.\n*   **13s:** Players from both teams move into position to contest the long ball as it comes down.",
+  "processing_time_seconds": 19.81761598587036,
+  "status": "success"
+}

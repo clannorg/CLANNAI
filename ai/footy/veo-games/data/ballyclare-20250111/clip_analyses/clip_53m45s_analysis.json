@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_53m45s.mp4",
+  "start_seconds": 3225,
+  "end_seconds": 3240,
+  "duration": 15,
+  "timestamp": "53:45",
+  "analysis_timestamp": "2025-07-31T20:27:44.542800",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe video shows a pre-game warm-up exercise rather than a match. A group of players in orange bibs are in a circle performing a \"rondo\" (keep-away) passing drill, while a single player in a yellow bib acts as the defender in the middle, trying to intercept the ball.\n\n**Key Timing Estimates**\n*   **1s:** An orange-bibbed player passes the ball to a teammate to his left.\n*   **3s:** The ball is passed across the circle to another player in an orange bib.\n*   **5s:** A quick pass is made back across the drill to another orange-bibbed player.\n*   **7s:** A one-touch pass is completed between two orange-bibbed players.\n*   **10s:** The ball is passed from the right side of the circle back to a player on the left.\n*   **13s:** Another successful pass is made by the orange-bibbed players, keeping possession from the yellow-bibbed defender.",
+  "processing_time_seconds": 24.06071162223816,
+  "status": "success"
+}

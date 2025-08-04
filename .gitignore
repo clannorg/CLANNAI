@@ -64,8 +64,8 @@ logs/
 *.model
 *.weights
 
-# Large datasets (don't commit data)
-data/
+# Large datasets (don't commit data, but allow analysis outputs)
+# Exclude raw data but allow analysis files
 datasets/
 samples/
 output/
@@ -74,6 +74,11 @@ artifacts/
 checkpoints/
 prompts/
 gemini_runs/
+
+# Allow analysis files but exclude raw data
+!ai/footy/veo-games/data/*/
+ai/footy/veo-games/data/*/clips/
+ai/footy/veo-games/data/*/4_clip_descriptions/
 
 # API keys and secrets
 *.key

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_93m00s.mp4",
+  "start_seconds": 5580,
+  "end_seconds": 5595,
+  "duration": 15,
+  "timestamp": "93:00",
+  "analysis_timestamp": "2025-07-31T20:32:51.328722",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the football clip, focusing on the key actions and timings.\n\n### Football Clip Analysis (15 seconds)\n\n**Main Action Description:**\nThe red team successfully executes a high press, forcing the black team's defense into a critical error inside their own penalty area. This results in an interception and a direct shot on goal, which is saved by the black team's goalkeeper.\n\n**Key Timing Estimates:**\n*   **2s:** The black team plays the ball back from the left flank towards their own defense.\n*   **6s:** The black team's goalkeeper receives the pass and is immediately pressured by a red forward.\n*   **9s:** Under pressure, the goalkeeper passes the ball across the box to a defender on the right.\n*   **11s:** The black defender makes a poor pass, which is intercepted by the red forward just inside the penalty area.\n*   **12s:** The red forward takes a first-time shot towards the goal.\n*   **14s:** The black goalkeeper dives to their left to make a crucial save.",
+  "processing_time_seconds": 38.74145579338074,
+  "status": "success"
+}

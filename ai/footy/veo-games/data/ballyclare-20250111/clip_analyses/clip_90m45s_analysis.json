@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_90m45s.mp4",
+  "start_seconds": 5445,
+  "end_seconds": 5460,
+  "duration": 15,
+  "timestamp": "90:45",
+  "analysis_timestamp": "2025-07-31T20:30:30.402852",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts a long, direct pass forward from the center circle, which is intercepted by the red team's defense. The red team then secures possession and begins to build an attack patiently from their own half.\n\n**Key Timing Estimates:**\n*   **1s:** Black team plays a long pass forward from just inside their own half.\n*   **4s:** A red defender intercepts the long ball with a header near the edge of the penalty area.\n*   **9s:** The red team gains full control of the loose ball on their right flank.\n*   **13s:** Red team passes the ball across their backline to switch the point of attack.",
+  "processing_time_seconds": 17.79416799545288,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_107m00s.mp4",
+  "start_seconds": 6420,
+  "end_seconds": 6435,
+  "duration": 15,
+  "timestamp": "107:00",
+  "analysis_timestamp": "2025-07-31T20:24:15.269032",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team initiates an attack with a long ball from their own half. Although the red team makes an initial defensive clearance, the black team regains possession and attempts a quick through ball, which is intercepted by a red defender.\n\n**Key Timing Estimates:**\n- **2s:** A black team player plays a long, aerial pass from their own half into the red team's territory.\n- **5s:** A red defender heads the long ball away, clearing the initial danger.\n- **8s:** The black team wins the second ball after a challenge in the midfield.\n- **12s:** After a short pass, a black player attempts a through ball towards the penalty area.\n- **14s:** A red defender steps in to intercept the through ball, ending the attack.",
+  "processing_time_seconds": 21.291576623916626,
+  "status": "success"
+}

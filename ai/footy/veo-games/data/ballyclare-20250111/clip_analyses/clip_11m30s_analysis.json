@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_11m30s.mp4",
+  "start_seconds": 690,
+  "end_seconds": 705,
+  "duration": 15,
+  "timestamp": "11:30",
+  "analysis_timestamp": "2025-07-31T20:24:29.471510",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team controls the game, building up possession from a throw-in on the far side. They calmly circulate the ball across their defensive line and into the midfield, with the red team holding their positions without pressing aggressively.\n\n**Key Timing Estimates:**\n- **1s:** The black team takes a throw-in on the far left touchline.\n- **6s:** The ball is worked infield to a central player for the black team.\n- **10s:** A black midfielder plays a simple pass back to a defender near the halfway line.\n- **14s:** The black team remains in comfortable possession in their own half as the red team watches on.",
+  "processing_time_seconds": 17.43315577507019,
+  "status": "success"
+}

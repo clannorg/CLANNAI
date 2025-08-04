@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_40m30s.mp4",
+  "start_seconds": 2430,
+  "end_seconds": 2445,
+  "duration": 15,
+  "timestamp": "40:30",
+  "analysis_timestamp": "2025-07-31T20:26:57.831744",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here's an analysis of the football clip provided.\n\n**Main Action Description:**\nThe black team takes a direct free-kick from outside the penalty area. The low, driven shot bypasses the defensive wall, but the red team's goalkeeper makes a diving save to his left.\n\n**Key Timing Estimates:**\n- **0-8s:** The black team prepares to take a free-kick while the red team forms a defensive wall.\n- **9s:** The referee's whistle signals for the kick to be taken.\n- **11s:** The black team's player strikes the ball with a low shot aimed at the near post.\n- **13s:** The red team's goalkeeper dives and makes the save, pushing the ball away from the goal.",
+  "processing_time_seconds": 16.266685962677002,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_58m15s.mp4",
+  "start_seconds": 3495,
+  "end_seconds": 3510,
+  "duration": 15,
+  "timestamp": "58:15",
+  "analysis_timestamp": "2025-07-31T20:29:17.102228",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a description of the main events in the video clip, with timestamps.\n\nThe black team begins the match with a kickoff from the center circle. They immediately pass the ball backward to establish possession within their own half.\n\n- **0s:** Players are in position for the kickoff, with the black team preparing to start the game.\n- **8s:** The black team kicks off, playing a short pass backward from the center spot.\n- **10s:** The ball is played back again to a central defender in the black team's half.\n- **14s:** The black team's defender controls the ball and looks to initiate an attack.",
+  "processing_time_seconds": 21.570313453674316,
+  "status": "success"
+}

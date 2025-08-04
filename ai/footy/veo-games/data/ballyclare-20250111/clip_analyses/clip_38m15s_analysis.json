@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_38m15s.mp4",
+  "start_seconds": 2295,
+  "end_seconds": 2310,
+  "duration": 15,
+  "timestamp": "38:15",
+  "analysis_timestamp": "2025-07-31T20:26:52.620771",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the key actions in the football clip.\n\n**Main Action Description:**\nThe black team takes a set piece from the right side of the field, delivering a high ball into the penalty area. The red team's goalkeeper confidently comes off his line to catch the ball and stop the attack.\n\n**Key Timing Estimates:**\n\n*   **4s:** The black team player takes the free-kick, sending a looping cross towards the far post.\n*   **7s:** The red team's goalkeeper moves forward and jumps to cleanly catch the ball in the air.\n*   **11s:** With the ball secured, the goalkeeper lands and begins to assess his options for a quick distribution.",
+  "processing_time_seconds": 13.5337655544281,
+  "status": "success"
+}

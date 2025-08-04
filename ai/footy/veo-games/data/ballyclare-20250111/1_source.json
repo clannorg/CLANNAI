@@ -1,0 +1,16 @@
+{
+  "url": "https://app.veo.co/matches/20250111-ballyclare-425e4c3f/",
+  "match_id": "ballyclare-20250111",
+  "veo_match_id": "20250111-ballyclare-425e4c3f",
+  "extracted_at": "2025-07-29T15:55:00.440111",
+  "total_events": 20,
+  "extraction_method": "veo_api_highlights",
+  "status": "ready_for_analysis",
+  "date": "2025-01-11",
+  "primary_team": "Ballyclare",
+  "venue": "Ballyclare",
+  "cloud_status": "uploaded",
+  "s3_upload_timestamp": "2025-07-30T20:43:39.182610",
+  "s3_files_count": 7,
+  "s3_bucket": "end-nov-webapp-clann"
+}

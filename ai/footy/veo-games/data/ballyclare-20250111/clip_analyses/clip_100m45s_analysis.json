@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_100m45s.mp4",
+  "start_seconds": 6045,
+  "end_seconds": 6060,
+  "duration": 15,
+  "timestamp": "100:45",
+  "analysis_timestamp": "2025-07-31T20:23:51.987986",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's an analysis of the football clip.\n\n**Main Action Description:**\nThe Black team's goalkeeper launches a long goal kick into the opposition's half. The play unfolds with a series of aerial duels in the midfield, with both teams competing to gain possession.\n\n**Key Timing Estimates:**\n*   **7s:** The Black team's goalkeeper takes a long goal kick towards the center circle.\n*   **11s:** A Black player (#10) wins the first header, flicking the ball forward.\n*   **12s:** A Red player (#11) wins the second header, directing the ball further into the Black team's half.\n*   **14s:** The ball is in the air as players from both teams converge to challenge for it.",
+  "processing_time_seconds": 15.851304531097412,
+  "status": "success"
+}

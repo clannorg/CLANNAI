@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_73m15s.mp4",
+  "start_seconds": 4395,
+  "end_seconds": 4410,
+  "duration": 15,
+  "timestamp": "73:15",
+  "analysis_timestamp": "2025-07-31T20:29:51.996777",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts to launch a direct attack from a restart in midfield with a long, aerial pass. The red team's defense is well-positioned to intercept, heading the ball clear and forcing it out of play for a throw-in.\n\n**Key Timing Estimates:**\n*   **1s:** Black player takes a free kick, playing a short pass to a teammate.\n*   **5s:** The teammate plays a long, diagonal ball forward towards the red team's penalty area.\n*   **9s:** A red defender easily intercepts the pass with a defensive header.\n*   **11s:** The loose ball is contested by players from both teams near the sideline.\n*   **13s:** The ball goes out of play for a throw-in.",
+  "processing_time_seconds": 20.440836906433105,
+  "status": "success"
+}

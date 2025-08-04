@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_43m15s.mp4",
+  "start_seconds": 2595,
+  "end_seconds": 2610,
+  "duration": 15,
+  "timestamp": "43:15",
+  "analysis_timestamp": "2025-07-31T20:27:05.460596",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the 15-second football clip.\n\nThe video shows teams warming up on the pitch, not in active gameplay. Players are performing light passing and individual drills.\n\n**2s:** A red player on the far left of the screen passes the ball.\n**4s:** A player from the black/orange team on the right side makes a short pass to a teammate.\n**10s:** The player in the yellow top in the center circle does a light stretch and kick-up.\n**14s:** A player in a green goalkeeper top on the left side kicks a ball towards the center of the pitch.",
+  "processing_time_seconds": 20.12273335456848,
+  "status": "success"
+}

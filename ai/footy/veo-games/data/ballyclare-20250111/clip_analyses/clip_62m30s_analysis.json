@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_62m30s.mp4",
+  "start_seconds": 3750,
+  "end_seconds": 3765,
+  "duration": 15,
+  "timestamp": "62:30",
+  "analysis_timestamp": "2025-07-31T20:29:18.417726",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the key events in this football clip.\n\nThe red team executes a clever, low free-kick routine from the right side. They pass the ball to a teammate at the edge of the penalty area for a shot, which is ultimately blocked by the defending black team.\n\n*   **6s:** A red player performs a dummy run over the ball to confuse the defense.\n*   **9s:** The red team takes the free-kick, playing a low, firm pass to a teammate positioned centrally outside the penalty box.\n*   **12s:** The receiving red player strikes the ball first-time towards the goal.\n*   **14s:** A black team defender slides in and successfully blocks the shot.",
+  "processing_time_seconds": 22.802186489105225,
+  "status": "success"
+}

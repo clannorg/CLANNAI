@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_10m00s.mp4",
+  "start_seconds": 600,
+  "end_seconds": 615,
+  "duration": 15,
+  "timestamp": "10:00",
+  "analysis_timestamp": "2025-07-31T20:24:14.502582",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the football clip:\n\nThe black team controls possession in their own half, circulating the ball between defenders and midfielders under pressure from the red team's organized press. The sequence culminates in an attempt to play a longer forward pass to break the press and switch the point of attack.\n\n- **2s:** A black defender passes the ball across the backline to a central teammate.\n- **4s:** The ball is passed forward to a black midfielder just inside their own half.\n- **6s:** Under immediate pressure from a red player, the midfielder quickly passes back to the defense.\n- **10s:** A black central defender plays a long forward pass towards the right flank.\n- **14s:** The clip ends as the ball travels through the air, with players from both teams moving to contest it.",
+  "processing_time_seconds": 17.03696870803833,
+  "status": "success"
+}

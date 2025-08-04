@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_110m15s.mp4",
+  "start_seconds": 6615,
+  "end_seconds": 6630,
+  "duration": 15,
+  "timestamp": "110:15",
+  "analysis_timestamp": "2025-07-31T20:24:16.739670",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This clip captures the post-match scene on the football field. Players from the red team are gathered together acknowledging the spectators, while the opposing team and officials are also present on the pitch.\n\n- **1s**: The red team stands as a group near the center circle, clapping towards the stands.\n- **5s**: A few players in red begin to walk away from the main group.\n- **8s**: The match officials, dressed in black and light blue, are seen speaking with players near the center of the pitch.\n- **12s**: Players from both teams continue to walk around the field, with some interacting with each other as the post-match activities conclude.",
+  "processing_time_seconds": 17.634374856948853,
+  "status": "success"
+}

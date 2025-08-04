@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_43m45s.mp4",
+  "start_seconds": 2625,
+  "end_seconds": 2640,
+  "duration": 15,
+  "timestamp": "43:45",
+  "analysis_timestamp": "2025-07-31T20:27:09.563457",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe video shows two teams conducting separate warm-up drills on the pitch before a match. The team in orange bibs is in a tight circle performing a continuous passing drill, while the players in red are spread out, passing and dribbling individually on the other side of the center line.\n\n**Key Timing Estimates:**\n*   **1s:** A player in a red shirt on the far left of the screen kicks a ball.\n*   **3s:** The goalkeeper (in a red shirt and yellow bib) passes the ball to a teammate near the center circle.\n*   **0s - 15s:** The team in orange bibs continuously performs a close-control passing drill (a rondo) in the right half of the pitch.",
+  "processing_time_seconds": 21.69719099998474,
+  "status": "success"
+}

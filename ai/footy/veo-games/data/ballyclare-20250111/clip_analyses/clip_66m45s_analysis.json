@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_66m45s.mp4",
+  "start_seconds": 4005,
+  "end_seconds": 4020,
+  "duration": 15,
+  "timestamp": "66:45",
+  "analysis_timestamp": "2025-07-31T20:29:32.114143",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the provided football clip.\n\nThe Red team attempts a quick attack, but the shot from the edge of the penalty area goes high over the goal. The play results in a goal kick for the Black team, who then prepare to restart the game.\n\n**Key Timings:**\n\n*   **0s:** A Red player shoots from just outside the Black team's penalty box.\n*   **3s:** The ball travels over the crossbar and out of play for a goal kick.\n*   **7s:** The referee signals for the goal kick as players from both teams start to reposition.\n*   **13s:** A Black team player places the ball down, preparing to take the goal kick.",
+  "processing_time_seconds": 17.74175786972046,
+  "status": "success"
+}

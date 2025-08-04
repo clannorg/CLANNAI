@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_71m30s.mp4",
+  "start_seconds": 4290,
+  "end_seconds": 4305,
+  "duration": 15,
+  "timestamp": "71:30",
+  "analysis_timestamp": "2025-07-31T20:29:37.315056",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe black team's initial attack is thwarted by a goalkeeper save, leading to a turnover. The red team then secures possession in their own half and begins to build up play from the back.\n\n**Key Timings:**\n*   **1s:** A player from the black team takes a shot from just outside the penalty area.\n*   **2s:** The red team's goalkeeper makes a diving save to their left.\n*   **7s:** A red team player wins a challenge near the center circle, securing possession.\n*   **11s:** Red player #14 receives the ball near the halfway line.\n*   **14s:** The red team passes the ball back towards their defense to start building an attack.",
+  "processing_time_seconds": 17.22317910194397,
+  "status": "success"
+}

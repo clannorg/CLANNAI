@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_00m15s.mp4",
+  "start_seconds": 15,
+  "end_seconds": 30,
+  "duration": 15,
+  "timestamp": "00:15",
+  "analysis_timestamp": "2025-07-31T20:23:35.649120",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip provided.\n\n**Main Action Description:**\nThe black team initiates an attack from their half, moving the ball down the left wing. A red defender successfully dispossesses the attacker just outside the penalty area, winning back the ball for the red team.\n\n**Key Timing Estimates:**\n*   **4s:** A player from the black team passes the ball forward from the center circle to the left flank.\n*   **9s:** The black winger carries the ball into the red team's final third.\n*   **11s:** A red defender makes a clean standing tackle, winning possession from the black attacker.\n*   **13s:** The red team secures the loose ball and begins to move it back into the midfield.",
+  "processing_time_seconds": 18.77513837814331,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_58m30s.mp4",
+  "start_seconds": 3510,
+  "end_seconds": 3525,
+  "duration": 15,
+  "timestamp": "58:30",
+  "analysis_timestamp": "2025-07-31T20:29:15.878465",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football match clip.\n\nThe black team starts the game with a long kick-off, sending the ball deep into the red team's half. The red team's defense successfully challenges for the high ball and secures possession to begin their first attack.\n\n- **4s:** The referee blows the whistle, and the black team kicks off the match.\n- **5s:** A black player launches a long, high ball from the center circle towards the red team's defense.\n- **9s:** A red defender wins the aerial duel, heading the ball down into the midfield.\n- **11s:** After a brief challenge for the loose ball, the red team gains clear possession.\n- **14s:** A red player controls the ball in their own half, looking upfield to start an attack.",
+  "processing_time_seconds": 20.340129613876343,
+  "status": "success"
+}

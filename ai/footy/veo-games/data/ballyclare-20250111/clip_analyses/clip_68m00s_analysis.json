@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_68m00s.mp4",
+  "start_seconds": 4080,
+  "end_seconds": 4095,
+  "duration": 15,
+  "timestamp": "68:00",
+  "analysis_timestamp": "2025-07-31T20:29:36.726966",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe team in black takes an attacking free-kick from the left side of the field. The ball is delivered into the box and, following a deflection, a black team player scores from close range.\n\n**Key Timing Estimates:**\n*   **0s:** The black team is setting up for a free-kick just outside the red team's penalty area.\n*   **7s:** The free-kick is taken, sending a cross into the box.\n*   **9s:** The ball is deflected or headed down in the center of the penalty area.\n*   **11s:** A player from the black team reacts to the loose ball and scores with a shot into the net.\n*   **13s:** The black team players begin to celebrate the goal.",
+  "processing_time_seconds": 20.848369359970093,
+  "status": "success"
+}

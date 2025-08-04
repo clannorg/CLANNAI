@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_50m45s.mp4",
+  "start_seconds": 3045,
+  "end_seconds": 3060,
+  "duration": 15,
+  "timestamp": "50:45",
+  "analysis_timestamp": "2025-07-31T20:27:28.386475",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This clip shows a pre-game warm-up rather than an active match. A group of players in orange bibs is casually gathered in the center circle area.\n\n**Key Timing Estimates:**\n\n*   **1s:** A player in an orange bib bends over near the ball in the center circle.\n*   **1s - 9s:** The players remain largely static in a small group, with the ball stationary on the pitch.\n*   **10s:** The player who was bent over stands up and walks away from the ball.\n*   **11s - 15s:** The group of players in orange bibs walks casually around the center circle.",
+  "processing_time_seconds": 20.2542245388031,
+  "status": "success"
+}

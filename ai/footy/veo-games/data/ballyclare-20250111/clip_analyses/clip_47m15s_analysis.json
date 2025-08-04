@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_47m15s.mp4",
+  "start_seconds": 2835,
+  "end_seconds": 2850,
+  "duration": 15,
+  "timestamp": "47:15",
+  "analysis_timestamp": "2025-07-31T20:27:22.983713",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\n**Main Action Description**\nThis clip shows a pre-match warm-up routine. Three players\u2014two in orange bibs and one in a yellow top\u2014are in the center of the pitch, casually passing a ball between them in a small keep-away drill.\n\n**Key Timing Estimates**\n*   **0s**: Three players are gathered in a small circle for a warm-up drill.\n*   **4s**: The player in the yellow top makes a short, one-touch pass to a teammate in an orange bib.\n*   **7s**: The player in the orange bib passes the ball to the other player in an orange bib.\n*   **8s - 15s**: The players continue the low-intensity passing drill, keeping the ball contained within their small circle.",
+  "processing_time_seconds": 23.83490490913391,
+  "status": "success"
+}

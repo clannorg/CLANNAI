@@ -1,0 +1,134 @@
+{
+  "team_name": "Red Team",
+  "match_id": "newmills-20250222",
+  "generated_at": "2025-08-02T18:24:30.669024",
+  "summary": {
+    "overall_rating": "B+",
+    "key_identity": "Red Team utilizes effective crosses and set-pieces to generate scoring opportunities.",
+    "match_outcome_assessment": "Win. Red team secured a 3-2 victory primarily due to converting set-piece opportunities and exploiting crosses from the left wing. However, defensive vulnerabilities at set-pieces need addressing."
+  },
+  "strengths": [
+    {
+      "title": "Set-Piece Conversion",
+      "description": "Red Team demonstrates a strong ability to convert set-pieces into goals, particularly penalties and free-kicks, showcasing efficient set-play routines and confident execution.",
+      "evidence_timestamps": [
+        "116:35",
+        "129:08"
+      ],
+      "impact_score": 90,
+      "key_evidence": "The team scored two penalties at 116:35 and secured a goal from open play following a cross at 86:39. This demonstrates good ability to create chances in open play. The goal at 129:08 provides further evidence of converting crosses."
+    },
+    {
+      "title": "Effective Crossing from the Left Wing",
+      "description": "The team scored a goal resulting from a cross delivered from the left wing, suggesting a targeted attacking strategy focusing on exploiting the left flank to create goal-scoring opportunities.",
+      "evidence_timestamps": [
+        "86:39",
+        "129:08"
+      ],
+      "impact_score": 80,
+      "key_evidence": "Goal scored at 86:39 originated from a cross on the left. The goal at 129:08 was also a well-worked goal from a low cross from the left."
+    }
+  ],
+  "weaknesses": [
+    {
+      "title": "Set-Piece Defensive Vulnerability",
+      "description": "Red Team conceded two goals through set-pieces (penalty and direct free-kick), indicating a weakness in their defensive organization and ability to defend set-plays effectively.",
+      "evidence_timestamps": [
+        "44:04",
+        "132:13"
+      ],
+      "severity_score": 85,
+      "cost_analysis": "Conceding goals from set-pieces can directly lead to dropped points in crucial matches, undermining the team's overall performance and competitive edge."
+    },
+    {
+      "title": "Goalkeeper Saves Required",
+      "description": "The Red Team required a significant number of saves (17) by the goalkeeper which indicates a potential problem with the strength of the Red Team's overall defense.",
+      "evidence_timestamps": [
+        "22:04",
+        "23:12",
+        "23:43",
+        "23:57",
+        "28:48",
+        "45:49",
+        "50:29",
+        "53:13",
+        "54:44",
+        "65:01",
+        "81:54",
+        "85:18",
+        "86:48",
+        "99:28",
+        "114:55",
+        "117:05",
+        "127:26",
+        "131:49",
+        "132:17",
+        "133:37"
+      ],
+      "severity_score": 70,
+      "cost_analysis": "Relying heavily on saves to prevent goals places immense pressure on the keeper and highlights a need for improved defensive structure. This is a high risk strategy and unsustainable in the long-term"
+    }
+  ],
+  "training_drills": [
+    {
+      "focus_area": "Defensive Set Piece Organization",
+      "drill_name": "Defensive Wall Positioning & Clearance",
+      "description": "Players practice forming a compact and effective defensive wall against free-kicks. Focus on correct positioning, jumping technique, and coordinated clearances.  Drill also includes practicing marking zonal areas during corners and free kicks to minimize chances of opponents getting free headers.",
+      "duration": "30 minutes",
+      "equipment": "Cones, mannequins, footballs",
+      "success_metrics": "Reduced number of dangerous free-kicks conceded and improved clearance rate during set-pieces. Measure wall effectiveness."
+    },
+    {
+      "focus_area": "Attacking Cross Delivery & Finishing",
+      "drill_name": "Wide Play & Finishing Drill",
+      "description": "Players practice delivering accurate crosses from wide positions (especially the left wing) into the box, while teammates focus on timing their runs and finishing with headers or volleys. Focus on both low and high crosses. A defender should be added to apply pressure to the attackers.",
+      "duration": "20 minutes",
+      "equipment": "Cones, footballs, goal",
+      "success_metrics": "Increased number of accurate crosses delivered and a higher conversion rate of crosses into shots on goal."
+    }
+  ],
+  "key_moments": [
+    {
+      "timestamp": "86:39",
+      "event_type": "goal",
+      "description": "A goal was scored from close range following a cross delivered from the left wing.",
+      "tactical_significance": "Demonstrates the effectiveness of attacking the opponent's defense through crosses, highlighting the importance of wing play and creating chances from wide areas.",
+      "learning_point": "Reinforce the importance of accurate cross delivery and effective attacking movement in the box to capitalize on crossing opportunities."
+    },
+    {
+      "timestamp": "~116:35",
+      "event_type": "goal",
+      "description": "A penalty was awarded to the Red team after a player was fouled from behind inside the box. The subsequent kickoff by the opposing team confirms the penalty was scored.",
+      "tactical_significance": "Winning penalties represents a tactical advantage. It demonstrates the team's ability to penetrate the opposition's defense and force errors.",
+      "learning_point": "Continue to emphasize attacking movements that draw fouls in dangerous areas, and maintain composure when converting penalty kicks."
+    }
+  ],
+  "performance_metrics": {
+    "attacking": {
+      "goals_scored": 3,
+      "shots_total": 20,
+      "conversion_rate": "15%",
+      "set_piece_threat": "High"
+    },
+    "defending": {
+      "goals_conceded": 2,
+      "saves_required": 17,
+      "defensive_actions": "High pressure, but vulnerable on set pieces",
+      "set_piece_vulnerability": "Medium"
+    }
+  },
+  "next_match_focus": [
+    {
+      "priority": "High",
+      "area": "Defensive Set Pieces",
+      "action": "Wall positioning drills and zonal marking improvement",
+      "expected_improvement": "Reduce free kick goals conceded and minimize headed chances from corners."
+    },
+    {
+      "priority": "Medium",
+      "area": "Shooting Accuracy",
+      "action": "Shooting drills with emphasis on placement",
+      "expected_improvement": "Improve the conversion rate from shots inside the penalty area."
+    }
+  ]
+}

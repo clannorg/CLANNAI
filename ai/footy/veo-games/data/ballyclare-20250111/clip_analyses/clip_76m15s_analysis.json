@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_76m15s.mp4",
+  "start_seconds": 4575,
+  "end_seconds": 4590,
+  "duration": 15,
+  "timestamp": "76:15",
+  "analysis_timestamp": "2025-07-31T20:29:53.163664",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe red team takes a set piece from the left side, delivering a cross into the box. The goalkeeper punches the ball clear, but it falls to a red attacker whose subsequent shot is blocked, resulting in a scramble inside the penalty area.\n\n**Key Timing Estimates:**\n*   **6s:** The red team delivers an inswinging cross into the penalty area from the left.\n*   **8s:** The defending goalkeeper punches the ball away.\n*   **10s:** A red player at the edge of the box gains control of the cleared ball.\n*   **11s:** The red player takes a shot on goal.\n*   **12s:** A player from the black team blocks the shot.\n*   **14s:** The ball deflects, and players from both teams scramble for possession inside the penalty box.",
+  "processing_time_seconds": 17.157591581344604,
+  "status": "success"
+}

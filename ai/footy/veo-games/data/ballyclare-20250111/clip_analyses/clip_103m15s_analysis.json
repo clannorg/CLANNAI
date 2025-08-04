@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_103m15s.mp4",
+  "start_seconds": 6195,
+  "end_seconds": 6210,
+  "duration": 15,
+  "timestamp": "103:15",
+  "analysis_timestamp": "2025-07-31T20:23:59.596629",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe black team attempts to play a long ball out from their half, but it is intercepted by a red player. The red team quickly turns the interception into a fast counter-attack, advancing the ball into the black team's territory.\n\n- **4s:** The black team's player (No. 34) makes a forward pass from his own half under pressure.\n- **9s:** A red player intercepts the long pass with a header near the center circle.\n- **11s:** A teammate in red collects the loose ball from the header, securing possession.\n- **13s:** The red player with the ball drives forward as a black player slips and falls, opening up space for the attack.",
+  "processing_time_seconds": 21.40493941307068,
+  "status": "success"
+}

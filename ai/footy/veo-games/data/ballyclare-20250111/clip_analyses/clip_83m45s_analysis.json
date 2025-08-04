@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_83m45s.mp4",
+  "start_seconds": 5025,
+  "end_seconds": 5040,
+  "duration": 15,
+  "timestamp": "83:45",
+  "analysis_timestamp": "2025-07-31T20:30:12.317332",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe clip captures a scrappy period of play in the midfield with multiple quick interceptions by both teams. The sequence ends when a black player commits a foul, and the referee awards a free-kick to the red team inside their own half.\n\n**Key Timing Estimates:**\n*   **1s:** A black player attempts a forward pass into the red team's half.\n*   **2s:** A red player intercepts the pass, but their subsequent forward pass is immediately intercepted by the black team.\n*   **6s:** A black player fouls a red player who had just regained possession for their team.\n*   **7s:** The referee blows the whistle, signaling for a free-kick to the red team.\n*   **8s:** The red player places the ball on the ground to take the free-kick.",
+  "processing_time_seconds": 17.05577564239502,
+  "status": "success"
+}

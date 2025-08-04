@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_02m15s.mp4",
+  "start_seconds": 135,
+  "end_seconds": 150,
+  "duration": 15,
+  "timestamp": "02:15",
+  "analysis_timestamp": "2025-07-31T20:23:34.944623",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main action description:**\nThe Black team launches a long free kick from their own half deep into the Red team's territory. The Red team's defense effectively handles the high ball, controlling it and passing it safely back to their goalkeeper to restart play.\n\n**Key timing estimates:**\n*   **1s:** The Black team is set up for a free kick just inside their own half.\n*   **8s:** The Black team player takes the free kick, sending a long, aerial ball toward the Red team's goal.\n*   **12s:** A Red team defender positions himself well and controls the dropping ball with his chest outside the penalty area.\n*   **14s:** The Red defender calmly passes the ball back to his goalkeeper.",
+  "processing_time_seconds": 18.06239104270935,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_105m30s.mp4",
+  "start_seconds": 6330,
+  "end_seconds": 6345,
+  "duration": 15,
+  "timestamp": "105:30",
+  "analysis_timestamp": "2025-07-31T20:24:11.388616",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team attempts to build an attack through the midfield with short passes, but the black team's disciplined press forces a turnover. A black defender wins the ball with a well-timed tackle, immediately initiating a counter-attack.\n\n**Key Timing Estimates:**\n*   **1s:** A red player passes the ball forward from their own half into the center circle.\n*   **7s:** The red team works the ball into the opposition's half with a quick one-two pass combination.\n*   **12s:** A black player executes a clean sliding tackle, successfully dispossessing the red attacker.\n*   **14s:** The black team secures possession of the loose ball and begins to advance up the field.",
+  "processing_time_seconds": 20.259523153305054,
+  "status": "success"
+}

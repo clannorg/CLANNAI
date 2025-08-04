@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_65m00s.mp4",
+  "start_seconds": 3900,
+  "end_seconds": 3915,
+  "duration": 15,
+  "timestamp": "65:00",
+  "analysis_timestamp": "2025-07-31T20:29:27.690398",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the football clip:\n\nThe black team builds an attack that results in a blocked shot inside the penalty area. The red team's defense holds firm, and their goalkeeper collects the loose ball to regain possession.\n\n- **2s:** A black player on the left wing passes the ball into the penalty box.\n- **4s:** Another black player takes a first-time shot from just inside the penalty area.\n- **5s:** The shot is blocked by a sliding red defender.\n- **8s:** The red team's goalkeeper gathers the deflected, loose ball.\n- **13s:** The goalkeeper holds the ball, allowing play to reset as both teams get back into position.",
+  "processing_time_seconds": 15.223167896270752,
+  "status": "success"
+}

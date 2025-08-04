@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_90m00s.mp4",
+  "start_seconds": 5400,
+  "end_seconds": 5415,
+  "duration": 15,
+  "timestamp": "90:00",
+  "analysis_timestamp": "2025-07-31T20:30:29.646590",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team orchestrates a dangerous attack with a through ball into the penalty box, resulting in a low shot on target. The red team's goalkeeper makes a crucial diving save, and a defender follows up to clear the immediate danger from the goalmouth.\n\n### Key Timing Estimates\n*   **2s:** A player from the black team plays a through pass into the penalty area for a teammate making a run.\n*   **4s:** The black attacker takes a right-footed shot from the right side of the box.\n*   **5s:** The red team's goalkeeper makes a diving save to his left, pushing the ball away from the goal.\n*   **7s:** A red defender clears the loose ball away from the goal line after the rebound.\n*   **11s:** The black team regains possession near the top of the penalty area.",
+  "processing_time_seconds": 18.50985813140869,
+  "status": "success"
+}

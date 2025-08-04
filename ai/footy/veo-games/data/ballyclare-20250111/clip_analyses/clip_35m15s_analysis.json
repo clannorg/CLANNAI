@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_35m15s.mp4",
+  "start_seconds": 2115,
+  "end_seconds": 2130,
+  "duration": 15,
+  "timestamp": "35:15",
+  "analysis_timestamp": "2025-07-31T20:26:40.797455",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the football clip provided.\n\n### Main Action Description\nThe black team maintains possession, patiently building play from their own half. They circulate the ball from the right flank, into the center, and then switch the play over to the left wing.\n\n### Key Timing Estimates\n*   **2s:** A black player on the right wing passes the ball forward to a central midfielder.\n*   **7s:** Under light pressure from a red player, the black midfielder passes the ball back to a central defender in the center circle.\n*   **12s:** The central defender passes the ball across the field to a teammate on the left flank.\n*   **14s:** The black player on the left wing receives the pass, continuing their team's possession.",
+  "processing_time_seconds": 13.934916496276855,
+  "status": "success"
+}

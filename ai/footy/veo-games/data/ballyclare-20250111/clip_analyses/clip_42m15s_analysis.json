@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_42m15s.mp4",
+  "start_seconds": 2535,
+  "end_seconds": 2550,
+  "duration": 15,
+  "timestamp": "42:15",
+  "analysis_timestamp": "2025-07-31T20:27:03.820648",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n**Main Action Description**\nThe scene shows a light warm-up session, with players in black and green training kits casually passing the ball amongst themselves on one side of the pitch. An individual in an orange bib, likely a goalkeeper or coach, stands near the goal area.\n\n**Key Timing Estimates**\n\n*   **2s:** A player in a black/green top near the center of the pitch receives a pass.\n*   **5s:** The player passes the ball to a teammate positioned further upfield.\n*   **8s:** A different player in a black/green top on the left side of the pitch controls the ball.\n*   **11s:** The player on the left makes a simple ground pass across the field to a central teammate.",
+  "processing_time_seconds": 20.461950540542603,
+  "status": "success"
+}

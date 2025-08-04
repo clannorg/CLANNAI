@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_83m15s.mp4",
+  "start_seconds": 4995,
+  "end_seconds": 5010,
+  "duration": 15,
+  "timestamp": "83:15",
+  "analysis_timestamp": "2025-07-31T20:30:10.330931",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip provided.\n\n**Main Action Description:**\nThe red team's goalkeeper receives a back-pass and, under light pressure from a black team forward, launches a long clearance upfield. Players from both teams move into the central area to contest the ball as it travels through the air.\n\n**Key Timing Estimates:**\n*   **2s:** The red team's goalkeeper receives the ball just inside his penalty area.\n*   **4s:** The goalkeeper kicks the ball long upfield with his left foot.\n*   **9s:** Midfield players from both the red and black teams position themselves near the center circle to challenge for the aerial ball.",
+  "processing_time_seconds": 15.747382402420044,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_13m00s.mp4",
+  "start_seconds": 780,
+  "end_seconds": 795,
+  "duration": 15,
+  "timestamp": "13:00",
+  "analysis_timestamp": "2025-07-31T20:24:29.588719",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Certainly! Here is an analysis of the provided football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe red team dispossesses the black team in the midfield and quickly transitions to an attack. A red player takes an ambitious long-range shot from well outside the penalty area, which sails over the goalkeeper and into the net for a goal.\n\n**Key Timing Estimates:**\n\n*   **1s:** A red player intercepts a pass from the black team near the halfway line.\n*   **2s:** The red player immediately makes a forward pass to a teammate in an advanced position.\n*   **6s:** The receiving red player takes a first-time shot from approximately 30 yards out.\n*   **8s:** The ball flies over the outstretched goalkeeper and lands in the back of the net for a goal.\n*   **11s:** Players from the black team react to conceding the goal as play stops.",
+  "processing_time_seconds": 14.575678586959839,
+  "status": "success"
+}

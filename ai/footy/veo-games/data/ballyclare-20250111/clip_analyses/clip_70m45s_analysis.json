@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_70m45s.mp4",
+  "start_seconds": 4245,
+  "end_seconds": 4260,
+  "duration": 15,
+  "timestamp": "70:45",
+  "analysis_timestamp": "2025-07-31T20:29:39.730940",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe clip captures the moments just before a kick-off or restart from the center circle. Players from both the Red and Black teams get into their formations as the Black team prepares to put the ball into play.\n\n**Key Timing Estimates:**\n- **0s:** The scene is set with the ball on the center spot, with the Black team preparing to kick-off and the Red team in their own half.\n- **6s:** A player from the Black team jogs towards the center circle to get into position for the restart.\n- **10s:** The Black team is organized in the center circle, waiting for the referee's signal.\n- **14s:** The Red team remains in a set defensive formation, anticipating the start of play.",
+  "processing_time_seconds": 20.648648023605347,
+  "status": "success"
+}

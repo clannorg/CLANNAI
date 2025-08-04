@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_64m30s.mp4",
+  "start_seconds": 3870,
+  "end_seconds": 3885,
+  "duration": 15,
+  "timestamp": "64:30",
+  "analysis_timestamp": "2025-07-31T20:29:14.124560",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe Black team takes a wide free-kick from the left, but the Red team's defense effectively heads the cross clear. The Red team then wins the second ball in midfield and establishes possession in their own half.\n\n- **3s:** The Black team's player takes a free-kick, delivering a cross into the penalty area.\n- **5s:** A Red defender in the center of the box jumps and heads the ball away to clear the danger.\n- **9s:** Red player #3 gains control of the cleared ball near the center circle.\n- **12s:** The Red player passes the ball back to a teammate, securing possession and starting a new phase of play from their own half.",
+  "processing_time_seconds": 18.441158056259155,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_06m30s.mp4",
+  "start_seconds": 390,
+  "end_seconds": 405,
+  "duration": 15,
+  "timestamp": "06:30",
+  "analysis_timestamp": "2025-07-31T20:23:37.471065",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the 15-second football clip.\n\n**Main action description:**\nThe black team initiates play from the back, circulating the ball amongst their defenders and goalkeeper. The red team applies a high press, attempting to disrupt the build-up play in the black team's defensive third.\n\n**Key timing estimates:**\n*   **2s:** The black team starts play from the center circle with a backward pass.\n*   **7s:** A black defender passes the ball back to their goalkeeper in the yellow jersey.\n*   **10s:** The goalkeeper, under pressure from a red attacker, passes the ball out to a defender on the right side.\n*   **13s:** The black defender on the right wing controls the ball and assesses their options forward.",
+  "processing_time_seconds": 20.581915616989136,
+  "status": "success"
+}

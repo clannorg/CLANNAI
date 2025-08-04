@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_76m00s.mp4",
+  "start_seconds": 4560,
+  "end_seconds": 4575,
+  "duration": 15,
+  "timestamp": "76:00",
+  "analysis_timestamp": "2025-07-31T20:29:56.490523",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe Red team delivers a free-kick into the penalty area, which is not fully cleared by the defending Black team. A Red player strikes the loose ball towards goal, but a Black defender makes a vital block to deny the scoring opportunity.\n\n- **7s:** A Red team player takes a free-kick from the right side, curling it into the penalty box.\n- **10s:** A Black team defender attempts to head the ball clear, but it drops down inside the area.\n- **12s:** A Red team attacker shoots the falling ball with their right foot from near the penalty spot.\n- **13s:** A Black team defender slides in and successfully blocks the powerful shot.",
+  "processing_time_seconds": 21.22476053237915,
+  "status": "success"
+}

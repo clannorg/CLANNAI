@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_45m15s.mp4",
+  "start_seconds": 2715,
+  "end_seconds": 2730,
+  "duration": 15,
+  "timestamp": "45:15",
+  "analysis_timestamp": "2025-07-31T20:27:18.760708",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in this football clip.\n\n**Main Action Description:**\nPlayers in orange bibs are conducting a casual warm-up, passing the ball between them in their own half of the pitch. The team in red stands passively near the center circle, observing the drill.\n\n**Key Timing Estimates:**\n*   **2s:** An orange player on the right side of the pitch stands with the ball at their feet.\n*   **6s:** The player passes the ball infield towards a teammate near the center circle.\n*   **9s:** The ball is immediately passed back to the same player on the right wing.\n*   **14s:** The player on the wing makes another pass back towards the center of the pitch.",
+  "processing_time_seconds": 23.65173625946045,
+  "status": "success"
+}

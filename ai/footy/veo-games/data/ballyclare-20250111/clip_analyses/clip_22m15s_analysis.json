@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_22m15s.mp4",
+  "start_seconds": 1335,
+  "end_seconds": 1350,
+  "duration": 15,
+  "timestamp": "22:15",
+  "analysis_timestamp": "2025-07-31T20:26:24.162057",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe team in black initiates an attack from their own half with a long, aerial pass over the top to the left flank. The red team's defense effectively deals with the long ball, heading it back towards their own goal before another defender makes a decisive clearance from the penalty area.\n\n**Key Timing Estimates:**\n- **5s:** A player from the black team executes a long, diagonal pass from deep inside his own half.\n- **9s:** A red defender near the edge of the penalty area wins the aerial duel, heading the ball defensively.\n- **10s:** Another red player clears the ball away from danger near the goal line.\n- **14s:** The cleared ball travels back towards the midfield, where both teams move to regain possession.",
+  "processing_time_seconds": 20.424017190933228,
+  "status": "success"
+}

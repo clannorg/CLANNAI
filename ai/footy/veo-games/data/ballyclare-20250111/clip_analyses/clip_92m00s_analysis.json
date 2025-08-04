@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_92m00s.mp4",
+  "start_seconds": 5520,
+  "end_seconds": 5535,
+  "duration": 15,
+  "timestamp": "92:00",
+  "analysis_timestamp": "2025-07-31T20:30:35.475218",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the key actions in this football clip.\n\n**Main action description:**\nThe red team takes a direct free-kick from just outside the penalty area, which is comfortably saved by the black team's goalkeeper. The keeper then quickly distributes the ball upfield to restart play.\n\n**Key timing estimates:**\n*   **0s:** Red team prepares to take a free kick on the edge of the penalty area.\n*   **5s:** The red player shoots the free-kick directly at the goal.\n*   **7s:** The black team's goalkeeper catches the ball, making a straightforward save.\n*   **12s:** The goalkeeper punts the ball long down the field.\n*   **15s:** The ball is in the air over midfield as players from both teams prepare to challenge for it.",
+  "processing_time_seconds": 19.85820770263672,
+  "status": "success"
+}

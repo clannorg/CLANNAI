@@ -1,0 +1,18 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_052
+==================================================
+
+Okay, I'm ready to analyze the 15-second football video clip.
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_052 (Starts at 8m30s)
+==================================================
+
+8m34s: Player in blue/black dribbles towards the goal. - ONGOING PLAY
+8m44s: Player in blue/black continues dribbling. - ONGOING PLAY
+
+**KEY MOMENTS:**
+- The clip shows a player dribbling near the goal.
+
+**MATCH FLOW:**
+- The clip shows possession near the goal. No shot or attempt on goal.
+```

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_34m30s.mp4",
+  "start_seconds": 2070,
+  "end_seconds": 2085,
+  "duration": 15,
+  "timestamp": "34:30",
+  "analysis_timestamp": "2025-07-31T20:26:43.354934",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Great, here's an analysis of the football clip provided.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team calmly builds possession from their own half, circulating the ball from the left touchline across their backline and into the center circle. The red team maintains a compact defensive shape, applying light pressure as the black team advances.\n\n**Key Timing Estimates:**\n\n*   **1s:** Black player No. 3 receives a pass near the left touchline.\n*   **4s:** The ball is quickly moved infield to a central black player.\n*   **8s:** The play is switched to a black player on the right side of the defense.\n*   **11s:** A firm pass is played forward into the center circle.\n*   **13s:** A black midfielder receives the ball under pressure in the center of the pitch.",
+  "processing_time_seconds": 17.41827964782715,
+  "status": "success"
+}

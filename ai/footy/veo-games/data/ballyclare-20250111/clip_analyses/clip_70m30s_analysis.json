@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_70m30s.mp4",
+  "start_seconds": 4230,
+  "end_seconds": 4245,
+  "duration": 15,
+  "timestamp": "70:30",
+  "analysis_timestamp": "2025-07-31T20:29:42.134136",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in the football clip.\n\nThe red team attempts to launch an attack from their own half with a long ball forward. A black defender successfully wins the initial aerial challenge, and a foul is then committed by a red player, resulting in a free-kick for the black team.\n\n**Key Timing Estimates:**\n*   **2s:** A red player passes the ball back to his defense under pressure from an opponent.\n*   **6s:** The red team plays a long, high ball forward from their own half.\n*   **8s:** A black defender wins the header against a red attacker in the air.\n*   **9s:** A foul is committed by a red player on a black player competing for the second ball.\n*   **10s:** The referee blows the whistle, stopping play and awarding a free-kick to the black team.",
+  "processing_time_seconds": 23.084254026412964,
+  "status": "success"
+}

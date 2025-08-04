@@ -1,0 +1,18 @@
+{
+  "total_compressed_clips": 451,
+  "original_clips_processed": 451,
+  "compression_stats": {
+    "total_original_size_mb": 3182.7299375534058,
+    "total_compressed_size_mb": 466.19702911376953,
+    "overall_compression_ratio": 85.35229069821301,
+    "processing_time_seconds": 1785.7834849357605,
+    "compression_speed_clips_per_second": 0.25255021328424015
+  },
+  "settings": {
+    "resolution": "640x480",
+    "video_codec": "libx264",
+    "crf": 23,
+    "audio_codec": "aac",
+    "audio_bitrate": "96k"
+  }
+}

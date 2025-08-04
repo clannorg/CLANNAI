@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_56m45s.mp4",
+  "start_seconds": 3405,
+  "end_seconds": 3420,
+  "duration": 15,
+  "timestamp": "56:45",
+  "analysis_timestamp": "2025-07-31T20:27:48.915339",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This is a great, clear clip of the moments just before a kick-off. Here is an analysis of the action.\n\nThe red and black teams are setting up in their respective halves for a kick-off. Players take their final positions while the red team waits with the ball at the center spot for the signal to begin play.\n\n- **0s:** The red and black teams are on the field, preparing for a restart from the center circle.\n- **4s:** A player from the black team bends over to adjust his equipment near the center line.\n- **9s:** The black player moves back into his team's formation in their defensive half.\n- **14s:** Both teams are now set in their formations, waiting for the referee to start the match.",
+  "processing_time_seconds": 21.43616795539856,
+  "status": "success"
+}

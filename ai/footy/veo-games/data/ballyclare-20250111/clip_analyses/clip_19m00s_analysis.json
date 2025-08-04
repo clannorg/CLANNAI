@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_19m00s.mp4",
+  "start_seconds": 1140,
+  "end_seconds": 1155,
+  "duration": 15,
+  "timestamp": "19:00",
+  "analysis_timestamp": "2025-07-31T20:24:45.742387",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's a breakdown of the football clip.\n\n**Main Action Description**\nThe black team launches a quick attack down the left flank, delivering a cross into the penalty area. The red team's defense scrambles to cover, ultimately blocking the resulting shot from the right side of the box.\n\n**Key Timing Estimates**\n\n*   **2s:** The black player (#20) receives the ball on the left side of the pitch.\n*   **7s:** The black player crosses the ball from the left wing into the penalty area.\n*   **10s:** Another black player receives the cross inside the box on the right-hand side.\n*   **13s:** The black player takes a shot on goal.\n*   **14s:** A red defender successfully blocks the shot.",
+  "processing_time_seconds": 16.153545141220093,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_103m00s.mp4",
+  "start_seconds": 6180,
+  "end_seconds": 6195,
+  "duration": 15,
+  "timestamp": "103:00",
+  "analysis_timestamp": "2025-07-31T20:23:58.949997",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team initiates play from a long goal kick, resulting in an aerial battle for possession in the midfield. The black team ultimately secures the loose ball and begins to advance into the red team's half.\n\n**Key Timing Estimates:**\n- **1s:** The black team's goalkeeper takes a goal kick toward the center circle.\n- **4s:** A black player wins the first header near the halfway line.\n- **5s:** Players from both teams challenge for a second header; the ball drops into midfield.\n- **10s:** A black player gains control of the loose ball just inside their own half.\n- **12s:** The black player passes the ball forward to a teammate advancing past the halfway line.\n- **14s:** The black team is in possession, moving the ball into the attacking third.",
+  "processing_time_seconds": 20.787647008895874,
+  "status": "success"
+}

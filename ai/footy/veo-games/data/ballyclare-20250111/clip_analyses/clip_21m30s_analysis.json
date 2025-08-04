@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_21m30s.mp4",
+  "start_seconds": 1290,
+  "end_seconds": 1305,
+  "duration": 15,
+  "timestamp": "21:30",
+  "analysis_timestamp": "2025-07-31T20:24:58.690839",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe clip shows the final pre-game moments as players from both teams get into position for kick-off. The red team makes a few casual passes before the black team sets up in the center circle to begin the match.\n\n**Key Timing Estimates:**\n- **1s:** A red team player passes the ball backward from the left touchline.\n- **7s:** A red player in his own half passes the ball forward towards the center circle.\n- **11s:** The black team's players move into the center circle to prepare for the kick-off.\n- **14s:** Both teams are now set in their respective formations, ready for the referee to start the game.",
+  "processing_time_seconds": 24.89972710609436,
+  "status": "success"
+}

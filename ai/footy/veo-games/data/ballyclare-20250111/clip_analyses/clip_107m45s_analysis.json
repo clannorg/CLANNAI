@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_107m45s.mp4",
+  "start_seconds": 6465,
+  "end_seconds": 6480,
+  "duration": 15,
+  "timestamp": "107:45",
+  "analysis_timestamp": "2025-07-31T20:24:18.539572",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the football clip.\n\n**Main action description:**\nThe black team takes an in-swinging corner kick from the right, resulting in a powerful header on target. The red team's goalkeeper makes a decisive two-handed punch to save the shot and deflect the ball out of play.\n\n**Key timing estimates:**\n*   **7s:** The black team player takes the corner kick from the right side.\n*   **9s:** An attacking black team player connects with a strong header in the penalty area.\n*   **10s:** The red team's goalkeeper makes a diving, two-handed save, punching the ball away.\n*   **13s:** The deflected ball goes out of play for another corner kick on the far side.",
+  "processing_time_seconds": 24.17729377746582,
+  "status": "success"
+}

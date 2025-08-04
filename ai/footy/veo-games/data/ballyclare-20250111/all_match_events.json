@@ -1,0 +1,648 @@
+{
+  "match_id": "ballyclare-20250111",
+  "processing_method": "sequential_batch_processing",
+  "events": [
+    {
+      "timestamp": "00:55",
+      "type": "goal",
+      "team": "team in black jerseys",
+      "description": "A powerful, low shot from outside the penalty area goes into the bottom left corner of the net.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "10:06",
+      "type": "goal",
+      "team": "team in black jerseys",
+      "description": "A spectacular long-range shot from the center of the pitch goes over the goalkeeper and into the goal.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "04:26",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "blocked",
+      "description": "Direct free-kick shot is defended and cleared by the red team.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "04:43",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "blocked",
+      "description": "Direct free-kick is struck into the defensive wall and headed clear.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "04:48",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "blocked",
+      "description": "A short free-kick routine leads to a shot attempt that is blocked by a rushing defender.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "09:33",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "saved",
+      "description": "First-time shot from inside the penalty area is saved by the diving goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "09:37",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "off_target",
+      "description": "Follow-up attempt on a loose ball from a tight angle goes across the face of the goal.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "10:28",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "blocked",
+      "description": "Powerful, first-time shot from just inside the penalty area is blocked by a defender's body.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "12:34",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "saved",
+      "description": "Shot on goal from a tight angle on the left side of the penalty area is saved by the goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "13:17",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "off_target",
+      "description": "Direct free-kick shot from outside the penalty area misses the target and goes wide.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "13:38",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "saved",
+      "description": "Following a free-kick, a header towards goal is safely caught by the goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 1
+    },
+    {
+      "timestamp": "13:00",
+      "type": "goal",
+      "team": "Red team",
+      "description": "An ambitious long-range shot from approximately 30 yards sails over the goalkeeper and into the net.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "105:45",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "blocked",
+      "description": "A first-time shot from a free-kick routine is blocked by a black defender inside the penalty area.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "106:30",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "off_target",
+      "description": "A long-range free kick is struck over the defensive wall but sails high over the crossbar.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "106:45",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "A powerful first-time volley from the edge of the box forces a diving save from the red goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "107:45",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "Following a corner, a strong header on target is saved by the goalkeeper's two-handed punch.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "15:00",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "blocked",
+      "description": "A direct free kick is shot towards goal but is blocked by the red team's defensive wall.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "15:15",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "A direct free kick shot is saved by the red goalkeeper, who dives to his left.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "15:15",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "A follow-up shot from the rebound at a tight angle is blocked by the grounded goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "15:30",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "off_target",
+      "description": "A direct free kick strikes the crossbar and bounces down, ultimately being cleared.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "16:00",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "saved",
+      "description": "A left-footed shot from inside the penalty area is met with a diving save by the black goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 2
+    },
+    {
+      "timestamp": "17:39",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "saved",
+      "description": "Long-range free-kick is deflected by the wall and then caught by the red goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 3
+    },
+    {
+      "timestamp": "19:13",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "blocked",
+      "description": "Following a cross, a shot from inside the penalty box is successfully blocked by a red defender.",
+      "confidence": "HIGH",
+      "source_batch": 3
+    },
+    {
+      "timestamp": "28:42",
+      "type": "shot",
+      "team": "red team",
+      "outcome": "saved",
+      "description": "On a swift counter-attack, a powerful long-range shot is well-saved by the goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 3
+    },
+    {
+      "timestamp": "31:51",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "blocked",
+      "description": "A shot from the top of the penalty arc is successfully blocked by a red defender.",
+      "confidence": "HIGH",
+      "source_batch": 3
+    },
+    {
+      "timestamp": "36:45",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "An attacker gets one-on-one and takes a right-footed shot from inside the box, which is met with a low, diving save by the Red team's goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "37:00",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "Direct free kick from the edge of the box is struck on target, but the red team's goalkeeper makes a diving, two-handed save.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "37:15",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "unknown_outcome",
+      "description": "A red player strikes a direct free-kick towards goal from a dangerous position. The clip ends as the ball is struck, so the outcome is not visible in this segment.",
+      "confidence": "MEDIUM",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "37:30",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "blocked",
+      "description": "An attacking free kick from the right side is crossed into the penalty area and a Red defender clears the danger with a header.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "39:45",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "An attacker takes a right-footed shot from the edge of the box that is saved by the goalkeeper, but the referee had already blown the whistle for a foul just before the shot was taken.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "40:00",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "blocked",
+      "description": "Following a cleared corner, a black team player attempts a volley from outside the penalty area which is immediately blocked by a red defender.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "40:15",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "off_target",
+      "description": "A direct free-kick from a dangerous position is shot high over the crossbar.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "40:30",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "saved",
+      "description": "A low, driven free-kick from outside the box is saved by the red team's goalkeeper, who dives to his left.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "40:45",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "saved",
+      "description": "A direct free kick from a dangerous position is shot on target and caught cleanly by the black team's goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 4
+    },
+    {
+      "timestamp": "51:30",
+      "type": "shot",
+      "team": "Red",
+      "outcome": "off_target",
+      "description": "During a warm-up drill, a player in red takes a shot on goal which is described as being off-screen.",
+      "confidence": "MEDIUM",
+      "source_batch": 5
+    },
+    {
+      "timestamp": "59:45",
+      "type": "shot",
+      "team": "Black",
+      "outcome": "blocked",
+      "description": "Following a low cross from the left wing, a black attacker's shot from the center of the box is blocked by a red defender.",
+      "confidence": "HIGH",
+      "source_batch": 5
+    },
+    {
+      "timestamp": "60:00",
+      "type": "shot",
+      "team": "Black",
+      "outcome": "blocked",
+      "description": "Following a cleared free-kick, a black player controls the ball at the edge of the area and takes a shot that is immediately blocked by a sliding red defender.",
+      "confidence": "HIGH",
+      "source_batch": 5
+    },
+    {
+      "timestamp": "60:30",
+      "type": "shot",
+      "team": "Red",
+      "outcome": "off_target",
+      "description": "A red player takes a direct free-kick from outside the penalty area, but the shot goes high over the crossbar.",
+      "confidence": "HIGH",
+      "source_batch": 5
+    },
+    {
+      "timestamp": "72:00",
+      "type": "goal",
+      "team": "team in black jerseys",
+      "description": "A shot from inside the penalty area results in a goal for the black team.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "62:30",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "blocked",
+      "description": "A shot from a free-kick routine at the edge of the area is blocked by a defender.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "63:15",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "saved",
+      "description": "A powerful, long-range shot from 30 yards is tipped over the bar by a diving goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "65:00",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "blocked",
+      "description": "A first-time shot from inside the penalty area is blocked by a sliding defender.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "66:45",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "off_target",
+      "description": "A shot from the edge of the penalty area goes high over the crossbar.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "68:00",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "goal",
+      "description": "Shot from close range after a free-kick deflection is scored. (Note: Rejected as a valid goal due to kickoff rule violation).",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "69:45",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "off_target",
+      "description": "A first-time shot from the right side of the box goes wide of the far post.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "71:15",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "saved",
+      "description": "A low shot from a through ball inside the penalty area is saved by the goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "71:30",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "saved",
+      "description": "A shot from just outside the penalty area is met with a diving save.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "74:30",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "saved",
+      "description": "A shot from outside the box is saved by the goalkeeper, who pushes the ball away.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "75:30",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "saved",
+      "description": "Goalkeeper makes a brave diving save at the feet of an onrushing striker to smother the ball.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "75:45",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "goal",
+      "description": "A penalty kick is successfully converted. (Note: Rejected as a valid goal due to lack of kickoff validation).",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "76:00",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "blocked",
+      "description": "Following a free-kick, a shot on a loose ball is blocked by a defender.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "76:15",
+      "type": "shot",
+      "team": "team in red jerseys",
+      "outcome": "blocked",
+      "description": "After a keeper punch, a shot from the edge of the box is blocked by a defender.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "76:45",
+      "type": "shot",
+      "team": "team in black jerseys",
+      "outcome": "blocked",
+      "description": "A first-time shot from inside the penalty area is deflected away by a sliding block.",
+      "confidence": "HIGH",
+      "source_batch": 6
+    },
+    {
+      "timestamp": "79:45",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "goal",
+      "description": "A close-range shot or penalty results in the ball hitting the back of the net. NOTE: The goal itself is invalidated by subsequent clips, but the action is described as a shot that scored.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "80:30",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "unknown",
+      "description": "Attacker brings a high ball down at the edge of the area and shoots with his left foot as the goalkeeper approaches.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "81:00",
+      "type": "shot",
+      "team": "red team",
+      "outcome": "blocked",
+      "description": "Following a partial clearance, a red player shoots from the edge of the box, but a black defender blocks it.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "83:00",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "saved",
+      "description": "A header from the center of the penalty area is caught cleanly by the red team's goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "84:15",
+      "type": "shot",
+      "team": "red team",
+      "outcome": "off_target",
+      "description": "An attacker inside the box hits a low cross/shot that travels across the face of goal with no one to connect.",
+      "confidence": "MEDIUM",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "84:30",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "saved",
+      "description": "A powerful first-time shot from outside the penalty area is tipped over the crossbar by a spectacular diving save.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "85:15",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "saved",
+      "description": "A long, high free kick from deep in their own half is sent towards goal and collected by the goalkeeper.",
+      "confidence": "MEDIUM",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "87:15",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "hit_crossbar",
+      "description": "A direct free-kick from just outside the penalty area powerfully strikes the crossbar and bounces back into play.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "90:00",
+      "type": "shot",
+      "team": "black team",
+      "outcome": "saved",
+      "description": "Following a through ball, an attacker takes a right-footed shot from inside the box, which is saved by the goalkeeper diving to his left.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "91:00",
+      "type": "shot",
+      "team": "red team",
+      "outcome": "saved",
+      "description": "From a low cross, a red attacker takes a first-time shot from the center of the box, which is saved by the goalkeeper diving to his left.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "92:00",
+      "type": "shot",
+      "team": "red team",
+      "outcome": "saved",
+      "description": "A direct free-kick from the edge of the penalty area is shot at goal and caught by the goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 7
+    },
+    {
+      "timestamp": "95:00",
+      "type": "goal",
+      "team": "Red team",
+      "description": "Penalty kick is successfully scored, sending the goalkeeper the wrong way.",
+      "confidence": "HIGH",
+      "source_batch": 8
+    },
+    {
+      "timestamp": "92:30",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "goal",
+      "description": "Long-range direct free kick shot flies over the wall into the top corner.",
+      "confidence": "HIGH",
+      "source_batch": 8
+    },
+    {
+      "timestamp": "93:00",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "saved",
+      "description": "First-time shot from an interception inside the penalty area is saved by the goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 8
+    },
+    {
+      "timestamp": "94:45",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "saved",
+      "description": "A player takes a first-time shot from the edge of the box on a cleared ball, forcing a save.",
+      "confidence": "HIGH",
+      "source_batch": 8
+    },
+    {
+      "timestamp": "95:00",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "goal",
+      "description": "Penalty kick is scored.",
+      "confidence": "HIGH",
+      "source_batch": 8
+    },
+    {
+      "timestamp": "96:30",
+      "type": "shot",
+      "team": "Black team",
+      "outcome": "goal",
+      "description": "A forward meets a low cross and scores with a right-footed shot.",
+      "confidence": "HIGH",
+      "source_batch": 8
+    },
+    {
+      "timestamp": "99:30",
+      "type": "shot",
+      "team": "Red team",
+      "outcome": "saved",
+      "description": "Attacker connects with a low cross for a first-time shot, which is saved by the goalkeeper.",
+      "confidence": "HIGH",
+      "source_batch": 8
+    }
+  ],
+  "batch_1_processing_time": 70.96026158332825,
+  "batch_2_processing_time": 51.98504614830017,
+  "batch_3_processing_time": 47.50450897216797,
+  "batch_4_processing_time": 41.94779324531555,
+  "batch_5_processing_time": 35.2206654548645,
+  "batch_6_processing_time": 54.782747983932495,
+  "batch_7_processing_time": 42.349167346954346,
+  "batch_8_processing_time": 36.58367681503296
+}

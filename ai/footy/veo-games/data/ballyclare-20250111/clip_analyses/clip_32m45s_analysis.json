@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_32m45s.mp4",
+  "start_seconds": 1965,
+  "end_seconds": 1980,
+  "duration": 15,
+  "timestamp": "32:45",
+  "analysis_timestamp": "2025-07-31T20:26:43.024145",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "The black team patiently controls possession, circulating the ball across their defensive and midfield lines. The red team maintains a compact defensive structure, applying light pressure but failing to win back the ball.\n\n**0s-2s**: A black player in the center circle passes the ball back to a defender.\n**5s-6s**: The black defender makes a pass to a teammate positioned wider on the right side of the pitch.\n**12s**: After holding possession, the player on the right passes the ball back to a central teammate.\n**14s**: The central player receives the pass and prepares to continue the build-up play.",
+  "processing_time_seconds": 18.75053644180298,
+  "status": "success"
+}

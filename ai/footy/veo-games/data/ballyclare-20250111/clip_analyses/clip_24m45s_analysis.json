@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_24m45s.mp4",
+  "start_seconds": 1485,
+  "end_seconds": 1500,
+  "duration": 15,
+  "timestamp": "24:45",
+  "analysis_timestamp": "2025-07-31T20:26:28.286713",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team controls possession, briefly losing it to an interception before quickly winning it back. They then switch the play from the right flank to the left with a long, accurate diagonal pass.\n\n*   **3s**: A red player in midfield intercepts a forward pass from the black team.\n*   **4s**: The black team immediately regains possession with a tackle in the center of the pitch.\n*   **8s**: A player from the black team dribbles the ball down the right side of the field.\n*   **11s**: The player executes a long, cross-field switch pass to the opposite (left) wing.\n*   **13s**: A black teammate on the left wing successfully receives the long pass.",
+  "processing_time_seconds": 24.51621699333191,
+  "status": "success"
+}

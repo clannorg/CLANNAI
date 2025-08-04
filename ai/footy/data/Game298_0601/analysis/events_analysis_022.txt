@@ -1,0 +1,20 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_022
+==================================================
+
+Okay, I've analyzed the 30-second football video clip starting at 10m30s into the match.
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_022 (Starts at 10m30s)
+==================================================
+
+10m34s: Ball is passed to a player in a blue/black kit - PASS
+10m42s: Player in a blue/black kit passes the ball - PASS
+10m50s: Player in white kit receives the ball after pass from a player in blue/black kit - PASS
+10m58s: Player in white kit dribbles the ball near the halfway line - DRIBBLING
+
+**KEY MOMENTS:**
+- Some passes are exchanged between the teams.
+
+**MATCH FLOW:**
+- The clip shows a normal football game with no major tactical changes or fouls.
+```

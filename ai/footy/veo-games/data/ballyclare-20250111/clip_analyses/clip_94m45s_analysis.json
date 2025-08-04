@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_94m45s.mp4",
+  "start_seconds": 5685,
+  "end_seconds": 5700,
+  "duration": 15,
+  "timestamp": "94:45",
+  "analysis_timestamp": "2025-07-31T20:32:50.616106",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here's a breakdown of the key events in the football clip:\n\nThe red team executes an attacking free-kick which is initially cleared by the black team's defense. The clearance falls to another red player who takes a powerful shot, forcing a save from the black team's goalkeeper.\n\n- **5s:** The referee blows the whistle, signaling for the free-kick to be taken.\n- **7s:** The red player delivers an in-swinging free-kick towards the penalty area.\n- **9s:** A black defender jumps and heads the ball away, clearing it towards the edge of the box.\n- **12s:** A red player runs onto the cleared ball and takes a first-time shot with his left foot.\n- **14s:** The black team's goalkeeper dives to his left to make a crucial save.",
+  "processing_time_seconds": 38.00766372680664,
+  "status": "success"
+}

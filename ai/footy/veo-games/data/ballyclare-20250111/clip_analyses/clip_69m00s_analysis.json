@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_69m00s.mp4",
+  "start_seconds": 4140,
+  "end_seconds": 4155,
+  "duration": 15,
+  "timestamp": "69:00",
+  "analysis_timestamp": "2025-07-31T20:29:36.005808",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team starts the match from the kickoff, controlling possession by passing the ball amongst their defenders in their own half. The red team assumes a defensive formation, applying light pressure without actively trying to win the ball back.\n\n### Key Timing Estimates\n**2s:** The whistle blows and the match begins.\n**3s:** The black team kicks off, with the player in the center circle passing the ball backward.\n**6s:** A black defender on the left receives a pass from a central midfielder.\n**9s:** The ball is played across the defensive line to a central defender.\n**14s:** The black central defender carries the ball forward towards the halfway line, still in possession.",
+  "processing_time_seconds": 18.9034321308136,
+  "status": "success"
+}

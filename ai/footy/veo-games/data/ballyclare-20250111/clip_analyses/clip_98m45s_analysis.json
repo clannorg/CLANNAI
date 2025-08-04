@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_98m45s.mp4",
+  "start_seconds": 5925,
+  "end_seconds": 5940,
+  "duration": 15,
+  "timestamp": "98:45",
+  "analysis_timestamp": "2025-07-31T20:33:14.796789",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\n**Main action description:**\nThe black team attempts to build an attack from their own half, but a red player intercepts a forward pass in the midfield. The red team quickly transitions to an attack, which is momentarily stopped by a tackle before another red player recovers the loose ball.\n\n**Key timing estimates:**\n*   **2s:** The black team circulates possession in their defensive half.\n*   **6s:** A red player intercepts a pass from the black team near the center circle, winning possession.\n*   **9s:** The red player advances and plays a forward pass to a teammate just inside the opposition's half.\n*   **12s:** The red attacker is immediately challenged by a black defender who makes a tackle.\n*   **14s:** A supporting red player recovers the loose ball from the tackle, continuing the attacking move.",
+  "processing_time_seconds": 62.057459592819214,
+  "status": "success"
+}

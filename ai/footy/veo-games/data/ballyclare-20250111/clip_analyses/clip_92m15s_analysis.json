@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_92m15s.mp4",
+  "start_seconds": 5535,
+  "end_seconds": 5550,
+  "duration": 15,
+  "timestamp": "92:15",
+  "analysis_timestamp": "2025-07-31T20:32:45.430209",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in the video clip.\n\nThe Red team prepares to take an attacking free kick from a central position outside the penalty area. The Black team organizes its defensive wall and marks players in the box, but the free kick is not taken before the clip ends.\n\n**0s:** The scene opens with the Red team set up for a free kick.\n**4s:** Red attacking players position themselves within the penalty area, waiting for the delivery.\n**8s:** The Black team's defensive wall is organized, and their goalkeeper is set on the goal line.\n**15s:** Players remain in their set positions as the clip concludes, still awaiting the kick.",
+  "processing_time_seconds": 32.8443169593811,
+  "status": "success"
+}

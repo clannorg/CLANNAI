@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_29m30s.mp4",
+  "start_seconds": 1770,
+  "end_seconds": 1785,
+  "duration": 15,
+  "timestamp": "29:30",
+  "analysis_timestamp": "2025-07-31T20:26:29.994849",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the football match clip.\n\n**Main Action Description:**\nThe clip captures a midfield turnover where the red team wins the ball and attempts to build an attack from the center. The black team quickly regains possession by intercepting a forward pass and immediately starts a counter-attack up the right flank.\n\n**Key Timing Estimates:**\n*   **2s:** A red player intercepts a pass and gains possession near the center circle.\n*   **6s:** The red team switches the play with a pass to a teammate on the left side of the pitch.\n*   **9s:** A forward pass is attempted by the red team into the black team's half.\n*   **11s:** The black team's right-sided defender intercepts the pass, stopping the attack.\n*   **14s:** The black player carries the ball over the halfway line, initiating a counter-attack.",
+  "processing_time_seconds": 26.09545612335205,
+  "status": "success"
+}

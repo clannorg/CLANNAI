@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_27m00s.mp4",
+  "start_seconds": 1620,
+  "end_seconds": 1635,
+  "duration": 15,
+  "timestamp": "27:00",
+  "analysis_timestamp": "2025-07-31T20:26:24.982956",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team attempts a long ball over the top, which is cleared by the red team's goalkeeper rushing out of the penalty area. The black team regains possession in midfield but their subsequent forward pass is intercepted by a red defender.\n\n**Key Timing Estimates:**\n*   **1s:** A black player heads the ball forward into the red team's half.\n*   **3s:** The red goalkeeper makes a long clearance with their foot from well outside the penalty box.\n*   **7s:** A black player controls the high ball near the center circle.\n*   **12s:** A red defender intercepts a forward pass from the black team near the halfway line.",
+  "processing_time_seconds": 21.162529706954956,
+  "status": "success"
+}

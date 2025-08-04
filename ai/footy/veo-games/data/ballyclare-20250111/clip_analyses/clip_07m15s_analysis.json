@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_07m15s.mp4",
+  "start_seconds": 435,
+  "end_seconds": 450,
+  "duration": 15,
+  "timestamp": "07:15",
+  "analysis_timestamp": "2025-07-31T20:23:36.326281",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in this football clip.\n\n**Main Action Description:**\nThe red team loses possession in the midfield due to a well-timed interception by the black team. The black team capitalizes on the turnover, controlling the ball and launching an attack down the right flank.\n\n**Key Timing Estimates:**\n*   **3s:** A black player intercepts a forward pass from the red team near the center circle.\n*   **7s:** The black team makes a short pass to maintain control in the center of the pitch.\n*   **12s:** The black team advances and plays a pass out to the right wing.\n*   **14s:** A black player receives the ball on the right side, continuing the forward attack.",
+  "processing_time_seconds": 19.43068218231201,
+  "status": "success"
+}

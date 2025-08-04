@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_41m15s.mp4",
+  "start_seconds": 2475,
+  "end_seconds": 2490,
+  "duration": 15,
+  "timestamp": "41:15",
+  "analysis_timestamp": "2025-07-31T20:27:09.419230",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe Red team's attack on the left wing breaks down, and the Black team quickly transitions to a counter-attack. The camera pans to follow the play as a Black player carries the ball from their own half deep into the Red team's territory.\n\n*   **1s:** A Red player's attempt to advance on the left wing is immediately stopped by a Black defender.\n*   **3s:** The Black team clears the ball, and a player collects it near the halfway line to start a counter-attack.\n*   **7s:** The Black player with the ball dribbles at speed past the center circle and into the Red team's half.\n*   **11s:** The play slows down on the right flank as the Red team gets defenders back into position, neutralizing the immediate threat.\n*   **14s:** Players from both teams begin to reset their positions across the field.",
+  "processing_time_seconds": 26.756476879119873,
+  "status": "success"
+}

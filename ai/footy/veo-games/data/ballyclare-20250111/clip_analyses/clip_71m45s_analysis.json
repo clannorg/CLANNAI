@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_71m45s.mp4",
+  "start_seconds": 4305,
+  "end_seconds": 4320,
+  "duration": 15,
+  "timestamp": "71:45",
+  "analysis_timestamp": "2025-07-31T20:29:41.313691",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Main Action Description\nThe red team attempts to build an attack from their own half with a long forward pass, but the black team's defense intercepts the ball and transitions into a counter-attack, carrying the ball over the halfway line.\n\n### Key Timing Estimates\n*   **1s:** Red player passes the ball from the left side of the pitch into a central area.\n*   **4s:** A red player receives the ball near the center circle.\n*   **7s:** The red midfielder plays a long, lofted pass forward into the black team's half.\n*   **9s:** A black defender calmly intercepts the pass and brings the ball under control.\n*   **11s:** The black defender passes the ball forward to a teammate to start a counter-attack.\n*   **14s:** The black team advances with the ball, crossing the halfway line.",
+  "processing_time_seconds": 19.730637788772583,
+  "status": "success"
+}

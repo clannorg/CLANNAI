@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_69m45s.mp4",
+  "start_seconds": 4185,
+  "end_seconds": 4200,
+  "duration": 15,
+  "timestamp": "69:45",
+  "analysis_timestamp": "2025-07-31T20:29:37.519669",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n### Main Action Description\nThe Red team attacks, and after a deflected cross, they regain possession on the edge of the box. A quick pass to the right sets up a Red attacker for a first-time shot, which goes wide of the far post.\n\n### Key Timing Estimates\n*   **1s:** A Red player's cross into the box is deflected by a Black defender.\n*   **3s:** A Red player intercepts a weak defensive clearance near the penalty area.\n*   **5s:** The Red player passes to a teammate positioned on the right side of the box.\n*   **6s:** The receiving Red player takes a shot on goal with his right foot.\n*   **7s:** The shot misses the target and goes wide for a goal kick.",
+  "processing_time_seconds": 19.101736783981323,
+  "status": "success"
+}

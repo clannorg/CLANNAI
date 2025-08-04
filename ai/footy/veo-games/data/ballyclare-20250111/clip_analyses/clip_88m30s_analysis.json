@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_88m30s.mp4",
+  "start_seconds": 5310,
+  "end_seconds": 5325,
+  "duration": 15,
+  "timestamp": "88:30",
+  "analysis_timestamp": "2025-07-31T20:30:27.623535",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip:\n\nThe black team initiates play with a long goal kick, but the red team wins the aerial battle in midfield. The red team quickly establishes control, attempts to build an attack on the left side, but a misplaced pass is intercepted by a black team player.\n\n- **1s:** The black team's goalkeeper takes a long goal kick.\n- **4s:** A red player wins the header near the center circle, knocking the ball down to a teammate.\n- **8s:** The red team plays a forward pass out to their left wing.\n- **13s:** A black team player intercepts a forward pass from the red winger, regaining possession for the black team.",
+  "processing_time_seconds": 18.95782470703125,
+  "status": "success"
+}

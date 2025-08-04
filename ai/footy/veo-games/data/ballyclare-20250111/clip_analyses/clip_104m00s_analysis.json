@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_104m00s.mp4",
+  "start_seconds": 6240,
+  "end_seconds": 6255,
+  "duration": 15,
+  "timestamp": "104:00",
+  "analysis_timestamp": "2025-07-31T20:23:57.465496",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe red team wins possession in the midfield and quickly launches a counter-attack. They move the ball efficiently through the center before spreading it out to the right wing to advance into the black team's half.\n\n**2s:** A red player pressures the black player on the ball near the halfway line.\n**5s:** The red team wins possession following the challenge in the center of the pitch.\n**6s:** A red player makes a quick forward pass to a teammate in the center circle.\n**10s:** The ball is passed out wide to a red player advancing on the right flank.\n**12s:** The red player on the wing receives the ball and carries it forward into the attacking third.",
+  "processing_time_seconds": 16.55212140083313,
+  "status": "success"
+}

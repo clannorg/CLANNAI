@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_10m15s.mp4",
+  "start_seconds": 615,
+  "end_seconds": 630,
+  "duration": 15,
+  "timestamp": "10:15",
+  "analysis_timestamp": "2025-07-31T20:24:16.300497",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here's an analysis of the football clip.\n\nThe red team wins possession in the midfield and immediately transitions to an attack, playing a long, direct ball over the top of the black team's defensive line.\n\n**2s:** The red team intercepts a pass and gains possession near the center circle.\n**6s:** After a short backward pass, a red player in their own half prepares to play the ball forward.\n**11s:** The red player executes a long, high pass forward over the black team's defense.\n**14s:** The ball travels towards the black team's goal as attacking and defending players give chase.",
+  "processing_time_seconds": 18.70104670524597,
+  "status": "success"
+}

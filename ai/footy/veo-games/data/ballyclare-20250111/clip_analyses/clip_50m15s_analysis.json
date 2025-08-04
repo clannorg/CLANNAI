@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_50m15s.mp4",
+  "start_seconds": 3015,
+  "end_seconds": 3030,
+  "duration": 15,
+  "timestamp": "50:15",
+  "analysis_timestamp": "2025-07-31T20:27:32.205898",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe scene captures a pre-game warm-up on an artificial pitch. Players in red kits and orange bibs are casually scattered around the field, performing light passing drills and individual ball work before a match.\n\n**Key Timing Estimates:**\n- **1s:** A player in an orange bib is on the ground doing a stretching exercise near the center circle.\n- **6s:** On the far left of the pitch, a player in a red kit makes a short pass to a teammate.\n- **9s:** A player in an orange bib, standing on the edge of the center circle, casually juggles the ball.\n- **12s:** On the right side, a player in an orange bib receives a pass from another teammate.",
+  "processing_time_seconds": 24.64764428138733,
+  "status": "success"
+}

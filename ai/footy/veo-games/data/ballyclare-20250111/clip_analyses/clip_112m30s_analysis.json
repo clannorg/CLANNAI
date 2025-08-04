@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_112m30s.mp4",
+  "start_seconds": 6750,
+  "end_seconds": 6765,
+  "duration": 15,
+  "timestamp": "112:30",
+  "analysis_timestamp": "2025-07-31T20:24:27.031836",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This video does not depict a football match in progress. Instead, it shows a person walking alongside an empty, snow-lined football pitch at night.\n\n**Key Timing Estimates:**\n- **0s:** The clip opens on a static shot of an empty, floodlit football pitch at night, with snow on the ground beside a red fence.\n- **4s:** A person enters the frame from the right, walking away from the camera.\n- **6s:** The person is fully in frame, carrying a bag and what appears to be camera equipment.\n- **12s:** The person continues walking down the path, moving further away from the camera.",
+  "processing_time_seconds": 16.336347818374634,
+  "status": "success"
+}

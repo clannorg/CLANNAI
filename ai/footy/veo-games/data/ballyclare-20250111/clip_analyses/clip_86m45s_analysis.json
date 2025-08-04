@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_86m45s.mp4",
+  "start_seconds": 5205,
+  "end_seconds": 5220,
+  "duration": 15,
+  "timestamp": "86:45",
+  "analysis_timestamp": "2025-07-31T20:30:23.726027",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events from the football clip.\n\nThe black team maintains possession in their own half, circulating the ball to draw out the opposition. The red team holds a compact, mid-block defensive shape, applying light pressure in the midfield.\n\n- **2s:** A black midfielder receives a pass from a defender.\n- **8s:** The black midfielder passes the ball out to his teammate (number 34) on the left wing.\n- **10s:** Under pressure from a red player, the winger (number 34) passes the ball backward to a central defender.\n- **14s:** The black central defender passes the ball across the backline to another defender, continuing their patient build-up play.",
+  "processing_time_seconds": 18.578157901763916,
+  "status": "success"
+}

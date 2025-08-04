@@ -1,0 +1,126 @@
+{
+  "match_info": {
+    "match_id": "newmills-20250222",
+    "title": "Newmills vs St Marys",
+    "date": "2025-02-22",
+    "venue": "Newmills",
+    "duration_minutes": 90,
+    "status": "completed"
+  },
+  "team_mapping": {
+    "red": {
+      "display_name": "Newmills",
+      "color": "#FF0000",
+      "is_home": true
+    },
+    "white": {
+      "display_name": "St Marys",
+      "color": "#FFFFFF",
+      "is_home": false
+    },
+    "black": {
+      "display_name": "St Marys",
+      "color": "#000000",
+      "is_home": false
+    }
+  },
+  "score_line": {
+    "red": 2,
+    "white": 1,
+    "final_score": "2-1",
+    "result": "red_win"
+  },
+  "event_statistics": {
+    "total_events": 106,
+    "goals": 3,
+    "shots": 9,
+    "fouls": 40,
+    "cards": 1,
+    "corners": 6,
+    "substitutions": 1
+  },
+  "key_moments": [
+    {
+      "timestamp": 7748,
+      "time_display": "7748",
+      "type": "goal",
+      "description": "Newmills scores, attacking down the left",
+      "team": "red",
+      "importance": "high"
+    },
+    {
+      "timestamp": 7933,
+      "time_display": "7933",
+      "type": "goal",
+      "description": "St Marys equalizes with a direct free kick",
+      "team": "white",
+      "importance": "high"
+    },
+    {
+      "timestamp": 1392,
+      "time_display": "1392",
+      "type": "shot",
+      "description": "St Marys shot saved inside the area.",
+      "team": "white",
+      "importance": "medium"
+    },
+    {
+      "timestamp": 5200,
+      "time_display": "5200",
+      "type": "shot",
+      "description": "St Marys shot saved from outside the box",
+      "team": "white",
+      "importance": "medium"
+    }
+  ],
+  "match_narrative": {
+    "opening_phase": "Newmills started strong, dominating possession in the first 30 minutes. St Marys defended resolutely, looking for opportunities on the counter.",
+    "key_turning_point": "Newmills' goal in the 78th minute shifted the momentum after a period of sustained pressure, but St Marys responded quickly with a direct free kick.",
+    "closing_phase": "The final 15 minutes saw both teams pushing for a winner, resulting in several fouls and a tense finish. St Marys pressed hard but failed to capitalize on late free-kicks.",
+    "match_summary": "Newmills secured a narrow victory over St Marys in a hard-fought match. The game was defined by individual moments of brilliance and punctuated by numerous fouls, ultimately decided by Newmills' late goal."
+  },
+  "tactical_overview": {
+    "dominant_team": "red",
+    "game_style": "attacking",
+    "key_patterns": [
+      "Left wing attacks",
+      "Free kicks into the area"
+    ],
+    "momentum_shifts": [
+      "After first Newmills goal",
+      "St Marys free kick goal"
+    ]
+  },
+  "display_metadata": {
+    "primary_color": "#FF0000",
+    "secondary_color": "#FFFFFF",
+    "highlight_events": [
+      7748,
+      7933,
+      1392
+    ],
+    "recommended_clips": [
+      {
+        "start": 7728,
+        "end": 7768,
+        "title": "Newmills Goal"
+      },
+      {
+        "start": 7913,
+        "end": 7953,
+        "title": "St Marys Free Kick Goal"
+      },
+      {
+        "start": 1372,
+        "end": 1412,
+        "title": "White team shot"
+      }
+    ]
+  },
+  "generation_info": {
+    "generated_at": "2025-08-04T14:54:07.816926",
+    "generator": "clann_ai_match_summary",
+    "version": "1.0",
+    "source_events": 106
+  }
+}

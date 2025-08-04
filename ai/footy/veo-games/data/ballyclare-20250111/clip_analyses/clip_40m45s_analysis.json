@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_40m45s.mp4",
+  "start_seconds": 2445,
+  "end_seconds": 2460,
+  "duration": 15,
+  "timestamp": "40:45",
+  "analysis_timestamp": "2025-07-31T20:27:00.279148",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip, focusing on the key actions and timings.\n\n### Football Clip Analysis\n\nThe red team attempts a direct free kick from a dangerous position just outside the penalty area. The black team's goalkeeper successfully defends the shot, catching the ball cleanly to end the threat.\n\n**Key Timings:**\n\n*   **3s:** A red team player takes a direct shot on goal from the free kick.\n*   **5s:** The black team's goalkeeper jumps and makes a clean catch.\n*   **6s:** The goalkeeper lands securely with the ball, gaining possession for the black team.",
+  "processing_time_seconds": 18.688326358795166,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_48m45s.mp4",
+  "start_seconds": 2925,
+  "end_seconds": 2940,
+  "duration": 15,
+  "timestamp": "48:45",
+  "analysis_timestamp": "2025-07-31T20:27:20.481950",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the provided football clip.\n\n**Main Action Description:**\nThe clip shows the orange team conducting a casual warm-up or training drill in the midfield. Players are performing dynamic stretches while passing the ball amongst themselves without any pressure from an opposing team.\n\n**Key Timing Estimates:**\n*   **1s:** An orange player in the center of the pitch passes the ball to a teammate.\n*   **3s:** Another orange player drops to the ground to begin a stretch.\n*   **7s:** The player who was on the ground performs a dynamic lunge stretch.\n*   **10s:** The same player transitions into a different stretching motion while other teammates continue to pass the ball in the background.\n*   **14s:** The player in the foreground remains stationary with the ball at their feet, observing the warm-up.",
+  "processing_time_seconds": 17.87452745437622,
+  "status": "success"
+}

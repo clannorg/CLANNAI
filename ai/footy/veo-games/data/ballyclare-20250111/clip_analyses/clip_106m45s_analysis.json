@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_106m45s.mp4",
+  "start_seconds": 6405,
+  "end_seconds": 6420,
+  "duration": 15,
+  "timestamp": "106:45",
+  "analysis_timestamp": "2025-07-31T20:24:15.766637",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team launches a long free kick, which is poorly cleared by the red defense. This sets up a black attacker for a powerful volley from the edge of the box, forcing a crucial diving save from the red goalkeeper.\n\n- **3s:** A player from the black team takes a long free kick from deep inside their own half.\n- **7s:** A red defender heads the ball, but it falls into the path of an onrushing opponent.\n- **9s:** The black attacker strikes a powerful first-time volley towards the goal.\n- **11s:** The red goalkeeper makes a diving save to his right, parrying the ball away.\n- **13s:** A red defender reacts quickly to clear the rebounded ball from the penalty area.",
+  "processing_time_seconds": 22.292973279953003,
+  "status": "success"
+}

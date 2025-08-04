@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_63m15s.mp4",
+  "start_seconds": 3795,
+  "end_seconds": 3810,
+  "duration": 15,
+  "timestamp": "63:15",
+  "analysis_timestamp": "2025-07-31T20:29:19.834333",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the football clip provided.\n\n**Main Action Description**\nThe red team wins possession in the opponent's half following a tackle. This turnover leads to a quick, powerful long-range shot that forces an excellent diving save from the black team's goalkeeper, resulting in a corner kick.\n\n**Key Timing Estimates**\n*   **6s:** A red player pressures and tackles a black player, winning possession in the opponent's half.\n*   **7s:** The ball is immediately laid off to a red team midfielder in the center.\n*   **9s:** The red midfielder takes a powerful, right-footed shot from approximately 30 yards out.\n*   **12s:** The black team's goalkeeper makes a full-stretch, diving save to his right, tipping the ball over the crossbar.",
+  "processing_time_seconds": 24.198400497436523,
+  "status": "success"
+}

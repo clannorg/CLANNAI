@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_03m00s.mp4",
+  "start_seconds": 180,
+  "end_seconds": 195,
+  "duration": 15,
+  "timestamp": "03:00",
+  "analysis_timestamp": "2025-07-31T20:23:37.312906",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\n**Main action description:**\nPlay is stopped due to an injury to a red team player inside the penalty area. A medic is on the field attending to the downed player, while the referee and other players from both teams stand by and wait.\n\n**Key timing estimates:**\n\n*   **0s:** The clip opens on a static scene with a red player on the ground in the penalty box.\n*   **4s:** Players from both the red and black teams are gathered around the injured player.\n*   **8s:** A person, likely a medic or physio, is crouched over and attending to the injured red player.\n*   **12s:** The referee and several players begin to slowly disperse from the central group as treatment continues.\n*   **14s:** The camera starts a slow pan to the right, showing more of the field as players wait for play to resume.",
+  "processing_time_seconds": 20.429762840270996,
+  "status": "success"
+}

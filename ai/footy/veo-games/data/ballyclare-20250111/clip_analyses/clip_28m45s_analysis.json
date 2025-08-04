@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_28m45s.mp4",
+  "start_seconds": 1725,
+  "end_seconds": 1740,
+  "duration": 15,
+  "timestamp": "28:45",
+  "analysis_timestamp": "2025-07-31T20:26:24.273385",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football match clip.\n\nThe black team builds an attack from their own half, successfully navigating the red team's midfield pressure. After regaining a loose ball following a tackle, the black team advances into the attacking half and slows the play to assess their options.\n\n*   **1s:** A black team player passes the ball forward from just inside their own half.\n*   **5s:** A red player executes a sliding tackle in the midfield, momentarily dispossessing the black team.\n*   **7s:** A different black team player collects the loose ball and dribbles past the halfway line.\n*   **13s:** The black player with the ball (wearing #7) slows down near the center circle, controlling possession and looking for a forward pass.",
+  "processing_time_seconds": 20.39983344078064,
+  "status": "success"
+}

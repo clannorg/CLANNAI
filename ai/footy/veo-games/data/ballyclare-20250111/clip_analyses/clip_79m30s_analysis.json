@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_79m30s.mp4",
+  "start_seconds": 4770,
+  "end_seconds": 4785,
+  "duration": 15,
+  "timestamp": "79:30",
+  "analysis_timestamp": "2025-07-31T20:30:06.864197",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe black team attempts to build an attack from deep within their own half, circulating the ball amongst their defenders. Their attempt to play a long ball forward down the left wing is intercepted by the red team's defense, halting the attack.\n\n**Key Timing Estimates:**\n- **1s:** The black team's midfielder passes the ball backward from the center circle.\n- **4s:** A black central defender passes the ball wide to their teammate on the left.\n- **9s:** The black player launches a long, aerial pass down the left touchline.\n- **13s:** A red defender positions himself and successfully intercepts the long pass, winning possession for the red team.",
+  "processing_time_seconds": 20.262606859207153,
+  "status": "success"
+}

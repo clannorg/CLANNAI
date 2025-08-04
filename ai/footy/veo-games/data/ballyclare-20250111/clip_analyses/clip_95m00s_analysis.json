@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_95m00s.mp4",
+  "start_seconds": 5700,
+  "end_seconds": 5715,
+  "duration": 15,
+  "timestamp": "95:00",
+  "analysis_timestamp": "2025-07-31T20:32:54.312964",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team takes a penalty kick against the black team's goalkeeper. The penalty taker successfully scores, sending the goalkeeper the wrong way as the shot is placed into the net.\n\n**Key Timing Estimates:**\n*   **5s:** The red player begins their run-up for the penalty kick.\n*   **7s:** The red player strikes the ball, aiming for the left side of the goal from their perspective.\n*   **8s:** The black team's goalkeeper dives to their own left, the opposite side of the shot.\n*   **9s:** The ball hits the back of the net, resulting in a goal for the red team.\n*   **11s:** The red team's players begin to celebrate the successful penalty.",
+  "processing_time_seconds": 41.69948768615723,
+  "status": "success"
+}

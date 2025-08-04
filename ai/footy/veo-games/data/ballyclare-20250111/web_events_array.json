@@ -1,0 +1,32 @@
+[
+  {
+    "type": "goal",
+    "timestamp": 54,
+    "description": "Following a scramble in the box, a Red team player scores from a loose ball.",
+    "team": "red"
+  },
+  {
+    "type": "goal",
+    "timestamp": 788,
+    "description": "The Black team plays a cross into the box, and a Red team defender's defensive header goes into their own net for an own goal.",
+    "team": "black"
+  },
+  {
+    "type": "goal",
+    "timestamp": 2468,
+    "description": "Black team scores directly from a free-kick taken just outside the penalty area.",
+    "team": "black"
+  },
+  {
+    "type": "goal",
+    "timestamp": 3401,
+    "description": "Following a restart, the Black team launches a quick attack, resulting in a goal from a shot.",
+    "team": "black"
+  },
+  {
+    "type": "goal",
+    "timestamp": 4090,
+    "description": "Black team scores from a free kick that was crossed into the box and headed into the goal.",
+    "team": "black"
+  }
+]

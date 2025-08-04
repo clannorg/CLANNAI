@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_46m15s.mp4",
+  "start_seconds": 2775,
+  "end_seconds": 2790,
+  "duration": 15,
+  "timestamp": "46:15",
+  "analysis_timestamp": "2025-07-31T20:27:20.449136",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This clip shows players from two teams warming up on the pitch, likely before a match or at halftime. There is no competitive play; players are casually jogging and passing the ball amongst themselves.\n\n**Key Timing Estimates:**\n\n*   **0s-3s:** Players are casually jogging and positioned around the center circle.\n*   **4s:** A player in an orange bib makes a short pass to a teammate within the center circle.\n*   **10s:** A player in an orange bib on the right side of the pitch kicks a long ball back towards the center.\n*   **12s:** The ball lands near the center circle, close to other players.\n*   **15s:** Players continue their casual warm-up movements.",
+  "processing_time_seconds": 22.617259979248047,
+  "status": "success"
+}

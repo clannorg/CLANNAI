@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_39m00s.mp4",
+  "start_seconds": 2340,
+  "end_seconds": 2355,
+  "duration": 15,
+  "timestamp": "39:00",
+  "analysis_timestamp": "2025-07-31T20:27:00.279921",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe red team attempts a long, direct pass forward from their own half, but the black team's defense successfully intercepts it. The black team then gains control of the ball in the midfield, slowing down the pace of the game to build their own attack.\n\n**Key Timings:**\n- **4s:** A red player plays a long, aerial ball forward from the halfway line.\n- **6s:** A black defender jumps and heads the ball away, clearing it from the danger zone.\n- **8s:** The black team secures possession of the loose ball in the center of the pitch.\n- **13s:** A black player with the ball walks near the center circle, controlling the play as both teams settle into position.",
+  "processing_time_seconds": 20.17785382270813,
+  "status": "success"
+}

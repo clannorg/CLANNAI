@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_80m00s.mp4",
+  "start_seconds": 4800,
+  "end_seconds": 4815,
+  "duration": 15,
+  "timestamp": "80:00",
+  "analysis_timestamp": "2025-07-31T20:30:07.392227",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe black team's goalkeeper initiates play with a long goal kick toward the center of the field. The red team successfully challenges for the high ball in the midfield, winning the aerial duel to gain possession as the clip ends.\n\n*   **1s:** The black team's goalkeeper prepares to take a goal kick.\n*   **9s:** The goalkeeper kicks the ball long toward the halfway line.\n*   **12s:** A red player and a black player jump to contest the high ball in the air.\n*   **13s:** The red player wins the header, flicking the ball forward to a teammate.",
+  "processing_time_seconds": 20.158747673034668,
+  "status": "success"
+}

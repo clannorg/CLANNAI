@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_80m30s.mp4",
+  "start_seconds": 4830,
+  "end_seconds": 4845,
+  "duration": 15,
+  "timestamp": "80:30",
+  "analysis_timestamp": "2025-07-31T20:30:10.109064",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the key events from the football clip.\n\n**Main action description:**\nThe Red team attempts to build play from their own half but is forced into a long ball by the Black team's pressure. A Black attacker expertly controls the high ball, drives into the penalty area, and gets a clear shot on goal.\n\n**Key timing estimates:**\n*   **1s**: The Red team has possession deep in their own half.\n*   **8s**: Under pressure, a Red player heads a long, hopeful ball forward over the top of the defense.\n*   **10s**: A Black attacker brings the high ball down with a great first touch at the edge of the penalty area.\n*   **12s**: The attacker takes another touch, moving into the box to create a shooting angle.\n*   **14s**: The Black attacker shoots with his left foot as the Red goalkeeper comes out to close him down.",
+  "processing_time_seconds": 21.254189491271973,
+  "status": "success"
+}

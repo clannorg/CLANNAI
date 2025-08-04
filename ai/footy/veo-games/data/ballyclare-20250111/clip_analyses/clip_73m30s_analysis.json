@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_73m30s.mp4",
+  "start_seconds": 4410,
+  "end_seconds": 4425,
+  "duration": 15,
+  "timestamp": "73:30",
+  "analysis_timestamp": "2025-07-31T20:29:50.887992",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team takes a long, aerial free kick from their own half, aiming for the red team's penalty box. The red team's defense successfully manages the set-piece, clearing the ball away before any shot can be taken.\n\n**Key Timing Estimates:**\n*   **1s:** A player from the black team takes a long-range free kick.\n*   **5s:** The ball descends into the red team's crowded penalty area.\n*   **6s:** The red team's defense heads the ball clear of immediate danger.\n*   **11s:** The attacking phase ends, and players from both teams begin to move back into their general formations.",
+  "processing_time_seconds": 18.773579835891724,
+  "status": "success"
+}

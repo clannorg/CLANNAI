@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_60m45s.mp4",
+  "start_seconds": 3645,
+  "end_seconds": 3660,
+  "duration": 15,
+  "timestamp": "60:45",
+  "analysis_timestamp": "2025-07-31T20:29:17.074788",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description**\nFollowing a long goal kick from the black team's goalkeeper, the red team wins the second ball in midfield. They quickly transition from defense to offense, launching a counter-attack with a swift pass out to the right wing.\n\n**Key Timing Estimates**\n*   **1s:** The black team's goalkeeper takes a long goal kick downfield.\n*   **3s:** A red player heads the ball down, winning the initial aerial duel.\n*   **6s:** A black player collects the loose ball and passes it forward.\n*   **10s:** A red player intercepts a pass in the center circle, winning possession back for his team.\n*   **12s:** The red player immediately plays a forward pass to a teammate running down the right wing.\n*   **14s:** The red winger receives the ball near the sideline under pressure from a closing black defender.",
+  "processing_time_seconds": 21.507208347320557,
+  "status": "success"
+}

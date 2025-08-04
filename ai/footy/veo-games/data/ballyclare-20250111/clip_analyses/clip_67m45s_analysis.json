@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_67m45s.mp4",
+  "start_seconds": 4065,
+  "end_seconds": 4080,
+  "duration": 15,
+  "timestamp": "67:45",
+  "analysis_timestamp": "2025-07-31T20:29:32.356118",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the football clip.\n\nThe red team restarts play from their own half, playing a long pass to their attacker on the left wing. The attacker is immediately challenged and brought down by a black team defender, resulting in a foul.\n\n- **3s:** The red team restarts play with a backward pass from the center circle.\n- **7s:** A red defender plays a long, direct pass forward to the left flank.\n- **10s:** The red attacker successfully controls the ball near the left touchline.\n- **13s:** The red attacker is fouled by a closing black defender and falls to the ground.",
+  "processing_time_seconds": 16.861241579055786,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_13m30s.mp4",
+  "start_seconds": 810,
+  "end_seconds": 825,
+  "duration": 15,
+  "timestamp": "13:30",
+  "analysis_timestamp": "2025-07-31T20:24:32.673059",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is a breakdown of the football clip:\n\nThe black team initiates play with a kickoff, passing the ball back to their defense. A defender then attempts a long forward pass, which is intercepted by the red team, who gain possession in their own half.\n\n- **4s:** The black team kicks off, passing the ball backward.\n- **9s:** A black defender launches a long ball upfield from deep inside their own half.\n- **13s:** A red team player successfully intercepts and controls the long aerial pass.",
+  "processing_time_seconds": 16.906288623809814,
+  "status": "success"
+}

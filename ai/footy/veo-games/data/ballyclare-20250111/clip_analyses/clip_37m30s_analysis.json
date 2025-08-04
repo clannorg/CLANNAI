@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_37m30s.mp4",
+  "start_seconds": 2250,
+  "end_seconds": 2265,
+  "duration": 15,
+  "timestamp": "37:30",
+  "analysis_timestamp": "2025-07-31T20:27:01.351095",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\nThe Black team takes an attacking free kick, which the Red team successfully defends with a headed clearance. The Black team recovers the ball outside the penalty area and maintains possession in the midfield to rebuild their attack.\n\n- **4s:** The Black team takes a free kick from the right side, crossing the ball into the penalty area.\n- **5s:** A Red defender heads the ball away, clearing the immediate danger.\n- **7s:** A Black player recovers the cleared ball just outside the penalty box.\n- **9s:** The Black player passes the ball backward to a teammate in the midfield.\n- **13s:** The Black team continues to hold possession near the center circle as Red players reorganize their defense.",
+  "processing_time_seconds": 23.503831386566162,
+  "status": "success"
+}

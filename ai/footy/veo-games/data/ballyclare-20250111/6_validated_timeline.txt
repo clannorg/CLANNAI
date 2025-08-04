@@ -1,0 +1,102 @@
+# AI-Validated Timeline - ballyclare-20250111
+# Generated: 2025-08-01T11:55:28.067631
+# Method: Gemini 2.5 Pro intelligent validation
+# Context: Error-correcting fallible clip descriptions
+
+Here is the error-corrected analysis of the match timeline.
+
+### VALIDATED GOALS
+
+1.  **Timestamp:** 00:54
+    *   **Scoring Team:** Red team
+    *   **Description:** Following a scramble in the box, a Red team player scores from a loose ball.
+    *   **Supporting Evidence:** The goal is described at 00:54. The subsequent clips from 01:00 to 02:00 contain multiple, overlapping descriptions of a kickoff from the center circle (e.g., `01:04 Red team prepares to restart play from the center circle`, `01:15 Black team kicks off`, `01:37 Black team takes the kickoff`). This overwhelming evidence of a restart validates the goal.
+    *   **Confidence Level:** High
+
+2.  **Timestamp:** 13:08
+    *   **Scoring Team:** Black team (via Own Goal)
+    *   **Description:** The Black team plays a cross into the box, and a Red team defender's defensive header goes into their own net for an own goal.
+    *   **Supporting Evidence:** The goal is clearly described at 13:08. This is immediately followed by multiple descriptions of a center-circle kickoff (`13:17 Black team takes the kick-off`, `13:34 kick-off is taken`, `13:48 The Black team takes the kickoff`).
+    *   **Confidence Level:** High
+
+3.  **Timestamp:** ~27:03
+    *   **Scoring Team:** Black team
+    *   **Description:** A Black team player takes a shot from distance which results in a goal.
+    *   **Supporting Evidence:** The clip at 27:00 describes a shot being "saved by the goalkeeper." However, the very next clip at 27:15 states, "Black team prepares for kickoff in the center circle," which is then confirmed at 27:30. A kickoff only follows a goal. The kickoff evidence overrides the AI's likely misinterpretation of "saved" when a goal was scored.
+    *   **Confidence Level:** Medium
+
+4.  **Timestamp:** 41:08
+    *   **Scoring Team:** Black team
+    *   **Description:** Black team scores directly from a free-kick taken just outside the penalty area.
+    *   **Supporting Evidence:** The goal is described at 41:08. The next clip at 41:15 explicitly confirms the restart: "Following a goal, players from both teams reset for a kickoff at the center circle."
+    *   **Confidence Level:** High
+
+5.  **Timestamp:** 56:41
+    *   **Scoring Team:** Black team
+    *   **Description:** Following a restart, the Black team launches a quick attack, resulting in a goal from a shot.
+    *   **Supporting Evidence:** A goal is claimed at 56:41. This is validated by multiple subsequent clips describing a kickoff: `56:45 - Red and black teams are getting into position for a kick-off`, `57:00 - Red team prepares to take the kickoff`, and several more mentions of kickoffs through 58:35.
+    *   **Confidence Level:** High
+
+6.  **Timestamp:** 68:10
+    *   **Scoring Team:** Black team
+    *   **Description:** Black team scores from a free kick that was crossed into the box and headed into the goal.
+    *   **Supporting Evidence:** The goal is described at 68:10. The following clip at 68:15 provides definitive validation: "The red team restarts the game from the center circle following a goal."
+    *   **Confidence Level:** High
+
+---
+
+### VALIDATED SHOTS
+
+*   **04:08:** Red team shot from a free kick is **blocked** by the Black team's defensive wall.
+*   **09:34:** Red team long-range shot is **saved** by the Black team's goalkeeper.
+*   **11:28:** Black team shot from inside the penalty area is **missed** (goes wide of the goal).
+*   **12:19:** Red team initial shot from inside the box is **saved** by the goalkeeper. (The follow-up "goal" at 12:21 is rejected).
+*   **15:28:** Black team header from a free kick is **saved** by the Red goalkeeper.
+*   **15:35:** Black team direct free kick is **saved** (caught) by the Red goalkeeper.
+*   **16:50:** Black team shot from inside the penalty area is **blocked**.
+*   **16:52:** Black team follow-up shot on the rebound is **blocked**.
+*   **17:36:** Black team direct free kick is **missed** (goes wide of the goal).
+*   **19:17:** Black team shot from outside the box is **saved** by the Red goalkeeper.
+*   **19:37:** Black team one-on-one shot is **missed** (goes wide of the goal).
+*   **27:59:** Red team direct free kick is **blocked** by the defensive wall.
+*   **31:47:** Black team shot from outside the penalty area is **blocked** by a Red defender.
+*   **32:06:** Red team shot from the right side of the box is **blocked** by a Black defender.
+*   **36:27:** Black team one-on-one shot is **saved** by the Red goalkeeper.
+*   **37:11:** Black team free kick is **saved** (caught) by the Red goalkeeper.
+*   **40:15:** Red team shot from inside the box is **saved** by the Black goalkeeper.
+*   **40:42:** Black team free kick is **blocked** by the Red team's defensive wall.
+*   **40:58:** Black team direct free kick is **missed** (goes over the crossbar).
+*   **59:51:** Black team shot from inside the penalty area is **missed** (goes wide).
+*   **60:12:** Black team attacking free kick is **saved** (punched clear) by the Red goalkeeper.
+*   **63:53:** Black team shot from a cross is **blocked** by a sliding Red defender.
+*   **64:14:** Red team cross/shot from the wing is **saved** (caught) by the Black goalkeeper.
+*   **65:05:** Black team shot from the edge of the area is **saved** by the Red goalkeeper.
+*   **65:07:** Black team follow-up shot is **blocked** by a defender.
+*   **69:47:** Black team shot is **saved** by the goalkeeper.
+*   **69:50:** Black team follow-up shot from the rebound is **missed** (goes wide).
+*   **70:07:** Black team direct free kick is **saved** (caught) by the Red goalkeeper.
+
+---
+
+### REJECTED CLAIMS
+
+*   **01:00 Goal by Black team:** Rejected. This is a contradictory description in the same time block as the validated Red goal at 00:54. Two goals cannot occur without a kickoff in between.
+*   **12:21 Goal by Red team:** Rejected. The claim of a goal is immediately contradicted by the next clip (12:30), which describes a **goal kick**, not a center-circle kickoff. This indicates the final shot was a miss.
+*   **17:22 Goal by Black team:** Rejected. There is no mention of a kickoff in any of the subsequent clips. Play continues with a free kick and normal open play, which violates the validation rules.
+*   **41:32 Goal by Black team:** Rejected. This claim comes immediately after a validated goal and kickoff sequence. There is no evidence of a second, subsequent kickoff. The timeline then shifts to warm-ups. This is a clear AI hallucination.
+*   **Multiple shot claims (e.g., 04:29, 15:08, 30:43):** Rejected due to a lack of described outcome (saved, blocked, missed, or goal). A simple mention of "shot taken" is insufficient evidence.
+
+---
+
+### ANALYSIS SUMMARY
+
+This analysis validates a match with a total of **6 goals**. The AI timeline was highly inconsistent, frequently hallucinating goals and misinterpreting events. However, by strictly adhering to the "goal must be followed by a kickoff" rule, a clear sequence of events can be established.
+
+**Final Score: Black team 5 - 1 Red team**
+
+**Key Match Events:**
+*   The Red team opened the scoring in the first minute of play.
+*   The Black team equalized with an own goal around the 13-minute mark.
+*   The Black team took the lead with a goal around 27 minutes and solidified it with another just before the 42-minute mark, likely heading into halftime with a 3-1 lead.
+*   The Black team dominated the scoresheet, adding two more goals in the second half (~56' and ~68'), including one from a free-kick header.
+*   The timeline shows numerous shots from both sides, with the Black team generating a higher volume of clear chances (saves, blocks) and the Red team being limited to fewer clear-cut opportunities. The AI frequently confused penalty kicks with free kicks just outside the box. A large portion of the timeline (approx. 41:45 to 56:00) was erroneously filled with pre-game warm-up clips.

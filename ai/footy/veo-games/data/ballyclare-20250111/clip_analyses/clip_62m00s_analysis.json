@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_62m00s.mp4",
+  "start_seconds": 3720,
+  "end_seconds": 3735,
+  "duration": 15,
+  "timestamp": "62:00",
+  "analysis_timestamp": "2025-07-31T20:29:13.658934",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip provided.\n\n**Main Action Description:**\nThe red team wins possession in the center of the pitch and attempts a quick counter-attack with a through ball. A black team defender stops the attack by committing a sliding tackle, resulting in a foul and a free kick for the red team.\n\n**Key Timing Estimates:**\n*   **3s:** A red player intercepts a pass and gains possession in the center circle.\n*   **6s:** The red player in possession plays a forward pass into the black team's half.\n*   **10s:** A black defender makes a sliding tackle, fouling the red attacker who was running onto the pass.\n*   **11s:** The referee blows the whistle and awards a free kick to the red team.",
+  "processing_time_seconds": 18.058459043502808,
+  "status": "success"
+}

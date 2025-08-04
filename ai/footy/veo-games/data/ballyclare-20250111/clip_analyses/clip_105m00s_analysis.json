@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_105m00s.mp4",
+  "start_seconds": 6300,
+  "end_seconds": 6315,
+  "duration": 15,
+  "timestamp": "105:00",
+  "analysis_timestamp": "2025-07-31T20:24:05.371540",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe black team attempts a direct attack from their own half with a long, aerial pass. The red team's goalkeeper easily anticipates the play and comes out to collect the ball, neutralizing the threat.\n\n**Key Timing Estimates**\n*   **2s:** A black player in the center circle passes the ball forward to a teammate.\n*   **4s:** The receiving black player immediately plays a long, lofted pass over the top of the red defense.\n*   **8s:** The red team's goalkeeper comes off his line to comfortably catch the ball.\n*   **11s:** The black team's attack is over as the goalkeeper holds possession and players regroup.",
+  "processing_time_seconds": 15.628772735595703,
+  "status": "success"
+}

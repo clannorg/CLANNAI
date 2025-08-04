@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_102m15s.mp4",
+  "start_seconds": 6135,
+  "end_seconds": 6150,
+  "duration": 15,
+  "timestamp": "102:15",
+  "analysis_timestamp": "2025-07-31T20:23:57.599213",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe video shows the setup and execution of a kickoff. The black team starts the match by passing the ball backward from the center circle to begin their build-up play from their own half.\n\n- **0s - 11s**: Players from the red and black teams are in position for kickoff, with a black-kitted player over the ball in the center circle.\n- **12s**: The referee blows the whistle to start the game.\n- **13s**: The black team player performs the kickoff, passing the ball backward to a teammate.\n- **14s**: The receiving player makes another short pass further back towards their defense.",
+  "processing_time_seconds": 19.922749042510986,
+  "status": "success"
+}

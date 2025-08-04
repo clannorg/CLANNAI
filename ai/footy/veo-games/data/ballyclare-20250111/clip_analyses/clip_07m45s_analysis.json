@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_07m45s.mp4",
+  "start_seconds": 465,
+  "end_seconds": 480,
+  "duration": 15,
+  "timestamp": "07:45",
+  "analysis_timestamp": "2025-07-31T20:23:51.355043",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team launches a swift counter-attack from their own half with a long, direct through-ball. The pass travels over the red team's defense, setting up a clear attacking opportunity for a black forward running in behind.\n\n**Key Timing Estimates:**\n*   **5s:** A black player in his own half plays a long, lofted pass forward into the opposition's territory.\n*   **11s:** The ball bounces just outside the red team's penalty area, ahead of the pursuing defenders.\n*   **13s:** The black team's attacker successfully runs onto the through-ball, bringing it under control.\n*   **15s:** The attacker is now in a dangerous position, advancing towards the goal with the red defenders scrambling to recover.",
+  "processing_time_seconds": 17.41460084915161,
+  "status": "success"
+}

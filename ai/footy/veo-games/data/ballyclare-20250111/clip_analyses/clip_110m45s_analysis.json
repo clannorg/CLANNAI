@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_110m45s.mp4",
+  "start_seconds": 6645,
+  "end_seconds": 6660,
+  "duration": 15,
+  "timestamp": "110:45",
+  "analysis_timestamp": "2025-07-31T20:24:19.412791",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nFollowing a goal, the red team celebrates as players from both sides walk back to their respective halves. The teams then prepare to restart the match with a kick-off from the center circle.\n\n**Key Timing Estimates:**\n*   **2s:** The red team celebrates together near the penalty area after having just scored.\n*   **6s:** Players from both teams begin walking back towards the halfway line to reset.\n*   **12s:** The ball is placed on the center spot, ready for the yellow and black team to take the kick-off.\n*   **15s:** Players are nearly in position for the restart, with the yellow and black team at the center circle.",
+  "processing_time_seconds": 19.81589984893799,
+  "status": "success"
+}

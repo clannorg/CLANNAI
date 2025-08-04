@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_74m00s.mp4",
+  "start_seconds": 4440,
+  "end_seconds": 4455,
+  "duration": 15,
+  "timestamp": "74:00",
+  "analysis_timestamp": "2025-07-31T20:29:46.956890",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team kicks off the match, immediately attempting a long, direct aerial pass towards their right flank. The red team effectively defends this opening move, with a player intercepting the long ball with a header to regain possession.\n\n**Key Timing Estimates:**\n*   **10s:** The black team kicks off from the center circle.\n*   **13s:** The black team player (#34) plays a long, high pass forward into the red team's half.\n*   **14s:** A red team player on the left intercepts the pass with their head.\n*   **15s:** The red team secures possession of the loose ball in their defensive half.",
+  "processing_time_seconds": 14.600647449493408,
+  "status": "success"
+}

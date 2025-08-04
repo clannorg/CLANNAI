@@ -1,0 +1,113 @@
+# AI-Powered Accuracy Comparison
+# Match: ballyclare-20250111
+# Generated: 2025-08-01T11:55:39.483206
+# Model: gemini-2.0-flash-exp
+
+## GOALS COMPARISON
+
+**Ground Truth**:
+* 0:37
+* 12:51
+* 67:55
+* 96:28
+
+**Our AI Detected**:
+* 0:54
+* 13:08
+* ~27:03
+* 41:08
+* 56:41
+* 68:10
+
+**Matches**:
+* **0:37 (Ground Truth) vs 0:54 (AI)**: Match. Within 30-second tolerance (17 seconds difference).
+* **12:51 (Ground Truth) vs 13:08 (AI)**: Match. Within 30-second tolerance (17 seconds difference).
+* **67:55 (Ground Truth) vs 68:10 (AI)**: Match. Within 30-second tolerance (15 seconds difference).
+
+**False Positives**:
+* ~27:03: There's no goal in ground truth at this time.
+* 41:08: There's no goal in ground truth at this time.
+* 56:41: There's no goal in ground truth at this time.
+
+**False Negatives**:
+* 96:28: Our AI missed this goal.
+
+## SHOTS COMPARISON
+
+**Ground Truth**:
+* 0:37
+* 4:29
+* 9:19
+* 12:49
+* 14:36
+* 31:33
+* 36:39
+* 38:02
+* 59:35
+* 66:26
+* 67:55
+* 76:34
+* 86:00
+* 87:07
+* 96:26
+* 104:00
+
+**Our AI Detected**:
+* 04:08
+* 09:34
+* 11:28
+* 12:19
+* 15:28
+* 15:35
+* 16:50
+* 16:52
+* 17:36
+* 19:17
+* 19:37
+* 27:59
+* 31:47
+* 32:06
+* 36:27
+* 37:11
+* 40:15
+* 40:42
+* 40:58
+* 59:51
+* 60:12
+* 63:53
+* 64:14
+* 65:05
+* 65:07
+* 69:47
+* 69:50
+* 70:07
+
+**Assessment**:
+The AI's shot detection appears quite active, identifying many instances of shots. However, a direct one-to-one match is difficult.
+
+*   AI frequently detects shots as blocked/saved/missed *around* the times of ground truth shots. This suggests the AI *is* detecting shooting actions, but the timestamps are often off by a few seconds (outside the defined tolerance), and often reports the *outcome* of the shot rather than just the shot event itself.
+*   There are some shots that our AI misses entirely, and conversely, many shots AI detects with no ground truth equivalent.
+*   The quality of the AI shot descriptions, specifying block/save/miss, adds value, though the timing inaccuracy makes precise matching hard.
+
+## ACCURACY METRICS
+
+**Goals - Precision**: 50% (3 correct goals / 6 total detected goals)
+**Goals - Recall**: 75% (3 correct goals / 4 total actual goals)
+**Shots - Precision**: ~30% (rough estimate - many possible matches within a wider tolerance)
+**Shots - Recall**: ~50% (rough estimate - many possible matches within a wider tolerance)
+
+## KEY INSIGHTS
+
+*   **What our AI does well**: The AI excels at identifying when a goal occurs if we incorporate the kickoff rule. The AI shows promise in identifying shooting events (shots), even providing contextual information like whether the shot was blocked, saved, or missed.
+
+*   **What needs improvement**:
+    *   **Goal Detection - Avoid Hallucinations:** The AI falsely identifies goals when there isn't a corresponding kickoff, indicating a fundamental misunderstanding of the game flow. The AI needs better event sequence logic.
+    *   **Timestamp Accuracy:** The timestamp accuracy of all events needs significant improvement. The +/-30 second tolerance highlights an issue, particularly with shots.
+    *   **Shot Detection - Consistency**: The AI struggles to detect all the shots that actually occurred.
+
+*   **Specific recommendations**:
+    *   **Refine Kickoff Validation:** Implement a stronger constraint: goals MUST be followed by a valid kickoff event detected within a shorter time window (e.g. 15 seconds). Reject any "goal" claims violating this constraint.
+    *   **Time Synchronization Tuning**: Investigate potential synchronization issues between the AI analysis pipeline and the Veo camera timestamps. Calibrate the AI pipeline’s timing mechanisms to more accurately align events with the ground truth data.
+    *   **Training Data Review:** Examine the training data used for shot detection. Does the data adequately represent different types of shots (long-range, headers, volleys, etc.)? Ensure the dataset includes examples where shots are blocked, saved, and missed, and that these events are *distinctly* labeled. This will enhance the AI's ability to not only identify shots but also accurately classify their outcomes.
+    *   **Contextual Awareness**: Train the AI to understand the flow of the game. The context clues surrounding the event will help to validate the predictions made by AI.
+    *   **Consider a Two-Stage Approach:** First, focus on accurate event detection (identify *when* a shot occurs), then, in a second stage, classify the outcome (blocked, saved, missed, goal). This can improve the precision of event timing and overall accuracy.

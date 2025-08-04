@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_58m45s.mp4",
+  "start_seconds": 3525,
+  "end_seconds": 3540,
+  "duration": 15,
+  "timestamp": "58:45",
+  "analysis_timestamp": "2025-07-31T20:29:20.091649",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe Black team attempts to build an attack from their own half, circulating the ball across their backline. The Red team applies organized pressure, forcing a long ball which is successfully intercepted by a Red defender in an aerial duel.\n\n**Key Timing Estimates:**\n*   **1s:** A Black player receives a pass just inside the Red team's half near the center circle.\n*   **5s:** The Black team plays the ball backward to their defense to reset the attack.\n*   **8s:** The Red team's forwards begin to apply a high press on the Black team's defenders.\n*   **11s:** Under pressure, a Black defender attempts a long, high pass up the left flank.\n*   **14s:** A Red defender wins the aerial challenge, heading the ball back towards midfield to regain possession.",
+  "processing_time_seconds": 24.542177200317383,
+  "status": "success"
+}

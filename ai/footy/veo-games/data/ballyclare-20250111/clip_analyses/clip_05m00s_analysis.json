@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_05m00s.mp4",
+  "start_seconds": 300,
+  "end_seconds": 315,
+  "duration": 15,
+  "timestamp": "05:00",
+  "analysis_timestamp": "2025-07-31T20:23:35.937861",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team controls possession in their own half, patiently building from the back by passing between their defenders and midfielders. The red team maintains a compact defensive shape, applying light pressure without winning possession.\n\n**Key Timing Estimates:**\n\n*   **2s:** A black player receives a pass on the left side of the pitch.\n*   **5s:** The ball is passed back across the defensive line.\n*   **9s:** A black defender passes the ball forward to a midfielder in the center circle.\n*   **11s:** The midfielder plays a first-time pass back to the left-sided defender (number 3).\n*   **13s:** The black defender plays a long pass forward into the opponent's half.",
+  "processing_time_seconds": 19.051170825958252,
+  "status": "success"
+}

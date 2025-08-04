@@ -1,0 +1,410 @@
+{
+  "match_id": "f323-527e6a4e",
+  "generated_timestamp": "2025-08-01T14:54:39.260491",
+  "events_count": 67,
+  "source": "clann_ai_pipeline",
+  "events": [
+    {
+      "type": "shot",
+      "timestamp": 135,
+      "description": "Low shot from the left side of the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 165,
+      "description": "Unspecified shot",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 240,
+      "description": "Shot from the left side of the box",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 300,
+      "description": "Header from a corner kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 315,
+      "description": "Shot from a free kick",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 330,
+      "description": "Goal from a set-piece.",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 435,
+      "description": "Header from a cross",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 450,
+      "description": "Goal from open play.",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 825,
+      "description": "Shot from the edge of the box",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 915,
+      "description": "Direct free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 945,
+      "description": "Shot from a free kick cross",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1170,
+      "description": "Direct free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1185,
+      "description": "Header from a free kick cross",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1200,
+      "description": "Header from a set piece",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1260,
+      "description": "Shot from outside the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 1410,
+      "description": "Goal scored directly from a free kick.",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 1470,
+      "description": "A goal scored from a shot at the edge of the penalty area.",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1485,
+      "description": "Header from a corner kick",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1515,
+      "description": "Low shot from left of the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1635,
+      "description": "Unspecified shot",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1800,
+      "description": "Shot from the edge of the box",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1815,
+      "description": "Shot from open play",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1845,
+      "description": "Low shot from a free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1860,
+      "description": "Shot from inside the penalty area",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1950,
+      "description": "Direct free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2190,
+      "description": "Shot from outside the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2490,
+      "description": "Goal scored from a penalty kick.",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2550,
+      "description": "Header from a free kick",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2580,
+      "description": "Goal from open play.",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2730,
+      "description": "Shot from inside the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3735,
+      "description": "Shot from inside the penalty area",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3750,
+      "description": "Header on goal",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3780,
+      "description": "Shot from a cross",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 3810,
+      "description": "Goal from open play, confirmed by team celebration.",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3990,
+      "description": "Shot from an indirect free kick",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4065,
+      "description": "Shot from the right flank",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4110,
+      "description": "Shot from the edge of the box",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4245,
+      "description": "Direct free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4485,
+      "description": "Shot from inside the box",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4590,
+      "description": "Direct free kick",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4650,
+      "description": "Follow-up shot after a tackle",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4665,
+      "description": "Penalty kick",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4710,
+      "description": "Shot from inside the box",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 4785,
+      "description": "Goal from open play, confirmed by team celebration.",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4845,
+      "description": "Long-range shot",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 4920,
+      "description": "Goal scored from a long ball into the penalty box.",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4950,
+      "description": "Shot from inside the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4965,
+      "description": "Shot from inside the box",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5025,
+      "description": "Penalty kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5085,
+      "description": "Shot from a cross",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5100,
+      "description": "Shot from a free kick",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5325,
+      "description": "Shot from inside the attacking half",
+      "team": "red"
+    },
+    {
+      "type": "goal",
+      "timestamp": 5415,
+      "description": "Goal scored from a header following a corner kick.",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5505,
+      "description": "Direct free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5520,
+      "description": "Direct free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5610,
+      "description": "Shot from inside the penalty area",
+      "team": "yellow"
+    },
+    {
+      "type": "goal",
+      "timestamp": 5775,
+      "description": "Goal scored from a fast attack down the left flank.",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5835,
+      "description": "Volleyed shot from outside the box",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5850,
+      "description": "Shot from inside the penalty area",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5910,
+      "description": "Shot from distance",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6000,
+      "description": "Shot from inside the box",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6015,
+      "description": "Low shot from a free kick",
+      "team": "yellow"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6090,
+      "description": "Shot from inside the penalty area",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6120,
+      "description": "Unspecified shot",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6135,
+      "description": "Header from a free kick",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6150,
+      "description": "Header from a cross",
+      "team": "red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6225,
+      "description": "Long-range shot",
+      "team": "red"
+    }
+  ]
+}

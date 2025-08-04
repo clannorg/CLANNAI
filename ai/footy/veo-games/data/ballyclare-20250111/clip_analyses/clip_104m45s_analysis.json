@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_104m45s.mp4",
+  "start_seconds": 6285,
+  "end_seconds": 6300,
+  "duration": 15,
+  "timestamp": "104:45",
+  "analysis_timestamp": "2025-07-31T20:24:04.385383",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip:\n\nThe Black team wins the ball in midfield and launches a quick counter-attack down the right-hand side. The play develops into a promising attacking situation near the red team's penalty area as the clip ends.\n\n- **3s:** A Black player executes a successful tackle in the center circle, dispossessing the Red team.\n- **5s:** The Black team immediately plays a forward pass to a teammate, starting the transition to attack.\n- **8s:** The ball is moved out to the right wing to a Black attacker.\n- **11s:** The Black winger receives the ball and drives towards the red team's penalty box.\n- **14s:** The Black attacker is positioned one-on-one against a Red defender near the corner of the box.",
+  "processing_time_seconds": 20.690727949142456,
+  "status": "success"
+}

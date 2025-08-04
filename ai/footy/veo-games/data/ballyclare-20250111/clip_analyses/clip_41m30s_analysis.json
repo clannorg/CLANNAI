@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_41m30s.mp4",
+  "start_seconds": 2490,
+  "end_seconds": 2505,
+  "duration": 15,
+  "timestamp": "41:30",
+  "analysis_timestamp": "2025-07-31T20:27:02.863289",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n### Football Analysis\n\nThe black team takes an attacking free kick from the left-hand side, but the red team's defense effectively deals with the threat. A red defender makes a strong clearing header, sending the ball back towards the midfield where players from both sides begin to compete for the second ball.\n\n**Key Timing Estimates:**\n\n*   **3s:** The black team player delivers an inswinging cross from the free kick.\n*   **6s:** A red defender in the penalty area jumps and heads the ball clear.\n*   **9s:** The cleared ball travels high and lands near the center circle.\n*   **12s:** Players from both the red and black teams converge on the loose ball to regain possession.",
+  "processing_time_seconds": 20.16918158531189,
+  "status": "success"
+}

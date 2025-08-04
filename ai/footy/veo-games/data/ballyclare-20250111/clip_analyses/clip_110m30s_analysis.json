@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_110m30s.mp4",
+  "start_seconds": 6630,
+  "end_seconds": 6645,
+  "duration": 15,
+  "timestamp": "110:30",
+  "analysis_timestamp": "2025-07-31T20:24:19.193287",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "The video shows the conclusion of a football match, with no active play. Players from the red and black-clad teams participate in the traditional post-match handshakes with the referees near the center circle before dispersing.\n\n*   **1s:** Players from the red team, black team, and referees are gathered for post-match handshakes.\n*   **4s:** The main handshake line concludes, and players begin to separate and walk away.\n*   **7s:** The black team players have walked past the center circle towards the right side of the pitch.\n*   **12s:** Players are now scattered across the field, walking off after the game has finished.",
+  "processing_time_seconds": 19.995392560958862,
+  "status": "success"
+}

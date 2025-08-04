@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_89m30s.mp4",
+  "start_seconds": 5370,
+  "end_seconds": 5385,
+  "duration": 15,
+  "timestamp": "89:30",
+  "analysis_timestamp": "2025-07-31T20:30:29.479042",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip, focusing on the key actions and timings.\n\n### Football Clip Analysis\n\nThe Red team attempts to launch an attack from a long throw-in on the right flank. A Red player flicks the ball on with a header, but the Black team's defense successfully clears the ball and regains possession.\n\n**Key Timing Estimates:**\n\n*   **8s:** The Red player executes a long throw-in from the right sideline into the attacking third.\n*   **10s:** A Red player wins the aerial duel and heads the ball towards the center of the pitch.\n*   **14s:** A Black team defender intercepts the bouncing ball and clears the danger, securing possession.",
+  "processing_time_seconds": 18.929073810577393,
+  "status": "success"
+}

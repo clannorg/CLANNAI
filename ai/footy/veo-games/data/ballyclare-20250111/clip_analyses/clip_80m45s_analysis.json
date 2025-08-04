@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_80m45s.mp4",
+  "start_seconds": 4845,
+  "end_seconds": 4860,
+  "duration": 15,
+  "timestamp": "80:45",
+  "analysis_timestamp": "2025-07-31T20:30:06.891996",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description**\n\nThe black team launches a quick attack down the right wing, carrying the ball from their own half into the final third. A red defender confronts the attacker near the penalty area and successfully dispossesses him with a clean sliding tackle.\n\n**Key Timing Estimates**\n\n*   **3s:** A black player in the center circle passes the ball wide to the right flank.\n*   **6s:** The black winger receives a through ball and begins dribbling down the right sideline.\n*   **10s:** The winger approaches the corner of the penalty box and is challenged by a red defender.\n*   **12s:** The red defender makes a successful sliding tackle, stopping the attack.\n*   **14s:** The ball is cleared, and the red team regains possession.",
+  "processing_time_seconds": 16.327329397201538,
+  "status": "success"
+}

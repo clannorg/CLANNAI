@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_99m15s.mp4",
+  "start_seconds": 5955,
+  "end_seconds": 5970,
+  "duration": 15,
+  "timestamp": "99:15",
+  "analysis_timestamp": "2025-07-31T20:32:42.747389",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team initiates a build-up from their own half, advancing the ball through midfield. The red team maintains a compact defensive structure and successfully dispossesses the black team with a tackle as they approach the final third.\n\n**Key Timing Estimates:**\n*   **5s:** The black team's central midfielder receives the ball and begins to advance into the opposition's half.\n*   **8s:** A pass is made to a teammate on the right side of the pitch.\n*   **11s:** The black player cuts inside and attempts a pass to a forward teammate positioned centrally.\n*   **13s:** A red defender steps in and makes a successful standing tackle, winning possession back for their team.",
+  "processing_time_seconds": 30.00398063659668,
+  "status": "success"
+}

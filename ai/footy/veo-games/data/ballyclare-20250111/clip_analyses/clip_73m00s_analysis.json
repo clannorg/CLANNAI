@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_73m00s.mp4",
+  "start_seconds": 4380,
+  "end_seconds": 4395,
+  "duration": 15,
+  "timestamp": "73:00",
+  "analysis_timestamp": "2025-07-31T20:29:50.564555",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team prepares to take an attacking free-kick from a central position outside the red team's penalty area. Both teams are organizing their players into offensive and defensive formations, awaiting the referee's whistle to restart the game.\n\n**Key Timing Estimates:**\n*   **1s:** Players from both teams are positioned for an imminent free-kick by the black team.\n*   **5s:** A black team player (No. 34) starts walking back towards the halfway line, likely to cover against a potential counter-attack.\n*   **9s:** The red team's defensive wall is set and holding its position in front of the penalty area.\n*   **15s:** The scene ends with all players still in their set-piece positions, as the free-kick has not yet been taken.",
+  "processing_time_seconds": 19.32506799697876,
+  "status": "success"
+}

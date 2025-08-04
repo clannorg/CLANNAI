@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_53m00s.mp4",
+  "start_seconds": 3180,
+  "end_seconds": 3195,
+  "duration": 15,
+  "timestamp": "53:00",
+  "analysis_timestamp": "2025-07-31T20:27:43.846235",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe scene captures a pre-game warm-up on an artificial pitch. Players in orange bibs are conducting a casual passing drill in a small group on the right side of the field, while a few players from the opposing team in green shirts are positioned separately and are not involved.\n\n**Key Timing Estimates**\n*   **1s**: A player in an orange bib on the far right passes the ball to a teammate in the center of the group.\n*   **5s**: The ball is passed to another player in the orange bibs who is moving towards the center circle.\n*   **8s**: A short, one-touch pass is completed between two players in the warm-up drill.\n*   **12s**: Another player receives a pass, controls it, and continues the passing sequence within the group.",
+  "processing_time_seconds": 25.941179990768433,
+  "status": "success"
+}

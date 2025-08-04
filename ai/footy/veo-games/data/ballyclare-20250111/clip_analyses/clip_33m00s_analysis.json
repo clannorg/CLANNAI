@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_33m00s.mp4",
+  "start_seconds": 1980,
+  "end_seconds": 1995,
+  "duration": 15,
+  "timestamp": "33:00",
+  "analysis_timestamp": "2025-07-31T20:26:45.248811",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description**\nThe black team controls possession deep in their own half, circulating the ball from the left flank, through the middle, and over to the right. The red team maintains a compact defensive shape, applying light pressure before the black team attempts a long forward pass to break the lines.\n\n**Key Timing Estimates**\n*   **2s:** The black player on the left touchline passes forward to a teammate.\n*   **3s:** A quick, one-touch pass moves the ball infield to a central player near the halfway line.\n*   **7s:** The central player passes the ball back towards the defense.\n*   **11s:** The black team switches the play with a pass across the field to a player on the right flank.\n*   **14s:** The player on the right launches a long, forward pass towards the attacking third.",
+  "processing_time_seconds": 20.72334122657776,
+  "status": "success"
+}

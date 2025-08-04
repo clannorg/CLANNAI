@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_84m15s.mp4",
+  "start_seconds": 5055,
+  "end_seconds": 5070,
+  "duration": 15,
+  "timestamp": "84:15",
+  "analysis_timestamp": "2025-07-31T20:30:13.930646",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the football clip.\n\n**Main action description:**\nThe red team builds an attack from the midfield, playing a through ball down the left flank into the penalty area. The attacker receives the pass and delivers a low ball across the face of the goal, but no teammate is able to connect with it.\n\n**Key timing estimates:**\n- **2s:** A red player in the center of the pitch passes the ball to a teammate on the left wing.\n- **8s:** The red player on the wing plays a forward pass into the path of an attacker making a run.\n- **11s:** The red attacker receives the through ball inside the left edge of the penalty box.\n- **13s:** The attacker hits a low cross/shot that travels across the six-yard box.",
+  "processing_time_seconds": 17.573636293411255,
+  "status": "success"
+}

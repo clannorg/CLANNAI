@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_15m15s.mp4",
+  "start_seconds": 915,
+  "end_seconds": 930,
+  "duration": 15,
+  "timestamp": "15:15",
+  "analysis_timestamp": "2025-07-31T20:24:35.268696",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "The black team takes a direct free kick, which is saved by the red team's goalkeeper. The black team gets to the rebound, but the goalkeeper makes a second, close-range block to deny a goal.\n\n- **7s:** The black team's player takes a shot from the free kick.\n- **8s:** The red goalkeeper dives to his left and saves the initial shot.\n- **11s:** A black player shoots from the rebound at a tight angle.\n- **12s:** The red goalkeeper, while still on the ground, makes a second save to block the follow-up shot.\n- **14s:** The ball is loose in the penalty area as players from both teams scramble for it.",
+  "processing_time_seconds": 16.72899603843689,
+  "status": "success"
+}

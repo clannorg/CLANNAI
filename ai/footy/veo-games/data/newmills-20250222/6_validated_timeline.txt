@@ -1,0 +1,116 @@
+# AI-Validated Timeline - newmills-20250222
+# Generated: 2025-08-02T17:08:49.714305
+# Method: Gemini 2.5 Pro intelligent validation
+# Context: Error-correcting fallible clip descriptions
+
+Here is the error-corrected analysis of the match timeline.
+
+### **VALIDATED GOALS**
+
+1.  **Timestamp:** ~44:04
+    *   **Team:** Black/White Team
+    *   **Description:** A penalty kick was awarded to the White team after a foul just outside the box where advantage was played. The subsequent restart from the center circle confirms the penalty was converted.
+    *   **Supporting Evidence:** `44:04` referee awards a penalty to the White team. This is followed by a `44:53` Red team kickoff from the center circle. A kickoff is the mandatory restart after a goal.
+    *   **Confidence Level:** High
+
+2.  **Timestamp:** 86:39
+    *   **Team:** Red Team
+    *   **Description:** A goal scored from close range following a cross delivered from the left wing.
+    *   **Supporting Evidence:** The goal is claimed at `86:39`. This is followed by a brief period of play, and then a confirmed kickoff for the White team at `87:23`. This sequence (goal -> short play -> opposition kickoff) is a valid pattern.
+    *   **Confidence Level:** Medium
+
+3.  **Timestamp:** ~116:35
+    *   **Team:** Red Team
+    *   **Description:** A penalty was awarded to the Red team after a player was fouled from behind inside the box. The subsequent kickoff by the opposing team confirms the penalty was scored.
+    *   **Supporting Evidence:** A penalty is awarded to the Red team at `116:35`. This is followed by a confirmed kickoff for the White team at `118:00`.
+    *   **Confidence Level:** High
+
+4.  **Timestamp:** 129:08
+    *   **Team:** Red Team
+    *   **Description:** A goal scored from an attack down the left side, finished from a low cross delivered into the box.
+    *   **Supporting Evidence:** The goal is explicitly described at `129:08`. This is directly followed by a `129:50` White team kickoff from the center circle, providing definitive proof.
+    *   **Confidence Level:** High
+
+5.  **Timestamp:** 132:13
+    *   **Team:** Black/White Team
+    *   **Description:** A goal scored from a direct free kick.
+    *   **Supporting Evidence:** The goal is claimed at `132:12-13`. This is strongly supported by the clip at `132:30` showing both teams lining up for a kickoff and the clip at `133:00` showing a team celebrating a goal and jogging back for the restart.
+    *   **Confidence Level:** High
+
+---
+
+### **VALIDATED SHOTS**
+
+*   **22:04:** Red Team - Header from a cross, saved by the goalkeeper. (Evidence: `22:04` description).
+*   **23:12:** White Team - Shot from inside the penalty area, saved by the Red goalkeeper. (Evidence: `23:13` description).
+*   **23:43:** White Team - Shot from a cross, saved by the keeper. (Evidence: `23:44` description).
+*   **23:57:** Black Team - Shot from inside the box, saved by the Red goalkeeper. (Evidence: `23:58` description).
+*   **24:36:** Black Team - Shot following a cross, hit the crossbar. (Evidence: `24:36` description).
+*   **27:33:** White Team - Header attempt, saved by the Red goalkeeper. (Evidence: `27:34` description).
+*   **28:48:** Red Team - Long-range shot, saved by the keeper. (Evidence: `28:49` description).
+*   **38:13:** Red Team - Shot following a cross, blocked by the defense. (Evidence: `38:13` description).
+*   **38:52:** Red Team - Direct free-kick, blocked by the defensive wall. (Evidence: `38:53` description).
+*   **39:39:** White Team - Shot from a cleared cross, blocked by a diving red defender. (Evidence: `39:39` description).
+*   **42:36:** White Team - Header attempt from a cross, caught by the red goalkeeper. (Evidence: `42:37` description).
+*   **43:29:** White Team - Shot from a free kick, saved by the goalkeeper. (Evidence: `43:29` description).
+*   **45:49:** Red Team - Shot from inside the box, saved by the goalkeeper. (Evidence: `45:50` description).
+*   **50:29:** White Team - Direct free-kick, saved by the goalkeeper (tipped over the crossbar). (Evidence: `50:29` description).
+*   **50:53:** Black Team - Direct free-kick, blocked by the defensive wall. (Evidence: `50:53` description).
+*   **53:13:** White Team - Shot from close range, saved by the goalkeeper. (Evidence: `53:14` description).
+*   **54:44:** White Team - Direct free-kick, saved by the goalkeeper (tipped over the crossbar). (Evidence: `54:44` description).
+*   **54:59:** Black Team - Direct free-kick, missed (shot goes over the goal). (Evidence: `54:59` description).
+*   **56:26:** Red Team - Shot from inside the penalty area, missed (goes wide). (Evidence: `56:26` description).
+*   **57:12:** Red Team - Direct free-kick, missed (goes over the crossbar). (Evidence: `57:12` description).
+*   **57:39:** Red Team - Long-range shot, blocked by a defender. (Evidence: `57:40` description).
+*   **65:01:** Red Team - Direct free-kick, caught by the White goalkeeper. (Evidence: `65:01` description).
+*   **66:01:** White/Black Team - Direct free-kick, missed (goes over the crossbar). (Evidence: `66:01` description).
+*   **77:26:** Red Team - Shot from inside the penalty box, missed (goes wide). (Evidence: `77:26` description).
+*   **81:54:** Red Team - One-on-one shot, saved by the goalkeeper. (Evidence: `81:55` description).
+*   **85:18:** White Team - Shot from inside the penalty box, saved by the red goalkeeper. (Evidence: `85:19` description).
+*   **86:48:** White Team - Shot from outside the penalty box, saved by the Red goalkeeper. (Evidence: `86:49` description).
+*   **99:28:** White Team - Shot from inside the penalty area, saved by the goalkeeper. (Evidence: `99:29` description).
+*   **101:29:** Red Team - Low shot from a free-kick, blocked by the defensive wall. (Evidence: `101:29` description).
+*   **113:52:** Red Team - Shot following a cross, hit the crossbar. (Evidence: `113:52` description).
+*   **114:55:** White Team - Direct free-kick from the edge of the box, saved by the keeper. (Evidence: `114:56` description).
+*   **117:05:** White Team - Low direct free-kick, saved by the goalkeeper. (Evidence: `117:05` description).
+*   **122:31:** Red Team - Shot, hit the post. (Evidence: `122:31` description).
+*   **124:42:** Black Team - Header attempt from a free-kick, caught by the goalkeeper. (Evidence: `124:43` description).
+*   **126:23:** White Team - Shot from the left side of the penalty area, hit the crossbar. (Evidence: `126:23` description).
+*   **127:26:** Red Team - Shot from a free-kick, saved by the keeper. (Evidence: `127:26` description).
+*   **129:16:** Red Team - Shot from inside the box, missed (goes wide). (Evidence: `129:16` description).
+*   **131:49:** White Team - Direct free-kick from the edge of the box, saved by the Red goalkeeper. (Evidence: `131:49` description).
+*   **132:17:** Red Team - Shot, saved by the White goalkeeper. (Evidence: `132:18` description).
+*   **133:37:** White Team - Shot from a free-kick, saved by the goalkeeper. (Evidence: `133:37` description).
+
+---
+
+### **REJECTED CLAIMS**
+
+*   **All events before 18:00:** Rejected as they are explicitly described as warm-ups or training drills, not part of the match.
+*   **18:45 Red Goal:** Rejected. No clear kickoff follows. The cluster of kickoffs after 19:30 are all described as starting the match, not restarting from a goal.
+*   **22:16 White Goal:** Rejected. No kickoff or celebration is mentioned in the subsequent clips.
+*   **38:34 Red Goal:** Rejected. Contradictory evidence in the next clip (`38:53`) states the free kick was blocked. No kickoff followed.
+*   **46:47 White Goal:** Rejected. No supporting evidence of a kickoff or celebration in subsequent clips.
+*   **53:40 White Goal:** Rejected. This claim is part of a confusing sequence of free kicks with contradictory outcomes (`54:18` punched clear, `54:44` saved). No kickoff is confirmed.
+*   **57:24 White Goal:** Rejected. No kickoff followed.
+*   **All events between 67:00-77:00:** Rejected as this period appears to be a half-time warm-up, not competitive match play.
+*   **86:14 Black Goal:** Rejected. No kickoff followed. The subsequent kickoff at 87:15 is linked to the Red goal at 86:39.
+*   **91:04 Black/White Goal:** Rejected. No kickoff followed.
+*   **95:12 White Goal:** Rejected. The AI describes a goal from a free kick, but it follows a penalty call, which is contradictory. More importantly, no kickoff is mentioned after.
+*   **101:09 Red Goal:** Rejected. No kickoff is mentioned in subsequent clips.
+*   **101:48 Red Goal:** Rejected. No kickoff is mentioned; play is simply paused.
+*   **104:20 Red Goal:** Rejected. While there is a cluster of kickoffs around `107:00`, the 2.5-minute gap between the goal and the restart is too long to establish a confident link.
+*   **108:08 Red Goal & 111:05 Black Goal:** Rejected. The evidence for these is a shared cluster of kickoffs around `113:00`. The 108:08 claim is 5 minutes before the kickoff (too long), and the 111:05 claim is immediately contradicted by a goal kick being taken at `111:15`. The evidence is too messy and contradictory to validate either goal.
+*   **118:33 White Goal:** Rejected. The following clip describes a goal kick, which contradicts a goal being scored. No kickoff is mentioned.
+*   **128:23 White Goal:** Rejected. Contradicted by a goal kick being awarded at `128:43`. No kickoff followed.
+*   **133:20 White Goal:** Rejected. This claim occurs immediately after a validated White goal at 132:13 and a celebration. A second goal cannot occur without a kickoff in between (Rule 2).
+
+---
+
+### **ANALYSIS SUMMARY**
+
+The AI's analysis of the match was heavily flawed, frequently hallucinating goals and misinterpreting restarts of play. The timeline was non-sequential, with multiple "starts" to the game and periods of warm-ups interspersed with match action.
+
+However, by strictly applying validation rules, a plausible match narrative emerges. The final score of the match was **Red Team 3 - 2 Black/White Team**.
+
+The match was a hard-fought contest characterized by set-piece goals and penalties. The Black/White team opened the scoring with a converted penalty (`~44:04`). The Red team equalized with a close-range finish from a cross (`86:39`) before taking the lead with their own converted penalty (`~116:35`). They extended their lead to 3-1 with a well-worked goal from a low cross (`129:08`). The Black/White team pulled one back with a direct free-kick goal (`132:13`) to make it 3-2, but it was not enough to change the outcome. Both teams had numerous other chances, with goalkeepers making key saves and the woodwork being struck on at least four separate occasions.

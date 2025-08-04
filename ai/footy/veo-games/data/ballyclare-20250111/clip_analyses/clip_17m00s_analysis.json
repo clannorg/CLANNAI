@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_17m00s.mp4",
+  "start_seconds": 1020,
+  "end_seconds": 1035,
+  "duration": 15,
+  "timestamp": "17:00",
+  "analysis_timestamp": "2025-07-31T20:24:39.388998",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key actions in the football clip.\n\n**Main Action Description:**\nThe black team initiates an attack from their own half, moving the ball down the left wing. A low cross is sent into the penalty area, where the red team's defense makes a partial clearance, leaving the ball contested in a dangerous position.\n\n**Key Timing Estimates:**\n*   **4s:** A player from the black team, positioned in the center circle, makes a pass to a teammate on the left flank.\n*   **8s:** The black winger delivers a low, driven cross into the opponent's penalty area.\n*   **11s:** A red defender attempts to clear the cross, but the ball ricochets and stays within the penalty box.\n*   **13s:** The loose ball is contested by both a black attacker and a red defender near the penalty spot.",
+  "processing_time_seconds": 15.965329647064209,
+  "status": "success"
+}

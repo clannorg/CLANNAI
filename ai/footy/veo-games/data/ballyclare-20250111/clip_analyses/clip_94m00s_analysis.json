@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_94m00s.mp4",
+  "start_seconds": 5640,
+  "end_seconds": 5655,
+  "duration": 15,
+  "timestamp": "94:00",
+  "analysis_timestamp": "2025-07-31T20:32:47.054718",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe Black team attempts to build an attack from a set piece, but the Red team effectively defends their box and wins the ball. The Red team then secures possession in the midfield, looking to start their own counter-attack as the clip ends.\n\n**Key Timing Estimates:**\n\n*   **3s:** A Black player receives a short pass from a set piece just outside the penalty area.\n*   **6s:** A Red defender intercepts a forward pass into the box with a decisive header, clearing the ball towards the center circle.\n*   **10s:** Red's number 9 brings the cleared ball down with his chest, gaining control in the midfield.\n*   **13s:** The Red player settles the ball and looks to initiate an attack from his team's own half.",
+  "processing_time_seconds": 34.45215559005737,
+  "status": "success"
+}

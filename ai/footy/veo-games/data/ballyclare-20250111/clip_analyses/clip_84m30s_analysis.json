@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_84m30s.mp4",
+  "start_seconds": 5070,
+  "end_seconds": 5085,
+  "duration": 15,
+  "timestamp": "84:30",
+  "analysis_timestamp": "2025-07-31T20:30:16.016335",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team takes a powerful, long-range shot from just outside the penalty area following a partially cleared cross. The red team's goalkeeper makes an impressive diving save, tipping the ball over the crossbar and out for a corner kick.\n\n**Key Timing Estimates:**\n*   **1s:** A black player's cross is headed away by a red defender.\n*   **2s:** The ball falls to a black player who strikes a powerful first-time shot toward the goal.\n*   **3s:** The red team's goalkeeper makes a spectacular diving save to their right.\n*   **4s:** The ball is pushed over the crossbar for a corner kick.\n*   **5s:** A black player (No. 29) walks away, raising his hand to acknowledge the good shot and save.\n*   **11s:** Players from both teams begin to reposition inside the penalty area for the upcoming corner.",
+  "processing_time_seconds": 19.525617837905884,
+  "status": "success"
+}

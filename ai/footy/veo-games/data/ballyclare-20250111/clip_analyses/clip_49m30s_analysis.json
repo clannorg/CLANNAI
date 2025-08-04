@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_49m30s.mp4",
+  "start_seconds": 2970,
+  "end_seconds": 2985,
+  "duration": 15,
+  "timestamp": "49:30",
+  "analysis_timestamp": "2025-07-31T20:27:28.883240",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football clip.\n\n**Main Action Description:**\nPlayers in orange bibs conduct a pre-match warm-up drill inside the center circle. The drill involves two players exchanging short ground passes while one player remains on one knee, concluding with a chipped pass for a header.\n\n**Key Timing Estimates:**\n*   **2s:** A kneeling player in an orange bib receives a ground pass from a teammate.\n*   **6s:** The standing player makes a one-touch pass back to the kneeling player.\n*   **9s:** The kneeling player returns the pass along the ground.\n*   **12s:** The standing player chips a lofted pass towards his teammate.\n*   **14s:** The kneeling player rises to head the ball back.",
+  "processing_time_seconds": 23.4223849773407,
+  "status": "success"
+}

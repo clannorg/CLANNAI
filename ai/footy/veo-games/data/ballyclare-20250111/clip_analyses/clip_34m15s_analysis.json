@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_34m15s.mp4",
+  "start_seconds": 2055,
+  "end_seconds": 2070,
+  "duration": 15,
+  "timestamp": "34:15",
+  "analysis_timestamp": "2025-07-31T20:26:41.823163",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nFollowing a foul in the center circle, the black team takes a quick free-kick. They maintain possession by passing the ball across their backline to initiate a new phase of play.\n\n**0-15s Clip Analysis:**\n- **2s:** The referee blows the whistle, awarding a free-kick to the black team for a foul in the center circle.\n- **5s:** The black team takes the free-kick quickly, passing it backward to a central defender.\n- **9s:** The ball is passed from one black defender to another further back.\n- **12s:** A long pass is played across the field from left to right, switching the point of attack.\n- **14s:** A black player on the right side of the pitch moves to receive the long pass.",
+  "processing_time_seconds": 15.994338989257812,
+  "status": "success"
+}

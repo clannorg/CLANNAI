@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_106m15s.mp4",
+  "start_seconds": 6375,
+  "end_seconds": 6390,
+  "duration": 15,
+  "timestamp": "106:15",
+  "analysis_timestamp": "2025-07-31T20:24:07.950115",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team takes a free kick from the left side of the field, opting for a short pass routine. The receiving player delivers a cross into the box, which the red team successfully defends and clears.\n\n**Key Timing Estimates:**\n*   **9s:** The black team plays a short free kick to a player running towards the ball.\n*   **11s:** After a touch, the black player delivers a left-footed cross into the penalty area.\n*   **13s:** A red defender successfully heads the ball, clearing it away from the goal.\n*   **14s:** The ball is cleared further away from the immediate danger zone by another red player.",
+  "processing_time_seconds": 15.9618980884552,
+  "status": "success"
+}

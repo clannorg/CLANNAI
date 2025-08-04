@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_30m45s.mp4",
+  "start_seconds": 1845,
+  "end_seconds": 1860,
+  "duration": 15,
+  "timestamp": "30:45",
+  "analysis_timestamp": "2025-07-31T20:26:42.693977",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football clip.\n\nThe black team takes an attacking free-kick which is headed clear by the red team's defense. However, the black team quickly recovers the loose ball in midfield and maintains possession to restart their attack.\n\n**2s:** The black team delivers an inswinging free-kick into the penalty area.\n**3s:** A red defender rises highest and heads the ball away, clearing it from the box.\n**6s:** The black team's player (#15) controls the cleared ball just inside the opposition's half.\n**8s:** The black team makes a forward pass, continuing their attacking phase.\n**12s:** The black team circulates possession in the midfield as the red team resets its defensive formation.",
+  "processing_time_seconds": 19.312867879867554,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_43m30s.mp4",
+  "start_seconds": 2610,
+  "end_seconds": 2625,
+  "duration": 15,
+  "timestamp": "43:30",
+  "analysis_timestamp": "2025-07-31T20:27:07.921350",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe clip shows two teams, one in red kits and another in orange training bibs over a dark kit, warming up before a match. Players are casually passing multiple footballs amongst themselves in the midfield area of an artificial pitch under floodlights.\n\n**Key Timing Estimates**\n*   **1s:** A player in a green top and red shorts passes a ball near the center circle.\n*   **5s:** On the left side of the pitch, another player in a green top and red shorts kicks a ball.\n*   **9s:** A player in an orange bib on the right wing passes the ball to a teammate.\n*   **13s:** Two players in orange bibs exchange another pass on the right side of the pitch.",
+  "processing_time_seconds": 21.363699674606323,
+  "status": "success"
+}

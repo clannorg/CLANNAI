@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_65m15s.mp4",
+  "start_seconds": 3915,
+  "end_seconds": 3930,
+  "duration": 15,
+  "timestamp": "65:15",
+  "analysis_timestamp": "2025-07-31T20:29:28.356897",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip provided.\n\n**Main Action Description:**\nThe black team attempts to build an attack from their own half with a long pass, but the red team applies immediate pressure, resulting in a successful tackle and a foul being called in the center of the pitch.\n\n**Key Timing Estimates:**\n*   **1s:** The black team's defender has possession deep in their own half.\n*   **8s:** A black player receives a long, high pass just inside the red team's half.\n*   **12s:** The black player is closed down by a red defender.\n*   **14s:** The red player executes a sliding tackle, winning the ball but committing a foul in the process.",
+  "processing_time_seconds": 14.729801893234253,
+  "status": "success"
+}

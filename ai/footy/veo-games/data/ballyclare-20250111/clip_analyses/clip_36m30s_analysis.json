@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_36m30s.mp4",
+  "start_seconds": 2190,
+  "end_seconds": 2205,
+  "duration": 15,
+  "timestamp": "36:30",
+  "analysis_timestamp": "2025-07-31T20:26:47.866142",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe play begins with a long kick from the black team's goalkeeper, resulting in a midfield battle for the second ball. The red team wins possession, intercepts an opposition pass, and immediately launches a long, diagonal attacking ball towards their left flank.\n\n**Key Timing Estimates:**\n\n*   **1s:** A red player wins the initial header from the goalkeeper's long kick near the center circle.\n*   **6s:** The black team briefly recovers the ball, and a player attempts a forward pass.\n*   **8s:** A red player intercepts the pass, regaining possession for the red team in the midfield.\n*   **11s:** The red player plays a long, lofted pass forward towards the left wing to initiate an attack.\n*   **14s:** A red attacker is seen running to receive the long pass as the clip concludes.",
+  "processing_time_seconds": 18.304277896881104,
+  "status": "success"
+}

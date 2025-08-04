@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_33m45s.mp4",
+  "start_seconds": 2025,
+  "end_seconds": 2040,
+  "duration": 15,
+  "timestamp": "33:45",
+  "analysis_timestamp": "2025-07-31T20:26:41.590680",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team controls possession in the midfield, attempting to build an attack. A black team player commits a foul with a sliding tackle, but the red team recovers the loose ball as play is stopped.\n\n**Key Timing Estimates:**\n*   **3s:** The referee signals for play to resume, and a red player passes the ball forward from the center circle.\n*   **8s:** A red midfielder receives a pass and turns towards the opposition's half.\n*   **10s:** A player from the black team executes a sliding tackle, causing the red player to fall.\n*   **12s:** A different red player gains control of the loose ball following the tackle.\n*   **14s:** The red team retains possession in the midfield as the referee has likely blown for a free kick.",
+  "processing_time_seconds": 16.7346773147583,
+  "status": "success"
+}

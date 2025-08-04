@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_62m45s.mp4",
+  "start_seconds": 3765,
+  "end_seconds": 3780,
+  "duration": 15,
+  "timestamp": "62:45",
+  "analysis_timestamp": "2025-07-31T20:29:18.958411",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main action description:**\nThe black team takes a long free kick into the red team's penalty area. The red team's defense clears the initial danger, but the black team retains possession and shifts the play to the left flank to build a new attack.\n\n**Key timing estimates:**\n*   **5s:** The black team takes a long free kick, sending the ball towards the penalty box.\n*   **8s:** The ball is cleared away from the immediate goal area by the red team's defense.\n*   **10s:** A black player collects the loose ball in the midfield and passes it to a teammate.\n*   **13s:** The ball is played wide to a black player advancing on the left wing.",
+  "processing_time_seconds": 23.337852954864502,
+  "status": "success"
+}

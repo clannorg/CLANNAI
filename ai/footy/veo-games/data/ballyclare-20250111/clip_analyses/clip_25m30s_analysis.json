@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_25m30s.mp4",
+  "start_seconds": 1530,
+  "end_seconds": 1545,
+  "duration": 15,
+  "timestamp": "25:30",
+  "analysis_timestamp": "2025-07-31T20:26:26.118329",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent, here is a breakdown of the key events in this football clip.\n\n**Main Action Description:**\nThe black team starts an attack from a throw-in on the right side of the pitch. They successfully play through the red team's initial press, moving the ball into the central midfield to build their offensive play.\n\n**Key Timing Estimates:**\n- **5s:** The black team receives a throw-in on the right sideline.\n- **6s:** A short pass is made infield to another black player.\n- **8s:** Under pressure from a red defender, the ball is passed into the center of the pitch.\n- **11s:** A black player in the center circle plays a forward pass to a teammate advancing into the red team's half.\n- **14s:** The black team continues its attacking build-up in the central area.",
+  "processing_time_seconds": 22.334014415740967,
+  "status": "success"
+}

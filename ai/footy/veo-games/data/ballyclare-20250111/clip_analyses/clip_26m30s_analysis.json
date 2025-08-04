@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_26m30s.mp4",
+  "start_seconds": 1590,
+  "end_seconds": 1605,
+  "duration": 15,
+  "timestamp": "26:30",
+  "analysis_timestamp": "2025-07-31T20:26:29.681834",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe red team maintains possession in their own half, patiently building up play from the back. They circulate the ball from the center to the right flank and then back into midfield under light pressure from the black team.\n\n**Key Timing Estimates**\n*   **7s:** A red player near the center circle passes the ball backward to a defender on the right side.\n*   **10s:** The red defender plays a forward pass along the right touchline to a midfielder.\n*   **12s:** The midfielder takes a touch and passes the ball infield to a central teammate.\n*   **14s:** The central player receives the ball and immediately plays a pass to a teammate on the left side of the pitch.",
+  "processing_time_seconds": 25.867196083068848,
+  "status": "success"
+}

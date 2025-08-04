@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_12m45s.mp4",
+  "start_seconds": 765,
+  "end_seconds": 780,
+  "duration": 15,
+  "timestamp": "12:45",
+  "analysis_timestamp": "2025-07-31T20:24:32.901848",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe red team attempts to build an attack from their own half with a long ball forward. The black team effectively defends the aerial threat and regains possession, starting their own build-up play from the back.\n\n- **3s:** A red player on the left passes the ball forward to a teammate.\n- **8s:** The red player (number 20) receives the ball and turns to face the opposition's goal.\n- **10s:** The red player plays a long, high pass forward into the attacking half.\n- **12s:** A red forward heads the long pass down towards the center.\n- **13s:** A black team defender intercepts the headed pass and takes control of the ball.\n- **15s:** The black player passes the ball back to a teammate on the sideline.",
+  "processing_time_seconds": 18.3991596698761,
+  "status": "success"
+}

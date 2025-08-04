@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_15m00s.mp4",
+  "start_seconds": 900,
+  "end_seconds": 915,
+  "duration": 15,
+  "timestamp": "15:00",
+  "analysis_timestamp": "2025-07-31T20:24:36.305966",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\nThe black team takes a direct free kick from just outside the penalty area. The shot is blocked by the red team's defensive wall, and the ball deflects back into play.\n\n- **1s**: The black team sets up for a free kick, with the red team forming a defensive wall.\n- **7s**: The referee blows the whistle to signal the kick can be taken.\n- **9s**: A black player performs a dummy run over the ball.\n- **11s**: The second black player shoots the free kick towards the goal.\n- **12s**: The shot is blocked by a player in the red defensive wall.\n- **14s**: The ball rebounds, and players from both teams close in to compete for possession.",
+  "processing_time_seconds": 19.392138719558716,
+  "status": "success"
+}

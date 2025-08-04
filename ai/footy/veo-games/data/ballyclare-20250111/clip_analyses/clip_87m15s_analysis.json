@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_87m15s.mp4",
+  "start_seconds": 5235,
+  "end_seconds": 5250,
+  "duration": 15,
+  "timestamp": "87:15",
+  "analysis_timestamp": "2025-07-31T20:30:23.382103",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is a breakdown of the football clip.\n\nThe black team takes a direct free-kick just outside the penalty area, which strikes the crossbar. The red team defends the resulting rebound and successfully clears the ball away from danger.\n\n*   **2s:** The black team's free-kick taker begins their run-up.\n*   **7s:** The player strikes the ball, aiming for the goal.\n*   **8s:** The shot powerfully hits the crossbar and bounces back into the penalty area.\n*   **9s:** A red defender quickly clears the bouncing ball away from the goal.\n*   **10s:** A black team player falls to the ground inside the box during the scramble for the rebound.",
+  "processing_time_seconds": 16.595926523208618,
+  "status": "success"
+}

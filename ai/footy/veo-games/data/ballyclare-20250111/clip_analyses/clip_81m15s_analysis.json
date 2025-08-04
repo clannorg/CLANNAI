@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_81m15s.mp4",
+  "start_seconds": 4875,
+  "end_seconds": 4890,
+  "duration": 15,
+  "timestamp": "81:15",
+  "analysis_timestamp": "2025-07-31T20:30:08.665521",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe team in black maintains possession in their own half, circulating the ball across their defensive line. Their attempt to launch an attack with a long forward pass is intercepted by the red team's defense, resulting in a turnover.\n\n**Key Timing Estimates:**\n*   **2s:** A black team player receives a pass near the center circle.\n*   **4s:** The player passes the ball backward to the defense.\n*   **7s:** The black central defender makes a lateral pass to a teammate on the right side.\n*   **11s:** The black player on the right attempts a long pass forward.\n*   **13s:** A red defender intercepts the long pass, gaining possession for their team.",
+  "processing_time_seconds": 17.698948860168457,
+  "status": "success"
+}

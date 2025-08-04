@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_44m30s.mp4",
+  "start_seconds": 2670,
+  "end_seconds": 2685,
+  "duration": 15,
+  "timestamp": "44:30",
+  "analysis_timestamp": "2025-07-31T20:27:17.904935",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Based on the 15-second clip, here is an analysis of the football action.\n\n**Main Action Description:**\nThis clip shows a team in orange bibs conducting a casual pre-game warm-up or a half-time passing drill. The players circulate the ball amongst themselves in one half of the pitch, while two players in red and yellow kits stand passively near the center circle.\n\n**Key Timing Estimates:**\n*   **3s:** An orange-bibbed player passes the ball to a teammate positioned further up the field.\n*   **7s:** The ball is passed back towards the center of the passing group.\n*   **10s:** A player makes a one-touch pass to a third teammate moving into open space.\n*   **14s:** The players continue their relaxed passing and moving drill as the clip concludes.",
+  "processing_time_seconds": 25.593804597854614,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_92m45s.mp4",
+  "start_seconds": 5565,
+  "end_seconds": 5580,
+  "duration": 15,
+  "timestamp": "92:45",
+  "analysis_timestamp": "2025-07-31T20:32:47.152379",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\nThe black team kicks off the match, immediately attempting a long, direct attack. The red team's defense successfully deals with the aerial threat and wins possession in their own half.\n\n- **2s:** The black team kicks off from the center circle with a short pass backward.\n- **6s:** A black defender launches a long, high ball forward toward the red team's penalty area.\n- **9s:** A red defender (wearing #21) comfortably wins the aerial duel, heading the ball clear.\n- **13s:** Following a brief scramble for the loose ball, the red team secures possession in their midfield.",
+  "processing_time_seconds": 34.5654354095459,
+  "status": "success"
+}

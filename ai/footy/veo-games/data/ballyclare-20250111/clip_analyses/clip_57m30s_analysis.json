@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_57m30s.mp4",
+  "start_seconds": 3450,
+  "end_seconds": 3465,
+  "duration": 15,
+  "timestamp": "57:30",
+  "analysis_timestamp": "2025-07-31T20:29:19.049689",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent, here is a breakdown of the events in this football clip.\n\nThe red and black teams are lined up in their respective halves for the opening kick-off. A player in a light-blue goalkeeper jersey performs a pre-kick-off stretch in the center circle before play officially begins.\n\n- **0s:** The red team is positioned in the center circle, ready to start the match.\n- **6s:** The referee signals for play to commence.\n- **8s:** A player in a light-blue goalkeeper kit bends over in the center circle.\n- **10s:** The player performs a diving stretch on the pitch.\n- **13s:** The player gets back to his feet, clearing the center circle for the kick-off.",
+  "processing_time_seconds": 23.51894497871399,
+  "status": "success"
+}

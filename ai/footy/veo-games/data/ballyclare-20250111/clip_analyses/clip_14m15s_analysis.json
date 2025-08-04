@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_14m15s.mp4",
+  "start_seconds": 855,
+  "end_seconds": 870,
+  "duration": 15,
+  "timestamp": "14:15",
+  "analysis_timestamp": "2025-07-31T20:24:33.791001",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team attempts a forward pass from a central position, which is quickly intercepted by the red team. The red team then builds from the back, moving the ball up the left flank before executing a long diagonal switch to a teammate on the right wing.\n\n**Key Timing Estimates:**\n*   **3s:** The black team player (#20) passes the ball forward.\n*   **4s:** A red player intercepts the pass with a header back to his defense.\n*   **7s:** A red player on the left receives a pass from his defense and starts moving upfield.\n*   **10s:** The red player plays a long, sweeping cross-field pass to the opposite (right) flank.\n*   **14s:** A red teammate runs to receive the long pass on the right side of the pitch.",
+  "processing_time_seconds": 17.490375757217407,
+  "status": "success"
+}

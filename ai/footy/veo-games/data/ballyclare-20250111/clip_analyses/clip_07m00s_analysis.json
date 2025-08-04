@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_07m00s.mp4",
+  "start_seconds": 420,
+  "end_seconds": 435,
+  "duration": 15,
+  "timestamp": "07:00",
+  "analysis_timestamp": "2025-07-31T20:23:41.325720",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe clip begins with a turnover in midfield, where the red team briefly gains possession before the black team quickly wins it back. The black team then circulates the ball from their defense to the left wing, launching a progressive attack as the clip ends.\n\n**Key Timing Estimates:**\n*   **1s:** A red player intercepts a loose ball in the center circle.\n*   **4s:** A black player intercepts a forward pass from the red team, regaining possession.\n*   **6s:** Under pressure, the black player passes the ball back to a central defender.\n*   **10s:** The black defender passes the ball wide to a teammate on the left flank.\n*   **14s:** A black player receives a pass on the left and plays a quick, first-time ball forward to a teammate making a run.",
+  "processing_time_seconds": 24.432800769805908,
+  "status": "success"
+}

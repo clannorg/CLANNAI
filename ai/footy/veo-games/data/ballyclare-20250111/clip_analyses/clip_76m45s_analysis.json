@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_76m45s.mp4",
+  "start_seconds": 4605,
+  "end_seconds": 4620,
+  "duration": 15,
+  "timestamp": "76:45",
+  "analysis_timestamp": "2025-07-31T20:29:56.356885",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team orchestrates a quick attack inside the box, but a crucial block by a red defender thwarts the scoring opportunity. The red team then clears the ball long to relieve the pressure and reset the play in their own half.\n\n- **2s:** A black player on the left edge of the box passes inside to a teammate.\n- **3s:** The receiving player lays the ball off into the path of a forward making a run.\n- **4s:** The black forward takes a first-time shot from inside the penalty area.\n- **5s:** A red defender makes a sliding block, deflecting the shot away from goal.\n- **8s:** A red player controls the loose ball and makes a powerful clearance upfield.\n- **10s:** The ball lands in the red team's half of the pitch.",
+  "processing_time_seconds": 19.912632703781128,
+  "status": "success"
+}

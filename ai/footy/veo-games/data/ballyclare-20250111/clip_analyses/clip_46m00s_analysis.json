@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_46m00s.mp4",
+  "start_seconds": 2760,
+  "end_seconds": 2775,
+  "duration": 15,
+  "timestamp": "46:00",
+  "analysis_timestamp": "2025-07-31T20:27:48.360005",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nPlayers from a red team and a team in yellow/orange bibs are conducting a low-intensity warm-up or passing drill. They are spread across the midfield area, casually moving and passing the ball without any defensive pressure.\n\n**Key Timing Estimates:**\n\n*   **4s:** A player in a yellow/orange bib, positioned inside the center circle, plays a long, lofted pass to the left side of the pitch.\n*   **7s:** A player in a red kit, near the halfway line, controls the long pass from the air.\n*   **11s:** On the right side of the field, a different player in a yellow/orange bib makes a short ground pass infield.\n*   **14s:** The red player on the left begins stretching, highlighting the non-competitive, warm-up nature of the activity.",
+  "processing_time_seconds": 51.27530884742737,
+  "status": "success"
+}

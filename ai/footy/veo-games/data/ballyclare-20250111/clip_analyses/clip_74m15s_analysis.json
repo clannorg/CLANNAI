@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_74m15s.mp4",
+  "start_seconds": 4455,
+  "end_seconds": 4470,
+  "duration": 15,
+  "timestamp": "74:15",
+  "analysis_timestamp": "2025-07-31T20:29:55.371854",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe Black team maintains possession in their own half, circulating the ball while being pressed by the Red team. Their attempt to build an attack ends with an overhit long pass that is easily claimed by the opposition's goalkeeper.\n\n*   **3s:** A Black defender passes the ball forward to a midfielder near the center circle.\n*   **6s:** The ball is moved to a Black player on the right wing, who is immediately closed down by a Red defender.\n*   **8s:** Under pressure, the Black team passes the ball back infield to maintain possession.\n*   **12s:** The Black midfielder attempts a long, hopeful pass towards the Red team's penalty area.\n*   **14s:** The pass is overhit and caught comfortably by the Red goalkeeper, turning over possession.",
+  "processing_time_seconds": 22.529266595840454,
+  "status": "success"
+}

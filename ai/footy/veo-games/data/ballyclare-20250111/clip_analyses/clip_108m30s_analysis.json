@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_108m30s.mp4",
+  "start_seconds": 6510,
+  "end_seconds": 6525,
+  "duration": 15,
+  "timestamp": "108:30",
+  "analysis_timestamp": "2025-07-31T20:24:12.038185",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team launches a quick attack with a long ball from midfield to the right wing. The winger controls the ball and advances down the sideline before being challenged, resulting in a throw-in for the attacking black team.\n\n**Key Timing Estimates:**\n*   **2s:** A black team player in the center circle plays a long forward pass to the right side.\n*   **6s:** The black team's winger (No. 10) receives the long ball on the right flank.\n*   **8s:** The winger begins dribbling down the touchline, putting pressure on the red team's defense.\n*   **13s:** After a challenge from a red defender, the ball goes out of play for a black team throw-in.",
+  "processing_time_seconds": 16.30219340324402,
+  "status": "success"
+}

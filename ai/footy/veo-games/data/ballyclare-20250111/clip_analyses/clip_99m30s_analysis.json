@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_99m30s.mp4",
+  "start_seconds": 5970,
+  "end_seconds": 5985,
+  "duration": 15,
+  "timestamp": "99:30",
+  "analysis_timestamp": "2025-07-31T20:32:47.329195",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the football clip.\n\nThe black team loses possession in their own half, leading to a quick counter-attack by the red team down the right wing. The sequence culminates in a low cross and a shot on goal, which is saved by the black team's goalkeeper.\n\n- **5s:** A red player pressures and dispossesses a black player near the center circle to win possession.\n- **8s:** The red team quickly moves the ball forward with a pass to a teammate on the right wing.\n- **11s:** The red winger delivers a low, driven cross into the penalty box.\n- **12s:** A red attacker running towards the near post connects with the cross, directing a first-time shot toward the goal.\n- **13s:** The black team's goalkeeper makes a diving save to his right, parrying the ball away.",
+  "processing_time_seconds": 34.58033490180969,
+  "status": "success"
+}

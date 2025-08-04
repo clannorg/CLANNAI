@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_82m00s.mp4",
+  "start_seconds": 4920,
+  "end_seconds": 4935,
+  "duration": 15,
+  "timestamp": "82:00",
+  "analysis_timestamp": "2025-07-31T20:30:12.665673",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the events in the video clip.\n\nThe red team attempts a direct, long-ball attack from the kickoff. The black team's defense reads the play well, wins the initial aerial challenge, and establishes controlled possession in their own half.\n\n- **2s:** A red player receives the kickoff pass just inside the center circle.\n- **4s:** The red player lofts a long, high pass forward toward the right attacking channel.\n- **8s:** The black team's central defender cleanly wins the header against a red attacker.\n- **11s:** A black player on the right side of the defense controls the headed clearance.\n- **14s:** Under pressure from a closing red player, the black defender makes a short pass back to a teammate to secure possession.",
+  "processing_time_seconds": 20.668757915496826,
+  "status": "success"
+}

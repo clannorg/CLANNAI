@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_111m45s.mp4",
+  "start_seconds": 6705,
+  "end_seconds": 6720,
+  "duration": 15,
+  "timestamp": "111:45",
+  "analysis_timestamp": "2025-07-31T20:24:30.196252",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Based on the video provided, there is no football match in progress. The clip consists of a slow pan across an empty, floodlit football pitch at night.\n\n**Main Action Description**\nThe video shows a panning shot of an empty football pitch, likely before or after a game. There are no players on the field and no ball in play; the only notable feature is snow that has been cleared and piled up along the touchline.\n\n**Key Timing Estimates**\nNo football-related actions such as passes, tackles, or shots occur in this clip. The only activity is the camera movement.\n- **0-7s:** The camera pans slowly from the center of the pitch towards the right touchline and corner.\n- **7-15s:** The camera begins panning back from right to left across the empty pitch.",
+  "processing_time_seconds": 22.246006965637207,
+  "status": "success"
+}

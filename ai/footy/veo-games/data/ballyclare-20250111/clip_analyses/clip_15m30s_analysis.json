@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_15m30s.mp4",
+  "start_seconds": 930,
+  "end_seconds": 945,
+  "duration": 15,
+  "timestamp": "15:30",
+  "analysis_timestamp": "2025-07-31T20:24:37.167226",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\nThe black team takes a direct free-kick which cannons off the crossbar. The rebound creates a frantic scramble in front of the goal, which the red team's defense ultimately manages to clear away from danger.\n\n**0s-4s:** The black team sets up for a free-kick just outside the penalty area.\n**5s:** The black player (No. 20) strikes the ball, shooting directly at the goal.\n**7s:** The shot hits the crossbar and bounces down onto the goal line.\n**9s:** The red team's goalkeeper and a black attacker (No. 52) rush to the loose ball.\n**13s:** After a brief scramble, a red defender successfully clears the ball away from the goal.",
+  "processing_time_seconds": 18.307679891586304,
+  "status": "success"
+}

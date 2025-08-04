@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_16m45s.mp4",
+  "start_seconds": 1005,
+  "end_seconds": 1020,
+  "duration": 15,
+  "timestamp": "16:45",
+  "analysis_timestamp": "2025-07-31T20:24:44.236193",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip provided.\n\n**Main Action Description:**\nThe black team intercepts a pass in the midfield and immediately launches a quick counter-attack. The ball carrier drives through the center of the pitch before playing a forward pass to a teammate making a run on the right side.\n\n**Key Timing Estimates:**\n*   **4s:** A black player intercepts a forward pass from the red team near the center circle.\n*   **7s:** The black player with the ball crosses the halfway line, advancing into the red team's half.\n*   **12s:** After dribbling forward, the black player plays a through pass to a teammate on the right flank.\n*   **14s:** The black attacker runs onto the pass, moving towards the red team's penalty area as the clip ends.",
+  "processing_time_seconds": 21.127134799957275,
+  "status": "success"
+}

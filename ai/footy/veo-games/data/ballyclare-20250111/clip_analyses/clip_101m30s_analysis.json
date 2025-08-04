@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_101m30s.mp4",
+  "start_seconds": 6090,
+  "end_seconds": 6105,
+  "duration": 15,
+  "timestamp": "101:30",
+  "analysis_timestamp": "2025-07-31T20:23:58.773903",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team initiates play from a throw-in on the left side, successfully retaining possession and building an attack through the midfield. The sequence culminates with a red player receiving the ball centrally and driving forward into the black team's defensive half.\n\n**Key Timing Estimates:**\n- **1s:** A red player takes a throw-in on the left touchline.\n- **4s:** Following a header and a short pass, the ball is played to a red midfielder.\n- **8s:** The red team works the ball forward; a black player challenges but the red team keeps possession.\n- **11s:** A red player receives a pass just inside the attacking half, near the center circle.\n- **13s:** The player turns and begins to run with the ball directly at the black team's defense.",
+  "processing_time_seconds": 21.801689386367798,
+  "status": "success"
+}

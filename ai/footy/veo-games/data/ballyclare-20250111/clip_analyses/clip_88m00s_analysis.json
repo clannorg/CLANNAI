@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_88m00s.mp4",
+  "start_seconds": 5280,
+  "end_seconds": 5295,
+  "duration": 15,
+  "timestamp": "88:00",
+  "analysis_timestamp": "2025-07-31T20:30:25.974792",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\nThe scene captures a pause in play, likely after a missed shot or a corner kick by the black team. Players from both teams are resetting their positions while the goalkeeper in red prepares for a goal kick.\n\n- **1s:** The clip begins with a black team player (No. 29) standing just outside the penalty area, having just completed an attacking move.\n- **4s:** The black team player (No. 29) turns and begins walking back towards the center of the pitch.\n- **8s:** The red team's goalkeeper stands in his goal, waiting to take a goal kick.\n- **13s:** Players from both the red and black teams remain in their positions, waiting for play to restart.",
+  "processing_time_seconds": 18.58229374885559,
+  "status": "success"
+}

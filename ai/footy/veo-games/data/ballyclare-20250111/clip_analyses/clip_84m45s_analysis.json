@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_84m45s.mp4",
+  "start_seconds": 5085,
+  "end_seconds": 5100,
+  "duration": 15,
+  "timestamp": "84:45",
+  "analysis_timestamp": "2025-07-31T20:30:16.477057",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the football action in the video clip.\n\n**Main Action Description**\nThe black team initiates an attack from their own half, circulating the ball from the left wing across to the right. They then play a long forward pass to successfully break into the red team's half on the right flank.\n\n**Key Timing Estimates**\n*   **2s:** A black player on the left passes the ball infield to a central midfielder.\n*   **4s:** The ball is switched across the field to a black player (No. 29) near the halfway line.\n*   **9s:** Player No. 29 plays a long, diagonal pass forward to the right wing.\n*   **11s:** A black winger controls the pass inside the red team's half.\n*   **14s:** The winger begins to run with the ball towards the opponent's penalty area.",
+  "processing_time_seconds": 18.849188089370728,
+  "status": "success"
+}

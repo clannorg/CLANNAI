@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_19m30s.mp4",
+  "start_seconds": 1170,
+  "end_seconds": 1185,
+  "duration": 15,
+  "timestamp": "19:30",
+  "analysis_timestamp": "2025-07-31T20:24:50.442931",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the key actions in the football clip.\n\n### Main Action Description\nThe black team attempts a quick counter-attack with a long ball over the top, forcing the red team's goalkeeper to rush far out of his box to make a vital headed clearance. Following the clearance, the black team regains possession and begins to build a new attack from the midfield.\n\n### Key Timing Estimates\n**0s:** A player from the black team plays a long, high pass from their own half.\n**3s:** A black team forward runs in behind the red defense to chase the long ball.\n**6s:** The red team's goalkeeper comes well outside the penalty area to head the ball away from the approaching attacker.\n**10s:** The black team recovers possession in the midfield.\n**13s:** A black team player receives a pass in the center circle, controlling the play.",
+  "processing_time_seconds": 20.075647830963135,
+  "status": "success"
+}

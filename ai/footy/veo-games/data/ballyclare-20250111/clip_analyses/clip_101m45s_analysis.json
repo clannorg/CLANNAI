@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_101m45s.mp4",
+  "start_seconds": 6105,
+  "end_seconds": 6120,
+  "duration": 15,
+  "timestamp": "101:45",
+  "analysis_timestamp": "2025-07-31T20:23:53.977231",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team loses possession in the center of the pitch due to a tackle, then immediately commits a foul. The red team takes the resulting long free-kick, which is caught by the opposition's goalkeeper.\n\n**Key Timing Estimates:**\n*   **5s**: A red player makes a successful sliding tackle in the center circle, winning possession from the black team.\n*   **7s**: A black player immediately fouls the red player, and the referee blows the whistle.\n*   **10s**: The red team takes a long, high free-kick from deep inside their own half.\n*   **14s**: The black team's goalkeeper steps out and catches the high ball comfortably.",
+  "processing_time_seconds": 16.664100408554077,
+  "status": "success"
+}

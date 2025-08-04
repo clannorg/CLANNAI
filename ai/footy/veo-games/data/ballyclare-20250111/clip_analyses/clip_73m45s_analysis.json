@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_73m45s.mp4",
+  "start_seconds": 4425,
+  "end_seconds": 4440,
+  "duration": 15,
+  "timestamp": "73:45",
+  "analysis_timestamp": "2025-07-31T20:29:48.854731",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team sets up for and executes a long free kick from their own half. The red team organizes its defensive line high up the pitch in preparation to challenge for the aerial ball.\n\n**Key Timing Estimates:**\n- **0s - 11s:** Players from both teams get into position for the restart, with the referee managing the setup.\n- **12s:** The black team player begins the run-up to take the free kick.\n- **13s:** The player strikes the ball, launching it high and long towards the red team's half.\n- **15s:** The clip ends with the ball in mid-air as players from both sides prepare to contest it.",
+  "processing_time_seconds": 16.601747751235962,
+  "status": "success"
+}

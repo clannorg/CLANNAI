@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_108m45s.mp4",
+  "start_seconds": 6525,
+  "end_seconds": 6540,
+  "duration": 15,
+  "timestamp": "108:45",
+  "analysis_timestamp": "2025-07-31T20:24:12.814675",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Certainly, here is an analysis of the football clip provided.\n\nThe Black team attacks down the right wing, drawing a foul inside the penalty area from the Red team. The resulting penalty kick is successfully converted by the Black team for a goal.\n\n*   **2s:** A Black team attacker dribbles towards the Red team's penalty area on the right flank.\n*   **8s:** The Black attacker is fouled by a sliding Red defender just inside the box.\n*   **10s:** The referee awards a penalty kick to the Black team.\n*   **12s:** The Black team's penalty taker strikes the ball.\n*   **13s:** The ball enters the goal, and the Black team scores.",
+  "processing_time_seconds": 16.814114332199097,
+  "status": "success"
+}

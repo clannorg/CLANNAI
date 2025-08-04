@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_38m30s.mp4",
+  "start_seconds": 2310,
+  "end_seconds": 2325,
+  "duration": 15,
+  "timestamp": "38:30",
+  "analysis_timestamp": "2025-07-31T20:26:58.718141",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe red team sets up for a goal kick or a deep free kick from their own penalty area. Players from both teams slowly move into their positions in midfield in anticipation of a long ball up the pitch.\n\n**Key Timing Estimates:**\n*   **0s:** The red team prepares to take a long kick from their own defensive third.\n*   **4s:** The red team's goalkeeper is visible in the goal while another red player stands over the ball.\n*   **8s:** A black team defender moves to mark a red team attacker in the center of the pitch.\n*   **14s:** Players from both teams are set in their positions, awaiting the kick.",
+  "processing_time_seconds": 19.331512928009033,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_34m45s.mp4",
+  "start_seconds": 2085,
+  "end_seconds": 2100,
+  "duration": 15,
+  "timestamp": "34:45",
+  "analysis_timestamp": "2025-07-31T20:26:43.358499",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team loses possession in the midfield following an interception by a red player. The red team then quickly transitions the ball to their left wing, looking to start an attack against the defending black team.\n\n### Key Timing Estimates\n**0s:** The black team has comfortable possession in the midfield.\n**6s:** A red player intercepts a forward pass from the black team near the center circle.\n**9s:** The red player who won possession passes the ball forward to a teammate on the left flank.\n**12s:** The red winger receives the pass and is immediately put under pressure by a closing black defender.\n**15s:** The clip ends as the red player maintains control of the ball on the left sideline.",
+  "processing_time_seconds": 17.369282484054565,
+  "status": "success"
+}

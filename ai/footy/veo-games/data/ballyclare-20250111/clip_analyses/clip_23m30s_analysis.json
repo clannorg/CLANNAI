@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_23m30s.mp4",
+  "start_seconds": 1410,
+  "end_seconds": 1425,
+  "duration": 15,
+  "timestamp": "23:30",
+  "analysis_timestamp": "2025-07-31T20:26:23.573370",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here's a breakdown of the football action in the clip.\n\nThe clip shows a midfield turnover and a failed attack. The red team initially wins the ball near the center circle, but their subsequent advance is quickly shut down by the black team's defense, who then regain possession.\n\n- **2s:** A red player intercepts a pass from the black team in the center of the pitch.\n- **4s:** The red team passes the ball to a teammate on the left wing, initiating an attack.\n- **7s:** A red player receives the ball just inside the black team's half.\n- **10s:** A black defender successfully tackles the red player, winning back the ball.\n- **13s:** The black team plays a pass forward, starting to build their own attack.",
+  "processing_time_seconds": 19.827959537506104,
+  "status": "success"
+}

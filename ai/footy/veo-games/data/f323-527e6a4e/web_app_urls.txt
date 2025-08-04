@@ -1,0 +1,13 @@
+# Web App S3 URLs - f323-527e6a4e
+# Generated for company dashboard upload
+
+VIDEO_URL=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/f323-527e6a4e-video-mp4.mp4
+EVENTS_URL=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-web_events_array-json.json
+RED_TEAM_URL=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_analysis_red_team-txt.txt
+YELLOW_TEAM_URL=https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_analysis_yellow_team-txt.txt
+
+# Copy-paste these URLs into company dashboard:
+# 1. Video URL
+# 2. Events JSON URL
+# 3. Red Team Analysis URL
+# 4. Yellow Team Analysis URL

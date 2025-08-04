@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_12m15s.mp4",
+  "start_seconds": 735,
+  "end_seconds": 750,
+  "duration": 15,
+  "timestamp": "12:15",
+  "analysis_timestamp": "2025-07-31T20:24:29.498353",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the football clip.\n\n### Main Action\nThe red team initiates a fast attack down the right wing. A low, driven cross is sent into the penalty area, leading to a sliding, first-time shot that results in a goal.\n\n### Key Timing Estimates\n*   **00:02:** The red player on the right wing plays a sharp, low cross into the six-yard box.\n*   **00:04:** An attacking red player slides in and connects with the ball, shooting towards the goal.\n*   **00:05:** The ball goes into the back of the net. Goal for the red team.\n*   **00:06:** The red team players begin celebrating, with the goalscorer falling to the ground.",
+  "processing_time_seconds": 16.683446168899536,
+  "status": "success"
+}

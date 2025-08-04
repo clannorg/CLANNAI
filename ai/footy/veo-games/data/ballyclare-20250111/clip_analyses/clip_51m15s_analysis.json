@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_51m15s.mp4",
+  "start_seconds": 3075,
+  "end_seconds": 3090,
+  "duration": 15,
+  "timestamp": "51:15",
+  "analysis_timestamp": "2025-07-31T20:27:33.343090",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This is a view of two teams warming up before a match, not active gameplay. The camera pans from right to left across the pitch, showing different groups of players performing light drills.\n\n**Timing Estimates:**\n- **0s:** The scene opens with a group of players in orange bibs on the right and another group in red kits and green bibs on the left.\n- **3s:** The camera begins a slow pan to the left.\n- **5s:** A player in a red kit on the left passes the ball to a teammate in a green bib.\n- **9s:** The camera pan reveals more of the players in red and green bibs casually passing the ball amongst themselves.\n- **13s:** The players continue their relaxed passing warm-up near the top of the penalty area.",
+  "processing_time_seconds": 23.779436111450195,
+  "status": "success"
+}

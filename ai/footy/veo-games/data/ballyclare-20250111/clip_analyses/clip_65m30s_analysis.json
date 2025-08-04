@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_65m30s.mp4",
+  "start_seconds": 3930,
+  "end_seconds": 3945,
+  "duration": 15,
+  "timestamp": "65:30",
+  "analysis_timestamp": "2025-07-31T20:29:33.298522",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe black team controls possession in their own half, circulating the ball between their defenders and midfielders under light pressure. The red team maintains a disciplined defensive formation, closing down passing lanes without committing to an aggressive press.\n\n**Key Timing Estimates:**\n*   **2s:** Following a brief stoppage, the black team restarts play with a pass back into their own half.\n*   **7s:** A black midfielder receives the ball and is immediately put under pressure by a red player.\n*   **9s:** The black team passes the ball back to a central defender inside the center circle to reset the play.\n*   **12s:** The central defender switches the play with a pass to the left-sided defender.\n*   **14s:** The black team begins to move the ball forward up the left wing.",
+  "processing_time_seconds": 19.63944721221924,
+  "status": "success"
+}

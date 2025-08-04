@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_35m45s.mp4",
+  "start_seconds": 2145,
+  "end_seconds": 2160,
+  "duration": 15,
+  "timestamp": "35:45",
+  "analysis_timestamp": "2025-07-31T20:26:48.574907",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nA player from the black team lofts a long pass into the red team's penalty area. The attacking black player is challenged by a red defender and goes to the ground, resulting in a stoppage of play as the referee assesses the situation.\n\n**Key Timing Estimates:**\n- **1s:** The black team player in the center circle plays a long, forward pass.\n- **5s:** An attacking black player and a red defender challenge for the incoming ball inside the penalty area, with the black player falling down.\n- **6s:** The ball runs loose, and the play is halted due to the challenge.\n- **10s:** The referee is on the scene, and players from both teams look on as the black player remains on the ground.",
+  "processing_time_seconds": 21.023006677627563,
+  "status": "success"
+}

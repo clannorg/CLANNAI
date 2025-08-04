@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_90m30s.mp4",
+  "start_seconds": 5430,
+  "end_seconds": 5445,
+  "duration": 15,
+  "timestamp": "90:30",
+  "analysis_timestamp": "2025-07-31T20:30:30.959438",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe black team successfully presses the red team in the midfield, winning the ball with a tackle and immediately launching a counter-attack by dribbling into the opposition's half.\n\n**Key Timing Estimates**\n*   **3s:** The red team begins building play from the left side of the pitch.\n*   **7s:** A red player receives a pass in the midfield, just inside their own half.\n*   **9s:** A black player makes a strong standing tackle, dispossessing the red player and winning the ball.\n*   **11s:** The black player who won possession begins to dribble forward, starting a counter-attack.\n*   **14s:** The player continues advancing with the ball into the red team's half.",
+  "processing_time_seconds": 18.55667233467102,
+  "status": "success"
+}

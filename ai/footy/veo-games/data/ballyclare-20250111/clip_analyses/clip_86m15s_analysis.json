@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_86m15s.mp4",
+  "start_seconds": 5175,
+  "end_seconds": 5190,
+  "duration": 15,
+  "timestamp": "86:15",
+  "analysis_timestamp": "2025-07-31T20:30:17.741515",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent, here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team calmly builds possession from their own half, circulating the ball across their backline. They then execute a long diagonal pass to switch the point of attack to their left winger, moving into the opposition's territory.\n\n**Key Timing Estimates:**\n*   **2s:** The black team plays a pass from their penalty area to a central defender.\n*   **7s:** Possession is worked out to a player on the right side of the pitch.\n*   **10s:** A black central player executes a long, switching pass towards the left flank.\n*   **14s:** The black winger (#29) controls the long pass near the left touchline.",
+  "processing_time_seconds": 17.747708320617676,
+  "status": "success"
+}

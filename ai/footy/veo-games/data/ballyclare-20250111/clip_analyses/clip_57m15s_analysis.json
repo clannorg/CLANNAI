@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_57m15s.mp4",
+  "start_seconds": 3435,
+  "end_seconds": 3450,
+  "duration": 15,
+  "timestamp": "57:15",
+  "analysis_timestamp": "2025-07-31T20:29:13.626968",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe clip captures the moments just before a kickoff. Both the red and black teams are in their respective halves, holding their formation as they wait for the referee to start or restart the match.\n\n**Key Timing Estimates:**\n\n*   **0s:** The scene opens with players from both teams positioned for a kickoff. The red team is in the left half, and the black team is in the right half.\n*   **0-15s:** The players remain largely stationary in their kickoff positions. The referee is in the center circle with the ball on the center spot, but no whistle is blown, and no play begins within this 15-second window.",
+  "processing_time_seconds": 18.096974849700928,
+  "status": "success"
+}

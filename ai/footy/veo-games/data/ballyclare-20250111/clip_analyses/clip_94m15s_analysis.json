@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_94m15s.mp4",
+  "start_seconds": 5655,
+  "end_seconds": 5670,
+  "duration": 15,
+  "timestamp": "94:15",
+  "analysis_timestamp": "2025-07-31T20:32:46.624946",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe black team builds an attack from their own half, moving the ball out to the right wing. A cross is delivered into the box, but a red defender successfully heads the ball clear to neutralize the threat.\n\n- **2s:** A black player in the center circle passes the ball forward to the right flank.\n- **6s:** The black winger receives the long pass near the sideline.\n- **11s:** After advancing, the black winger delivers a cross into the penalty area.\n- **14s:** A red defender in the center of the box heads the ball away from goal to clear the danger.",
+  "processing_time_seconds": 34.02103781700134,
+  "status": "success"
+}

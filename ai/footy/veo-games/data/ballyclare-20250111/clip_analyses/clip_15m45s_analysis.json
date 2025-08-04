@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_15m45s.mp4",
+  "start_seconds": 945,
+  "end_seconds": 960,
+  "duration": 15,
+  "timestamp": "15:45",
+  "analysis_timestamp": "2025-07-31T20:24:38.388402",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team initiates a controlled build-up from their own penalty area, starting with a short pass from the goalkeeper. They successfully circulate the ball across their defensive line before advancing it into the midfield.\n\n**Key Timing Estimates:**\n*   **2s:** The black team's goalkeeper passes the ball short to a central defender to start the play.\n*   **5s:** The central defender makes a simple sideways pass to the left-sided defender.\n*   **10s:** The left-sided defender plays a firm, forward pass into a central midfielder.\n*   **12s:** The black team's midfielder (number 20) receives the pass under no pressure and turns to face the opposition's half.",
+  "processing_time_seconds": 19.486900091171265,
+  "status": "success"
+}

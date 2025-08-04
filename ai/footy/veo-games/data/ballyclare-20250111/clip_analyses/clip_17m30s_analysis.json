@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_17m30s.mp4",
+  "start_seconds": 1050,
+  "end_seconds": 1065,
+  "duration": 15,
+  "timestamp": "17:30",
+  "analysis_timestamp": "2025-07-31T20:24:41.573592",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the provided football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team takes a long-range free-kick from a central position. The shot is deflected by the red team's defensive wall, and the ball loops up for an easy catch by the red goalkeeper.\n\n**Key Timing Estimates:**\n*   **1s:** The black team prepares to take a free-kick while the red team organizes a defensive wall.\n*   **9s:** A black player takes the shot from the free-kick.\n*   **10s:** The ball strikes a player in the red wall and is deflected high into the air.\n*   **12s:** The red team's goalkeeper steps forward and comfortably catches the ball.",
+  "processing_time_seconds": 15.876996040344238,
+  "status": "success"
+}

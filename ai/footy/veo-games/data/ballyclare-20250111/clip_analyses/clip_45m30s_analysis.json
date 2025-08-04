@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_45m30s.mp4",
+  "start_seconds": 2730,
+  "end_seconds": 2745,
+  "duration": 15,
+  "timestamp": "45:30",
+  "analysis_timestamp": "2025-07-31T20:27:23.186858",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a description of the main action and key events from the video clip.\n\nPlayers from a team in red tops and green shorts and another in dark/black kits are participating in a pre-match warm-up drill. The drill consists of players passing the ball casually between them in one half of the field.\n\n**0s:** A player in red/green near the center circle passes the ball forward.\n**2s:** A player in a black kit receives the ball and plays a short pass to a teammate.\n**5s:** A player on the right, wearing an orange bib over a black kit, passes the ball across the pitch.\n**9s:** A player in red/green receives the ball near the center circle.\n**11s:** The red/green player makes a long pass to a teammate on the left touchline.\n**13s:** The player on the left touchline plays a simple pass back towards the center.",
+  "processing_time_seconds": 26.341252088546753,
+  "status": "success"
+}

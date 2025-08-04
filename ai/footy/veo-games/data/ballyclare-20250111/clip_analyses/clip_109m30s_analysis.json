@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_109m30s.mp4",
+  "start_seconds": 6570,
+  "end_seconds": 6585,
+  "duration": 15,
+  "timestamp": "109:30",
+  "analysis_timestamp": "2025-07-31T20:24:16.182697",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is a breakdown of the football clip.\n\nThe red team prepares to take an attacking free kick from the right side of the pitch, close to the penalty area. The black team organizes its defensive wall and marks players in anticipation of the set-piece.\n\n- **1s:** The scene opens with both teams setting up for a red team free kick.\n- **4s:** The referees manage the positioning of the players, particularly the black team's defensive wall.\n- **8s:** A red team player gestures, directing teammates as they arrange their positions for the kick.\n- **13s:** The black team's goalkeeper (in yellow) moves forward to organize the defense before retreating toward the goal line.",
+  "processing_time_seconds": 19.698010444641113,
+  "status": "success"
+}

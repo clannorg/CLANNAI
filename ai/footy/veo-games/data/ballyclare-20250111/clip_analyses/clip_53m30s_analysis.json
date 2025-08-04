@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_53m30s.mp4",
+  "start_seconds": 3210,
+  "end_seconds": 3225,
+  "duration": 15,
+  "timestamp": "53:30",
+  "analysis_timestamp": "2025-07-31T20:27:41.039603",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a description and timing analysis of the football clip.\n\nThis video shows a team warming up on the pitch before a game, not an active match between two opposing teams. The players on the field appear to be part of the same squad, distinguished by orange training bibs and a goalkeeper in green.\n\n**Main Action Description:**\nThe clip shows a football team's pre-game warm-up. A group of players in orange bibs engages in a casual passing drill on one side of the field while a goalkeeper stands near the center circle.\n\n**Key Timing Estimates:**\n- **5s:** A player in a green goalkeeper kit passes a ball from the center circle towards teammates.\n- **8s:** A player in an orange bib on the right receives the ball to start a passing sequence.\n- **11s:** The player makes a short pass to a teammate in the center of the warm-up group.\n- **14s:** The ball is passed again within the small group as they continue their drill.",
+  "processing_time_seconds": 20.590221405029297,
+  "status": "success"
+}

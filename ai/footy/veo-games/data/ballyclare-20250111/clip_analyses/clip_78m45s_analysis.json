@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_78m45s.mp4",
+  "start_seconds": 4725,
+  "end_seconds": 4740,
+  "duration": 15,
+  "timestamp": "78:45",
+  "analysis_timestamp": "2025-07-31T20:29:57.627749",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's a breakdown of the action in the football clip.\n\nThe black team attempts to start an attack from the center circle, but a red player intercepts the initial pass. A foul is immediately committed by the black team, resulting in the referee awarding a free kick.\n\n- **1s:** A player from the black team passes the ball forward from inside the center circle.\n- **3s:** A red player intercepts the pass just outside the center circle.\n- **4s:** A black player immediately tackles the red player, committing a foul.\n- **5s:** The referee blows the whistle to stop play.\n- **6s:** The referee signals a free kick for the red team.\n- **10s:** Players begin repositioning for the upcoming free kick.",
+  "processing_time_seconds": 16.313835859298706,
+  "status": "success"
+}

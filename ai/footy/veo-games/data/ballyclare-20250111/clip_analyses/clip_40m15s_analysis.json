@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_40m15s.mp4",
+  "start_seconds": 2415,
+  "end_seconds": 2430,
+  "duration": 15,
+  "timestamp": "40:15",
+  "analysis_timestamp": "2025-07-31T20:26:55.108752",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team takes a direct free-kick from a dangerous position just outside the red team's penalty area. The shot is ultimately unsuccessful, flying high over the crossbar for a goal kick.\n\n**Key Timing Estimates:**\n- **0s:** The black team is positioned to take a free-kick. The red team forms a defensive wall and marks players in the box.\n- **10s:** The black team player begins the run-up to strike the ball.\n- **11s:** The player shoots the ball towards the goal.\n- **13s:** The ball sails over the crossbar, resulting in a goal kick for the red team.",
+  "processing_time_seconds": 13.969651937484741,
+  "status": "success"
+}

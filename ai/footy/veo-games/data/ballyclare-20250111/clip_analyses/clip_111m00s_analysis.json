@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_111m00s.mp4",
+  "start_seconds": 6660,
+  "end_seconds": 6675,
+  "duration": 15,
+  "timestamp": "111:00",
+  "analysis_timestamp": "2025-07-31T20:24:23.108916",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Based on my analysis of the 15-second clip, here is a breakdown of the events:\n\nThe clip shows the teams walking off the pitch at the end of a period of play, likely for halftime or the end of the match. There is no active gameplay, possession, or ball connections to report.\n\n*   **0s - 4s:** Players from both teams are seen milling around the center of the pitch after the whistle has apparently blown.\n*   **5s:** Players begin to walk off the field together, heading towards the covered stand in the background.\n*   **10s - 15s:** The teams continue to exit the field of play as the clip ends.",
+  "processing_time_seconds": 21.745371341705322,
+  "status": "success"
+}

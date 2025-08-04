@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_93m15s.mp4",
+  "start_seconds": 5595,
+  "end_seconds": 5610,
+  "duration": 15,
+  "timestamp": "93:15",
+  "analysis_timestamp": "2025-07-31T20:32:51.418063",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the football clip.\n\n### Main Action Description\nThe black team clears the ball long from their defensive third, but the red team wins the initial aerial duel in midfield. A subsequent forward pass from the red team is intercepted in the center circle, allowing the black team to regain and circulate possession in their own half under pressure.\n\n### Key Timing Estimates\n- **1s:** A black player near the penalty area kicks a long ball downfield.\n- **3s:** A red player (wearing #12) wins the header in the midfield.\n- **6s:** Another red player volleys the ball forward towards the center circle.\n- **8s:** A black player (wearing #26) intercepts the pass inside the center circle.\n- **12s:** The black team maintains possession, moving the ball towards the right sideline.",
+  "processing_time_seconds": 38.82778549194336,
+  "status": "success"
+}

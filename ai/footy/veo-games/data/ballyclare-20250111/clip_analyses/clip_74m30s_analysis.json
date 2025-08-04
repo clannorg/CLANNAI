@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_74m30s.mp4",
+  "start_seconds": 4470,
+  "end_seconds": 4485,
+  "duration": 15,
+  "timestamp": "74:30",
+  "analysis_timestamp": "2025-07-31T20:29:52.717779",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course, here is a detailed analysis of the football clip.\n\nThe red team's attack is stopped by a goalkeeper save, and the black team successfully clears the ball to launch a counter-attack into the opponent's half.\n\n- **0s:** A player from the red team takes a shot from just outside the penalty box.\n- **1s:** The black team's goalkeeper makes a diving save to their right, pushing the ball away.\n- **4s:** A black defender clears the loose ball high and long towards the midfield.\n- **9s:** The black team's number 11 wins the header near the center circle.\n- **12s:** After a brief scramble, the black team secures possession and plays a pass forward.\n- **14s:** The black team controls the ball and begins to build an attack in the red team's territory.",
+  "processing_time_seconds": 19.582244873046875,
+  "status": "success"
+}

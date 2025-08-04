@@ -1,0 +1,9 @@
+{
+  "url": "https://app.veo.co/matches/527e6a4e-f323-4524-b211-c3799a579e3f/",
+  "match_id": "f323-527e6a4e",
+  "veo_match_id": "527e6a4e-f323-4524-b211-c3799a579e3f",
+  "extracted_at": "2025-08-01T11:57:11.816221",
+  "total_events": 32,
+  "extraction_method": "veo_api_highlights",
+  "status": "ready_for_analysis"
+}

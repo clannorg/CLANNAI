@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_18m30s.mp4",
+  "start_seconds": 1110,
+  "end_seconds": 1125,
+  "duration": 15,
+  "timestamp": "18:30",
+  "analysis_timestamp": "2025-07-31T20:24:51.566648",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe red team controls possession in their own half, circulating the ball from the center to the right flank. They then attempt a long, diagonal switch of play to the left wing, which the black team's defense moves to cover.\n\n**Key Timing Estimates:**\n*   **3s:** A red midfielder receives a pass just inside their own half.\n*   **6s:** The ball is passed backwards and across the pitch to a red defender on the right side.\n*   **12s:** The red defender plays a long, diagonal pass attempting to switch the play to the left wing.\n*   **14s:** A black defender positions themself under the high ball to challenge for the header.",
+  "processing_time_seconds": 22.094934463500977,
+  "status": "success"
+}

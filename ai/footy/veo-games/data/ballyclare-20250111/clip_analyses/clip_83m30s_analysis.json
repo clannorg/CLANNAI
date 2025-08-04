@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_83m30s.mp4",
+  "start_seconds": 5010,
+  "end_seconds": 5025,
+  "duration": 15,
+  "timestamp": "83:30",
+  "analysis_timestamp": "2025-07-31T20:30:12.402557",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n### Main Action Description\nThe clip begins with a long goal kick from the black team's goalkeeper. After a brief aerial duel in midfield, the black team secures possession and calmly circulates the ball in their own half, eventually moving it to the right flank under pressure from the red team.\n\n### Key Timing Estimates\n*   **1s:** The black team's goalkeeper takes a long goal kick.\n*   **3s:** A red defender heads the ball forward just inside the center circle.\n*   **4s:** A black midfielder (wearing #29) gains control of the loose ball.\n*   **5s:** The black midfielder passes the ball backward to a teammate near the halfway line.\n*   **8s:** The black player passes the ball wide to a teammate on the right side of the pitch.\n*   **13s:** The black player on the right wing is put under pressure by an advancing red player.",
+  "processing_time_seconds": 17.190430402755737,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_81m00s.mp4",
+  "start_seconds": 4860,
+  "end_seconds": 4875,
+  "duration": 15,
+  "timestamp": "81:00",
+  "analysis_timestamp": "2025-07-31T20:30:09.131749",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe red team sustains pressure around the black team's penalty area, moving the ball from right to left. The attack culminates in a cross from the left and a shot from the edge of the box, which is blocked by a defender.\n\n*   **2s:** The red team passes the ball from the right wing to a player at the corner of the penalty box.\n*   **6s:** The ball is worked across to a red player on the left side of the penalty area.\n*   **8s:** A low cross is sent into the box from the left by the red player.\n*   **11s:** After a partial clearance by the black team, a red player takes control of the loose ball.\n*   **12s:** The red player shoots from the edge of the box.\n*   **13s:** A black defender successfully blocks the shot, and the ball rebounds back into play.",
+  "processing_time_seconds": 18.243539810180664,
+  "status": "success"
+}

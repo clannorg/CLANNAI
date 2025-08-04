@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_79m45s.mp4",
+  "start_seconds": 4785,
+  "end_seconds": 4800,
+  "duration": 15,
+  "timestamp": "79:45",
+  "analysis_timestamp": "2025-07-31T20:30:06.786046",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe clip opens at the exact moment the black team scores a goal from a penalty or a close-range shot. The subsequent action is the black team's celebration and the red team's dejected reaction as they prepare to restart the match.\n\n**Key Timing Estimates:**\n*   **1s:** Black team scores a goal; the ball is seen hitting the back of the net.\n*   **2s:** The black team's goalscorer (#25) celebrates on his knees.\n*   **5s:** Teammates from the black team run to join the goalscorer in celebration inside the penalty area.\n*   **9s:** A red team player retrieves the ball from the goal.\n*   **13s:** The red team player begins carrying the ball back towards the center circle for the kickoff.",
+  "processing_time_seconds": 19.82892608642578,
+  "status": "success"
+}

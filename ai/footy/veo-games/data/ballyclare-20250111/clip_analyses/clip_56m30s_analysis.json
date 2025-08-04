@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_56m30s.mp4",
+  "start_seconds": 3390,
+  "end_seconds": 3405,
+  "duration": 15,
+  "timestamp": "56:30",
+  "analysis_timestamp": "2025-07-31T20:27:43.109483",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nFollowing a kickoff, the team in black immediately launches an attack down their left flank. They successfully move the ball from the center circle deep into the red team's half, while the red team organizes to defend the advance.\n\n**Key Timing Estimates:**\n*   **5s:** The black team kicks off from the center circle, passing backwards to a teammate.\n*   **9s:** A black player makes a long forward pass from their own half towards the left wing.\n*   **11s:** A black winger receives the pass and controls the ball inside the red team's half.\n*   **13s:** The black team continues to advance with the ball on the left side as red defenders move to contain them.",
+  "processing_time_seconds": 16.057249546051025,
+  "status": "success"
+}

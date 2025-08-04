@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_37m45s.mp4",
+  "start_seconds": 2265,
+  "end_seconds": 2280,
+  "duration": 15,
+  "timestamp": "37:45",
+  "analysis_timestamp": "2025-07-31T20:26:59.255132",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team maintains possession in the midfield, patiently circulating the ball from right to left against the red team's organized defensive block. The red team remains compact, successfully preventing any forward penetration and forcing the play backwards.\n\n*   **3s:** A black player near the halfway line makes a forward pass up the right side.\n*   **6s:** Facing pressure from a red player, the ball is passed back towards the center of the pitch.\n*   **9s:** A black central midfielder switches the play with a pass out to the left wing, into the red team's half.\n*   **12s:** The black winger receives the ball but is immediately confronted by the red defender.\n*   **14s:** To keep possession, the winger plays a safe pass back to a supporting central midfielder.",
+  "processing_time_seconds": 20.881845712661743,
+  "status": "success"
+}

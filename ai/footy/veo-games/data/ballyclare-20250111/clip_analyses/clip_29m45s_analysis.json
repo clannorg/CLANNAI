@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_29m45s.mp4",
+  "start_seconds": 1785,
+  "end_seconds": 1800,
+  "duration": 15,
+  "timestamp": "29:45",
+  "analysis_timestamp": "2025-07-31T20:26:38.627934",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team controls possession deep in their own half, calmly circulating the ball from the left side to the right. They successfully switch the play with a long diagonal pass, bypassing the red team's initial pressure.\n\n**Key Timing Estimates:**\n*   **2s:** The black team's left-back (number 3) possesses the ball on the left touchline.\n*   **5s:** Under pressure, the left-back passes the ball across the field to a central teammate.\n*   **7s:** The central player plays a long, diagonal switch pass out to the right wing.\n*   **10s:** The black winger on the right flank controls the long pass.\n*   **13s:** The winger plays a short, safe pass back to a central midfielder, maintaining the black team's possession.",
+  "processing_time_seconds": 16.748711585998535,
+  "status": "success"
+}

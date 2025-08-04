@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_77m00s.mp4",
+  "start_seconds": 4620,
+  "end_seconds": 4635,
+  "duration": 15,
+  "timestamp": "77:00",
+  "analysis_timestamp": "2025-07-31T20:29:54.583440",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team builds possession from a goal kick, successfully moving the ball from their defense into the center of the field under pressure from the red team.\n\n- **2s:** The black team's goalkeeper takes a short goal kick to a defender just outside the penalty area.\n- **7s:** The ball is passed across the defense to a black player (#34) on the left side.\n- **10s:** The black defender passes the ball forward to a midfielder.\n- **12s:** The midfielder plays a one-touch pass to a teammate positioned in the center circle.\n- **14s:** The black team maintains possession in the center of the pitch as the red team organizes its defensive shape.",
+  "processing_time_seconds": 17.9569993019104,
+  "status": "success"
+}

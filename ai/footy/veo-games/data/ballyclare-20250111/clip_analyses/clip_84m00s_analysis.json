@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_84m00s.mp4",
+  "start_seconds": 5040,
+  "end_seconds": 5055,
+  "duration": 15,
+  "timestamp": "84:00",
+  "analysis_timestamp": "2025-07-31T20:30:10.549758",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\n### Main Action Description\nThe referee stops play and awards a free-kick to the red team in their own half near the center circle. Both teams then spend the remainder of the clip reorganizing and preparing for the set piece.\n\n### Key Timing Estimates\n*   **1s:** A red player heads the ball in the center of the pitch.\n*   **3s:** The referee blows the whistle and signals for a free-kick in favor of the red team.\n*   **6s:** A red player sets the ball down to take the free-kick.\n*   **11s:** Players from both the red and black teams have repositioned and are waiting for the kick to be taken.",
+  "processing_time_seconds": 15.177777767181396,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_59m45s.mp4",
+  "start_seconds": 3585,
+  "end_seconds": 3600,
+  "duration": 15,
+  "timestamp": "59:45",
+  "analysis_timestamp": "2025-07-31T20:29:14.431216",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is an analysis of the football clip.\n\nThe black team launches an attack down the left wing, culminating in a low cross into the box. The red team's defense successfully blocks the initial shot and clears the ball after a brief scramble in the penalty area.\n\n*   **3s:** A player from the black team on the left wing prepares to deliver a cross.\n*   **5s:** The low cross is sent into the red team's penalty area.\n*   **6s:** A black attacker's shot from the center of the box is blocked by a red defender.\n*   **9s:** The red team successfully clears the ball away from the immediate goal area.",
+  "processing_time_seconds": 18.885562419891357,
+  "status": "success"
+}

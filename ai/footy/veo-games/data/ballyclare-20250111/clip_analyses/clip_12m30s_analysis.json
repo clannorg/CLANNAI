@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_12m30s.mp4",
+  "start_seconds": 750,
+  "end_seconds": 765,
+  "duration": 15,
+  "timestamp": "12:30",
+  "analysis_timestamp": "2025-07-31T20:24:27.743037",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe Black team initiates an attack from their own penalty area with a long goal kick. After an aerial duel in midfield, the Black team secures possession on the right wing inside the opposition's half.\n\n**Key Timing Estimates:**\n*   **6s:** The Black team's goalkeeper takes a long kick, sending the ball high up the field.\n*   **11s:** A Red player and a Black player contest the high ball in the air near the center circle.\n*   **13s:** The ball drops and is controlled by a Black player on the right side of the pitch.\n*   **14s:** The Black player plays a forward pass to a teammate further down the right wing.",
+  "processing_time_seconds": 14.717412948608398,
+  "status": "success"
+}

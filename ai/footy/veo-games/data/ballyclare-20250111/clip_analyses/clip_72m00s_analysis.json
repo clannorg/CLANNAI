@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_72m00s.mp4",
+  "start_seconds": 4320,
+  "end_seconds": 4335,
+  "duration": 15,
+  "timestamp": "72:00",
+  "analysis_timestamp": "2025-07-31T20:29:46.601463",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team scores a goal from inside the penalty area at the start of the clip. Following the kickoff, the red team maintains possession in the midfield, probing for an opening.\n\n*   **2s:** The black team scores a goal with a shot from inside the penalty area.\n*   **4s:** Black team players celebrate the goal as the camera pans out.\n*   **7s:** The red team restarts the game with a kickoff from the center circle.\n*   **11s:** After a couple of short passes, a red team midfielder receives the ball near the halfway line.\n*   **14s:** The red team circulates possession in their own half as the black team holds its defensive shape.",
+  "processing_time_seconds": 21.44998002052307,
+  "status": "success"
+}

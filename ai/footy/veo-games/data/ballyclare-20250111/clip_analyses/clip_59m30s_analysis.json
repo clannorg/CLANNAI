@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_59m30s.mp4",
+  "start_seconds": 3570,
+  "end_seconds": 3585,
+  "duration": 15,
+  "timestamp": "59:30",
+  "analysis_timestamp": "2025-07-31T20:29:18.117647",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis request. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe Black team initiates a patient build-up from their own defensive third, calmly circulating the ball through their midfield. They successfully progress play up the pitch, culminating in a switch of play to their left winger in the opposition's half.\n\n**Key Timing Estimates:**\n\n*   **1s:** A Black defender passes the ball forward from the edge of his penalty area to a teammate.\n*   **4s:** A Black midfielder receives the ball and makes a quick one-touch pass forward into the center circle.\n*   **8s:** Following a short interchange in midfield, the ball is passed back to a central player (No. 15).\n*   **10s:** The central midfielder plays a longer pass out to the left flank.\n*   **12s:** The Black winger receives the ball just inside the Red team's half, near the touchline.",
+  "processing_time_seconds": 22.58020567893982,
+  "status": "success"
+}

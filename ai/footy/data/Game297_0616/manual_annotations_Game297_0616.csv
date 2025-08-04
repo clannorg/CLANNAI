@@ -1,0 +1,41 @@
+Timestamp,Label,Start_offset,End_offset,Description,Camera_view,Annotation_view
+01;17,Shot,4,2,Skip,Middle,Right
+4;53,Shot,4,2,Skip,Right,Left
+07;06,Save,4,3,,Middle,Right
+9;03,Block,4,2,,Left,Left
+10;10,Block,4,2,,Left,Left
+12;47,Shot,4,2,,Middle,Right
+15;50,Save,4,3,,Left,Right
+16;08,Goal!,5,4, Left,ripley,Left
+17;55,Save,4,3,,Middle,Left
+20;05,Goal!,5,4, Right,ripley,Right
+21;23,Goal!,5,4, Right,ripley,Right
+22;43,Shot,4,3,,Middle,Left
+23;23,Goal!,5,3, Right,ripley,Right
+25;21,Save,4,2,,Middle,Left
+29;52,Shot,4,2,Skip,Middle,Left
+30;09,Block,5,2,,Right,Right
+34;32,Save,4,3,,Left,Left
+36;03,Block,4,2,,Middle,Left
+36;54,Shot,4,3,,Right,Left
+40;23,Save,4,3,,Right,Right
+40;55,Shot,4,2,,Middle,Right
+42;23,Goal!,5,4, Left,ripley,Left
+44;12,Goal!,6,4, Left,ripley,Left
+44;45,Shot,4,3,,Middle,Left
+45;55,Goal!,5,4, Left,ripley,Left
+47;08,Save,4,2,Skip,Middle,Right
+51;49,Block,4,2,,Middle,Left
+53;52,Block,4,3,,Middle,Left
+55;36,Save,4,3,,Middle,Left
+56;37,Shot,4,3,,Right,Left
+59;23,Shot,4,3,,Middle,Left
+1;00;46,Shot,4,3,,Left,Left
+1;02;07,Save,4,3,,Middle,Left
+1;02;45,Goal!,5,4, Left,ripley,Left
+1;04;57,Goal!,5,4, Left,ripley,Left
+1;08;43,Goal!,5,4, Left,ripley,Left
+1;14;08,End,0,0,End of video!,full,Both
+01;04;02,Save,4,3,,Middle,Right
+01;10;35,Save,4,2,,Left,Right
+01;13;39,End,0,0,End of video!,full,Both

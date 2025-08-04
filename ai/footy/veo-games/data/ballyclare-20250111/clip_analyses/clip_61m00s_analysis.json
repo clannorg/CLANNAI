@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_61m00s.mp4",
+  "start_seconds": 3660,
+  "end_seconds": 3675,
+  "duration": 15,
+  "timestamp": "61:00",
+  "analysis_timestamp": "2025-07-31T20:29:19.960896",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team initiates an attack from a throw-in deep inside their own half. Following a quick headed pass, a midfielder launches a long, aerial ball forward over the midfield towards the red team's defensive line.\n\n**Key Timing Estimates:**\n*   **1s:** The black team is in possession, preparing for a throw-in on the left sideline.\n*   **9s:** The throw-in is taken down the line to a teammate.\n*   **10s:** The receiving player heads the ball infield to a central midfielder.\n*   **12s:** The black midfielder plays a long, direct pass forward with his right foot.\n*   **14s:** The ball travels high over the center circle as the clip ends.",
+  "processing_time_seconds": 24.387921810150146,
+  "status": "success"
+}

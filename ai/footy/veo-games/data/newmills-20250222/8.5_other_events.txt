@@ -1,0 +1,596 @@
+# Other Events - newmills-20250222
+# Generated: 2025-08-04T14:49:16.786325
+# Method: Gemini intelligent event extraction
+# Source: Complete timeline analysis
+# Focus: Fouls, cards, corners, substitutions, decisions
+
+Here's an analysis of significant non-goal/shot events from the provided match timeline, categorized as requested.
+
+=== FOULS & FREE KICKS ===
+Timestamp: 22:45 (1365 seconds)
+Type: Penalty
+Team: (Implied White Team Foul)
+Description: Red team attacks into the penalty area, leading to a foul. Penalty awarded to the Red team.
+Significance: Significant impact, potential goal scoring opportunity.
+
+Timestamp: 25:15 (1515 seconds)
+Type: Foul/Offside
+Team: Red
+Description: Red team attempts a long ball forward from their own half, but the play is called back for a foul and an offside.
+Significance: Stops a potential attack.
+
+Timestamp: 26:45 (1605 seconds)
+Type: Foul/Free kick
+Team: White
+Description: The White team loses possession in midfield, leading to a foul and a free kick for the Red team.
+Significance: Gives Red team possession and potential attacking chance.
+
+Timestamp: 30:30 (1830 seconds)
+Type: Foul/Sliding Tackle
+Team: Red
+Description: A Red player commits a foul with a sliding tackle.
+Significance: Stops a White team attack, set piece opportunity.
+
+Timestamp: 31:15 (1875 seconds)
+Type: Foul
+Team: Red
+Description: The Red team loses possession in the center circle, resulting in a foul being called against them.
+Significance: Stops their attack.
+
+Timestamp: 31:21 (1881 seconds)
+Type: Tackle
+Team: Red
+Description: A Red player is tackled by a White player.
+Significance: Gives White team the ball.
+
+Timestamp: 31:22 (1882 seconds)
+Type: Foul
+Team: Red
+Description: The referee blows the whistle for a foul.
+Significance: White team the ball.
+
+Timestamp: 34:15 (2055 seconds)
+Type: Offside
+Team: Black
+Description: Black team attempts a quick attack with a through ball, but the play is stopped. Key events: 34:21: Red team's goalkeeper rushes out of the box to clear the ball, 34:26: The referee signals for an offside against the black team.
+Significance: Wipes away the black team's attack.
+
+Timestamp: 35:15 (2115 seconds)
+Type: Foul/Free kick
+Team: (Implied Red Team Foul)
+Description: Play is stopped for a foul, and the white team prepares to take a free kick from their own half.
+Significance: Break in play.
+
+Timestamp: 35:30 (2130 seconds)
+Type: Tackle
+Team: Red
+Description: The Red team wins the ball with a successful tackle near the center circle.
+Significance: Red team get the ball, but immediately lose it.
+
+Timestamp: 35:34 (2134 seconds)
+Type: Tackle
+Team: White
+Description: The White team immediately wins possession back with a counter-tackle.
+Significance: White team has the ball.
+
+Timestamp: 35:45 (2145 seconds)
+Type: Foul
+Team: Red
+Description: A White team player is fouled by a Red team player and is on the ground.
+Significance: Stops a potential white team attack.
+
+Timestamp: 35:52 (2152 seconds)
+Type: Foul
+Team: Red
+Description: The referee blows the whistle to stop play for the foul.
+Significance: Free kick awarded to the White team.
+
+Timestamp: 39:00 (2340 seconds)
+Type: Foul
+Team: Red
+Description: Black team attacks in the red team's half, but the play is stopped by a foul.
+Significance: Stops Black team's attack and free kick awarded to the Black team.
+
+Timestamp: 40:30 (2430 seconds)
+Type: Foul
+Team: Red
+Description: White team wins possession and is fouled during a counter-attack.
+Significance: Stops white team from making counter attack.
+
+Timestamp: 41:00 (2460 seconds)
+Type: Foul
+Team: Red
+Description: White team wins a free-kick in the attacking half and puts a cross into the box.
+Significance: Good attack for white team that doesn't result in a goal.
+
+Timestamp: 43:53 (2633 seconds)
+Type: Foul
+Team: Red
+Description: A white attacker is fouled by a red defender just outside the penalty box, but the referee plays advantage as the ball continues into the area.
+Significance: Red team almost concedes a penalty.
+
+Timestamp: 44:00 (2640 seconds)
+Type: Penalty
+Team: Red
+Description: The White team is awarded a penalty kick after a foul in the box.
+Significance: Great attack for the White Team, leads to penalty.
+
+Timestamp: 46:15 (2775 seconds)
+Type: Foul
+Team: (Implied White Team Foul)
+Description: The Red team takes a long throw-in, attempting to create an attack in the final third. The White team defends the initial aerial ball. Referee whistles for a foul, awarding a free-kick to the Red team.
+Significance: Red team gets attack from set piece.
+
+Timestamp: 49:45 (2985 seconds)
+Type: Foul/Penalty
+Team: Red
+Description: Black team launches an attack down the right wing. Red defender commits a foul in the penalty area, referee awards a penalty.
+Significance: Big chance for the Black Team, will be dangerous to the Red Team.
+
+Timestamp: 50:00 (3000 seconds)
+Type: Foul
+Team: Black
+Description: Play is stopped for a foul by the black team near the red team's penalty area, and a free kick is awarded to the red team.
+Significance: The Red team has a good chance of a goal, will be useful for the Red team.
+
+Timestamp: 63:45 (3825 seconds)
+Type: Tackle
+Team: Red
+Description: White team attacks down the right wing, leading to a challenge near the box. A White player is tackled by a Red player and goes to the ground just outside the penalty area.
+Significance: Stops white attack and provides a free kick for the red team.
+
+Timestamp: 79:45 (4785 seconds)
+Type: Foul
+Team: (Implied White team foul)
+Description: Red team attempts to build an attack from midfield, but the play is stopped by a foul.
+Significance: Stops red team's attack.
+
+Timestamp: 79:55 (4795 seconds)
+Type: Foul
+Team: (Implied White team foul)
+Description: a red player is tackled and brought down, resulting in a free-kick.
+Significance: Set piece opportunity for the Red Team
+
+Timestamp: 83:15 (4995 seconds)
+Type: Foul
+Team: Red
+Description: Black team's attack through the midfield is halted by a foul.
+Significance: Stops the Black team's attack.
+
+Timestamp: 83:19 (5009 seconds)
+Type: Foul
+Team: Red
+Description: A red player makes a sliding tackle on a black player in the center circle, resulting in a foul.
+Significance: This gave White Team a great chance to score but they messed it up.
+
+Timestamp: 93:30 (5610 seconds)
+Type: Foul
+Team: (Implied White Team Foul)
+Description: Red team has possession in the midfield, but the play is stopped by a foul.
+Significance: Red team get great opportunity to attack, and potentially score.
+
+Timestamp: 93:41 (5621 seconds)
+Type: Tackle
+Team: (Implied White Team)
+Description: Red player is tackled in the center circle, 93:42 referee whistles for a foul.
+Significance: White team the ability to counter attack
+
+Timestamp: 94:15 (5655 seconds)
+Type: Foul
+Team: White
+Description: The Red team builds an attack from their own half into the final third. Key events: 94:28 a Red player is fouled by a white team defender.
+Significance: White Team foul
+
+Timestamp: 94:45 (5685 seconds)
+Type: Foul/Penalty
+Team: Red
+Description: White team attacks down the right wing, leading to a foul.
+Significance: Good attack for white team which leads to a penalty.
+
+Timestamp: 98:00 (5880 seconds)
+Type: Foul
+Team: Red
+Description: A foul is committed by the Red team in their own half, stopping play.
+Significance: Stops the Red Team, allows White Team to attack.
+
+Timestamp: 106:30 (6390 seconds)
+Type: Foul
+Team: Red
+Description: Play is contested in the midfield, with possession changing hands before a foul is called. Key events: 106:40 Red player commits a tackle in the center circle, resulting in a foul.
+Significance: White Team has the ability to attack.
+
+Timestamp: 109:00 (6540 seconds)
+Type: Foul
+Team: White
+Description: The red team's attack is stopped by a foul from a white team player, resulting in a free-kick.
+Significance: Gives a free kick to the red team.
+
+Timestamp: 110:15 (6615 seconds)
+Type: Foul
+Team: Red
+Description: The Black team launches an attack with a long ball forward. 110:19 a Black team attacker is brought down by a Red defender just outside the penalty area.
+Significance: Grants White team a good chance of a goal, will be useful for the White team.
+
+Timestamp: 112:45 (6765 seconds)
+Type: Foul
+Team: Implied Red
+Description: A scramble for possession in the center circle between the Red and Black teams results in a foul.
+Significance: Halts the Red and Black Team.
+
+Timestamp: 113:30 (6810 seconds)
+Type: Foul
+Team: Red
+Description: The white team attempts to build an attack from their own half, but the play is stopped by a foul. 113:41 A red team player commits a foul on a white team player in the midfield.
+Significance: Halts the Red team, grants the White team a chance to attack.
+
+Timestamp: 114:15 (6855 seconds)
+Type: Foul
+Team: Red
+Description: White team attempts an attack through the middle, which is stopped by a foul. Key events:
+- 114:18: A Red player commits a foul just inside their own half.
+- 114:19: The referee blows the whistle and awards a free kick to the White team.
+Significance: Good opportunity for the White Team to have a good shot on goal.
+
+Timestamp: 116:30 (6990 seconds)
+Type: Foul/Penalty
+Team: White
+Description: Red team player is fouled in the penalty box during an attack.
+Significance: Good opportunity for the red team to be able to have a good shot and score.
+
+Timestamp: 117:15 (7035 seconds)
+Type: Foul
+Team: Red
+Description: Red team takes a free kick that is cleared by the White team, who then launch a counter-attack which is stopped by a foul. 117:21: A White team player is fouled near the halfway line during a counter-attack.
+Significance: Stopped the potential goal scoring attack for White Team.
+
+Timestamp: 119:30 (7170 seconds)
+Type: Foul
+Team: Red
+Description: The white team plays a long ball forward, leading to a foul. 119:37 the white attacker is fouled just outside the opposition's penalty area, resulting in a free kick.
+Significance: Halts White team, potential goal scoring attack.
+
+Timestamp: 124:00 (7440 seconds)
+Type: Foul
+Team: Red
+Description: White team attacks from outside the box, leading to a foul.
+Significance: Halts the White Team's attack, gives White Team a great chance to score.
+
+Timestamp: 124:12 (7452 seconds)
+Type: Foul
+Team: Red
+Description: The White Team takes a shot from outside the box, leading to a foul by the red team.
+Significance: Good for White Team, great chance for a goal!
+
+Timestamp: 125:15 (7515 seconds)
+Type: Foul
+Team: White
+Description: The Red team starts an attack from the center, which is stopped by a foul from the White team. A White team player commits a foul with a sliding tackle.
+Significance: Good opportunity for the red team to score a goal
+
+Timestamp: 125:55 (7555 seconds)
+Type: Foul
+Team: Red
+Description: White team maintains possession in the attacking half, passing amongst themselves until play is stopped by the referee.
+Significance: A Red Team foul lead to the whistle, can lead to more problems for the Red Team.
+
+Timestamp: 131:00 (7860 seconds)
+Type: Foul
+Team: Black
+Description: The red team attacks and wins a free kick near the penalty area. 131:02 a player from the black team commits a foul, resulting in a free kick for the red team.
+Significance: Dangerous Foul by the black team. Red team get the ability to score.
+
+Timestamp: 134:00 (8040 seconds)
+Type: Foul
+Team: White
+Description: White team attempts to build an attack down the left flank. White player is fouled near the sideline, 134:05 play is stopped by the referee.
+Significance: Stops a potential goal scoring attack.
+
+=== CARDS & DISCIPLINE ===
+Timestamp: 109:14 (6554 seconds)
+Type: Yellow card
+Team: White
+Description: The referee shows a yellow card to the white team player who committed the foul.
+Impact: Warns the player and puts them at risk of a red card.
+
+=== CORNERS & SET PIECES ===
+Timestamp: 30:00 (1800 seconds)
+Type: Corner kick
+Team: White
+Description: A low cross is sent into the penalty area by the white team. A defender from the red team clears the ball, resulting in a corner kick.
+Danger Level: Medium
+
+Timestamp: 42:30 (2550 seconds)
+Type: Free kick
+Team: White
+Description: The white team takes a free-kick from the left side of the penalty area. A white team player attempts a header towards goal. The red team's goalkeeper catches the ball.
+Danger Level: Medium
+
+Timestamp: 50:15 (3015 seconds)
+Type: Attacking free-kick
+Team: White
+Description: The white team takes an attacking free-kick from the edge of the penalty area. The red team's goalkeeper makes a diving save, tipping the ball over the crossbar.
+Danger Level: High
+
+Timestamp: 50:30 (3030 seconds)
+Type: Set Piece
+Team: White
+Description: White team executes a set-piece routine from a free kick. The free kick is passed short to a teammate on the right.
+Danger Level: Medium
+
+Timestamp: 50:45 (3045 seconds)
+Type: Free Kick
+Team: Black
+Description: Black team takes a free kick from the right side of the pitch. Key events: 50:52 free kick is taken, 50:53 the shot is blocked by the defensive wall, 50:56 the white team clears the ball after a scramble in the box.
+Danger Level: Medium
+
+Timestamp: 78:00 (4680 seconds)
+Type: Throw-In
+Team: Red
+Description: Red team takes a throw-in from the right sideline. Red player executes a long throw-in down the line.
+Danger Level: Low
+
+Timestamp: 80:00 (4800 seconds)
+Type: Free Kick
+Team: Red
+Description: Red team takes a free kick in their own half and builds an attack down the right wing.
+Danger Level: Low
+
+Timestamp: 81:15 (4875 seconds)
+Type: Kick-Off
+Team: White
+Description: White team kicks off to start the match. Key events: 81:27 referee blows the whistle, 81:28 White team kicks off and passes the ball back.
+Danger Level: Low
+
+Timestamp: 81:30 (4890 seconds)
+Type: Long Pass
+Team: White
+Description: White team builds an attack from their own half with a long pass. Key events: 81:38 White team plays a long, aerial pass over the top of the red team's defense.
+Danger Level: Low
+
+Timestamp: 81:45 (4905 seconds)
+Type: Through Ball
+Team: Red
+Description: Red team launches a counter-attack with a through ball, leading to a one-on-one chance. Key events: 81:50 Red player plays a through ball, 81:54 Red attacker takes a shot, 81:55 Goalkeeper makes the save.
+Danger Level: High
+
+Timestamp: 81:50 (4910 seconds)
+Type: Through Ball
+Team: Red
+Description: Red team launches a counter-attack with a through ball, leading to a one-on-one chance.
+Danger Level: High
+
+Timestamp: 88:15 (5295 seconds)
+Type: Free Kick
+Team: White
+Description: White team plays a long free kick forward, which is defended by the Red team who then start a counter-attack.
+Danger Level: Medium
+
+Timestamp: 89:00 (5340 seconds)
+Type: Throw-In
+Team: Red
+Description: Red team takes a throw-in, followed by a free kick, and then maintains possession in their own half.
+Danger Level: Low
+
+Timestamp: 89:15 (5355 seconds)
+Type: Throw-In
+Team: White
+Description: White team prepares for and takes a long throw-in from the left touchline.
+Danger Level: Low
+
+Timestamp: 95:15 (5715 seconds)
+Type: Corner
+Team: White
+Description: White team takes a corner kick which is defended by the red team.
+Danger Level: Medium
+
+Timestamp: 95:30 (5730 seconds)
+Type: Free Kick
+Team: Black
+Description: Black team takes a short free kick, attempting an attack down the right wing.
+Danger Level: Low
+
+Timestamp: 100:00 (6000 seconds)
+Type: Throw-In
+Team: Red
+Description: Red team sets up for a throw-in deep in their own half.
+Danger Level: Low
+
+Timestamp: 100:45 (6045 seconds)
+Type: Cross
+Team: Red
+Description: Red team builds an attack down the right wing, delivering a cross into the penalty area.
+Danger Level: Medium
+
+Timestamp: 108:15 (6495 seconds)
+Type: Free Kick
+Team: Red
+Description: Red team takes a free kick into the penalty area.
+Danger Level: Medium
+
+Timestamp: 108:30 (6510 seconds)
+Type: Save
+Team: Black Team
+Description: The Black team's goalkeeper saves a header and initiates play from the back.
+Danger Level: Low
+
+Timestamp: 111:15 (6675 seconds)
+Type: Goal Kick
+Team: White
+Description: The White team prepares for and takes a goal kick following a Red team attack.
+Danger Level: Low
+
+Timestamp: 112:15 (6735 seconds)
+Type: Throw-In
+Team: Black
+Description: The black team attacks down the right wing, resulting in a throw-in.
+Danger Level: Low
+
+Timestamp: 120:00 (7200 seconds)
+Type: Free Kick
+Team: White
+Description: White team takes a free kick from the left, which is defended and cleared by the Red team.
+Danger Level: Medium
+
+Timestamp: 121:15 (7275 seconds)
+Type: Corner
+Team: White
+Description: White team takes a corner kick that is cleared by the Red team.
+Danger Level: High
+
+Timestamp: 121:30 (7290 seconds)
+Type: Blocked Free Kick
+Team: Red
+Description: Red team takes a free kick that is blocked, leading to a counter-attack by the White team.
+Danger Level: Low
+
+Timestamp: 122:15 (7335 seconds)
+Type: Attack
+Team: Red
+Description: Red team builds an attack down the right wing in the opposition's half.
+Danger Level: Low
+
+Timestamp: 123:30 (7410 seconds)
+Type: Corner
+Team: Red
+Description: The Red team attacks down the right wing, resulting in a corner kick.
+Danger Level: High
+
+Timestamp: 123:45 (7425 seconds)
+Type: Free Kick
+Team: White
+Description: The White team takes a free kick which is played low into the penalty area, leading to a scramble for possession.
+Danger Level: Medium
+
+Timestamp: 126:45 (7605 seconds)
+Type: Free Kick
+Team: Red
+Description: Red team takes a short free kick from the midfield.
+Danger Level: Medium
+
+Timestamp: 127:00 (7620 seconds)
+Type: Free Kick
+Team: Red
+Description: Red team takes a short free kick from the halfway line and maintains possession in their own half.
+Danger Level: Low
+
+Timestamp: 134:15 (8055 seconds)
+Type: Throw-In
+Team: Red
+Description: Red team takes a throw-in from the sideline.
+Danger Level: Low
+
+Timestamp: 134:45 (8085 seconds)
+Type: Throw-In
+Team: White
+Description: White team takes a long throw-in from the right sideline into the penalty area.
+Danger Level: High
+
+Timestamp: 134:30 (8070 seconds)
+Type: Foul
+Team: White
+Description: The White team launches a counter-attack from their own half.
+Danger Level: Low
+
+=== SUBSTITUTIONS ===
+Timestamp: 135:00 (8100 seconds)
+Team: Red
+Change: [Player out → Player in]
+Tactical Reason: Not specified.
+
+=== OFFSIDE & DECISIONS ===
+Timestamp: 25:15 (1515 seconds)
+Type: Offside
+Team: Red
+Description: Red team attempts a long ball forward from their own half, but the play is called back for an offside.
+Impact: Halts attack, changes possession.
+
+Timestamp: 25:45 (1545 seconds)
+Type: Offside
+Team: Red
+Description: The white team regains possession after an offside call and begins to build an attack from their own half.
+Impact: Halts attack, changes possession.
+
+Timestamp: 34:15 (2055 seconds)
+Type: Offside
+Team: Black
+Description: Key events: 34:21: Red team's goalkeeper rushes out of the box to clear the ball, 34:26: The referee signals for an offside against the black team.
+Impact: Halts potential goal-scoring opportunity.
+
+Timestamp: 126:15 (7575 seconds)
+Type: Offside
+Team: White
+Description: White team launches a quick counter-attack from midfield. The shot hits the crossbar, the assistant referee raises the flag for offside.
+Impact: Halts the Black team's attack.
+
+=== OTHER SIGNIFICANT EVENTS ===
+Timestamp: 05:00 (300 seconds)
+Type: External Factor
+Team: N/A
+Description: Red team participates in a rondo passing drill. Key events: 05:05 a coach kicks a ball into the drill.
+Significance: Minor distraction.
+
+Timestamp: 18:30 (1110 seconds)
+Type: Injury Stoppage
+Team: White
+Description: There is a break in play for an injury to a player on the White team.
+Significance: Disrupts momentum, allows for tactical changes.
+
+Timestamp: 44:30 (2670 seconds)
+Type: Injury Stoppage
+Team: White
+Description: A stoppage in play occurs with a White team player down on the field.
+Significance: Disrupts flow of the game.
+
+Timestamp: 53:15 (3195 seconds)
+Type: Stoppage in Play
+Team: N/A
+Description: Stoppage in play following an incident inside the penalty area.
+Significance: Possible injury or review needed.
+
+Timestamp: 54:00 (3240 seconds)
+Type: Injury
+Team: White
+Description: The game is stopped for an injury to a player on the White team, who receives medical attention on the pitch.
+Significance: Break in play for medical treatment.
+
+Timestamp: 78:30 (4710 seconds)
+Type: Injury
+Team: Red
+Description: Red team kicks off to start the game, but play is immediately halted due to an injury.
+Significance: Disrupts the game.
+
+Timestamp: 79:15 (4755 seconds)
+Type: External Factor (Dog)
+Team: N/A
+Description: Red team is passing the ball in their own half before the game starts, when a dog runs onto the pitch.
+Significance: Disrupts the play.
+
+Timestamp: 83:30 (5010 seconds)
+Type: Injury
+Team: Red
+Description: The game is stopped due to an injury to a Red team player in the center circle.
+Significance: The players have to leave the pitch so that the player can recover.
+
+Timestamp: 84:15 (5055 seconds)
+Type: Injury
+Team: Red
+Description: The match is stopped for an injury to a player on the Red team. Key events: 84:15 a Red team player is on the ground in the center circle receiving medical attention, 84:21 the injured player gets up and is helped off the pitch.
+Significance: Good opportunity for White Team to have a better chance to come back and win.
+
+Timestamp: 102:00 (6120 seconds)
+Type: Pause
+Team: Both Teams
+Description: The game is paused with both teams waiting for play to resume.
+Significance: Short break for any reason.
+
+Timestamp: 135:30 (8130 seconds)
+Type: Walk Around
+Team: Red and White Team
+Description: Players from both teams walk around the center of the pitch after a period of play has concluded.
+Significance: Stop in time to move around the play and rest to carry on for more game time.
+
+Timestamp: 135:45 (8145 seconds)
+Type: End
+Team: Red and White Team
+Description: Players from both teams walk off the field after the conclusion of play.
+Significance: The players have finished on the pitch to a end of the game.

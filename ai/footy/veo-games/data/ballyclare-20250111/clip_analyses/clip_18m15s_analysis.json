@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_18m15s.mp4",
+  "start_seconds": 1095,
+  "end_seconds": 1110,
+  "duration": 15,
+  "timestamp": "18:15",
+  "analysis_timestamp": "2025-07-31T20:24:45.175006",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts to build an attack from their own half but is met with an organized press from the red team. This pressure forces the black team to play a long ball upfield, which the red team intercepts easily to regain possession.\n\n**Key Timing Estimates:**\n*   **4s:** A black player receives the ball in the center circle and is immediately pressured by a red player.\n*   **6s:** The black player passes the ball back to a teammate deeper in their own half.\n*   **10s:** Under pressure from an advancing red forward, the black player hits a long, aerial pass downfield.\n*   **14s:** The red player (#2) intercepts the long pass near the halfway line, winning possession for the red team.",
+  "processing_time_seconds": 17.01076364517212,
+  "status": "success"
+}

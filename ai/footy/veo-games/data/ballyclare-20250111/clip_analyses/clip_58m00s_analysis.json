@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_58m00s.mp4",
+  "start_seconds": 3480,
+  "end_seconds": 3495,
+  "duration": 15,
+  "timestamp": "58:00",
+  "analysis_timestamp": "2025-07-31T20:29:14.372128",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the provided 15-second football clip.\n\n**Main Action Description**\nThe clip shows the pre-game setup just before kickoff. Both the red and black teams are in their respective halves, holding their positions and awaiting the referee's signal to start the match.\n\n**Key Timing Estimates**\n*   **0-3s:** The camera shows a wide view of the pitch with both teams in formation for kickoff.\n*   **4-6s:** The red player (#14) on the halfway line looks down and then back up, getting into position.\n*   **7-9s:** Black team players in the center circle make final positional adjustments and communicate with hand signals.\n*   **10-12s:** One of the black team players in the center circle briefly bends over.\n*   **13-15s:** All players remain stationary in their starting positions, ready for the whistle.",
+  "processing_time_seconds": 18.836789846420288,
+  "status": "success"
+}

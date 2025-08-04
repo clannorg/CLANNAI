@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_33m30s.mp4",
+  "start_seconds": 2010,
+  "end_seconds": 2025,
+  "duration": 15,
+  "timestamp": "33:30",
+  "analysis_timestamp": "2025-07-31T20:26:41.564925",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip, focusing on the main actions and key timings.\n\n### Football Match Analysis\n\n**Main action description:**\nThe black team attempts to play out from the center, but the red team intercepts the pass in midfield. After a quick free-kick, the red team plays a long, aerial ball forward, which is contested on the left side of the pitch.\n\n**Key timing estimates:**\n*   **2s:** The black team plays a pass forward from the center circle.\n*   **4s:** A red player intercepts the pass, gaining possession in the midfield.\n*   **8s:** The red team takes a quick free-kick, launching the ball forward.\n*   **14s:** A red player wins the aerial duel, heading the ball onward as the clip ends.",
+  "processing_time_seconds": 16.712684154510498,
+  "status": "success"
+}

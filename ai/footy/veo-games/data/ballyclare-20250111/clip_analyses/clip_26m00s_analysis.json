@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_26m00s.mp4",
+  "start_seconds": 1560,
+  "end_seconds": 1575,
+  "duration": 15,
+  "timestamp": "26:00",
+  "analysis_timestamp": "2025-07-31T20:26:24.852113",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the football clip.\n\nThe Red team applies high pressure in the midfield, winning the ball from the Black team. However, their subsequent attempt to attack down the left is quickly intercepted, and the Black team regains possession, trying to build from the back under continued pressure.\n\n- **3s:** The Red team wins possession from a loose ball in the center circle.\n- **6s:** A Red player receives a pass on the left side of the midfield.\n- **8s:** The Red player attempts a through ball down the left channel.\n- **10s:** A Black defender intercepts the pass and gains control of the ball.\n- **12s:** The Black defender passes the ball forward to a teammate in midfield.\n- **14s:** The Black midfielder receives the ball and is immediately put under pressure by two Red players.",
+  "processing_time_seconds": 21.05278968811035,
+  "status": "success"
+}

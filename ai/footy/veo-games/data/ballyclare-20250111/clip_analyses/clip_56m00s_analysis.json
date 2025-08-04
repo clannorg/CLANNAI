@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_56m00s.mp4",
+  "start_seconds": 3360,
+  "end_seconds": 3375,
+  "duration": 15,
+  "timestamp": "56:00",
+  "analysis_timestamp": "2025-07-31T20:27:46.164214",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nSeveral players from the red team are warming up, casually passing the ball amongst themselves in a small group. The drill consists of light passing and movement in the middle of the pitch.\n\n**Key Timing Estimates:**\n*   **4s:** A red player makes a short ground pass to a teammate on the left.\n*   **8s:** The receiving player lobs the ball back towards the center with their left foot.\n*   **11s:** Another red player controls the high pass with their chest.\n*   **13s:** Following the chest control, a short pass is made to continue the warm-up drill.",
+  "processing_time_seconds": 21.525794744491577,
+  "status": "success"
+}

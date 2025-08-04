@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_54m45s.mp4",
+  "start_seconds": 3285,
+  "end_seconds": 3300,
+  "duration": 15,
+  "timestamp": "54:45",
+  "analysis_timestamp": "2025-07-31T20:27:42.651672",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\n### Analysis of Football Clip\n\n**Main Action Description:**\nThe clip shows players from what appears to be a single team engaged in a pre-match passing drill within the center circle. The players, wearing a mix of red shirts and orange bibs, casually pass the ball amongst themselves with no defensive pressure.\n\n**Key Timing Estimates:**\n*   **2s:** A player in an orange bib passes the ball to a teammate in a red shirt.\n*   **5s:** The red player makes a pass across the circle to another teammate in a red shirt.\n*   **8s:** After a quick one-two, a player near the center spot passes the ball to the left side of the circle.\n*   **11s:** The player on the left controls the ball and passes it back towards the middle.\n*   **14s:** A one-touch pass is made from a player in a red shirt to a teammate in an orange bib.",
+  "processing_time_seconds": 19.667731523513794,
+  "status": "success"
+}

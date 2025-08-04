@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_104m15s.mp4",
+  "start_seconds": 6255,
+  "end_seconds": 6270,
+  "duration": 15,
+  "timestamp": "104:15",
+  "analysis_timestamp": "2025-07-31T20:23:59.197754",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the key events in this football clip.\n\nThe Black team takes a direct free-kick from just outside the penalty area, but the shot goes wide of the goal. The play resets for a goal kick to be taken by the Red team.\n\n**Key Timings:**\n- **0s**: The Black team is positioned to take a free-kick on the left side of the Red team's penalty box.\n- **2s**: The Black player shoots the free-kick directly towards the goal.\n- **4s**: The ball misses the target, going wide of the far post for a goal kick.\n- **7s**: The Red team's goalkeeper retrieves the ball to prepare for the kick.\n- **13s**: The goalkeeper places the ball and sets up to take the goal kick.",
+  "processing_time_seconds": 17.871811628341675,
+  "status": "success"
+}

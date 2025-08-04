@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_02m00s.mp4",
+  "start_seconds": 120,
+  "end_seconds": 135,
+  "duration": 15,
+  "timestamp": "02:00",
+  "analysis_timestamp": "2025-07-31T20:23:38.469711",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis! Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nFollowing a kickoff, the black team immediately loses possession to an aggressive press from the red team. The red team then calmly circulates the ball across their defensive line, controlling the pace and beginning to build an attack from their own half.\n\n**Key Timing Estimates:**\n*   **1s:** The black team kicks off, playing a short pass forward from the center circle.\n*   **2s:** A red player immediately tackles and wins the ball from the black team in the midfield.\n*   **5s:** After the turnover, the red team passes the ball back to their defenders on the left side.\n*   **8s:** The ball is calmly passed across the backline to a central red player.\n*   **13s:** The black team's player (No. 3) gestures to organize his team's defensive shape as the red team maintains possession.",
+  "processing_time_seconds": 21.588297367095947,
+  "status": "success"
+}

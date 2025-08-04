@@ -1,0 +1,98 @@
+{
+  "match_id": "newmills-20250222",
+  "upload_timestamp": "2025-08-04T15:13:27.035550",
+  "bucket": "end-nov-webapp-clann",
+  "region": "eu-west-1",
+  "s3_urls": {
+    "web_events.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-web_events-json.json",
+      "s3_key": "analysis-data/newmills-20250222-web_events-json.json",
+      "description": "Web app compatible events timeline",
+      "file_size_mb": 0.02
+    },
+    "web_events_array.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-web_events_array-json.json",
+      "s3_key": "analysis-data/newmills-20250222-web_events_array-json.json",
+      "description": "Direct events array for web app",
+      "file_size_mb": 0.01
+    },
+    "6_validated_timeline.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-6_validated_timeline-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-6_validated_timeline-txt.txt",
+      "description": "AI validated match timeline (text)",
+      "file_size_mb": 0.01
+    },
+    "7_accuracy_comparison.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-7_accuracy_comparison-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-7_accuracy_comparison-txt.txt",
+      "description": "AI accuracy validation",
+      "file_size_mb": 0.01
+    },
+    "13_manager_insights.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-13_manager_insights-json.json",
+      "s3_key": "analysis-data/newmills-20250222-13_manager_insights-json.json",
+      "description": "Complete manager insights (timeline + ground truth + validated goals)",
+      "file_size_mb": 0.0
+    },
+    "9.5_match_summary.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-9-5_match_summary-json.json",
+      "s3_key": "analysis-data/newmills-20250222-9-5_match_summary-json.json",
+      "description": "Complete match summary with team mapping and display metadata",
+      "file_size_mb": 0.0
+    },
+    "7.5_definite_events.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-7-5_definite_events-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-7-5_definite_events-txt.txt",
+      "description": "VEO-validated definite events with AI descriptions",
+      "file_size_mb": 0.0
+    },
+    "8.5_other_events.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-8-5_other_events-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-8-5_other_events-txt.txt",
+      "description": "Other significant events (fouls, cards, corners, etc.)",
+      "file_size_mb": 0.02
+    },
+    "8_tactical_analysis_red_team.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-8_tactical_analysis_red_team-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-8_tactical_analysis_red_team-txt.txt",
+      "description": "Red team tactical analysis, strengths, weaknesses",
+      "file_size_mb": 0.01
+    },
+    "8_tactical_analysis_yellow_team.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-8_tactical_analysis_yellow_team-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-8_tactical_analysis_yellow_team-txt.txt",
+      "description": "Yellow team tactical analysis, strengths, weaknesses",
+      "file_size_mb": 0.01
+    },
+    "8_tactical_match_summary.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-8_tactical_match_summary-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-8_tactical_match_summary-txt.txt",
+      "description": "Combined tactical match summary and coaching insights",
+      "file_size_mb": 0.0
+    },
+    "5_complete_timeline.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-5_complete_timeline-txt.txt",
+      "s3_key": "analysis-data/newmills-20250222-5_complete_timeline-txt.txt",
+      "description": "Complete detailed play-by-play timeline",
+      "file_size_mb": 0.09
+    },
+    "1_veo_ground_truth.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/newmills-20250222-1_veo_ground_truth-json.json",
+      "s3_key": "analysis-data/newmills-20250222-1_veo_ground_truth-json.json",
+      "description": "Original Veo ground truth data for comparison",
+      "file_size_mb": 0.01
+    },
+    "video.mp4": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/newmills-20250222-video-mp4.mp4",
+      "s3_key": "analysis-videos/newmills-20250222-video-mp4.mp4",
+      "description": "Full match video",
+      "file_size_mb": 4525.27
+    }
+  },
+  "upload_summary": {
+    "total_files": 17,
+    "successful_uploads": 14,
+    "failed_uploads": 3,
+    "total_size_mb": 4525.46
+  }
+}

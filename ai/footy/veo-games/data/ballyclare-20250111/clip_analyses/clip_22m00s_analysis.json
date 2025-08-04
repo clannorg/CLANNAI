@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_22m00s.mp4",
+  "start_seconds": 1320,
+  "end_seconds": 1335,
+  "duration": 15,
+  "timestamp": "22:00",
+  "analysis_timestamp": "2025-07-31T20:24:52.250642",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\nThe game restarts with a free kick for the black team in the middle of the park. The black team opts to play the ball backwards to their defenders to retain possession and build an attack from deep.\n\n*   **2s:** The referee blows the whistle for a foul committed by the red team, awarding a free kick to the black team in the center circle.\n*   **6s:** The black team takes the free kick, playing a short pass back to a teammate.\n*   **8s:** The ball is passed back to a black central defender.\n*   **11s:** The central defender passes the ball wide to the right-back.\n*   **14s:** The black right-back controls the ball near the touchline in their own half.",
+  "processing_time_seconds": 16.981719255447388,
+  "status": "success"
+}

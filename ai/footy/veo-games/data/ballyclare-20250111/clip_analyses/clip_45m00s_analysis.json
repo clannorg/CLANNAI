@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_45m00s.mp4",
+  "start_seconds": 2700,
+  "end_seconds": 2715,
+  "duration": 15,
+  "timestamp": "45:00",
+  "analysis_timestamp": "2025-07-31T20:27:13.489016",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nPlayers in orange bibs are seen conducting a casual passing warm-up drill in the midfield. The players in red shirts and the goalkeeper are largely stationary in the center circle, not actively participating in the drill.\n\n**Key Timing Estimates:**\n*   **4s:** A player in an orange bib on the right side of the pitch controls a high ball.\n*   **7s:** The orange-bibbed player makes a simple ground pass to a central teammate.\n*   **9s:** The central player passes the ball to another teammate further on the right.\n*   **13s:** The players in orange bibs continue to pass the ball amongst themselves in a relaxed manner.",
+  "processing_time_seconds": 20.868117570877075,
+  "status": "success"
+}

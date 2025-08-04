@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_00m00s.mp4",
+  "start_seconds": 0,
+  "end_seconds": 15,
+  "duration": 15,
+  "timestamp": "00:00",
+  "analysis_timestamp": "2025-07-31T20:23:40.913123",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in this football clip.\n\nThe clip opens with the red team taking a quick free kick in midfield, which is immediately challenged by the black team. The camera then pans away from the play to follow a red player walking across the pitch.\n\n- **1s**: The red team takes a short free kick near the center circle.\n- **2s**: A black player immediately tackles the red player receiving the pass, creating a contested ball.\n- **4s**: The camera begins to pan right, leaving the main action to follow a red player (number 21).\n- **12s**: The red player (number 21) slows to a walk near the right touchline, while the game continues in the background.",
+  "processing_time_seconds": 24.039493083953857,
+  "status": "success"
+}

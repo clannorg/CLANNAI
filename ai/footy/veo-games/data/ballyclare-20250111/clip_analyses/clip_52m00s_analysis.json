@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_52m00s.mp4",
+  "start_seconds": 3120,
+  "end_seconds": 3135,
+  "duration": 15,
+  "timestamp": "52:00",
+  "analysis_timestamp": "2025-07-31T20:27:36.980639",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe scene shows a pre-match warm-up, not a competitive game. Players in various training kits are scattered across the pitch, casually passing the ball in small groups while spectators watch from the stands.\n\n**Key Timing Estimates:**\n- **1s:** On the left side of the pitch, a player in a black kit passes the ball to a player in a red and green kit.\n- **5s:** A player in a red and green kit near the center circle receives a long pass.\n- **9s:** The camera pans to the right, revealing a group of players wearing orange bibs.\n- **12s:** The players in orange bibs begin casually passing a ball among themselves on the right side of the pitch.",
+  "processing_time_seconds": 19.85001540184021,
+  "status": "success"
+}

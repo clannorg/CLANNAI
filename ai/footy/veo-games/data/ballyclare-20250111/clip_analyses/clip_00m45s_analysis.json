@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_00m45s.mp4",
+  "start_seconds": 45,
+  "end_seconds": 60,
+  "duration": 15,
+  "timestamp": "00:45",
+  "analysis_timestamp": "2025-07-31T20:23:37.699346",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team capitalizes on a loose ball in the midfield, launching a swift attack. A player receives a pass outside the penalty area and scores with a powerful, low shot into the bottom corner.\n\n**Key Timing Estimates:**\n*   **4s:** A red defender's sliding challenge fails to win the ball cleanly in the center of the pitch.\n*   **6s:** The black team recovers the loose ball and immediately plays a pass forward.\n*   **8s:** A black attacker, positioned centrally outside the box, receives the pass.\n*   **9s:** The attacker takes a first-time shot with his right foot.\n*   **10s:** The ball goes past the diving goalkeeper and into the bottom left corner of the net for a goal.\n*   **13s:** The goalscorer celebrates with a knee slide near the corner.",
+  "processing_time_seconds": 20.823543071746826,
+  "status": "success"
+}

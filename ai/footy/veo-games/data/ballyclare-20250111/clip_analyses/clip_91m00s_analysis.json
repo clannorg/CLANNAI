@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_91m00s.mp4",
+  "start_seconds": 5460,
+  "end_seconds": 5475,
+  "duration": 15,
+  "timestamp": "91:00",
+  "analysis_timestamp": "2025-07-31T20:30:32.007145",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe red team executes a quick attack, with a low cross into the penalty area resulting in a shot that is well-saved by the black team's goalkeeper. The ensuing scramble for the rebound is eventually cleared by the black team's defense.\n\n- **1s:** A red player delivers a low cross into the penalty area from the right side.\n- **3s:** A red attacker in the center of the box takes a first-time shot on goal.\n- **4s:** The black team's goalkeeper makes a diving save to his left, parrying the ball back into play.\n- **6s:** A red player goes to the ground after challenging for the rebound with a defender.\n- **7s:** The black team's defense manages to clear the ball away from immediate danger.",
+  "processing_time_seconds": 19.34123134613037,
+  "status": "success"
+}

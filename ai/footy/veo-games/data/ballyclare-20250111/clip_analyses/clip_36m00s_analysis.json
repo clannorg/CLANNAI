@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_36m00s.mp4",
+  "start_seconds": 2160,
+  "end_seconds": 2175,
+  "duration": 15,
+  "timestamp": "36:00",
+  "analysis_timestamp": "2025-07-31T20:26:46.557527",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe Black team initiates a controlled build-up from a free kick deep inside their own half. They play a short pass to start the play and move the ball forward into midfield under light pressure from the Red team.\n\n**Key Timing Estimates:**\n*   **0s:** The Black team is positioned to take a free kick on the left side of their defensive third.\n*   **12s:** The free kick is taken as a short pass to a teammate who came back to receive the ball.\n*   **13s:** The receiver plays a quick pass forward to a midfielder.\n*   **14s:** The ball is successfully moved into the central area of the pitch as the Black team continues its possession.",
+  "processing_time_seconds": 18.539085626602173,
+  "status": "success"
+}

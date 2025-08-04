@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_105m15s.mp4",
+  "start_seconds": 6315,
+  "end_seconds": 6330,
+  "duration": 15,
+  "timestamp": "105:15",
+  "analysis_timestamp": "2025-07-31T20:24:09.306322",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team builds possession from their defensive third, circulating the ball across the backline. The red team applies a structured press in the black team's half, attempting to win the ball as it moves to the left flank.\n\n**Key Timing Estimates:**\n*   **3s:** A black defender receives a pass near the left side of his own penalty area.\n*   **8s:** The black player passes the ball further out to a teammate on the left touchline.\n*   **12s:** Under pressure from a red forward, the black player makes a short, forward pass.\n*   **14s:** A red player challenges for the ball, but it deflects to another black player, who retains possession.",
+  "processing_time_seconds": 18.253474473953247,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_22m30s.mp4",
+  "start_seconds": 1350,
+  "end_seconds": 1365,
+  "duration": 15,
+  "timestamp": "22:30",
+  "analysis_timestamp": "2025-07-31T20:26:29.561719",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe Black team attempts to build an attack from a long throw-in, but the Red team defends effectively. After clearing the initial danger, the Red team intercepts the subsequent pass to win back possession.\n\n- **4s:** The Black team player takes a long throw-in toward the opponent's penalty area.\n- **5s:** A Red defender heads the ball away, clearing it from the box.\n- **8s:** The Black team recovers the cleared ball and passes it back to a defender near the halfway line.\n- **12s:** The Black defender attempts a long forward pass down the field.\n- **14s:** A Red player steps in to intercept the pass, regaining control for their team.",
+  "processing_time_seconds": 25.823222398757935,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_05m15s.mp4",
+  "start_seconds": 315,
+  "end_seconds": 330,
+  "duration": 15,
+  "timestamp": "05:15",
+  "analysis_timestamp": "2025-07-31T20:23:37.676221",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description**\nThe team in the black kit patiently builds possession from their own half, circulating the ball through the midfield. The team in red maintains a compact defensive shape, applying moderate pressure to disrupt the build-up play.\n\n**Key Timing Estimates**\n*   **1s:** A player in black controls the ball near the halfway line, looking for passing options.\n*   **8s:** The player passes the ball forward and left to a teammate moving towards the touchline.\n*   **10s:** A red player immediately pressures the receiver, forcing a quick decision.\n*   **11s:** The black player makes a short, one-touch pass infield to a supporting teammate.\n*   **14s:** The black team continues to move the ball in the midfield as the red team shifts to cover the space.",
+  "processing_time_seconds": 20.78908944129944,
+  "status": "success"
+}

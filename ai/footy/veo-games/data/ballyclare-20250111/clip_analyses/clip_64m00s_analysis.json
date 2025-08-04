@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_64m00s.mp4",
+  "start_seconds": 3840,
+  "end_seconds": 3855,
+  "duration": 15,
+  "timestamp": "64:00",
+  "analysis_timestamp": "2025-07-31T20:29:17.658301",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in the video clip.\n\n**Main Action Description:**\nThe red team controls possession, methodically building an attack from their own half. They progress the ball through several short passes in midfield before launching a long through-ball into the black team's penalty area.\n\n**Key Timing Estimates:**\n*   **3s:** A red player in his own half passes the ball to a central teammate.\n*   **6s:** The ball is passed forward, crossing the halfway line into the black team's half.\n*   **8s:** A red player receives the ball and lays it off to an advancing teammate.\n*   **12s:** A long, diagonal through-ball is played towards the left side of the penalty area.\n*   **14s:** A red attacker makes a run into the penalty box to meet the pass as the clip ends.",
+  "processing_time_seconds": 21.9992196559906,
+  "status": "success"
+}

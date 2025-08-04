@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_02m45s.mp4",
+  "start_seconds": 165,
+  "end_seconds": 180,
+  "duration": 15,
+  "timestamp": "02:45",
+  "analysis_timestamp": "2025-07-31T20:23:34.521358",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team launches a swift attack from the center, resulting in a player being fouled by a red defender inside the penalty area. The referee immediately awards a penalty kick.\n\n**Key Timing Estimates:**\n*   **1s:** A player from the black team plays a through ball forward from the center circle.\n*   **2s:** A black attacker receives the pass and enters the penalty area.\n*   **3s:** A red defender makes a sliding tackle, fouling the black attacker.\n*   **4s:** The referee blows the whistle and signals for a penalty kick.\n*   **7s:** Players begin to position themselves for the upcoming penalty.",
+  "processing_time_seconds": 17.63801145553589,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_67m15s.mp4",
+  "start_seconds": 4035,
+  "end_seconds": 4050,
+  "duration": 15,
+  "timestamp": "67:15",
+  "analysis_timestamp": "2025-07-31T20:29:33.241170",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe team in red attempts a direct, long-ball attack from their own half, which is calmly intercepted by the black team's defense. The black team successfully regains possession and begins to build from the back.\n\n**Key Timing Estimates**\n*   **3s:** The red team has possession in their own half, looking for an opening.\n*   **7s:** A red player plays a long, aerial pass forward toward the left side of the pitch.\n*   **10s:** The black defender (number 25) positions himself under the ball and intercepts the long pass.\n*   **13s:** The black defender plays a simple pass back to a teammate, securing possession for his side.",
+  "processing_time_seconds": 18.439239740371704,
+  "status": "success"
+}

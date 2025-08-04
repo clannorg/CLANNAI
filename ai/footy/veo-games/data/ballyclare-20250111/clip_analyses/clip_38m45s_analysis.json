@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_38m45s.mp4",
+  "start_seconds": 2325,
+  "end_seconds": 2340,
+  "duration": 15,
+  "timestamp": "38:45",
+  "analysis_timestamp": "2025-07-31T20:26:57.084491",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the 15-second football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team's goalkeeper initiates play with a long goal kick toward the halfway line. Although the red team wins the initial header, the black team quickly recovers the second ball in midfield and begins moving possession forward.\n\n**Key Timing Estimates:**\n*   **7s:** The goalkeeper for the black team takes a long goal kick down the center of the field.\n*   **9s:** A red player wins the aerial duel against a black player just inside the center circle, heading the ball forward.\n*   **11s:** A black player intercepts the flicked-on ball as it bounces in the midfield.\n*   **13s:** The black player in possession passes the ball out to a teammate on the right flank.",
+  "processing_time_seconds": 17.224125385284424,
+  "status": "success"
+}

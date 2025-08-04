@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_79m15s.mp4",
+  "start_seconds": 4755,
+  "end_seconds": 4770,
+  "duration": 15,
+  "timestamp": "79:15",
+  "analysis_timestamp": "2025-07-31T20:30:01.513407",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is an analysis of the football clip provided.\n\nThe black team launches an attack from the midfield, moving the ball to the right flank. The red team's defense holds its shape, successfully intercepting the attempted cross and clearing the ball away from their penalty area.\n\n- **3s:** A black player in the center of the pitch receives a long ball and begins to dribble forward.\n- **7s:** The player passes the ball out to a teammate on the right wing, near the edge of the penalty box.\n- **9s:** The black winger attempts to cross the ball into the penalty area.\n- **10s:** A red defender intercepts and blocks the cross.\n- **12s:** The red team clears the ball out of the defensive third and back towards the midfield.\n- **14s:** The black team recovers the cleared ball near the center circle.",
+  "processing_time_seconds": 18.62898349761963,
+  "status": "success"
+}

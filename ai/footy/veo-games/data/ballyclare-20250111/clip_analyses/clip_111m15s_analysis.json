@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_111m15s.mp4",
+  "start_seconds": 6675,
+  "end_seconds": 6690,
+  "duration": 15,
+  "timestamp": "111:15",
+  "analysis_timestamp": "2025-07-31T20:24:23.423552",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Based on the video provided, here is an analysis of the 15-second clip.\n\nThere is no active gameplay in this clip. The video shows a wide, static view of an empty football pitch at night before the camera begins to pan.\n\n*   **1s - 10s**: The camera holds a fixed, wide shot of the football pitch, centered on the halfway line. Spectators are visible in the stands, but no match is being played.\n*   **11s**: The camera begins a slow pan to the right, moving its view across the empty pitch.\n*   **15s**: The clip ends as the camera continues its pan across the field.",
+  "processing_time_seconds": 19.038048028945923,
+  "status": "success"
+}

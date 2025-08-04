@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_70m00s.mp4",
+  "start_seconds": 4200,
+  "end_seconds": 4215,
+  "duration": 15,
+  "timestamp": "70:00",
+  "analysis_timestamp": "2025-07-31T20:29:37.734417",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe Red team's goalkeeper takes a long goal kick down the center of the pitch. The Black team successfully wins the resulting aerial battle in midfield, secures possession, and begins to build an attack.\n\n**5s:** The Red goalkeeper takes a long goal kick from his penalty area.\n**9s:** A Black player outjumps a Red player to win the header in the center of the pitch.\n**12s:** Another Black player controls the second ball and makes a short pass to a teammate.\n**14s:** The Black team plays a forward pass to start moving into the Red team's half.",
+  "processing_time_seconds": 18.80071783065796,
+  "status": "success"
+}

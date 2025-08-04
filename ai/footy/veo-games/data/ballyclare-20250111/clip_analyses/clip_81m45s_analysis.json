@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_81m45s.mp4",
+  "start_seconds": 4905,
+  "end_seconds": 4920,
+  "duration": 15,
+  "timestamp": "81:45",
+  "analysis_timestamp": "2025-07-31T20:30:11.035702",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the football clip.\n\nThe Black team's goalkeeper takes a long goal kick which is contested in midfield. The Red team wins the initial header, but the referee immediately blows the whistle for a foul against them, awarding a free kick to the Black team.\n\n- **1s:** The Black team's goalkeeper takes a long goal kick upfield.\n- **4s:** A Red team player wins an aerial duel near the center circle, heading the ball forward.\n- **8s:** The referee blows the whistle to stop play for a foul committed by the Red team.\n- **10s:** A free kick is awarded to the Black team just inside their own half.",
+  "processing_time_seconds": 19.576568841934204,
+  "status": "success"
+}

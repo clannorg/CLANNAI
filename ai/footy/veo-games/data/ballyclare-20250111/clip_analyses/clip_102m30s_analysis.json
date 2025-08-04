@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_102m30s.mp4",
+  "start_seconds": 6150,
+  "end_seconds": 6165,
+  "duration": 15,
+  "timestamp": "102:30",
+  "analysis_timestamp": "2025-07-31T20:23:56.484560",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe black team attempts an attacking free kick from the right, which is easily collected by the red team's goalkeeper. The goalkeeper's quick distribution is immediately intercepted in the midfield, allowing the black team to regain possession.\n\n**Key Timing Estimates:**\n*   **4s:** The black team player kicks the ball from a set-piece, sending a high cross toward the penalty area.\n*   **7s:** The red team's goalkeeper confidently catches the ball.\n*   **9s:** The goalkeeper quickly rolls the ball out to a defender on the left side.\n*   **12s:** A black team midfielder intercepts the defender's forward pass near the center circle.\n*   **14s:** The black player takes control of the loose ball, restarting their team's attack.",
+  "processing_time_seconds": 18.785040616989136,
+  "status": "success"
+}

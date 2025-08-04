@@ -1,0 +1,74 @@
+{
+  "match_id": "f323-527e6a4e",
+  "upload_timestamp": "2025-08-02T15:12:30.375216",
+  "bucket": "end-nov-webapp-clann",
+  "region": "eu-west-1",
+  "s3_urls": {
+    "web_events.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-web_events-json.json",
+      "s3_key": "analysis-data/f323-527e6a4e-web_events-json.json",
+      "description": "Web app compatible events timeline",
+      "file_size_mb": 0.01
+    },
+    "web_events_array.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-web_events_array-json.json",
+      "s3_key": "analysis-data/f323-527e6a4e-web_events_array-json.json",
+      "description": "Direct events array for web app",
+      "file_size_mb": 0.01
+    },
+    "6_validated_timeline.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-6_validated_timeline-txt.txt",
+      "s3_key": "analysis-data/f323-527e6a4e-6_validated_timeline-txt.txt",
+      "description": "AI validated match timeline (text)",
+      "file_size_mb": 0.01
+    },
+    "7_accuracy_comparison.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-7_accuracy_comparison-txt.txt",
+      "s3_key": "analysis-data/f323-527e6a4e-7_accuracy_comparison-txt.txt",
+      "description": "AI accuracy validation",
+      "file_size_mb": 0.01
+    },
+    "8_tactical_analysis_red_team.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_analysis_red_team-txt.txt",
+      "s3_key": "analysis-data/f323-527e6a4e-8_tactical_analysis_red_team-txt.txt",
+      "description": "Red team tactical analysis, strengths, weaknesses",
+      "file_size_mb": 0.01
+    },
+    "8_tactical_analysis_yellow_team.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_analysis_yellow_team-txt.txt",
+      "s3_key": "analysis-data/f323-527e6a4e-8_tactical_analysis_yellow_team-txt.txt",
+      "description": "Yellow team tactical analysis, strengths, weaknesses",
+      "file_size_mb": 0.01
+    },
+    "8_tactical_match_summary.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-8_tactical_match_summary-txt.txt",
+      "s3_key": "analysis-data/f323-527e6a4e-8_tactical_match_summary-txt.txt",
+      "description": "Combined tactical match summary and coaching insights",
+      "file_size_mb": 0.0
+    },
+    "5_complete_timeline.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-5_complete_timeline-txt.txt",
+      "s3_key": "analysis-data/f323-527e6a4e-5_complete_timeline-txt.txt",
+      "description": "Complete detailed play-by-play timeline",
+      "file_size_mb": 0.08
+    },
+    "1_veo_ground_truth.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/f323-527e6a4e-1_veo_ground_truth-json.json",
+      "s3_key": "analysis-data/f323-527e6a4e-1_veo_ground_truth-json.json",
+      "description": "Original Veo ground truth data for comparison",
+      "file_size_mb": 0.01
+    },
+    "video.mp4": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/f323-527e6a4e-video-mp4.mp4",
+      "s3_key": "analysis-videos/f323-527e6a4e-video-mp4.mp4",
+      "description": "Full match video",
+      "file_size_mb": 3688.41
+    }
+  },
+  "upload_summary": {
+    "total_files": 13,
+    "successful_uploads": 10,
+    "failed_uploads": 3,
+    "total_size_mb": 3688.56
+  }
+}

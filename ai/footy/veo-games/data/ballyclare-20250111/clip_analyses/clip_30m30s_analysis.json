@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_30m30s.mp4",
+  "start_seconds": 1830,
+  "end_seconds": 1845,
+  "duration": 15,
+  "timestamp": "30:30",
+  "analysis_timestamp": "2025-07-31T20:26:37.847006",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here's a breakdown of the football clip:\n\nA black team player executes a long free kick from their own half, sending the ball deep into the red team's territory. A red defender successfully wins the resulting aerial challenge on the edge of the penalty area, clearing the ball away from danger.\n\n- **3s:** A black team player takes a long, high free kick from inside their own half.\n- **9s:** The ball arrives near the edge of the red team's penalty box.\n- **10s:** A red defender out-jumps a black attacker and heads the ball clear.\n- **13s:** Players from both teams pursue the loose ball as it heads towards the sideline.",
+  "processing_time_seconds": 14.840014457702637,
+  "status": "success"
+}

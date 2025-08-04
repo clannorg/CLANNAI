@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_95m45s.mp4",
+  "start_seconds": 5745,
+  "end_seconds": 5760,
+  "duration": 15,
+  "timestamp": "95:45",
+  "analysis_timestamp": "2025-07-31T20:32:48.152003",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the football clip:\n\nA player from the black team carries the ball through the midfield before being brought down by a sliding tackle from a red team player. The referee immediately stops play, awarding a free kick to the black team.\n\n- **1s:** A player from the black team dribbles the ball forward into the opposition's half.\n- **3s:** A red team player commits a foul with a sliding tackle on the player with the ball.\n- **4s:** The referee blows the whistle, stopping the game for the foul.",
+  "processing_time_seconds": 35.50941038131714,
+  "status": "success"
+}

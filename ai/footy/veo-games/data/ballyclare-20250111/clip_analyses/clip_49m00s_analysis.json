@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_49m00s.mp4",
+  "start_seconds": 2940,
+  "end_seconds": 2955,
+  "duration": 15,
+  "timestamp": "49:00",
+  "analysis_timestamp": "2025-07-31T20:27:27.478974",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the provided football clip.\n\n**Main Action Description:**\nThe clip shows a pre-game warm-up session on a football pitch. Players from two teams, one in orange tops and the other in green tops with red bibs, are casually passing the ball in small groups on different parts of the field.\n\n**Key Timing Estimates:**\n*   **2s:** An orange-kitted player on the right side of the pitch passes the ball to a teammate.\n*   **6s:** A player wearing a green top and red bib on the left side of the pitch receives a pass.\n*   **9s:** The orange-kitted player inside the center circle passes the ball to a teammate.\n*   **12s:** The player in the green top on the far left passes the ball back to their warm-up partner.",
+  "processing_time_seconds": 24.61545729637146,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_23m15s.mp4",
+  "start_seconds": 1395,
+  "end_seconds": 1410,
+  "duration": 15,
+  "timestamp": "23:15",
+  "analysis_timestamp": "2025-07-31T20:26:22.018500",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n**Main action description:**\nThe black team attempts to build an attack from their own half with a forward pass, but a red team player aggressively presses and intercepts the ball. Play is immediately halted by the referee, who awards a free-kick to the black team for a foul committed during the interception.\n\n**Key timing estimates:**\n\n*   **3s:** A black team player in the center circle makes a forward pass into the red team's half.\n*   **5s:** A red player pressures the receiver and intercepts the pass, winning possession for the red team.\n*   **12s:** The referee blows the whistle to stop play.\n*   **14s:** It is clear a foul has been given against the red team, awarding a free-kick to the black team.",
+  "processing_time_seconds": 18.27603268623352,
+  "status": "success"
+}

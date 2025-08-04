@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_90m15s.mp4",
+  "start_seconds": 5415,
+  "end_seconds": 5430,
+  "duration": 15,
+  "timestamp": "90:15",
+  "analysis_timestamp": "2025-07-31T20:30:31.387686",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe Red team attempts to play the ball out from their defense, but the Black team's organized high press disrupts the play in the center circle. The pressure ultimately leads to a foul being called against the Black team, resulting in a free kick for the Red team inside their own half.\n\n**Key Timing Estimates:**\n*   **3s:** A Red defender plays a forward pass to a teammate in the center circle.\n*   **6s:** A Black player pressures the receiver, causing the ball to come loose in midfield.\n*   **10s:** The ball is passed back to a Red defender who is immediately pressed by a Black forward.\n*   **13s:** The referee blows the whistle and signals for a foul committed by the Black team.",
+  "processing_time_seconds": 19.07013750076294,
+  "status": "success"
+}

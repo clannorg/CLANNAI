@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_46m45s.mp4",
+  "start_seconds": 2805,
+  "end_seconds": 2820,
+  "duration": 15,
+  "timestamp": "46:45",
+  "analysis_timestamp": "2025-07-31T20:27:22.074416",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\nPlayers from both teams are warming up on the pitch. The team in black jerseys with orange bibs is conducting a passing drill near the center circle, while the red team's players are loosely warming up on the left side of the field.\n\n**0s:** A player in an orange bib passes the ball within their warm-up circle.\n**2s:** A player in red on the far left kicks a ball towards the center.\n**6s:** The players in orange bibs continue their passing drill.\n**8s:** A player in a red jersey near the left touchline kicks a ball.\n**13s:** The black team's warm-up drill continues with short, quick passes.",
+  "processing_time_seconds": 23.356024503707886,
+  "status": "success"
+}

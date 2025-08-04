@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_01m45s.mp4",
+  "start_seconds": 105,
+  "end_seconds": 120,
+  "duration": 15,
+  "timestamp": "01:45",
+  "analysis_timestamp": "2025-07-31T20:23:43.694423",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main action description:**\nThe black team initiates the match with a kickoff, attempting a direct, long ball forward. The red team successfully defends the initial attack and gains possession, but quickly turns the ball over in midfield under pressure.\n\n**Key timing estimates:**\n- **5s:** The black team kicks off the match from the center circle.\n- **6s:** A black player immediately plays a long, aerial pass into the red team's half.\n- **8s:** A red defender wins the header, bringing the ball down and securing possession for the red team.\n- **12s:** The red team's attempted forward pass is intercepted by a black midfielder.\n- **13s:** The black team recovers the loose ball within their own half.",
+  "processing_time_seconds": 26.81361436843872,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_06m00s.mp4",
+  "start_seconds": 360,
+  "end_seconds": 375,
+  "duration": 15,
+  "timestamp": "06:00",
+  "analysis_timestamp": "2025-07-31T20:23:34.806146",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe red team successfully defends an attack and regains possession deep in their own half. They opt to reset the play by passing back to their goalkeeper, who then launches a long ball upfield to initiate a new attack.\n\n**Key Timing Estimates:**\n\n*   **1s:** A black team player near the edge of the red team's penalty box attempts a pass, which is intercepted.\n*   **3s:** The red player #21 receives the ball just inside his own half and turns to face his goal.\n*   **6s:** The ball is passed back to the red team's goalkeeper.\n*   **11s:** The goalkeeper takes a touch and kicks a long ball forward towards the right side of the pitch.\n*   **14s:** The ball is in mid-air, traveling into the opposition's half as the clip ends.",
+  "processing_time_seconds": 17.917802333831787,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_106m00s.mp4",
+  "start_seconds": 6360,
+  "end_seconds": 6375,
+  "duration": 15,
+  "timestamp": "106:00",
+  "analysis_timestamp": "2025-07-31T20:24:10.695366",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the provided football clip.\n\n**Main Action Description:**\nThe clip shows a stoppage in play following a foul or injury inside the penalty area. A player from the red team is on the ground, and the referee is managing the situation as players from both teams gather nearby.\n\n**Key Timing Estimates:**\n- **0s:** The scene opens with a red player already on the ground inside the penalty box, with the ball stationary nearby.\n- **3s:** The referee is seen standing over the downed player, with other players from both the red and black teams looking on.\n- **7s:** Players remain stationary, waiting for the play to resume or for the injured player to receive attention.\n- **13s:** A teammate in red kneels down to help the injured player, who starts to sit up.",
+  "processing_time_seconds": 18.958374738693237,
+  "status": "success"
+}

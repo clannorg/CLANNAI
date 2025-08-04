@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_37m00s.mp4",
+  "start_seconds": 2220,
+  "end_seconds": 2235,
+  "duration": 15,
+  "timestamp": "37:00",
+  "analysis_timestamp": "2025-07-31T20:26:51.364462",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe black team takes a direct free kick from the edge of the box, which is on target. The red team's goalkeeper makes a diving save, and a defender successfully clears the loose ball from the penalty area to end the immediate threat.\n\n**Key Timing Estimates**\n- **4s**: The black team players are set up and ready to take the free kick.\n- **8s**: The black team player strikes the free kick, sending the ball towards the goal.\n- **10s**: The red team's goalkeeper dives to their left and makes a two-handed save, pushing the ball away.\n- **13s**: A red defender clears the rebound from inside the six-yard box.",
+  "processing_time_seconds": 21.369388818740845,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_09m00s.mp4",
+  "start_seconds": 540,
+  "end_seconds": 555,
+  "duration": 15,
+  "timestamp": "09:00",
+  "analysis_timestamp": "2025-07-31T20:23:51.128853",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team initiates a build-up from their goalkeeper, advancing the ball up the right side. A long diagonal pass is attempted towards the left wing but is ultimately intercepted by a red team player in the center of the pitch.\n\n**Key Timing Estimates:**\n*   **4s:** The goalkeeper (in yellow) passes the ball out to the black team's right defender.\n*   **11s:** The black defender carries the ball across the halfway line into the opposition's half.\n*   **14s:** The player attempts a long, diagonal switch pass across the field.\n*   **15s:** A red team player intercepts the pass in the center circle.",
+  "processing_time_seconds": 15.7762770652771,
+  "status": "success"
+}

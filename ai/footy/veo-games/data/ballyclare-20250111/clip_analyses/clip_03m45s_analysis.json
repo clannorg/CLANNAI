@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_03m45s.mp4",
+  "start_seconds": 225,
+  "end_seconds": 240,
+  "duration": 15,
+  "timestamp": "03:45",
+  "analysis_timestamp": "2025-07-31T20:23:36.183463",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "The clip shows a stoppage in play during a football match on a cold day, with some snow visible by the stands. A player from the black team is on the ground receiving attention while the red team stands nearby and the camera slowly pans across the field.\n\n**0s:** A player in a black kit is on the ground on the left side of the pitch, being attended to by the referee.\n**4s:** The camera begins a slow pan from left to right, moving away from the group of players.\n**9s:** The pan passes the halfway line, showing other players from both teams waiting in their positions for play to restart.\n**15s:** The pan continues towards the right side of the field, showing the full extent of the pitch and stands as the game remains paused.",
+  "processing_time_seconds": 19.29905104637146,
+  "status": "success"
+}

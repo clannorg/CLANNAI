@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_56m15s.mp4",
+  "start_seconds": 3375,
+  "end_seconds": 3390,
+  "duration": 15,
+  "timestamp": "56:15",
+  "analysis_timestamp": "2025-07-31T20:27:43.818470",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe red team initiates a slow build-up from their own half, starting with a pass from the goalkeeper. They maintain comfortable possession in the central area of the pitch as players from both teams settle into their positions.\n\n- **1s:** The goalkeeper (in a black and green kit) passes the ball to a red-shirted midfielder.\n- **2s:** The red midfielder receives the ball just inside their own half.\n- **5s:** The player with the ball walks into the center circle, controlling the pace.\n- **8s:** Other red players move around the midfield to offer passing options.\n- **12s:** The red team remains in possession near the halfway line, with no pressure from the opposition.",
+  "processing_time_seconds": 18.90982151031494,
+  "status": "success"
+}

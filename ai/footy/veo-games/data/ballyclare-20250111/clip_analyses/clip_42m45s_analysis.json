@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_42m45s.mp4",
+  "start_seconds": 2565,
+  "end_seconds": 2580,
+  "duration": 15,
+  "timestamp": "42:45",
+  "analysis_timestamp": "2025-07-31T20:27:06.959556",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe red team is conducting a pre-match warm-up, circulating the ball amongst themselves in their own half. They maintain possession with a series of simple passes in a relaxed drill with no defensive pressure.\n\n**Key Timing Estimates:**\n*   **2s:** A player in a green bib passes the ball to a teammate in a red shirt.\n*   **7s:** A red player switches play with a long pass across the field to a teammate on the left.\n*   **10s:** The player receives the ball and makes a one-touch pass back towards the center.\n*   **14s:** A red player near the center circle controls the ball and makes a forward pass.",
+  "processing_time_seconds": 22.298431158065796,
+  "status": "success"
+}

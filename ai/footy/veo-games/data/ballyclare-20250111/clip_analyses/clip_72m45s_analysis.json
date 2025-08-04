@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_72m45s.mp4",
+  "start_seconds": 4365,
+  "end_seconds": 4380,
+  "duration": 15,
+  "timestamp": "72:45",
+  "analysis_timestamp": "2025-07-31T20:29:51.459013",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe Black team sets up for an attacking free kick in a central position outside the penalty area. The Red team organizes a defensive wall while the referee manages the players' positioning before the kick is taken.\n\n**Key Timing Estimates:**\n- **0s:** The clip opens with players from both teams gathered for a Black team free kick.\n- **4s:** The Red team forms a multi-player defensive wall to block the anticipated shot.\n- **8s:** The referee gestures to the players in the red wall, ensuring they maintain the correct distance from the ball.\n- **15s:** The players remain in position, still waiting for the referee to signal for the free kick to be taken as the clip ends.",
+  "processing_time_seconds": 20.961953163146973,
+  "status": "success"
+}

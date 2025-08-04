@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_22m45s.mp4",
+  "start_seconds": 1365,
+  "end_seconds": 1380,
+  "duration": 15,
+  "timestamp": "22:45",
+  "analysis_timestamp": "2025-07-31T20:26:28.018240",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in this football clip.\n\nThe team in black initiates a build-up from their own half, culminating in a long pass over the top of the opposition's defense. The red team's goalkeeper anticipates the pass and comes out to collect the ball, ending the attacking sequence.\n\n**Key Timings:**\n*   **1s:** The black player (#3) on the left sideline passes the ball forward to a central midfielder.\n*   **6s:** A black midfielder plays a lofted through-ball over the top of the red team's defensive line.\n*   **9s:** The red team's goalkeeper comes off his line to safely catch the ball inside the penalty box.\n*   **13s:** The goalkeeper holds the ball, allowing both teams to reset their positions on the field.",
+  "processing_time_seconds": 24.27890920639038,
+  "status": "success"
+}

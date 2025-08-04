@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_95m30s.mp4",
+  "start_seconds": 5730,
+  "end_seconds": 5745,
+  "duration": 15,
+  "timestamp": "95:30",
+  "analysis_timestamp": "2025-07-31T20:32:48.794602",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the key events in the football clip.\n\n### Main Action Description\nThe black team's goalkeeper initiates play with a long goal kick downfield. The red team successfully wins the initial aerial duel and, after a brief midfield battle, secures possession to begin building an attack from their own half.\n\n### Key Timing Estimates\n*   **1s:** The black team's goalkeeper takes a long goal kick.\n*   **4s:** A red player near the center circle wins the first header.\n*   **6s:** Following a second header, a red player directs the ball forward.\n*   **10s:** The red team gains control of the loose ball and makes a short pass in midfield.\n*   **13s:** A red player receives the ball and carries it forward over the halfway line.",
+  "processing_time_seconds": 36.15593957901001,
+  "status": "success"
+}

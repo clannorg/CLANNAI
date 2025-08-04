@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_78m30s.mp4",
+  "start_seconds": 4710,
+  "end_seconds": 4725,
+  "duration": 15,
+  "timestamp": "78:30",
+  "analysis_timestamp": "2025-07-31T20:29:59.993690",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team loses possession in the center circle from a red team press, which sparks a quick counter-attack. The red team drives forward, but their attempted through ball is intercepted by a black defender just outside the penalty area, allowing the black team to regain control.\n\n**Key Timing Estimates:**\n\n*   **3s:** A black team player receives a pass in the center circle.\n*   **5s:** A red team player intercepts the ball, dispossessing the black team.\n*   **6s:** The red player passes to a teammate, initiating a counter-attack.\n*   **11s:** The red player with the ball attempts a forward pass to a running teammate.\n*   **12s:** A black defender steps in and intercepts the pass, ending the red team's attack.\n*   **14s:** The black defender passes the ball back into midfield, re-establishing possession for his team.",
+  "processing_time_seconds": 20.262526035308838,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_52m15s.mp4",
+  "start_seconds": 3135,
+  "end_seconds": 3150,
+  "duration": 15,
+  "timestamp": "52:15",
+  "analysis_timestamp": "2025-07-31T20:27:42.779666",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the provided football clip.\n\n**Main Action Description:**\nThe clip captures players warming up on the pitch, likely before a match or at half-time. A small group of players in orange bibs are engaged in a passing drill, while other individual players are loosely moving and kicking balls around the field.\n\n**Key Timing Estimates:**\n*   **1s:** A group of four players wearing orange bibs performs a passing drill (a \"rondo\") near the center circle.\n*   **6s:** A player in a green bib walks into the frame from the left side of the pitch.\n*   **9s:** The player in the green bib kicks a stationary ball and begins to jog towards the center.\n*   **12s:** The player in the green bib raises their arm while jogging, as the players in orange bibs continue their drill.",
+  "processing_time_seconds": 25.52381443977356,
+  "status": "success"
+}

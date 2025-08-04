@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_47m30s.mp4",
+  "start_seconds": 2850,
+  "end_seconds": 2865,
+  "duration": 15,
+  "timestamp": "47:30",
+  "analysis_timestamp": "2025-07-31T20:27:24.452135",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe video shows a pre-match warm-up or a light training session on an artificial pitch under floodlights. A few players in orange and yellow bibs are casually passing a ball between them near the center circle, with no organized match play taking place.\n\n**Key Timing Estimates**\n\n*   **3s:** An orange-bibbed player makes a short pass to a teammate in a yellow bib inside the center circle.\n*   **8s:** The player in the yellow bib controls the ball while another player (in an orange bib) who was on the ground gets up.\n*   **12s:** The player in the yellow bib passes the ball back to the player in the orange bib, continuing the informal drill.",
+  "processing_time_seconds": 25.1968674659729,
+  "status": "success"
+}

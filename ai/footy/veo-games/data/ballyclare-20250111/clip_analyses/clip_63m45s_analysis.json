@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_63m45s.mp4",
+  "start_seconds": 3825,
+  "end_seconds": 3840,
+  "duration": 15,
+  "timestamp": "63:45",
+  "analysis_timestamp": "2025-07-31T20:29:25.151208",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team attempts a long pass which is intercepted, leading to a rapid counter-attack by the red team. The attack progresses into the penalty area but is broken up by a defender, forcing the black team to make a rushed clearance.\n\n**Key Timing Estimates:**\n- **4s:** The black team plays a long ball forward from their right flank towards the red team's box.\n- **5s:** A red defender wins the aerial duel and heads the ball away.\n- **8s:** After possession is won, a red player with the ball is tackled by a black defender inside the penalty area.\n- **11s:** The black team clears the ball high and long out of their defensive third.\n- **14s:** A red player in the midfield controls the cleared ball, allowing their team to retain possession.",
+  "processing_time_seconds": 29.497596740722656,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_39m30s.mp4",
+  "start_seconds": 2370,
+  "end_seconds": 2385,
+  "duration": 15,
+  "timestamp": "39:30",
+  "analysis_timestamp": "2025-07-31T20:26:58.889499",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip, focusing on the main actions and key timings.\n\nThe black team attempts a long-ball attack from deep within their own half. The red team\u2019s defense successfully clears the aerial threat just outside their penalty area with two consecutive volleys.\n\n- **8s:** A player from the black team kicks a long, high pass forward from the halfway line.\n- **12s:** As the ball drops, a red defender makes the first clearance with a volley just outside the penalty box.\n- **14s:** Another red player meets the cleared ball and volleys it again, sending it back towards the midfield.",
+  "processing_time_seconds": 18.091927528381348,
+  "status": "success"
+}

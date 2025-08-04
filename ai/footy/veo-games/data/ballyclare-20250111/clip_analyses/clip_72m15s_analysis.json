@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_72m15s.mp4",
+  "start_seconds": 4335,
+  "end_seconds": 4350,
+  "duration": 15,
+  "timestamp": "72:15",
+  "analysis_timestamp": "2025-07-31T20:29:48.138227",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe Red team maintains possession in the attacking half, facing intense pressure from the Black team's midfield. The play becomes scrappy, leading to a foul by a Black player and a free-kick being awarded to the Red team.\n\n- **3s:** A Black player attempts a sliding tackle, but the ball deflects to a nearby Red player.\n- **5s:** Another Red player falls to the ground while challenging for the now loose ball.\n- **7s:** As a Red player gathers the ball, he is brought down by a sliding tackle from a Black defender.\n- **8s:** The referee blows the whistle, awarding a free-kick to the Red team just outside the center circle.\n- **11s:** Players from both teams react to the foul as they reposition for the upcoming free-kick.",
+  "processing_time_seconds": 20.44769287109375,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_01m15s.mp4",
+  "start_seconds": 75,
+  "end_seconds": 90,
+  "duration": 15,
+  "timestamp": "01:15",
+  "analysis_timestamp": "2025-07-31T20:23:38.191578",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe red team initiates a slow, controlled build-up from their own half, starting from the center circle. They circulate the ball to the left flank to probe the black team's organized defensive structure.\n\n**Key Timing Estimates:**\n*   **3s:** A red player in the center circle passes the ball backward to a central defender.\n*   **8s:** The ball is played across the field to a red player positioned on the left side.\n*   **11s:** The red player on the left plays a forward pass up the sideline to a teammate.\n*   **14s:** The receiving red player is immediately put under pressure by a defending player from the black team near the halfway line.",
+  "processing_time_seconds": 21.312175512313843,
+  "status": "success"
+}

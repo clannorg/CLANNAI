@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_08m00s.mp4",
+  "start_seconds": 480,
+  "end_seconds": 495,
+  "duration": 15,
+  "timestamp": "08:00",
+  "analysis_timestamp": "2025-07-31T20:23:51.736770",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts to build up play from their defense, circulating the ball across their backline. Under pressure from the red team's high press, they are forced to play a long ball forward, which is successfully intercepted by a red defender in the midfield.\n\n**Key Timing Estimates:**\n*   **3s:** A black defender passes the ball across the defensive line to a central teammate.\n*   **8s:** The black team plays the ball back towards their own goal to escape pressure.\n*   **11s:** A long, high ball is launched forward from deep inside the black team's half.\n*   **14s:** A red defender wins the aerial challenge near the center circle, heading the ball down.\n*   **15s:** The red team secures possession of the loose ball in the midfield.",
+  "processing_time_seconds": 17.215232133865356,
+  "status": "success"
+}

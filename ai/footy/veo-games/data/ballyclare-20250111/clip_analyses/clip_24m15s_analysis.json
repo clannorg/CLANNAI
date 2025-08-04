@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_24m15s.mp4",
+  "start_seconds": 1455,
+  "end_seconds": 1470,
+  "duration": 15,
+  "timestamp": "24:15",
+  "analysis_timestamp": "2025-07-31T20:26:24.525359",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip provided.\n\n### Football Clip Analysis\n\n**Main Action Description:**\nThe black team attempts to build an attack from their own half, circulating the ball through the midfield. The red team maintains a disciplined and compact defensive shape, applying light pressure and preventing any forward penetration, forcing the black team to pass sideways.\n\n**Key Timing Estimates:**\n*   **1s:** The black team is in possession of the ball in their own half.\n*   **4s:** A black player receives a pass and advances past the halfway line.\n*   **7s:** A red player pressures the ball carrier, forcing a sideways pass.\n*   **10s:** The black team recycles possession, passing the ball back toward the center circle.\n*   **14s:** A central black player receives the ball but is immediately pressured by a red midfielder, preventing any forward play.",
+  "processing_time_seconds": 20.768959999084473,
+  "status": "success"
+}

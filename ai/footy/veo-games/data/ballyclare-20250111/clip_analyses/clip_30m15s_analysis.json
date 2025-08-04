@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_30m15s.mp4",
+  "start_seconds": 1815,
+  "end_seconds": 1830,
+  "duration": 15,
+  "timestamp": "30:15",
+  "analysis_timestamp": "2025-07-31T20:26:38.373137",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe team in the black kit prepares to take a direct free kick in a dangerous position just outside the penalty box. The red team organizes its defensive wall and marks players in the area in anticipation of the shot or cross.\n\n**Key Timing Estimates:**\n*   **1s**: The black team is set up for a free kick, with the referee standing near the ball.\n*   **4s**: The referee gestures, likely instructing the kicker or checking the defensive wall's distance.\n*   **9s**: The player in black bends down to adjust the position of the ball on the pitch.\n*   **14s**: Players from both teams remain in their set positions, waiting for the referee's signal for the kick to be taken.",
+  "processing_time_seconds": 15.732679605484009,
+  "status": "success"
+}

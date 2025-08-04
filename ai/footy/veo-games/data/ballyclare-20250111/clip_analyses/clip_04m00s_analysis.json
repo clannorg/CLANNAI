@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_04m00s.mp4",
+  "start_seconds": 240,
+  "end_seconds": 255,
+  "duration": 15,
+  "timestamp": "04:00",
+  "analysis_timestamp": "2025-07-31T20:23:38.158119",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe Black team executes a free-kick routine from a central position, lofting the ball into the box. The Red team's defense initially clears the danger with a header, but the Black team recovers the loose ball to maintain their attacking pressure.\n\n**0-5s**: Players from both teams set up for a Black team free kick.\n**6s**: A Black team player takes the free kick, chipping the ball toward the penalty area.\n**8s**: A Red defender jumps and heads the ball away, clearing it from the box.\n**10s**: A Black team player controls the clearance just outside the penalty area.\n**13s**: The Black player in possession turns with the ball, assessing options as the Red team scrambles to reorganize its defense.",
+  "processing_time_seconds": 21.273324966430664,
+  "status": "success"
+}

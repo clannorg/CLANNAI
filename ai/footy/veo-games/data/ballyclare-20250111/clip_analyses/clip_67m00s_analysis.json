@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_67m00s.mp4",
+  "start_seconds": 4020,
+  "end_seconds": 4035,
+  "duration": 15,
+  "timestamp": "67:00",
+  "analysis_timestamp": "2025-07-31T20:29:32.842292",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is an analysis of the provided 15-second football clip.\n\n**Main action description:**\nThe black team takes a long free-kick from their own half, which is won by a red player in an aerial duel. The red team subsequently gains possession and starts building play from their own half, circulating the ball in the midfield.\n\n**Key timing estimates:**\n*   **2s:** A player from the black team takes a long, high free-kick into the opposition's half.\n*   **6s:** A red player wins the header in the air, directing the ball towards a teammate.\n*   **9s:** Under pressure, a red player clears the ball high towards the right side of the pitch.\n*   **14s:** A red player controls the ball on the right and makes a simple pass back to a central midfielder.",
+  "processing_time_seconds": 18.41005778312683,
+  "status": "success"
+}

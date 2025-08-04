@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_63m00s.mp4",
+  "start_seconds": 3780,
+  "end_seconds": 3795,
+  "duration": 15,
+  "timestamp": "63:00",
+  "analysis_timestamp": "2025-07-31T20:29:16.069613",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team initiates an attack with a long ball from their own half, which is briefly intercepted by the black team. The red team quickly regains possession on the right flank, but the subsequent attack is stopped by the black defense, leading to a throw-in for the red team.\n\n**Key Timing Estimates:**\n\n*   **1s:** A red player kicks a long, high ball forward from their own half.\n*   **4s:** A black defender near the center circle heads the ball away.\n*   **5s:** A red player runs onto the loose ball on the right side of the pitch.\n*   **9s:** Black defenders converge on the red player, and the ball is cleared out of play near the sideline.\n*   **11s:** The referee blows the whistle and signals for a red team throw-in.",
+  "processing_time_seconds": 20.44017744064331,
+  "status": "success"
+}

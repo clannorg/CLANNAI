@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_88m15s.mp4",
+  "start_seconds": 5295,
+  "end_seconds": 5310,
+  "duration": 15,
+  "timestamp": "88:15",
+  "analysis_timestamp": "2025-07-31T20:31:07.536481",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the football clip:\n\nThe black team launches a long free kick towards the red team's penalty area. The red team's defense successfully defends the aerial ball and secures possession in their own half.\n\n- **2s:** The black team player takes a long free kick from deep inside his own half.\n- **7s:** A red defender positions himself and heads the ball clear just outside the penalty box.\n- **9s:** A second red player collects the headed clearance and makes a short pass to a teammate.\n- **13s:** The red team establishes controlled possession in their defensive third.",
+  "processing_time_seconds": 58.9567129611969,
+  "status": "success"
+}

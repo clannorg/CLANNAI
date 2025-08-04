@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_60m30s.mp4",
+  "start_seconds": 3630,
+  "end_seconds": 3645,
+  "duration": 15,
+  "timestamp": "60:30",
+  "analysis_timestamp": "2025-07-31T20:29:11.646239",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip you provided.\n\nThe red team takes a direct free-kick from just outside the penalty area. The shot is ultimately unsuccessful, flying high over the crossbar for a goal kick.\n\n- **1s:** Red team prepares for a direct free-kick; the black team forms a defensive wall.\n- **12s:** The red player starts their run-up to the ball.\n- **13s:** The player strikes the ball, taking the free-kick.\n- **15s:** The shot goes over the crossbar.",
+  "processing_time_seconds": 16.085686206817627,
+  "status": "success"
+}

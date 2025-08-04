@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_17m15s.mp4",
+  "start_seconds": 1035,
+  "end_seconds": 1050,
+  "duration": 15,
+  "timestamp": "17:15",
+  "analysis_timestamp": "2025-07-31T20:24:40.481486",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe red team sets up for an attacking free kick from a dangerous position on the left side of the field. The black team organizes its defensive wall and marks players within the penalty area, while the referee manages the situation before the kick is taken.\n\n**Key Timing Estimates:**\n*   **0s - 4s:** Red team has possession for a free kick; the referee is speaking to players in the black team's defensive wall.\n*   **5s - 9s:** A red player stands over the ball, ready to take the kick, while other red players are positioned inside the penalty box as targets.\n*   **10s - 15s:** The camera pans slowly to the right, showing the full defensive setup of the black team. All players remain in their set-piece positions, waiting for the play to start.",
+  "processing_time_seconds": 15.341092348098755,
+  "status": "success"
+}

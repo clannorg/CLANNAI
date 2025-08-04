@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_64m15s.mp4",
+  "start_seconds": 3855,
+  "end_seconds": 3870,
+  "duration": 15,
+  "timestamp": "64:15",
+  "analysis_timestamp": "2025-07-31T20:29:15.494626",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the 15-second football clip.\n\n### Main Action Description\nThe clip shows the aftermath of an incident inside the red team's penalty area. The referee issues a yellow card to a player from the black team, and both teams then slowly begin to reset their positions for the restart of play, which appears to be a goal kick or defensive free kick for the red team.\n\n### Key Timing Estimates\n*   **2s:** The referee shows a yellow card to a black-kitted player near the penalty spot.\n*   **5s:** The booked player from the black team turns and starts walking out of the penalty area.\n*   **9s:** The red team's goalkeeper places the ball on the ground, preparing for a goal kick or free kick.\n*   **13s:** Players from the black team continue to retreat from the penalty box into the midfield area as the teams reorganize.",
+  "processing_time_seconds": 19.825316429138184,
+  "status": "success"
+}

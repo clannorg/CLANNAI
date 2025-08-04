@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_12m00s.mp4",
+  "start_seconds": 720,
+  "end_seconds": 735,
+  "duration": 15,
+  "timestamp": "12:00",
+  "analysis_timestamp": "2025-07-31T20:24:31.916297",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts to build up play through the midfield, making a couple of short passes under pressure. The red team maintains a compact defensive shape and successfully wins the ball back with an aggressive tackle in the center of the pitch.\n\n**Key Timing Estimates:**\n- **3s:** A black player in the center circle passes the ball forward to a teammate.\n- **9s:** The receiving player, now under pressure from a red opponent, makes a short sideways pass to another black player.\n- **12s:** A red player (wearing number 25) makes a successful sliding tackle, dispossessing the black team.\n- **14s:** The red team recovers the loose ball and secures possession.",
+  "processing_time_seconds": 19.133664846420288,
+  "status": "success"
+}

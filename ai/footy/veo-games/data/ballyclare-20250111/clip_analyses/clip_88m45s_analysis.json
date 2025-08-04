@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_88m45s.mp4",
+  "start_seconds": 5325,
+  "end_seconds": 5340,
+  "duration": 15,
+  "timestamp": "88:45",
+  "analysis_timestamp": "2025-07-31T20:30:27.948500",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the 15-second football clip.\n\n### Football Clip Analysis\n\nThe black team attempts to build play from their defensive half, but the red team applies pressure and successfully wins the ball back in the midfield.\n\n**Key Timings:**\n\n*   **1s:** The black team starts with possession in their own half.\n*   **5s:** A black midfielder receives a pass in the center circle and turns to face the opponent's goal.\n*   **8s:** The ball is played wide to a black team player on the left flank.\n*   **12s:** A red team player intercepts a pass in the midfield, winning back possession.\n*   **14s:** The red team secures the ball and begins to organize their attack from the center of the pitch.",
+  "processing_time_seconds": 18.816521644592285,
+  "status": "success"
+}

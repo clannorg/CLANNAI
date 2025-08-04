@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_85m30s.mp4",
+  "start_seconds": 5130,
+  "end_seconds": 5145,
+  "duration": 15,
+  "timestamp": "85:30",
+  "analysis_timestamp": "2025-07-31T20:30:16.581368",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Main Action Description\nThe Black team's goalkeeper initiates play with a long kick down the center of the pitch. A Black team player wins the aerial duel in the center circle, flicking the ball on into the Red team's half where a Red defender calmly chests it back.\n\n### Key Timing Estimates\n- **4s:** The Black team's goalkeeper takes a long goal kick.\n- **8s:** A Black team player in the center circle jumps and heads the ball forward.\n- **13s:** The Red team's defender (#5) chests the ball down, controlling it and directing it back towards his own goal.",
+  "processing_time_seconds": 18.13198447227478,
+  "status": "success"
+}

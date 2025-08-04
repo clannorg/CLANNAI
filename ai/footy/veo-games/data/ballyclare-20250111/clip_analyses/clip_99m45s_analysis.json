@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_99m45s.mp4",
+  "start_seconds": 5985,
+  "end_seconds": 6000,
+  "duration": 15,
+  "timestamp": "99:45",
+  "analysis_timestamp": "2025-07-31T20:33:22.622369",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe clip shows a fast-paced midfield battle with several quick turnovers. Play starts with the Red team's attack being cleared, leading to a scramble for possession in the center of the pitch, which the Black team ultimately wins and settles into controlled possession in their own half.\n\n**Key Timing Estimates:**\n\n*   **1s:** Red player on the far right wing sends the ball into the midfield.\n*   **3s:** The Black team heads the ball away, clearing the initial danger.\n*   **6s:** A Red player makes a strong tackle in the midfield, winning the ball back.\n*   **8s:** The Black team intercepts a Red team pass near the center circle.\n*   **11s:** The Black player with the ball passes back to a defender near the halfway line to secure possession.\n*   **14s:** The Black team is in calm possession in their defensive half, looking to build up play.",
+  "processing_time_seconds": 44.036548137664795,
+  "status": "success"
+}

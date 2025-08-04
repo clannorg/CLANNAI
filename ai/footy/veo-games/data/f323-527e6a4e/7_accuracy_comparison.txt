@@ -1,0 +1,165 @@
+# AI-Powered Accuracy Comparison
+# Match: f323-527e6a4e
+# Generated: 2025-08-01T12:19:25.530996
+# Model: gemini-2.0-flash-exp
+
+## GOALS COMPARISON
+
+**Ground Truth**:
+*   05:21 (Goal)
+*   07:20 (Goal)
+*   38:38 (Goal)
+*   42:56 (Goal)
+*   63:17 (Goal)
+*   79:33 (Goal)
+*   90:13 (Goal)
+
+**Our AI Detected**:
+*   05:30 (Goal)
+*   07:30 (Goal)
+*   23:30 (Goal)
+*   24:30 (Goal)
+*   41:30 (Goal)
+*   43:00 (Goal)
+*   63:30 (Goal)
+*   79:45 (Goal)
+*   82:00 (Goal)
+*   90:15 (Goal)
+*   96:15 (Goal)
+
+**Matches**:
+*   05:30 (AI) matches 05:21 (Ground Truth) - Within 9 seconds (TP)
+*   07:30 (AI) matches 07:20 (Ground Truth) - Within 10 seconds (TP)
+*   63:30 (AI) matches 63:17 (Ground Truth) - Within 13 seconds (TP)
+*   79:45 (AI) matches 79:33 (Ground Truth) - Within 12 seconds (TP)
+*   90:15 (AI) matches 90:13 (Ground Truth) - Within 2 seconds (TP)
+
+**False Positives**:
+*   23:30 (AI) - No corresponding goal in ground truth.
+*   24:30 (AI) - No corresponding goal in ground truth.
+*   41:30 (AI) - No corresponding goal in ground truth.
+*   43:00 (AI) - No corresponding goal in ground truth.
+*   82:00 (AI) - No corresponding goal in ground truth.
+*   96:15 (AI) - No corresponding goal in ground truth.
+
+**False Negatives**:
+*   38:38 (Ground Truth) - Not detected by AI.
+*   42:56 (Ground Truth) - Not detected by AI.
+
+## SHOTS COMPARISON
+
+**Ground Truth**:
+*   02:12 (Shot on goal)
+*   04:45 (Shot on goal)
+*   05:21 (Shot on goal)
+*   07:19 (Shot on goal)
+*   17:19 (Shot on goal)
+*   20:59 (Shot on goal)
+*   24:18 (Shot on goal)
+*   27:41 (Shot on goal)
+*   38:07 (Shot on goal)
+*   38:37 (Shot on goal)
+*   40:51 (Shot on goal)
+*   42:55 (Shot on goal)
+*   62:54 (Shot on goal)
+*   63:16 (Shot on goal)
+*   72:49 (Shot on goal)
+*   74:18 (Shot on goal)
+*   74:46 (Shot on goal)
+*   77:18 (Shot on goal)
+*   78:23 (Shot on goal)
+*   79:32 (Shot on goal)
+*   83:47 (Shot on goal)
+*   97:18 (Shot on goal)
+*   101:46 (Shot on goal)
+*   102:10 (Shot on goal)
+*   104:53 (Shot on goal)
+
+**Our AI Detected**:
+*   02:15 (Shot)
+*   02:45 (Shot)
+*   04:00 (Shot)
+*   05:00 (Shot)
+*   05:15 (Shot)
+*   07:15 (Shot)
+*   13:45 (Shot)
+*   15:15 (Shot)
+*   15:45 (Shot)
+*   19:30 (Shot)
+*   19:45 (Shot)
+*   20:00 (Shot)
+*   21:00 (Shot)
+*   24:45 (Shot)
+*   25:15 (Shot)
+*   27:15 (Shot)
+*   30:00 (Shot)
+*   30:15 (Shot)
+*   30:45 (Shot)
+*   31:00 (Shot)
+*   32:30 (Shot)
+*   36:30 (Shot)
+*   37:45 (Shot)
+*   38:30 (Shot)
+*   45:30 (Shot)
+*   62:15 (Shot)
+*   62:30 (Shot)
+*   63:00 (Shot)
+*   66:30 (Shot)
+*   67:45 (Shot)
+*   68:30 (Shot)
+*   70:45 (Shot)
+*   74:45 (Shot)
+*   76:30 (Shot)
+*   77:30 (Shot)
+*   77:45 (Shot)
+*   78:30 (Shot)
+*   80:45 (Shot)
+*   82:30 (Shot)
+*   82:45 (Shot)
+*   83:45 (Shot)
+*   84:45 (Shot)
+*   85:00 (Shot)
+*   88:45 (Shot)
+*   91:45 (Shot)
+*   92:00 (Shot)
+*   93:30 (Shot)
+*   95:15 (Shot)
+*   97:30 (Shot)
+*   98:30 (Shot)
+*   100:00 (Shot)
+*   100:15 (Shot)
+*   101:30 (Shot)
+*   102:00 (Shot)
+*   102:15 (Shot)
+*   102:30 (Shot)
+*   103:45 (Shot)
+
+**Assessment**:
+
+The AI detects many shots, but with poor timestamp precision and includes many events that are not 'shots on goal' as defined in the ground truth (e.g. blocked shots, missed shots, headers). A high number of shots detected around set pieces (free kicks, corners) could suggest it's detecting the set piece delivery as a shot.
+
+A rough count suggests approximately 12 matching events (with a generous timestamp tolerance), suggesting a low level of recall. Due to the high number of false positives, precision is also very low.
+
+## ACCURACY METRICS
+
+**Goals - Precision**: 5/11 = 45.45% (correct goals / total detected goals)
+**Goals - Recall**: 5/7 = 71.43% (correct goals / total actual goals)
+**Shots - Precision**: Approximately 20% (very rough estimate)
+**Shots - Recall**: Approximately 48% (very rough estimate)
+
+## KEY INSIGHTS
+
+*   **What our AI does well:**
+    *   The AI can, under certain circumstances, correctly identify goals by recognizing events immediately around the events with a 30-second matching threshold.
+*   **What needs improvement:**
+    *   The AI has very poor precision in goal detection due to many false positives. It often hallucinates goals.
+    *   Timestamp accuracy needs significant improvement. The AI is frequently off by several seconds, even for successfully identified events.
+    *   The shot detection is very noisy. The AI is detecting many events that are not shots on goal, and the timestamps are inaccurate.
+    *   The AI struggles to distinguish between different restart types (kick-offs, goal kicks, free kicks, etc.). It relies on kick-offs to validate goals, but incorrectly identifies other restarts as kick-offs.
+    *   The AI often struggles with consecutive events and introduces contradictions.
+*   **Specific recommendations:**
+    *   **Improve goal validation logic:** The reliance on kick-offs is a good starting point but needs refinement. The system needs to accurately identify kick-offs and reliably link them to preceding goals. Relaxing the validation logic to include second ball situations that follow on goal scoring opportunities
+    *   **Refine timestamp accuracy:** Investigate the source of timestamp errors and implement corrections or smoothing techniques. It is possible the AI is hallucinating sequences from similar instances in training
+    *   **Enhance shot detection:** Retrain the shot detection model with more diverse data, including negative examples (passes, clearances, tackles). Implement a filter to remove shots that are unlikely to be on target (e.g., shots from very wide angles).
+    *   **Improve scene understanding:** Train the AI to better understand different restart types and the flow of the game. This would help reduce false positives and improve goal validation.
+    *   **Reduce hallucinations:** Implement stricter consistency checks and error-correction mechanisms to minimize the generation of contradictory or unsupported claims.

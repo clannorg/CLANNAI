@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_45m45s.mp4",
+  "start_seconds": 2745,
+  "end_seconds": 2760,
+  "duration": 15,
+  "timestamp": "45:45",
+  "analysis_timestamp": "2025-07-31T20:27:50.471868",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe clip shows a low-intensity warm-up or training drill with players spread out across the pitch. The players are making long, simple passes to each other, circulating the ball across the field without any defensive pressure.\n\n**Key Timing Estimates:**\n*   **3s:** A player in red on the far left of the pitch passes the ball infield.\n*   **6s:** A central player in red receives the ball and immediately plays a long, diagonal switch to the right wing.\n*   **10s:** A player in an orange bib controls the long pass on the right-hand side of the pitch.\n*   **12s:** The player in the orange bib passes the ball back towards the center of the field.\n*   **14s:** The ball rolls towards the center as players jog and reposition themselves.",
+  "processing_time_seconds": 53.49958872795105,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_28m15s.mp4",
+  "start_seconds": 1695,
+  "end_seconds": 1710,
+  "duration": 15,
+  "timestamp": "28:15",
+  "analysis_timestamp": "2025-07-31T20:26:22.640328",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Certainly, here is an analysis of the football clip provided.\n\n**Main Action Description:**\nThe black team controls possession, patiently building play from their own half. They circulate the ball from the right side, through the center, and switch the play to the left wing to launch an attack.\n\n**Key Timing Estimates:**\n\n*   **2s:** A black player near the center circle passes the ball back to a teammate.\n*   **7s:** The black central midfielder turns with the ball and begins to advance.\n*   **10s:** The midfielder plays a long, diagonal pass out to the left side of the pitch.\n*   **13s:** The black player on the left wing successfully controls the pass and prepares to move forward.",
+  "processing_time_seconds": 18.7807719707489,
+  "status": "success"
+}

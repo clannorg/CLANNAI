@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_05m30s.mp4",
+  "start_seconds": 330,
+  "end_seconds": 345,
+  "duration": 15,
+  "timestamp": "05:30",
+  "analysis_timestamp": "2025-07-31T20:23:38.162233",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe team in black initiates a central attack from their own half. A midfielder receives the ball, turns, and carries it deep into the red team's territory, forcing the defending team to maintain its defensive shape.\n\n**Key Timing Estimates**\n*   **2s:** The black team player on the right passes the ball forward to a teammate in the center circle.\n*   **4s:** The central midfielder for the black team receives the pass and turns toward the opponent's goal.\n*   **7s:** The player begins to dribble forward, advancing into the red team's half of the field.\n*   **11s:** The ball carrier approaches the final third as the red team's defensive line holds its position.\n*   **14s:** The clip ends with the black team's attack still developing deep in the opposition's half.",
+  "processing_time_seconds": 21.274662256240845,
+  "status": "success"
+}

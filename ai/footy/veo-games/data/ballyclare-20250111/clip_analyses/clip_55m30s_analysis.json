@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_55m30s.mp4",
+  "start_seconds": 3330,
+  "end_seconds": 3345,
+  "duration": 15,
+  "timestamp": "55:30",
+  "analysis_timestamp": "2025-07-31T20:27:48.849058",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the provided football clip.\n\nThis clip shows a panoramic view of the pitch during a pre-game warm-up. Players from both teams are scattered across the field, engaging in individual drills and light passing as the camera pans from right to left.\n\n- **0s**: Camera begins a slow pan from the right side of the pitch towards the left.\n- **1s**: Two players in orange kits pass a ball between each other near the center circle.\n- **9s**: A player in a red kit on the far left performs a stretching or warm-up drill, falling to the ground.\n- **13s**: A whistle is clearly heard, likely signaling the end of the warm-up period or for players to assemble.",
+  "processing_time_seconds": 24.39666199684143,
+  "status": "success"
+}

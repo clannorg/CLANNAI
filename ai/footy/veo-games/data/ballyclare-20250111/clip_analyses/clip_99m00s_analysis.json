@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_99m00s.mp4",
+  "start_seconds": 5940,
+  "end_seconds": 5955,
+  "duration": 15,
+  "timestamp": "99:00",
+  "analysis_timestamp": "2025-07-31T20:32:50.301146",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe red team initiates a quick attack from midfield, playing a through ball into the left side of the penalty area. The black team's defense recovers, with a defender making a key interception before the goalkeeper smothers the loose ball to end the scoring threat.\n\n**Key Timing Estimates**\n*   **2s:** A red midfielder in the center circle plays a forward pass to a teammate in the left channel.\n*   **6s:** The red attacker dribbles forward and plays a low through ball into the penalty box.\n*   **9s:** A black defender tracks the run and intercepts the pass inside the penalty area.\n*   **12s:** The black team's goalkeeper comes off his line to collect the loose ball.",
+  "processing_time_seconds": 37.57373046875,
+  "status": "success"
+}

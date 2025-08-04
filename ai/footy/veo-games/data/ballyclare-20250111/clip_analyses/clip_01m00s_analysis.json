@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_01m00s.mp4",
+  "start_seconds": 60,
+  "end_seconds": 75,
+  "duration": 15,
+  "timestamp": "01:00",
+  "analysis_timestamp": "2025-07-31T20:23:33.498209",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here's a breakdown of the key events in this football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nFollowing a goal by the team in black, the players celebrate while the red team dejectedly walks back to the center of the pitch. The teams then set up for the red team to kick off and restart the game.\n\n**Key Timing Estimates:**\n*   **0s:** The black team scores a goal, and the crowd erupts in celebration.\n*   **2s:** The black team's goalscorer runs towards the sideline to celebrate.\n*   **5s:** The camera pans to show the red team players walking back to their half.\n*   **9s:** A red team player places the ball on the center spot for the kickoff.\n*   **12s:** The referee walks into the center circle as players from both teams take their positions for the restart.",
+  "processing_time_seconds": 16.621106386184692,
+  "status": "success"
+}

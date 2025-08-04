@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_108m15s.mp4",
+  "start_seconds": 6495,
+  "end_seconds": 6510,
+  "duration": 15,
+  "timestamp": "108:15",
+  "analysis_timestamp": "2025-07-31T20:24:16.913412",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main action description:**\nThe black team gains possession from a long ball in midfield but is quickly pressured by the red team. They are forced to play the ball all the way back to their goalkeeper, who then clears it long upfield to reset the attack.\n\n**Key timing estimates:**\n*   **2s:** A black player wins a header in the center circle, directing it forward to a teammate.\n*   **4s:** The receiving black player makes a short pass to a teammate to his left.\n*   **7s:** Under pressure, the black team passes the ball backward towards their central defender.\n*   **9s:** The black central defender plays the ball back to the goalkeeper.\n*   **13s:** The goalkeeper clears the ball long upfield to evade the closing red attacker.",
+  "processing_time_seconds": 21.561942100524902,
+  "status": "success"
+}

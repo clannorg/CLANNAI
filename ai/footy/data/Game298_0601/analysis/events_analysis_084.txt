@@ -1,0 +1,18 @@
+FOOTBALL EVENTS ANALYSIS - CLIP_084
+==================================================
+
+Okay, I've analyzed the 15-second clip. Here's the breakdown of football events:
+
+```
+FOOTBALL EVENTS ANALYSIS - CLIP_084 (Starts at 13m50s)
+==================================================
+
+13m57s: Foul - player in black and purple brings down another player. - FOUL
+14m08s: Referee signals for a free kick after the foul - FREE KICK AWARDED
+
+**KEY MOMENTS:**
+- A foul is committed, leading to the awarding of a free kick.
+
+**MATCH FLOW:**
+- The clip focuses on a player being fouled. The referee signals a free kick to the fouled team.
+```

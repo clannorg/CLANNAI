@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_07m30s.mp4",
+  "start_seconds": 450,
+  "end_seconds": 465,
+  "duration": 15,
+  "timestamp": "07:30",
+  "analysis_timestamp": "2025-07-31T20:23:49.742539",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team gains possession in their own half and attempts to play out from the back. A pressing black team player successfully tackles the red player near the sideline, winning a free-kick for their team.\n\n**Key Timing Estimates:**\n*   **3s:** A red defender intercepts a pass and gains control of the ball.\n*   **7s:** The red player (#21) on the right touchline receives a pass.\n*   **9s:** A black team player makes a clean sliding tackle, winning the ball.\n*   **11s:** The referee blows the whistle, awarding a free-kick to the black team as the red player is judged to have committed a foul during the challenge.",
+  "processing_time_seconds": 16.24408531188965,
+  "status": "success"
+}

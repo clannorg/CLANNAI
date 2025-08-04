@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_35m00s.mp4",
+  "start_seconds": 2100,
+  "end_seconds": 2115,
+  "duration": 15,
+  "timestamp": "35:00",
+  "analysis_timestamp": "2025-07-31T20:26:44.660889",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\n**Main Action Description**\nThe red team attempts a long ball forward from a throw-in, but the black team wins the aerial duel. The black team quickly secures possession and launches a counter-attack by switching play to their right wing.\n\n**Key Timing Estimates**\n*   **1s**: The red team takes a throw-in on the left touchline.\n*   **3s**: A red player plays a long, high pass into the black team's half.\n*   **6s**: A black team defender successfully wins the header against a red attacker.\n*   **10s**: The black team gains control and passes the ball out to a player on the right flank.\n*   **13s**: The black player carries the ball forward, advancing past the halfway line.",
+  "processing_time_seconds": 18.542438983917236,
+  "status": "success"
+}

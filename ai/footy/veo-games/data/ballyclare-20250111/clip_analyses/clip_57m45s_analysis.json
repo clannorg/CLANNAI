@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_57m45s.mp4",
+  "start_seconds": 3465,
+  "end_seconds": 3480,
+  "duration": 15,
+  "timestamp": "57:45",
+  "analysis_timestamp": "2025-07-31T20:29:14.801785",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the provided football clip.\n\n**Main Action Description:**\nThe black team kicks off the match, immediately passing the ball backward to their defenders. They maintain controlled possession in their own half, circulating the ball across the backline while the red team settles into their defensive shape.\n\n**Key Timing Estimates:**\n*   **2s:** A player from the black team kicks off, passing the ball back from the center circle.\n*   **5s:** The ball is played to a black central defender near the edge of the center circle.\n*   **7s:** A pass is made out to the black team's left-sided defender.\n*   **11s:** The ball is passed back to a central defender who is now positioned deeper.\n*   **14s:** The black team continues to circulate possession across their defensive line.",
+  "processing_time_seconds": 19.270434617996216,
+  "status": "success"
+}

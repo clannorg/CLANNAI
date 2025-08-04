@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_89m15s.mp4",
+  "start_seconds": 5355,
+  "end_seconds": 5370,
+  "duration": 15,
+  "timestamp": "89:15",
+  "analysis_timestamp": "2025-07-31T20:30:27.194161",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the video clip.\n\n**Main Action Description:**\nThe clip captures the moment immediately after a foul is committed near the right touchline. Play is stopped by the referee's whistle, the assistant referee signals the infraction, and the team in red prepares to take the resulting free kick.\n\n**Key Timing Estimates:**\n*   **1s:** The referee's whistle blows, stopping play for a foul.\n*   **2s:** The assistant referee, positioned on the right touchline, raises their flag to signal the foul.\n*   **6s:** A player in red walks to the spot of the foul to take the free kick.\n*   **9s:** The red team's number 5 player picks up the ball, preparing to restart play.\n*   **13s:** The red player looks upfield to assess passing options before taking the free kick.",
+  "processing_time_seconds": 16.862993478775024,
+  "status": "success"
+}

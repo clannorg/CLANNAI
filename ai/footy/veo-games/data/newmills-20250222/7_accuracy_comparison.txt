@@ -1,0 +1,126 @@
+# AI-Powered Accuracy Comparison
+# Match: newmills-20250222
+# Generated: 2025-08-02T17:09:49.688331
+# Model: gemini-2.0-flash-exp
+
+Okay, here's a comparison of the AI-generated event data against the Veo ground truth, focusing on goals and shots, followed by an overall assessment and recommendations.
+
+## GOALS COMPARISON
+
+**Ground Truth**:
+*   86:24 (5184 seconds)
+*   128:54 (7734 seconds)
+*   131:58 (7918 seconds)
+
+**Our AI Detected**:
+*   44:04 (2644 seconds)
+*   86:39 (5200 seconds)
+*   116:35 (6995 seconds)
+*   129:08 (7748 seconds)
+*   132:13 (7933 seconds)
+
+**Matches (±30 second tolerance)**:
+*   86:39 (AI) matches 86:24 (Ground Truth) - **MATCH** (15 second difference)
+*   129:08 (AI) matches 128:54 (Ground Truth) - **MATCH** (14 second difference)
+*   132:13 (AI) matches 131:58 (Ground Truth) - **MATCH** (15 second difference)
+
+**False Positives**:
+*   44:04 (2644 seconds) - No corresponding goal in the ground truth within the tolerance.
+*   116:35 (6995 seconds) - No corresponding goal in the ground truth within the tolerance.
+
+**False Negatives**:
+*   None. Our AI detected all ground truth goals.
+
+## SHOTS COMPARISON
+
+**Ground Truth**:
+*   23:26 (1406 seconds)
+*   50:37 (3037 seconds)
+*   52:42 (3162 seconds)
+*   54:46 (3286 seconds)
+*   59:21 (3561 seconds)
+*   65:46 (3946 seconds)
+*   86:23 (5183 seconds)
+*   100:52 (6052 seconds)
+*   108:08 (6488 seconds)
+*   120:51 (7251 seconds)
+*   123:26 (7406 seconds)
+*   124:25 (7465 seconds)
+*   128:13 (7693 seconds)
+*   128:52 (7732 seconds)
+*   131:57 (7917 seconds)
+*   133:05 (7985 seconds)
+
+**Our AI Detected**:
+*   22:04 (1324 seconds)
+*   23:12 (1392 seconds)
+*   23:43 (1423 seconds)
+*   23:57 (1437 seconds)
+*   24:36 (1476 seconds)
+*   27:33 (1653 seconds)
+*   28:48 (1728 seconds)
+*   38:13 (2293 seconds)
+*   38:52 (2332 seconds)
+*   39:39 (2379 seconds)
+*   42:36 (2556 seconds)
+*   43:29 (2609 seconds)
+*   45:49 (2749 seconds)
+*   50:29 (3029 seconds)
+*   50:53 (3053 seconds)
+*   53:13 (3193 seconds)
+*   54:44 (3284 seconds)
+*   54:59 (3299 seconds)
+*   56:26 (3386 seconds)
+*   57:12 (3432 seconds)
+*   57:39 (3459 seconds)
+*   65:01 (3901 seconds)
+*   66:01 (3961 seconds)
+*   77:26 (4646 seconds)
+*   81:54 (4914 seconds)
+*   85:18 (5118 seconds)
+*   86:48 (5208 seconds)
+*   99:28 (5968 seconds)
+*   101:29 (6089 seconds)
+*   113:52 (6832 seconds)
+*   114:55 (6895 seconds)
+*   117:05 (7025 seconds)
+*   122:31 (7351 seconds)
+*   124:42 (7482 seconds)
+*   126:23 (7583 seconds)
+*   127:26 (7646 seconds)
+*   129:16 (7756 seconds)
+*   131:49 (7909 seconds)
+*   132:17 (7937 seconds)
+*   133:37 (8017 seconds)
+
+**Assessment**:
+The shot detection seems much less accurate than goal detection. Many of the timestamps do not align with the ground truth, even with a generous tolerance. However, the AI does appear to be detecting *some kind* of shooting-related event (shots, free kicks, headers on target, blocked shots, etc.). The descriptions indicate these are footballing actions relating to attacking play, but are not precise "shots on goal". Many *near* matches though, suggesting close-but-not-quite accuracy, for example: 23:12 (AI) vs 23:26 (Ground Truth). The number of AI-detected shots (40) is significantly higher than Ground Truth shots on goal (16), implying high *false positive* rate and possible model confusion with different types of attacking plays.
+
+## ACCURACY METRICS
+
+**Goals - Precision**: 60% (3 correct goals / 5 total detected goals)
+**Goals - Recall**: 100% (3 correct goals / 3 total actual goals)
+**Shots - Precision**: ~20% (rough estimate) - Very approximate, based on how many AI detected 'shots' fall within 30 seconds of a ground truth shot on goal.  Further, it isn't really detecting Shots on Goal as the GT implies - it seems to be detecting ANY shot type event with some frequency.
+**Shots - Recall**: ~50% (rough estimate). It catches roughly half of the shots on goal.
+
+## KEY INSIGHTS
+
+*   **What our AI does well:**
+    *   Reliably detects all goals. Good RECALL on goals is great. The false positives (incorrectly flagged goals) are the primary issue in this case.
+    *   Identifies that shots/attacking plays are happening. It seems to broadly categorize offensive plays, which may have uses, but need further separation.
+*   **What needs improvement:**
+    *   **Goal False Positives:** The AI *hallucinates* goals. It needs a more robust validation system to differentiate between a penalty *awarded* and a penalty *scored* (for example, checking for a kickoff immediately following the event). The "rejected claims" section shows it CAN identify reasons to reject goals, but this logic isn't being applied consistently.
+    *   **Shot Detection Accuracy:** Significant improvement needed. The AI misclassifies other attacking actions as "shots on goal". The timestamping is also less accurate for shots compared to goals.
+    *   **Timeline Consistency:** The AI summary notes its own timeline was "non-sequential". It needs to ensure a temporally consistent analysis.
+*   **Specific Recommendations:**
+    1.  **Refine Goal Validation Rules:** Strengthen the rules used to validate goals. *Mandatory kickoff evidence immediately following the event*. Cross-reference descriptions for contradictory events (e.g., "free kick blocked" vs. "goal from free kick").
+    2.  **Shot Classification Training:** Retrain the model with a more comprehensive dataset of attacking events. Differentiate between:
+        *   Shots *on target* (requiring a save from the goalkeeper)
+        *   Shots *off target*
+        *   Blocked shots
+        *   Headers
+        *   Free kicks (direct/indirect)
+        *   Goal kicks
+    3.  **Temporal Consistency Checks:** Implement checks to ensure events are ordered logically in the timeline. Flag anomalies like goals occurring without preceding attacking plays, or long delays between a goal and the subsequent kickoff. The model is generating *some* supporting events, but needs temporal consistency as an absolute requirement for all event associations.
+    4.  **Confidence Scoring System:** Develop a confidence scoring system for each detected event. This will allow users to filter events based on reliability and understand the AI's certainty.
+    5.  **Error Analysis:** Conduct a deep dive into the rejected claims. Understand WHY the AI rejected them and use that knowledge to improve the primary detection model. The "rejected claims" section contains valuable data for improving model performance. The AI is making judgements during error-correction; make those judgements the foundation for primary event detection.

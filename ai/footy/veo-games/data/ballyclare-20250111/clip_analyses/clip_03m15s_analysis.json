@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_03m15s.mp4",
+  "start_seconds": 195,
+  "end_seconds": 210,
+  "duration": 15,
+  "timestamp": "03:15",
+  "analysis_timestamp": "2025-07-31T20:23:36.136566",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n**Main Action Description:**\nThe clip shows the aftermath of a foul on a player from the black team just outside the red team's penalty box. The referee is managing the situation as the black team prepares to take a direct free kick, and the red team organizes a defensive wall.\n\n**Key Timing Estimates:**\n*   **1s**: A player from the black team is on the ground, having been fouled near the edge of the penalty area.\n*   **5s**: The fouled player sits up as the red team begins to form a defensive wall.\n*   **9s**: The player gets back to his feet and the referee manages the players' positions.\n*   **13s**: The ball is placed on the ground for the free kick, with the black team in possession and setting up to take the kick.",
+  "processing_time_seconds": 19.253028392791748,
+  "status": "success"
+}

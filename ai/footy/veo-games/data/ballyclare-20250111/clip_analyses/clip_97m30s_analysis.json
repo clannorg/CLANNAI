@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_97m30s.mp4",
+  "start_seconds": 5850,
+  "end_seconds": 5865,
+  "duration": 15,
+  "timestamp": "97:30",
+  "analysis_timestamp": "2025-07-31T20:32:49.664504",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n### Main Action Description\nThe black team kicks off the match and maintains possession in their own half. They circulate the ball between their defenders as they begin to build an attack, while the red team organizes into their defensive shape.\n\n### Key Timing Estimates\n*   **7s:** The referee blows the whistle to signal the start of play.\n*   **8s:** The black team kicks off, with a player passing the ball back from the center circle.\n*   **11s:** A black defender receives a pass and switches the ball to a teammate on the left side of the pitch.\n*   **14s:** The black team continues to move the ball across their backline under light pressure from the red team's forwards.",
+  "processing_time_seconds": 36.96610975265503,
+  "status": "success"
+}

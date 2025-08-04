@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_68m45s.mp4",
+  "start_seconds": 4125,
+  "end_seconds": 4140,
+  "duration": 15,
+  "timestamp": "68:45",
+  "analysis_timestamp": "2025-07-31T20:29:36.444133",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here's a breakdown of the football action in the clip.\n\nThe black team maintains possession in their own half, circulating the ball between midfielders under light pressure from the red team. Their attempt to progress the ball forward with a long pass is unsuccessful as the red team's defense intercepts it.\n\n**0s:** The clip begins with the black team in possession near the center circle.\n**2s:** A black midfielder passes the ball forward to a teammate (No. 15).\n**4s:** Player No. 15 plays a return pass to the original player.\n**7s:** The ball is passed laterally to a black player on the left side of the pitch.\n**11s:** The player attempts a long, ambitious diagonal pass towards the right flank.\n**13s:** A red defender positions himself well and intercepts the pass with a header.",
+  "processing_time_seconds": 19.36922597885132,
+  "status": "success"
+}

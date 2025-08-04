@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_25m15s.mp4",
+  "start_seconds": 1515,
+  "end_seconds": 1530,
+  "duration": 15,
+  "timestamp": "25:15",
+  "analysis_timestamp": "2025-07-31T20:26:27.435940",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the football clip provided.\n\nThe Red team wins possession from a throw-in and immediately launches a quick counter-attack with a long through-ball. The attack is thwarted as the Black team's goalkeeper anticipates the danger and gathers the ball before the Red attacker can reach it.\n\n*   **4s:** The Black team takes a throw-in from the left sideline into the midfield.\n*   **7s:** The Red team wins possession after a challenge near the sideline.\n*   **12s:** A Red midfielder plays a long, searching through-ball over the top of the Black team's defense.\n*   **15s:** The Black team's goalkeeper comes well off their line to successfully collect the ball, ending the attacking threat.",
+  "processing_time_seconds": 23.65919256210327,
+  "status": "success"
+}

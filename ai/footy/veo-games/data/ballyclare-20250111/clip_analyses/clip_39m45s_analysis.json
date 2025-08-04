@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_39m45s.mp4",
+  "start_seconds": 2385,
+  "end_seconds": 2400,
+  "duration": 15,
+  "timestamp": "39:45",
+  "analysis_timestamp": "2025-07-31T20:26:59.148689",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe black team initiates a swift attack, moving the ball into the final third, which results in a shot from the edge of the penalty area. The red team's goalkeeper makes a save on the deflected shot, and the referee immediately blows the whistle to stop play.\n\n- **2s:** A black team player in the center of the pitch plays a through-ball forward to a teammate.\n- **4s:** The attacking black player receives the ball on the right-hand side, just outside the penalty box.\n- **7s:** The black attacker takes a right-footed shot towards the goal.\n- **9s:** The red team's goalkeeper dives to his left to save the deflected shot.\n- **11s:** The referee blows the whistle, halting the game for a foul that occurred just before the shot.",
+  "processing_time_seconds": 18.236703634262085,
+  "status": "success"
+}

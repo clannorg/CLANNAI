@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_96m45s.mp4",
+  "start_seconds": 5805,
+  "end_seconds": 5820,
+  "duration": 15,
+  "timestamp": "96:45",
+  "analysis_timestamp": "2025-07-31T20:32:49.270002",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nFollowing a goal, the red team celebrates enthusiastically near the opposition's penalty area. The black team retrieves the ball and sets up to restart the game from the center circle.\n\n**Key Timing Estimates:**\n*   **1s:** The red team is seen celebrating a goal inside the penalty box.\n*   **5s:** Players begin jogging back towards the halfway line to reset their positions.\n*   **8s:** The football is placed on the center spot, ready for the kick-off.\n*   **12s:** Two players from the black team stand over the ball in the center circle, preparing to restart the match.",
+  "processing_time_seconds": 36.60057210922241,
+  "status": "success"
+}

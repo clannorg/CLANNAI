@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_85m15s.mp4",
+  "start_seconds": 5115,
+  "end_seconds": 5130,
+  "duration": 15,
+  "timestamp": "85:15",
+  "analysis_timestamp": "2025-07-31T20:30:18.684793",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main action description:**\nThe black team takes a long, high free kick from deep inside their own half, sending the ball directly towards the red team's goal. The red team's goalkeeper safely gathers the ball, and players from both teams begin to reset their positions on the field.\n\n**Key timing estimates:**\n*   **3s:** The black team executes a long free kick from their defensive half.\n*   **8s:** The ball travels the length of the pitch and is collected by the red team's goalkeeper (off-screen).\n*   **11s:** A black team player (#25) signals to his team and starts moving back into a defensive formation.\n*   **14s:** The red team now has possession, and players from both teams are returning to their positions for open play.",
+  "processing_time_seconds": 20.47641348838806,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_31m00s.mp4",
+  "start_seconds": 1860,
+  "end_seconds": 1875,
+  "duration": 15,
+  "timestamp": "31:00",
+  "analysis_timestamp": "2025-07-31T20:26:39.386501",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in the football clip.\n\nThe black team attempts a direct attack from their own half with a long ball over the top. The red team's goalkeeper reads the play well, coming off his line to collect the ball and end the attack.\n\n- **2s:** A black team player receives a pass just inside his own half.\n- **6s:** The black player plays a long, diagonal pass forward over the red team's defensive line.\n- **10s:** A black attacker chases the long ball down the right side into the final third.\n- **13s:** The red team's goalkeeper comes out to the edge of the penalty area to claim the bouncing ball.",
+  "processing_time_seconds": 15.81297779083252,
+  "status": "success"
+}

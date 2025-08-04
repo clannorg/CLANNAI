@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_59m15s.mp4",
+  "start_seconds": 3555,
+  "end_seconds": 3570,
+  "duration": 15,
+  "timestamp": "59:15",
+  "analysis_timestamp": "2025-07-31T20:29:14.931747",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe black team controls possession, starting with a throw-in and building an attack from the back. They patiently work the ball across the midfield before attempting a forward pass into the red team's defensive third.\n\n- **3s:** The black team's player #34 takes a throw-in from the left sideline.\n- **5s:** The receiver passes the ball back to player #34.\n- **7s:** Player #34 passes the ball infield to a central midfielder.\n- **10s:** The ball is passed wide to a black team player on the opposite flank.\n- **13s:** The black team winger attempts a forward pass towards the penalty box.",
+  "processing_time_seconds": 19.394019603729248,
+  "status": "success"
+}

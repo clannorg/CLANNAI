@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_112m00s.mp4",
+  "start_seconds": 6720,
+  "end_seconds": 6735,
+  "duration": 15,
+  "timestamp": "112:00",
+  "analysis_timestamp": "2025-07-31T20:24:30.367084",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This clip does not contain any active football gameplay. It is a slow panning shot across an empty football pitch at night, likely before or after a match.\n\n**Main action description:**\nThe camera slowly pans to the right, showing an empty, floodlit football pitch with artificial turf. Some snow is visible along the red barriers at the sideline.\n\n**Key timing estimates:**\n*   **0-2s:** The shot begins with a view of a covered stand and goal on the far side of the pitch.\n*   **3-8s:** The camera pans right, moving along the sideline and showing the red barrier fence.\n*   **9-15s:** The pan continues past the goal line, revealing a path and a concrete wall behind the pitch before stopping.",
+  "processing_time_seconds": 21.060546398162842,
+  "status": "success"
+}

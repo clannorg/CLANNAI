@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_23m45s.mp4",
+  "start_seconds": 1425,
+  "end_seconds": 1440,
+  "duration": 15,
+  "timestamp": "23:45",
+  "analysis_timestamp": "2025-07-31T20:26:25.936420",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent analysis. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description**\nFollowing a long ball, the teams engage in a scrappy midfield battle for possession. The Red team eventually gains control, but their subsequent long forward pass is intercepted and cleared by the Black team's defense.\n\n**Key Timing Estimates**\n- **1s**: A Red player heads the ball forward into the midfield after a long kick from the Black team.\n- **3s**: The ball is contested in the center circle between a Red player and Black player #20.\n- **8s**: The Red team secures the loose ball and plays a short pass back to their defense.\n- **11s**: A Red defender launches a long, lofted pass towards the right side of the attack.\n- **13s**: A Black defender successfully wins the aerial challenge and heads the ball clear.",
+  "processing_time_seconds": 22.183037281036377,
+  "status": "success"
+}

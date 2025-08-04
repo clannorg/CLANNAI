@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_20m45s.mp4",
+  "start_seconds": 1245,
+  "end_seconds": 1260,
+  "duration": 15,
+  "timestamp": "20:45",
+  "analysis_timestamp": "2025-07-31T20:24:50.517171",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n### Football Clip Analysis\n\n**Main Action Description:**\nThe black team attempts a slow build-up from midfield, but their forward pass is comfortably intercepted by a red defender. The red team calmly secures possession at the back and looks to start their own attack.\n\n**Key Timing Estimates:**\n\n*   **3s:** A black player passes the ball forward from the center circle into the red team's half.\n*   **8s:** The black team player attempts a through ball toward their left wing.\n*   **9s:** A red central defender steps up and easily intercepts the pass.\n*   **12s:** The red defender plays a simple sideways pass to a fellow defender, securing possession.",
+  "processing_time_seconds": 17.843992471694946,
+  "status": "success"
+}

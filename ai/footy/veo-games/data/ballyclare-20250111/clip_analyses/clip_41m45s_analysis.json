@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_41m45s.mp4",
+  "start_seconds": 2505,
+  "end_seconds": 2520,
+  "duration": 15,
+  "timestamp": "41:45",
+  "analysis_timestamp": "2025-07-31T20:27:02.607313",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe team in black kits is conducting a passing warm-up drill, moving the ball across the width of the field in their own half. The opposing team in red/pink is grouped together on the far side near the halfway line, and the officials are in the center circle.\n\n**Key Timing Estimates:**\n*   **3s:** A player in black near the center passes the ball out towards the left wing.\n*   **6s:** A teammate receives the pass on the left side of the pitch.\n*   **9s:** The player passes the ball further left towards the touchline.\n*   **12s:** The final player in the sequence receives the pass near the left sideline and moves the ball forward.",
+  "processing_time_seconds": 19.58305072784424,
+  "status": "success"
+}

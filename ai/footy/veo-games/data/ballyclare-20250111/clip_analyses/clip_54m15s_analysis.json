@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_54m15s.mp4",
+  "start_seconds": 3255,
+  "end_seconds": 3270,
+  "duration": 15,
+  "timestamp": "54:15",
+  "analysis_timestamp": "2025-07-31T20:27:44.180219",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe clip shows players warming up on the pitch before a match. The primary focus is a small group of players in orange bibs performing a rondo (a \"piggy-in-the-middle\" passing drill), maintaining possession while a single player in yellow acts as the defender trying to intercept the ball.\n\n**Key Timing Estimates:**\n- **1s:** A player in an orange bib on the left side of the circle passes the ball.\n- **3s:** The receiving player makes a one-touch pass to the teammate on the right.\n- **6s:** The ball is passed back to the player at the top of the rondo circle.\n- **9s:** A pass is made across the circle to the player at the bottom left.\n- **13s:** The ball is passed back to the player at the top of the circle, continuing the drill.",
+  "processing_time_seconds": 22.105677843093872,
+  "status": "success"
+}

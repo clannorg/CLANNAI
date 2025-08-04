@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_106m30s.mp4",
+  "start_seconds": 6390,
+  "end_seconds": 6405,
+  "duration": 15,
+  "timestamp": "106:30",
+  "analysis_timestamp": "2025-07-31T20:24:09.722512",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description**\nThe team in black takes a long-range free kick from a central position, aiming for the goal. The red team sets up a defensive wall and defends their penalty area as the shot is taken.\n\n**Key Timing Estimates**\n*   **0-7s:** Players get into position for a free kick; the red team forms a wall while the black team prepares to shoot.\n*   **8s:** The black team's player strikes the ball, taking the free kick.\n*   **9s:** The ball travels over the red team's defensive wall.\n*   **12s:** The shot sails high over the crossbar, resulting in a goal kick for the red team.\n*   **14s:** The play is over, and players begin to move out of the penalty area.",
+  "processing_time_seconds": 16.283496618270874,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_62m15s.mp4",
+  "start_seconds": 3735,
+  "end_seconds": 3750,
+  "duration": 15,
+  "timestamp": "62:15",
+  "analysis_timestamp": "2025-07-31T20:29:12.467093",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the 15-second football clip.\n\n### Football Clip Analysis\n\n**Main Action Description:**\nThe black team takes a long, direct free kick from their own half, aiming for the red team's penalty area. The red team's goalkeeper successfully defends the play by coming out to claim the ball in the air, ending the attack.\n\n**Key Timing Estimates:**\n*   **5s:** A player from the black team executes a long free kick, sending the ball high into the opponent's half.\n*   **8s:** The ball reaches the edge of the red team's penalty area.\n*   **9s:** The red team's goalkeeper moves off their line, jumps, and cleanly catches the ball in the air.\n*   **12s:** The goalkeeper has secured possession and begins looking for an option to distribute the ball.",
+  "processing_time_seconds": 16.861695051193237,
+  "status": "success"
+}

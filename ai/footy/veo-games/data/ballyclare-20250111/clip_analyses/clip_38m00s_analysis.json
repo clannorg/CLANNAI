@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_38m00s.mp4",
+  "start_seconds": 2280,
+  "end_seconds": 2295,
+  "duration": 15,
+  "timestamp": "38:00",
+  "analysis_timestamp": "2025-07-31T20:26:56.972149",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team launches a quick, direct attack from their own half with a long ball over the top to their left wing. An attacker receives the ball and drives into the penalty area, but their subsequent low cross is intercepted and cleared by a red team defender.\n\n**Key Timing Estimates:**\n\n*   **4s:** A player from the black team in the center circle plays a long, diagonal pass forward.\n*   **9s:** The black attacker successfully controls the ball on the run, just outside the left corner of the red team's penalty box.\n*   **10s:** The attacker delivers a low, driven pass across the face of the goal.\n*   **11s:** A red defender positioned near the penalty spot intercepts the cross and clears the immediate danger.",
+  "processing_time_seconds": 18.34409213066101,
+  "status": "success"
+}

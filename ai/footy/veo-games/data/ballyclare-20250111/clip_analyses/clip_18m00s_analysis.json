@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_18m00s.mp4",
+  "start_seconds": 1080,
+  "end_seconds": 1095,
+  "duration": 15,
+  "timestamp": "18:00",
+  "analysis_timestamp": "2025-07-31T20:24:46.354566",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team maintains possession in the midfield, circulating the ball around the center circle. The red team applies controlled pressure, eventually forcing the black team to play a long pass back to their defenders to reset the attack.\n\n### Key Timing Estimates\n*   **3s:** A black team player passes the ball forward into the center circle.\n*   **7s:** The ball is moved to another black player on the right side of the center circle.\n*   **9s:** Under pressure from a red player, the ball is passed back towards the middle.\n*   **12s:** The central black player plays a long backwards pass to a defender in their own half.",
+  "processing_time_seconds": 18.61140251159668,
+  "status": "success"
+}

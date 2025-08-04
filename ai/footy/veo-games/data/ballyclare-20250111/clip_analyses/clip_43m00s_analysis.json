@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_43m00s.mp4",
+  "start_seconds": 2580,
+  "end_seconds": 2595,
+  "duration": 15,
+  "timestamp": "43:00",
+  "analysis_timestamp": "2025-07-31T20:27:08.132012",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe scene depicts a pre-match warm-up, with players from the red team and a team in yellow bibs (black team) casually passing the ball around the center of the pitch. The players are not in a formal game structure and are circulating the ball in a relaxed manner.\n\n**Key Timing Estimates**\n*   **2s**: A red team player near the center circle passes the ball forward to a teammate.\n*   **5s**: The receiving red player passes the ball back toward the middle of the pitch.\n*   **12s**: A player from the black team (in a yellow bib) receives a pass near the right side of the center circle.\n*   **14s**: The black team player makes a long pass across the field toward the left side.",
+  "processing_time_seconds": 22.882978916168213,
+  "status": "success"
+}

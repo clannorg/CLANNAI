@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_57m00s.mp4",
+  "start_seconds": 3420,
+  "end_seconds": 3435,
+  "duration": 15,
+  "timestamp": "57:00",
+  "analysis_timestamp": "2025-07-31T20:27:45.702343",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\n**Main Action Description**\n\nThe clip shows the kick-off of the match. The team in red initiates play from the center circle, passing the ball backwards into their own half to start building possession from the defense.\n\n**Key Timing Estimates**\n\n*   **1s - 9s:** Players from the red and black teams take their positions for the kick-off.\n*   **10s:** The red team takes the kick-off from the center spot.\n*   **12s:** The ball is immediately passed back to a red player in the center circle.\n*   **14s:** The red player passes the ball deep into their own half to a defender.",
+  "processing_time_seconds": 17.315600395202637,
+  "status": "success"
+}

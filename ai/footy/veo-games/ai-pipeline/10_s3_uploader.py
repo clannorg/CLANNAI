@@ -229,6 +229,38 @@ def upload_match_to_s3(match_id):
     except Exception as e:
         print(f"⚠️  Failed to save S3 locations: {e}")
     
+    # Create focused core locations file (events only - no AI insights)
+    try:
+        core_locations = {
+            "match_id": match_id,
+            "upload_timestamp": s3_locations["upload_timestamp"],
+            "bucket": s3_locations["bucket"],
+            "region": s3_locations["region"],
+            "core_files": {}
+        }
+        
+        # Core file mapping for website (no AI insights)
+        core_file_mapping = {
+            "web_events_json": "web_events.json",
+            "web_events_array_json": "web_events_array.json", 
+            "match_summary_json": "9.5_match_summary.json",
+            "video_mp4": "video.mp4",
+            "definite_events_txt": "7.5_definite_events.txt",
+            "other_events_txt": "8.5_other_events.txt"
+        }
+        
+        for key, filename in core_file_mapping.items():
+            if filename in s3_locations["s3_urls"]:
+                core_locations["core_files"][key] = s3_locations["s3_urls"][filename]["url"]
+        
+        core_locations_file = data_dir / "s3_core_locations.json"
+        with open(core_locations_file, 'w') as f:
+            json.dump(core_locations, f, indent=2)
+        print(f"📋 Core locations saved to: {core_locations_file}")
+        
+    except Exception as e:
+        print(f"⚠️  Failed to create core locations: {e}")
+
     # Print summary
     summary = s3_locations["upload_summary"]
     print(f"\n📊 Upload Summary:")

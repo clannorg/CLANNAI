@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_21m15s.mp4",
+  "start_seconds": 1275,
+  "end_seconds": 1290,
+  "duration": 15,
+  "timestamp": "21:15",
+  "analysis_timestamp": "2025-07-31T20:24:52.021107",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here's a breakdown of the football clip.\n\nThe red team attempts to build an attack from midfield, but a strong challenge from the black team results in a foul and a free kick in the center circle. The red team takes the free kick short, passing it back to reset their attack from the defensive line.\n\n*   **4s:** A red player in midfield receives a pass and turns towards the opposition's goal.\n*   **5s:** A black player makes a strong tackle in the center circle, bringing the red player down.\n*   **6s:** The referee blows the whistle, signaling a foul and awarding a free kick to the red team.\n*   **9s:** The free kick is taken quickly, with the ball passed backwards towards the red team's defense.\n*   **12s:** A red defender receives the short free kick near the left touchline.",
+  "processing_time_seconds": 18.600919246673584,
+  "status": "success"
+}

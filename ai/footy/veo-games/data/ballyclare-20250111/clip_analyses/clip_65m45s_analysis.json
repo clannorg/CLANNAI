@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_65m45s.mp4",
+  "start_seconds": 3945,
+  "end_seconds": 3960,
+  "duration": 15,
+  "timestamp": "65:45",
+  "analysis_timestamp": "2025-07-31T20:29:30.496831",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team initiates an attack down the right wing, but the red team's defense quickly intercepts the ball. Red then gains possession in their own half and attempts to build an attack against the black team's defensive pressure.\n\n**Key Timing Estimates:**\n*   **2s:** A red defender intercepts a pass from the black team near the edge of the penalty area.\n*   **4s:** The red defender clears the ball long towards the halfway line.\n*   **6s:** Red team's player No. 14 controls the cleared ball just inside his own half.\n*   **12s:** After being pressured, Red's No. 14 passes the ball backward to a teammate.\n*   **14s:** Another red player receives the pass and looks to advance the ball from deep.",
+  "processing_time_seconds": 16.68644905090332,
+  "status": "success"
+}

@@ -1,0 +1,74 @@
+# Definite Events - newmills-20250222
+# Generated: 2025-08-04T14:48:31.962441
+# Method: VEO truth + AI descriptions cross-reference
+# Quality: Only VEO-confirmed events with rich context
+
+Okay, here is the definitive events list for the newmills-20250222 match, cross-referencing the VEO ground truth with the AI-validated timeline, adhering to your specifications:
+
+=== DEFINITE GOALS ===
+Timestamp: 86:39 (5200 seconds)
+Team: Red Team
+Description: A goal scored from close range following a cross delivered from the left wing.
+VEO Validation: AI 86:39 matches Ground Truth 86:24 (15 second difference)
+
+Timestamp: 129:08 (7748 seconds)
+Team: Red Team
+Description: A goal scored from an attack down the left side, finished from a low cross delivered into the box.
+VEO Validation: AI 129:08 matches Ground Truth 128:54 (14 second difference)
+
+Timestamp: 132:13 (7933 seconds)
+Team: Black/White Team
+Description: A goal scored from a direct free kick.
+VEO Validation: AI 132:13 matches Ground Truth 131:58 (15 second difference)
+
+=== DEFINITE SHOTS ===
+Timestamp: 23:12 (1392 seconds)
+Team: White Team
+Description: Shot from inside the penalty area, saved by the Red goalkeeper.
+Outcome: saved
+VEO Validation: AI 23:12 vs Ground Truth 23:26 (within tolerance)
+
+Timestamp: 50:29 (3029 seconds)
+Team: White Team
+Description: Direct free-kick, saved by the goalkeeper (tipped over the crossbar).
+Outcome: saved
+VEO Validation: AI 50:29 vs Ground Truth 50:37 (within tolerance)
+
+Timestamp: 53:13 (3193 seconds)
+Team: White Team
+Description: Shot from close range, saved by the goalkeeper.
+Outcome: saved
+VEO Validation: AI 53:13 vs Ground Truth 52:42 (within tolerance)
+
+Timestamp: 54:44 (3284 seconds)
+Team: White Team
+Description: Direct free-kick, saved by the goalkeeper (tipped over the crossbar).
+Outcome: saved
+VEO Validation: AI 54:44 vs Ground Truth 54:46 (within tolerance)
+
+Timestamp: 65:01 (3901 seconds)
+Team: Red Team
+Description: Direct free-kick, caught by the White goalkeeper.
+Outcome: saved
+VEO Validation: AI 65:01 vs Ground Truth 65:46 (within tolerance)
+
+Timestamp: 86:48 (5208 seconds)
+Team: White Team
+Description: Shot from outside the penalty box, saved by the Red goalkeeper.
+Outcome: saved
+VEO Validation: AI 86:48 vs Ground Truth 86:23 (within tolerance)
+
+Timestamp: 124:42 (7482 seconds)
+Team: Black Team
+Description: Header attempt from a free-kick, caught by the goalkeeper.
+Outcome: saved
+VEO Validation: AI 124:42 vs Ground Truth 124:25 (within tolerance)
+
+Timestamp: 131:49 (7909 seconds)
+Team: White Team
+Description: Direct free-kick from the edge of the box, saved by the Red goalkeeper.
+Outcome: saved
+VEO Validation: AI 131:49 vs Ground Truth 131:57 (within tolerance)
+
+=== OTHER VALIDATED EVENTS ===
+None

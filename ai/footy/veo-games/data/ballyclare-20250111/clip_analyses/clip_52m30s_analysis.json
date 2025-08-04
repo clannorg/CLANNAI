@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_52m30s.mp4",
+  "start_seconds": 3150,
+  "end_seconds": 3165,
+  "duration": 15,
+  "timestamp": "52:30",
+  "analysis_timestamp": "2025-07-31T20:27:44.021950",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThis clip shows players warming up on the pitch before a match. A group of players in orange bibs is performing a passing drill (a rondo) on the right side of the field, while another player practices individually on the left.\n\n**Key Timing Estimates**\n*   **0s:** The scene opens with an Orange Team passing drill on the right and a player in a black top dribbling on the left.\n*   **3s:** The player in the black top lightly taps the ball forward while dribbling.\n*   **7s:** A player in the Orange Team drill makes a one-touch pass to a teammate.\n*   **12s:** The Orange Team continues their possession-based passing drill near the halfway line.",
+  "processing_time_seconds": 26.38882303237915,
+  "status": "success"
+}

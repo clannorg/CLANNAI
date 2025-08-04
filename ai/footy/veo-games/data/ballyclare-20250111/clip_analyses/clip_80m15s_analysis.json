@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_80m15s.mp4",
+  "start_seconds": 4815,
+  "end_seconds": 4830,
+  "duration": 15,
+  "timestamp": "80:15",
+  "analysis_timestamp": "2025-07-31T20:30:06.755768",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe clip starts with a goal kick from the Black team, leading to a series of aerial battles and challenges in the midfield. Possession changes hands multiple times before the Red team eventually gains control and secures the ball in their own defensive third.\n\n**1-2s:** The Black team's goalkeeper takes a long goal kick.\n**3s:** A Red player wins the initial header in the opposition's half.\n**4s:** A Black player gains control of the loose ball and lays it off to a teammate.\n**6s:** A Red defender makes a tackle on the right flank, disrupting the Black team's attack.\n**9s:** After a scramble, a Black defender passes the ball forward from their own half.\n**11s:** A Red player heads the ball backward to a teammate to secure possession.\n**14s:** The Red team has settled possession with their defender near the edge of their own penalty area.",
+  "processing_time_seconds": 18.61738872528076,
+  "status": "success"
+}

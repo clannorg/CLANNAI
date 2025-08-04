@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_75m45s.mp4",
+  "start_seconds": 4545,
+  "end_seconds": 4560,
+  "duration": 15,
+  "timestamp": "75:45",
+  "analysis_timestamp": "2025-07-31T20:29:52.518344",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here's an analysis of the football clip.\n\n**Main Action Description:**\nThe red team is awarded a penalty kick against the black team. After a steady build-up, the red player takes their shot and successfully scores, sending the goalkeeper the wrong way.\n\n**Key Timing Estimates:**\n*   **1s:** A player from the red team stands over the ball, preparing to take a penalty kick.\n*   **13s:** The red player begins their run-up to the ball.\n*   **14s:** The player strikes the ball with their right foot.\n*   **15s:** The ball hits the back of the net, scoring a goal for the red team.",
+  "processing_time_seconds": 17.362858533859253,
+  "status": "success"
+}

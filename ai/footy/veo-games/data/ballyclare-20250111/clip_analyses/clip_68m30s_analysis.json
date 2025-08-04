@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_68m30s.mp4",
+  "start_seconds": 4110,
+  "end_seconds": 4125,
+  "duration": 15,
+  "timestamp": "68:30",
+  "analysis_timestamp": "2025-07-31T20:29:33.467472",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team initiates play from the center circle with a kick-off to start or restart the game. The red team remains in their defensive half, organized and ready to press.\n\n**Key Timing Estimates:**\n*   **0-10s:** Players from both teams are in position for a kick-off, with two black team players near the center circle.\n*   **11s:** A player from the black team takes the kick-off.\n*   **12s:** The ball is passed backward from the center spot to a teammate.\n*   **14s:** The teammate controls the pass, officially starting the black team's possession from their own half.",
+  "processing_time_seconds": 16.7055881023407,
+  "status": "success"
+}

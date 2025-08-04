@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_112m15s.mp4",
+  "start_seconds": 6735,
+  "end_seconds": 6750,
+  "duration": 15,
+  "timestamp": "112:15",
+  "analysis_timestamp": "2025-07-31T20:24:25.696348",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Based on the video provided, here is an analysis of the clip.\n\nThere is no football match or any on-pitch action in this 15-second clip. The video consists of a single, static shot of the side of an empty, artificially-lit football pitch at night.\n\n**Main Action Description:**\nThe clip shows an empty football pitch next to a paved path and a concrete wall. There are no players, no ball, and no game activity visible throughout the entire duration.\n\n**Key Timing Estimates:**\n- **0s - 15s:** The scene remains completely static. No players or ball are present, and no football-related actions occur.",
+  "processing_time_seconds": 15.97370982170105,
+  "status": "success"
+}

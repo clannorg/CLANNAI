@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_100m30s.mp4",
+  "start_seconds": 6030,
+  "end_seconds": 6045,
+  "duration": 15,
+  "timestamp": "100:30",
+  "analysis_timestamp": "2025-07-31T20:23:56.198986",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\nThe red team prepares to take a free kick from their attacking half of the field. Players from both the red and black teams are static, holding their positions and waiting for the game to be restarted.\n\n- **0s:** The scene opens with the red team in possession, setting up for a free kick just inside the opposition's half.\n- **5s:** Players from both teams remain largely stationary, organized for the set piece.\n- **11s:** A red player in the foreground bends down to adjust their sock.\n- **15s:** The clip ends with the players still in position, waiting for the free kick to be taken.",
+  "processing_time_seconds": 20.175306797027588,
+  "status": "success"
+}

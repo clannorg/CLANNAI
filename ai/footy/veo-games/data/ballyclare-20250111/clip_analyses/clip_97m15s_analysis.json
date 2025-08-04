@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_97m15s.mp4",
+  "start_seconds": 5835,
+  "end_seconds": 5850,
+  "duration": 15,
+  "timestamp": "97:15",
+  "analysis_timestamp": "2025-07-31T20:32:46.825336",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe team in black kits off, immediately playing the ball back to their defense. They attempt a long forward pass up the field, which is intercepted by a header from a red defender, leading to a contest for the loose ball in midfield.\n\n**Key Timing Estimates:**\n*   **2s:** The black team takes the kick-off, passing backwards to a central defender.\n*   **6s:** The ball is passed from the black central defender to a teammate on the left.\n*   **9s:** The black player on the left plays a long, aerial pass down the left-wing.\n*   **11s:** A red defender intercepts the long pass with a header, directing the ball back towards the center of the pitch.\n*   **14s:** The ball lands in the midfield, with players from both teams converging to challenge for possession.",
+  "processing_time_seconds": 34.13692355155945,
+  "status": "success"
+}

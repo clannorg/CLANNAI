@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_42m30s.mp4",
+  "start_seconds": 2550,
+  "end_seconds": 2565,
+  "duration": 15,
+  "timestamp": "42:30",
+  "analysis_timestamp": "2025-07-31T20:27:07.558022",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "This clip shows two teams, one in red and one in black with green bibs, performing a pre-game warm-up. Players are casually passing the ball in separate groups rather than engaging in a competitive match.\n\n- **1s**: A player in a black shirt and green bib on the left side of the pitch passes the ball.\n- **5s**: A red team player controls a pass near the center circle.\n- **7s**: The red player makes a short pass to a teammate positioned to the right.\n- **11s**: After a one-touch return, the initial red player receives the ball back.\n- **14s**: The ball is passed to a third red player now inside the center circle.",
+  "processing_time_seconds": 23.5367329120636,
+  "status": "success"
+}

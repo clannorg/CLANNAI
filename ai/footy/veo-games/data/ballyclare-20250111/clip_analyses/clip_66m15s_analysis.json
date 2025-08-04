@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_66m15s.mp4",
+  "start_seconds": 3975,
+  "end_seconds": 3990,
+  "duration": 15,
+  "timestamp": "66:15",
+  "analysis_timestamp": "2025-07-31T20:29:32.252760",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe Red team initiates a controlled build-up from their defensive third, progressing the ball methodically up the left wing. The Black team remains organized, applying pressure to contain the attack as it enters their half.\n\n**Key Timing Estimates:**\n*   **3s:** Red player #5, near the center circle, receives a pass from a deeper position.\n*   **7s:** A Red midfielder plays a quick, forward pass to a teammate on the left.\n*   **9s:** Red player #5 receives the ball back and dribbles down the left touchline, crossing the halfway line.\n*   **12s:** Faced with a Black defender, Red player #5 plays a short pass inside to a supporting teammate.\n*   **14s:** The Red player receives the pass and is immediately put under pressure by a closing Black defender.",
+  "processing_time_seconds": 17.998087167739868,
+  "status": "success"
+}

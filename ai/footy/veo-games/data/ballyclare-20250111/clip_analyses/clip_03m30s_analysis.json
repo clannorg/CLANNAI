@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_03m30s.mp4",
+  "start_seconds": 210,
+  "end_seconds": 225,
+  "duration": 15,
+  "timestamp": "03:30",
+  "analysis_timestamp": "2025-07-31T20:23:39.237756",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team sets up for a direct free kick in an attacking position just outside the penalty area, while the red team forms a defensive wall. A player from the black team, who was initially on the ground, gets back to his feet as the teams prepare for the set piece.\n\n**Key Timing Estimates:**\n\n*   **0s:** The black team has possession for a free kick; a player (No. 17) is on the ground.\n*   **3s:** The referee manages the scene as the red team organizes their defensive wall.\n*   **8s:** The black team's free-kick taker bends down to place the ball.\n*   **11s:** The player who was on the ground (No. 17) gets up and moves away from the ball.\n*   **14s:** Players from both teams are in position, awaiting the referee's signal to take the kick.",
+  "processing_time_seconds": 22.35382843017578,
+  "status": "success"
+}

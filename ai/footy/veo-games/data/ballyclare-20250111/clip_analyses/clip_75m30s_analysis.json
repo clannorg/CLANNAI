@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_75m30s.mp4",
+  "start_seconds": 4530,
+  "end_seconds": 4545,
+  "duration": 15,
+  "timestamp": "75:30",
+  "analysis_timestamp": "2025-07-31T20:29:55.261444",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe red team attempts a quick attack with a through ball into the penalty area. The black team's goalkeeper anticipates the play, coming off his line to make a brave diving save at the feet of the red team's striker.\n\n**Key Timing Estimates**\n*   **2s:** A red team player plays a decisive through ball into the penalty box for a teammate making a run.\n*   **4s:** The black team's goalkeeper rushes off his goal line to intercept the pass.\n*   **5s:** The goalkeeper dives low to his left, smothering the ball and making a successful save.\n*   **6s:** The onrushing red attacker tumbles over the goalkeeper after the save is made.\n*   **10s:** The play is stopped as the goalkeeper maintains possession of the ball on the ground.",
+  "processing_time_seconds": 21.050021409988403,
+  "status": "success"
+}

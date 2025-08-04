@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_87m30s.mp4",
+  "start_seconds": 5250,
+  "end_seconds": 5265,
+  "duration": 15,
+  "timestamp": "87:30",
+  "analysis_timestamp": "2025-07-31T20:30:22.871110",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\nThe red team takes a free kick from the right, delivering the ball into the penalty area. The black team successfully defends the set piece, heading the ball clear, leading to a new phase of play on the edge of the box.\n\n- **8s:** The red player strikes the ball to take the free kick.\n- **10s:** A black defender positioned inside the penalty area heads the ball away to clear the danger.\n- **14s:** A red player collects the cleared ball on the left side, just outside the penalty area, while being closed down by a black player.",
+  "processing_time_seconds": 16.00663733482361,
+  "status": "success"
+}

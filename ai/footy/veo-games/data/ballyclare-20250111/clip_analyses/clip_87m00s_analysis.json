@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_87m00s.mp4",
+  "start_seconds": 5220,
+  "end_seconds": 5235,
+  "duration": 15,
+  "timestamp": "87:00",
+  "analysis_timestamp": "2025-07-31T20:30:30.017724",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe black team attempts a long pass from their own half, which is intercepted by the red team. Red quickly transitions into an attack, working the ball down the right-hand side and establishing possession in the final third as the clip ends.\n\n*   **3s:** The black player (#15) plays a long, high diagonal pass forward.\n*   **5s:** A red defender intercepts the pass with a header in midfield.\n*   **6s:** The red team gains control of the loose ball just inside the center circle.\n*   **8s:** A red midfielder passes the ball out to a teammate on the right wing.\n*   **12s:** The red winger plays a forward pass down the right flank to an advancing teammate.\n*   **15s:** The clip concludes with the red team in an attacking position on the edge of the penalty area.",
+  "processing_time_seconds": 23.261738061904907,
+  "status": "success"
+}

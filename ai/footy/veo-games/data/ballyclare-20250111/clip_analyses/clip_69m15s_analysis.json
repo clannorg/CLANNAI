@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_69m15s.mp4",
+  "start_seconds": 4155,
+  "end_seconds": 4170,
+  "duration": 15,
+  "timestamp": "69:15",
+  "analysis_timestamp": "2025-07-31T20:29:34.211190",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe black team attempts a long, direct attack from their own half, forcing the red team's goalkeeper to come far off their line for a crucial headed clearance. The subsequent play in midfield results in the red team regaining possession after a strong tackle.\n\n**Key Timing Estimates:**\n\n*   **3s:** A black team player in their own half plays a long, diagonal pass over the top towards the left wing.\n*   **7s:** The red team's goalkeeper rushes far out of the penalty area to intercept the pass with a decisive header.\n*   **11s:** A black player gains control of the cleared ball in the center of the pitch.\n*   **14s:** A red player successfully tackles the black player, winning back the ball in the midfield.",
+  "processing_time_seconds": 16.55264401435852,
+  "status": "success"
+}

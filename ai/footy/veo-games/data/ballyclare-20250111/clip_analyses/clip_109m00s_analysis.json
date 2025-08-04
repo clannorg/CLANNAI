@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_109m00s.mp4",
+  "start_seconds": 6540,
+  "end_seconds": 6555,
+  "duration": 15,
+  "timestamp": "109:00",
+  "analysis_timestamp": "2025-07-31T20:24:20.234084",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main action description:**\nThe black team prepares to take a direct free-kick from a dangerous, central position just outside the penalty area. The red team organizes its defensive wall and marks players in the box, waiting for the kick to be taken.\n\n**Key timing estimates:**\n*   **1s:** A player from the black team is on the ground, having won the free-kick.\n*   **3s:** The fouled player gets to his feet and moves away.\n*   **7s:** A teammate from the black team approaches to set the ball for the free-kick.\n*   **9s:** The red team's defensive wall is formed, and the referee ensures they are at the correct distance.\n*   **12s:** The black team's free-kick taker finishes placing the ball and stands up.\n*   **15s:** All players are in position, awaiting the referee's signal to proceed with the kick.",
+  "processing_time_seconds": 24.034969091415405,
+  "status": "success"
+}

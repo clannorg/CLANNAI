@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_102m00s.mp4",
+  "start_seconds": 6120,
+  "end_seconds": 6135,
+  "duration": 15,
+  "timestamp": "102:00",
+  "analysis_timestamp": "2025-07-31T20:23:55.735733",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the provided 15-second football clip.\n\n**Main Action Description:**\nThe clip begins with the team in red initiating play with a kickoff from the center circle. They immediately establish control, patiently circulating the ball across their backline and into their midfield to build an attack from deep within their own half.\n\n**Key Timing Estimates:**\n\n*   **3s:** The red team kicks off from the center spot, passing the ball backward to a teammate.\n*   **5s:** The ball is played back to a central defender to start building possession from the defense.\n*   **8s:** The red team passes the ball horizontally across their defensive line.\n*   **12s:** A red defender passes the ball forward to a central midfielder.\n*   **15s:** The red team maintains controlled possession in their own half as the clip concludes.",
+  "processing_time_seconds": 18.264506578445435,
+  "status": "success"
+}

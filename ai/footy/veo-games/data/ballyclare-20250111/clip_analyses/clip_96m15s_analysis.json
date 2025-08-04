@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_96m15s.mp4",
+  "start_seconds": 5775,
+  "end_seconds": 5790,
+  "duration": 15,
+  "timestamp": "96:15",
+  "analysis_timestamp": "2025-07-31T20:32:55.080498",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the provided football clip.\n\nThe Black team kicks off from the center circle, playing the ball back to their defense. They attempt a long, direct pass forward, but a Red defender intercepts it with a header, leading to a battle for the loose ball in midfield.\n\n- **4s:** The Black team starts the play from the center circle with a backward pass.\n- **9s:** After a couple of short passes, a Black defender launches a long, aerial ball toward the Red team's half.\n- **11s:** A Red defender jumps and successfully wins the header, clearing the ball away from the intended Black attacker.\n- **13s:** The ball lands in the midfield, where players from both teams converge to compete for possession.",
+  "processing_time_seconds": 42.42704796791077,
+  "status": "success"
+}

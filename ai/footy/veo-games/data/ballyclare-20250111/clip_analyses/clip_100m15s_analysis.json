@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_100m15s.mp4",
+  "start_seconds": 6015,
+  "end_seconds": 6030,
+  "duration": 15,
+  "timestamp": "100:15",
+  "analysis_timestamp": "2025-07-31T20:23:55.212951",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe red team controls possession in their own half, circulating the ball from a throw-in across their backline. The clip ends as a red defender launches a long, direct pass forward to initiate an attack into the black team's territory.\n\n**Key Timing Estimates:**\n- **2s**: A red player takes a throw-in on the far side of the pitch.\n- **6s**: A red player in the center receives a pass and is put under immediate pressure.\n- **10s**: The ball is played back to a red defender deep inside his own half.\n- **13s**: The red defender plays a long, aerial pass forward over the black team's midfield.",
+  "processing_time_seconds": 19.234588861465454,
+  "status": "success"
+}

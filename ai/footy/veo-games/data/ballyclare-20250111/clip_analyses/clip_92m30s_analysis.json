@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_92m30s.mp4",
+  "start_seconds": 5550,
+  "end_seconds": 5565,
+  "duration": 15,
+  "timestamp": "92:30",
+  "analysis_timestamp": "2025-07-31T20:34:20.773717",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in this football clip.\n\n**Main Action Description:**\nThe black team takes a long-range direct free kick from a central position. The shot is perfectly executed, flying over the red team's defensive wall and into the top corner of the goal, leaving the goalkeeper with no chance.\n\n**Key Timing Estimates:**\n*   **1s:** The black team's player is positioned over the ball for a direct free kick, with the red team forming a defensive wall.\n*   **4s:** The black player strikes the ball, sending a powerful shot towards the goal.\n*   **8s:** The ball sails over the wall and into the top left corner of the net for a goal.\n*   **10s:** The goalscorer and his teammates begin celebrating near the corner of the pitch.",
+  "processing_time_seconds": 128.187344789505,
+  "status": "success"
+}

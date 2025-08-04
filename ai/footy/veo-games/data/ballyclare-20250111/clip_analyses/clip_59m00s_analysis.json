@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_59m00s.mp4",
+  "start_seconds": 3540,
+  "end_seconds": 3555,
+  "duration": 15,
+  "timestamp": "59:00",
+  "analysis_timestamp": "2025-07-31T20:29:18.933577",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe Black team secures a long ball in their own half but is immediately pressured by the Red team. The Red team wins possession through a tackle and quickly transitions to an attack, playing a pass down the left wing to start their offensive move.\n\n**Key Timing Estimates:**\n\n*   **2s:** A Red player challenges for a long ball in the air near the center circle.\n*   **4s:** The Black team gains possession of the loose ball in their own half.\n*   **10s:** A Red player successfully tackles a Black player, winning the ball back.\n*   **13s:** The Red player on the ball plays a forward pass to a teammate advancing down the left wing.",
+  "processing_time_seconds": 23.395001649856567,
+  "status": "success"
+}

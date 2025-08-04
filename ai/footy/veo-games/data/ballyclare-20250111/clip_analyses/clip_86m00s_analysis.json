@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_86m00s.mp4",
+  "start_seconds": 5160,
+  "end_seconds": 5175,
+  "duration": 15,
+  "timestamp": "86:00",
+  "analysis_timestamp": "2025-07-31T20:30:17.907112",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main action description:**\nThe red team successfully defends an attack near their own penalty area, winning possession and transitioning into a controlled build-up. They circulate the ball across their midfield, moving from the center to the left flank before playing it back inside.\n\n**Key timing estimates:**\n*   **1s:** A red player makes a successful tackle to stop a black team attack on the edge of the penalty box.\n*   **2s:** The red team clears the ball away from their defensive third.\n*   **4s:** A red player brings the ball under control in the center of the pitch.\n*   **8s:** The red team switches play with a pass out to the left side of the field.\n*   **11s:** A red player on the left wing receives the pass.\n*   **13s:** The winger, under pressure from a defender, plays a short pass back to a central midfielder.",
+  "processing_time_seconds": 18.77732491493225,
+  "status": "success"
+}

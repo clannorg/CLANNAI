@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_44m00s.mp4",
+  "start_seconds": 2640,
+  "end_seconds": 2655,
+  "duration": 15,
+  "timestamp": "44:00",
+  "analysis_timestamp": "2025-07-31T20:27:17.130503",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe video shows two teams warming up on a football pitch under stadium lights. The team in orange bibs maintains possession on the right-hand side of the field in a controlled passing drill, while the team in red and yellow is loosely spread out on the left.\n\n**Key Timing Estimates**\n- **2s:** An orange player chests down a pass to a teammate, initiating a passing sequence.\n- **6s:** The camera begins a slow pan from right to left across the pitch.\n- **9s:** An orange player near the right sideline passes the ball back into the center of their group's drill.\n- **13s:** The orange team continues to circulate the ball with short, one-touch passes within their warm-up drill.",
+  "processing_time_seconds": 28.55547046661377,
+  "status": "success"
+}

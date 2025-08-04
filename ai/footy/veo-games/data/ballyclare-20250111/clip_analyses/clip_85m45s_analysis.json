@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_85m45s.mp4",
+  "start_seconds": 5145,
+  "end_seconds": 5160,
+  "duration": 15,
+  "timestamp": "85:45",
+  "analysis_timestamp": "2025-07-31T20:30:15.616866",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Great, here's an analysis of the football clip.\n\n### Football Clip Analysis\n\n**Main Action Description:**\nThe Red team initiates an attack from their own penalty area, building play up the left side. A Red defender then plays a long, direct pass forward, where a teammate controls it and lays it off to a midfielder under pressure.\n\n**Key Timing Estimates:**\n- **4s:** The Red goalkeeper passes the ball to a defender on the left side of the pitch.\n- **11s:** A Red player launches a long, high ball forward from deep within their own half.\n- **13s:** A Red attacker chests the ball down just inside the opposition's half.\n- **14s:** The attacker immediately lays the ball off to a supporting teammate in the center circle.",
+  "processing_time_seconds": 16.889092206954956,
+  "status": "success"
+}

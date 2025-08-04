@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_19m45s.mp4",
+  "start_seconds": 1185,
+  "end_seconds": 1200,
+  "duration": 15,
+  "timestamp": "19:45",
+  "analysis_timestamp": "2025-07-31T20:24:49.290288",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe black team calmly maintains possession in their own half, drawing in the red team's press. They then successfully switch the play with a long pass from the center out to the right wing to launch an attack.\n\n**Key Timing Estimates**\n*   **1s:** A black central player has the ball just inside their own half.\n*   **4s:** The player passes sideways to a teammate under pressure from a red attacker.\n*   **8s:** After a quick one-two, a long forward pass is played out to the right flank.\n*   **12s:** The black winger controls the pass near the halfway line and starts to move forward.",
+  "processing_time_seconds": 18.82952046394348,
+  "status": "success"
+}

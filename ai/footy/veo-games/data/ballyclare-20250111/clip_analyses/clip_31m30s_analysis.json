@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_31m30s.mp4",
+  "start_seconds": 1890,
+  "end_seconds": 1905,
+  "duration": 15,
+  "timestamp": "31:30",
+  "analysis_timestamp": "2025-07-31T20:26:39.860115",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n### Main Action Description\nThe black team controls possession, initiating an attack from their own half. They progress the ball skillfully up the left wing, moving from their side of the pitch into the red team's territory under consistent pressure.\n\n### Key Timing Estimates\n**3s:** A black player near the center circle makes a forward pass into the red team's half.\n**6s:** The receiving black player switches the play with a pass to a teammate on the left wing.\n**10s:** The black winger receives the ball and begins to dribble forward down the touchline.\n**14s:** The black player with the ball is challenged and contained by two red defenders near the sideline.",
+  "processing_time_seconds": 16.206743240356445,
+  "status": "success"
+}

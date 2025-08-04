@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_97m00s.mp4",
+  "start_seconds": 5820,
+  "end_seconds": 5835,
+  "duration": 15,
+  "timestamp": "97:00",
+  "analysis_timestamp": "2025-07-31T20:32:47.504423",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\n**Main Action Description:**\nThe black team kicks off the match, circulating the ball amongst their defenders in their own half. They then attempt a long forward pass, which is easily intercepted by a red team defender who gains possession.\n\n**Key Timing Estimates:**\n*   **4s:** The black team kicks off from the center circle with a short backward pass.\n*   **7s:** A black defender on the right side receives the ball deep inside their own half.\n*   **10s:** The black defender attempts a long, ambitious pass forward down the field.\n*   **13s:** A red defender positioned on the left side of the defense calmly intercepts the pass.",
+  "processing_time_seconds": 34.819886207580566,
+  "status": "success"
+}

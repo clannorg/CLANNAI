@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_14m00s.mp4",
+  "start_seconds": 840,
+  "end_seconds": 855,
+  "duration": 15,
+  "timestamp": "14:00",
+  "analysis_timestamp": "2025-07-31T20:24:35.325800",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the events in the video clip.\n\n**Main Action Description:**\nThe black team attempts to build an attack down the left side but is met with two consecutive aggressive tackles from the red team. The second challenge, a sliding tackle near the sideline, is deemed a foul by the referee, who awards a free kick to the black team.\n\n**Key Timing Estimates:**\n*   **3s:** A black player passes the ball from the center to a teammate on the left wing.\n*   **5s:** A red defender challenges the black winger, causing the ball to come loose.\n*   **9s:** A red player executes a sliding tackle on the black player who had just recovered the ball.\n*   **11s:** The referee blows the whistle to stop play for a foul.\n*   **13s:** The referee signals a free kick for the black team.",
+  "processing_time_seconds": 19.142881393432617,
+  "status": "success"
+}

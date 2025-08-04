@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_11m00s.mp4",
+  "start_seconds": 660,
+  "end_seconds": 675,
+  "duration": 15,
+  "timestamp": "11:00",
+  "analysis_timestamp": "2025-07-31T20:24:28.164024",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main action description:**\nThe black team's goalkeeper launches a long aerial ball, leading to a contest for possession in the midfield. The play culminates in a red player committing a foul on a black player just inside the center circle, resulting in a free-kick.\n\n**Key timing estimates:**\n*   **2s:** The black team's goalkeeper kicks the ball long downfield.\n*   **5s:** A black player heads the ball on into the red team's half.\n*   **8s:** A red defender makes a high clearance from just outside their penalty area.\n*   **13s:** A red player tackles a black player, who goes down in the center circle.\n*   **14s:** The referee blows the whistle, signaling a foul and awarding a free-kick to the black team.",
+  "processing_time_seconds": 17.10207223892212,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_17m45s.mp4",
+  "start_seconds": 1065,
+  "end_seconds": 1080,
+  "duration": 15,
+  "timestamp": "17:45",
+  "analysis_timestamp": "2025-07-31T20:24:43.226808",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n### Main Action Description\nThe red team takes a free-kick from the left side of the pitch, which is initially cleared by the black team's defense. The red team quickly regains possession near the halfway line and recycles the ball to the left wing to start a new attacking phase.\n\n### Key Timing Estimates\n\n*   **6s:** The red team takes a free-kick, sending a high ball into the penalty area.\n*   **7s:** A black team defender clears the ball with a defensive header.\n*   **10s:** The ball is cleared a second time but falls to a red player just inside the attacking half.\n*   **14s:** The red player passes the ball forward to a teammate positioned on the left side of the pitch.",
+  "processing_time_seconds": 16.19482922554016,
+  "status": "success"
+}

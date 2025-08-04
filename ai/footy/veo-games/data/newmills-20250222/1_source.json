@@ -1,0 +1,15 @@
+{
+  "url": "https://app.veo.co/matches/20250222-newmills-vs-stmarys-6c97bb85/",
+  "match_id": "newmills-20250222",
+  "veo_match_id": "20250222-newmills-vs-stmarys-6c97bb85",
+  "extracted_at": "2025-08-02T15:35:48.977248",
+  "total_events": 25,
+  "extraction_method": "veo_api_highlights",
+  "status": "ready_for_analysis",
+  "date": "2025-02-22",
+  "primary_team": "Newmills",
+  "venue": "Newmills",
+  "cleanup_status": "completed",
+  "cleanup_size_gb": 4.42,
+  "cleanup_timestamp": "2025-08-04T14:57:14.438305"
+}

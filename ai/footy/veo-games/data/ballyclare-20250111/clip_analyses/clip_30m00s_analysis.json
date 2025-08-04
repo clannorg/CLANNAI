@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_30m00s.mp4",
+  "start_seconds": 1800,
+  "end_seconds": 1815,
+  "duration": 15,
+  "timestamp": "30:00",
+  "analysis_timestamp": "2025-07-31T20:26:37.275688",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe black team attempts a quick forward pass in the center of the pitch, but the receiving player is immediately tackled and fouled by a red team player. The referee blows the whistle, stopping play and awarding a free kick to the black team.\n\n**Key Timing Estimates:**\n*   **2s:** Black player #52 passes the ball forward from the center circle.\n*   **3s:** Another black player receives the pass and is immediately fouled by Red player #21.\n*   **3s:** The referee blows the whistle, signaling a foul.\n*   **4s:** The fouled black player falls to the ground.\n*   **10s:** The fouled player gets back to his feet.\n*   **12s:** The referee indicates the spot for the free kick to be taken by the black team.",
+  "processing_time_seconds": 15.25699257850647,
+  "status": "success"
+}

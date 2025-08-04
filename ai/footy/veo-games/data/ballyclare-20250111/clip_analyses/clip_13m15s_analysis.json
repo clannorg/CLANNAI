@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_13m15s.mp4",
+  "start_seconds": 795,
+  "end_seconds": 810,
+  "duration": 15,
+  "timestamp": "13:15",
+  "analysis_timestamp": "2025-07-31T20:24:33.419996",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is an analysis of the provided football clip.\n\n**Main Action Description:**\nThe scene shows both teams getting into formation for a kick-off from the center circle. The black team is positioned to start the play, while the red team is organized in their own half, ready to defend.\n\n**Key Timing Estimates:**\n*   **1s:** Players are positioned around the center circle, with the black team preparing to kick off.\n*   **3s:** The camera begins a slow pan to the left, revealing the full team setups.\n*   **7s:** A black player near the halfway line finishes adjusting his gear and stands ready.\n*   **11s:** The view stabilizes, showing the black team set to kick off and the red team holding their defensive formation.\n*   **14s:** Both teams remain in their static positions, waiting for the referee's signal to begin play.",
+  "processing_time_seconds": 18.150850772857666,
+  "status": "success"
+}

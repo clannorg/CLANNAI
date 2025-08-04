@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_49m45s.mp4",
+  "start_seconds": 2985,
+  "end_seconds": 3000,
+  "duration": 15,
+  "timestamp": "49:45",
+  "analysis_timestamp": "2025-07-31T20:27:24.638206",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThis clip shows players in orange bibs conducting a light, pre-game passing warm-up on one half of the pitch. In the background, a goalkeeper in a yellow bib is also warming up separately near the goal.\n\n**1s:** The clip begins with players in orange bibs passing the ball in the center circle.\n**2s:** An orange-bibbed player receives a pass on the right side of the center circle.\n**5s:** The player passes the ball back towards a central teammate.\n**10s:** The camera begins to pan to the right, showing a goalkeeper in a yellow bib warming up near the goal.\n**14s:** The players in orange bibs continue their casual passing drill.",
+  "processing_time_seconds": 18.241992235183716,
+  "status": "success"
+}

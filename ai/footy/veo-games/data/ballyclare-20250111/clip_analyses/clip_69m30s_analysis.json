@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_69m30s.mp4",
+  "start_seconds": 4170,
+  "end_seconds": 4185,
+  "duration": 15,
+  "timestamp": "69:30",
+  "analysis_timestamp": "2025-07-31T20:29:36.846570",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's an analysis of the football clip.\n\n### Football Clip Analysis\n\n**Main Action Description:**\nThe red team loses possession in the center circle from a decisive slide tackle by a black team player. The black team immediately capitalizes on the turnover, launching a fast-paced counter-attack down the field.\n\n**Key Timing Estimates:**\n*   **2s:** A red player advances with the ball into the midfield.\n*   **5s:** A black team player executes a successful sliding tackle in the center circle, dispossessing the red player.\n*   **7s:** Another black team player collects the loose ball and begins to dribble forward at speed.\n*   **10s:** The black player crosses the halfway line, driving the counter-attack into the red team's half.\n*   **13s:** A pass is made to a teammate advancing on the right side of the attack.",
+  "processing_time_seconds": 18.72869348526001,
+  "status": "success"
+}

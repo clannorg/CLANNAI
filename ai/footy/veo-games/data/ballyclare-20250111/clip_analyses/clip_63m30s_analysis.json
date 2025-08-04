@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_63m30s.mp4",
+  "start_seconds": 3810,
+  "end_seconds": 3825,
+  "duration": 15,
+  "timestamp": "63:30",
+  "analysis_timestamp": "2025-07-31T20:29:14.286582",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe red team attempts to launch an attack from their own half with a long diagonal pass. The black team's midfield anticipates the play and successfully intercepts the ball to regain possession.\n\n**Key Timing Estimates:**\n*   **3s:** A red player in the center circle passes the ball back to a central defender.\n*   **8s:** The red defender plays a long, high, diagonal pass forward towards the left side of the pitch.\n*   **12s:** A black player (#21) jumps and intercepts the pass with a header in the midfield.\n*   **14s:** The black team secures possession of the loose ball after the interception.",
+  "processing_time_seconds": 18.64405632019043,
+  "status": "success"
+}

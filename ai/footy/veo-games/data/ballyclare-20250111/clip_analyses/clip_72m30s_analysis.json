@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_72m30s.mp4",
+  "start_seconds": 4350,
+  "end_seconds": 4365,
+  "duration": 15,
+  "timestamp": "72:30",
+  "analysis_timestamp": "2025-07-31T20:29:47.233222",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\nThe referee manages a confrontation between players after awarding a free kick. The red team retains possession and prepares to take the set-piece from a central position, while the black team organizes its defense.\n\n*   **1s**: The clip starts with the referee mediating between a group of red and black team players after a foul.\n*   **3s**: A red player places the ball on the ground to set up for a free kick.\n*   **7s**: The initial group of players begins to disperse as the black team starts forming a defensive wall.\n*   **11s**: The referee walks towards the black team's defensive line to manage its positioning.\n*   **14s**: The scene is set, with the red team over the ball and the black team's defense in position, awaiting the kick.",
+  "processing_time_seconds": 18.876206159591675,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_67m30s.mp4",
+  "start_seconds": 4050,
+  "end_seconds": 4065,
+  "duration": 15,
+  "timestamp": "67:30",
+  "analysis_timestamp": "2025-07-31T20:29:31.555711",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nPlay is stopped in the midfield after a black team player commits a foul on a red team player. The referee immediately blows the whistle and awards a free kick to the team in red.\n\n**Key Timing Estimates:**\n- **1s:** A black player makes a sliding tackle on a red player in the center of the pitch.\n- **2s:** The referee blows the whistle for a foul as the red player goes to the ground.\n- **5s:** The fouled red player remains on the turf while other players react to the call.\n- **10s:** Players from both teams begin to reposition in anticipation of the free kick for the red team.",
+  "processing_time_seconds": 16.62384605407715,
+  "status": "success"
+}

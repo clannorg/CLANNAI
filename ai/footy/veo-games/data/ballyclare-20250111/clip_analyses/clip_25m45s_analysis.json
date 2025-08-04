@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_25m45s.mp4",
+  "start_seconds": 1545,
+  "end_seconds": 1560,
+  "duration": 15,
+  "timestamp": "25:45",
+  "analysis_timestamp": "2025-07-31T20:26:25.828582",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\nThe Red team initiates an attack from their half, but a forward pass is intercepted by the Black team. The Black team then secures possession and begins to build an attack of their own down the right side of the pitch.\n\n- **1s:** A Red player in their own half passes the ball forward to a teammate inside the center circle.\n- **4s:** The Red midfielder passes the ball sideways to another Red player.\n- **8s:** The Red team attempts a longer pass forward toward the right flank.\n- **10s:** A Black defender successfully intercepts the pass, taking control of the ball.\n- **14s:** The Black defender passes the ball forward along the right touchline to a teammate.",
+  "processing_time_seconds": 22.04216766357422,
+  "status": "success"
+}

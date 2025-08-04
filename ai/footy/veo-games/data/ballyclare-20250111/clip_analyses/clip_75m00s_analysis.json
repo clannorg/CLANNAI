@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_75m00s.mp4",
+  "start_seconds": 4500,
+  "end_seconds": 4515,
+  "duration": 15,
+  "timestamp": "75:00",
+  "analysis_timestamp": "2025-07-31T20:29:51.194970",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's a breakdown of the football clip.\n\nThe red team launches a direct attack from a restart in their own half. A misjudged defensive header by a black team player allows the red team to regain possession and quickly play a through ball down the left wing, putting their attacker in a threatening position.\n\n- **5s:** A red player plays a long, high ball forward from inside the center circle.\n- **7s:** A black team player in midfield mistimes a defensive header, sending the ball backward toward his own goal.\n- **8s:** A red attacker (#11) gains control of the loose ball in the attacking half.\n- **12s:** The red player plays a through pass into the space on the left flank.\n- **14s:** A running red teammate receives the pass just outside the penalty area on the left side.",
+  "processing_time_seconds": 17.89633345603943,
+  "status": "success"
+}

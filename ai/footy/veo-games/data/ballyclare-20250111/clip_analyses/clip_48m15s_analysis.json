@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_48m15s.mp4",
+  "start_seconds": 2895,
+  "end_seconds": 2910,
+  "duration": 15,
+  "timestamp": "48:15",
+  "analysis_timestamp": "2025-07-31T20:27:17.632997",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe scene shows players from both teams conducting pre-match warm-ups on the pitch. In the center, a group of players in orange bibs are doing a light passing drill, during which one player stumbles and falls.\n\n**Key Timing Estimates:**\n\n*   **2s:** A player in an orange bib passes the ball to a teammate in the center circle.\n*   **6s:** While attempting to control the pass, the receiving player in the orange bib loses his footing and falls to the ground.\n*   **9s:** The player who fell gets back to his feet and rejoins the drill.\n*   **13s:** On the left side of the pitch, two players in red shirts casually pass a ball between each other.",
+  "processing_time_seconds": 17.352803945541382,
+  "status": "success"
+}

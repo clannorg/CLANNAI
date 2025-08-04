@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_47m00s.mp4",
+  "start_seconds": 2820,
+  "end_seconds": 2835,
+  "duration": 15,
+  "timestamp": "47:00",
+  "analysis_timestamp": "2025-07-31T20:27:17.771559",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a summary of the action from the video clip.\n\n**Main Action Description:**\nThe scene captures a pre-match warm-up session. The red team is on the left half of the pitch, casually passing the ball, while a group of players in orange bibs conduct a close-control passing drill (a rondo) on the right.\n\n**Key Timing Estimates:**\n\n*   **2s:** A red player on the left wing passes the ball towards a teammate standing in the center circle.\n*   **5s:** The red player receives the pass and controls the ball in the center circle.\n*   **7s:** The players in orange bibs are actively engaged in a rondo passing drill on the right side of the pitch.\n*   **11s:** The red player in the center circle makes a return pass back towards the left side of the field.",
+  "processing_time_seconds": 18.88191318511963,
+  "status": "success"
+}

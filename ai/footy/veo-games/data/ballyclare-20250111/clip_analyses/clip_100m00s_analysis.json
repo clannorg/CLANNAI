@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_100m00s.mp4",
+  "start_seconds": 6000,
+  "end_seconds": 6015,
+  "duration": 15,
+  "timestamp": "100:00",
+  "analysis_timestamp": "2025-07-31T20:23:53.473452",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe black team attempts a long diagonal pass from their own half, but it is intercepted by a red defender. The red team immediately launches a counter-attack down the right wing, which is abruptly ended when the player with the ball is fouled by a sliding tackle.\n\n**Key Timing Estimates:**\n*   **3s:** The black team player near the center circle plays a long, aerial pass towards the right side of the field.\n*   **7s:** A red team defender successfully intercepts the pass with a header.\n*   **12s:** The red team player advancing with the ball is brought down by a sliding tackle from a black team player.\n*   **14s:** The play stops as a foul is committed, and the ball rolls out of play.",
+  "processing_time_seconds": 17.535490036010742,
+  "status": "success"
+}

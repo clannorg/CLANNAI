@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_42m00s.mp4",
+  "start_seconds": 2520,
+  "end_seconds": 2535,
+  "duration": 15,
+  "timestamp": "42:00",
+  "analysis_timestamp": "2025-07-31T20:27:06.396088",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThis clip shows a low-intensity pre-game warm-up, not a competitive match. A goalkeeper practices saving a shot while several outfield players in yellow bibs walk and jog around the pitch.\n\n- **2s:** A goalkeeper in an orange kit easily saves a low shot from the left side of the box.\n- **7s:** The goalkeeper, having collected the ball, walks to the edge of the penalty area.\n- **11s:** A player wearing a yellow bib slowly walks from the left side of the pitch towards the center.\n- **14s:** Another player in a yellow bib walks across the midfield from right to left.",
+  "processing_time_seconds": 23.041032791137695,
+  "status": "success"
+}

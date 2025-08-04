@@ -1,0 +1,217 @@
+{
+  "match_id": "ballyclare-20250111",
+  "analysis_timestamp": "2025-07-31T18:36:20.661320",
+  "analysis_method": "precise_goals_and_shots_gemini_2.5_pro",
+  "clips_analyzed": 60,
+  "time_period": "First 15 minutes (0:00-15:00)",
+  "processing_time_seconds": 66.5610601902008,
+  "goals_and_shots_analysis": {
+    "goals": [
+      {
+        "precise_timestamp": "00:55",
+        "precise_seconds": 55,
+        "team": "Black Team",
+        "description": "Long-range shot finds the back of the net.",
+        "clip_start_time": "00:45",
+        "event_timing_in_clip": "10s",
+        "evidence": "10s: The shot finds the back of the net, resulting in a goal for the black team.",
+        "source_clip": "clip_00m45s.mp4",
+        "confidence": "HIGH"
+      },
+      {
+        "precise_timestamp": "12:21",
+        "precise_seconds": 741,
+        "team": "Red Team",
+        "description": "Scores from rebound after goalkeeper's save.",
+        "clip_start_time": "12:15",
+        "event_timing_in_clip": "6s",
+        "evidence": "6s: A second red player follows up and scores from the rebound.",
+        "source_clip": "clip_12m15s.mp4",
+        "confidence": "HIGH"
+      },
+      {
+        "precise_timestamp": "13:08",
+        "precise_seconds": 788,
+        "team": "Red Team",
+        "description": "Powerful long-range shot into the top of the net.",
+        "clip_start_time": "13:00",
+        "event_timing_in_clip": "8s",
+        "evidence": "8s: The ball flies past the goalkeeper and into the top of the net for a goal.",
+        "source_clip": "clip_13m00s.mp4",
+        "confidence": "HIGH"
+      }
+    ],
+    "shots_saved": [
+      {
+        "precise_timestamp": "06:10",
+        "precise_seconds": 370,
+        "team": "Black Team",
+        "description": "Goalkeeper makes a point-blank save from a tight angle.",
+        "clip_start_time": "06:00",
+        "event_timing_in_clip": "10s",
+        "evidence": "10s: The red team's goalkeeper makes a point-blank save, blocking the shot.",
+        "source_clip": "clip_06m00s.mp4",
+        "confidence": "HIGH"
+      },
+      {
+        "precise_timestamp": "07:56",
+        "precise_seconds": 476,
+        "team": "Black Team",
+        "description": "Goalkeeper makes a diving save to his left.",
+        "clip_start_time": "07:45",
+        "event_timing_in_clip": "11s",
+        "evidence": "11s: The red goalkeeper makes a diving save to his left.",
+        "source_clip": "clip_07m45s.mp4",
+        "confidence": "HIGH"
+      },
+      {
+        "precise_timestamp": "09:35",
+        "precise_seconds": 575,
+        "team": "Red Team",
+        "description": "Powerful volley from outside the box is saved.",
+        "clip_start_time": "09:30",
+        "event_timing_in_clip": "5s",
+        "evidence": "5s: The black team's goalkeeper makes a diving save to his right.",
+        "source_clip": "clip_09m30s.mp4",
+        "confidence": "HIGH"
+      },
+      {
+        "precise_timestamp": "12:20",
+        "precise_seconds": 740,
+        "team": "Red Team",
+        "description": "Goalkeeper saves shot from edge of the box.",
+        "clip_start_time": "12:15",
+        "event_timing_in_clip": "5s",
+        "evidence": "5s: The black team's goalkeeper dives to make a save, but the ball deflects back into the box.",
+        "source_clip": "clip_12m15s.mp4",
+        "confidence": "HIGH"
+      }
+    ],
+    "shots_missed": [
+      {
+        "precise_timestamp": "03:42",
+        "precise_seconds": 222,
+        "team": "Black Team",
+        "description": "Direct free kick goes wide of the post.",
+        "clip_start_time": "03:30",
+        "event_timing_in_clip": "12s",
+        "evidence": "12s: The shot goes wide of the red team's left post for a goal kick.",
+        "source_clip": "clip_03m30s.mp4",
+        "confidence": "HIGH"
+      },
+      {
+        "precise_timestamp": "04:49",
+        "precise_seconds": 289,
+        "team": "Black Team",
+        "description": "Header from a free kick goes over the crossbar.",
+        "clip_start_time": "04:45",
+        "event_timing_in_clip": "4s",
+        "evidence": "4s: The headed shot travels over the crossbar and out of play.",
+        "source_clip": "clip_04m45s.mp4",
+        "confidence": "HIGH"
+      },
+      {
+        "precise_timestamp": "11:26",
+        "precise_seconds": 686,
+        "team": "Black Team",
+        "description": "First-time shot from through-ball goes wide.",
+        "clip_start_time": "11:15",
+        "event_timing_in_clip": "11s",
+        "evidence": "11s: The ball goes wide of the far post for a goal kick.",
+        "source_clip": "clip_11m15s.mp4",
+        "confidence": "HIGH"
+      }
+    ],
+    "shots_blocked": [
+      {
+        "precise_timestamp": "04:45",
+        "precise_seconds": 285,
+        "team": "Black Team",
+        "description": "Direct free kick is blocked by the defensive wall.",
+        "clip_start_time": "04:30",
+        "event_timing_in_clip": "15s",
+        "evidence": "15s: The ball strikes a player in the red team's wall and is blocked.",
+        "source_clip": "clip_04m30s.mp4",
+        "confidence": "HIGH"
+      }
+    ],
+    "summary": {
+      "total_goals": 3,
+      "total_shots": 11,
+      "goals_breakdown": {
+        "Black Team": 1,
+        "Red Team": 2
+      },
+      "shots_breakdown": {
+        "saved": 4,
+        "missed": 3,
+        "blocked": 1,
+        "goals": 3
+      },
+      "analysis_method": "Precise timing extraction from enhanced AI clips",
+      "time_period_analyzed": "First 15 minutes (0:00-15:00)"
+    }
+  },
+  "source_clips": [
+    "clip_00m00s.mp4",
+    "clip_00m15s.mp4",
+    "clip_00m30s.mp4",
+    "clip_00m45s.mp4",
+    "clip_01m00s.mp4",
+    "clip_01m15s.mp4",
+    "clip_01m30s.mp4",
+    "clip_01m45s.mp4",
+    "clip_02m00s.mp4",
+    "clip_02m15s.mp4",
+    "clip_02m30s.mp4",
+    "clip_02m45s.mp4",
+    "clip_03m00s.mp4",
+    "clip_03m15s.mp4",
+    "clip_03m30s.mp4",
+    "clip_03m45s.mp4",
+    "clip_04m00s.mp4",
+    "clip_04m15s.mp4",
+    "clip_04m30s.mp4",
+    "clip_04m45s.mp4",
+    "clip_05m00s.mp4",
+    "clip_05m15s.mp4",
+    "clip_05m30s.mp4",
+    "clip_05m45s.mp4",
+    "clip_06m00s.mp4",
+    "clip_06m15s.mp4",
+    "clip_06m30s.mp4",
+    "clip_06m45s.mp4",
+    "clip_07m00s.mp4",
+    "clip_07m15s.mp4",
+    "clip_07m30s.mp4",
+    "clip_07m45s.mp4",
+    "clip_08m00s.mp4",
+    "clip_08m15s.mp4",
+    "clip_08m30s.mp4",
+    "clip_08m45s.mp4",
+    "clip_09m00s.mp4",
+    "clip_09m15s.mp4",
+    "clip_09m30s.mp4",
+    "clip_09m45s.mp4",
+    "clip_10m00s.mp4",
+    "clip_10m15s.mp4",
+    "clip_10m30s.mp4",
+    "clip_10m45s.mp4",
+    "clip_11m00s.mp4",
+    "clip_11m15s.mp4",
+    "clip_11m30s.mp4",
+    "clip_11m45s.mp4",
+    "clip_12m00s.mp4",
+    "clip_12m15s.mp4",
+    "clip_12m30s.mp4",
+    "clip_12m45s.mp4",
+    "clip_13m00s.mp4",
+    "clip_13m15s.mp4",
+    "clip_13m30s.mp4",
+    "clip_13m45s.mp4",
+    "clip_14m00s.mp4",
+    "clip_14m15s.mp4",
+    "clip_14m30s.mp4",
+    "clip_14m45s.mp4"
+  ]
+}

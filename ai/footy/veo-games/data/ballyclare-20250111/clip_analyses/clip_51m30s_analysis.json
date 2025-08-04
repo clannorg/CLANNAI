@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_51m30s.mp4",
+  "start_seconds": 3090,
+  "end_seconds": 3105,
+  "duration": 15,
+  "timestamp": "51:30",
+  "analysis_timestamp": "2025-07-31T20:27:33.905705",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main action description:**\nPlayers are participating in a pre-game warm-up on an artificial turf pitch. The main focus is a shooting drill by players in red jerseys, passing amongst themselves before taking a long-range shot.\n\n**Key timing estimates:**\n*   **1s:** A red-shirted player makes a short pass to a teammate in the center of the pitch.\n*   **3s:** The teammate receives the pass near the top of the center circle.\n*   **8s:** After a controlling touch, the player in red takes a shot on goal (off-screen to the left).\n*   **13s:** The camera pan reveals another group of players in orange bibs warming up on the right side of the field.",
+  "processing_time_seconds": 20.416478633880615,
+  "status": "success"
+}

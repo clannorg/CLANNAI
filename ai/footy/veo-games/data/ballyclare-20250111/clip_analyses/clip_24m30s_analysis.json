@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_24m30s.mp4",
+  "start_seconds": 1470,
+  "end_seconds": 1485,
+  "duration": 15,
+  "timestamp": "24:30",
+  "analysis_timestamp": "2025-07-31T20:26:23.380996",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football action in the clip.\n\n**Main Action Description**\nThe black team attempts a long, direct pass forward from their own half to start an attack. The red team's defense intercepts the initial pass, but a red player then commits a foul while challenging for the second ball, resulting in a free kick for the black team.\n\n**Key Timing Estimates**\n*   **2s:** A player from the black team plays a long, aerial pass forward from just inside their own half.\n*   **3s:** A red defender positioned near the center circle wins the header and clears the ball.\n*   **5s:** A black player successfully controls the cleared ball in the midfield.\n*   **7s:** A red player fouls the black player in possession, and the referee blows the whistle for a free kick.\n*   **11s:** Play is stopped as the black team prepares to take the free kick.",
+  "processing_time_seconds": 19.618611335754395,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_93m30s.mp4",
+  "start_seconds": 5610,
+  "end_seconds": 5625,
+  "duration": 15,
+  "timestamp": "93:30",
+  "analysis_timestamp": "2025-07-31T20:32:42.086910",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe play is contested in the midfield as the red team wins possession but quickly loses it. The black team then attempts a long, ambitious forward pass which is overhit and goes out of play.\n\n**Key Timing Estimates:**\n*   **2s**: Red player #8 wins a loose ball in the center circle following a tackle.\n*   **5s**: The red team's subsequent forward pass is intercepted by a black defender.\n*   **11s**: After a short back pass, a black player attempts a long, diagonal switch of play.\n*   **13s**: The long pass is unsuccessful and goes out of bounds for a red team throw-in.",
+  "processing_time_seconds": 29.49286699295044,
+  "status": "success"
+}

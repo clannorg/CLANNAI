@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_06m15s.mp4",
+  "start_seconds": 375,
+  "end_seconds": 390,
+  "duration": 15,
+  "timestamp": "06:15",
+  "analysis_timestamp": "2025-07-31T20:23:35.978160",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the football clip provided.\n\n### Football Clip Analysis\n\nThe black team plays out from the back, but the red team intercepts the ball in the midfield. The black team immediately wins possession back and launches a long pass forward into the attacking half.\n\n*   **3s:** The black team's goalkeeper plays a short pass to a defender just outside the penalty area.\n*   **5s:** A red player intercepts the black team's forward pass near the center circle.\n*   **8s:** A black player makes a tackle and regains possession in his own half.\n*   **11s:** The black player plays a long, high pass forward toward the right wing.\n*   **14s:** The ball travels over the red defense as a black attacker and red defender run to compete for it.",
+  "processing_time_seconds": 19.089454889297485,
+  "status": "success"
+}

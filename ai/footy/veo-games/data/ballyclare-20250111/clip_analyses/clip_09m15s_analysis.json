@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_09m15s.mp4",
+  "start_seconds": 555,
+  "end_seconds": 570,
+  "duration": 15,
+  "timestamp": "09:15",
+  "analysis_timestamp": "2025-07-31T20:23:56.753962",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe clip begins with a contested ball in midfield, which the Red team wins. They then establish controlled possession in their own half, passing between defenders on the left side before moving the ball into the center to begin building an attack.\n\n**Key Timing Estimates:**\n- **3s:** A Black player brings an aerial ball under control in the midfield.\n- **5s:** A Red player wins the ball with a tackle and passes it back to a defender.\n- **8s:** The Red team circulates possession amongst their defenders on the left side of the pitch.\n- **12s:** A Red defender plays a forward pass to a teammate on the left wing.\n- **14s:** The Red winger makes a short pass infield to a central midfielder.",
+  "processing_time_seconds": 21.22918677330017,
+  "status": "success"
+}

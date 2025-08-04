@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_109m15s.mp4",
+  "start_seconds": 6555,
+  "end_seconds": 6570,
+  "duration": 15,
+  "timestamp": "109:15",
+  "analysis_timestamp": "2025-07-31T20:24:18.859293",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a detailed analysis of the football clip.\n\n**Main action description:**\nThe black team sets up to take a corner kick from the right-hand side, while the red team organizes its defense inside the penalty area. The referee and an assistant are managing the players from both sides as they jostle for position before the kick.\n\n**Key timing estimates:**\n*   **1s:** The scene opens with the black team positioned to take a corner kick.\n*   **4s:** The referee is centered in the penalty area, managing the players and ensuring fair positioning.\n*   **8s:** The camera slowly pans to the left, showing more of the red team's defensive line across the six-yard box.\n*   **12s:** Players from both teams continue to adjust their positions in anticipation of the corner being taken.",
+  "processing_time_seconds": 22.62662172317505,
+  "status": "success"
+}

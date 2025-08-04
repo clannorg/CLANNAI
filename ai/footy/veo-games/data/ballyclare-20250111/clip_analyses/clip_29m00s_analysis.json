@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_29m00s.mp4",
+  "start_seconds": 1740,
+  "end_seconds": 1755,
+  "duration": 15,
+  "timestamp": "29:00",
+  "analysis_timestamp": "2025-07-31T20:26:23.875201",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the key events in the football clip.\n\n**Main Action Description:**\nThe black team builds possession slowly from their defensive half. The ball is passed from the center to the left wing, where the attacking player is immediately challenged near the touchline.\n\n**Key Timing Estimates:**\n*   **7s:** The black player wearing number 4 receives a pass from a teammate in his own half.\n*   **11s:** After dribbling forward, the number 4 player passes the ball wide to a teammate on the left wing.\n*   **14s:** The black winger receives the pass and is immediately pressured by a closing red defender.",
+  "processing_time_seconds": 19.988763332366943,
+  "status": "success"
+}

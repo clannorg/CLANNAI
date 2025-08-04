@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_44m15s.mp4",
+  "start_seconds": 2655,
+  "end_seconds": 2670,
+  "duration": 15,
+  "timestamp": "44:15",
+  "analysis_timestamp": "2025-07-31T20:27:16.938937",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here's a breakdown of the action in this football clip.\n\nThe video shows two teams conducting pre-match warm-ups on opposite sides of the field. The black team (wearing orange bibs) is performing a coordinated passing drill on the right half, while the red team is casually passing the ball on the left.\n\n- **1s:** The scene opens on a wide view of the pitch with both teams warming up.\n- **5s:** A player from the black team (in orange bibs) makes a short pass forward to a teammate on the right side.\n- **9s:** The receiving player passes the ball back to a third teammate who has moved into the space.\n- **12s:** That player immediately completes a one-touch pass to another teammate within their passing drill formation.\n- **14s:** The black team continues to circulate the ball amongst themselves as part of their warm-up routine.",
+  "processing_time_seconds": 25.574222087860107,
+  "status": "success"
+}

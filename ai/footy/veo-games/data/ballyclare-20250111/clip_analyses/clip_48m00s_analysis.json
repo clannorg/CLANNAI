@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_48m00s.mp4",
+  "start_seconds": 2880,
+  "end_seconds": 2895,
+  "duration": 15,
+  "timestamp": "48:00",
+  "analysis_timestamp": "2025-07-31T20:27:23.568945",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe clip shows players warming up before a match, with no active game in progress. A small group of players in orange bibs on the right side of the field casually passes a ball amongst themselves.\n\n**Key Timing Estimates**\n*   **4s:** A player in an orange bib and blue top walks towards a ball near the center circle.\n*   **8s:** The player passes the ball to a teammate in an orange bib to his right.\n*   **13s:** The receiving player makes a short pass to another teammate in an orange bib.",
+  "processing_time_seconds": 23.28967046737671,
+  "status": "success"
+}

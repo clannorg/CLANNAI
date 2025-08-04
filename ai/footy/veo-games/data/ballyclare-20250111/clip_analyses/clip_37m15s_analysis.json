@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_37m15s.mp4",
+  "start_seconds": 2235,
+  "end_seconds": 2250,
+  "duration": 15,
+  "timestamp": "37:15",
+  "analysis_timestamp": "2025-07-31T20:26:52.414528",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the 15-second football clip.\n\n### Football Match Analysis\n\n**Main Action Description:**\nThe red team prepares to take a free-kick from a dangerous position just outside the right side of the penalty area. The black team organizes a defensive wall and marks players in the box, with the clip ending as the red player strikes the ball towards goal.\n\n**Key Timing Estimates:**\n*   **0s - 4s:** The referee instructs the black team's defensive wall, ensuring they are the correct distance from the ball.\n*   **5s - 12s:** The red team players finalize their positions around the box, while the taker stands over the ball, preparing for the kick.\n*   **14s:** The red player runs up and strikes the free-kick with their right foot, aiming it towards the goal.",
+  "processing_time_seconds": 15.138718843460083,
+  "status": "success"
+}

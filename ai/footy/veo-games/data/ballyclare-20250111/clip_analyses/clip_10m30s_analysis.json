@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_10m30s.mp4",
+  "start_seconds": 630,
+  "end_seconds": 645,
+  "duration": 15,
+  "timestamp": "10:30",
+  "analysis_timestamp": "2025-07-31T20:24:15.865850",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team attempts to build play from their defense but struggles under the organized high press from the red team. This pressure forces an errant long pass, which is intercepted by a red midfielder who regains possession for their team near the halfway line.\n\n**Key Timing Estimates:**\n*   **2s:** A black central defender receives a pass just inside his team's half.\n*   **7s:** Under pressure, a black midfielder passes the ball back towards his own goal to a defender.\n*   **11s:** The black defender attempts a long, driven pass forward to clear the danger.\n*   **13s:** A red team midfielder intercepts the pass near the center circle, winning possession.",
+  "processing_time_seconds": 17.83307385444641,
+  "status": "success"
+}

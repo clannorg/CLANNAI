@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_39m15s.mp4",
+  "start_seconds": 2355,
+  "end_seconds": 2370,
+  "duration": 15,
+  "timestamp": "39:15",
+  "analysis_timestamp": "2025-07-31T20:26:56.845488",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here's an analysis of the football clip provided.\n\nThe black team controls possession, patiently building an attack from their own half. They progress the ball through the midfield with several short passes before attempting a long, forward pass to the right flank.\n\n- **4s:** A black player in a deep position makes a pass into midfield.\n- **6s:** A black midfielder near the center circle receives the pass under pressure.\n- **9s:** The midfielder lays the ball off to another black player positioned further up the field.\n- **13s:** The black player launches a long, aerial pass over the red team's defense towards the right side of the pitch.",
+  "processing_time_seconds": 16.253918409347534,
+  "status": "success"
+}

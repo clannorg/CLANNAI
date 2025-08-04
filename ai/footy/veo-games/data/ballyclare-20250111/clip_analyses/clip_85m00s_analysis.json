@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_85m00s.mp4",
+  "start_seconds": 5100,
+  "end_seconds": 5115,
+  "duration": 15,
+  "timestamp": "85:00",
+  "analysis_timestamp": "2025-07-31T20:30:17.530066",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here's an analysis of the football clip.\n\nThe black team plays a long ball forward from their defense into the midfield. A red player challenges for the ball and commits a foul, resulting in the referee stopping play.\n\n- **2s:** A black team player kicks a long aerial pass upfield from just outside their penalty area.\n- **9s:** The ball is contested in the center of the pitch between a black player and a red player.\n- **10s:** The red player (No. 8) fouls the black player (No. 15) from behind.\n- **12s:** The referee blows the whistle and signals for a free kick to the black team.",
+  "processing_time_seconds": 19.73684573173523,
+  "status": "success"
+}

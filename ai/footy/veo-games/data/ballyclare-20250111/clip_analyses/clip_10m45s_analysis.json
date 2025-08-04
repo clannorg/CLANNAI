@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_10m45s.mp4",
+  "start_seconds": 645,
+  "end_seconds": 660,
+  "duration": 15,
+  "timestamp": "10:45",
+  "analysis_timestamp": "2025-07-31T20:24:16.633647",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a breakdown of the football clip.\n\n**Main Action Description**\nThe Black team attempts a quick forward pass from midfield, but it is intercepted by a Red defender. The Red team secures possession and begins building an attack by circulating the ball across their midfield.\n\n**Key Timing Estimates**\n*   **2s:** A Black team player receives the ball near the center circle.\n*   **5s:** The Black player attempts a forward pass into the Red team's half.\n*   **7s:** A Red team defender steps in to intercept the pass.\n*   **9s:** The Red defender passes the ball to a central midfielder.\n*   **11s:** The Red midfielder switches play with a pass to a teammate on the left.\n*   **14s:** The Red team maintains possession in midfield, looking to move forward.",
+  "processing_time_seconds": 17.859551906585693,
+  "status": "success"
+}

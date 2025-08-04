@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_44m45s.mp4",
+  "start_seconds": 2685,
+  "end_seconds": 2700,
+  "duration": 15,
+  "timestamp": "44:45",
+  "analysis_timestamp": "2025-07-31T20:27:17.255638",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe clip shows a pre-game warm-up session on a football pitch. A team in black (wearing orange bibs) is engaged in a close-control passing drill, while the camera performs a slow pan from right to left across the field.\n\n**Key Timing Estimates:**\n- **2s:** A player from the Black team passes the ball to a teammate in the center of their warm-up circle.\n- **4s:** The central player quickly passes the ball back out to another teammate on the perimeter of the circle.\n- **6s:** The camera begins to pan left, moving its focus away from the passing drill.\n- **9s:** The camera's view is now centered on the halfway line, showing two players from the Red team standing in the center circle.\n- **14s:** The pan continues, showing the left half of the pitch as the Black team's warm-up drill remains visible on the far right.",
+  "processing_time_seconds": 24.840928077697754,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_54m00s.mp4",
+  "start_seconds": 3240,
+  "end_seconds": 3255,
+  "duration": 15,
+  "timestamp": "54:00",
+  "analysis_timestamp": "2025-07-31T20:27:38.681476",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a breakdown of the 15-second football clip.\n\n### Main Action Description\nThe clip shows a team wearing orange training bibs engaged in a casual passing warm-up in the center of the field. They are organized in a small group, keeping possession with simple passes while another teammate passes a separate ball nearby.\n\n### Key Timing Estimates\n*   **1s:** A player in the central group passes the ball to a teammate to his right.\n*   **4s:** The ball is passed back to the center of the small group.\n*   **8s:** A player further left on the pitch passes a different ball towards the central area.\n*   **10s:** Within the main passing drill, the ball is moved to a teammate on the right side of the group.\n*   **13s:** The ball is passed back towards the middle of the warm-up circle.",
+  "processing_time_seconds": 16.894372940063477,
+  "status": "success"
+}

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_98m30s.mp4",
+  "start_seconds": 5910,
+  "end_seconds": 5925,
+  "duration": 15,
+  "timestamp": "98:30",
+  "analysis_timestamp": "2025-07-31T20:34:18.120358",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Here is a breakdown of the key events in this football clip.\n\n**Main action description:**\nThe red team initiates play from the center, passing back to their defense before attempting a long ball forward. The black team's defense effectively counters the attack, winning the crucial header to regain control of the ball.\n\n**Key timing estimates:**\n\n*   **1s:** The red team starts play from the center circle with a short pass backward.\n*   **5s:** After circulating the ball, a red defender on the right passes it across to a teammate on the left.\n*   **9s:** The red defender launches a long, high pass forward towards the right attacking channel.\n*   **12s:** A black defender outjumps the red attacker and wins the header, clearing the danger.\n*   **14s:** The black team secures the loose ball in their defensive third.",
+  "processing_time_seconds": 125.38402462005615,
+  "status": "success"
+}

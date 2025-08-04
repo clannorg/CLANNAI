@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_103m30s.mp4",
+  "start_seconds": 6210,
+  "end_seconds": 6225,
+  "duration": 15,
+  "timestamp": "103:30",
+  "analysis_timestamp": "2025-07-31T20:23:56.000321",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent. Here is a detailed analysis of the football clip provided.\n\n**Main Action Description:**\nThe black team orchestrates a quick attack, playing a pass into the penalty area for a forward who takes a shot from the left side. The red team's goalkeeper makes a crucial diving save to deny the scoring opportunity.\n\n**Key Timing Estimates:**\n*   **1s:** A black team player makes a pass forward into the penalty area.\n*   **2s:** A black attacker runs onto the pass, taking control of the ball inside the box.\n*   **4s:** The black attacker takes a shot on goal from a tight angle.\n*   **5s:** The red team's goalkeeper makes a diving save to his right, pushing the ball away.\n*   **6s - 15s:** The ball is loose in the penalty area as players from both teams converge on it, reacting to the rebound from the save.",
+  "processing_time_seconds": 17.530397415161133,
+  "status": "success"
+}

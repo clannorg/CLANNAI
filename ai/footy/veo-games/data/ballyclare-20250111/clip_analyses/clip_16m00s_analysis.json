@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_16m00s.mp4",
+  "start_seconds": 960,
+  "end_seconds": 975,
+  "duration": 15,
+  "timestamp": "16:00",
+  "analysis_timestamp": "2025-07-31T20:24:40.135659",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe red team intercepts a pass in midfield and launches a quick counter-attack down the right flank. This leads to a shot from inside the penalty area, which is saved by the black team's goalkeeper.\n\n**Key Timing Estimates**\n*   **2s:** A red player intercepts a pass from the black team just inside their own half.\n*   **4s:** The red player immediately plays a long, diagonal pass forward to a teammate on the right wing.\n*   **7s:** The red attacker controls the ball and cuts inside toward the penalty box.\n*   **10s:** The attacker takes a left-footed shot from just inside the penalty area.\n*   **11s:** The black team's goalkeeper makes a diving save to his right, parrying the ball away.\n*   **13s:** The ball rebounds towards the left side of the box, with another red player running in to follow up.",
+  "processing_time_seconds": 20.94224715232849,
+  "status": "success"
+}

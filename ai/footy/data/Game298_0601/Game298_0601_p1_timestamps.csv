@@ -1,0 +1,12 @@
+Timestamp,Label,Start_offset,End_offset,Description,Camera_view,Annotation_view
+0;40,Save,4,2,skip,,
+0;48,Goal!,5,3,,,
+2;52,Save,3,2,skip,,
+3;06,Goal!,5,3,,,
+4;25,Save,3,2,,,
+5;28,Shot,3,2,skip,,
+7;19,Save,3,2,,,
+7;43,Shot,4,2,skip,,
+11;00,Save,4,2,skip,,
+13;17,Shot,5,2,,,
+15;17,End,0,0,End of video!,,

@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_14m30s.mp4",
+  "start_seconds": 870,
+  "end_seconds": 885,
+  "duration": 15,
+  "timestamp": "14:30",
+  "analysis_timestamp": "2025-07-31T20:24:37.758571",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe Black team recycles possession under pressure, but their long ball forward is intercepted by the Red team. However, the Black team applies immediate pressure and wins the ball back in the center circle.\n\n- **2s:** A Black player under pressure passes the ball back toward his own half.\n- **7s:** A Red defender (#5) intercepts a long, diagonal pass from the Black team.\n- **11s:** A Black player wins the ball back with a strong tackle in the center circle.\n- **14s:** The Black team secures possession in midfield and begins to build a new attack.",
+  "processing_time_seconds": 21.12479519844055,
+  "status": "success"
+}

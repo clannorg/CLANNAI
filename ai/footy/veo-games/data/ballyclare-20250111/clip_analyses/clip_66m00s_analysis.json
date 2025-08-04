@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_66m00s.mp4",
+  "start_seconds": 3960,
+  "end_seconds": 3975,
+  "duration": 15,
+  "timestamp": "66:00",
+  "analysis_timestamp": "2025-07-31T20:29:35.155349",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the action in the video clip.\n\nThe black team initiates play with a long goal kick down the middle of the field. The red team wins the subsequent aerial duel in the midfield, securing possession and looking to build an attack.\n\n**Key Timing Estimates:**\n\n*   **7s:** The black team's goalkeeper takes a long goal kick.\n*   **10s:** A red player and a black player challenge for the high ball near the center circle.\n*   **11s:** The red player wins the header, flicking the ball forward into space.\n*   **13s:** A second red player runs onto the loose ball and takes control in the midfield.",
+  "processing_time_seconds": 21.03064775466919,
+  "status": "success"
+}

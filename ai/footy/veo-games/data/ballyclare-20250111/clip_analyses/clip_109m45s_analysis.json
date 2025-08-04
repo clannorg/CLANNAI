@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_109m45s.mp4",
+  "start_seconds": 6585,
+  "end_seconds": 6600,
+  "duration": 15,
+  "timestamp": "109:45",
+  "analysis_timestamp": "2025-07-31T20:24:18.901380",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Based on the 15-second clip provided, here is an analysis of the main action and key timings.\n\nThe clip shows the conclusion of a football match at night. Players from the red team and the dark-kitted team are walking on the pitch and shaking hands with each other in a show of sportsmanship after the final whistle.\n\n*   **2s:** The scene opens with players from both teams walking across the field after the match has finished.\n*   **6s:** Players from the opposing teams begin to converge and start the post-match handshakes.\n*   **8s:** A red player shakes hands with the opposing team's goalkeeper (in yellow).\n*   **13s:** The process of shaking hands continues as players from both teams intermingle and begin to walk off the pitch.",
+  "processing_time_seconds": 22.14726710319519,
+  "status": "success"
+}

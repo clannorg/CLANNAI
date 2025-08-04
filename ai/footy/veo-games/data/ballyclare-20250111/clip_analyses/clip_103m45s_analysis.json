@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_103m45s.mp4",
+  "start_seconds": 6225,
+  "end_seconds": 6240,
+  "duration": 15,
+  "timestamp": "103:45",
+  "analysis_timestamp": "2025-07-31T20:24:01.363327",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description**\nThe clip captures the moments after a goal has been scored, with players from both the red and black teams resetting their positions. While a stadium announcement is made, the black team's number 10 player acknowledges the crowd with a celebratory gesture.\n\n**Key Timing Estimates**\n*   **0-9s**: Players from both teams casually walk back into their respective halves of the field.\n*   **7s**: A stadium announcer can be heard, seemingly naming the \"man of the match\".\n*   **12s**: The black team's number 10 player turns towards the crowd and raises his arms in a wide, celebratory pose.\n*   **14s**: The same player gives a thumbs-up gesture.",
+  "processing_time_seconds": 22.125460147857666,
+  "status": "success"
+}

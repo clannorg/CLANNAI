@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_55m45s.mp4",
+  "start_seconds": 3345,
+  "end_seconds": 3360,
+  "duration": 15,
+  "timestamp": "55:45",
+  "analysis_timestamp": "2025-07-31T20:27:46.122009",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is an analysis of the football clip.\n\n**Main Action Description:**\nThe scene shows a low-intensity moment, likely a pre-game warm-up. Players from the black/green team are casually passing the ball between themselves in their own half, while players from the red team are scattered and not applying any pressure.\n\n**Key Timing Estimates:**\n*   **1s:** A player from the red team, who was sitting on the pitch, gets to his feet.\n*   **5s:** A player in a black/green kit receives a slow pass on the left side of the field.\n*   **8s:** The black/green player makes a simple ground pass forward to a teammate.\n*   **12s:** The teammate plays a one-touch return pass back to the first player.\n*   **14s:** The first player controls the return pass, continuing the relaxed possession sequence.",
+  "processing_time_seconds": 21.48521327972412,
+  "status": "success"
+}

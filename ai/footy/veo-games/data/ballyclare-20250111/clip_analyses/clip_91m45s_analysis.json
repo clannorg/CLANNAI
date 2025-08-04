@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_91m45s.mp4",
+  "start_seconds": 5505,
+  "end_seconds": 5520,
+  "duration": 15,
+  "timestamp": "91:45",
+  "analysis_timestamp": "2025-07-31T20:30:36.077381",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the 15-second football clip.\n\n**Main Action Description:**\nThe clip shows a stoppage in play, likely due to an injury. Players from the red team are gathered with an official around a downed player near their own penalty area, while the black team waits for the game to restart.\n\n**Key Timing Estimates:**\n\n*   **1s:** The scene opens with play already halted. A group of players, mostly from the red team, are clustered on the edge of the penalty box.\n*   **5s:** Players from both teams are spread out across the pitch, waiting for the situation to be resolved.\n*   **10s:** The black team's player #29 stands alone near the center circle.\n*   **14s:** The situation remains static, with no active play occurring as the clip ends.",
+  "processing_time_seconds": 20.664501667022705,
+  "status": "success"
+}

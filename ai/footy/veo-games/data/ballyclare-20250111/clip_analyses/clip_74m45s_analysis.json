@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_74m45s.mp4",
+  "start_seconds": 4485,
+  "end_seconds": 4500,
+  "duration": 15,
+  "timestamp": "74:45",
+  "analysis_timestamp": "2025-07-31T20:29:50.966430",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe black team maintains possession in their own half, circulating the ball across their backline from right to left. The red team holds a disciplined defensive shape, waiting for the black team to advance further up the pitch.\n\n- **1s:** The black player on the right passes the ball backwards towards the center circle.\n- **4s:** The central black player passes the ball laterally to a teammate on the left side of the pitch.\n- **7s:** The ball is passed back towards the center of the field to another black player.\n- **10s:** The black team switches play to their player positioned wide on the left touchline.\n- **14s:** The black player on the left touchline controls the ball and assesses forward options as the clip ends.",
+  "processing_time_seconds": 17.725102186203003,
+  "status": "success"
+}

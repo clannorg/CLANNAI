@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_00m30s.mp4",
+  "start_seconds": 30,
+  "end_seconds": 45,
+  "duration": 15,
+  "timestamp": "00:30",
+  "analysis_timestamp": "2025-07-31T20:23:35.524656",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\n**Main Action Description:**\nThe black team controls possession in their own half, methodically building an attack. They work the ball from the right flank into the center before executing a long switch of play back to the right wing to advance into the opponent's territory.\n\n**Key Timing Estimates:**\n*   **1s**: A black defender (No. 4) receives the ball on the right side of the pitch.\n*   **5s**: The defender passes the ball forward to a central midfielder (No. 7).\n*   **7s**: The midfielder plays a first-time pass to another central player.\n*   **11s**: The player in the center of the pitch plays a long diagonal pass out to the right wing.\n*   **13s**: The black winger on the far side successfully controls the long pass.",
+  "processing_time_seconds": 18.649709463119507,
+  "status": "success"
+}

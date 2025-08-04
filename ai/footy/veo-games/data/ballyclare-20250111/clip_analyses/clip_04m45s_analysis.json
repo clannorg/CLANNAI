@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_04m45s.mp4",
+  "start_seconds": 285,
+  "end_seconds": 300,
+  "duration": 15,
+  "timestamp": "04:45",
+  "analysis_timestamp": "2025-07-31T20:23:35.352335",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a breakdown of the football clip.\n\nThe black team attempts a short free-kick routine just outside the penalty area, but the red team's defense quickly closes down and blocks the shot, clearing the ball to safety.\n\n**Key Timings:**\n*   **0s:** The black team is positioned for a free-kick just outside the red team's penalty area.\n*   **1s:** The black player takes the free-kick, passing it short to a teammate to the left.\n*   **3s:** A red defender rushes out from the penalty area and successfully blocks the subsequent shot attempt.\n*   **4s:** The ball is cleared away from the penalty box, ending the immediate scoring threat.\n*   **6s - 15s:** Players from both teams move away from the set-piece positions as the play shifts towards midfield.",
+  "processing_time_seconds": 18.466089010238647,
+  "status": "success"
+}

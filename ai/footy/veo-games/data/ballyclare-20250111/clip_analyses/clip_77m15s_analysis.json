@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_77m15s.mp4",
+  "start_seconds": 4635,
+  "end_seconds": 4650,
+  "duration": 15,
+  "timestamp": "77:15",
+  "analysis_timestamp": "2025-07-31T20:29:58.208237",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course. Here is a breakdown of the football clip.\n\nThe black team attempts to move the ball forward from midfield but is met with an aggressive press from the red team. A challenge near the center circle results in a foul being awarded to the black team.\n\n- **2s:** A black player in the center circle plays a forward pass to a teammate.\n- **5s:** The red team presses high, and the ball becomes contested just inside their half.\n- **8s:** Black player #34 gathers the loose ball on the left side of the pitch.\n- **11s:** A red player commits a tackle on black player #34, bringing him to the ground.\n- **13s:** The referee signals for a foul, awarding a free-kick to the black team.",
+  "processing_time_seconds": 21.48114848136902,
+  "status": "success"
+}

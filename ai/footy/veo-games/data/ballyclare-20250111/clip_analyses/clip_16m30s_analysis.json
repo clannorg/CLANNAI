@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_16m30s.mp4",
+  "start_seconds": 990,
+  "end_seconds": 1005,
+  "duration": 15,
+  "timestamp": "16:30",
+  "analysis_timestamp": "2025-07-31T20:24:35.296792",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Excellent! Here is a detailed analysis of the 15-second football clip.\n\n**Main Action Description:**\nThe black team initiates play from a free kick inside their own half, opting for a short pass to maintain possession. They then build up play slowly through the midfield, while the red team holds a structured defensive shape without applying significant pressure.\n\n**Key Timing Estimates:**\n*   **2s:** The black team is positioned to take a free kick from just inside their own half, near the center circle.\n*   **5s:** The free kick is taken with a short, simple pass sideways to a teammate, indicating a desire to control possession.\n*   **9s:** The ball is passed forward to another black player in the center of the pitch.\n*   **13s:** The black team continues to circulate the ball calmly in the midfield, probing the red team's defensive setup.",
+  "processing_time_seconds": 15.062466144561768,
+  "status": "success"
+}

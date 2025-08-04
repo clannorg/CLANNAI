@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_101m15s.mp4",
+  "start_seconds": 6075,
+  "end_seconds": 6090,
+  "duration": 15,
+  "timestamp": "101:15",
+  "analysis_timestamp": "2025-07-31T20:23:54.220450",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "Of course! Here is a detailed analysis of the football clip.\n\n**Main Action Description:**\nThe red team initiates an attack with a long throw-in from the left sideline, which is directed into the penalty area. After an initial defensive header by the black team, the ball drops loose, leading to a powerful shot from a red player that is bravely blocked by a black defender.\n\n**Key Timing Estimates:**\n*   **3s:** The red player takes a long throw-in, launching the ball towards the goal.\n*   **5s:** A black defender positioned near the six-yard box wins the aerial duel, heading the ball away.\n*   **8s:** Following a brief scramble, a black player pokes the loose ball away from the immediate danger zone.\n*   **13s:** A red player runs onto the cleared ball and strikes a powerful, first-time shot from just inside the penalty area.\n*   **14s:** A black defender makes a crucial block, stopping the shot with their body.",
+  "processing_time_seconds": 17.893946409225464,
+  "status": "success"
+}

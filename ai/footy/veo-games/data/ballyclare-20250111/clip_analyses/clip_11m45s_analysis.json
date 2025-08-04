@@ -1,0 +1,12 @@
+{
+  "clip_filename": "clip_11m45s.mp4",
+  "start_seconds": 705,
+  "end_seconds": 720,
+  "duration": 15,
+  "timestamp": "11:45",
+  "analysis_timestamp": "2025-07-31T20:24:31.006734",
+  "gemini_model": "gemini-2.5-pro",
+  "events_analysis": "A red player commits a foul with a sliding tackle in the midfield, leading to a free-kick for the black team. The black team takes the free-kick quickly and maintains possession, circulating the ball in the middle of the pitch.\n\n**2s:** A black player receives a pass near the center circle.\n**6s:** Red player (#25) executes a sliding tackle on the black player on the halfway line.\n**8s:** The referee blows the whistle and signals for a foul against the red team.\n**11s:** The black team takes the free-kick and passes the ball sideways to a teammate in midfield.\n**14s:** The black team continues to pass the ball around the center circle, controlling possession.",
+  "processing_time_seconds": 18.9646213054657,
+  "status": "success"
+}
