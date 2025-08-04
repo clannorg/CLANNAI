@@ -1,4 +1,5 @@
 const express = require('express');
+const { Pool } = require('pg');
 const { authenticateToken } = require('../middleware/auth');
 const { 
   getTeamByCode, 
@@ -8,6 +9,16 @@ const {
   createTeam,
   isTeamMember 
 } = require('../utils/database');
+
+// Initialize database pool
+const isAWSRDS = process.env.DATABASE_URL && process.env.DATABASE_URL.includes('rds.amazonaws.com');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: isAWSRDS ? { 
+    rejectUnauthorized: false,
+    require: true 
+  } : false
+});
 
 const router = express.Router();
 
@@ -64,7 +75,7 @@ router.post('/join-by-code', authenticateToken, async (req, res) => {
 
     // Find team by invite code
     const teamResult = await pool.query(
-      'SELECT id, name, invite_code FROM teams WHERE invite_code = $1',
+      'SELECT id, name, team_code FROM teams WHERE team_code = $1',
       [inviteCode]
     );
 
@@ -95,7 +106,7 @@ router.post('/join-by-code', authenticateToken, async (req, res) => {
       team: {
         id: team.id,
         name: team.name,
-        invite_code: team.invite_code
+        team_code: team.team_code
       }
     });
   } catch (error) {

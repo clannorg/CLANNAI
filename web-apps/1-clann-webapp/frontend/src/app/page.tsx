@@ -61,6 +61,7 @@ export default function Home() {
     const errorMsg = searchParams.get('error')
 
     if (join) {
+      console.log('🔗 Join code detected in URL:', join)
       setJoinCode(join)
       
       // Fetch team info for the banner
@@ -130,6 +131,7 @@ export default function Home() {
         // Check for join code in URL parameters first
         if (joinCode) {
           // Auto-join the team
+          console.log('🎯 Attempting to join team with code:', joinCode)
           try {
             const joinResponse = await fetch(`${API_BASE_URL}/api/teams/join-by-code`, {
               method: 'POST',
@@ -140,16 +142,21 @@ export default function Home() {
               body: JSON.stringify({ inviteCode: joinCode })
             })
             
+            console.log('🔍 Join response status:', joinResponse.status)
+            
             if (joinResponse.ok) {
               // Successfully joined, go to dashboard
+              console.log('✅ Successfully joined team!')
               window.location.href = '/dashboard'
             } else {
               // Failed to join, still go to dashboard but show error
               const joinError = await joinResponse.json()
+              console.error('❌ Failed to join team:', joinError)
               window.location.href = `/dashboard?error=${encodeURIComponent(joinError.error || 'Failed to join team')}`
             }
           } catch (error) {
             // Error joining, go to dashboard
+            console.error('🚨 Error during join process:', error)
             window.location.href = `/dashboard?error=${encodeURIComponent('Failed to join team')}`
           }
         } else {

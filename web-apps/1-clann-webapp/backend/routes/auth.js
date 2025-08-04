@@ -42,7 +42,14 @@ router.post('/register', async (req, res) => {
     // Auto-join user to all public teams (so they can see demo games)
     try {
       const { Pool } = require('pg');
-      const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+      const isAWSRDS = process.env.DATABASE_URL && process.env.DATABASE_URL.includes('rds.amazonaws.com');
+      const pool = new Pool({ 
+        connectionString: process.env.DATABASE_URL,
+        ssl: isAWSRDS ? { 
+          rejectUnauthorized: false,
+          require: true 
+        } : false
+      });
       
       const publicTeamsResult = await pool.query('SELECT id FROM teams WHERE is_public = true');
       
