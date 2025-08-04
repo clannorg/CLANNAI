@@ -716,8 +716,7 @@ export default function Home() {
             <div className="mt-6 p-4 bg-black/40 rounded-xl border border-gray-800/30">
               <p className="text-xs text-gray-400 mb-3 font-medium">Demo Credentials:</p>
               <div className="space-y-1">
-              <p className="text-xs text-gray-300">User: arsenal@demo.com / demo123</p>
-              <p className="text-xs text-gray-300">Company: admin@clann.ai / demo123</p>
+                              <p className="text-xs text-gray-300">Company: admin@clann.ai / demo123</p>
               </div>
             </div>
           </div>
