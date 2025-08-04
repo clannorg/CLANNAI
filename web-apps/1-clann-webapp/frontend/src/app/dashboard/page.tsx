@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
-import DashboardInsights from '@/components/dashboard/DashboardInsights'
+
 
 interface Game {
   id: string
@@ -374,13 +374,6 @@ export default function Dashboard() {
         {/* Content Area */}
         <div className="space-y-4">
 
-        {/* AI Insights Tab */}
-        {activeTab === 'insights' && (
-          <div className="bg-white rounded-xl shadow-sm p-6">
-            <DashboardInsights />
-          </div>
-        )}
-
         {/* Games Tab */}
         {activeTab === 'games' && (
           <div className="space-y-6">
@@ -677,118 +670,99 @@ export default function Dashboard() {
 
 
 
-        {/* Teams Tab */}
+        {/* Teams Tab - Simplified for Sharing */}
         {activeTab === 'teams' && (
-          teams.length === 0 ? (
-            <div className="bg-white rounded-lg border p-8 max-w-lg mx-auto text-center">
-              <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">No teams yet</h2>
-              <p className="text-gray-500 mb-8">Get started by joining or creating a team.</p>
-              
-              <div className="space-y-4">
-                <div className="bg-gray-50 rounded-lg p-6 border">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Join Team</h3>
-                  <p className="text-gray-600 mb-4">Enter a team code to join an existing team</p>
-                  <div className="flex gap-2">
-                                         <input
-                       type="text"
-                       placeholder="Enter team code (e.g., ARS269)"
-                       className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                       value={joinTeamCode}
-                       onChange={(e) => setJoinTeamCode(e.target.value)}
-                     />
-                    <button
-                      onClick={() => setShowJoinModal(true)}
-                      className="bg-[#016F32] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#016F32]/90"
-                    >
-                      Join
-                    </button>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-2">Demo codes: ARS269 • CHE277 • LIV297</p>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-6 border">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Create Team</h3>
-                  <p className="text-gray-600 mb-4">Enter a team name to create a new team</p>
-                  <div className="flex gap-2">
-                                         <input
-                       type="text"
-                       placeholder="Enter team name"
-                       className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                       value={createTeamName}
-                       onChange={(e) => setCreateTeamName(e.target.value)}
-                     />
-                    <button
-                      onClick={() => setShowCreateTeamModal(true)}
-                      className="bg-[#016F32] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#016F32]/90"
-                    >
-                      Create
-                    </button>
-                  </div>
-                </div>
-              </div>
+          <div className="bg-white rounded-xl shadow-sm">
+            <div className="p-6 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Team Sharing</h2>
+              <p className="text-gray-600">Share your team codes to invite others</p>
             </div>
-          ) : (
-            <div className="bg-white rounded-xl shadow-sm">
-              <div className="flex justify-between items-center p-6 border-b border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900">Your Teams</h2>
-                <div className="flex gap-2">
+            
+            <div className="p-6 space-y-6">
+              {/* Your Teams for Sharing */}
+              {teams.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Teams</h3>
+                  <div className="space-y-4">
+                    {teams.map((team: any) => (
+                      <div key={team.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-lg font-medium text-gray-900">{team.name}</h4>
+                          <span className="px-3 py-1 bg-[#016F32] text-white text-sm font-mono rounded-lg">
+                            {team.team_code}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="flex-1">
+                            <input
+                              type="text"
+                              value={`${window.location.origin}/join/${team.team_code}`}
+                              readOnly
+                              className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
+                            />
+                          </div>
+                          <button
+                            onClick={() => {
+                              navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
+                              const button = document.activeElement as HTMLButtonElement
+                              const originalText = button.textContent
+                              button.textContent = 'Copied!'
+                              button.classList.add('bg-green-600')
+                              setTimeout(() => {
+                                button.textContent = originalText
+                                button.classList.remove('bg-green-600')
+                              }, 2000)
+                            }}
+                            className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium"
+                          >
+                            Copy Link
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {/* Quick Actions */}
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                <div className="flex flex-wrap gap-3">
                   <button
                     onClick={() => setShowJoinModal(true)}
-                    className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 text-sm"
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50"
                   >
                     Join Team
                   </button>
                   <button
                     onClick={() => setShowCreateTeamModal(true)}
-                    className="bg-[#016F32] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#016F32]/90 text-sm"
+                    className="px-4 py-2 bg-[#016F32] text-white rounded-lg font-medium hover:bg-[#016F32]/90"
                   >
                     Create Team
                   </button>
                 </div>
-              </div>
-              <div className="p-6 space-y-4">
-                {teams.map((team: any) => (
-                  <div key={team.id} className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">{team.name}</h3>
-                    <div className="space-y-3">
-                    <p className="text-gray-600 text-sm">Join Code: <code className="bg-gray-200 px-2 py-1 rounded">{team.team_code}</code></p>
-                      <div className="flex items-center gap-3">
-                        <div className="flex-1">
-                          <p className="text-xs text-gray-500 mb-1">Share this link:</p>
-                          <input
-                            type="text"
-                            value={`${window.location.origin}/join/${team.team_code}`}
-                            readOnly
-                            className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
-                          />
-                        </div>
-                        <button
-                          onClick={() => {
-                            navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
-                            // Show temporary success feedback
-                            const button = document.activeElement as HTMLButtonElement
-                            const originalText = button.textContent
-                            button.textContent = 'Copied!'
-                            button.classList.add('bg-green-600', 'text-white')
-                            setTimeout(() => {
-                              button.textContent = originalText
-                              button.classList.remove('bg-green-600', 'text-white')
-                            }, 2000)
-                          }}
-                          className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium whitespace-nowrap"
-                        >
-                          Copy Link
-                        </button>
-                      </div>
-                    </div>
+                
+                {/* Demo codes for easy discovery */}
+                <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="text-sm text-blue-700 font-medium mb-1">Try these demo teams:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {['ARS269', 'CHE277', 'LIV297', 'TQJ105'].map(code => (
+                      <button
+                        key={code}
+                        onClick={() => {
+                          setJoinTeamCode(code)
+                          setShowJoinModal(true)
+                        }}
+                        className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded font-mono hover:bg-blue-200"
+                      >
+                        {code}
+                      </button>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
-          )
+          </div>
         )}
       </div>
 
@@ -1032,7 +1006,7 @@ export default function Dashboard() {
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200/20">
         <div className="flex justify-center">
           <div className="flex">
-            {(['games', 'insights', 'teams'] as const).map((tab) => (
+            {(['games', 'teams'] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -1042,7 +1016,7 @@ export default function Dashboard() {
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
-                {tab === 'games' ? 'My Games' : tab === 'insights' ? 'AI Insights' : 'Teams'}
+                {tab === 'games' ? 'My Games' : 'Teams'}
               </button>
             ))}
           </div>
