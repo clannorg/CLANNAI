@@ -215,7 +215,7 @@ export default function Dashboard() {
             return
           }
         }
-              } else {
+      } else {
         // Use first existing team if user didn't specify team name
         selectedTeam = teams[0]
       }
@@ -543,56 +543,56 @@ export default function Dashboard() {
                   >
                     <div className="space-y-4">
                       <div 
-                        onClick={() => router.push(`/games/${game.id}`)}
+                    onClick={() => router.push(`/games/${game.id}`)}
                         className="flex justify-between items-start cursor-pointer"
-                      >
-                        <div className="space-y-3 min-w-0 flex-1 mr-4">
-                          <h3 className="text-xl font-bold truncate">{game.title}</h3>
-                          
-                          <div className="space-y-2 text-sm text-gray-600">
-                            <div className="flex items-center gap-2">
-                              <span className="flex-shrink-0">⚽</span>
-                              <span className="truncate">Team: {game.team_name}</span>
-                            </div>
-                            
-                            <div className="flex items-center gap-2">
-                              <span className="flex-shrink-0">📅</span>
-                              <span className="truncate">{new Date(game.created_at).toLocaleDateString()}</span>
-                            </div>
-                            
-                            {game.video_url && (
-                              <div className="flex items-center gap-2">
-                                <span className="flex-shrink-0">🎥</span>
-                                <a
-                                  href={game.video_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-[#016F32] hover:underline truncate"
-                                  onClick={(e) => e.stopPropagation()}
-                                >
-                                  VEO Footage
-                                </a>
-                              </div>
-                            )}
-                          </div>
-                        </div>
+                  >
+                      <div className="space-y-3 min-w-0 flex-1 mr-4">
+                        <h3 className="text-xl font-bold truncate">{game.title}</h3>
                         
-                        <div className="flex-shrink-0 flex flex-col items-end gap-2">
-                          <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${
-                            game.status === 'analyzed'
-                              ? 'bg-green-500/20 text-green-600 border border-green-500/30'
-                              : 'bg-yellow-500/20 text-yellow-600 border border-yellow-500/30'
-                          }`}>
-                            {game.status.toUpperCase()}
-                            {game.status === 'analyzed' && <span className="text-lg">→</span>}
+                        <div className="space-y-2 text-sm text-gray-600">
+                          <div className="flex items-center gap-2">
+                            <span className="flex-shrink-0">⚽</span>
+                            <span className="truncate">Team: {game.team_name}</span>
                           </div>
                           
-                          {game.status === 'analyzed' && (
-                            <span className="text-sm text-gray-500 whitespace-nowrap">
-                              Click to view analysis
-                            </span>
+                          <div className="flex items-center gap-2">
+                            <span className="flex-shrink-0">📅</span>
+                            <span className="truncate">{new Date(game.created_at).toLocaleDateString()}</span>
+                          </div>
+                          
+                          {game.video_url && (
+                            <div className="flex items-center gap-2">
+                              <span className="flex-shrink-0">🎥</span>
+                              <a
+                                href={game.video_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[#016F32] hover:underline truncate"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                VEO Footage
+                              </a>
+                            </div>
                           )}
                         </div>
+                      </div>
+                      
+                      <div className="flex-shrink-0 flex flex-col items-end gap-2">
+                        <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${
+                          game.status === 'analyzed'
+                            ? 'bg-green-500/20 text-green-600 border border-green-500/30'
+                            : 'bg-yellow-500/20 text-yellow-600 border border-yellow-500/30'
+                        }`}>
+                          {game.status.toUpperCase()}
+                          {game.status === 'analyzed' && <span className="text-lg">→</span>}
+                        </div>
+                        
+                        {game.status === 'analyzed' && (
+                          <span className="text-sm text-gray-500 whitespace-nowrap">
+                            Click to view analysis
+                          </span>
+                        )}
+                      </div>
                       </div>
 
                       {/* AI Conversation Starters for Analyzed Games */}
@@ -735,20 +735,20 @@ export default function Dashboard() {
                   <div key={team.id} className="bg-gray-50 rounded-lg p-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">{team.name}</h3>
                     <div className="space-y-3">
-                      <p className="text-gray-600 text-sm">Join Code: <code className="bg-gray-200 px-2 py-1 rounded">{team.team_code}</code></p>
+                    <p className="text-gray-600 text-sm">Join Code: <code className="bg-gray-200 px-2 py-1 rounded">{team.team_code}</code></p>
                       <div className="flex items-center gap-3">
                         <div className="flex-1">
                           <p className="text-xs text-gray-500 mb-1">Share this link:</p>
                           <input
                             type="text"
-                            value={`https://clannai.com/join/${team.team_code}`}
+                            value={`${window.location.origin}/join/${team.team_code}`}
                             readOnly
                             className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
                           />
                         </div>
                         <button
                           onClick={() => {
-                            navigator.clipboard.writeText(`https://clannai.com/join/${team.team_code}`)
+                            navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
                             // Show temporary success feedback
                             const button = document.activeElement as HTMLButtonElement
                             const originalText = button.textContent
