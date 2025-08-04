@@ -128,42 +128,69 @@ class PipelineAutomation:
             if game_id in processed_games:
                 continue
             
-            # Check if analysis is complete (has web_events.json or web_events_array.json)
+            # Check if analysis is complete (has S3 data or local event files)
+            s3_locations_file = game_dir / "s3_locations.json"
             web_events_file = game_dir / "web_events.json"
             web_events_array_file = game_dir / "web_events_array.json"
             
-            if web_events_file.exists() or web_events_array_file.exists():
+            if s3_locations_file.exists() or web_events_file.exists() or web_events_array_file.exists():
                 completed.append(game_id)
-                logger.info(f"🔍 Found completed analysis: {game_id}")
+                source = "S3" if s3_locations_file.exists() else "local"
+                logger.info(f"🔍 Found completed analysis: {game_id} ({source})")
         
         return completed
     
     def load_events_data(self, game_dir: Path) -> Optional[List[Dict]]:
-        """Load events data from AI pipeline output"""
-        # Try web_events_array.json first (direct array format)
+        """Load events data - prioritize comprehensive local files, use S3 as fallback"""
+        
+        # Try local comprehensive files first (most complete data)
         web_events_array_file = game_dir / "web_events_array.json"
         if web_events_array_file.exists():
             try:
                 with open(web_events_array_file, 'r') as f:
                     events = json.load(f)
-                logger.info(f"📊 Loaded {len(events)} events from web_events_array.json")
+                logger.info(f"📊 Loaded {len(events)} events from local web_events_array.json (comprehensive)")
                 return events
             except Exception as e:
                 logger.error(f"❌ Failed to load web_events_array.json: {e}")
         
-        # Try web_events.json (object format with events property)
+        # Try local web_events.json (object format with events property)
         web_events_file = game_dir / "web_events.json"
         if web_events_file.exists():
             try:
                 with open(web_events_file, 'r') as f:
                     data = json.load(f)
                 events = data.get('events', []) if isinstance(data, dict) else data
-                logger.info(f"📊 Loaded {len(events)} events from web_events.json")
+                logger.info(f"📊 Loaded {len(events)} events from local web_events.json (comprehensive)")
                 return events
             except Exception as e:
                 logger.error(f"❌ Failed to load web_events.json: {e}")
         
-        logger.warning(f"⚠️ No events files found in {game_dir}")
+        # Fallback to S3 data (may be limited)
+        s3_locations_file = game_dir / "s3_locations.json"
+        if s3_locations_file.exists():
+            try:
+                with open(s3_locations_file, 'r') as f:
+                    s3_data = json.load(f)
+                
+                # Try to find events file in S3 locations
+                s3_urls = s3_data.get('s3_urls', {})
+                
+                # Look for goals_and_shots_timeline.json (limited events)
+                if 'goals_and_shots_timeline.json' in s3_urls:
+                    s3_url = s3_urls['goals_and_shots_timeline.json']['url']
+                    logger.info(f"📡 Fetching events from S3: goals_and_shots_timeline.json (limited dataset)")
+                    response = requests.get(s3_url)
+                    if response.status_code == 200:
+                        events = response.json()
+                        logger.info(f"📊 Loaded {len(events)} events from S3 goals_and_shots_timeline (basic events only)")
+                        return events
+                
+                logger.warning(f"⚠️ No suitable events file found in S3 locations")
+            except Exception as e:
+                logger.error(f"❌ Failed to load from S3: {e}")
+        
+        logger.warning(f"⚠️ No events files found in {game_dir} (local or S3)")
         return None
     
     def get_game_id_for_analysis(self, analysis_id: str) -> Optional[str]:
