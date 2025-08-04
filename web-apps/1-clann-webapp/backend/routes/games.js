@@ -10,6 +10,7 @@ const {
   isTeamMember,
   getUserTeams 
 } = require('../utils/database');
+const { generatePresignedUploadUrl, getFileInfo } = require('../utils/s3');
 
 const router = express.Router();
 
@@ -721,6 +722,116 @@ router.put('/:id/status', [authenticateToken, requireCompanyRole], async (req, r
   } catch (error) {
     console.error('Update status error:', error);
     res.status(500).json({ error: 'Failed to update game status' });
+  }
+});
+
+// Generate pre-signed URL for direct file upload
+router.post('/upload/presigned-url', authenticateToken, async (req, res) => {
+  try {
+    const { fileName, fileType, fileSize, teamId } = req.body;
+
+    // Validation
+    if (!fileName || !fileType || !fileSize || !teamId) {
+      return res.status(400).json({ 
+        error: 'Missing required fields: fileName, fileType, fileSize, teamId' 
+      });
+    }
+
+    // Check if user is member of the team
+    const isMember = await isTeamMember(req.user.id, teamId);
+    if (!isMember) {
+      return res.status(403).json({ 
+        error: 'You are not a member of this team' 
+      });
+    }
+
+    // Generate presigned URL
+    const uploadData = await generatePresignedUploadUrl(fileName, fileType, fileSize);
+
+    res.json({
+      success: true,
+      uploadUrl: uploadData.uploadUrl,
+      s3Key: uploadData.s3Key,
+      publicUrl: uploadData.publicUrl
+    });
+  } catch (error) {
+    console.error('Presigned URL generation error:', error);
+    res.status(400).json({ error: error.message || 'Failed to generate upload URL' });
+  }
+});
+
+// Confirm file upload and create game record
+router.post('/upload/confirm', authenticateToken, async (req, res) => {
+  try {
+    const { 
+      title, 
+      description, 
+      teamId, 
+      s3Key, 
+      originalFilename, 
+      fileSize,
+      fileType 
+    } = req.body;
+
+    // Validation
+    if (!title || !teamId || !s3Key || !originalFilename) {
+      return res.status(400).json({ 
+        error: 'Missing required fields: title, teamId, s3Key, originalFilename' 
+      });
+    }
+
+    // Check if user is member of the team
+    const isMember = await isTeamMember(req.user.id, teamId);
+    if (!isMember) {
+      return res.status(403).json({ 
+        error: 'You are not a member of this team' 
+      });
+    }
+
+    // Verify file exists in S3
+    try {
+      await getFileInfo(s3Key);
+    } catch (error) {
+      return res.status(400).json({ 
+        error: 'File not found in S3. Upload may have failed.' 
+      });
+    }
+
+    // Create game record in database
+    const newGame = await createGame({
+      title: title.trim(),
+      description: description?.trim() || '',
+      video_url: null, // This is for VEO URLs
+      s3_key: s3Key,
+      original_filename: originalFilename,
+      file_size: fileSize,
+      file_type: 'upload', // vs 'veo'
+      team_id: teamId,
+      uploaded_by: req.user.id,
+      status: 'pending'
+    });
+
+    console.log(`📹 New video uploaded: ${title} (${originalFilename}) for team ${teamId}`);
+
+    res.json({
+      success: true,
+      message: 'Video uploaded successfully',
+      game: {
+        id: newGame.id,
+        title: newGame.title,
+        description: newGame.description,
+        s3_key: newGame.s3_key,
+        original_filename: newGame.original_filename,
+        file_size: newGame.file_size,
+        file_type: newGame.file_type,
+        team_id: newGame.team_id,
+        status: newGame.status,
+        created_at: newGame.created_at
+      }
+    });
+  } catch (error) {
+    console.error('Upload confirmation error:', error);
+    res.status(500).json({ error: 'Failed to confirm upload' });
   }
 });
 

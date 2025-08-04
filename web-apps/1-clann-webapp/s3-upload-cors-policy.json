@@ -1,0 +1,15 @@
+{
+    "CORSRules": [
+        {
+            "AllowedHeaders": ["*"],
+            "AllowedMethods": ["GET", "POST", "PUT", "DELETE", "HEAD"],
+            "AllowedOrigins": [
+                "https://clannai.com",
+                "https://test.clannai.com", 
+                "http://localhost:3000"
+            ],
+            "ExposeHeaders": ["ETag"],
+            "MaxAgeSeconds": 3000
+        }
+    ]
+}

@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
-import DashboardInsights from '@/components/dashboard/DashboardInsights'
+import VideoUpload from '@/components/VideoUpload'
+
 
 interface Game {
   id: string
@@ -23,12 +24,14 @@ interface Team {
 
 export default function Dashboard() {
   const router = useRouter()
+  const veoUrlInputRef = useRef<HTMLInputElement>(null)
   const [user, setUser] = useState<any>(null)
   const [games, setGames] = useState<Game[]>([])
   const [demoGames, setDemoGames] = useState<Game[]>([])
   const [teams, setTeams] = useState<Team[]>([])
   const [activeTab, setActiveTab] = useState('games')
   const [showUploadModal, setShowUploadModal] = useState(false)
+  const [showVideoUploadModal, setShowVideoUploadModal] = useState(false)
   const [showJoinModal, setShowJoinModal] = useState(false)
   const [showCreateTeamModal, setShowCreateTeamModal] = useState(false)
   const [showSettingsModal, setShowSettingsModal] = useState(false)
@@ -91,6 +94,23 @@ export default function Dashboard() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     window.location.href = '/'
+  }
+
+  const handleUploadVideoClick = () => {
+    // Switch to games tab first
+    setActiveTab('games')
+    
+    // Use setTimeout to ensure the tab content is rendered before scrolling
+    setTimeout(() => {
+      if (veoUrlInputRef.current) {
+        // Scroll to the input and focus it
+        veoUrlInputRef.current.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        })
+        veoUrlInputRef.current.focus()
+      }
+    }, 100)
   }
 
   const handleJoinTeam = async (e: React.FormEvent) => {
@@ -271,7 +291,7 @@ export default function Dashboard() {
             {/* Action buttons - stacked on mobile, horizontal on desktop */}
             <div className="flex flex-col w-full md:flex-row md:w-auto md:items-center gap-3 md:gap-4">
               <button 
-                onClick={() => setActiveTab('games')}
+                onClick={handleUploadVideoClick}
                 className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
               >
                 📹 Upload Video
@@ -283,16 +303,16 @@ export default function Dashboard() {
               >
                 Join Team
               </button>
-              
-              <button 
+                
+                <button
                 onClick={() => setShowSettingsModal(true)}
                 className="flex items-center justify-center gap-2 text-gray-700 px-6 py-2.5 rounded-lg font-medium border border-gray-300 w-full md:w-auto"
-              >
+                >
                 <span>Settings</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
                 </svg>
-              </button>
+                </button>
 
               {/* Company Tools - Only show for company users */}
               {user?.role === 'company' && (
@@ -321,12 +341,12 @@ export default function Dashboard() {
                 {teams.length > 0 ? teams[0].name : 
                   <div className="flex items-center gap-2 text-gray-500">
                     Upload footage to create a team
-                    <button 
+            <button
                       onClick={() => setShowUploadModal(true)}
                       className="text-sm px-3 py-1 bg-[#016F32]/10 text-[#016F32] rounded-lg hover:bg-[#016F32]/20"
                     >
                       Upload Now →
-                    </button>
+            </button>
                   </div>
                 }
                 <span className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400 hover:bg-green-400/10 hover:text-green-400 cursor-pointer">
@@ -342,7 +362,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
         </div>
       </div>
 
@@ -356,77 +376,28 @@ export default function Dashboard() {
         {/* Content Area */}
         <div className="space-y-4">
 
-        {/* AI Insights Tab */}
-        {activeTab === 'insights' && (
-          <div className="bg-white rounded-xl shadow-sm p-6">
-            <DashboardInsights />
-          </div>
-        )}
-
         {/* Games Tab */}
         {activeTab === 'games' && (
           <div className="space-y-6">
-            {/* Upload New Match - WORKING VERSION */}
-            <div className="bg-white rounded-xl shadow-sm">
-              <div className="p-6 border-b border-gray-100">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">Upload New Match</h2>
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <form onSubmit={handleUploadGame} className="space-y-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">VEO URL</label>
-                      <input
-                        type="url"
-                        value={uploadGameUrl}
-                        onChange={(e) => setUploadGameUrl(e.target.value)}
-                        placeholder="Paste your VEO URL here..."
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                        required
-                      />
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
-                        <input
-                          type="text"
-                          value={uploadTeamName}
-                          onChange={(e) => setUploadTeamName(e.target.value)}
-                          placeholder="Enter team name"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Match Title</label>
-                        <input
-                          type="text"
-                          value={uploadGameTitle}
-                          onChange={(e) => setUploadGameTitle(e.target.value)}
-                          placeholder="Enter match title"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="flex justify-end">
-                      <button
-                        type="submit"
-                        disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim()}
-                        className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        {uploadGameLoading ? 'Adding...' : 'Upload Match'}
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+            {/* Matches List - CONTENT FIRST */}
+          <div className="bg-white rounded-xl shadow-sm">
+              {/* Tab Navigation */}
+              <div className="flex justify-center border-b border-gray-200">
+                {(['games', 'teams'] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-6 py-4 font-medium text-sm ${
+                      activeTab === tab
+                        ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
+                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    {tab === 'games' ? 'My Games' : 'Teams'}
+                  </button>
+                ))}
             </div>
-
-            {/* Matches List */}
-            <div className="bg-white rounded-xl shadow-sm">
-              <div className="p-6 border-b border-gray-100">
-                <h2 className="text-xl font-bold text-gray-900">Your Matches</h2>
-              </div>
-              <div className="p-6">
+                          <div className="p-6">
                 {loading ? (
                   <div className="text-center py-12">
                     <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
@@ -459,7 +430,7 @@ export default function Dashboard() {
                           <div key={game.id} className="bg-gray-50 rounded-lg p-4 transition-colors">
                             <div className="space-y-4">
                               <div className="flex justify-between items-start">
-                                <div>
+                  <div>
                                   <h3 className="font-medium text-gray-900">{game.title}</h3>
                                   <p className="text-sm text-gray-600 mt-1">Team: {game.team_name}</p>
                                   <p className="text-xs text-gray-500 mt-1">
@@ -481,8 +452,8 @@ export default function Dashboard() {
                                   </div>
                                   <p className="text-xs text-gray-400 text-right">44 events • AI insights available</p>
                                 </div>
-                              </div>
-                              
+                  </div>
+                  
                               <div className="grid grid-cols-2 gap-2">
                                 <button 
                                   onClick={(e) => {
@@ -505,8 +476,8 @@ export default function Dashboard() {
                                   <span>⚽</span>
                                   <span>Tactics</span>
                                 </button>
-                                
-                                <button 
+
+                  <button
                                   onClick={(e) => {
                                     e.stopPropagation()
                                     router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Who were our best and worst performers in this match and what should each player work on?")}`)
@@ -515,7 +486,7 @@ export default function Dashboard() {
                                 >
                                   <span>⭐</span>
                                   <span>Player Analysis</span>
-                                </button>
+                  </button>
                                 
                                 <button 
                                   onClick={(e) => {
@@ -533,8 +504,8 @@ export default function Dashboard() {
                         ))}
                       </div>
                     )}
-                  </div>
-                ) : (
+              </div>
+            ) : (
               <div className="space-y-4">
                 {games.map((game: any) => (
                   <div
@@ -593,7 +564,7 @@ export default function Dashboard() {
                           </span>
                         )}
                       </div>
-                      </div>
+                    </div>
 
                       {/* AI Conversation Starters for Analyzed Games */}
                       {game.status === 'analyzed' && (
@@ -643,14 +614,101 @@ export default function Dashboard() {
                               <span>📈</span>
                               <span>Next Match Prep</span>
                             </button>
-                          </div>
-                        </div>
-                      )}
-                    </div>
                   </div>
-                ))}
               </div>
             )}
+            </div>
+                  </div>
+                ))}
+          </div>
+        )}
+            </div>
+
+            {/* Upload New Match - Moved to Bottom */}
+            <div className="bg-white rounded-xl shadow-sm">
+              <div className="p-6 border-b border-gray-100">
+                <h2 className="text-xl font-bold text-gray-900 mb-4">Upload New Match</h2>
+                
+                {/* Upload Options */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <button
+                    onClick={() => setShowVideoUploadModal(true)}
+                    className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors group"
+                  >
+                    <div className="text-center">
+                      <div className="w-12 h-12 mx-auto bg-[#016F32] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Upload Video File</h3>
+                      <p className="text-sm text-gray-500">MP4, MOV, AVI files (max 2GB)</p>
+                    </div>
+                  </button>
+                  
+                  <div className="p-6 border border-gray-300 rounded-lg">
+                    <div className="text-center mb-4">
+                      <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-1">VEO URL</h3>
+                      <p className="text-sm text-gray-500">Paste URL from Veo, Trace, or Spiideo</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <form onSubmit={handleUploadGame} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">VEO URL</label>
+                      <input
+                        ref={veoUrlInputRef}
+                        type="url"
+                        value={uploadGameUrl}
+                        onChange={(e) => setUploadGameUrl(e.target.value)}
+                        placeholder="Paste your VEO URL here..."
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                        required
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
+                                         <input
+                       type="text"
+                          value={uploadTeamName}
+                          onChange={(e) => setUploadTeamName(e.target.value)}
+                          placeholder="Enter team name"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Match Title</label>
+                        <input
+                          type="text"
+                          value={uploadGameTitle}
+                          onChange={(e) => setUploadGameTitle(e.target.value)}
+                          placeholder="Enter match title"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                    <button
+                        type="submit"
+                        disabled={uploadGameLoading || !uploadGameTitle.trim() || !uploadGameUrl.trim()}
+                        className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        {uploadGameLoading ? 'Adding...' : 'Upload Match'}
+                    </button>
+                  </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
           </div>
@@ -658,118 +716,98 @@ export default function Dashboard() {
 
 
 
-        {/* Teams Tab */}
+        {/* Teams Tab - Simplified for Sharing */}
         {activeTab === 'teams' && (
-          teams.length === 0 ? (
-            <div className="bg-white rounded-lg border p-8 max-w-lg mx-auto text-center">
-              <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">No teams yet</h2>
-              <p className="text-gray-500 mb-8">Get started by joining or creating a team.</p>
-              
-              <div className="space-y-4">
-                <div className="bg-gray-50 rounded-lg p-6 border">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Join Team</h3>
-                  <p className="text-gray-600 mb-4">Enter a team code to join an existing team</p>
-                  <div className="flex gap-2">
+          <div className="bg-white rounded-xl shadow-sm">
+            {/* Tab Navigation */}
+            <div className="flex justify-center border-b border-gray-200">
+              {(['games', 'teams'] as const).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-6 py-4 font-medium text-sm ${
+                    activeTab === tab
+                      ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
+                      : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {tab === 'games' ? 'My Games' : 'Teams'}
+                </button>
+              ))}
+            </div>
+            <div className="p-6 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Team Sharing</h2>
+              <p className="text-gray-600">Share your team codes to invite others</p>
+            </div>
+            
+            <div className="p-6 space-y-6">
+              {/* Your Teams for Sharing */}
+              {teams.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Your Teams</h3>
+                  <div className="space-y-4">
+                    {teams.map((team: any) => (
+                      <div key={team.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-lg font-medium text-gray-900">{team.name}</h4>
+                          <span className="px-3 py-1 bg-[#016F32] text-white text-sm font-mono rounded-lg">
+                            {team.team_code}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <div className="flex-1">
                                          <input
                        type="text"
-                       placeholder="Enter team code (e.g., ARS269)"
-                       className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                       value={joinTeamCode}
-                       onChange={(e) => setJoinTeamCode(e.target.value)}
-                     />
+                              value={`${window.location.origin}/join/${team.team_code}`}
+                              readOnly
+                              className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
+                            />
+                          </div>
                     <button
-                      onClick={() => setShowJoinModal(true)}
-                      className="bg-[#016F32] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#016F32]/90"
-                    >
-                      Join
-                    </button>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-2">Demo codes: ARS269 • CHE277 • LIV297</p>
-                </div>
-
-                <div className="bg-gray-50 rounded-lg p-6 border">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Create Team</h3>
-                  <p className="text-gray-600 mb-4">Enter a team name to create a new team</p>
-                  <div className="flex gap-2">
-                                         <input
-                       type="text"
-                       placeholder="Enter team name"
-                       className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32]/20 focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                       value={createTeamName}
-                       onChange={(e) => setCreateTeamName(e.target.value)}
-                     />
-                    <button
-                      onClick={() => setShowCreateTeamModal(true)}
-                      className="bg-[#016F32] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#016F32]/90"
-                    >
-                      Create
+                            onClick={() => {
+                              navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
+                              const button = document.activeElement as HTMLButtonElement
+                              const originalText = button.textContent
+                              button.textContent = 'Copied!'
+                              button.classList.add('bg-green-600')
+                              setTimeout(() => {
+                                button.textContent = originalText
+                                button.classList.remove('bg-green-600')
+                              }, 2000)
+                            }}
+                            className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium"
+                          >
+                            Copy Link
                     </button>
                   </div>
                 </div>
+                    ))}
               </div>
             </div>
-          ) : (
-            <div className="bg-white rounded-xl shadow-sm">
-              <div className="flex justify-between items-center p-6 border-b border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900">Your Teams</h2>
-                <div className="flex gap-2">
+              )}
+              
+              {/* Quick Actions */}
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                <div className="flex flex-wrap gap-3">
                   <button
                     onClick={() => setShowJoinModal(true)}
-                    className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 text-sm"
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50"
                   >
                     Join Team
                   </button>
                   <button
                     onClick={() => setShowCreateTeamModal(true)}
-                    className="bg-[#016F32] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#016F32]/90 text-sm"
+                    className="px-4 py-2 bg-[#016F32] text-white rounded-lg font-medium hover:bg-[#016F32]/90"
                   >
                     Create Team
                   </button>
                 </div>
+                
+                
               </div>
-              <div className="p-6 space-y-4">
-                {teams.map((team: any) => (
-                  <div key={team.id} className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">{team.name}</h3>
-                    <div className="space-y-3">
-                    <p className="text-gray-600 text-sm">Join Code: <code className="bg-gray-200 px-2 py-1 rounded">{team.team_code}</code></p>
-                      <div className="flex items-center gap-3">
-                        <div className="flex-1">
-                          <p className="text-xs text-gray-500 mb-1">Share this link:</p>
-                          <input
-                            type="text"
-                            value={`${window.location.origin}/join/${team.team_code}`}
-                            readOnly
-                            className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
-                          />
-                        </div>
-                        <button
-                          onClick={() => {
-                            navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
-                            // Show temporary success feedback
-                            const button = document.activeElement as HTMLButtonElement
-                            const originalText = button.textContent
-                            button.textContent = 'Copied!'
-                            button.classList.add('bg-green-600', 'text-white')
-                            setTimeout(() => {
-                              button.textContent = originalText
-                              button.classList.remove('bg-green-600', 'text-white')
-                            }, 2000)
-                          }}
-                          className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium whitespace-nowrap"
-                        >
-                          Copy Link
-                        </button>
-                      </div>
-                    </div>
                   </div>
-                ))}
               </div>
-            </div>
-          )
         )}
       </div>
 
@@ -1000,35 +1038,29 @@ export default function Dashboard() {
         </div>
       )}
 
-        {/* Clean Feedback Toast like old app */}
-        {error && (
-          <div className="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-50 text-red-600 max-w-md">
-            {error}
-          </div>
-        )}
+      {/* Clean Feedback Toast like old app */}
+      {error && (
+        <div className="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-50 text-red-600 max-w-md">
+          {error}
         </div>
+      )}
+
+      {/* Video Upload Modal */}
+      {showVideoUploadModal && (
+        <VideoUpload
+          onUploadSuccess={(gameData) => {
+            console.log('Video uploaded successfully:', gameData)
+            // Refresh the games list
+            loadUserData()
+          }}
+          onClose={() => setShowVideoUploadModal(false)}
+          teams={teams}
+        />
+      )}
+      </div>
       </div>
 
-      {/* Bottom Tab Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200/20">
-        <div className="flex justify-center">
-          <div className="flex">
-            {(['games', 'insights', 'teams'] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-8 py-3 font-medium text-sm whitespace-nowrap ${
-                  activeTab === tab
-                    ? 'text-[#016F32] border-t-2 border-[#016F32]'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {tab === 'games' ? 'My Games' : tab === 'insights' ? 'AI Insights' : 'Teams'}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+
     </div>
   )
 } 
