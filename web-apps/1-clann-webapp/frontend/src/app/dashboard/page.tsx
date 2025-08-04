@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
+import VideoUpload from '@/components/VideoUpload'
 
 
 interface Game {
@@ -30,6 +31,7 @@ export default function Dashboard() {
   const [teams, setTeams] = useState<Team[]>([])
   const [activeTab, setActiveTab] = useState('games')
   const [showUploadModal, setShowUploadModal] = useState(false)
+  const [showVideoUploadModal, setShowVideoUploadModal] = useState(false)
   const [showJoinModal, setShowJoinModal] = useState(false)
   const [showCreateTeamModal, setShowCreateTeamModal] = useState(false)
   const [showSettingsModal, setShowSettingsModal] = useState(false)
@@ -626,6 +628,37 @@ export default function Dashboard() {
             <div className="bg-white rounded-xl shadow-sm">
               <div className="p-6 border-b border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Upload New Match</h2>
+                
+                {/* Upload Options */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <button
+                    onClick={() => setShowVideoUploadModal(true)}
+                    className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors group"
+                  >
+                    <div className="text-center">
+                      <div className="w-12 h-12 mx-auto bg-[#016F32] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Upload Video File</h3>
+                      <p className="text-sm text-gray-500">MP4, MOV, AVI files (max 2GB)</p>
+                    </div>
+                  </button>
+                  
+                  <div className="p-6 border border-gray-300 rounded-lg">
+                    <div className="text-center mb-4">
+                      <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-1">VEO URL</h3>
+                      <p className="text-sm text-gray-500">Paste URL from Veo, Trace, or Spiideo</p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="bg-gray-50 rounded-lg p-6">
                   <form onSubmit={handleUploadGame} className="space-y-4">
                     <div>
@@ -773,8 +806,8 @@ export default function Dashboard() {
                 
                 
               </div>
-            </div>
-          </div>
+                  </div>
+              </div>
         )}
       </div>
 
@@ -1010,6 +1043,19 @@ export default function Dashboard() {
         <div className="fixed bottom-4 right-4 p-4 rounded-lg shadow-lg bg-red-50 text-red-600 max-w-md">
           {error}
         </div>
+      )}
+
+      {/* Video Upload Modal */}
+      {showVideoUploadModal && (
+        <VideoUpload
+          onUploadSuccess={(gameData) => {
+            console.log('Video uploaded successfully:', gameData)
+            // Refresh the games list
+            loadUserData()
+          }}
+          onClose={() => setShowVideoUploadModal(false)}
+          teams={teams}
+        />
       )}
       </div>
       </div>
