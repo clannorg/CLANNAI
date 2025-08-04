@@ -1,0 +1,31 @@
+# AI Pipeline → Website Automation Configuration
+
+api:
+  base_url: "https://api.clannai.com"  # Production API
+  # base_url: "http://localhost:3002"  # Local development API
+  company_email: "admin@clann.ai"
+  company_password: "demo123"
+
+pipeline:
+  data_directory: "./data"  # Relative to ai/veo-games/ directory
+  monitor_interval: 30      # seconds between checks
+  processed_games_file: "processed_games.json"
+
+# Manual mapping of AI analysis folders to database game IDs
+# Format: "ai_folder_name": "database_game_uuid"
+game_mapping:
+  # REAL MAPPINGS from live database:
+  "newmills-20250222": "62c0baf8-0307-4453-adf5-6dd794356ead"  # Game "1" - newmills vs stmarys
+  
+  # Still need UUIDs for these analyses:
+  "19-20250419": "your-game-uuid-here"
+  "ballyclare-20250111": "your-game-uuid-here"  
+  "f323-527e6a4e": "your-game-uuid-here"
+  
+  # To get game UUIDs, check the company dashboard or database:
+  # SELECT id, title FROM games ORDER BY created_at DESC;
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "pipeline_automation.log"

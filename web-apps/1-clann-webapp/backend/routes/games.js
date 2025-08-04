@@ -354,6 +354,46 @@ router.post('/:id/upload-events', [authenticateToken, requireCompanyRole], async
   }
 });
 
+// Upload events JSON directly (for AI pipeline automation)
+router.post('/:id/upload-events-direct', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { events, source = 'ai_pipeline' } = req.body;
+
+    if (!events || !Array.isArray(events)) {
+      return res.status(400).json({ error: 'Events array is required' });
+    }
+
+    console.log(`📊 Direct upload: ${events.length} events for game ${gameId}`);
+    console.log('📋 Sample event:', events[0]);
+    
+    // Convert events to JSON string for PostgreSQL JSONB storage
+    const updatedGame = await updateGame(gameId, {
+      ai_analysis: JSON.stringify(events),
+      status: 'analyzed'
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      message: 'Events uploaded successfully via direct JSON',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        status: updatedGame.status,
+        events_count: events.length,
+        source: source,
+        updated_at: updatedGame.updated_at
+      }
+    });
+  } catch (error) {
+    console.error('Direct events upload error:', error);
+    res.status(500).json({ error: 'Failed to upload events: ' + error.message });
+  }
+});
+
 // Upload S3 tactical file (company only) 
 router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], async (req, res) => {
   try {
