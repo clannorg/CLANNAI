@@ -1,0 +1,22 @@
+{
+  "newmills-20250222": {
+    "game_id": "62c0baf8-0307-4453-adf5-6dd794356ead",
+    "processed_at": "2025-08-04T21:17:36.818084",
+    "events_count": 106
+  },
+  "19-20250419": {
+    "game_id": "62c0baf8-0307-4453-adf5-6dd794356ead",
+    "processed_at": "2025-08-04T21:34:52.119972",
+    "events_count": 66
+  },
+  "ballyclare-20250111": {
+    "game_id": "ed4150c5-9d60-4647-a568-6d1da24a9765",
+    "processed_at": "2025-08-04T21:37:17.257959",
+    "events_count": 5
+  },
+  "f323-527e6a4e": {
+    "game_id": "6376bcb6-6edc-46dd-9a12-9ae64f1ec873",
+    "processed_at": "2025-08-04T21:37:17.333578",
+    "events_count": 67
+  }
+}
