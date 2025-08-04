@@ -1,136 +1,67 @@
-# 🚀 ClannAI WebApp - PRODUCTION ROADMAP
+# 🚀 ClannAI - Football Analysis Platform
 
-**Complete Gaelic football analysis platform** - User teams, game uploads, company analytics dashboard
+**Professional video analysis platform for football teams** - Live at [clannai.com](https://clannai.com)
 
-## 🎯 **DEPLOYMENT TARGET**
-- **Server**: AWS EC2 `webapp-t3` (52.214.173.0)
-- **Database**: AWS RDS PostgreSQL (clannai-mvp-new) ✅ LIVE
-- **Domain**: clannai.com + api.clannai.com
-- **Deployment Tool**: Devopness MCP CLI
+## ✨ **Features**
 
----
+- 🎯 **Video Analysis** - Upload VEO URLs, get AI-powered tactical insights
+- 👥 **Team Management** - Join teams with invite codes, manage multiple teams
+- 🤖 **AI Coach** - Chat with AI about match analysis and tactical advice
+- 📊 **Event Timeline** - Interactive match events with timestamps
+- 🏢 **Company Dashboard** - Admin view for all teams and games
+- 🎮 **Demo Content** - Rich demo games for immediate onboarding
 
-## 📋 **PRODUCTION CHECKLIST**
+## 🚀 **Quick Start**
 
-### 🔧 **Phase 1: Frontend Restructure** *(CURRENT FOCUS)*
-- [ ] **Break down monolithic page.tsx** (617 lines → organized components)
-- [ ] **Extract auth components** (login/signup modals → separate files)
-- [ ] **Reorganize dashboard** (482 lines → modular components)
-- [ ] **Create shared UI library** (buttons, forms, modals)
-- [ ] **Implement proper routing** (protected routes, layouts)
-- [ ] **Add loading states** and error boundaries
-
-### 🎨 **Phase 2: UI/UX Polish**
-- [ ] **Mobile responsiveness** optimization
-- [ ] **Loading skeletons** for all data fetching
-- [ ] **Error handling** with user-friendly messages
-- [ ] **Form validation** with proper feedback
-- [ ] **Accessibility** improvements (a11y)
-- [ ] **Performance optimization** (lazy loading, code splitting)
-
-### 🔌 **Phase 3: Backend Integration**
-- [ ] **API endpoints testing** (all CRUD operations)
-- [ ] **File upload handling** (VEO URLs, JSON analysis)
-- [ ] **Database migrations** (any schema updates)
-- [ ] **Environment variables** (production vs staging)
-- [ ] **Security hardening** (CORS, rate limiting, input validation)
-- [ ] **Health checks** and monitoring
-
-### 🚀 **Phase 4: Production Deployment**
-- [ ] **Environment setup** (production .env files)
-- [ ] **Build optimization** (Next.js production build)
-- [ ] **Devopness deployment** using MCP CLI
-- [ ] **Domain configuration** (clannai.com DNS)
-- [ ] **SSL certificates** setup
-- [ ] **Database connection** (production AWS RDS)
-
-### ✅ **Phase 5: Testing & Launch**
-- [ ] **End-to-end testing** (user flows)
-- [ ] **Load testing** (performance under load)
-- [ ] **Security audit** (penetration testing)
-- [ ] **Backup procedures** (database + files)
-- [ ] **Monitoring setup** (logs, alerts, uptime)
-- [ ] **Launch announcement** 🎉
-
----
-
-## 🏗️ **FRONTEND RESTRUCTURE PLAN**
-
-### **Current Issues:**
-❌ `page.tsx` (617 lines) - landing + auth + forms mixed  
-❌ `dashboard/page.tsx` (482 lines) - dashboard + modals + API calls  
-❌ No shared components or consistent UI patterns  
-❌ Poor separation of concerns  
-
-### **Target Structure:**
-```
-frontend/src/
-├── app/
-│   ├── (auth)/
-│   │   ├── login/page.tsx
-│   │   └── register/page.tsx
-│   ├── (dashboard)/
-│   │   ├── dashboard/page.tsx
-│   │   ├── games/[id]/page.tsx
-│   │   └── teams/[id]/page.tsx
-│   ├── (company)/
-│   │   └── company/page.tsx
-│   └── page.tsx (landing only)
-├── components/
-│   ├── ui/ (shared components)
-│   ├── auth/ (login/signup forms)
-│   ├── dashboard/ (dashboard widgets)
-│   ├── games/ (game-related components)
-│   └── layout/ (headers, navigation)
-├── hooks/ (custom React hooks)
-├── lib/ (utilities, API client)
-└── types/ (TypeScript definitions)
-```
-
----
-
-## 💾 **TECH STACK CONFIRMED**
-
-### **Frontend** ✅
-- Next.js 15 + React 19
-- TypeScript + Tailwind CSS
-- JWT authentication
-
-### **Backend** ✅  
-- Express.js 4.18.2
-- AWS RDS PostgreSQL 16
-- bcrypt + JWT tokens
-
-### **Infrastructure** ✅
-- AWS EC2 (webapp-t3)
-- AWS RDS (clannai-mvp-new)
-- Devopness deployment
-
----
-
-## 🚀 **QUICK START**
-
+### **Local Development:**
 ```bash
-# Backend (connects to AWS RDS)
-cd backend && npm start
+# 1. Start Backend (connects to AWS RDS)
+cd backend && node server.js
 
-# Frontend
+# 2. Start Frontend  
 cd frontend && npm run dev
 
-# Demo: http://localhost:3000
-# Login: demo@clann.ai / demo123
+# 3. Visit: http://localhost:3000
 ```
 
+### **Demo Access:**
+- **URL**: https://clannai.com
+- **Demo User**: Any email/password (auto-creates account)
+- **Demo Games**: Automatically visible to all new users
+
+## 🔗 **Join Teams**
+
+**Newmills Team**: `https://clannai.com/join/TQJ1Q5`
+
+**Other Demo Teams:**
+- Arsenal FC Academy: `ARS269`
+- Chelsea Youth: `CHE277` 
+- Liverpool Reserves: `LIV297`
+- City Development: `MCI298`
+- United U21s: `MUN304`
+
+## 🏗️ **Tech Stack**
+
+- **Frontend**: Next.js 15 + React 19 + TypeScript + Tailwind CSS
+- **Backend**: Express.js + PostgreSQL (AWS RDS)
+- **Infrastructure**: AWS (RDS, S3) + Devopness deployment
+- **Authentication**: JWT tokens with bcrypt
+
+## 🌍 **Deployment**
+
+- **Production**: https://clannai.com (auto-deployed via Devopness)
+- **API**: https://api.clannai.com
+- **Database**: AWS RDS PostgreSQL (production)
+
+## 📊 **Current Status**
+
+✅ **Live Production Platform**  
+✅ **Demo Content Access** - New users see rich content immediately  
+✅ **Direct Join Links** - One-click team joining  
+✅ **AWS Database** - Production-ready PostgreSQL with SSL  
+🔄 **Enhanced Event Timeline** - In progress  
+⏳ **User Video Upload** - Next feature  
+
 ---
 
-## 📊 **CURRENT STATUS**
-
-✅ **Database**: AWS RDS live with demo data (8 users, 5 teams, 7 games)  
-✅ **Authentication**: JWT + bcrypt working  
-✅ **Core Features**: Upload VEO URLs, team management, company dashboard  
-🔄 **In Progress**: Frontend restructure  
-⏳ **Next**: UI polish → Testing → Production deployment
-
----
-
-**🎯 GOAL: Production deployment in 3-5 days!** 
+**🎯 Production-ready SaaS platform for football analysis**
