@@ -275,6 +275,29 @@ export default function Dashboard() {
     }
   }
 
+  const handleLeaveTeam = async (teamId: string, teamName: string) => {
+    if (!confirm(`Are you sure you want to leave "${teamName}"?`)) {
+      return
+    }
+
+    try {
+      setError('')
+      await apiClient.leaveTeam(teamId)
+      
+      // Reload teams after leaving
+      const teamsResponse = await apiClient.getUserTeams()
+      setTeams(teamsResponse.teams || [])
+      
+      // Show success message briefly
+      setError(`Successfully left team "${teamName}"`)
+      setTimeout(() => setError(''), 3000)
+      
+    } catch (err: any) {
+      console.error('Failed to leave team:', err)
+      setError(err.message || 'Failed to leave team')
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white pb-20">
       {/* Top Navigation - Match UserDashboard.js exactly */}
@@ -784,6 +807,12 @@ export default function Dashboard() {
                             className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium"
                           >
                             Copy Link
+                    </button>
+                    <button
+                            onClick={() => handleLeaveTeam(team.id, team.name)}
+                            className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                          >
+                            Leave Team
                     </button>
                   </div>
                 </div>
