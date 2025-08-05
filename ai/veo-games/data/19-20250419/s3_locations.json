@@ -1,6 +1,6 @@
 {
   "match_id": "19-20250419",
-  "upload_timestamp": "2025-08-04T23:45:00.637272",
+  "upload_timestamp": "2025-08-05T00:06:55.382838",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "s3_urls": {
@@ -22,10 +22,34 @@
       "description": "AI validated match timeline (text)",
       "file_size_mb": 0.01
     },
+    "13_manager_insights.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-13_manager_insights-json.json",
+      "s3_key": "analysis-data/19-20250419-13_manager_insights-json.json",
+      "description": "Complete manager insights (timeline + ground truth + validated goals)",
+      "file_size_mb": 0.0
+    },
     "9.5_match_summary.json": {
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-9-5_match_summary-json.json",
       "s3_key": "analysis-data/19-20250419-9-5_match_summary-json.json",
       "description": "Complete match summary with team mapping and display metadata",
+      "file_size_mb": 0.0
+    },
+    "8_tactical_analysis_red_team.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-8_tactical_analysis_red_team-txt.txt",
+      "s3_key": "analysis-data/19-20250419-8_tactical_analysis_red_team-txt.txt",
+      "description": "Red team tactical analysis, strengths, weaknesses",
+      "file_size_mb": 0.01
+    },
+    "8_tactical_analysis_yellow_team.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-8_tactical_analysis_yellow_team-txt.txt",
+      "s3_key": "analysis-data/19-20250419-8_tactical_analysis_yellow_team-txt.txt",
+      "description": "Yellow team tactical analysis, strengths, weaknesses",
+      "file_size_mb": 0.01
+    },
+    "8_tactical_match_summary.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/19-20250419-8_tactical_match_summary-txt.txt",
+      "s3_key": "analysis-data/19-20250419-8_tactical_match_summary-txt.txt",
+      "description": "Combined tactical match summary and coaching insights",
       "file_size_mb": 0.0
     },
     "5_complete_timeline.txt": {
@@ -49,8 +73,8 @@
   },
   "upload_summary": {
     "total_files": 17,
-    "successful_uploads": 7,
-    "failed_uploads": 10,
-    "total_size_mb": 3958.52
+    "successful_uploads": 11,
+    "failed_uploads": 6,
+    "total_size_mb": 3958.54
   }
 }

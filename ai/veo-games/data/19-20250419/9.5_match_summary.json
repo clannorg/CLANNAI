@@ -9,121 +9,141 @@
   },
   "team_mapping": {
     "red": {
-      "display_name": "Red Team",
+      "display_name": "Team Red",
       "color": "#FF0000",
       "is_home": true
     },
     "blue": {
-      "display_name": "Blue Team",
+      "display_name": "Team Blue",
       "color": "#0000FF",
       "is_home": false
     },
-    "light_blue": {
-      "display_name": "Light Blue Team",
-      "color": "#ADD8E6",
+    "blue_black": {
+      "display_name": "Team Blue/Black",
+      "color": "#000000",
       "is_home": false
     },
-    "claret": {
-      "display_name": "Claret Team",
-      "color": "#800020",
+    "red_claret": {
+      "display_name": "Team Red/Claret",
+      "color": "#800000",
+      "is_home": true
+    },
+    "light_blue": {
+      "display_name": "Team Light Blue",
+      "color": "#ADD8E6",
       "is_home": false
     }
   },
   "score_line": {
-    "red": 0,
-    "blue": 0,
-    "light_blue": 1,
-    "claret": 0,
-    "final_score": "0-1",
-    "result": "light_blue_win"
+    "red": 2,
+    "blue": 2,
+    "final_score": "2-2",
+    "result": "draw"
   },
   "event_statistics": {
-    "total_events": 42,
-    "goals": 1,
-    "shots": 0,
-    "fouls": 27,
-    "cards": 2,
-    "corners": 7,
-    "substitutions": 1
+    "total_events": 104,
+    "goals": 4,
+    "shots": 61,
+    "saves": 39,
+    "blocked_shots": 10,
+    "corners": 1,
+    "penalties": 3
   },
   "key_moments": [
     {
-      "timestamp": 2415,
-      "time_display": "40:15",
-      "type": "penalty",
-      "description": "Red attack blocked, penalty awarded",
-      "team": "light_blue",
-      "importance": "high"
-    },
-    {
-      "timestamp": 3855,
-      "time_display": "64:15",
-      "type": "yellow_card",
-      "description": "Yellow card to Claret player for foul",
-      "team": "claret",
-      "importance": "medium"
-    },
-    {
-      "timestamp": 5160,
-      "time_display": "86:00",
-      "type": "red_card",
-      "description": "Red card issued to Red team player",
-      "team": "red",
-      "importance": "high"
-    },
-    {
-      "timestamp": 6540,
-      "time_display": "109:00",
+      "timestamp": 4813,
+      "time_display": "80:13",
       "type": "goal",
-      "description": "Light blue team scores a goal from corner",
-      "team": "light_blue",
+      "description": "Blue/Black team scores from an attack down the left wing.",
+      "team": "blue_black",
       "importance": "high"
+    },
+    {
+      "timestamp": 5562,
+      "time_display": "92:42",
+      "type": "goal",
+      "description": "Red/Claret team scores from a loose ball inside the penalty area.",
+      "team": "red_claret",
+      "importance": "high"
+    },
+    {
+      "timestamp": 5704,
+      "time_display": "95:04",
+      "type": "goal",
+      "description": "Blue/Black team scores from a shot outside the penalty box.",
+      "team": "blue_black",
+      "importance": "high"
+    },
+    {
+      "timestamp": 6007,
+      "time_display": "100:07",
+      "type": "goal",
+      "description": "Red/Claret team scores a successfully converted penalty kick.",
+      "team": "red_claret",
+      "importance": "high"
+    },
+    {
+      "timestamp": 2977,
+      "time_display": "49:37",
+      "type": "save",
+      "description": "Blue team's goalkeeper saves a penalty kick from the red team",
+      "team": "blue",
+      "importance": "medium"
     }
   ],
   "match_narrative": {
-    "opening_phase": "The match started with both teams battling for possession in midfield, with several fouls disrupting the flow of the game. Red team looked to build from the back, while Light Blue aimed for quick counter-attacks.",
-    "key_turning_point": "The red card issued to a Red team player in the second half dramatically shifted the momentum. Light Blue capitalized on this advantage.",
-    "closing_phase": "Light Blue secured a late goal from a corner to seal the victory. Red struggled to mount a comeback with ten men.",
-    "match_summary": "A hard-fought match defined by numerous fouls and a late Light Blue goal. Red's red card proved pivotal, allowing Light Blue to take control and ultimately win the game. "
+    "opening_phase": "The first half saw both teams creating chances, with several shots being saved by both goalkeepers.  A number of shots were taken from outside the box but failed to hit the target",
+    "key_turning_point": "The series of goals in the latter stages of the match, particularly the Blue/Black team's goal from outside the box, increased the excitement of the match.",
+    "closing_phase": "The match concluded with end-to-end action. The Blue team's pressing created some late chances but the Red team defended well.",
+    "match_summary": "A tightly contested match with moments of brilliance from both sides. The goalkeepers were kept busy, and the late goals ensured a dramatic finish."
   },
   "tactical_overview": {
-    "dominant_team": "light_blue",
-    "game_style": "counter-attacking",
+    "dominant_team": "Evenly Matched",
+    "game_style": "Attacking and Defensive",
     "key_patterns": [
-      "Attacking free kicks",
-      "Quick transitions after turnovers"
+      "Quick counter-attacks by Red team",
+      "Blue team utilizing crosses into the box",
+      "Both teams looked for openings through long-range shots",
+      "Penalties becoming a factor in key stages of the game"
     ],
     "momentum_shifts": [
-      "After Red card at 5160",
-      "Light Blue goal from corner at 6540"
+      "Red team's early pressure in the first 20 minutes",
+      "Blue team's dominance in the second half",
+      "Momentum swings after each of the late goals"
     ]
   },
   "display_metadata": {
     "primary_color": "#FF0000",
-    "secondary_color": "#ADD8E6",
+    "secondary_color": "#0000FF",
     "highlight_events": [
-      2415,
-      3855,
-      5160,
-      6540
+      4813,
+      5562,
+      5704,
+      6007,
+      2977
     ],
     "recommended_clips": [
       {
-        "start": 6520,
-        "end": 6560,
-        "title": "Light Blue Goal"
+        "start": 4800,
+        "end": 4840,
+        "title": "Blue/Black Goal - Left Wing Attack"
       },
       {
-        "start": 5140,
-        "end": 5180,
-        "title": "Red Card Incident"
+        "start": 5550,
+        "end": 5590,
+        "title": "Red/Claret Goal - Loose Ball"
+      },
+      {
+        "start": 5690,
+        "end": 5730,
+        "title": "Blue/Black Goal - Outside the Box"
       }
     ]
   },
   "generation_info": {
-    "generated_at": "2025-08-04T23:28:29.665141",
+    "generated_at": "2025-08-04T23:55:19.531744",
     "generator": "clann_ai_match_summary",
     "version": "1.0",
-    "source_events": 42
+    "source_events": 104
   }
 }
