@@ -777,44 +777,64 @@ export default function Dashboard() {
                   <div className="space-y-4">
                     {teams.map((team: any) => (
                       <div key={team.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-lg font-medium text-gray-900">{team.name}</h4>
-                          <span className="px-3 py-1 bg-[#016F32] text-white text-sm font-mono rounded-lg">
-                            {team.team_code}
-                          </span>
+                        <div className="mb-4">
+                          <h4 className="text-lg font-medium text-gray-900 mb-3">{team.name}</h4>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1">
-                                         <input
-                       type="text"
-                              value={`${window.location.origin}/join/${team.team_code}`}
-                              readOnly
-                              className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
-                            />
-                          </div>
-                    <button
+                        
+                        {/* Primary: Clickable Link */}
+                        <div className="mb-3">
+                          <label className="block text-xs font-medium text-gray-600 mb-1">🔗 Invite Link (Click to Copy)</label>
+                          <button
                             onClick={() => {
-                              navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
+                              const link = `${window.location.origin}/join/${team.team_code}`
+                              navigator.clipboard.writeText(link)
                               const button = document.activeElement as HTMLButtonElement
-                              const originalText = button.textContent
-                              button.textContent = 'Copied!'
-                              button.classList.add('bg-green-600')
+                              const originalBg = button.className
+                              button.textContent = '✅ Copied to clipboard!'
+                              button.className = 'w-full px-3 py-2 text-sm bg-green-100 border border-green-300 rounded-lg text-green-700 font-mono text-left transition-all duration-200'
                               setTimeout(() => {
-                                button.textContent = originalText
-                                button.classList.remove('bg-green-600')
+                                button.textContent = link
+                                button.className = originalBg
                               }, 2000)
                             }}
-                            className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium"
+                            className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono text-left hover:bg-gray-50 hover:border-[#016F32] transition-all duration-200 cursor-pointer"
+                            title="Click to copy invite link"
                           >
-                            Copy Link
-                    </button>
-                    <button
+                            {`${window.location.origin}/join/${team.team_code}`}
+                          </button>
+                        </div>
+                        
+                        {/* Team Code */}
+                        <div className="mb-3">
+                          <label className="block text-xs font-medium text-gray-600 mb-1">🔢 Team Code (Click to Copy)</label>
+                          <button
+                            onClick={() => {
+                              navigator.clipboard.writeText(team.team_code)
+                              const button = document.activeElement as HTMLButtonElement
+                              const originalBg = button.className
+                              button.textContent = '✅ Copied to clipboard!'
+                              button.className = 'w-full px-3 py-2 text-sm bg-green-100 border border-green-300 rounded-lg text-green-700 font-mono text-left transition-all duration-200'
+                              setTimeout(() => {
+                                button.textContent = team.team_code
+                                button.className = originalBg
+                              }, 2000)
+                            }}
+                            className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono text-left hover:bg-gray-50 hover:border-[#016F32] transition-all duration-200 cursor-pointer"
+                            title="Click to copy team code"
+                          >
+                            {team.team_code}
+                          </button>
+                        </div>
+
+                        {/* Actions */}
+                        <div className="flex justify-end">
+                          <button
                             onClick={() => handleLeaveTeam(team.id, team.name)}
                             className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm rounded-lg hover:bg-gray-50 transition-colors font-medium"
                           >
                             Leave Team
-                    </button>
-                  </div>
+                          </button>
+                        </div>
                 </div>
                     ))}
               </div>
