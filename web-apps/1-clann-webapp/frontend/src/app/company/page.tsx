@@ -19,6 +19,8 @@ interface Game {
   uploaded_by_email: string
   created_at: string
   has_analysis: boolean
+  tactical_analysis_url?: string
+  has_tactical?: boolean
 }
 
 interface Stats {
@@ -195,7 +197,7 @@ export default function CompanyDashboard() {
       // Determine if it's tactical or general analysis
       const isTactical = urlLower.includes('tactical') || urlLower.includes('coaching') || 
                         urlLower.includes('red_team') || urlLower.includes('yellow_team') ||
-                        urlLower.includes('summary');
+                        urlLower.includes('summary') || urlLower.includes('insights');
       
       const endpoint = isTactical ? 'upload-tactical' : 'upload-analysis-file';
       
@@ -489,6 +491,16 @@ export default function CompanyDashboard() {
                             Save
                           </button>
                         </div>
+
+                        {/* Show Tactical Analysis Location if uploaded */}
+                        {game.tactical_analysis_url && (
+                          <div className="mt-2 text-sm">
+                            <p className="text-base font-semibold text-gray-900"><strong>Current Tactical Analysis:</strong></p>
+                            <p className="text-green-600 font-mono text-xs break-all">
+                              {game.tactical_analysis_url}
+                            </p>
+                          </div>
+                        )}
 
                         {/* Status Toggle */}
                         <div className="flex items-center space-x-2">

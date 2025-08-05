@@ -402,7 +402,68 @@ router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], asy
       return res.status(400).json({ error: 'S3 key is required' });
     }
 
-    // Store tactical file URL in metadata
+    // Fetch tactical analysis from S3 URL
+    const axios = require('axios');
+    console.log('📥 Fetching tactical analysis from:', s3Key);
+    const analysisResponse = await axios.get(s3Key, {
+      responseType: 'text' // Get as text first to avoid auto-parsing issues
+    });
+    
+    let analysisData = analysisResponse.data;
+    
+    // Handle different response types - sometimes S3 returns string, sometimes object
+    if (typeof analysisData === 'string') {
+      try {
+        analysisData = JSON.parse(analysisData);
+      } catch (parseError) {
+        console.error('Failed to parse JSON string:', parseError);
+        return res.status(400).json({ error: 'Invalid JSON format in S3 file' });
+      }
+    }
+    
+    console.log('📊 Fetched tactical analysis with keys:', Object.keys(analysisData));
+    console.log('📋 Sample analysis preview:', JSON.stringify(analysisData).substring(0, 200) + '...');
+
+    // Transform data structure to match frontend expectations
+    const transformedData = {
+      tactical: {},
+      analysis: {}
+    };
+
+    // If the S3 data has tactical_analysis.red_team, transform it
+    if (analysisData.tactical_analysis) {
+      const tactical = analysisData.tactical_analysis;
+      
+      if (tactical.red_team) {
+        transformedData.tactical.red_team = {
+          content: JSON.stringify(tactical.red_team, null, 2)
+        };
+      }
+      
+      if (tactical.blue_team) {
+        transformedData.tactical.blue_team = {
+          content: JSON.stringify(tactical.blue_team, null, 2)
+        };
+      }
+    }
+
+    // Include other analysis data
+    if (analysisData.match_overview) {
+      transformedData.analysis.match_overview = analysisData.match_overview;
+    }
+    
+    if (analysisData.key_moments) {
+      transformedData.analysis.key_moments = analysisData.key_moments;
+    }
+    
+    if (analysisData.manager_recommendations) {
+      transformedData.analysis.manager_recommendations = analysisData.manager_recommendations;
+    }
+
+    console.log('🔄 Transformed data structure:', Object.keys(transformedData));
+    console.log('🔄 Tactical keys:', Object.keys(transformedData.tactical));
+
+    // Store tactical analysis URL in metadata AND populate tactical_analysis field
     const currentGame = await getGameById(gameId);
     if (!currentGame) {
       return res.status(404).json({ error: 'Game not found' });
@@ -432,22 +493,25 @@ router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], asy
       metadata: {
         ...currentMetadata,
         tactical_files: tacticalFiles
-      }
+      },
+      tactical_analysis: JSON.stringify(transformedData), // Store the transformed content for frontend display
+      status: 'analyzed'
     });
 
     res.json({
-      message: 'Tactical file uploaded successfully',
+      message: 'Tactical analysis uploaded successfully',
       game: {
         id: updatedGame.id,
         title: updatedGame.title,
         status: updatedGame.status,
         tactical_type: tacticalType,
+        has_tactical: true,
         updated_at: updatedGame.updated_at
       }
     });
   } catch (error) {
     console.error('Upload tactical error:', error);
-    res.status(500).json({ error: 'Failed to upload tactical file' });
+    res.status(500).json({ error: 'Failed to upload tactical analysis' });
   }
 });
 

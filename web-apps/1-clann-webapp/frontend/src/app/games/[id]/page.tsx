@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter, useParams, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import apiClient from '@/lib/api-client'
-import TacticalInsights from '../../../components/games/TacticalInsights'
+import FifaStyleInsights from '../../../components/games/FifaStyleInsights'
 import { AIChatProvider, AIChatSidebar, ChatToggleButton, useAIChat } from '../../../components/ai-chat'
 
 interface GameEvent {
@@ -773,7 +773,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       <div className="bg-gray-900 min-h-screen">
         <div className="container mx-auto px-6 py-8">
           <h2 className="text-3xl font-bold text-white mb-6">Game Insights</h2>
-      <TacticalInsights 
+      <FifaStyleInsights 
         tacticalData={tacticalData} 
         tacticalLoading={tacticalLoading} 
             gameId={gameId}

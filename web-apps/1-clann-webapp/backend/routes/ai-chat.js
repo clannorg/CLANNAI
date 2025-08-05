@@ -34,8 +34,59 @@ router.post('/game/:gameId', authenticateToken, async (req, res) => {
 
     // Parse tactical analysis
     let tacticalAnalysis = null
+    let tacticalContext = ''
     if (game.tactical_analysis) {
       tacticalAnalysis = game.tactical_analysis
+      
+      // Enhanced tactical context for AI
+      if (tacticalAnalysis.analysis) {
+        if (tacticalAnalysis.analysis.match_overview) {
+          const overview = tacticalAnalysis.analysis.match_overview
+          tacticalContext += `\n\nMatch Overview:
+- Final Score: ${overview.final_score}
+- Total Goals: ${overview.total_goals}
+- Total Shots: ${overview.total_shots}
+- Winning Team: ${overview.winning_team}
+- Key Story: ${overview.key_tactical_story}`
+        }
+
+        if (tacticalAnalysis.analysis.manager_recommendations?.red_team) {
+          tacticalContext += `\n\nCoach Recommendations for Red Team:`
+          tacticalAnalysis.analysis.manager_recommendations.red_team.forEach((rec, i) => {
+            tacticalContext += `\n${i + 1}. ${rec}`
+          })
+        }
+
+        if (tacticalAnalysis.analysis.key_moments) {
+          tacticalContext += `\n\nKey Moments:`
+          tacticalAnalysis.analysis.key_moments.forEach((moment, i) => {
+            tacticalContext += `\n${i + 1}. ${Math.floor(moment.timestamp / 60)}:${(moment.timestamp % 60).toString().padStart(2, '0')} - ${moment.description}`
+            if (moment.tactical_significance) {
+              tacticalContext += `\n   Tactical Significance: ${moment.tactical_significance}`
+            }
+          })
+        }
+      }
+
+      // Include team-specific tactical analysis  
+      if (tacticalAnalysis.tactical?.red_team) {
+        try {
+          const redTeamData = JSON.parse(tacticalAnalysis.tactical.red_team.content)
+          tacticalContext += `\n\nRed Team Analysis:`
+          if (redTeamData.strengths) {
+            tacticalContext += `\nStrengths: ${redTeamData.strengths.join(', ')}`
+          }
+          if (redTeamData.weaknesses) {
+            tacticalContext += `\nAreas for Improvement: ${redTeamData.weaknesses.join(', ')}`
+          }
+          if (redTeamData.shot_accuracy) {
+            tacticalContext += `\nShooting Analysis: ${redTeamData.shot_accuracy}`
+          }
+        } catch (e) {
+          // Fallback to raw content if parsing fails
+          tacticalContext += `\n\nRed Team Analysis: ${tacticalAnalysis.tactical.red_team.content.slice(0, 300)}...`
+        }
+      }
     }
 
     // Calculate game statistics
@@ -49,53 +100,7 @@ router.post('/game/:gameId', authenticateToken, async (req, res) => {
       blackTeamGoals: events.filter(e => e.type === 'goal' && e.team === 'black').length,
     }
 
-    // Build tactical context from analysis
-    let tacticalContext = ''
-    if (tacticalAnalysis) {
-      tacticalContext = '\n\nTactical Analysis Available:'
-      
-      // Add manager insights if available
-      if (tacticalAnalysis.analysis && tacticalAnalysis.analysis.manager_insights) {
-        try {
-          const insights = JSON.parse(tacticalAnalysis.analysis.manager_insights.content)
-          tacticalContext += `
-          
-Match Summary:
-- Key Story: ${insights.match_summary.key_tactical_story}
-- Result Factors: ${insights.match_summary.result_factors.join(', ')}
-
-Your Team Analysis:
-${insights.your_team_analysis.strengths_to_keep.map(s => `- Strength: ${s.area} (${s.evidence})`).join('\n')}
-${insights.your_team_analysis.weaknesses_to_fix.map(w => `- Weakness: ${w.area} (${w.evidence}) - Training Focus: ${w.training_focus}`).join('\n')}
-
-Opposition Analysis:
-${insights.opposition_analysis.their_threats.map(t => `- Threat: ${t.pattern} - Counter: ${t.how_to_defend}`).join('\n')}
-${insights.opposition_analysis.their_weaknesses.map(w => `- Vulnerability: ${w.vulnerability} - Exploit: ${w.how_to_exploit}`).join('\n')}
-
-Training Priorities:
-${insights.training_priorities.map(p => `${p.priority}. ${p.focus} - ${p.drill} (${p.duration})`).join('\n')}
-
-Next Match Tactics:
-${insights.next_match_tactics.map(t => `- Game Plan: ${t.if_facing_similar_opponent}\n- Set Pieces: ${t.set_piece_focus}\n- Attack Plan: ${t.attacking_plan}`).join('\n')}
-          `
-        } catch (e) {
-          tacticalContext += '\n- Manager insights available but not in structured format'
-        }
-      }
-      
-      // Add basic tactical files
-      if (tacticalAnalysis.tactical) {
-        if (tacticalAnalysis.tactical.match_summary) {
-          tacticalContext += `\n\nMatch Summary: ${tacticalAnalysis.tactical.match_summary.content.slice(0, 200)}...`
-        }
-        if (tacticalAnalysis.tactical.red_team) {
-          tacticalContext += `\n\nRed Team Analysis: ${tacticalAnalysis.tactical.red_team.content.slice(0, 200)}...`
-        }
-        if (tacticalAnalysis.tactical.yellow_team) {
-          tacticalContext += `\n\nYellow Team Analysis: ${tacticalAnalysis.tactical.yellow_team.content.slice(0, 200)}...`
-        }
-      }
-    }
+    // Tactical context is already built above - use the enhanced version
 
     // Build context for AI
     const gameContext = `
