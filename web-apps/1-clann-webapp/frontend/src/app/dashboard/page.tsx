@@ -72,16 +72,22 @@ export default function Dashboard() {
       setLoading(true)
       setError('')
       
-      // Load games, demo games, and teams in parallel
-      const [gamesResponse, demoGamesResponse, teamsResponse] = await Promise.all([
+      // Load user games and teams first
+      const [gamesResponse, teamsResponse] = await Promise.all([
         apiClient.getUserGames(),
-        apiClient.getDemoGames(),
         apiClient.getUserTeams()
       ])
       
+      // Only show demos if user has no real teams (new user experience)
+      const userTeams = teamsResponse.teams || []
+      const hasRealTeams = userTeams.length > 0
+      const demoGamesResponse = hasRealTeams 
+        ? { games: [] }  // No demos for real customers
+        : await apiClient.getDemoGames()  // Demos for trial users
+      
       setGames(gamesResponse.games || [])
       setDemoGames(demoGamesResponse.games || [])
-      setTeams(teamsResponse.teams || [])
+      setTeams(userTeams)
     } catch (err: any) {
       console.error('Failed to load user data:', err)
       setError(err.message || 'Failed to load data')
