@@ -1,0 +1,52 @@
+{
+  "clubs": [
+    {
+      "name": "Supporters Club",
+      "source": "Scottish FA",
+      "url": "https://www.scottishfa.co.uk/scotland/supporters-tickets/scotland-supporters-club-membership/",
+      "country": "Scotland",
+      "type": "affiliated"
+    },
+    {
+      "name": "Ayr United F.C. U13s",
+      "source": "Scottish FA",
+      "url": "",
+      "country": "Scotland",
+      "type": "league_team"
+    },
+    {
+      "name": "Celtic F.C. Under 13s",
+      "source": "Scottish FA",
+      "url": "",
+      "country": "Scotland",
+      "type": "league_team"
+    },
+    {
+      "name": "Motherwell F.C. U13",
+      "source": "Scottish FA",
+      "url": "",
+      "country": "Scotland",
+      "type": "league_team"
+    },
+    {
+      "name": "Partick Thistle F.C. under 13s",
+      "source": "Scottish FA",
+      "url": "",
+      "country": "Scotland",
+      "type": "league_team"
+    },
+    {
+      "name": "Rangers FC U13",
+      "source": "Scottish FA",
+      "url": "",
+      "country": "Scotland",
+      "type": "league_team"
+    }
+  ],
+  "processed_sources": [
+    "fa_fulltime",
+    "scottish_fa",
+    "pitchero"
+  ],
+  "total_clubs": 6
+}

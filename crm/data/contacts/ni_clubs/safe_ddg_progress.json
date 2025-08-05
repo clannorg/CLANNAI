@@ -1,0 +1,106 @@
+{
+  "INSTITUTE OF SPORTS ANALYSIS": {
+    "phones": [],
+    "emails": [],
+    "websites_found": [
+      "https://www.zhihu.com/question/465324186",
+      "https://zhidao.baidu.com/question/1523517177900759180.html",
+      "https://www.zhihu.com/tardis/bd/art/657105552"
+    ],
+    "search_methods": [
+      "DDG API: \"INSTITUTE OF SPORTS ANALYSIS\" contact phone email Northern Ireland",
+      "DDG API: INSTITUTE OF SPORTS ANALYSIS football club contact details"
+    ],
+    "sources": []
+  },
+  "Crusaders FC": {
+    "phones": [
+      "028 90370777"
+    ],
+    "emails": [
+      "media@crusadersfc.com",
+      "generalmanager@crusadersfc.com"
+    ],
+    "websites_found": [
+      "https://forum.gamer.com.tw/A.php?bsn=27586",
+      "https://forum.gamer.com.tw/C.php?bsn=27586&snA=30649",
+      "https://forum.gamer.com.tw/C.php?bsn=27586&snA=30335",
+      "https://crusadersfootballclub.com/contact",
+      "https://www.crusadersfc.com/?lang=ar",
+      "https://www.4ni.co.uk/c/52244/crusaders-football-club-belfast"
+    ],
+    "search_methods": [
+      "DDG API: \"Crusaders FC\" contact phone email Northern Ireland",
+      "DDG API: Crusaders FC football club contact details"
+    ],
+    "sources": [
+      "Website: https://crusadersfootballclub.com/contact",
+      "Website: https://www.crusadersfc.com/?lang=ar"
+    ]
+  },
+  "Bangor FC": {
+    "phones": [
+      "07825 235480",
+      "028 91457712",
+      "07597 310660",
+      "028 9070 1444",
+      "028 9127 1163",
+      "028 9263 8649",
+      "07817 628359"
+    ],
+    "emails": [
+      "company.secretary@bangorfc.com",
+      "media@bangorfc.com"
+    ],
+    "websites_found": [
+      "https://uk.soccerway.com/teams/northern-ireland/bangor-fc/",
+      "https://bangorfc.com/",
+      "https://www.4ni.co.uk/c/44199/bangor-football-athletic-club-ltd-bangor",
+      "https://bangor-north-down.cylex-uk.co.uk/company/bangor-football-club-22324173.html"
+    ],
+    "search_methods": [
+      "DDG API: \"Bangor FC\" contact phone email Northern Ireland",
+      "DDG HTML: \"Bangor FC\" contact phone email Northern Ireland",
+      "DDG API: Bangor FC football club contact details"
+    ],
+    "sources": [
+      "Website: https://bangorfc.com/",
+      "Website: https://www.4ni.co.uk/c/44199/bangor-football-athletic-club-ltd-bangor"
+    ]
+  },
+  "Greenisland FC": {
+    "phones": [],
+    "emails": [],
+    "websites_found": [
+      "https://www.greetingsisland.com/",
+      "https://www.greetingsisland.com/Invitations",
+      "https://www.greetingsisland.com/cards/birthday"
+    ],
+    "search_methods": [
+      "DDG API: \"Greenisland FC\" contact phone email Northern Ireland",
+      "DDG API: Greenisland FC football club contact details"
+    ],
+    "sources": []
+  },
+  "Larne FC": {
+    "phones": [],
+    "emails": [
+      "archiesmyth2@aol.com"
+    ],
+    "websites_found": [
+      "https://www.larnerfc.com/contact/",
+      "https://contactout.com/company/larne-football-club-8427",
+      "https://uk.soccerway.com/teams/wd/wd/1581/",
+      "https://en.wikipedia.org/wiki/Larne",
+      "https://larnefc.com/",
+      "https://www.theirishroadtrip.com/larne-in-antrim/"
+    ],
+    "search_methods": [
+      "DDG API: \"Larne FC\" contact phone email Northern Ireland",
+      "DDG API: Larne FC football club contact details"
+    ],
+    "sources": [
+      "DDG snippet: \"Larne FC\" contact phone email Northern Ireland"
+    ]
+  }
+}

@@ -1,0 +1,1939 @@
+{
+  "clubs": [
+    {
+      "name": "Clubs",
+      "source": "Premier League",
+      "url": "https://www.premierleague.com/clubs",
+      "country": "England",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Clubs",
+      "source": "Premier League",
+      "url": "https://www.premierleague.com/clubs",
+      "country": "England",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Clubs",
+      "source": "Premier League",
+      "url": "https://www.premierleague.com/clubs",
+      "country": "England",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Aberdeen",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Airdrieonians",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Arbroath",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ayr United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Celtic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Clyde",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Cove Rangers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dumbarton",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dundee",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dundee United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "East Fife",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "East Kilbride",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Elgin City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Falkirk",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Greenock Morton",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Hamilton Academical",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Heart of Midlothian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Hibernian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Inverness Caledonian Thistle",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Kelty Hearts",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Kilmarnock",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Livingston",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Montrose",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Motherwell",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Partick Thistle",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Peterhead",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Queen of the South",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Queen&#039;s Park",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Rangers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ross County",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "St. Johnstone",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "St. Mirren",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stenhousemuir",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stirling Albion",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stranraer",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "The Spartans",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Heart of Midlothian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Aberdeen",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Livingston",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Falkirk",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "St. Mirren",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Motherwell",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Rangers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dundee",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Aberdeen",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Celtic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dundee United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Heart of Midlothian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Hibernian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Kilmarnock",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Celtic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Livingston",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Heart of Midlothian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Motherwell",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ross County",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "St. Johnstone",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ayr United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Airdrieonians",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Partick Thistle",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Greenock Morton",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Queen&#039;s Park",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Arbroath",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Airdrieonians",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Queen&#039;s Park",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Greenock Morton",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ayr United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ross County",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Partick Thistle",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "St. Johnstone",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Arbroath",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "East Fife",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Inverness Caledonian Thistle",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Peterhead",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Montrose",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Kelty Hearts",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Queen of the South",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Hamilton Academical",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stenhousemuir",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Cove Rangers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Cove Rangers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Montrose",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Hamilton Academical",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "East Fife",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Inverness Caledonian Thistle",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stenhousemuir",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Queen of the South",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Peterhead",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Clyde",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Elgin City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stirling Albion",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stranraer",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "The Spartans",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dumbarton",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Clyde",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "The Spartans",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dumbarton",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Elgin City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stranraer",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Stirling Albion",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Celtic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Falkirk",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Greenock Morton",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Aberdeen",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Partick Thistle",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ayr United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "St. Johnstone",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Motherwell",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "St. Mirren",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Heart of Midlothian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Rangers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Kilmarnock",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dundee United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Livingston",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Hibernian",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ayr United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dundee United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Elgin City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ross County",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dundee United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ross County",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ayr United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Elgin City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Brechin City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ross County",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Ayr United",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Elgin City",
+      "source": "Scottish Premier League",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "premier",
+      "type": "club_listing"
+    },
+    {
+      "name": "Kent Green United",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Kent Green United",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Kent Green United",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Kent Green United",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Kent Green United",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Kent Green United",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Kent Green United",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Kent FA",
+      "url": "https://www.kentfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting Up a Club",
+      "source": "Essex FA",
+      "url": "https://www.essexfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting Up a Club",
+      "source": "Essex FA",
+      "url": "https://www.essexfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting Up a Club",
+      "source": "Essex FA",
+      "url": "https://www.essexfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting Up a Club",
+      "source": "Essex FA",
+      "url": "https://www.essexfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting Up a Club",
+      "source": "Essex FA",
+      "url": "https://www.essexfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting Up a Club",
+      "source": "Essex FA",
+      "url": "https://www.essexfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting Up a Club",
+      "source": "Essex FA",
+      "url": "https://www.essexfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Manchester FA",
+      "url": "https://www.manchesterfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Manchester FA",
+      "url": "https://www.manchesterfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Manchester FA",
+      "url": "https://www.manchesterfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Manchester FA",
+      "url": "https://www.manchesterfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Manchester FA",
+      "url": "https://www.manchesterfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Manchester FA",
+      "url": "https://www.manchesterfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Manchester FA",
+      "url": "https://www.manchesterfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "setting up a club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Find out more about the people you need at your club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Setting up a club",
+      "source": "Liverpool FA",
+      "url": "https://www.liverpoolfa.com/clubs",
+      "country": "England",
+      "level": "county",
+      "type": "county_fa"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Ayr United",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Cove Rangers",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Dundee United",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Elgin City",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Inverness Caledonian Thistle",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Kelty Hearts",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Partick Thistle",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Dundee United",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Ayr United",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Partick Thistle",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Cove Rangers",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Kelty Hearts",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Inverness Caledonian Thistle",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Elgin City",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Cove Rangers",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Brechin City",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Partick Thistle",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Edinburgh City",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Alloa Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Ayr United",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Forfar Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Annan Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Dunfermline Athletic",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Raith Rovers",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Inverness Caledonian Thistle",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Elgin City",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Kelty Hearts",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    },
+    {
+      "name": "Brora Rangers",
+      "source": "SPFL",
+      "url": "https://spfl.co.uk/clubs",
+      "country": "Scotland",
+      "level": "league",
+      "type": "scottish_league"
+    }
+  ],
+  "processed_sources": [
+    "football_webpages",
+    "county_fas",
+    "scottish_leagues",
+    "football_apis"
+  ],
+  "total_clubs": 241
+}

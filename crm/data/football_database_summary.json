@@ -1,0 +1,19 @@
+{
+  "total_clubs": 48,
+  "by_country": {
+    "Scotland": 44,
+    "England": 4
+  },
+  "by_source": {
+    "Scottish Premier League": 43,
+    "Kent FA": 2,
+    "Premier League": 1,
+    "Liverpool FA": 1,
+    "SPFL": 1
+  },
+  "by_level": {
+    "premier": 44,
+    "county": 3,
+    "league": 1
+  }
+}

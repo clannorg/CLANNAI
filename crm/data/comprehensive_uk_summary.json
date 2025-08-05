@@ -1,0 +1,47 @@
+{
+  "scraping_metadata": {
+    "total_clubs": 48,
+    "scraping_date": "2025-08-03T21:52:49.698014",
+    "sources_used": [
+      "Premier League",
+      "Liverpool FA",
+      "SPFL",
+      "Scottish Premier League",
+      "Kent FA"
+    ],
+    "total_sources": 5
+  },
+  "geographic_breakdown": {
+    "by_country": {
+      "Scotland": 44,
+      "England": 4
+    },
+    "england_clubs": 4,
+    "scotland_clubs": 44,
+    "uk_clubs": 0
+  },
+  "club_types": {
+    "by_type": {
+      "club_listing": 44,
+      "county_fa": 3,
+      "scottish_league": 1
+    },
+    "by_level": {
+      "premier": 44,
+      "county": 3,
+      "league": 1
+    }
+  },
+  "data_quality": {
+    "clubs_with_urls": 48,
+    "clubs_with_country": 48,
+    "clubs_with_type": 48
+  },
+  "source_breakdown": {
+    "Scottish Premier League": 43,
+    "Kent FA": 2,
+    "Premier League": 1,
+    "Liverpool FA": 1,
+    "SPFL": 1
+  }
+}
