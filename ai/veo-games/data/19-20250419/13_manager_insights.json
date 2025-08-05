@@ -1,67 +1,94 @@
 {
   "match_summary": {
-    "key_tactical_story": "This was a high-intensity, back-and-forth match ending in a 2-2 draw. Both teams demonstrated attacking intent, but defensive vulnerabilities and strong goalkeeping performances were key factors in the final result. The match was heavily influenced by set-pieces, particularly penalties, with multiple saves impacting the scoreline.",
+    "key_tactical_story": "The match was a tightly contested 2-2 draw characterized by numerous scoring attempts and crucial saves by both goalkeepers. Both teams demonstrated resilience, coming back from deficits to equalize, highlighting the importance of goalkeeping and capitalizing on loose balls in the box.",
     "result_factors": [
-      "Goalkeeping Performance (Multiple Penalty Saves)",
-      "Set-Piece Execution & Defense",
-      "Defensive Errors Leading to Goals"
+      "Goalkeeping performance",
+      "Capitalizing on defensive errors",
+      "Set-piece execution"
     ]
   },
   "your_team_analysis": {
     "strengths_to_keep": [
       {
-        "area": "Attacking from outside the box",
-        "evidence": "Goal at 95:04 was scored from a shot outside the penalty box",
-        "keep_doing": "Encourage players to take long-range shots when the opportunity arises. Practice shooting from distance in training."
+        "area": "Attacking from distance",
+        "evidence": "Goal at 95:04 from outside the penalty box.",
+        "keep_doing": "Encourage players to take shots from distance when opportunities arise, practice long-range shooting in training."
+      },
+      {
+        "area": "Drawing Penalties",
+        "evidence": "Earned penalty at 100:07.",
+        "keep_doing": "Continue aggressive attacking play in the penalty area to draw fouls, coach players on legally drawing fouls."
       }
     ],
     "weaknesses_to_fix": [
       {
-        "area": "Defending loose balls in the box",
-        "evidence": "Conceded a goal at 92:42 from a loose ball inside the penalty area.",
-        "training_focus": "Implement drills focused on clearing loose balls and winning second balls in the penalty area. Work on defensive positioning and communication in the box."
+        "area": "Conceding Late Goals",
+        "evidence": "Conceded equalizer at 92:42.",
+        "training_focus": "Improve defensive concentration in the late stages of the game, practice late-game defensive scenarios."
+      },
+      {
+        "area": "Preventing shots from inside the box",
+        "evidence": "Goals scored from a loose ball inside the penalty area at 92:42",
+        "training_focus": "improve organization and discipline of defensive shape and players being first to the ball."
       }
     ]
   },
   "opposition_analysis": {
     "their_threats": [
       {
-        "pattern": "Attacking down the left wing",
-        "evidence": "Conceded a goal at 80:13 from an attack down the left wing.",
-        "how_to_defend": "Strengthen the right side of defense. Double-team the opposition's left winger and fullback. Ensure sufficient cover from midfielders."
+        "pattern": "Capitalizing on Loose Balls",
+        "evidence": "Goal at 92:42 from a loose ball inside the penalty area.",
+        "how_to_defend": "Improve defensive clearances, emphasize winning second balls in the box, ensure tight marking of attackers in the box."
+      },
+      {
+        "pattern": "Set Piece Delivery",
+        "evidence": "Several headers on goal from crosses and free kicks (e.g., 04:42, 07:27, 09:13, 28:14, 48:36, 68:14)",
+        "how_to_defend": "Improve aerial duel win rate in the box, assign specific marking duties, practice defending set pieces."
       }
     ],
     "their_weaknesses": [
       {
-        "vulnerability": "Dealing with pressure in their own box",
-        "evidence": "Goal at 92:42 was scored from a loose ball, indicating they struggle to clear the box effectively under pressure",
-        "how_to_exploit": "Increase pressure when in possession near their penalty area. Force them into making mistakes and create opportunities from loose balls."
+        "vulnerability": "Goalkeeper saving penalties.",
+        "evidence": "Saved 3 penalties at 49:37, 82:22, 91:13.",
+        "how_to_exploit": "When awarded penalties, have players change their approach or shooting style to take the goalie out of comfort zone and improve conversion rate."
+      },
+      {
+        "vulnerability": "Defensive headers",
+        "evidence": "Clearance by the Red/Claret team lead to goal at 95:04",
+        "how_to_exploit": "Apply more pressure on the team inside their own box."
       }
     ]
   },
   "training_priorities": [
     {
       "priority": 1,
-      "focus": "Defensive organization in the penalty box",
-      "drill": "Drills focusing on clearing loose balls, winning second balls, and improving defensive positioning and communication.",
-      "duration": "30 minutes",
-      "measure": "Reduce the number of goals conceded from loose balls and second chances in the penalty area."
+      "focus": "Defensive Concentration",
+      "drill": "Late-game defensive scenario training",
+      "duration": "25 minutes",
+      "measure": "Reduce late-game goals conceded."
     },
     {
       "priority": 2,
-      "focus": "Defensive strategy against left-wing attacks",
-      "drill": "Practice defensive positioning, double-teaming the opposition's left winger and fullback, and providing cover from midfielders.",
-      "duration": "25 minutes",
-      "measure": "Limit the opponent's success rate in attacking down the left wing."
+      "focus": "Penalty Conversion",
+      "drill": "Different approaches or shooting styles",
+      "duration": "20 minutes",
+      "measure": "Increase penalty conversion rate."
+    },
+    {
+      "priority": 3,
+      "focus": "Defensive Clearances",
+      "drill": "Practice drills to improve the accuracy and direction of defensive headers and clearances.",
+      "duration": "20 minutes",
+      "measure": "Reduce the frequency of clearances leading directly to opposition scoring opportunities."
     }
   ],
   "next_match_tactics": [
     {
-      "if_facing_similar_opponent": "Focus defensive efforts on neutralizing their left-wing attacks and capitalize on their vulnerability in defending loose balls inside the box.",
-      "set_piece_focus": "Practice set-piece execution and defensive strategies, especially against penalties and free-kicks near the box.",
-      "attacking_plan": "Maintain pressure in their defensive third to force errors and create scoring opportunities."
+      "if_facing_similar_opponent": "Tighten marking inside the box, focus on winning second balls, and practice late-game defensive concentration to prevent late equalizers.",
+      "set_piece_focus": "Dedicate more time to practicing defensive set pieces, focusing on aerial duels and marking assignments.",
+      "attacking_plan": "Capitalize on the weakness of the goalkeeper for penalty kicks and by applying pressure on the team inside their own box."
     }
   ],
   "match_id": "19-20250419",
-  "generated_at": "2025-08-04T23:55:00.011513"
+  "generated_at": "2025-08-05T00:12:30.288939"
 }

@@ -83,7 +83,7 @@ def upload_match_to_s3(match_id):
         return False
     
     # Define paths
-    data_dir = Path("data") / match_id
+    data_dir = Path("../data") / match_id
     if not data_dir.exists():
         print(f"❌ Data directory not found: {data_dir}")
         return False
@@ -145,6 +145,21 @@ def upload_match_to_s3(match_id):
             "s3_folder": "analysis-data",
             "content_type": "text/plain",
             "description": "Other significant events (fouls, cards, corners, etc.)"
+        },
+        "enhanced_events.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "VEO-first enhanced events with AI descriptions (ground truth)"
+        },
+        "correct_insights.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Corrected tactical insights based on accurate event data"
+        },
+        "claret_team_insights.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Tactical analysis specifically for the Claret team"
         },
         # Tactical Analysis Files (THE GOLDMINE 🔥)
         "8_tactical_analysis_red_team.txt": {

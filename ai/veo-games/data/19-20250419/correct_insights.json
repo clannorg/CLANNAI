@@ -1,0 +1,62 @@
+{
+  "match_overview": {
+    "final_score": "1-0",
+    "total_goals": 1,
+    "total_shots": 28,
+    "key_tactical_story": "The Red team secured a narrow victory through a late goal. The match featured numerous attacks and counter-attacks from both sides, with goalkeepers playing a crucial role in keeping the score low until the late breakthrough.",
+    "winning_team": "red"
+  },
+  "tactical_analysis": {
+    "red_team": {
+      "strengths": [
+        "Counter-attacking capabilities (e.g., at timestamp 1348)",
+        "Goalkeeping (multiple saves noted)",
+        "Recovering loose balls in the box (leading to the goal)",
+        "Defensive clearances (e.g., at timestamp 1881)"
+      ],
+      "weaknesses": [
+        "Losing possession from throw-ins (multiple instances leading to Blue counter-attacks)",
+        "Defending against counter attacks",
+        "Discipline (red card issued)"
+      ],
+      "shot_accuracy": "The Red team had several shots on goal, with at least two described as requiring saves from the opposing keeper. One shot led to a goal after recovering the loose ball."
+    },
+    "blue_team": {
+      "strengths": [
+        "Counter-attacking capabilities (multiple instances)",
+        "Winning possession in midfield",
+        "Building patient attacks (e.g., at timestamp 5540)",
+        "Corner kick delivery (timestamp 2768)",
+        "Long ball attacks (timestamp 5938)"
+      ],
+      "weaknesses": [
+        "Inability to convert counter-attacks into goals",
+        "Defensive vulnerabilities from throw-ins (contributing to Red possession)",
+        "Finishing (multiple shots off target or saved)",
+        "Sustaining attacks in the final third"
+      ],
+      "shot_accuracy": "The Blue team had numerous shots, including multiple counter-attack attempts and a header from a corner. However, they failed to score, with several shots saved by the Red goalkeeper or going over the crossbar."
+    }
+  },
+  "key_moments": [
+    {
+      "timestamp": 5548,
+      "description": "The red team attacks, and following a tackle in the box, they recover the loose ball and score.",
+      "tactical_significance": "This was the decisive moment, converting pressure into a goal. It highlights Red team's ability to capitalize on opportunities in the box and potentially a defensive lapse by Blue."
+    }
+  ],
+  "manager_recommendations": {
+    "red_team": [
+      "Improve throw-in retention to prevent opposition counter-attacks.",
+      "Maintain discipline to avoid further red cards in future matches.",
+      "Continue capitalizing on loose ball opportunities in the box.",
+      "Strengthen defense in the right wing to stop light blue build up."
+    ],
+    "blue_team": [
+      "Improve finishing in the final third to convert counter-attacks into goals.",
+      "Address defensive vulnerabilities, especially during throw-in situations.",
+      "Focus on converting set-piece opportunities (corners, free kicks) into goals.",
+      "Improve defense to stop attack from the opposing team."
+    ]
+  }
+}
