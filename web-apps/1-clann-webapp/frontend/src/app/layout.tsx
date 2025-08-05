@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     siteName: 'ClannAI',
     images: [
       {
-        url: '/clann-logo.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'ClannAI Football Analysis Platform',
+        alt: 'ClannAI - Professional Football Analysis Platform',
       },
     ],
     locale: 'en_US',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "ClannAI - Football Analysis Platform",
     description: "Professional video analysis platform for football teams. Upload matches, get AI-powered tactical insights, and improve your team's performance.",
     creator: '@ClannAI',
-    images: ['/clann-logo.png'],
+    images: ['/og-image.png'],
   },
   icons: {
     icon: '/favicon.ico',

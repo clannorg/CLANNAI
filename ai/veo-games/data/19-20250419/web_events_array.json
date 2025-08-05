@@ -1,274 +1,236 @@
 [
   {
-    "type": "shot",
-    "timestamp": 488,
-    "description": "The Red team loses possession from a throw-in, leading to a quick counter-attack by the Blue team.",
-    "team": "blue",
-    "veo_event_id": "eee3646f-7335-43b4-b61e-21d9b151ec7e",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 538,
-    "description": "The Red team loses possession from a throw-in, leading to a quick counter-attack by the Blue team.",
-    "team": "blue",
-    "veo_event_id": "0470f3d6-2ac5-4638-b934-f01e5600b52f",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 820,
-    "description": "The red team builds an attack in the final third which results in a shot on goal. The goalkeeper makes a diving save to his right.",
-    "team": "red",
-    "veo_event_id": "4dc1b14c-75b2-4937-b377-07030fc509f9",
-    "confidence": "high"
+    "type": "foul",
+    "timestamp": 150,
+    "description": "Claret foul stops attack, gives Light Blue free kick.",
+    "team": "claret"
   },
   {
     "type": "foul",
-    "timestamp": 905,
-    "description": "The referee whistles for a foul against the Claret team, awarding a free kick to the Light Blue team.",
-    "team": "Claret",
-    "confidence": "high",
-    "source": "ai_detected"
-  },
-  {
-    "type": "shot",
-    "timestamp": 1153,
-    "description": "Blue team wins possession in midfield and builds an attack, passing forward into the attacking third and attempting a through ball into the penalty area.",
-    "team": "blue",
-    "veo_event_id": "ba33cdea-ad8a-4c9d-af7b-6720b632c172",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 1348,
-    "description": "The red team initiates a counter-attack from their own half, advancing down the right wing and taking a shot from the right side of the penalty area.",
-    "team": "red",
-    "veo_event_id": "5ac9d113-9660-4f84-a8c1-e14dd68f028b",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 1856,
-    "description": "The Red team's goalkeeper takes a long goal kick downfield.",
-    "team": "red",
-    "veo_event_id": "df58ae69-a488-4d41-9cd3-b304cd3c5222",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 1881,
-    "description": "The light blue team takes a long throw-in into the red team's penalty area. The ball is headed clear by a red defender.",
-    "team": "light_blue",
-    "veo_event_id": "a7417301-a293-4dee-8160-be05605cb720",
-    "confidence": "medium"
+    "timestamp": 465,
+    "description": "Red player fouled during aerial challenge.",
+    "team": "red"
   },
   {
     "type": "foul",
-    "timestamp": 2201,
-    "description": "Red team is fouled during an attack in the opponent's half, resulting in a free kick.",
-    "team": "Blue",
-    "confidence": "high",
-    "source": "ai_detected"
+    "timestamp": 1020,
+    "description": "Blue attacker brought down by Red sliding tackle.",
+    "team": "red"
   },
   {
-    "type": "shot",
-    "timestamp": 2281,
-    "description": "The light blue team wins possession in the midfield and launches a quick counter-attack.",
-    "team": "light_blue",
-    "veo_event_id": "8be15e24-904d-430d-bd55-578d589ac872",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 1035,
+    "description": "Free kick awarded to Red team after a foul.",
+    "team": "red"
   },
   {
-    "type": "shot",
-    "timestamp": 2324,
-    "description": "Blue team attempts to build an attack from a throw-in, but the red team defends and clears the danger, with play shifting to a midfield battle.",
-    "team": "blue",
-    "veo_event_id": "2cbfcfb6-ed0e-48c9-963f-c23d99044077",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 1320,
+    "description": "Red team fouled during attack in opponent's half.",
+    "team": "blue"
   },
   {
-    "type": "shot",
-    "timestamp": 2768,
-    "description": "The blue team takes a corner kick from the right side. A blue player attempts a header that goes over the crossbar for a goal kick.",
-    "team": "blue",
-    "veo_event_id": "349c104c-f479-4bb0-a2f2-a7f40cf559fa",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 1425,
+    "description": "Red player fouls, stopping Light Blue attack.",
+    "team": "red"
   },
   {
-    "type": "shot",
-    "timestamp": 2834,
-    "description": "The Blue team wins possession in midfield and launches a counter-attack. A shot is taken by a Blue player from inside the box and the Red goalkeeper saves the shot.",
-    "team": "blue",
-    "veo_event_id": "5c2c3eb9-3cb1-48de-825a-fdabb60338ce",
-    "confidence": "high"
+    "type": "foul",
+    "timestamp": 1440,
+    "description": "Foul on a light blue player in the center circle.",
+    "team": "not_specified"
   },
   {
-    "type": "shot",
-    "timestamp": 2906,
-    "description": "Light Blue team builds an attack from the right wing, resulting in a shot that goes over the crossbar.",
-    "team": "light_blue",
-    "veo_event_id": "b52f4a7c-9930-4799-90ff-2c4dd4fd544f",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 1530,
+    "description": "Red team player brought down by sliding tackle.",
+    "team": "light_blue"
   },
   {
-    "type": "shot",
-    "timestamp": 4103,
-    "description": "Light Blue team takes a free kick from the left side. The free kick is crossed into the penalty area. A Light Blue player heads the ball towards the goal, which is saved by the Red team's goalkeeper.",
-    "team": "light_blue",
-    "veo_event_id": "46d97bc6-3fd2-446c-8fb5-16d14b50331e",
-    "confidence": "high"
+    "type": "foul",
+    "timestamp": 1950,
+    "description": "Foul committed on the light blue attacker near the penalty area.",
+    "team": "not_specified"
   },
   {
-    "type": "shot",
-    "timestamp": 4235,
-    "description": "The light blue team attacks down the left wing, working the ball into a central position and taking a shot from outside the box that is blocked by a red defender.",
-    "team": "light_blue",
-    "veo_event_id": "8cdae321-92fd-455e-83e6-58ace37db500",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 2250,
+    "description": "Referee stops play for a foul after a cross into the box.",
+    "team": "not_specified"
   },
   {
-    "type": "shot",
-    "timestamp": 4256,
-    "description": "Red team builds an attack from their own penalty area.  A long, direct pass is played forward, but the attack is intercepted by a headed clearance from the Light Blue defender.",
-    "team": "red",
-    "veo_event_id": "f74a6287-121c-441f-9a3f-5914a84fb1d6",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 2415,
+    "description": "Red team attacks, penalty being awarded.",
+    "team": "not_specified"
   },
   {
-    "type": "shot",
-    "timestamp": 4342,
-    "description": "The light blue team attacks in the penalty area, resulting in two quick-fire shots. A shot by a light blue player is blocked by a sliding red defender. A teammate takes a follow-up shot from the rebound and the red team's goalkeeper makes a diving save.",
-    "team": "light_blue",
-    "veo_event_id": "67a163b9-c91f-4600-9358-b12c54599ad4",
-    "confidence": "high"
+    "type": "foul",
+    "timestamp": 2430,
+    "description": "Blue team prepares to take a free kick.",
+    "team": "blue"
   },
   {
-    "type": "shot",
-    "timestamp": 4481,
-    "description": "The Light Blue team builds an attack from their own half. A long pass is played forward into the final third. A light blue player heads the ball back towards the penalty area.",
-    "team": "light_blue",
-    "veo_event_id": "8f921b93-a275-46e4-b0e5-86dca5c499ef",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 2565,
+    "description": "The Blue team builds possession, winning a free-kick.",
+    "team": "blue"
   },
   {
-    "type": "shot",
-    "timestamp": 4544,
-    "description": "Light blue team builds an attack from the left wing. cross is played into the box.",
-    "team": "light_blue",
-    "veo_event_id": "290c86ae-7bdc-4305-9f1b-a394c0157869",
-    "confidence": "medium"
+    "type": "corner",
+    "timestamp": 2745,
+    "description": "Blue team takes a corner kick.",
+    "team": "blue"
   },
   {
-    "type": "shot",
-    "timestamp": 4594,
-    "description": "The Blue team attacks down the left, resulting in a shot on goal that is saved by the Claret team's goalkeeper.",
-    "team": "blue",
-    "veo_event_id": "7f757474-85c5-476c-8cf4-44c2615b32ef",
-    "confidence": "medium"
+    "type": "corner",
+    "timestamp": 2760,
+    "description": "Blue team takes a corner kick from the right side.",
+    "team": "blue"
   },
   {
-    "type": "shot",
-    "timestamp": 5422,
-    "description": "The blue team wins possession after a long clearance and builds an attack from their own half.",
-    "team": "blue",
-    "veo_event_id": "11fd53a5-1001-4422-8b02-deb063cff265",
-    "confidence": "low"
+    "type": "foul",
+    "timestamp": 2805,
+    "description": "Aerial ball contested, free kick awarded to red team.",
+    "team": "not_specified"
   },
   {
-    "type": "shot",
-    "timestamp": 5540,
-    "description": "The Blue team builds a patient attack from their own half, moving the ball into the final third and probing the opposition's defense.",
-    "team": "blue",
-    "veo_event_id": "bfab7452-674a-4e85-b677-dfb36706b169",
-    "confidence": "medium"
+    "type": "foul",
+    "timestamp": 2820,
+    "description": "Red team awarded a free kick in their own half.",
+    "team": "red"
   },
   {
-    "type": "goal",
-    "timestamp": 5548,
-    "description": "The red team attacks, and following a tackle in the box, they recover the loose ball and score.",
-    "team": "red",
-    "veo_event_id": "d928c9d6-90ca-4598-afc9-229592880735",
-    "confidence": "high"
+    "type": "foul",
+    "timestamp": 2865,
+    "description": "Red team foul stops Blue attack.",
+    "team": "red"
   },
   {
-    "type": "shot",
-    "timestamp": 5683,
-    "description": "Blue team defends against a Red team attack, which breaks down leading to a throw-in for the Blue team.",
-    "team": "blue",
-    "veo_event_id": "852b57f9-d180-458c-84b7-68d5d330a4ca",
-    "confidence": "low"
-  },
-  {
-    "type": "shot",
-    "timestamp": 5725,
-    "description": "The red team attacks in the final third, resulting in a shot on goal that is saved by keeper.",
-    "team": "red",
-    "veo_event_id": "72f6e18f-0e29-4787-9615-b96bfcfe523a",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 5771,
-    "description": "Light Blue team attacks down the left wing into the box. Pass played into the penalty area. Shot from the edge of the box is blocked by a defender.",
-    "team": "light_blue",
-    "veo_event_id": "f731f35d-8a8f-4c9f-b6bd-86f07014adc2",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 5938,
-    "description": "The blue team wins possession in the midfield and launches a long-ball attack. The red team's defender clears the ball with a header just outside the penalty area.",
-    "team": "blue",
-    "veo_event_id": "a1723ff9-57af-4410-bf70-9d0efc687090",
-    "confidence": "low"
-  },
-  {
-    "type": "shot",
-    "timestamp": 6177,
-    "description": "Light Blue team attacks down the middle, working the ball into the penalty area and taking a shot from inside the box, which goes wide of the goal.",
-    "team": "light_blue",
-    "veo_event_id": "67b2fb45-5660-4dce-94bc-d09e0594792b",
-    "confidence": "medium"
-  },
-  {
-    "type": "shot",
-    "timestamp": 6317,
-    "description": "The Red team takes an indirect free-kick which is cleared by the Light Blue team's defense.",
-    "team": "red",
-    "veo_event_id": "7c083abd-cb4b-4168-98fe-ec96e77fa202",
-    "confidence": "low"
+    "type": "foul",
+    "timestamp": 3840,
+    "description": "Red team attacked, Blue team foul in opposition's half.",
+    "team": "blue"
   },
   {
     "type": "yellow_card",
-    "timestamp": 6424,
-    "description": "Play is stopped for a foul on a Light Blue player, with the referee issuing a yellow card to a Claret player.",
-    "team": "Claret",
-    "confidence": "high",
-    "source": "ai_detected"
+    "timestamp": 3855,
+    "description": "Claret player gets yellow card for foul on Light Blue.",
+    "team": "claret"
   },
   {
-    "type": "shot",
-    "timestamp": 6559,
-    "description": "Red team's attack is cleared, leading to a Blue team counter-attack. Red player takes a shot which is blocked.  Blue team gains possession and starts a counter-attack.",
-    "team": "blue",
-    "veo_event_id": "09a735c0-1d3f-4a1a-ab92-5aab4965fbe5",
-    "confidence": "low"
+    "type": "foul",
+    "timestamp": 3915,
+    "description": "Red team has possession, foul is called.",
+    "team": "not_specified"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4050,
+    "description": "Blue player fouled in midfield, advantage played.",
+    "team": "not_specified"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4260,
+    "description": "Light Blue team attack brought back for a free kick.",
+    "team": "not_specified"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4650,
+    "description": "Red team foul on a Blue team player.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4770,
+    "description": "Red team awarded free kick.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4830,
+    "description": "Red team foul in the center circle.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4950,
+    "description": "Foul during aerial challenge in midfield.",
+    "team": "not_specified"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5010,
+    "description": "Blue team wins possession in the attacking half.",
+    "team": "not_specified"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5145,
+    "description": "The Blue team executes a long throw-in into the penalty area",
+    "team": "blue"
   },
   {
     "type": "red_card",
-    "timestamp": 8605,
-    "description": "Referee issues a red card to a player on the Red team during a stoppage in play.",
-    "team": "Red",
-    "confidence": "high",
-    "source": "ai_detected"
+    "timestamp": 5160,
+    "description": "Referee issues a red card to a Red team player.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5280,
+    "description": "Red team takes a free kick from the left flank.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5310,
+    "description": "Red team takes a short free kick on the edge of the area.",
+    "team": "red"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5685,
+    "description": "Blue team takes a corner from the left.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6255,
+    "description": "The Blue team takes a free kick, cleared by the goalkeeper.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6540,
+    "description": "The light blue team scores a goal from a corner kick.",
+    "team": "light_blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6585,
+    "description": "Blue team attack from midfield stopped by a foul.",
+    "team": "not_specified"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6600,
+    "description": "Light Blue player brought down by a foul.",
+    "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6690,
+    "description": "Blue team takes a quick free-kick, disallowed.",
+    "team": "blue"
   },
   {
     "type": "substitution",
-    "timestamp": 11551,
-    "description": "Players warm up and walk on the sideline as a substitution is prepared. a player in a claret and blue shirt is substituted off and shakes hands with a teammate.",
-    "team": "Claret",
-    "confidence": "high",
-    "source": "ai_detected"
+    "timestamp": 6945,
+    "description": "Player off from Claret and Blue, Player on.",
+    "team": "not_explicitly_stated"
   }
 ]

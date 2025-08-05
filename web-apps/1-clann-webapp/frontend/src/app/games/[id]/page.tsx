@@ -54,7 +54,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
     yellow_card: true,
     red_card: true,
     corner: true,
-    substitution: true
+    substitution: true,
+    turnover: true
   })
   const [teamFilter, setTeamFilter] = useState('both') // 'red', 'black', 'both'
   const [timeRange, setTimeRange] = useState([0, 0]) // [start, end] in seconds
@@ -725,7 +726,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                       yellow_card: true,
                       red_card: true,
                       corner: true,
-                      substitution: true
+                      substitution: true,
+                      turnover: true
                     })
                     setTeamFilter('both')
                     setTimeRange([0, duration || 0])

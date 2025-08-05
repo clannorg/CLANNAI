@@ -1,0 +1,821 @@
+# Other Events - 19-20250419
+# Generated: 2025-08-05T22:47:45.036328
+# Method: Gemini intelligent event extraction
+# Source: Complete timeline analysis
+# Focus: Fouls, cards, corners, substitutions, turnovers, decisions
+
+Here's an analysis of the provided football match timeline, focusing on significant non-goal/shot events:
+
+=== FOULS & FREE KICKS ===
+Timestamp: 02:30 (150 seconds)
+Type: Foul
+Team: Claret
+Description: Claret team attempts to build an attack with a long ball, which is stopped by a foul. The referee whistles for the foul.
+Significance: Halts a Claret attack and gives Light Blue team a free kick in a potentially advantageous position.
+
+Timestamp: 07:45 (465 seconds)
+Type: Foul
+Team: Red (opponent not explicitly mentioned)
+Description: Red team wins an aerial duel in midfield. A red player is fouled during an aerial challenge.
+Significance: Grants Red team possession and a set-piece opportunity in midfield.
+
+Timestamp: 17:00 (1020 seconds)
+Type: Foul
+Team: Red
+Description: Blue attacker is brought down by a sliding tackle from a red defender just outside the penalty box.
+Significance: Dangerous free kick opportunity for the Blue team just outside the Red team's penalty area.
+
+Timestamp: 17:15 (1035 seconds)
+Type: Free kick
+Team: Red
+Description: The referee awards a free kick to the Red team following a foul on a Red player in an attacking position.
+Significance: Attacking free kick opportunity for the Red team.
+
+Timestamp: 22:00 (1320 seconds)
+Type: Foul
+Team: Blue
+Description: Red team is fouled during an attack in the opponent's half.
+Significance: Grants Red team a free kick in a promising attacking position, disrupting Blue's defensive organization.
+
+Timestamp: 23:45 (1425 seconds)
+Type: Foul
+Team: Red
+Description: Light Blue team attempts to build an attack, but a long pass is intercepted, leading to a foul committed by a Red player.
+Significance: Stops a Light Blue attack and awards a free kick, disrupting the Light Blue team's momentum.
+
+Timestamp: 24:00 (1440 seconds)
+Type: Foul
+Team: Not specified
+Description: Play is stopped in the center circle for a foul on a light blue player.
+Significance: Resets play after a foul, granting the light blue team possession.
+
+Timestamp: 25:30 (1530 seconds)
+Type: Foul
+Team: Light blue
+Description: Red team player is brought down by a sliding tackle.
+Significance: Stops a counter-attack and grants the Red team a free kick.
+
+Timestamp: 32:30 (1950 seconds)
+Type: Foul
+Team: Not specified
+Description: Foul committed on the light blue attacker near the penalty area.
+Significance: Awards a dangerous free kick to the light blue team.
+
+Timestamp: 37:30 (2250 seconds)
+Type: Foul
+Team: Not specified
+Description: Referee stops play for a foul after a cross into the box.
+Significance: Halts a Claret team attack, gives them a free kick.
+
+Timestamp: 40:15 (2415 seconds)
+Type: Foul
+Team: Not specified
+Description: Red team attacks in the opposition's half creating a shooting opportunity that is blocked resulting in a penalty being awarded.
+Significance: Results in the awarding of a penalty.
+
+Timestamp: 40:30 (2430 seconds)
+Type: Free kick
+Team: Blue
+Description: The Blue team prepares to take a free kick from their own half following a foul on a Red team player.
+Significance: Grants Blue team possession and a chance to build an attack.
+
+Timestamp: 42:45 (2565 seconds)
+Type: Free kick
+Team: Blue
+Description: The Blue team builds possession from their goalkeeper, moving the ball upfield and winning a free-kick.
+Significance: Grants Blue team a set-piece opportunity.
+
+Timestamp: 46:45 (2805 seconds)
+Type: Foul
+Team: Not specified
+Description: The teams contest an aerial ball in midfield, which results in the referee awarding a free kick to the red team.
+Significance: Grants Red team possession and a set-piece opportunity in midfield.
+
+Timestamp: 47:00 (2820 seconds)
+Type: Free kick
+Team: Red
+Description: The Red team is awarded a free kick in their own half immediately after the Blue team's kick-off.
+Significance: Grants Red team possession and a chance to build from the back.
+
+Timestamp: 47:45 (2865 seconds)
+Type: Foul
+Team: Red
+Description: Blue team builds an attack from midfield which is stopped by a foul from the Red team.
+Significance: Grants Blue team a free kick in a potentially threatening position.
+
+Timestamp: 64:00 (3840 seconds)
+Type: Foul
+Team: Blue
+Description: Red team is on the attack in the opposition's half when a player is fouled.
+Significance: Grants Red team a free kick in the opponent's half.
+
+Timestamp: 65:15 (3915 seconds)
+Type: Foul
+Team: Not specified
+Description: Red team has possession in the opposition's half before a foul is called.
+Significance: Grants Red team a free kick in the opposition's half.
+
+Timestamp: 67:30 (4050 seconds)
+Type: Foul
+Team: Not specified
+Description: Blue team wins possession in midfield and starts an attack. Foul on a Blue player, advantage is played.
+Significance: Allows the play to continue until the advantage is lost.
+
+Timestamp: 71:00 (4260 seconds)
+Type: Foul
+Team: Not specified
+Description: The Light Blue team builds an attack through the centre of the pitch, which is ultimately brought back for a free kick.
+Significance: After advantage, a free kick is awarded to the light blue team.
+
+Timestamp: 77:30 (4650 seconds)
+Type: Foul
+Team: Red
+Description: Red team contests a high ball in the midfield, leading to a foul on a Blue team player.
+Significance: Awards a free kick to the Blue team in midfield.
+
+Timestamp: 79:30 (4770 seconds)
+Type: Free kick
+Team: Red
+Description: The Red team passes the ball in their own half before a free kick is awarded.
+Significance: Gives the red team the opportunity to build an attack from a set piece.
+
+Timestamp: 80:30 (4830 seconds)
+Type: Foul
+Team: Red
+Description: A foul is committed by the Red team in the center circle, leading to a free kick for the Light Blue team.
+Significance: Awards a free kick to the Light Blue team in the center circle.
+
+Timestamp: 82:30 (4950 seconds)
+Type: Foul
+Team: Not Specified
+Description: A foul is committed during an aerial challenge in midfield during kick-off.
+Significance: Grants the free kick to the team who was fouled.
+
+Timestamp: 83:30 (5010 seconds)
+Type: Foul
+Team: Not specified
+Description: Blue team wins possession in the attacking half and withstands a challenge.
+Significance: Allows the play to continue due to advantage.
+
+Timestamp: 88:00 (5280 seconds)
+Type: Free kick
+Team: Red
+Description: Red team takes a free kick from the left flank, which is cleared by the defense.
+Significance: Opportunity for the red team to score, even though it's cleared.
+
+Timestamp: 88:30 (5310 seconds)
+Type: Free kick
+Team: Red
+Description: Red team takes a short free kick and attempts to build an attack on the edge of the penalty area.
+Significance: The free kick creates the potential for an attack near the goal.
+
+Timestamp: 104:15 (6255 seconds)
+Type: Free Kick
+Team: Blue
+Description: The Blue team takes a free kick, which is cleared by the Red team's goalkeeper.
+Significance: Chance for the Blue team to put pressure on the goal and earn a set piece.
+
+Timestamp: 109:45 (6585 seconds)
+Type: Foul
+Team: Not specified
+Description: Blue team builds an attack from midfield, which is stopped by a foul.
+Significance: Halts the blue team's attack.
+
+Timestamp: 110:00 (6600 seconds)
+Type: Foul
+Team: Red
+Description: Light Blue team attacks down the left wing, but the player is brought down by a foul.
+Significance: Results in a free kick for the Light Blue team.
+
+Timestamp: 111:30 (6690 seconds)
+Type: Free kick
+Team: Blue
+Description: The Blue team takes a quick free-kick near the penalty area, which is disallowed by the referee.
+Significance: Resets the play to properly take a free kick.
+
+=== CARDS & DISCIPLINE ===
+Timestamp: 64:15 (3855 seconds)
+Type: Yellow card
+Team: Claret
+Description: Play is stopped for a foul on a Light Blue player, with the referee issuing a yellow card to a Claret player.
+Impact: Cautions a Claret player, potentially affecting their tackling and future decisions in the match.
+
+Timestamp: 86:00 (5160 seconds)
+Type: Red card
+Team: Red
+Description: Referee issues a red card to a player on the Red team during a stoppage in play.
+Impact: Significant disadvantage for the Red team, forcing them to play with ten players, heavily influencing tactics and fatigue.
+
+=== CORNERS & SET PIECES ===
+Timestamp: 45:45 (2745 seconds)
+Type: Corner kick
+Team: Blue
+Description: Blue team takes a corner kick.
+Danger Level: Medium.
+
+Timestamp: 46:00 (2760 seconds)
+Type: Corner Kick
+Team: Blue
+Description: Blue team takes a corner kick from the right side.
+Danger Level: Medium.
+
+Timestamp: 85:45 (5145 seconds)
+Type: Throw-in
+Team: Blue
+Description: The Blue team executes a long throw-in into the penalty area, which is cleared by the Red team's defense.
+Danger Level: Medium
+
+Timestamp: 109:00 (6540 seconds)
+Type: Corner kick
+Team: Light Blue
+Description: The light blue team scores a goal from a corner kick.
+Danger Level: High
+
+Timestamp: 94:45 (5685 seconds)
+Type: Corner kick
+Team: Blue
+Description: Blue team takes a corner from the left, which is defended by the Red team.
+Danger Level: Medium.
+
+=== SUBSTITUTIONS ===
+Timestamp: 115:45 (6945 seconds)
+Team: Not explicitly stated, but likely Claret and Blue based on context
+Change: Player off from Claret and Blue, Player on.
+Tactical Reason: Probably tactical or due to fatigue.
+
+=== TURNOVERS & POSSESSION CHANGES ===
+Timestamp: 02:15 (135 seconds)
+Type: Turnover
+Team: Red
+Description: The light blue team attempts to build an attack down the right wing, but the red team dispossesses them.
+Context: Midfield
+Impact: Red team starts to build from midfield.
+
+Timestamp: 03:15 (195 seconds)
+Type: Interception, Recovery
+Team: Blue, Red
+Description: Red team's attack is broken up, leading to a Blue team counter-attack which is then intercepted by the Red team. Blue team wins possession, Red team intercepts.
+Context: Midfield
+Impact: Possession changes hands twice quickly.
+
+Timestamp: 05:45 (345 seconds)
+Type: Interception
+Team: Red
+Description: Blue team attempts a long ball attack from midfield, Red team intercepts.
+Context: Midfield.
+Impact: Red team starts to build from their own half.
+
+Timestamp: 06:00 (360 seconds)
+Type: Turnover
+Team: Red
+Description: The black team builds an attack, but the red team wins the ball back and launches a counter-attack.
+Context: Attacking third for Black, transition.
+Impact: Counter-attack initiated.
+
+Timestamp: 07:00 (420 seconds)
+Type: Turnover
+Team: Maroon
+Description: The light blue team builds an attack from a throw-in but loses possession, allowing the maroon team to start an attack from their own half.
+Context: attacking third for light blue.
+Impact: maroon attack initiated.
+
+Timestamp: 08:00 (480 seconds)
+Type: Turnover
+Team: Blue
+Description: The Red team loses possession from a throw-in, leading to a quick counter-attack by the Blue team.
+Context: Defensive third for Red
+Impact: Fast Blue counter-attack.
+
+Timestamp: 09:45 (585 seconds)
+Type: Interception
+Team: Red, Light Blue
+Description: The light blue team's initial attack is intercepted by the red team, who then attempt a forward pass that is also intercepted.
+Context: Midfield
+Impact: Prevents light blue attack.
+
+Timestamp: 10:15 (615 seconds)
+Type: Interception
+Team: Light Blue, Red
+Description: Red team attacks, loses possession, but quickly regains the ball and resets the play in their own half.
+Context: attacking third
+Impact: Possession changes hands twice quickly.
+
+Timestamp: 11:30 (690 seconds)
+Type: Dispossessed
+Team: Blue
+Description: Red team builds an attack from midfield but is dispossessed by the Blue team.
+Context: Midfield.
+Impact: Grants Blue team possession in the midfield.
+
+Timestamp: 11:45 (705 seconds)
+Type: Interception
+Team: Light Blue
+Description: The Light Blue team wins possession in midfield and builds an attack into the final third, but the Red team defends successfully and regains the ball.
+Context: Midfield
+Impact: Blocks the Light Blue attack and regains possession.
+
+Timestamp: 13:00 (780 seconds)
+Type: Recovery
+Team: Red
+Description: Red team player collects a cleared ball in midfield.
+Context: Midfield.
+Impact: Red team regains possession and moves forward.
+
+Timestamp: 14:15 (855 seconds)
+Type: Recovery
+Team: Blue
+Description: The Blue team wins possession from a long ball and builds an attack from the midfield.
+Context: Midfield.
+Impact: Grants Blue team possession and starts an attack.
+
+Timestamp: 14:30 (870 seconds)
+Type: Interception
+Team: Light Blue
+Description: The red team's attack is broken up, leading to a turnover and a midfield battle for possession.
+Context: Midfield.
+Impact: Grants light blue team possession.
+
+Timestamp: 15:45 (945 seconds)
+Type: Tackle
+Team: Red
+Description: Light Blue team attacks in the final third but is dispossessed by a sliding tackle, though they regain possession and circulate the ball in midfield.
+Context: Attacking third.
+Impact: Prevents a light blue attack
+
+Timestamp: 16:45 (1005 seconds)
+Type: Interception
+Team: Light Blue
+Description: The Light Blue team gains possession in midfield and patiently builds an attack from their own half.
+Context: Midfield.
+Impact: Light Blue team starts a build-up.
+
+Timestamp: 19:15 (1155 seconds)
+Type: Tackle
+Team: Blue
+Description: Blue team wins possession in midfield with a tackle and builds an attack.
+Context: Midfield.
+Impact: Blue team launch an attack.
+
+Timestamp: 19:30 (1170 seconds)
+Type: Turnover, Recovery
+Team: Light Blue, Light Blue
+Description: The light blue team defends a cross and transitions into an attack. Goalkeeper collects a cross, Light Blue team plays long.
+Context: Defensive action leading to an attack.
+Impact: Counter-attack opportunity for the Light Blue team.
+
+Timestamp: 21:45 (1205 seconds)
+Type: Interception, Recovery
+Team: Red, Blue
+Description: Blue team builds an attack from midfield, which is briefly intercepted before they win the ball back.
+Context: Midfield.
+Impact: Quick changes of possession in the midfield.
+
+Timestamp: 24:30 (1470 seconds)
+Type: Turnover
+Team: Blue
+Description: The red team takes a free kick into the box, which is cleared by the blue team's defense. The blue team then gains possession.
+Context: Defensive action in the blue teams penalty box.
+Impact: Gives Blue the possession in their own half.
+
+Timestamp: 28:30 (1710 seconds)
+Type: Turnover
+Team: Blue
+Description: Red team attacks on the left wing, but the blue team defends, wins possession and launches a counter-attack.
+Context: Red team attacking on the left wing.
+Impact: Initiates Blue team's counter-attack.
+
+Timestamp: 29:15 (1755 seconds)
+Type: Interception
+Team: Blue
+Description: The Claret team builds an attack from their own half, but their long forward pass is intercepted by the Blue team.
+Context: Defensive action in blue team's half.
+Impact: Gives the blue team possession and the chance to build an attack.
+
+Timestamp: 29:30 (1770 seconds)
+Type: Interception
+Team: Blue
+Description: The Maroon team loses possession in midfield, allowing the Blue team to launch a counter-attack up the right flank.
+Context: Midfield battle, counter-attack opportunity.
+Impact: Sets up a Blue team counter.
+
+Timestamp: 31:30 (1890 seconds)
+Type: Block
+Team: Light Blue
+Description: The Red team attacks, creating a scramble in the box, but the Light Blue team's defense blocks multiple shot attempts before clearing the ball.
+Context: The Red team attacking in the box.
+Impact: Blocks red team from scoring.
+
+Timestamp: 32:00 (1920 seconds)
+Type: Interception
+Team: Red
+Description: Blue team builds an attack from their own half, but a misplaced pass is intercepted by the Red team in midfield.
+Context: Midfield play, attack build-up.
+Impact: Prevents Blue attack.
+
+Timestamp: 32:15 (1935 seconds)
+Type: Recovery
+Team: Light Blue, Red
+Description: Both teams battle for possession in the midfield with multiple turnovers. Light Blue team wins the ball in the center circle, Red team regains possession, Red team's long pass is headed away by a Light Blue defender.
+Context: Chaotic midfield play.
+Impact: Multiple possession changes, shifting momentum.
+
+Timestamp: 35:00 (2100 seconds)
+Type: Tackle
+Team: Blue
+Description: A Blue defender makes a successful tackle to dispossess the Red team attacker and starts to move the ball out of their half.
+Context: Defensive third.
+Impact: Prevents a red attack.
+
+Timestamp: 35:15 (2115 seconds)
+Type: Interception
+Team: Blue
+Description: Red team attempts to build an attack which is broken up by the Blue team, who then regain possession.
+Context: attacking third
+Impact: Stops a red attack.
+
+Timestamp: 35:30 (2130 seconds)
+Type: Recovery
+Team: Red
+Description: The Red team wins possession in their half and builds a counter-attack.
+Context: Defensive play leading to a counter.
+Impact: Sets up a red counter-attack.
+
+Timestamp: 37:00 (2220 seconds)
+Type: Interception
+Team: Blue
+Description: Red team takes a throw-in, but the Blue team intercepts and begins to move the ball upfield.
+Context: Building an attack from a throw-in.
+Impact: Allows the Blue team to gain possession and push forward.
+
+Timestamp: 38:00 (2280 seconds)
+Type: Tackle
+Team: Light Blue
+Description: The light blue team wins possession in the midfield and launches a quick counter-attack after a tackle in the center circle.
+Context: Tackle in the midfield leads to a counterattack.
+Impact: Leads to a light blue counter attack.
+
+Timestamp: 38:30 (2310 seconds)
+Type: Clearance
+Team: Red
+Description: Blue team attempts to build an attack from a throw-in, but the red team defends and clears the danger.
+Context: Clearance following a throw-in attack.
+Impact: Clears the threat of the attack.
+
+Timestamp: 39:45 (2385 seconds)
+Type: Tackle
+Team: Black
+Description: The Black team wins possession in midfield with a tackle and starts to build an attack.
+Context: Midfield, turnover to attack.
+Impact: Black team gains possession and attacks.
+
+Timestamp: 41:30 (2490 seconds)
+Type: Clearance
+Team: Light Blue
+Description: The light blue team clears the ball from their defensive third, but the claret team quickly regains possession in midfield.
+Context: Defensive action leading to an attack.
+Impact: Allows the Claret team to build from the midfield.
+
+Timestamp: 42:15 (2535 seconds)
+Type: Turnover
+Team: Red, Light Blue
+Description: The teams exchange possession in midfield with a series of passes and headers.
+Context: Midfield Battle.
+Impact: Fast paced changes of possession.
+
+Timestamp: 43:15 (2595 seconds)
+Type: Interception
+Team: Red
+Description: The Light Blue team attempts to build an attack, but the Red team intercepts and starts a counter-attack.
+Context: Midfield
+Impact: Counter-attack initiated.
+
+Timestamp: 44:15 (2655 seconds)
+Type: Interception
+Team: Blue
+Description: Red team loses possession in midfield, allowing the Blue team to build up play from their own half.
+Context: Midfield
+Impact: Gives the Blue team possession.
+
+Timestamp: 45:00 (2700 seconds)
+Type: Interception
+Team: Light Blue
+Description: The Light Blue team wins possession after kickoff.
+Context: Immediately following a kick off.
+Impact: Possession given to light blue team to begin their attack.
+
+Timestamp: 45:15 (2715 seconds)
+Type: Interception
+Team: Blue
+Description: The Red team defends an attack and launches a long ball forward, The Blue team's defender intercepts the long ball with a header.
+Context: Defensive header in midfield.
+Impact: Blue team wins possession.
+
+Timestamp: 47:15 (2835 seconds)
+Type: Tackle
+Team: Blue
+Description: The Blue team wins possession in midfield with a tackle and launches a counter-attack.
+Context: Midfield transition.
+Impact: Potential counter for the Blue team.
+
+Timestamp: 48:00 (2880 seconds)
+Type: Interception
+Team: Light Blue
+Description: The Light Blue team wins the ball in midfield and builds a patient attack down the right side of the pitch.
+Context: Midfield
+Impact: Begins a light blue attack
+
+Timestamp: 70:15 (4215 seconds)
+Type: Tackle
+Team: Red
+Description: The Light Blue team builds an attack from midfield, advancing down the left wing. The Red team makes a successful tackle to win back possession.
+Context: Defense
+Impact: Prevents light blue team to make an attack from the left wing.
+
+Timestamp: 72:45 (4365 seconds)
+Type: Dispossessed
+Team: Red
+Description: The Red team attempts to build an attack from their half but is dispossessed, leading to a Blue team counter-attack.
+Context: Center circle
+Impact: Counter-attack opportunity.
+
+Timestamp: 72:30 (4350 seconds)
+Type: Block
+Team: Red
+Description: The light blue team attacks in the penalty area, resulting in two quick-fire shots that are blocked.
+Context: Red team defending in their box.
+Impact: Prevents light blue team from scoring.
+
+Timestamp: 78:15 (4695 seconds)
+Type: Turnover
+Team: Blue
+Description: Red team takes a long goal kick, but the Blue team wins possession.
+Context: Red team playing the ball out from their back.
+Impact: Gives the ball to the Blue team in midfield.
+
+Timestamp: 79:00 (4740 seconds)
+Type: Interception
+Team: Red
+Description: The Blue team builds an attack in the opponent's half, moving the ball from the left to the right flank, before the Red team intercepts.
+Context: Red team defending in their half.
+Impact: Stops an imminent Blue team's attack.
+
+Timestamp: 79:15 (4755 seconds)
+Type: Interception
+Team: Red
+Description: The Blue team patiently builds an attack from the back, moving the ball into the opponent's half before their advance is stopped.
+Context: Red team defending in their half.
+Impact: Stops an imminent Blue team's attack.
+
+Timestamp: 80:15 (4815 seconds)
+Type: Turnover
+Team: Red
+Description: Red team wins possession from the attacking Blue team and launches a counter-attack from their own half.
+Context: Blue team's attack is interrupted.
+Impact: Allows Red team to launch a counter-attack.
+
+Timestamp: 81:00 (4860 seconds)
+Type: Interception
+Team: Red
+Description: Red team intercepts a chipped pass from the light blue team in their half.
+Context: Red team defending a chipped pass.
+Impact: Prevents an imminent light blue team's attack.
+
+Timestamp: 83:00 (4980 seconds)
+Type: Tackle
+Team: Light Blue
+Description: Light Blue team wins the ball in midfield and launches a counter-attack down the right flank.
+Context: Tackle in the midfield leads to a counterattack.
+Impact: Leads to a light blue counter attack.
+
+Timestamp: 83:15 (4995 seconds)
+Type: Tackle
+Team: Red
+Description: Red team gains possession in midfield after a challenge and starts an attack.
+Context: Tackle in midfield.
+Impact: Allows a Red team attack to begin.
+
+Timestamp: 89:15 (5355 seconds)
+Type: Interception
+Team: Light Blue
+Description: Red team controls the ball in the midfield, probing for an opening. A Light Blue player intercepts a pass near the center circle, then Red immediately win the ball back.
+Context: Midfield battle, turnover.
+Impact: Short change in momentum.
+
+Timestamp: 90:15 (5415 seconds)
+Type: Tackle
+Team: Blue
+Description: The blue team wins possession after a long clearance and builds an attack from their own half. A blue player makes a successful tackle in midfield.
+Context: Midfield
+Impact: Starts Blue team's attack.
+
+Timestamp: 91:45 (5505 seconds)
+Type: Interception
+Team: Red
+Description: Midfield play with possession changing hands.
+Context: Defensive action in Red teams box.
+Impact: Gives Blue the possession in their own half.
+
+Timestamp: 92:00 (5520 seconds)
+Type: Tackle
+Team: Red
+Description: Red team builds an attack, winning the ball back in midfield with a tackle.
+Context: Midfield.
+Impact: Red team starts an attack from midfield.
+
+Timestamp: 93:30 (5610 seconds)
+Type: Turnover
+Team: Blue
+Description: The blue team wins the ball from the kick-off and launches a quick attack.
+Context: Quick changes from kick-off.
+Impact: Sets-up the blue team for an attack on the goal.
+
+Timestamp: 94:30 (5670 seconds)
+Type: Clearance
+Team: Red
+Description: Blue team defends against a Red team attack, which breaks down leading to a throw-in for the Blue team.
+Context: Red team attacking.
+Impact: Prevents the red team from having a chance at a shot.
+
+Timestamp: 95:15 (5715 seconds)
+Type: Interception
+Team: Red
+Description: Blue team kicks off, but the Red team immediately wins possession in the center of the pitch.
+Context: Kickoff, immediate pressure.
+Impact: Fast transition to Red attack.
+
+Timestamp: 96:00 (5760 seconds)
+Type: Recovery
+Team: Light Blue
+Description: Light blue team wins possession from a goal kick.
+Context: Midfield.
+Impact: Starts an attack.
+
+Timestamp: 96:45 (5760 seconds)
+Type: Turnover
+Team: Red
+Description: The teams battle for possession in midfield. A red team player makes a successful tackle on the light blue player.
+Context: Midfield battle
+Impact: Allows red to begin an attack.
+
+Timestamp: 97:45 (5865 seconds)
+Type: Turnover
+Team: Light Blue
+Description: Light Blue team defends a long ball and establishes possession in their own half.
+Context: Defensive Header, Midfield Pass
+Impact: Maintains possession in own half, Sets up for the start of their attack.
+
+Timestamp: 98:45 (5925 seconds)
+Type: Long Ball, Defensive Header
+Team: Blue
+Description: the blue team wins possession in the midfield and launches a long-ball attack.
+Context: Defensive Header.
+Impact: Sets up for their potential attack.
+
+Timestamp: 101:30 (6090 seconds)
+Type: Turnover
+Team: Light Blue
+Description: The Light Blue team wins possession in their defensive half and begins to build an attack.
+Context: the Light Blue gains control of the ball and starts moving forward,
+Impact: Attack through midfield.
+
+Timestamp: 102:30 (6150 seconds)
+Type: Sliding Tackle
+Team: Red
+Description: Blue team builds an attack from their own half, but the Red team wins possession with a tackle on the left wing.
+Context: Wing attack.
+Impact: Prevents potential Blue team scoring chance.
+
+Timestamp: 102:45 (6165 seconds)
+Type: Clearance
+Team: Red
+Description: The blue team's attack down the left is cleared by the red team, who then gain possession and begin to build from their own half.
+Context: Defence.
+Impact: Clears the blue team's attack.
+
+Timestamp: 105:30 (6330 seconds)
+Type: Turnover
+Team: Red
+Description: The Red team defends a high ball into their box, wins back possession, and begins to build an attack from their own half.
+Context: Box
+Impact: Starts an attack
+
+Timestamp: 105:45 (6345 seconds)
+Type: Headed Clearance
+Team: Red
+Description: Blue team attempts to build an attack from midfield. A Red defender clears the ball with a header.
+Context: Defence.
+Impact: Defence from the blue team's attack.
+
+Timestamp: 107:00 (6420 seconds)
+Type: Interception
+Team: Claret
+Description: the light blue team builds an attack from the halfway line, moving the ball into the claret team's half. The claret team's defense intercepts the ball, ending the attacking move.
+Context: Claret team defence intercepting the ball.
+Impact: Prevention of imminent light blue team's attack.
+
+Timestamp: 107:30 (6450 seconds)
+Type: Possession Change
+Team: Light Blue
+Description: Light Blue team wins possession from a goal kick and circulates the ball in the midfield.
+Context: Start of Light Blue Attack
+Impact: Begins their attack through the middle of the field.
+
+Timestamp: 107:45 (6465 seconds)
+Type: Interception
+Team: Red
+Description: Blue team builds an attack from a throw-in. A Red player intercepts the subsequent pass, the Red team clears the ball long.
+Context: Red defence.
+Impact: Prevents the blue team from scoring.
+
+Timestamp: 108:15 (6495 seconds)
+Type: Second Ball Header
+Team: Red
+Description: The Red team takes a long free kick from their own half and a Blue defender heads the ball clear.
+Context: Defensive Header
+Impact: Sets up another chance for the red team to continue their attack.
+
+Timestamp: 108:30 (6510 seconds)
+Type: Possession Change
+Team: Light Blue
+Description: Light blue team takes the kick-off and builds an attack, maintaining possession in the midfield.
+Context: Light blue initiating the attack
+Impact: Sets up an attack for the light blue team.
+
+Timestamp: 109:15 (6555 seconds)
+Type: Block
+Team: Red
+Description: Red player takes a shot which is blocked, Blue team gains possession and starts a counter-attack.
+Context: Red player takes a shot which is blocked.
+Impact: Begins the blue team's counter-attack.
+
+Timestamp: 110:45 (6645 seconds)
+Type: Save, Long Kick
+Team: Red Team's Goalkeeper, Red Team's Goalkeeper
+Description: Black team's attack is saved by the Red team's goalkeeper, who then initiates a counter-attack with a long kick upfield.
+Context: Initiating a Red team Counter-Attack
+Impact: Saves Black team's Attack and sets up the start of the Red team's potential goal-scoring opportunity.
+
+Timestamp: 112:00 (6720 seconds)
+Type: Recovered Ball
+Team: Blue
+Description: The blue team clears the ball from defense and quickly regains possession in midfield to build an attack.
+Context: Defence
+Impact: Gives blue team the start of their potential attack.
+
+Timestamp: 112:15 (6735 seconds)
+Type: Headed Clearance
+Team: Red
+Description: Red team attempts a long pass into the Black team's penalty area, which is cleared by the defense.
+Context: Defence.
+Impact: Cleared the ball from the penalty area, prevented the red team from attacking.
+
+Timestamp: 113:00 (6780 seconds)
+Type: Interception
+Team: Light Blue
+Description: Light Blue team wins possession in midfield and starts an attack down the right wing.
+Context: Midfield.
+Impact: Light blue gets the opportunity to start the next attack.
+
+Timestamp: 113:15 (6795 seconds)
+Type: Pass
+Team: Light Blue
+Description: Light Blue team builds a patient attack from their own half, moving the ball up the left side of the pitch.
+Context: Attacking side, Pass to the Front 3rd
+Impact: Building an attack.
+
+Timestamp: 113:30 (6810 seconds)
+Type: Block, shot blocked
+Team: Red
+Description: The light blue team attacks the red team's goal, but their shot is blocked.
+Context: Shooting
+Impact: Prevents light blue goal.
+
+Timestamp: 115:30 (6930 seconds)
+Type: Turnover
+Team: Blue
+Description: The goalkeeper takes a long goal kick. The Blue team gains possession of the loose ball.
+Context: Defensive play leading to a turnover.
+Impact: sets up the possibility for Blue team to create a scoring opportunity.
+
+=== OFFSIDE & DECISIONS ===
+(No clear offside decisions are explicitly mentioned in the provided timeline.)
+
+=== OTHER SIGNIFICANT EVENTS ===
+Timestamp: 26:00 (1560 seconds)
+Type: Break in play
+Description: Players take a break in play, with the blue team gathering for a team talk and water break.
+Impact: Allows Blue to regroup and strategize, disrupting game rhythm.
+
+Timestamp: 26:30 (1590 seconds)
+Type: Preparation
+Description: The teams are on the pitch before the match begins.
+Impact: No Immediate action.
+
+Timestamp: 30:00 (1800 seconds)
+Type: Penalty Decision
+Description: Blue team attacks, resulting in a penalty decision.
+Impact: Significant opportunity for Blue to score.
+
+Timestamp: 30:15 (1815 seconds)
+Type: Reset
+Description:
