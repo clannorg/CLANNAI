@@ -73,6 +73,19 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  // Function to seek to specific timestamp
+  const seekToTimestamp = (timestampInSeconds: number) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = timestampInSeconds
+      // Also play the video if it's not already playing
+      if (videoRef.current.paused) {
+        videoRef.current.play()
+      }
+      // Scroll to video for better UX
+      videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
+
   // Initialize time range when game is loaded
   useEffect(() => {
     if (game && duration > 0) {
@@ -776,7 +789,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       <FifaStyleInsights 
         tacticalData={tacticalData} 
         tacticalLoading={tacticalLoading} 
-            gameId={gameId}
+        gameId={gameId}
+        onSeekToTimestamp={seekToTimestamp}
       />
         </div>
       </div>

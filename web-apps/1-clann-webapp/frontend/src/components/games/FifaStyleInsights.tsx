@@ -11,9 +11,10 @@ interface Props {
   tacticalData: TacticalData | null
   tacticalLoading: boolean
   gameId: string
+  onSeekToTimestamp?: (timestampInSeconds: number) => void
 }
 
-export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameId }: Props) {
+export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameId, onSeekToTimestamp }: Props) {
   // Helper function to parse JSON content if it's a string
   const parseContent = (content: any) => {
     if (typeof content === 'string') {
@@ -199,9 +200,18 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
             {keyMoments.map((moment: any, i: number) => (
               <div key={i} className="bg-black/20 rounded-lg p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-yellow-400 font-mono">
-                    {Math.floor(moment.timestamp / 60)}:{(moment.timestamp % 60).toString().padStart(2, '0')}
-                  </span>
+                  <button
+                    onClick={() => onSeekToTimestamp?.(moment.timestamp)}
+                    className="text-yellow-400 font-mono hover:text-yellow-300 hover:bg-yellow-500/10 px-2 py-1 rounded transition-all duration-200 cursor-pointer flex items-center space-x-1"
+                    title="Click to jump to this moment in the video"
+                  >
+                    <span>
+                      {Math.floor(moment.timestamp / 60)}:{(moment.timestamp % 60).toString().padStart(2, '0')}
+                    </span>
+                    <svg className="w-3 h-3 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1m6-7a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </button>
                   <span className="text-gray-400 text-xs">Match Moment</span>
                 </div>
                 <p className="text-gray-200 text-sm mb-2">{moment.description}</p>
