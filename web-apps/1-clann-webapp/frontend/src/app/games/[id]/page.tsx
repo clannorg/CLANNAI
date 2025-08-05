@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useRouter, useParams, useSearchParams } from 'next/navigation'
+import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import apiClient from '@/lib/api-client'
-import TacticalInsights from '../../../components/games/TacticalInsights'
+import FifaStyleInsights from '../../../components/games/FifaStyleInsights'
 import { AIChatProvider, AIChatSidebar, ChatToggleButton, useAIChat } from '../../../components/ai-chat'
 
 interface GameEvent {
@@ -36,7 +36,6 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   const { isOpen: showChat, toggleChat, sendMessage } = useAIChat()
   const router = useRouter()
   const params = useParams()
-  const searchParams = useSearchParams()
   const gameId = params.id as string
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
@@ -71,7 +70,22 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   } | null>(null)
   const [tacticalLoading, setTacticalLoading] = useState(false)
   
+
+  
   const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Function to seek to specific timestamp
+  const seekToTimestamp = (timestampInSeconds: number) => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = timestampInSeconds
+      // Also play the video if it's not already playing
+      if (videoRef.current.paused) {
+        videoRef.current.play()
+      }
+      // Scroll to video for better UX
+      videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }
 
   // Initialize time range when game is loaded
   useEffect(() => {
@@ -96,24 +110,39 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       setTacticalLoading(false)
   }, [game])
 
-  // Auto-open AI chat and start conversation for demo games
+  // Auto-open AI chat and start conversation when requested via sessionStorage
   useEffect(() => {
-    const autoChat = searchParams.get('autoChat')
-    const customMessage = searchParams.get('message')
+    if (!game) return
     
-    if (game && game.is_demo && !showChat && autoChat === 'true') {
-      console.log('🤖 Auto-opening AI chat and starting conversation for demo game')
-      // Delay slightly to let the page load
-      setTimeout(() => {
-        toggleChat()
-        // Send custom message or default welcome message
-        setTimeout(() => {
-          const messageToSend = customMessage || "Hi! I'm new to ClannAI. Can you tell me about this match and what insights you can provide?"
-          sendMessage(messageToSend)
-        }, 800)
-      }, 1500)
+    try {
+      const autoChatData = sessionStorage.getItem('autoChat')
+      if (autoChatData) {
+        const { message, timestamp } = JSON.parse(autoChatData)
+        
+        // Only use recent auto-chat requests (within last 30 seconds)
+        if (Date.now() - timestamp < 30000) {
+          console.log('🤖 Auto-opening AI chat and starting conversation')
+          
+          // Clear the sessionStorage so it doesn't repeat
+          sessionStorage.removeItem('autoChat')
+          
+          // Delay slightly to let the page load
+          setTimeout(() => {
+            toggleChat()
+            setTimeout(() => {
+              sendMessage(message)
+            }, 800)
+          }, 1500)
+        } else {
+          // Clean up old auto-chat data
+          sessionStorage.removeItem('autoChat')
+        }
+      }
+    } catch (error) {
+      console.error('Error parsing autoChat data:', error)
+      sessionStorage.removeItem('autoChat')
     }
-  }, [game, showChat, toggleChat, sendMessage, searchParams])
+  }, [game]) // Only depend on game, not chat functions
 
 
 
@@ -773,10 +802,11 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       <div className="bg-gray-900 min-h-screen">
         <div className="container mx-auto px-6 py-8">
           <h2 className="text-3xl font-bold text-white mb-6">Game Insights</h2>
-      <TacticalInsights 
+      <FifaStyleInsights 
         tacticalData={tacticalData} 
         tacticalLoading={tacticalLoading} 
-            gameId={gameId}
+        gameId={gameId}
+        onSeekToTimestamp={seekToTimestamp}
       />
         </div>
       </div>

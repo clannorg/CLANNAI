@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 
 interface TacticalData {
   tactical: Record<string, { content: string, filename: string, uploaded_at: string }>
-  analysis: Record<string, { content: string, filename: string, uploaded_at: string }>
+  analysis: Record<string, any>
 }
 
 interface Props {

@@ -22,28 +22,40 @@ router.get('/games', [authenticateToken, requireCompanyRole], async (req, res) =
     const paginatedGames = games.slice(parseInt(offset), parseInt(offset) + parseInt(limit));
 
     res.json({
-      games: paginatedGames.map(game => ({
-        id: game.id,
-        title: game.title,
-        description: game.description,
-        video_url: game.video_url,
-        s3_key: game.s3_key,
-        original_filename: game.original_filename,
-        file_size: game.file_size,
-        file_type: game.file_type,
-        thumbnail_url: game.thumbnail_url,
-        duration: game.duration,
-        status: game.status,
-        team_id: game.team_id,
-        team_name: game.team_name,
-        team_color: game.team_color,
-        uploaded_by: game.uploaded_by,
-        uploaded_by_name: game.uploaded_by_name,
-        uploaded_by_email: game.uploaded_by_email,
-        has_analysis: !!game.ai_analysis,
-        created_at: game.created_at,
-        updated_at: game.updated_at
-      })),
+      games: paginatedGames.map(game => {
+        // Extract tactical analysis URL from metadata
+        const metadata = game.metadata || {};
+        const tacticalFiles = metadata.tactical_files || {};
+        const tacticalAnalysisUrl = tacticalFiles.coaching_insights?.url || 
+                                  tacticalFiles.match_summary?.url || 
+                                  tacticalFiles.general?.url ||
+                                  Object.values(tacticalFiles)[0]?.url || null;
+
+        return {
+          id: game.id,
+          title: game.title,
+          description: game.description,
+          video_url: game.video_url,
+          s3_key: game.s3_key,
+          original_filename: game.original_filename,
+          file_size: game.file_size,
+          file_type: game.file_type,
+          thumbnail_url: game.thumbnail_url,
+          duration: game.duration,
+          status: game.status,
+          team_id: game.team_id,
+          team_name: game.team_name,
+          team_color: game.team_color,
+          uploaded_by: game.uploaded_by,
+          uploaded_by_name: game.uploaded_by_name,
+          uploaded_by_email: game.uploaded_by_email,
+          has_analysis: !!game.ai_analysis,
+          has_tactical: !!game.tactical_analysis,
+          tactical_analysis_url: tacticalAnalysisUrl,
+          created_at: game.created_at,
+          updated_at: game.updated_at
+        };
+      }),
       pagination: {
         total: totalGames,
         limit: parseInt(limit),

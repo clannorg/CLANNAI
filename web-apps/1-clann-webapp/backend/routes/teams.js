@@ -4,6 +4,7 @@ const { authenticateToken } = require('../middleware/auth');
 const { 
   getTeamByCode, 
   addUserToTeam, 
+  removeUserFromTeam,
   getUserTeams, 
   getTeamById,
   createTeam,
@@ -235,6 +236,38 @@ router.get('/codes/demo', (req, res) => {
       { code: 'MUN304', team: 'United U21s' }
     ]
   });
+});
+
+// Leave team
+router.post('/:id/leave', authenticateToken, async (req, res) => {
+  try {
+    const teamId = req.params.id; // Keep as UUID string, don't parse as integer
+    const userId = req.user.id;
+
+    if (!teamId) {
+      return res.status(400).json({ error: 'Invalid team ID' });
+    }
+
+    // Check if user is a member of the team
+    const isMember = await isTeamMember(userId, teamId);
+    if (!isMember) {
+      return res.status(400).json({ error: 'You are not a member of this team' });
+    }
+
+    // Remove user from team
+    const result = await removeUserFromTeam(userId, teamId);
+
+    res.json({
+      message: 'Successfully left team',
+      success: true
+    });
+
+  } catch (error) {
+    console.error('Error leaving team:', error);
+    res.status(500).json({ 
+      error: error.message || 'Failed to leave team' 
+    });
+  }
 });
 
 module.exports = router; 

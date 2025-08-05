@@ -1,6 +1,12 @@
 {
+  "scripts": {
+    "db:content": "node db/scripts/printDetailedContent.js",
+    "db:schema": "node db/scripts/printSchema.js"
+  },
   "dependencies": {
     "@devopness/cli": "^1.27.0",
-    "@devopness/sdk-js": "^2.164.5"
+    "@devopness/sdk-js": "^2.164.5",
+    "pg": "^8.11.0",
+    "dotenv": "^16.0.0"
   }
 }

@@ -102,6 +102,12 @@ class ApiClient {
     })
   }
 
+  async leaveTeam(teamId: string) {
+    return this.request<{ message: string; success: boolean }>(`/api/teams/${teamId}/leave`, {
+      method: 'POST'
+    })
+  }
+
   async getDemoTeamCodes() {
     return this.request<{ codes: any[] }>('/api/teams/codes/demo')
   }

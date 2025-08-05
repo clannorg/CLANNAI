@@ -239,6 +239,32 @@ const createTeam = async (name, description, ownerId, color = '#016F32') => {
   return team;
 };
 
+// Remove user from team
+const removeUserFromTeam = async (userId, teamId) => {
+  try {
+    // Check if user is a member of the team
+    const memberCheck = await pool.query(
+      'SELECT * FROM team_members WHERE user_id = $1 AND team_id = $2',
+      [userId, teamId]
+    );
+
+    if (memberCheck.rows.length === 0) {
+      throw new Error('User is not a member of this team');
+    }
+
+    // Remove the user from team members
+    await pool.query(
+      'DELETE FROM team_members WHERE user_id = $1 AND team_id = $2',
+      [userId, teamId]
+    );
+
+    return { success: true, message: 'Successfully left team' };
+  } catch (error) {
+    console.error('Error removing user from team:', error);
+    throw error;
+  }
+};
+
 module.exports = {
   pool,
   getUserByEmail,
@@ -249,6 +275,7 @@ module.exports = {
   createTeam,
   isTeamMember,
   addUserToTeam,
+  removeUserFromTeam,
   getUserTeams,
   getUserGames,
   getAllGames,

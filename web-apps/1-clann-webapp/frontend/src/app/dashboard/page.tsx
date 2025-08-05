@@ -72,16 +72,22 @@ export default function Dashboard() {
       setLoading(true)
       setError('')
       
-      // Load games, demo games, and teams in parallel
-      const [gamesResponse, demoGamesResponse, teamsResponse] = await Promise.all([
+      // Load user games and teams first
+      const [gamesResponse, teamsResponse] = await Promise.all([
         apiClient.getUserGames(),
-        apiClient.getDemoGames(),
         apiClient.getUserTeams()
       ])
       
+      // Only show demos if user has no real teams (new user experience)
+      const userTeams = teamsResponse.teams || []
+      const hasRealTeams = userTeams.length > 0
+      const demoGamesResponse = hasRealTeams 
+        ? { games: [] }  // No demos for real customers
+        : await apiClient.getDemoGames()  // Demos for trial users
+      
       setGames(gamesResponse.games || [])
       setDemoGames(demoGamesResponse.games || [])
-      setTeams(teamsResponse.teams || [])
+      setTeams(userTeams)
     } catch (err: any) {
       console.error('Failed to load user data:', err)
       setError(err.message || 'Failed to load data')
@@ -266,6 +272,29 @@ export default function Dashboard() {
       setError(err.message || 'Failed to upload game')
     } finally {
       setUploadGameLoading(false)
+    }
+  }
+
+  const handleLeaveTeam = async (teamId: string, teamName: string) => {
+    if (!confirm(`Are you sure you want to leave "${teamName}"?`)) {
+      return
+    }
+
+    try {
+      setError('')
+      await apiClient.leaveTeam(teamId)
+      
+      // Reload teams after leaving
+      const teamsResponse = await apiClient.getUserTeams()
+      setTeams(teamsResponse.teams || [])
+      
+      // Show success message briefly
+      setError(`Successfully left team "${teamName}"`)
+      setTimeout(() => setError(''), 3000)
+      
+    } catch (err: any) {
+      console.error('Failed to leave team:', err)
+      setError(err.message || 'Failed to leave team')
     }
   }
 
@@ -458,7 +487,11 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What specific training drills should we focus on to improve our defensive shape and pressing after this match?")}`)
+                                    sessionStorage.setItem('autoChat', JSON.stringify({
+                                      message: "What specific training drills should we focus on to improve our defensive shape and pressing after this match?",
+                                      timestamp: Date.now()
+                                    }))
+                                    router.push(`/games/${game.id}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -469,7 +502,11 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What attacking patterns worked best and what tactical adjustments should we make for our next match?")}`)
+                                    sessionStorage.setItem('autoChat', JSON.stringify({
+                                      message: "What attacking patterns worked best and what tactical adjustments should we make for our next match?",
+                                      timestamp: Date.now()
+                                    }))
+                                    router.push(`/games/${game.id}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -480,7 +517,11 @@ export default function Dashboard() {
                   <button
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Who were our best and worst performers in this match and what should each player work on?")}`)
+                                    sessionStorage.setItem('autoChat', JSON.stringify({
+                                      message: "Who were our best and worst performers in this match and what should each player work on?",
+                                      timestamp: Date.now()
+                                    }))
+                                    router.push(`/games/${game.id}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -491,7 +532,11 @@ export default function Dashboard() {
                                 <button 
                                   onClick={(e) => {
                                     e.stopPropagation()
-                                    router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How should we prepare for our next opponent based on this match analysis and what formation should we use?")}`)
+                                    sessionStorage.setItem('autoChat', JSON.stringify({
+                                      message: "How should we prepare for our next opponent based on this match analysis and what formation should we use?",
+                                      timestamp: Date.now()
+                                    }))
+                                    router.push(`/games/${game.id}`)
                                   }}
                                   className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                                 >
@@ -574,7 +619,11 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What specific training drills should we focus on to improve our defensive shape and pressing after this match?")}`)
+                                sessionStorage.setItem('autoChat', JSON.stringify({
+                                  message: "What specific training drills should we focus on to improve our defensive shape and pressing after this match?",
+                                  timestamp: Date.now()
+                                }))
+                                router.push(`/games/${game.id}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
@@ -585,7 +634,11 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("What attacking patterns worked best and what tactical adjustments should we make for our next match?")}`)
+                                sessionStorage.setItem('autoChat', JSON.stringify({
+                                  message: "What attacking patterns worked best and what tactical adjustments should we make for our next match?",
+                                  timestamp: Date.now()
+                                }))
+                                router.push(`/games/${game.id}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
@@ -596,7 +649,11 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("Who were our best and worst performers in this match and what should each player work on?")}`)
+                                sessionStorage.setItem('autoChat', JSON.stringify({
+                                  message: "Who were our best and worst performers in this match and what should each player work on?",
+                                  timestamp: Date.now()
+                                }))
+                                router.push(`/games/${game.id}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
@@ -607,7 +664,11 @@ export default function Dashboard() {
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
-                                router.push(`/games/${game.id}?autoChat=true&message=${encodeURIComponent("How should we prepare for our next opponent based on this match analysis and what formation should we use?")}`)
+                                sessionStorage.setItem('autoChat', JSON.stringify({
+                                  message: "How should we prepare for our next opponent based on this match analysis and what formation should we use?",
+                                  timestamp: Date.now()
+                                }))
+                                router.push(`/games/${game.id}`)
                               }}
                               className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
                             >
@@ -748,38 +809,64 @@ export default function Dashboard() {
                   <div className="space-y-4">
                     {teams.map((team: any) => (
                       <div key={team.id} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-lg font-medium text-gray-900">{team.name}</h4>
-                          <span className="px-3 py-1 bg-[#016F32] text-white text-sm font-mono rounded-lg">
-                            {team.team_code}
-                          </span>
+                        <div className="mb-4">
+                          <h4 className="text-lg font-medium text-gray-900 mb-3">{team.name}</h4>
                         </div>
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1">
-                                         <input
-                       type="text"
-                              value={`${window.location.origin}/join/${team.team_code}`}
-                              readOnly
-                              className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono"
-                            />
-                          </div>
-                    <button
+                        
+                        {/* Primary: Clickable Link */}
+                        <div className="mb-3">
+                          <label className="block text-xs font-medium text-gray-600 mb-1">🔗 Invite Link (Click to Copy)</label>
+                          <button
                             onClick={() => {
-                              navigator.clipboard.writeText(`${window.location.origin}/join/${team.team_code}`)
+                              const link = `${window.location.origin}/join/${team.team_code}`
+                              navigator.clipboard.writeText(link)
                               const button = document.activeElement as HTMLButtonElement
-                              const originalText = button.textContent
-                              button.textContent = 'Copied!'
-                              button.classList.add('bg-green-600')
+                              const originalBg = button.className
+                              button.textContent = '✅ Copied to clipboard!'
+                              button.className = 'w-full px-3 py-2 text-sm bg-green-100 border border-green-300 rounded-lg text-green-700 font-mono text-left transition-all duration-200'
                               setTimeout(() => {
-                                button.textContent = originalText
-                                button.classList.remove('bg-green-600')
+                                button.textContent = link
+                                button.className = originalBg
                               }, 2000)
                             }}
-                            className="px-4 py-2 bg-[#016F32] text-white text-sm rounded-lg hover:bg-[#016F32]/90 transition-colors font-medium"
+                            className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono text-left hover:bg-gray-50 hover:border-[#016F32] transition-all duration-200 cursor-pointer"
+                            title="Click to copy invite link"
                           >
-                            Copy Link
-                    </button>
-                  </div>
+                            {`${window.location.origin}/join/${team.team_code}`}
+                          </button>
+                        </div>
+                        
+                        {/* Team Code */}
+                        <div className="mb-3">
+                          <label className="block text-xs font-medium text-gray-600 mb-1">🔢 Team Code (Click to Copy)</label>
+                          <button
+                            onClick={() => {
+                              navigator.clipboard.writeText(team.team_code)
+                              const button = document.activeElement as HTMLButtonElement
+                              const originalBg = button.className
+                              button.textContent = '✅ Copied to clipboard!'
+                              button.className = 'w-full px-3 py-2 text-sm bg-green-100 border border-green-300 rounded-lg text-green-700 font-mono text-left transition-all duration-200'
+                              setTimeout(() => {
+                                button.textContent = team.team_code
+                                button.className = originalBg
+                              }, 2000)
+                            }}
+                            className="w-full px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg text-gray-600 font-mono text-left hover:bg-gray-50 hover:border-[#016F32] transition-all duration-200 cursor-pointer"
+                            title="Click to copy team code"
+                          >
+                            {team.team_code}
+                          </button>
+                        </div>
+
+                        {/* Actions */}
+                        <div className="flex justify-end">
+                          <button
+                            onClick={() => handleLeaveTeam(team.id, team.name)}
+                            className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                          >
+                            Leave Team
+                          </button>
+                        </div>
                 </div>
                     ))}
               </div>
