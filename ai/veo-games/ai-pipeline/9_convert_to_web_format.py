@@ -117,6 +117,7 @@ SUPPORTED EVENT TYPES (USE THESE EXACT STRINGS ONLY):
 - "red_card" - Red cards only
 - "corner" - Corner kicks, throw-ins near goal
 - "substitution" - Player changes only
+- "turnover" - Possession changes, interceptions, recoveries (team that GAINS possession)
 
 CRITICAL MAPPING RULES:
 - "scores a goal" / "goal scored" → "goal" (ALWAYS!)
@@ -124,19 +125,21 @@ CRITICAL MAPPING RULES:
 - Foul/Free kick/Tackle → "foul"
 - Corner kick → "corner"
 - Throw-in → "corner" (only if near penalty area)
-- Interception → ignore (normal play)
+- "wins possession" / "loses possession" / "gains possession" / "builds possession" → "turnover"
+- "interception" / "recovery" / "possession change" → "turnover"
 - Goal kick → ignore (not supported)
 - Pre-match → ignore (not supported)  
 - Offside → ignore (not supported)
 
 RULES:
 1. **GOAL DETECTION**: If description contains "scores", "goal scored", "goal from", ALWAYS use type "goal"
-2. Convert timestamps to total seconds (86:39 = 5199 seconds, 22:04 = 1324 seconds)
-3. Extract team: "red", "yellow", "black", "blue", "claret", "light blue" (lowercase, replace spaces with _)
-4. Keep descriptions concise but descriptive (max 80 characters)  
-5. Sort by timestamp (earliest first)
-6. Map ALL events to supported types - DO NOT use unsupported types
-7. Output ONLY the JSON array, no explanation or markdown
+2. **TURNOVER DETECTION**: If description contains possession change, use "turnover" and credit team that GAINS possession
+3. Convert timestamps to total seconds (86:39 = 5199 seconds, 22:04 = 1324 seconds)
+4. Extract team: "red", "yellow", "black", "blue", "claret", "light blue" (lowercase, replace spaces with _)
+5. Keep descriptions concise but descriptive (max 80 characters)  
+6. Sort by timestamp (earliest first)
+7. Map ALL events to supported types - DO NOT use unsupported types
+8. Output ONLY the JSON array, no explanation or markdown
 
 Extract events from ALL sections: goals, shots, fouls, cards, corners, substitutions, etc."""
 

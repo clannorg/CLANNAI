@@ -1,9 +1,39 @@
 [
   {
+    "type": "turnover",
+    "timestamp": 135,
+    "description": "Red team dispossesses light blue team.",
+    "team": "red"
+  },
+  {
     "type": "foul",
     "timestamp": 150,
-    "description": "Claret foul stops attack, gives Light Blue free kick.",
+    "description": "Claret team attack stopped by a foul.",
     "team": "claret"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 195,
+    "description": "Possession changes hands twice quickly.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 345,
+    "description": "Red team intercepts a long ball.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 360,
+    "description": "Red team wins ball and launches counter-attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 420,
+    "description": "Maroon team starts an attack from their own half.",
+    "team": "maroon"
   },
   {
     "type": "foul",
@@ -12,69 +42,273 @@
     "team": "red"
   },
   {
+    "type": "turnover",
+    "timestamp": 480,
+    "description": "Blue team starts a quick counter-attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 585,
+    "description": "Red team intercepts light blue's attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 615,
+    "description": "Possession changes hands twice quickly.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 690,
+    "description": "Blue team dispossesses the red team.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 705,
+    "description": "Red team defends successfully and regains the ball.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 780,
+    "description": "Red team regains possession and moves forward.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 855,
+    "description": "Blue team wins possession and starts attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 870,
+    "description": "Grants light blue team possession.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 945,
+    "description": "Prevents a light blue attack",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1005,
+    "description": "Light Blue team starts a build-up.",
+    "team": "light_blue"
+  },
+  {
     "type": "foul",
     "timestamp": 1020,
-    "description": "Blue attacker brought down by Red sliding tackle.",
+    "description": "Blue attacker brought down by red defender.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 1035,
-    "description": "Free kick awarded to Red team after a foul.",
+    "description": "Attacking free kick opportunity for the Red team.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1155,
+    "description": "Blue team wins possession with a tackle and builds an attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1170,
+    "description": "Counter-attack opportunity for the Light Blue team.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1205,
+    "description": "Quick changes of possession in the midfield.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 1320,
-    "description": "Red team fouled during attack in opponent's half.",
+    "description": "Red team is fouled during an attack.",
     "team": "blue"
   },
   {
     "type": "foul",
     "timestamp": 1425,
-    "description": "Red player fouls, stopping Light Blue attack.",
+    "description": "Foul committed by a Red player.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 1440,
-    "description": "Foul on a light blue player in the center circle.",
-    "team": "not_specified"
+    "description": "Foul on a light blue player.",
+    "team": "not specified"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1470,
+    "description": "Gives Blue the possession in their own half.",
+    "team": "blue"
   },
   {
     "type": "foul",
     "timestamp": 1530,
-    "description": "Red team player brought down by sliding tackle.",
+    "description": "Red team player is brought down by a sliding tackle.",
+    "team": "light_blue"
+  },
+  {
+    "type": "break_in_play",
+    "timestamp": 1560,
+    "description": "Players take a break in play.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1710,
+    "description": "Initiates Blue team's counter-attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1755,
+    "description": "Gives the blue team possession.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1770,
+    "description": "Sets up a Blue team counter.",
+    "team": "blue"
+  },
+  {
+    "type": "penalty",
+    "timestamp": 1800,
+    "description": "Blue team attacks, resulting in a penalty decision.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1890,
+    "description": "Blocks red team from scoring.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1920,
+    "description": "Prevents Blue attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1935,
+    "description": "Multiple possession changes, shifting momentum.",
     "team": "light_blue"
   },
   {
     "type": "foul",
     "timestamp": 1950,
     "description": "Foul committed on the light blue attacker near the penalty area.",
-    "team": "not_specified"
+    "team": "not specified"
   },
   {
-    "type": "foul",
-    "timestamp": 2250,
-    "description": "Referee stops play for a foul after a cross into the box.",
-    "team": "not_specified"
+    "type": "turnover",
+    "timestamp": 2100,
+    "description": "Prevents a red attack.",
+    "team": "blue"
   },
   {
-    "type": "foul",
-    "timestamp": 2415,
-    "description": "Red team attacks, penalty being awarded.",
-    "team": "not_specified"
+    "type": "turnover",
+    "timestamp": 2115,
+    "description": "Stops a red attack.",
+    "team": "blue"
   },
   {
-    "type": "foul",
-    "timestamp": 2430,
-    "description": "Blue team prepares to take a free kick.",
+    "type": "turnover",
+    "timestamp": 2130,
+    "description": "Sets up a red counter-attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2220,
+    "description": "Allows the Blue team to gain possession.",
     "team": "blue"
   },
   {
     "type": "foul",
-    "timestamp": 2565,
-    "description": "The Blue team builds possession, winning a free-kick.",
+    "timestamp": 2250,
+    "description": "Halts a Claret team attack.",
+    "team": "not specified"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2280,
+    "description": "Leads to a light blue counter attack.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2310,
+    "description": "Clears the threat of the attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2385,
+    "description": "Black team gains possession and attacks.",
+    "team": "black"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2415,
+    "description": "Results in the awarding of a penalty.",
+    "team": "not specified"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2430,
+    "description": "Grants Blue team possession.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2490,
+    "description": "Allows the Claret team to build from the midfield.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2535,
+    "description": "Fast paced changes of possession.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2595,
+    "description": "Counter-attack initiated.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2655,
+    "description": "Gives the Blue team possession.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2700,
+    "description": "Possession given to light blue team to begin their attack.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2715,
+    "description": "Blue team wins possession.",
     "team": "blue"
   },
   {
@@ -92,116 +326,272 @@
   {
     "type": "foul",
     "timestamp": 2805,
-    "description": "Aerial ball contested, free kick awarded to red team.",
-    "team": "not_specified"
+    "description": "Referee awarding a free kick to the red team.",
+    "team": "not specified"
   },
   {
     "type": "foul",
     "timestamp": 2820,
-    "description": "Red team awarded a free kick in their own half.",
+    "description": "Grants Red team possession.",
     "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2835,
+    "description": "Potential counter for the Blue team.",
+    "team": "blue"
   },
   {
     "type": "foul",
     "timestamp": 2865,
-    "description": "Red team foul stops Blue attack.",
+    "description": "Grants Blue team a free kick.",
     "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 2880,
+    "description": "Begins a light blue attack",
+    "team": "light_blue"
   },
   {
     "type": "foul",
     "timestamp": 3840,
-    "description": "Red team attacked, Blue team foul in opposition's half.",
+    "description": "Grants Red team a free kick.",
     "team": "blue"
   },
   {
     "type": "yellow_card",
     "timestamp": 3855,
-    "description": "Claret player gets yellow card for foul on Light Blue.",
+    "description": "Referee issues a yellow card to a Claret player.",
     "team": "claret"
   },
   {
-    "type": "foul",
-    "timestamp": 3915,
-    "description": "Red team has possession, foul is called.",
-    "team": "not_specified"
+    "type": "turnover",
+    "timestamp": 4215,
+    "description": "Prevents light blue team to make an attack from the left wing.",
+    "team": "red"
   },
   {
-    "type": "foul",
-    "timestamp": 4050,
-    "description": "Blue player fouled in midfield, advantage played.",
-    "team": "not_specified"
+    "type": "turnover",
+    "timestamp": 4350,
+    "description": "Prevents light blue team from scoring.",
+    "team": "red"
   },
   {
-    "type": "foul",
-    "timestamp": 4260,
-    "description": "Light Blue team attack brought back for a free kick.",
-    "team": "not_specified"
+    "type": "turnover",
+    "timestamp": 4365,
+    "description": "Counter-attack opportunity.",
+    "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 4650,
-    "description": "Red team foul on a Blue team player.",
+    "description": "Awards a free kick to the Blue team.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4695,
+    "description": "Gives the ball to the Blue team in midfield.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4740,
+    "description": "Stops an imminent Blue team's attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4755,
+    "description": "Stops an imminent Blue team's attack.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 4770,
-    "description": "Red team awarded free kick.",
+    "description": "Gives the red team the opportunity to build an attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4815,
+    "description": "Allows Red team to launch a counter-attack.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 4830,
-    "description": "Red team foul in the center circle.",
+    "description": "Awards a free kick to the Light Blue team.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4860,
+    "description": "Prevents an imminent light blue team's attack.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 4950,
-    "description": "Foul during aerial challenge in midfield.",
-    "team": "not_specified"
+    "description": "Grants the free kick to the team who was fouled.",
+    "team": "not specified"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4980,
+    "description": "Leads to a light blue counter attack.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4995,
+    "description": "Allows a Red team attack to begin.",
+    "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 5010,
-    "description": "Blue team wins possession in the attacking half.",
-    "team": "not_specified"
+    "description": "Allows the play to continue due to advantage.",
+    "team": "not specified"
   },
   {
     "type": "corner",
     "timestamp": 5145,
-    "description": "The Blue team executes a long throw-in into the penalty area",
+    "description": "The Blue team executes a long throw-in into the penalty area.",
     "team": "blue"
   },
   {
     "type": "red_card",
     "timestamp": 5160,
-    "description": "Referee issues a red card to a Red team player.",
+    "description": "Referee issues a red card to a player.",
     "team": "red"
   },
   {
-    "type": "foul",
-    "timestamp": 5280,
-    "description": "Red team takes a free kick from the left flank.",
+    "type": "turnover",
+    "timestamp": 5355,
+    "description": "Short change in momentum.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5415,
+    "description": "Starts Blue team's attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5505,
+    "description": "Gives Blue the possession in their own half.",
     "team": "red"
   },
   {
-    "type": "foul",
-    "timestamp": 5310,
-    "description": "Red team takes a short free kick on the edge of the area.",
+    "type": "turnover",
+    "timestamp": 5520,
+    "description": "Red team starts an attack from midfield.",
     "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5610,
+    "description": "Sets-up the blue team for an attack on the goal.",
+    "team": "blue"
   },
   {
     "type": "corner",
     "timestamp": 5685,
-    "description": "Blue team takes a corner from the left.",
+    "description": "Blue team takes a corner.",
     "team": "blue"
   },
   {
-    "type": "foul",
-    "timestamp": 6255,
-    "description": "The Blue team takes a free kick, cleared by the goalkeeper.",
+    "type": "turnover",
+    "timestamp": 5715,
+    "description": "Fast transition to Red attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5760,
+    "description": "Starts an attack.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5760,
+    "description": "Allows red to begin an attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5865,
+    "description": "Maintains possession in own half.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5925,
+    "description": "Sets up for their potential attack.",
     "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6090,
+    "description": "Attack through midfield.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6150,
+    "description": "Prevents potential Blue team scoring chance.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6165,
+    "description": "Clears the blue team's attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6330,
+    "description": "Starts an attack",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6345,
+    "description": "Defence from the blue team's attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6420,
+    "description": "Prevention of imminent light blue team's attack.",
+    "team": "claret"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6450,
+    "description": "Begins their attack through the middle of the field.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6465,
+    "description": "Prevents the blue team from scoring.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6495,
+    "description": "Sets up another chance for the red team to continue their attack.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6510,
+    "description": "Sets up an attack for the light blue team.",
+    "team": "light_blue"
   },
   {
     "type": "corner",
@@ -210,27 +600,75 @@
     "team": "light_blue"
   },
   {
+    "type": "turnover",
+    "timestamp": 6555,
+    "description": "Begins the blue team's counter-attack.",
+    "team": "red"
+  },
+  {
     "type": "foul",
     "timestamp": 6585,
-    "description": "Blue team attack from midfield stopped by a foul.",
-    "team": "not_specified"
+    "description": "Halts the blue team's attack.",
+    "team": "not specified"
   },
   {
     "type": "foul",
     "timestamp": 6600,
-    "description": "Light Blue player brought down by a foul.",
+    "description": "Results in a free kick for the Light Blue team.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6645,
+    "description": "Saves Black team's Attack and sets up the start of the Red team's opp.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 6690,
-    "description": "Blue team takes a quick free-kick, disallowed.",
+    "description": "Resets the play to properly take a free kick.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6720,
+    "description": "Gives blue team the start of their potential attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6735,
+    "description": "Cleared the ball from the penalty area.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6780,
+    "description": "Light blue gets the opportunity to start the next attack.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6795,
+    "description": "Building an attack.",
+    "team": "light_blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6810,
+    "description": "Prevents light blue goal.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6930,
+    "description": "Sets up possibility for Blue team to create a scoring opp.",
     "team": "blue"
   },
   {
     "type": "substitution",
     "timestamp": 6945,
     "description": "Player off from Claret and Blue, Player on.",
-    "team": "not_explicitly_stated"
+    "team": "not specified"
   }
 ]
