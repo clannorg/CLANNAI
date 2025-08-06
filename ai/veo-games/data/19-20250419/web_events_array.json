@@ -2,133 +2,172 @@
   {
     "type": "turnover",
     "timestamp": 135,
-    "description": "Red team dispossesses light blue team.",
+    "description": "The light blue team attacked, but the red team dispossessed them.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 150,
-    "description": "Claret team attack stopped by a foul.",
+    "description": "Claret attack stopped by a foul.",
     "team": "claret"
   },
   {
     "type": "turnover",
     "timestamp": 195,
-    "description": "Possession changes hands twice quickly.",
-    "team": "blue"
+    "description": "Red attack broken up, Blue counter-attack, intercepted by Red.",
+    "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 345,
-    "description": "Red team intercepts a long ball.",
+    "description": "Blue long ball attack intercepted by Red.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 360,
-    "description": "Red team wins ball and launches counter-attack.",
+    "description": "The black team attacked, but the red team won the ball back.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 420,
-    "description": "Maroon team starts an attack from their own half.",
+    "description": "Light blue lost possession, Maroon to attack from their own half.",
     "team": "maroon"
   },
   {
     "type": "foul",
     "timestamp": 465,
-    "description": "Red player fouled during aerial challenge.",
+    "description": "Red player is fouled during an aerial challenge.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 480,
-    "description": "Blue team starts a quick counter-attack.",
+    "description": "Red lost possession, leading to a quick Blue counter-attack.",
     "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 488,
+    "description": "The Red team loses possession from a throw-in, leading to a quick counter-attack by the Blue team.",
+    "team": "blue",
+    "veo_event_id": "eee3646f-7335-43b4-b61e-21d9b151ec7e",
+    "confidence": "medium"
+  },
+  {
+    "type": "shot",
+    "timestamp": 538,
+    "description": "The Red team loses possession from a throw-in, leading to a quick counter-attack by the Blue team.",
+    "team": "blue",
+    "veo_event_id": "0470f3d6-2ac5-4638-b934-f01e5600b52f",
+    "confidence": "medium"
   },
   {
     "type": "turnover",
     "timestamp": 585,
-    "description": "Red team intercepts light blue's attack.",
+    "description": "Light blue attack intercepted by red, forward pass intercepted.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 615,
-    "description": "Possession changes hands twice quickly.",
-    "team": "light_blue"
+    "description": "Red attacks, loses possession, but quickly regains the ball.",
+    "team": "light blue"
   },
   {
     "type": "turnover",
     "timestamp": 690,
-    "description": "Blue team dispossesses the red team.",
+    "description": "Red build an attack from midfield but is dispossessed by Blue.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 705,
-    "description": "Red team defends successfully and regains the ball.",
+    "description": "Light Blue wins possession in midfield, Red defends and regains the ball.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 780,
-    "description": "Red team regains possession and moves forward.",
+    "description": "Red player collects a cleared ball in midfield.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 820,
+    "description": "The red team builds an attack in the final third which results in a shot on goal. The goalkeeper makes a diving save to his right.",
+    "team": "red",
+    "veo_event_id": "4dc1b14c-75b2-4937-b377-07030fc509f9",
+    "confidence": "high"
   },
   {
     "type": "turnover",
     "timestamp": 855,
-    "description": "Blue team wins possession and starts attack.",
+    "description": "The Blue team wins possession from a long ball.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 870,
-    "description": "Grants light blue team possession.",
+    "description": "The red attack is broken up, leading to a turnover.",
     "team": "light_blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 905,
+    "description": "The referee whistles for a foul against the Claret team, awarding a free kick to the Light Blue team.",
+    "team": "Claret",
+    "confidence": "high"
   },
   {
     "type": "turnover",
     "timestamp": 945,
-    "description": "Prevents a light blue attack",
+    "description": "Light Blue attack dispossessed by tackle.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 1005,
-    "description": "Light Blue team starts a build-up.",
+    "description": "The Light Blue team gains possession in midfield.",
     "team": "light_blue"
   },
   {
     "type": "foul",
     "timestamp": 1020,
-    "description": "Blue attacker brought down by red defender.",
+    "description": "Blue attacker is brought down by a sliding tackle from Red.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 1035,
-    "description": "Attacking free kick opportunity for the Red team.",
+    "description": "The referee awards a free kick to the Red team.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 1153,
+    "description": "Blue team wins possession in midfield and builds an attack, passing forward into the attacking third and attempting a through ball into the penalty area.",
+    "team": "blue",
+    "veo_event_id": "ba33cdea-ad8a-4c9d-af7b-6720b632c172",
+    "confidence": "medium"
   },
   {
     "type": "turnover",
     "timestamp": 1155,
-    "description": "Blue team wins possession with a tackle and builds an attack.",
+    "description": "Blue team wins possession in midfield with a tackle.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 1170,
-    "description": "Counter-attack opportunity for the Light Blue team.",
+    "description": "Light blue defends a cross and transitions into an attack.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 1205,
-    "description": "Quick changes of possession in the midfield.",
+    "description": "Blue builds an attack from midfield, which is briefly intercepted.",
     "team": "red"
   },
   {
@@ -138,21 +177,29 @@
     "team": "blue"
   },
   {
+    "type": "shot",
+    "timestamp": 1348,
+    "description": "The red team initiates a counter-attack from their own half, advancing down the right wing and taking a shot from the right side of the penalty area.",
+    "team": "red",
+    "veo_event_id": "5ac9d113-9660-4f84-a8c1-e14dd68f028b",
+    "confidence": "medium"
+  },
+  {
     "type": "foul",
     "timestamp": 1425,
-    "description": "Foul committed by a Red player.",
+    "description": "Light Blue attack stopped by a foul from Red.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 1440,
-    "description": "Foul on a light blue player.",
-    "team": "not specified"
+    "description": "Play is stopped in the center circle for a foul.",
+    "team": "not_specified"
   },
   {
     "type": "turnover",
     "timestamp": 1470,
-    "description": "Gives Blue the possession in their own half.",
+    "description": "Red free kick cleared by the blue team's defense. ",
     "team": "blue"
   },
   {
@@ -165,150 +212,189 @@
     "type": "break_in_play",
     "timestamp": 1560,
     "description": "Players take a break in play.",
-    "team": "blue"
+    "team": "not_specified"
   },
   {
     "type": "turnover",
     "timestamp": 1710,
-    "description": "Initiates Blue team's counter-attack.",
+    "description": "Red attacks on the left wing, blue defends, wins possession.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 1755,
-    "description": "Gives the blue team possession.",
+    "description": "Claret attack broken up, long pass intercepted by Blue.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 1770,
-    "description": "Sets up a Blue team counter.",
+    "description": "Maroon lost possession, Blue to launch a counter-attack.",
     "team": "blue"
   },
   {
-    "type": "penalty",
+    "type": "penalty_decision",
     "timestamp": 1800,
     "description": "Blue team attacks, resulting in a penalty decision.",
-    "team": "blue"
+    "team": "not_specified"
   },
   {
-    "type": "turnover",
+    "type": "shot",
+    "timestamp": 1856,
+    "description": "The Red team's goalkeeper takes a long goal kick downfield.",
+    "team": "red",
+    "veo_event_id": "df58ae69-a488-4d41-9cd3-b304cd3c5222",
+    "confidence": "medium"
+  },
+  {
+    "type": "shot",
+    "timestamp": 1881,
+    "description": "The light blue team takes a long throw-in into the red team's penalty area. The ball is headed clear by a red defender.",
+    "team": "light_blue",
+    "veo_event_id": "a7417301-a293-4dee-8160-be05605cb720",
+    "confidence": "medium"
+  },
+  {
+    "type": "block",
     "timestamp": 1890,
-    "description": "Blocks red team from scoring.",
+    "description": "The Red team attacks, light blue team blocks multiple shot attempts.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 1920,
-    "description": "Prevents Blue attack.",
+    "description": "Blue attack from their own half, intercepted by Red.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 1935,
-    "description": "Multiple possession changes, shifting momentum.",
+    "description": "Both teams battle for possession in the midfield.",
     "team": "light_blue"
   },
   {
     "type": "foul",
     "timestamp": 1950,
     "description": "Foul committed on the light blue attacker near the penalty area.",
-    "team": "not specified"
+    "team": "not_specified"
   },
   {
     "type": "turnover",
     "timestamp": 2100,
-    "description": "Prevents a red attack.",
+    "description": "A Blue defender makes a successful tackle.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 2115,
-    "description": "Stops a red attack.",
+    "description": "Red team attempts to build an attack is broken up by the Blue team.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 2130,
-    "description": "Sets up a red counter-attack.",
+    "description": "The Red team wins possession in their half.",
     "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2201,
+    "description": "Red team is fouled during an attack in the opponent's half, resulting in a free kick.",
+    "team": "Blue",
+    "confidence": "high"
   },
   {
     "type": "turnover",
     "timestamp": 2220,
-    "description": "Allows the Blue team to gain possession.",
+    "description": "Red throw-in, Blue intercepts and begins to move upfield.",
     "team": "blue"
-  },
-  {
-    "type": "foul",
-    "timestamp": 2250,
-    "description": "Halts a Claret team attack.",
-    "team": "not specified"
   },
   {
     "type": "turnover",
     "timestamp": 2280,
-    "description": "Leads to a light blue counter attack.",
+    "description": "Light blue wins possession in the midfield.",
     "team": "light_blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 2281,
+    "description": "The light blue team wins possession in the midfield and launches a quick counter-attack.",
+    "team": "light_blue",
+    "veo_event_id": "8be15e24-904d-430d-bd55-578d589ac872",
+    "confidence": "medium"
   },
   {
     "type": "turnover",
     "timestamp": 2310,
-    "description": "Clears the threat of the attack.",
+    "description": "Blue attempt to build an attack, the red team defends.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 2324,
+    "description": "Blue team attempts to build an attack from a throw-in, but the red team defends and clears the danger, with play shifting to a midfield battle.",
+    "team": "blue",
+    "veo_event_id": "2cbfcfb6-ed0e-48c9-963f-c23d99044077",
+    "confidence": "medium"
   },
   {
     "type": "turnover",
     "timestamp": 2385,
-    "description": "Black team gains possession and attacks.",
+    "description": "The Black team wins possession in midfield with a tackle.",
     "team": "black"
   },
   {
     "type": "foul",
     "timestamp": 2415,
-    "description": "Results in the awarding of a penalty.",
-    "team": "not specified"
+    "description": "Red team attacks in the opposition's half creating a shooting opportunity.",
+    "team": "not_specified"
   },
   {
     "type": "foul",
     "timestamp": 2430,
-    "description": "Grants Blue team possession.",
+    "description": "The Blue team prepares to take a free kick.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 2490,
-    "description": "Allows the Claret team to build from the midfield.",
+    "description": "The light blue team clears the ball.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 2535,
-    "description": "Fast paced changes of possession.",
+    "description": "The teams exchange possession in midfield.",
     "team": "red"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2565,
+    "description": "The Blue team builds possession from their goalkeeper.",
+    "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 2595,
-    "description": "Counter-attack initiated.",
+    "description": "The Light Blue team attempts to build an attack, Red intercepts.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 2655,
-    "description": "Gives the Blue team possession.",
+    "description": "Red loses possession in midfield, allowing Blue team.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 2700,
-    "description": "Possession given to light blue team to begin their attack.",
+    "description": "The Light Blue team wins possession after kickoff.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 2715,
-    "description": "Blue team wins possession.",
+    "description": "The Blue team's defender intercepts the long ball with a header.",
     "team": "blue"
   },
   {
@@ -324,273 +410,444 @@
     "team": "blue"
   },
   {
+    "type": "shot",
+    "timestamp": 2768,
+    "description": "The blue team takes a corner kick from the right side. A blue player attempts a header that goes over the crossbar for a goal kick.",
+    "team": "blue",
+    "veo_event_id": "349c104c-f479-4bb0-a2f2-a7f40cf559fa",
+    "confidence": "medium"
+  },
+  {
     "type": "foul",
     "timestamp": 2805,
-    "description": "Referee awarding a free kick to the red team.",
-    "team": "not specified"
+    "description": "Teams contest an aerial ball, free kick to the red team.",
+    "team": "not_specified"
   },
   {
     "type": "foul",
     "timestamp": 2820,
-    "description": "Grants Red team possession.",
+    "description": "The Red team is awarded a free kick.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 2834,
+    "description": "The Blue team wins possession in midfield and launches a counter-attack. A shot is taken by a Blue player from inside the box and the Red goalkeeper saves the shot.",
+    "team": "blue",
+    "veo_event_id": "5c2c3eb9-3cb1-48de-825a-fdabb60338ce",
+    "confidence": "high"
   },
   {
     "type": "turnover",
     "timestamp": 2835,
-    "description": "Potential counter for the Blue team.",
+    "description": "The Blue team wins possession in midfield with a tackle.",
     "team": "blue"
   },
   {
     "type": "foul",
     "timestamp": 2865,
-    "description": "Grants Blue team a free kick.",
+    "description": "Blue attack stopped by a foul from the Red team.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 2880,
-    "description": "Begins a light blue attack",
+    "description": "The Light Blue team wins the ball in midfield.",
     "team": "light_blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 2906,
+    "description": "Light Blue team builds an attack from the right wing, resulting in a shot that goes over the crossbar.",
+    "team": "light_blue",
+    "veo_event_id": "b52f4a7c-9930-4799-90ff-2c4dd4fd544f",
+    "confidence": "medium"
   },
   {
     "type": "foul",
     "timestamp": 3840,
-    "description": "Grants Red team a free kick.",
+    "description": "Red team is on the attack, player is fouled.",
     "team": "blue"
   },
   {
     "type": "yellow_card",
     "timestamp": 3855,
-    "description": "Referee issues a yellow card to a Claret player.",
+    "description": "Yellow card to a Claret player.",
     "team": "claret"
+  },
+  {
+    "type": "foul",
+    "timestamp": 3915,
+    "description": "Red team has possession, a foul is called.",
+    "team": "not_specified"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4050,
+    "description": "Blue wins possession in midfield, foul on a Blue player.",
+    "team": "not_specified"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4103,
+    "description": "Light Blue team takes a free kick from the left side. The free kick is crossed into the penalty area. A Light Blue player heads the ball towards the goal, which is saved by the Red team's goalkeeper.",
+    "team": "light_blue",
+    "veo_event_id": "46d97bc6-3fd2-446c-8fb5-16d14b50331e",
+    "confidence": "high"
   },
   {
     "type": "turnover",
     "timestamp": 4215,
-    "description": "Prevents light blue team to make an attack from the left wing.",
+    "description": "The Light Blue team attacks from midfield, Red team makes a tackle.",
     "team": "red"
   },
   {
-    "type": "turnover",
+    "type": "shot",
+    "timestamp": 4235,
+    "description": "The light blue team attacks down the left wing, working the ball into a central position and taking a shot from outside the box that is blocked by a red defender.",
+    "team": "light_blue",
+    "veo_event_id": "8cdae321-92fd-455e-83e6-58ace37db500",
+    "confidence": "medium"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4256,
+    "description": "Red team builds an attack from their own penalty area.  A long, direct pass is played forward, but the attack is intercepted by a headed clearance from the Light Blue defender.",
+    "team": "red",
+    "veo_event_id": "f74a6287-121c-441f-9a3f-5914a84fb1d6",
+    "confidence": "medium"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4260,
+    "description": "Light Blue attack, free kick awarded.",
+    "team": "not_specified"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4342,
+    "description": "The light blue team attacks in the penalty area, resulting in two quick-fire shots. A shot by a light blue player is blocked by a sliding red defender. A teammate takes a follow-up shot from the rebound and the red team's goalkeeper makes a diving save.",
+    "team": "light_blue",
+    "veo_event_id": "67a163b9-c91f-4600-9358-b12c54599ad4",
+    "confidence": "high"
+  },
+  {
+    "type": "block",
     "timestamp": 4350,
-    "description": "Prevents light blue team from scoring.",
+    "description": "Light blue attacks in the penalty area, two quick shots blocked.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 4365,
-    "description": "Counter-attack opportunity.",
+    "description": "Red team dispossessed, leading to a Blue team counter-attack.",
     "team": "red"
   },
   {
-    "type": "foul",
-    "timestamp": 4650,
-    "description": "Awards a free kick to the Blue team.",
-    "team": "red"
+    "type": "shot",
+    "timestamp": 4481,
+    "description": "The Light Blue team builds an attack from their own half. A long pass is played forward into the final third. A light blue player heads the ball back towards the penalty area.",
+    "team": "light_blue",
+    "veo_event_id": "8f921b93-a275-46e4-b0e5-86dca5c499ef",
+    "confidence": "medium"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4544,
+    "description": "Light blue team builds an attack from the left wing. cross is played into the box.",
+    "team": "light_blue",
+    "veo_event_id": "290c86ae-7bdc-4305-9f1b-a394c0157869",
+    "confidence": "medium"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4594,
+    "description": "The Blue team attacks down the left, resulting in a shot on goal that is saved by the Claret team's goalkeeper.",
+    "team": "blue",
+    "veo_event_id": "7f757474-85c5-476c-8cf4-44c2615b32ef",
+    "confidence": "medium"
   },
   {
     "type": "turnover",
     "timestamp": 4695,
-    "description": "Gives the ball to the Blue team in midfield.",
+    "description": "Red team takes a long goal kick, Blue team wins possession.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 4740,
-    "description": "Stops an imminent Blue team's attack.",
+    "description": "Blue builds an attack, Red team intercepts.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 4755,
-    "description": "Stops an imminent Blue team's attack.",
+    "description": "The Blue team patiently builds an attack, Red team intercepts.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 4770,
-    "description": "Gives the red team the opportunity to build an attack.",
+    "description": "Red team contests a high ball in midfield, foul on Blue.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 4815,
-    "description": "Allows Red team to launch a counter-attack.",
+    "description": "Red team wins possession and launches a counter-attack.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 4830,
-    "description": "Awards a free kick to the Light Blue team.",
+    "description": "A foul is committed by the Red team.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 4860,
-    "description": "Prevents an imminent light blue team's attack.",
+    "description": "Red team intercepts a chipped pass.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 4950,
-    "description": "Grants the free kick to the team who was fouled.",
-    "team": "not specified"
+    "description": "A foul is committed during an aerial challenge.",
+    "team": "not_specified"
   },
   {
     "type": "turnover",
     "timestamp": 4980,
-    "description": "Leads to a light blue counter attack.",
+    "description": "Light Blue team wins the ball in midfield.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 4995,
-    "description": "Allows a Red team attack to begin.",
+    "description": "Red team gains possession in midfield after a challenge.",
     "team": "red"
   },
   {
     "type": "foul",
     "timestamp": 5010,
-    "description": "Allows the play to continue due to advantage.",
-    "team": "not specified"
+    "description": "Blue team wins possession in the attacking half.",
+    "team": "not_specified"
   },
   {
     "type": "corner",
     "timestamp": 5145,
-    "description": "The Blue team executes a long throw-in into the penalty area.",
+    "description": "The Blue team executes a long throw-in.",
     "team": "blue"
   },
   {
     "type": "red_card",
     "timestamp": 5160,
-    "description": "Referee issues a red card to a player.",
+    "description": "Red card to a player on the Red team.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 5355,
-    "description": "Short change in momentum.",
+    "description": "Light Blue intercepts, Red immediately win the ball back.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 5415,
-    "description": "Starts Blue team's attack.",
+    "description": "The blue team wins possession after a long clearance.",
     "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 5422,
+    "description": "The blue team wins possession after a long clearance and builds an attack from their own half.",
+    "team": "blue",
+    "veo_event_id": "11fd53a5-1001-4422-8b02-deb063cff265",
+    "confidence": "low"
   },
   {
     "type": "turnover",
     "timestamp": 5505,
-    "description": "Gives Blue the possession in their own half.",
+    "description": "Midfield play with possession changing hands.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 5520,
-    "description": "Red team starts an attack from midfield.",
+    "description": "Red team builds an attack, winning the ball back.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 5540,
+    "description": "The Blue team builds a patient attack from their own half, moving the ball into the final third and probing the opposition's defense.",
+    "team": "blue",
+    "veo_event_id": "bfab7452-674a-4e85-b677-dfb36706b169",
+    "confidence": "medium"
+  },
+  {
+    "type": "goal",
+    "timestamp": 5548,
+    "description": "The red team attacks, and following a tackle in the box, they recover the loose ball and score.",
+    "team": "red",
+    "veo_event_id": "d928c9d6-90ca-4598-afc9-229592880735",
+    "confidence": "high"
   },
   {
     "type": "turnover",
     "timestamp": 5610,
-    "description": "Sets-up the blue team for an attack on the goal.",
+    "description": "The blue team wins the ball from the kick-off.",
     "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 5683,
+    "description": "Blue team defends against a Red team attack, which breaks down leading to a throw-in for the Blue team.",
+    "team": "blue",
+    "veo_event_id": "852b57f9-d180-458c-84b7-68d5d330a4ca",
+    "confidence": "low"
   },
   {
     "type": "corner",
     "timestamp": 5685,
-    "description": "Blue team takes a corner.",
+    "description": "Blue team takes a corner from the left.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 5715,
-    "description": "Fast transition to Red attack.",
+    "description": "Blue team kicks off, but the Red team immediately wins possession.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 5725,
+    "description": "The red team attacks in the final third, resulting in a shot on goal that is saved by keeper.",
+    "team": "red",
+    "veo_event_id": "72f6e18f-0e29-4787-9615-b96bfcfe523a",
+    "confidence": "medium"
   },
   {
     "type": "turnover",
     "timestamp": 5760,
-    "description": "Starts an attack.",
+    "description": "Light blue team wins possession from a goal kick.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 5760,
-    "description": "Allows red to begin an attack.",
+    "description": "A red team player makes a successful tackle.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 5771,
+    "description": "Light Blue team attacks down the left wing into the box. Pass played into the penalty area. Shot from the edge of the box is blocked by a defender.",
+    "team": "light_blue",
+    "veo_event_id": "f731f35d-8a8f-4c9f-b6bd-86f07014adc2",
+    "confidence": "medium"
   },
   {
     "type": "turnover",
     "timestamp": 5865,
-    "description": "Maintains possession in own half.",
+    "description": "Light Blue team defends a long ball.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 5925,
-    "description": "Sets up for their potential attack.",
+    "description": "Blue team wins possession and launches a long-ball attack.",
     "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 5938,
+    "description": "The blue team wins possession in the midfield and launches a long-ball attack. The red team's defender clears the ball with a header just outside the penalty area.",
+    "team": "blue",
+    "veo_event_id": "a1723ff9-57af-4410-bf70-9d0efc687090",
+    "confidence": "low"
   },
   {
     "type": "turnover",
     "timestamp": 6090,
-    "description": "Attack through midfield.",
+    "description": "The Light Blue team wins possession.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 6150,
-    "description": "Prevents potential Blue team scoring chance.",
+    "description": "Blue attack, Red team wins possession with a tackle.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6165,
-    "description": "Clears the blue team's attack.",
+    "description": "Blue attack cleared by Red team.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 6177,
+    "description": "Light Blue team attacks down the middle, working the ball into the penalty area and taking a shot from inside the box, which goes wide of the goal.",
+    "team": "light_blue",
+    "veo_event_id": "67b2fb45-5660-4dce-94bc-d09e0594792b",
+    "confidence": "medium"
+  },
+  {
+    "type": "shot",
+    "timestamp": 6317,
+    "description": "The Red team takes an indirect free-kick which is cleared by the Light Blue team's defense.",
+    "team": "red",
+    "veo_event_id": "7c083abd-cb4b-4168-98fe-ec96e77fa202",
+    "confidence": "low"
   },
   {
     "type": "turnover",
     "timestamp": 6330,
-    "description": "Starts an attack",
+    "description": "The Red team defends a high ball.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6345,
-    "description": "Defence from the blue team's attack.",
+    "description": "Blue attack, Red defender clears the ball with a header.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6420,
-    "description": "Prevention of imminent light blue team's attack.",
+    "description": "Light blue team builds an attack, Claret team intercepts.",
     "team": "claret"
+  },
+  {
+    "type": "yellow_card",
+    "timestamp": 6424,
+    "description": "Play is stopped for a foul on a Light Blue player, with the referee issuing a yellow card to a Claret player.",
+    "team": "Claret",
+    "confidence": "high"
   },
   {
     "type": "turnover",
     "timestamp": 6450,
-    "description": "Begins their attack through the middle of the field.",
+    "description": "Light Blue team wins possession from a goal kick.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 6465,
-    "description": "Prevents the blue team from scoring.",
+    "description": "Blue attack from a throw-in, Red player intercepts.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6495,
-    "description": "Sets up another chance for the red team to continue their attack.",
+    "description": "Red takes a free kick, Blue defender clears the ball.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6510,
-    "description": "Sets up an attack for the light blue team.",
+    "description": "Light blue team takes the kick-off.",
     "team": "light_blue"
   },
   {
@@ -602,73 +859,95 @@
   {
     "type": "turnover",
     "timestamp": 6555,
-    "description": "Begins the blue team's counter-attack.",
+    "description": "Red shot is blocked, Blue team gains possession.",
     "team": "red"
+  },
+  {
+    "type": "shot",
+    "timestamp": 6559,
+    "description": "Red team's attack is cleared, leading to a Blue team counter-attack. Red player takes a shot which is blocked.  Blue team gains possession and starts a counter-attack.",
+    "team": "blue",
+    "veo_event_id": "09a735c0-1d3f-4a1a-ab92-5aab4965fbe5",
+    "confidence": "low"
   },
   {
     "type": "foul",
     "timestamp": 6585,
-    "description": "Halts the blue team's attack.",
-    "team": "not specified"
+    "description": "Blue team attack from midfield stopped by a foul.",
+    "team": "not_specified"
   },
   {
     "type": "foul",
     "timestamp": 6600,
-    "description": "Results in a free kick for the Light Blue team.",
+    "description": "Light Blue attack, player brought down by a foul.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6645,
-    "description": "Saves Black team's Attack and sets up the start of the Red team's opp.",
-    "team": "red"
+    "description": "Black team's attack is saved by the Red team's goalkeeper.",
+    "team": "red_team's_goalkeeper"
   },
   {
     "type": "foul",
     "timestamp": 6690,
-    "description": "Resets the play to properly take a free kick.",
+    "description": "Blue team takes a quick free-kick near the penalty area.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 6720,
-    "description": "Gives blue team the start of their potential attack.",
+    "description": "Blue clears the ball, regains possession.",
     "team": "blue"
   },
   {
     "type": "turnover",
     "timestamp": 6735,
-    "description": "Cleared the ball from the penalty area.",
+    "description": "Red team pass cleared by the defense.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6780,
-    "description": "Light blue gets the opportunity to start the next attack.",
+    "description": "Light Blue wins possession in midfield.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 6795,
-    "description": "Building an attack.",
+    "description": "Light Blue team builds a patient attack.",
     "team": "light_blue"
   },
   {
     "type": "turnover",
     "timestamp": 6810,
-    "description": "Prevents light blue goal.",
+    "description": "The light blue team attacks the red team's goal, but their shot is blocked.",
     "team": "red"
   },
   {
     "type": "turnover",
     "timestamp": 6930,
-    "description": "Sets up possibility for Blue team to create a scoring opp.",
+    "description": "The goalkeeper takes a long goal kick. The Blue team gains possession.",
     "team": "blue"
   },
   {
     "type": "substitution",
     "timestamp": 6945,
     "description": "Player off from Claret and Blue, Player on.",
-    "team": "not specified"
+    "team": "not_explicitly_stated"
+  },
+  {
+    "type": "red_card",
+    "timestamp": 8605,
+    "description": "Referee issues a red card to a player on the Red team during a stoppage in play.",
+    "team": "Red",
+    "confidence": "high"
+  },
+  {
+    "type": "substitution",
+    "timestamp": 11551,
+    "description": "Players warm up and walk on the sideline as a substitution is prepared. a player in a claret and blue shirt is substituted off and shakes hands with a teammate.",
+    "team": "Claret",
+    "confidence": "high"
   }
 ]

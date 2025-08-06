@@ -33,7 +33,8 @@ class WebFormatConverter:
             'red_card': 'Red card shown',
             'substitution': 'Player substitution',
             'corner': 'Corner kick',
-            'offside': 'Offside call'
+            'offside': 'Offside call',
+            'turnover': 'Possession gained'
         }
         
         print(f"🔄 Web Format Converter initialized with Gemini AI")
@@ -319,6 +320,35 @@ Extract events from ALL sections: goals, shots, fouls, cards, corners, substitut
 
         return events
 
+    def convert_enhanced_events_to_web_format(self, enhanced_events):
+        """Convert enhanced_events.json to web app format"""
+        events = []
+        
+        for enhanced_event in enhanced_events:
+            # Enhanced events are already in a good format, just need minor adjustments
+            event = {
+                "type": enhanced_event.get("type", "unknown"),
+                "timestamp": enhanced_event.get("timestamp", 0),
+                "description": enhanced_event.get("description", "Event occurred"),
+            }
+            
+            # Add team if available
+            if "team" in enhanced_event:
+                event["team"] = enhanced_event["team"]
+            
+            # Keep VEO event ID for reference
+            if "veo_event_id" in enhanced_event:
+                event["veo_event_id"] = enhanced_event["veo_event_id"]
+                
+            # Keep confidence if available
+            if "confidence" in enhanced_event:
+                event["confidence"] = enhanced_event["confidence"]
+            
+            events.append(event)
+        
+        print(f"🔄 Converted {len(events)} enhanced events to web format")
+        return events
+
     def convert_match_to_web_format(self, match_id):
         """Convert AI pipeline outputs to web app format"""
         print(f"🔄 Converting {match_id} to web format")
@@ -329,10 +359,91 @@ Extract events from ALL sections: goals, shots, fouls, cards, corners, substitut
             print(f"❌ Data directory not found: {data_dir}")
             return False
 
-        # Try definite events first (VEO-validated with AI descriptions)
+        # Try enhanced events first (best quality - VEO + AI enhanced)
+        enhanced_events_path = data_dir / "enhanced_events.json"
+        events = []
+        
+        if enhanced_events_path.exists():
+            print(f"🎯 Reading enhanced events (VEO + AI): {enhanced_events_path}")
+            try:
+                with open(enhanced_events_path, 'r', encoding='utf-8') as f:
+                    enhanced_events = json.load(f)
+                
+                # Convert enhanced events to web format
+                events = self.convert_enhanced_events_to_web_format(enhanced_events)
+                print(f"✅ Loaded {len(events)} enhanced events (goals, shots, fouls, cards)")
+                
+                # Also read other events for turnovers, corners, etc.
+                other_events_path = data_dir / "8.5_other_events.txt"
+                if other_events_path.exists():
+                    print(f"📖 Also reading other events for turnovers: {other_events_path}")
+                    try:
+                        with open(other_events_path, 'r', encoding='utf-8') as f:
+                            other_content = f.read()
+                        
+                        # Convert other events with Gemini
+                        other_events = self.convert_with_gemini(other_content)
+                        print(f"✅ Loaded {len(other_events)} additional events (turnovers, corners, etc.)")
+                        
+                        # Combine both sets of events
+                        events.extend(other_events)
+                        print(f"🎯 Combined total: {len(events)} events")
+                        
+                    except Exception as e:
+                        print(f"⚠️ Failed to load other events: {e}")
+                
+                if events:
+                    # We have combined enhanced + other events
+                    events.sort(key=lambda x: x['timestamp'])
+                    
+                    # Create web app compatible JSON
+                    web_events = {
+                        "match_id": match_id,
+                        "generated_timestamp": datetime.now().isoformat(),
+                        "events_count": len(events),
+                        "source": "clann_ai_pipeline_enhanced",
+                        "events": events
+                    }
+
+                    # Save web-compatible events file
+                    web_events_path = data_dir / "web_events.json"
+                    try:
+                        with open(web_events_path, 'w', encoding='utf-8') as f:
+                            json.dump(web_events, f, indent=2, ensure_ascii=False)
+                        print(f"✅ Enhanced web events saved to: {web_events_path}")
+                    except Exception as e:
+                        print(f"❌ Failed to save web events: {e}")
+                        return False
+
+                    # Also save just the events array (direct format)
+                    events_array_path = data_dir / "web_events_array.json"
+                    try:
+                        with open(events_array_path, 'w', encoding='utf-8') as f:
+                            json.dump(events, f, indent=2, ensure_ascii=False)
+                        print(f"✅ Enhanced events array saved to: {events_array_path}")
+                    except Exception as e:
+                        print(f"❌ Failed to save events array: {e}")
+
+                    # Print summary
+                    event_types = {}
+                    for event in events:
+                        event_types[event['type']] = event_types.get(event['type'], 0) + 1
+                    
+                    print(f"\n📋 ENHANCED EVENTS SUMMARY:")
+                    print(f"   🎯 Match: {match_id}")
+                    print(f"   📊 Events: {len(events)} total")
+                    for event_type, count in sorted(event_types.items()):
+                        print(f"   {self.supported_event_types.get(event_type, event_type)}: {count}")
+                    
+                    return True
+                    
+            except Exception as e:
+                print(f"❌ Failed to read enhanced events: {e}")
+                print(f"🔄 Falling back to text processing...")
+        
+        # Fallback: Try definite events + other events (original logic)
         definite_events_path = data_dir / "7.5_definite_events.txt"
         other_events_path = data_dir / "8.5_other_events.txt"
-        events = []
         
         # Combine definite events and other events
         combined_content = ""

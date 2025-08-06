@@ -21,6 +21,7 @@ interface Game {
   has_analysis: boolean
   tactical_analysis_url?: string
   has_tactical?: boolean
+  events_url?: string
 }
 
 interface Stats {
@@ -386,6 +387,15 @@ export default function CompanyDashboard() {
                               <p className="text-base font-semibold text-gray-900"><strong>Current S3 Location:</strong></p>
                               <p className="text-sm text-green-700 font-mono bg-green-50 px-2 py-1 rounded break-all">
                                 {game.s3_key}
+                              </p>
+                            </div>
+                          )}
+                          
+                          {game.events_url && (
+                            <div>
+                              <p className="text-base font-semibold text-gray-900"><strong>Current Events Location:</strong></p>
+                              <p className="text-sm text-blue-700 font-mono bg-blue-50 px-2 py-1 rounded break-all">
+                                {game.events_url}
                               </p>
                             </div>
                           )}

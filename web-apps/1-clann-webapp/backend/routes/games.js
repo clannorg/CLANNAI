@@ -320,13 +320,39 @@ router.post('/:id/upload-events', [authenticateToken, requireCompanyRole], async
     console.log(`📊 Fetched ${events.length} events from ${s3Key}`);
     console.log('📋 Sample event:', events[0]);
     
+    // Store events URL in metadata along with the events data
+    const currentGame = await getGameById(gameId);
+    if (!currentGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    const currentMetadata = currentGame.metadata || {};
+    const eventsFiles = currentMetadata.events_files || {};
+    
+    // Determine file type from filename
+    const filename = originalFilename?.toLowerCase() || s3Key.toLowerCase();
+    let eventsType = 'general';
+    if (filename.includes('web_events_array')) eventsType = 'web_events_array';
+    else if (filename.includes('web_events')) eventsType = 'web_events';
+    else if (filename.includes('enhanced_events')) eventsType = 'enhanced_events';
+
+    eventsFiles[eventsType] = {
+      url: s3Key,
+      filename: originalFilename,
+      uploaded_at: new Date().toISOString()
+    };
+    
     // Convert events to JSON string for PostgreSQL JSONB storage
     console.log('📝 About to store events in database...');
     console.log('📝 First few events:', JSON.stringify(events.slice(0, 2), null, 2));
     
     const updatedGame = await updateGame(gameId, {
       ai_analysis: JSON.stringify(events), // Convert to JSON string for PostgreSQL
-      status: 'analyzed'
+      status: 'analyzed',
+      metadata: {
+        ...currentMetadata,
+        events_files: eventsFiles
+      }
     });
 
     if (!updatedGame) {
@@ -340,6 +366,8 @@ router.post('/:id/upload-events', [authenticateToken, requireCompanyRole], async
         title: updatedGame.title,
         status: updatedGame.status,
         events_count: events.length,
+        events_type: eventsType,
+        events_url: s3Key,
         updated_at: updatedGame.updated_at
       }
     });

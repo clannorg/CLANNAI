@@ -31,6 +31,13 @@ router.get('/games', [authenticateToken, requireCompanyRole], async (req, res) =
                                   tacticalFiles.general?.url ||
                                   Object.values(tacticalFiles)[0]?.url || null;
 
+        // Extract events S3 URL from metadata
+        const eventsFiles = metadata.events_files || {};
+        const eventsUrl = eventsFiles.web_events?.url || 
+                         eventsFiles.web_events_array?.url || 
+                         eventsFiles.enhanced_events?.url ||
+                         Object.values(eventsFiles)[0]?.url || null;
+
         return {
           id: game.id,
           title: game.title,
@@ -52,6 +59,7 @@ router.get('/games', [authenticateToken, requireCompanyRole], async (req, res) =
           has_analysis: !!game.ai_analysis,
           has_tactical: !!game.tactical_analysis,
           tactical_analysis_url: tacticalAnalysisUrl,
+          events_url: eventsUrl,
           created_at: game.created_at,
           updated_at: game.updated_at
         };
