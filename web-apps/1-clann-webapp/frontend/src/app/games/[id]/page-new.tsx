@@ -65,29 +65,27 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
     analysis: Record<string, { content: string, filename: string, uploaded_at: string }>
   } | null>(null)
   const [tacticalLoading, setTacticalLoading] = useState(false)
-  
+
   // Function to seek to specific timestamp
   const seekToTimestamp = (timestampInSeconds: number) => {
-    // Use the global reference stored by VideoPlayer
-    if ((window as any).videoPlayerSeek) {
-      (window as any).videoPlayerSeek(timestampInSeconds)
-    }
+    // This will be passed to VideoPlayer and used there
+    console.log('Seeking to timestamp:', timestampInSeconds)
   }
 
   // Load tactical data from game
   useEffect(() => {
-      setTacticalLoading(true)
+    setTacticalLoading(true)
     if (game.tactical_analysis) {
       setTacticalData(game.tactical_analysis)
       console.log('📊 Tactical data loaded from game:', 
         Object.keys(game.tactical_analysis.tactical || {}), 
         Object.keys(game.tactical_analysis.analysis || {})
       )
-      } else {
-        console.log('No tactical analysis data available')
+    } else {
+      console.log('No tactical analysis data available')
       setTacticalData(null)
-      }
-      setTacticalLoading(false)
+    }
+    setTacticalLoading(false)
   }, [game])
 
   // Auto-open AI chat and start conversation when requested via sessionStorage
@@ -106,13 +104,13 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           // Clear the sessionStorage so it doesn't repeat
           sessionStorage.removeItem('autoChat')
           
-      // Delay slightly to let the page load
-      setTimeout(() => {
-        toggleChat()
-        setTimeout(() => {
+          // Delay slightly to let the page load
+          setTimeout(() => {
+            toggleChat()
+            setTimeout(() => {
               sendMessage(message)
-        }, 800)
-      }, 1500)
+            }, 800)
+          }, 1500)
         } else {
           // Clean up old auto-chat data
           sessionStorage.removeItem('autoChat')
@@ -188,7 +186,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   }, [currentEventIndex, showSidebar])
 
   const handleTimeUpdate = (time: number, dur: number) => {
-      setCurrentTime(time)
+    setCurrentTime(time)
     setDuration(dur)
   }
 
@@ -199,7 +197,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   return (
     <div className="min-h-screen bg-black">
       {/* Video Section */}
-    <div className="h-screen bg-black relative overflow-hidden">
+      <div className="h-screen bg-black relative overflow-hidden">
         
         {/* Game Header */}
         <GameHeader
@@ -211,10 +209,10 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           onToggleEvents={() => setShowSidebar(!showSidebar)}
         />
 
-      {/* Video Container - with dynamic margins for sidebars */}
-      <div className={`relative h-full flex items-center justify-center transition-all duration-300 ${
-        showChat ? 'md:ml-80' : ''
-      } ${
+        {/* Video Container - with dynamic margins for sidebars */}
+        <div className={`relative h-full flex items-center justify-center transition-all duration-300 ${
+          showChat ? 'md:ml-80' : ''
+        } ${
           showSidebar ? 'md:mr-80' : ''
         }`}>
           
@@ -223,13 +221,13 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             events={filteredEvents}
             allEvents={allEvents}
             currentEventIndex={currentEventIndex}
-          onTimeUpdate={handleTimeUpdate}
+            onTimeUpdate={handleTimeUpdate}
             onEventClick={handleEventClick}
             onSeekToTimestamp={seekToTimestamp}
           />
 
-          </div>
-          
+        </div>
+
         {/* Unified Sidebar */}
         <UnifiedSidebar
           isOpen={showSidebar}
@@ -244,11 +242,11 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           setTeamFilter={setTeamFilter}
           showFilters={showFilters}
           setShowFilters={setShowFilters}
-        tacticalData={tacticalData} 
-        tacticalLoading={tacticalLoading} 
-            gameId={gameId}
+          tacticalData={tacticalData}
+          tacticalLoading={tacticalLoading}
+          gameId={gameId}
           onSeekToTimestamp={seekToTimestamp}
-      />
+        />
 
       </div>
     </div>
@@ -324,4 +322,4 @@ export default function GameView() {
       <GameViewContent game={game} />
     </AIChatProvider>
   )
-} 
+}
