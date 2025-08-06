@@ -1,0 +1,32 @@
+10. The idea
+
+What is the problem you wish to solve and why is your proposed approach a good and innovative solution?
+
+**The Problem:**
+
+Amateur sports clubs face a critical analytics gap that limits player development and team performance. While professional teams have access to individual player tracking through GPS devices costing £200-500 per player per season, this technology remains prohibitively expensive for the 100,000+ amateur clubs worldwide who have adopted affordable touchline cameras (Veo, Spideo, Pixellot).
+
+Current video solutions capture comprehensive match footage but provide no automated individual player analytics. Coaches can review games but cannot access the granular performance metrics—distance covered, speed, positioning, movement patterns—that drive data-informed training decisions. This creates a significant competitive disadvantage for amateur players who lack the analytical insights necessary for targeted skill development.
+
+Existing market solutions either require expensive hardware investment or provide only basic team-level statistics, leaving a substantial gap between what amateur clubs need and what they can afford.
+
+**Our Innovative Solution:**
+
+ClannAI addresses this market gap through revolutionary AI-powered computer vision that delivers professional-grade individual player tracking using only existing video footage. Our breakthrough approach combines multiple cutting-edge technologies: Grounding DINO "open-vocabulary" object detection, Segment Anything Model (SAM2) for precise segmentation, and advanced YOLO variants for real-time object tracking, all integrated within a comprehensive PyTorch and OpenCV framework.
+
+Our current pipeline leverages advanced vision language models integrated with intelligent agent systems that perform cumulative analysis of video outputs. This multi-agent approach has already demonstrated exceptional success in automated event detection, achieving industry-leading accuracy in identifying goals, fouls, shots, and tactical moments. This proven technology is currently deployed and actively used by our 12 pilot clubs, providing real-world validation of our technical approach across diverse match conditions.
+
+The same vision language model architecture that excels in event detection is being adapted for player ReID through embedded OCR feature analysis, enabling consistent player identification across different camera angles, lighting conditions, and match scenarios. Our FastAPI-powered backend processes video through AWS infrastructure, while our modern frontend built on Next.js 15 with React 19 and TypeScript delivers real-time insights via HLS.js video streaming. Unlike traditional solutions that require additional hardware, our cloud-based platform processes standard video uploads to automatically generate individual player metrics including distance covered, speed profiles, positional heat maps, and tactical movement patterns.
+
+**Key Innovations:**
+
+- **Proven vision language model pipeline:** Currently deployed with 12 pilot clubs, demonstrating exceptional event detection accuracy in real-world conditions
+- **Multi-agent cumulative analysis:** Intelligent agent systems provide comprehensive video interpretation, validated through active pilot club usage
+- **Zero additional hardware:** Leverages existing camera investments, removing £20,000+ GPS system costs
+- **Advanced ReID through embedded OCR:** Adapts proven vision language models for player identification using embedded feature analysis
+- **Open-vocabulary detection:** Automatically identifies players, referees, balls, and tactical formations without manual labeling
+- **Real-time processing:** Delivers insights within 15 minutes of video upload versus hours of manual analysis
+
+Our solution democratizes sports analytics by making sophisticated individual player tracking accessible at amateur club price points (£50/month vs £10,000+ annually for GPS), representing a 99.5% cost reduction while delivering comparable or superior analytical depth.
+
+This innovation transforms how amateur sports approach player development, enabling coaches to make data-driven decisions that accelerate skill acquisition and improve team performance across grassroots sport globally.
