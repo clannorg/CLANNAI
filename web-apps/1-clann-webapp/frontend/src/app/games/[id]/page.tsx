@@ -434,7 +434,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                   
                   return (
                     <button
-                      key={`${event.timestamp}-${event.type}`}
+                      key={`${event.timestamp}-${event.type}-${index}`}
                       onClick={() => handleEventClick(event)}
                       className={`absolute top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 hover:scale-200 hover:shadow-xl pointer-events-auto ${
                         getEventColor(event.type)
