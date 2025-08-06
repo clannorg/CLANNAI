@@ -378,7 +378,10 @@ export default function Dashboard() {
             </button>
                   </div>
                 }
-                <span className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400 hover:bg-green-400/10 hover:text-green-400 cursor-pointer">
+                <span 
+                  onClick={() => window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')}
+                  className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400 hover:bg-green-400/10 hover:text-green-400 cursor-pointer transition-colors"
+                >
                   FREE TIER - Upgrade
                 </span>
               </h1>

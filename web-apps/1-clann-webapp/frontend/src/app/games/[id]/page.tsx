@@ -840,19 +840,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
         </div>
       )}
 
-      {/* Toggle Buttons for when sidebars are closed */}
-      {!showChat && !showEvents && (
-        <div className="absolute top-4 right-4 z-50 space-y-2">
-          <button
-            onClick={() => setShowEvents(true)}
-            className="block bg-black/80 backdrop-blur-sm rounded-lg p-3 text-white hover:text-gray-300 transition-colors"
-            title="Show Events"
-          >
-            📊 Events ({allEvents.length})
-          </button>
-          <ChatToggleButton variant="floating" />
-        </div>
-      )}
+
 
       </div>
 
