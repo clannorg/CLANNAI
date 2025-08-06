@@ -67,7 +67,7 @@ export default function UnifiedSidebar({
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('events')
   const { messages, sendMessage, isLoading, inputValue, setInputValue, clearMessages } = useAIChat()
   const [chatInputValue, setChatInputValue] = useState('')
-  const [sidebarWidth, setSidebarWidth] = useState(320) // Default 320px (80 * 4)
+  const [sidebarWidth, setSidebarWidth] = useState(400) // Default 400px - wider for better usability
   const [isResizing, setIsResizing] = useState(false)
   
   // Use external active tab if provided, otherwise use internal
