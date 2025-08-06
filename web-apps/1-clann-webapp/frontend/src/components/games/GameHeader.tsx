@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { ChatToggleButton } from '../ai-chat'
 
 interface GameHeaderProps {
   game: {
@@ -13,7 +12,6 @@ interface GameHeaderProps {
     black: number
   }
   currentTime: number
-  showChat: boolean
   showEvents: boolean
   onToggleEvents: () => void
 }
@@ -22,7 +20,6 @@ export default function GameHeader({
   game,
   teamScores,
   currentTime,
-  showChat,
   showEvents,
   onToggleEvents
 }: GameHeaderProps) {
@@ -33,9 +30,7 @@ export default function GameHeader({
   }
 
   return (
-    <div className={`absolute top-4 z-50 flex items-center space-x-2 md:space-x-4 transition-all duration-300 ${
-      showChat ? 'md:left-[336px] left-4' : 'left-4'
-    }`}>
+    <div className="absolute top-4 left-4 z-50 flex items-center space-x-2 md:space-x-4 transition-all duration-300">
       <Link 
         href="/dashboard" 
         className="group flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl px-4 py-2.5 text-white transition-all duration-200 border border-white/20 hover:border-white/30 shadow-lg"
@@ -68,11 +63,7 @@ export default function GameHeader({
         </div>
       </div>
 
-      <div className="flex items-center space-x-3">
-        <ChatToggleButton 
-          className="mobile-chat-toggle"
-        />
-        
+      <div className="flex items-center space-x-3">        
         <button
           onClick={onToggleEvents}
           className={`group flex items-center space-x-2 px-4 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 border shadow-lg ${

@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { AIChatSidebar, useAIChat } from '../ai-chat'
+import { useState, useEffect } from 'react'
+import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
 
 interface GameEvent {
@@ -15,6 +15,9 @@ interface GameEvent {
 interface UnifiedSidebarProps {
   isOpen: boolean
   onClose: () => void
+  activeTab?: 'events' | 'ai' | 'insights'
+  onTabChange?: (tab: 'events' | 'ai' | 'insights') => void
+  onWidthChange?: (width: number) => void
   
   // Events tab props
   events: GameEvent[]
@@ -43,6 +46,9 @@ type TabType = 'events' | 'ai' | 'insights'
 export default function UnifiedSidebar({
   isOpen,
   onClose,
+  activeTab: externalActiveTab,
+  onTabChange,
+  onWidthChange,
   events,
   allEvents,
   currentEventIndex,
@@ -58,8 +64,66 @@ export default function UnifiedSidebar({
   gameId,
   onSeekToTimestamp
 }: UnifiedSidebarProps) {
-  const [activeTab, setActiveTab] = useState<TabType>('events')
-  const { isOpen: showChat } = useAIChat()
+  const [internalActiveTab, setInternalActiveTab] = useState<TabType>('events')
+  const { messages, sendMessage, isLoading, inputValue, setInputValue, clearMessages } = useAIChat()
+  const [chatInputValue, setChatInputValue] = useState('')
+  const [sidebarWidth, setSidebarWidth] = useState(320) // Default 320px (80 * 4)
+  const [isResizing, setIsResizing] = useState(false)
+  
+  // Use external active tab if provided, otherwise use internal
+  const activeTab = externalActiveTab || internalActiveTab
+  
+  const handleTabChange = (newTab: TabType) => {
+    if (onTabChange) {
+      onTabChange(newTab)
+    } else {
+      setInternalActiveTab(newTab)
+    }
+  }
+
+  const handleSendMessage = async () => {
+    if (!chatInputValue.trim() || isLoading) return
+    await sendMessage(chatInputValue)
+    setChatInputValue('')
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      handleSendMessage()
+    }
+  }
+
+  // Handle drag resize
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setIsResizing(true)
+    
+    const startX = e.clientX
+    const startWidth = sidebarWidth
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const deltaX = startX - e.clientX // Reverse direction for right sidebar
+      const newWidth = Math.max(280, Math.min(600, startWidth + deltaX)) // Min 280px, Max 600px
+      setSidebarWidth(newWidth)
+      if (onWidthChange) {
+        onWidthChange(newWidth)
+      }
+    }
+
+    const handleMouseUp = () => {
+      setIsResizing(false)
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+      document.body.style.cursor = 'default'
+      document.body.style.userSelect = 'auto'
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseup', handleMouseUp)
+    document.body.style.cursor = 'ew-resize'
+    document.body.style.userSelect = 'none'
+  }
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60)
@@ -70,7 +134,28 @@ export default function UnifiedSidebar({
   if (!isOpen) return null
 
   return (
-    <div className="absolute top-0 right-0 h-full w-full md:w-80 bg-black/90 backdrop-blur-sm border-l border-gray-700 flex flex-col z-30">
+    <div 
+      className="absolute top-0 right-0 h-full bg-black/90 backdrop-blur-sm border-l border-gray-700 flex flex-col z-30"
+      style={{ 
+        width: `${sidebarWidth}px`,
+        minWidth: '280px',
+        maxWidth: '600px'
+      }}
+    >
+      {/* Resize Handle */}
+      <div
+        className={`absolute left-0 top-0 bottom-0 w-1 cursor-ew-resize hover:bg-blue-500/50 transition-colors ${
+          isResizing ? 'bg-blue-500' : 'bg-transparent hover:bg-gray-500/30'
+        }`}
+        onMouseDown={handleMouseDown}
+        title="Drag to resize"
+      >
+        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-3 h-8 -ml-1 flex items-center justify-center">
+          <div className={`w-0.5 h-4 bg-gray-500 rounded-full transition-all ${
+            isResizing ? 'bg-blue-500 scale-110' : 'hover:bg-gray-400'
+          }`} />
+        </div>
+      </div>
       {/* Tab Header */}
       <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
         <div className="flex items-center justify-between mb-4">
@@ -89,7 +174,7 @@ export default function UnifiedSidebar({
         {/* Tab Navigation */}
         <div className="flex bg-gray-800/50 rounded-lg p-1">
           <button
-            onClick={() => setActiveTab('events')}
+            onClick={() => handleTabChange('events')}
             className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
               activeTab === 'events'
                 ? 'bg-green-500/20 text-green-200 border border-green-500/30'
@@ -108,7 +193,7 @@ export default function UnifiedSidebar({
           </button>
 
           <button
-            onClick={() => setActiveTab('ai')}
+            onClick={() => handleTabChange('ai')}
             className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
               activeTab === 'ai'
                 ? 'bg-blue-500/20 text-blue-200 border border-blue-500/30'
@@ -122,7 +207,7 @@ export default function UnifiedSidebar({
           </button>
 
           <button
-            onClick={() => setActiveTab('insights')}
+            onClick={() => handleTabChange('insights')}
             className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
               activeTab === 'insights'
                 ? 'bg-purple-500/20 text-purple-200 border border-purple-500/30'
@@ -365,24 +450,84 @@ export default function UnifiedSidebar({
             <div className="p-4 border-b border-gray-700">
               <h4 className="text-lg font-semibold text-white mb-2">AI Coach</h4>
               <p className="text-sm text-gray-400">Get personalized coaching insights and training recommendations.</p>
-              <div className="mt-4 text-center">
-                <p className="text-yellow-400 text-sm">Click "AI Coach" in the header to start a conversation!</p>
-              </div>
             </div>
-            <div className="flex-1 p-4">
-              <div className="bg-gray-800/50 rounded-lg p-6 text-center">
-                <svg className="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-                <h5 className="text-white font-medium mb-2">AI Coaching Available</h5>
-                <p className="text-gray-400 text-sm mb-4">Get personalized insights about:</p>
-                <div className="space-y-2 text-sm text-gray-300">
-                  <div>• Training drills recommendations</div>
-                  <div>• Tactical analysis</div>
-                  <div>• Player performance insights</div>
-                  <div>• Match preparation tips</div>
+            
+            {/* Chat Messages */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              {messages.length === 0 ? (
+                <div className="text-center py-8">
+                  <svg className="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  <h5 className="text-white font-medium mb-2">Ready to Coach!</h5>
+                  <p className="text-gray-400 text-sm mb-4">Ask me about:</p>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div>• Training drills recommendations</div>
+                    <div>• Tactical analysis</div>
+                    <div>• Player performance insights</div>
+                    <div>• Match preparation tips</div>
+                  </div>
                 </div>
+              ) : (
+                messages.map((message, index) => (
+                  <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                    <div className={`max-w-[80%] rounded-lg p-3 ${
+                      message.role === 'user' 
+                        ? 'bg-blue-600 text-white' 
+                        : 'bg-gray-700 text-gray-100'
+                    }`}>
+                      <div className="text-sm whitespace-pre-wrap">{message.content}</div>
+                    </div>
+                  </div>
+                ))
+              )}
+              
+              {isLoading && (
+                <div className="flex justify-start">
+                  <div className="bg-gray-700 text-gray-100 rounded-lg p-3 max-w-[80%]">
+                    <div className="flex items-center space-x-2">
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-400"></div>
+                      <span className="text-sm">AI Coach is thinking...</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Chat Input */}
+            <div className="border-t border-gray-700 p-4">
+              <div className="flex items-end space-x-3">
+                <input
+                  type="text"
+                  placeholder="Ask the AI coach..."
+                  value={chatInputValue}
+                  onChange={(e) => setChatInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  disabled={isLoading}
+                  className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                />
+                <button
+                  onClick={handleSendMessage}
+                  disabled={!chatInputValue.trim() || isLoading}
+                  className="flex items-center justify-center w-12 h-12 bg-blue-500 hover:bg-blue-600 disabled:bg-white/10 text-white rounded-xl transition-all duration-200"
+                >
+                  {isLoading ? (
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  ) : (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  )}
+                </button>
               </div>
+              {messages.length > 0 && (
+                <button
+                  onClick={clearMessages}
+                  className="text-xs text-white/60 hover:text-white/80 mt-3 px-2 py-1 rounded-lg hover:bg-white/5"
+                >
+                  Clear chat
+                </button>
+              )}
             </div>
           </div>
         )}

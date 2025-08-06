@@ -42,6 +42,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   const [duration, setDuration] = useState(0)
   const [currentEventIndex, setCurrentEventIndex] = useState(-1)
   const [showSidebar, setShowSidebar] = useState(true)
+  const [sidebarTab, setSidebarTab] = useState<'events' | 'ai' | 'insights'>('events')
+  const [sidebarWidth, setSidebarWidth] = useState(320)
   const [teamScores, setTeamScores] = useState({ red: 0, black: 0 })
   
   // Filter state
@@ -108,7 +110,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           
       // Delay slightly to let the page load
       setTimeout(() => {
-        toggleChat()
+            setShowSidebar(true)
+            setSidebarTab('ai')
         setTimeout(() => {
               sendMessage(message)
         }, 800)
@@ -206,17 +209,17 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           game={game}
           teamScores={teamScores}
           currentTime={currentTime}
-          showChat={showChat}
           showEvents={showSidebar}
           onToggleEvents={() => setShowSidebar(!showSidebar)}
         />
 
       {/* Video Container - with dynamic margins for sidebars */}
-      <div className={`relative h-full flex items-center justify-center transition-all duration-300 ${
-        showChat ? 'md:ml-80' : ''
-      } ${
-          showSidebar ? 'md:mr-80' : ''
-        }`}>
+      <div 
+        className="relative h-full flex items-center justify-center transition-all duration-300"
+        style={{
+          marginRight: showSidebar ? `${sidebarWidth}px` : '0'
+        }}
+      >
           
           <VideoPlayer
             game={game}
@@ -231,9 +234,12 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           </div>
           
         {/* Unified Sidebar */}
-        <UnifiedSidebar
+                <UnifiedSidebar
           isOpen={showSidebar}
           onClose={() => setShowSidebar(false)}
+          activeTab={sidebarTab}
+          onTabChange={setSidebarTab}
+          onWidthChange={setSidebarWidth}
           events={filteredEvents}
           allEvents={allEvents}
           currentEventIndex={currentEventIndex}
