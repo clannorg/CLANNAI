@@ -625,94 +625,126 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
 
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
+                className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 ${
                   showFilters 
-                    ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/40 text-green-200' 
-                    : 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
+                    ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/60 text-green-200 shadow-lg shadow-green-500/10' 
+                    : 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/60 text-blue-200 shadow-lg shadow-blue-500/10'
                 }`}
                 title="Toggle Filters"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
                 </svg>
-                <span>Filters</span>
+                <span>{showFilters ? 'Hide Filters' : 'Show Filters'}</span>
+                {!showFilters && (
+                  <span className="inline-flex items-center justify-center w-5 h-5 text-xs bg-blue-500 text-white rounded-full">
+                    {Object.values(eventTypeFilters).filter(Boolean).length}
+                  </span>
+                )}
               </button>
             </div>
 
             {/* Filter Controls */}
             {showFilters && (
-              <div className="space-y-3 text-sm">
-                {/* Event Type Filters */}
+              <div className="space-y-4 text-sm">
+                {/* Event Type Filters - Pill Buttons */}
                 <div>
-                  <label className="text-gray-300 block mb-2">Event Types:</label>
-                  <div className="grid grid-cols-2 gap-1">
+                  <label className="text-gray-300 block mb-3 font-medium">Event Types:</label>
+                  <div className="grid grid-cols-2 gap-2">
                     {Object.entries(eventTypeFilters).map(([type, enabled]) => (
-                      <label key={type} className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          checked={enabled}
-                          onChange={(e) => setEventTypeFilters(prev => ({
-                            ...prev,
-                            [type]: e.target.checked
-                          }))}
-                          className="w-3 h-3"
-                        />
-                        <span className="text-xs text-gray-300 capitalize">{type.replace('_', ' ')}</span>
-                      </label>
+                      <button
+                        key={type}
+                        onClick={() => setEventTypeFilters(prev => ({
+                          ...prev,
+                          [type]: !prev[type]
+                        }))}
+                        className={`h-9 text-xs font-medium rounded-lg border-2 transition-colors ${
+                          enabled 
+                            ? 'bg-green-500 text-white hover:bg-green-600 border-green-500' 
+                            : 'bg-gray-700/50 text-gray-400 hover:bg-gray-600/50 border-gray-600'
+                        }`}
+                      >
+                        {type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                      </button>
                     ))}
                   </div>
                 </div>
 
-                {/* Team Filter */}
+                {/* Team Filter - Big Buttons */}
                 <div>
-                  <label className="text-gray-300 block mb-2">Team:</label>
-                  <select
-                    value={teamFilter}
-                    onChange={(e) => setTeamFilter(e.target.value)}
-                    className="w-full bg-gray-800 text-white text-xs p-2 rounded border border-gray-600"
-                  >
-                    <option value="both">Both Teams</option>
-                    <option value="red">Red Team</option>
-                    <option value="black">Black Team</option>
-                  </select>
-                </div>
-
-                {/* Time Range */}
-                <div>
-                  <label className="text-gray-300 block mb-2">Time Range:</label>
-                  <div className="flex items-center space-x-2">
-                    <input
-                      type="range"
-                      min="0"
-                      max={duration || 0}
-                      value={timeRange[0]}
-                      onChange={(e) => setTimeRange([parseFloat(e.target.value), timeRange[1]])}
-                      className="flex-1 h-1"
-                    />
-                    <input
-                      type="range"
-                      min="0"
-                      max={duration || 0}
-                      value={timeRange[1]}
-                      onChange={(e) => setTimeRange([timeRange[0], parseFloat(e.target.value)])}
-                      className="flex-1 h-1"
-                    />
-                  </div>
-                  <div className="text-xs text-gray-400 mt-1">
-                    {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
+                  <label className="text-gray-300 block mb-3 font-medium">Team:</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      onClick={() => setTeamFilter('both')}
+                      className={`h-10 text-sm font-semibold rounded-lg border-2 transition-colors ${
+                        teamFilter === 'both'
+                          ? 'bg-white text-black hover:bg-gray-200 border-white'
+                          : 'bg-white/10 text-white hover:bg-white/20 border-white/30'
+                      }`}
+                    >
+                      Both
+                    </button>
+                    <button
+                      onClick={() => setTeamFilter('red')}
+                      className={`h-10 text-sm font-semibold rounded-lg border-2 transition-colors ${
+                        teamFilter === 'red'
+                          ? 'bg-red-500 text-white hover:bg-red-600 border-red-500'
+                          : 'bg-red-500/20 text-red-400 hover:bg-red-500/30 border-red-500/30'
+                      }`}
+                    >
+                      Red
+                    </button>
+                    <button
+                      onClick={() => setTeamFilter('black')}
+                      className={`h-10 text-sm font-semibold rounded-lg border-2 transition-colors ${
+                        teamFilter === 'black'
+                          ? 'bg-blue-500 text-white hover:bg-blue-600 border-blue-500'
+                          : 'bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 border-blue-500/30'
+                      }`}
+                    >
+                      Black
+                    </button>
                   </div>
                 </div>
 
                 {/* Search */}
                 <div>
-                  <label className="text-gray-300 block mb-2">Search:</label>
+                  <label className="text-gray-300 block mb-2 font-medium">Search:</label>
                   <input
                     type="text"
                     placeholder="Search descriptions..."
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
-                    className="w-full bg-gray-800 text-white text-xs p-2 rounded border border-gray-600"
+                    className="w-full bg-gray-800/80 text-white text-sm p-2.5 rounded-lg border border-gray-600 hover:border-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
                   />
+                </div>
+
+                {/* Time Range */}
+                <div>
+                  <label className="text-gray-300 block mb-2 font-medium">Time Range:</label>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <input
+                        type="range"
+                        min="0"
+                        max={duration || 0}
+                        value={timeRange[0]}
+                        onChange={(e) => setTimeRange([parseFloat(e.target.value), timeRange[1]])}
+                        className="flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                      />
+                      <input
+                        type="range"
+                        min="0"
+                        max={duration || 0}
+                        value={timeRange[1]}
+                        onChange={(e) => setTimeRange([timeRange[0], parseFloat(e.target.value)])}
+                        className="flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                      />
+                    </div>
+                    <div className="text-xs text-gray-400 text-center">
+                      {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Reset Filters */}
@@ -733,9 +765,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                     setTimeRange([0, duration || 0])
                     setSearchText('')
                   }}
-                  className="w-full bg-gray-700 hover:bg-gray-600 text-white text-xs py-2 rounded transition-colors"
+                  className="w-full bg-gray-600/80 hover:bg-gray-500/80 text-white text-sm py-2.5 rounded-lg transition-colors font-medium"
                 >
-                  Reset Filters
+                  Reset All Filters
                 </button>
               </div>
             )}
@@ -750,31 +782,55 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                     key={`${event.timestamp}-${event.type}-${index}`}
                     id={`event-${originalIndex}`}
                   onClick={() => handleEventClick(event)}
-                  className={`w-full text-left p-3 rounded-lg transition-colors ${
+                  className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
                       originalIndex === currentEventIndex 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
+                      : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <div className={`w-2 h-2 rounded-full ${getEventColor(event.type)}`} />
-                      <span className="text-sm font-medium">{event.type}</span>
-                        {event.team && (
-                          <span className={`text-xs px-1 py-0.5 rounded ${
-                            event.team === 'red' ? 'bg-red-600' : 'bg-blue-600'
-                          }`}>
-                            {event.team}
-                          </span>
-                        )}
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      {/* Event Type Badge */}
+                      <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${
+                        event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
+                        event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
+                        event.type === 'foul' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' :
+                        event.type === 'turnover' ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' :
+                        event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
+                        'bg-gray-500/20 text-gray-300 border-gray-500/30'
+                      }`}>
+                        {event.type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                      </span>
+                      
+                      {/* Team Badge */}
+                      {event.team && (
+                        <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${
+                          event.team === 'red' 
+                            ? 'bg-red-500/20 text-red-300 border-red-500/30' 
+                            : 'bg-blue-500/20 text-blue-300 border-blue-500/30'
+                        }`}>
+                          {event.team.charAt(0).toUpperCase() + event.team.slice(1)}
+                        </span>
+                      )}
                     </div>
-                    <span className="text-xs text-gray-400">{formatTime(event.timestamp)}</span>
+                    
+                    {/* Time Badge */}
+                    <div className="flex items-center gap-1">
+                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                    </div>
                   </div>
+                  
+                  {/* Description */}
                   {event.description && (
-                    <div className="text-xs text-gray-400 mt-1">{event.description}</div>
+                    <div className="text-xs text-gray-400 mt-2 leading-relaxed">{event.description}</div>
                   )}
+                  
+                  {/* Player */}
                   {event.player && (
-                    <div className="text-xs text-gray-400 mt-1">{event.player}</div>
+                    <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
                   )}
                 </button>
                 )
