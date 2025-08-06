@@ -670,10 +670,37 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                       return (
                         <button
                           key={type}
-                          onClick={() => setEventTypeFilters(prev => ({
-                            ...prev,
-                            [type]: !prev[type]
-                          }))}
+                          onClick={() => {
+                            setEventTypeFilters(prev => {
+                              const currentValues = Object.values(prev)
+                              const allSelected = currentValues.every(val => val === true)
+                              const selectedCount = currentValues.filter(val => val === true).length
+                              
+                              // If all are selected, clicking one should show only that one
+                              if (allSelected) {
+                                const newFilters = Object.keys(prev).reduce((acc, key) => {
+                                  acc[key] = key === type
+                                  return acc
+                                }, {} as typeof prev)
+                                return newFilters
+                              }
+                              
+                              // If only this one is selected, clicking it should show all
+                              if (selectedCount === 1 && prev[type]) {
+                                const newFilters = Object.keys(prev).reduce((acc, key) => {
+                                  acc[key] = true
+                                  return acc
+                                }, {} as typeof prev)
+                                return newFilters
+                              }
+                              
+                              // Otherwise, normal toggle
+                              return {
+                                ...prev,
+                                [type]: !prev[type]
+                              }
+                            })
+                          }}
                           className={`h-9 text-xs font-medium rounded-lg border-2 transition-colors hover:scale-105 ${getFilterColor(type)}`}
                         >
                           {type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
