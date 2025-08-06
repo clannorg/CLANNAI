@@ -2,7 +2,6 @@
 ## Technical Specification for Full-Stack Development
 
 **Target:** Complete automated platform by Friday  
-**Equity Offer:** 5% immediately on completion + 15% total vested over 12 months  
 **Goal:** VEO URL → 15-minute AI processing → Interactive web player
 
 ---
@@ -276,14 +275,6 @@ Frontend receives completion notification and loads:
 - ✅ Ready for customer demos and beta testing
 
 ---
-
-## 💰 Compensation Structure
-
-**Immediate:** 5% equity upon successful completion and deployment  
-**Total:** 15% equity vested over 12 months  
-**Timeline:** Complete by Friday for immediate 5%  
-**Bonus:** Additional 2% for early delivery (by Wednesday)
-
 ---
 
 ## 📞 Contact & Resources
