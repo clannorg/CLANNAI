@@ -142,6 +142,8 @@ export default function UnifiedSidebar({
         maxWidth: '600px'
       }}
     >
+
+
       {/* Resize Handle */}
       <div
         className={`absolute left-0 top-0 bottom-0 w-1 cursor-ew-resize hover:bg-blue-500/50 transition-colors ${
@@ -158,21 +160,20 @@ export default function UnifiedSidebar({
       </div>
       {/* Tab Header */}
       <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-bold text-white">Game Analysis</h3>
+        <div className="flex items-center justify-between">
+          {/* Subtle Close Button - Left Side */}
           <button
             onClick={onClose}
-            className="flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-200 border border-white/10 hover:border-white/20"
+            className="mr-3 flex items-center justify-center w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200"
             title="Close Sidebar"
           >
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
-        </div>
-
-        {/* Tab Navigation */}
-        <div className="flex bg-gray-800/50 rounded-lg p-1">
+          
+          {/* Tab Navigation */}
+          <div className="flex bg-gray-800/50 rounded-lg p-1 flex-1">
           <button
             onClick={() => handleTabChange('events')}
             className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
@@ -219,6 +220,7 @@ export default function UnifiedSidebar({
             </svg>
             <span>Insights</span>
           </button>
+          </div>
         </div>
       </div>
 
