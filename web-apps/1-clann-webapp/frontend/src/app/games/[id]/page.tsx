@@ -651,22 +651,35 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                 <div>
                   <label className="text-gray-300 block mb-3 font-medium">Event Types:</label>
                   <div className="grid grid-cols-2 gap-2">
-                    {Object.entries(eventTypeFilters).map(([type, enabled]) => (
-                      <button
-                        key={type}
-                        onClick={() => setEventTypeFilters(prev => ({
-                          ...prev,
-                          [type]: !prev[type]
-                        }))}
-                        className={`h-9 text-xs font-medium rounded-lg border-2 transition-colors ${
-                          enabled 
-                            ? 'bg-green-500 text-white hover:bg-green-600 border-green-500' 
-                            : 'bg-gray-700/50 text-gray-400 hover:bg-gray-600/50 border-gray-600'
-                        }`}
-                      >
-                        {type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                      </button>
-                    ))}
+                    {Object.entries(eventTypeFilters).map(([type, enabled]) => {
+                      const getFilterColor = (eventType: string) => {
+                        switch (eventType.toLowerCase()) {
+                          case 'goal': return enabled ? 'bg-green-500 text-white border-green-500' : 'bg-green-500/20 text-green-400 border-green-500/30'
+                          case 'shot': return enabled ? 'bg-blue-500 text-white border-blue-500' : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                          case 'foul': return enabled ? 'bg-red-500 text-white border-red-500' : 'bg-red-500/20 text-red-400 border-red-500/30'
+                          case 'yellow_card': return enabled ? 'bg-yellow-500 text-black border-yellow-500' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+                          case 'red_card': return enabled ? 'bg-red-600 text-white border-red-600' : 'bg-red-600/20 text-red-400 border-red-600/30'
+                          case 'substitution': return enabled ? 'bg-purple-500 text-white border-purple-500' : 'bg-purple-500/20 text-purple-400 border-purple-500/30'
+                          case 'corner': return enabled ? 'bg-cyan-500 text-white border-cyan-500' : 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'
+                          case 'turnover': return enabled ? 'bg-purple-500 text-white border-purple-500' : 'bg-purple-500/20 text-purple-400 border-purple-500/30'
+                          case 'save': return enabled ? 'bg-orange-500 text-white border-orange-500' : 'bg-orange-500/20 text-orange-400 border-orange-500/30'
+                          default: return enabled ? 'bg-gray-500 text-white border-gray-500' : 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+                        }
+                      }
+                      
+                      return (
+                        <button
+                          key={type}
+                          onClick={() => setEventTypeFilters(prev => ({
+                            ...prev,
+                            [type]: !prev[type]
+                          }))}
+                          className={`h-9 text-xs font-medium rounded-lg border-2 transition-colors hover:scale-105 ${getFilterColor(type)}`}
+                        >
+                          {type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
 
@@ -707,45 +720,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                   </div>
                 </div>
 
-                {/* Search */}
-                <div>
-                  <label className="text-gray-300 block mb-2 font-medium">Search:</label>
-                  <input
-                    type="text"
-                    placeholder="Search descriptions..."
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
-                    className="w-full bg-gray-800/80 text-white text-sm p-2.5 rounded-lg border border-gray-600 hover:border-gray-500 focus:border-blue-500 focus:outline-none transition-colors"
-                  />
-                </div>
 
-                {/* Time Range */}
-                <div>
-                  <label className="text-gray-300 block mb-2 font-medium">Time Range:</label>
-                  <div className="space-y-2">
-                    <div className="flex items-center space-x-2">
-                      <input
-                        type="range"
-                        min="0"
-                        max={duration || 0}
-                        value={timeRange[0]}
-                        onChange={(e) => setTimeRange([parseFloat(e.target.value), timeRange[1]])}
-                        className="flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
-                      />
-                      <input
-                        type="range"
-                        min="0"
-                        max={duration || 0}
-                        value={timeRange[1]}
-                        onChange={(e) => setTimeRange([timeRange[0], parseFloat(e.target.value)])}
-                        className="flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
-                      />
-                    </div>
-                    <div className="text-xs text-gray-400 text-center">
-                      {formatTime(timeRange[0])} - {formatTime(timeRange[1])}
-                    </div>
-                  </div>
-                </div>
 
                 {/* Reset Filters */}
                 <button
@@ -762,8 +737,6 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                       turnover: true
                     })
                     setTeamFilter('both')
-                    setTimeRange([0, duration || 0])
-                    setSearchText('')
                   }}
                   className="w-full bg-gray-600/80 hover:bg-gray-500/80 text-white text-sm py-2.5 rounded-lg transition-colors font-medium"
                 >
