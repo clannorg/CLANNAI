@@ -46,6 +46,7 @@ TARGET EVENTS TO FIND:
 6. **Penalties** - Penalty awards (separate from goals)
 7. **Throw-ins** - Significant throw-in situations
 8. **Restarts** - Free kicks, goal kicks that create opportunities
+9. **Turnovers** - Possession changes, interceptions, recoveries
 
 ANALYSIS GUIDELINES:
 - Look for referee decisions and stoppages
@@ -54,6 +55,7 @@ ANALYSIS GUIDELINES:
 - Track game flow disruptions
 - Include tactical changes (substitutions)
 - Focus on events that affect match dynamics
+- Detect possession changes (wins/loses possession, interceptions, recoveries)
 
 OUTPUT FORMAT:
 === FOULS & FREE KICKS ===
@@ -82,6 +84,14 @@ Timestamp: XX:XX (XXXX seconds)
 Team: [Team making change]
 Change: [Player out → Player in]
 Tactical Reason: [Why substitution made]
+
+=== TURNOVERS & POSSESSION CHANGES ===
+Timestamp: XX:XX (XXXX seconds)
+Type: [Turnover/Interception/Recovery]
+Team: [Team that GAINS possession]
+Description: [How possession was won - tackle, interception, loose ball, etc.]
+Context: [Situation - throw-in, midfield, defensive third, counter-attack opportunity]
+Impact: [Immediate result - counter-attack, build-up, defensive action]
 
 === OFFSIDE & DECISIONS ===
 Timestamp: XX:XX (XXXX seconds)
@@ -135,7 +145,7 @@ Focus on events that coaches would want to review or that significantly affected
                 f.write(f"# Generated: {datetime.now().isoformat()}\n")
                 f.write(f"# Method: Gemini intelligent event extraction\n")
                 f.write(f"# Source: Complete timeline analysis\n")
-                f.write(f"# Focus: Fouls, cards, corners, substitutions, decisions\n\n")
+                f.write(f"# Focus: Fouls, cards, corners, substitutions, turnovers, decisions\n\n")
                 f.write(other_events_content)
             
             print("✅ Other events extracted successfully!")
@@ -160,7 +170,7 @@ def main():
     
     if success:
         print(f"\n📋 Other events extracted for {match_id}!")
-        print("🎯 Contains fouls, cards, corners, substitutions, and decisions")
+        print("🎯 Contains fouls, cards, corners, substitutions, turnovers, and decisions")
         print("🔄 Next: Run 9_convert_to_web_format.py for final JSON conversion")
     else:
         print(f"\n❌ Failed to extract other events for {match_id}")
