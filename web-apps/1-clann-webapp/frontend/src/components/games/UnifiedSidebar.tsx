@@ -145,21 +145,41 @@ export default function UnifiedSidebar({
       const result = await response.json()
       console.log('✅ Clip created successfully:', result)
       
-      // Create download link
+      // Create download link with authentication token
+      const token = localStorage.getItem('token')
       const link = document.createElement('a')
-      link.href = result.downloadUrl
+      link.href = `http://localhost:3002${result.downloadUrl}`
       link.download = result.fileName
       link.style.display = 'none'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+      
+      // Add authorization header by creating a fetch request instead of direct link
+      fetch(`http://localhost:3002${result.downloadUrl}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = result.fileName
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+      })
+      .catch((error: any) => {
+        console.error('Download failed:', error)
+        alert('Download failed. Please try again.')
+      })
       
       // Clear selection after successful creation
       setSelectedEvents(new Set())
       
       alert(`🎉 Highlight reel created! (${result.eventCount} events, ${result.duration}s)\nDownload started automatically.`)
       
-    } catch (error) {
+    } catch (error: any) {
       console.error('❌ Error creating clip:', error)
       alert(`Error creating clip: ${error.message}`)
     } finally {

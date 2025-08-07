@@ -102,9 +102,10 @@ router.post('/create', authenticateToken, async (req, res) => {
 
             console.log('🎉 Highlight reel created successfully!');
             
+            // Instead of returning S3 URL, return our backend download endpoint
             res.json({
                 success: true,
-                downloadUrl: uploadResult.publicUrl,
+                downloadUrl: `/api/clips/download/${uploadResult.s3Key}`,
                 fileName: clipFileName,
                 duration: events.length * 10, // 10 seconds per event
                 eventCount: events.length
@@ -126,6 +127,32 @@ router.post('/create', authenticateToken, async (req, res) => {
             error: 'Failed to create highlight reel',
             details: error.message 
         });
+    }
+});
+
+// Download route - serves files from S3 through our backend
+router.get('/download/:s3Key(*)', authenticateToken, async (req, res) => {
+    try {
+        const s3Key = req.params.s3Key;
+        console.log(`📥 Serving download for: ${s3Key}`);
+        
+        const command = new GetObjectCommand({
+            Bucket: BUCKET_NAME,
+            Key: s3Key
+        });
+
+        const response = await s3Client.send(command);
+        
+        // Set headers for download
+        res.setHeader('Content-Type', 'video/mp4');
+        res.setHeader('Content-Disposition', `attachment; filename="${path.basename(s3Key)}"`);
+        
+        // Stream the file
+        response.Body.pipe(res);
+        
+    } catch (error) {
+        console.error('❌ Download error:', error);
+        res.status(404).json({ error: 'File not found' });
     }
 });
 
