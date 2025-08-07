@@ -1,0 +1,12 @@
+{
+  "url": "https://app.veo.co/matches/20250726-edinburgh-united-vs-cowdenbeath-central-75b2c59d/",
+  "match_id": "edinburgh-20250726",
+  "veo_match_id": "20250726-edinburgh-united-vs-cowdenbeath-central-75b2c59d",
+  "extracted_at": "2025-08-07T11:26:46.853957",
+  "total_events": 39,
+  "extraction_method": "veo_api_highlights",
+  "status": "ready_for_analysis",
+  "date": "2025-07-26",
+  "primary_team": "Edinburgh",
+  "venue": "Edinburgh"
+}

@@ -1,17 +1,95 @@
 #!/usr/bin/env python3
 """
-2. Download Video
-Downloads match video from Veo using working VeoDownloader implementation
+2. Download Video + Create Sample Clip + Upload to S3
+Downloads match video, creates 15-second sample clip, uploads to S3, prints URL
 """
 
 import sys
 import os
+import json
+import boto3
+import subprocess
 from pathlib import Path
+from datetime import datetime
+from dotenv import load_dotenv
 import re
 
-# Import the working VeoDownloader from the original file
-sys.path.append('../../superseded/footy-legacy/0_utils')
-from veo_downloader import VeoDownloader
+# Load environment variables
+load_dotenv()
+
+class S3SampleUploader:
+    def __init__(self):
+        """Initialize S3 client with environment credentials"""
+        if os.getenv('AWS_ACCESS_KEY_ID'):
+            self.s3_client = boto3.client(
+                's3',
+                region_name=os.getenv('AWS_REGION', 'eu-west-1'),
+                aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+                aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY')
+            )
+        else:
+            self.s3_client = boto3.client('s3', region_name='eu-west-1')
+        self.bucket_name = os.getenv('AWS_BUCKET_NAME', 'end-nov-webapp-clann')
+        print(f"🌩️  Connected to S3 bucket: {self.bucket_name}")
+
+    def upload_sample_clip(self, local_path, match_id):
+        """Upload sample clip to S3 and return the URL"""
+        try:
+            file_size_mb = local_path.stat().st_size / 1024 / 1024
+            print(f"📤 Uploading sample clip ({file_size_mb:.1f}MB)")
+            
+            s3_key = f"sample-clips/{match_id}/sample_clip.mp4"
+            
+            self.s3_client.upload_file(
+                str(local_path), 
+                self.bucket_name, 
+                s3_key,
+                ExtraArgs={
+                    'ContentType': 'video/mp4',
+                    'CacheControl': 'max-age=31536000'
+                }
+            )
+            
+            s3_url = f"https://{self.bucket_name}.s3.amazonaws.com/{s3_key}"
+            print(f"✅ Uploaded to: {s3_url}")
+            return s3_url
+            
+        except Exception as e:
+            print(f"❌ Failed to upload sample clip: {e}")
+            return None
+
+def create_sample_clip(video_path, match_id):
+    """Create a 15-second sample clip from the downloaded video"""
+    print(f"✂️  Creating 15-second sample clip...")
+    
+    sample_path = video_path.parent / "sample_clip.mp4"
+    
+    try:
+        # Create 15-second clip starting at 5 minutes - FAST STREAM COPY!
+        cmd = [
+            'ffmpeg',
+            '-i', str(video_path),
+            '-ss', '00:05:00',  # Start at 5 minutes
+            '-t', '00:00:15',   # 15 seconds duration
+            '-c', 'copy',  # Stream copy - NO RE-ENCODING = FAST!
+            '-avoid_negative_ts', 'make_zero',
+            '-y',  # Overwrite
+            str(sample_path)
+        ]
+        
+        subprocess.run(cmd, capture_output=True, text=True, check=True)
+        
+        if sample_path.exists():
+            size_mb = sample_path.stat().st_size / 1024 / 1024
+            print(f"✅ Sample clip created: {size_mb:.1f}MB")
+            return sample_path
+        else:
+            print("❌ Sample clip creation failed")
+            return None
+            
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Failed to create sample clip: {e}")
+        return None
 
 def create_readable_match_id(veo_match_id, veo_url=""):
     """Convert raw Veo match ID to human-readable format"""
@@ -43,8 +121,8 @@ def create_readable_match_id(veo_match_id, veo_url=""):
         # If anything fails, use original ID
         return veo_match_id
 
-def download_video(veo_url, match_id=None):
-    """Download video using direct CDN URL - exactly like the working bash command"""
+def download_video_with_sample(veo_url, match_id=None):
+    """Download video, create sample clip, upload to S3, print URL"""
     print(f"📥 Step 2: Downloading video from {veo_url}")
     
     if not match_id:
@@ -69,42 +147,66 @@ def download_video(veo_url, match_id=None):
         return False
     
     print(f"📹 Downloading video to {video_path}")
+    print(f"🎯 Using yt-dlp to download zoomed footage from: {veo_url}")
     
-    # Direct CDN URL (exactly what worked with wget)
-    cdn_url = "https://c.veocdn.com/1d3c2587-0e9e-403d-a5c0-bb560d279c0c/standard/machine/32b61fa1/video.mp4"
-    
-    print(f"🎯 Using direct CDN URL: {cdn_url}")
-    
-    # Use wget exactly like the working bash command
-    import subprocess
+    # Step 1: Download the video
     try:
         result = subprocess.run([
-            'wget', '-O', str(video_path), cdn_url
+            'yt-dlp', '-f', 'standard-1080p', '-o', str(video_path), veo_url
         ], check=True)
         
-        if video_path.exists() and video_path.stat().st_size > 0:
-            size_mb = video_path.stat().st_size / (1024 * 1024)
-            print(f"✅ Step 2 complete: Video ready ({size_mb:.1f}MB)")
-            return True
-        else:
+        if not (video_path.exists() and video_path.stat().st_size > 0):
             print("❌ Download failed - file missing or empty")
             return False
             
+        size_mb = video_path.stat().st_size / (1024 * 1024)
+        print(f"✅ Video downloaded: {size_mb:.1f}MB")
+        
     except subprocess.CalledProcessError as e:
-        print(f"❌ wget failed: {e}")
+        print(f"❌ Download failed: {e}")
+        return False
+    
+    # Step 2: Create sample clip
+    sample_path = create_sample_clip(video_path, match_id)
+    if not sample_path:
+        print("❌ Sample clip creation failed")
+        return False
+    
+    # Step 3: Upload to S3
+    try:
+        uploader = S3SampleUploader()
+        s3_url = uploader.upload_sample_clip(sample_path, match_id)
+        
+        if s3_url:
+            print(f"\n🎯 SAMPLE CLIP READY!")
+            print(f"📹 Clip: sample_clip.mp4")
+            print(f"🌐 URL: {s3_url}")
+            print(f"📊 Check this clip to verify:")
+            print(f"   - Is it zoomed footage (not panoramic)?")
+            print(f"   - Is it the correct Edinburgh United game?")
+            print(f"   - Is the quality good for AI analysis?")
+            return True
+        else:
+            print("❌ S3 upload failed")
+            return False
+            
+    except Exception as e:
+        print(f"❌ S3 setup failed: {e}")
         return False
 
 if __name__ == "__main__":
     if len(sys.argv) not in [2, 3]:
         print("Usage: python 2_download_video.py <veo-url> [match-id]")
+        print("Example: python 2_download_video.py 'https://app.veo.co/matches/20250726-edinburgh-united-vs-cowdenbeath-central-75b2c59d/'")
         sys.exit(1)
     
     veo_url = sys.argv[1]
     match_id = sys.argv[2] if len(sys.argv) == 3 else None
     
-    success = download_video(veo_url, match_id)
+    success = download_video_with_sample(veo_url, match_id)
     
     if success:
-        print(f"🎯 Ready for Step 3: Generate clips")
+        print(f"\n✅ COMPLETE! Sample clip uploaded and ready for verification")
+        print(f"🎯 Ready for Step 3: Generate clips (if sample looks good)")
     else:
         sys.exit(1) 
