@@ -45,6 +45,7 @@ logs/
 *.mp4
 *.avi
 *.mov
+*.MOV
 *.mkv
 *.flv
 *.wmv

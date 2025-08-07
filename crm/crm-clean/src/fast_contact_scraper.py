@@ -263,19 +263,12 @@ class FastContactScraper:
 
 def main():
     import sys
-    import argparse
     
-    # Set up argument parser
-    parser = argparse.ArgumentParser(description='Fast Contact Scraper for Football Clubs')
-    parser.add_argument('input_file', nargs='?', default='data/gemini_veo_lovers.csv',
-                       help='Input CSV file with clubs to scrape (default: data/gemini_veo_lovers.csv)')
-    parser.add_argument('--output', '-o', default='data/fast_scraper_results.csv',
-                       help='Output CSV file (default: data/fast_scraper_results.csv)')
-    
-    args = parser.parse_args()
+    # Get input file from command line argument, or use default
+    input_file = sys.argv[1] if len(sys.argv) > 1 else 'data/gemini_veo_lovers.csv'
     
     scraper = FastContactScraper()
-    results = scraper.run_scraper(args.input_file, args.output)
+    results = scraper.run_scraper(input_file)
     
     # Print summary
     contacts_found = sum(1 for r in results if r['contact_found'])
