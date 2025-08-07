@@ -3,3 +3,5 @@ tree -I 'venv|__pycache__|*.pyc|*.md|*.txt|*.json|*.csv|*.lock|.git'
 tree -I 'node_modules' -L 3
 
 cd web-apps/video-player/local-video-player && npm run dev
+
+   conda activate clann-unified
