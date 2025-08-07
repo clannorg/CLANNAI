@@ -281,5 +281,6 @@ wsproto==1.2.0
 yacs
 yapf
 yarl
-yolov5==7.0.13attrs==24.3.0
+yolov5==7.0.13
+attrs==24.3.0
 zxing-cpp

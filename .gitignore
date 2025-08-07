@@ -111,4 +111,9 @@ cache/
 temp/
 tmp/
 web-apps/video-player/local-video-player/public/videos/
+
 # CRM Data Files - Now tracking CRM data files
+Anaconda3-2024.02-1-Linux-x86_64.sh
+improved_scraper.py
+test_scraper.py
+veo_1000_scraper.py
