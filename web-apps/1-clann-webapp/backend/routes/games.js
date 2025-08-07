@@ -430,6 +430,14 @@ router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], asy
       return res.status(400).json({ error: 'S3 key is required' });
     }
 
+    // Handle both full S3 URLs and just keys
+    let actualS3Key = s3Key;
+    if (s3Key.startsWith('https://')) {
+      // Extract key from full S3 URL
+      const urlParts = s3Key.split('/');
+      actualS3Key = urlParts.slice(3).join('/'); // Remove bucket name and domain
+    }
+
     // Fetch tactical analysis from S3 URL
     const axios = require('axios');
     console.log('📥 Fetching tactical analysis from:', s3Key);
@@ -630,6 +638,14 @@ router.post('/:id/upload-analysis-file', [authenticateToken, requireCompanyRole]
       return res.status(400).json({ error: 'S3 key is required' });
     }
 
+    // Handle both full S3 URLs and just keys
+    let actualS3Key = s3Key;
+    if (s3Key.startsWith('https://')) {
+      // Extract key from full S3 URL
+      const urlParts = s3Key.split('/');
+      actualS3Key = urlParts.slice(3).join('/'); // Remove bucket name and domain
+    }
+
     // Store analysis file URL in metadata
     const currentGame = await getGameById(gameId);
     if (!currentGame) {
@@ -651,7 +667,7 @@ router.post('/:id/upload-analysis-file', [authenticateToken, requireCompanyRole]
     }
 
     analysisFiles[analysisType] = {
-      url: s3Key,
+      url: actualS3Key,
       filename: originalFilename,
       uploaded_at: new Date().toISOString()
     };

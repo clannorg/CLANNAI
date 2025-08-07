@@ -94,7 +94,17 @@ router.post('/create', authenticateToken, async (req, res) => {
             const timestamp = Date.now();
             const clipFileName = `highlight_${gameId}_${timestamp}.mp4`;
             
-            const uploadResult = await uploadToS3(finalClipBuffer, clipFileName, 'video/mp4');
+            console.log('📤 Attempting to upload to S3...');
+            console.log('📤 File size to upload:', finalClipBuffer.length, 'bytes');
+            
+            try {
+                const uploadResult = await uploadToS3(finalClipBuffer, clipFileName, 'video/mp4');
+                console.log('📤 Upload result:', uploadResult);
+                console.log('📤 S3 Key:', uploadResult.s3Key);
+            } catch (uploadError) {
+                console.error('❌ S3 upload failed:', uploadError);
+                throw new Error(`S3 upload failed: ${uploadError.message}`);
+            }
 
             // Clean up temporary files
             console.log('🧹 Cleaning up temporary files...');
@@ -187,14 +197,30 @@ async function downloadFromS3(s3Key, localPath) {
 // Helper function to create a single clip using FFmpeg
 function createClip(inputPath, outputPath, startTime, duration) {
     return new Promise((resolve, reject) => {
+        console.log(`🔧 FFmpeg command: ffmpeg -ss ${startTime} -i "${inputPath}" -t ${duration} -c copy -avoid_negative_ts make_zero "${outputPath}"`);
+        
         const command = `ffmpeg -ss ${startTime} -i "${inputPath}" -t ${duration} -c copy -avoid_negative_ts make_zero "${outputPath}"`;
         
         exec(command, (error, stdout, stderr) => {
             if (error) {
-                console.error('FFmpeg error:', error);
-                console.error('stderr:', stderr);
+                console.error('❌ FFmpeg error:', error);
+                console.error('❌ FFmpeg stderr:', stderr);
+                console.error('❌ FFmpeg stdout:', stdout);
                 reject(new Error(`FFmpeg failed: ${error.message}`));
             } else {
+                // Check if file was actually created and has content
+                const fs = require('fs');
+                if (fs.existsSync(outputPath)) {
+                    const stats = fs.statSync(outputPath);
+                    console.log(`✅ Clip created: ${outputPath} (${stats.size} bytes)`);
+                    if (stats.size < 1000) {
+                        console.error('⚠️  Warning: Clip file is very small, may be corrupted');
+                    }
+                } else {
+                    console.error('❌ Error: Clip file was not created');
+                    reject(new Error('Clip file was not created'));
+                    return;
+                }
                 resolve();
             }
         });
@@ -206,12 +232,28 @@ function concatenateClips(fileListPath, outputPath) {
     return new Promise((resolve, reject) => {
         const command = `ffmpeg -f concat -safe 0 -i "${fileListPath}" -c copy "${outputPath}"`;
         
+        console.log(`🔧 Concatenation command: ${command}`);
+        
         exec(command, (error, stdout, stderr) => {
             if (error) {
-                console.error('FFmpeg concatenation error:', error);
-                console.error('stderr:', stderr);
+                console.error('❌ FFmpeg concatenation error:', error);
+                console.error('❌ FFmpeg stderr:', stderr);
+                console.error('❌ FFmpeg stdout:', stdout);
                 reject(new Error(`FFmpeg concatenation failed: ${error.message}`));
             } else {
+                // Check if final file was created and has content
+                const fs = require('fs');
+                if (fs.existsSync(outputPath)) {
+                    const stats = fs.statSync(outputPath);
+                    console.log(`✅ Final clip created: ${outputPath} (${stats.size} bytes)`);
+                    if (stats.size < 1000) {
+                        console.error('⚠️  Warning: Final clip file is very small, may be corrupted');
+                    }
+                } else {
+                    console.error('❌ Error: Final clip file was not created');
+                    reject(new Error('Final clip file was not created'));
+                    return;
+                }
                 resolve();
             }
         });
