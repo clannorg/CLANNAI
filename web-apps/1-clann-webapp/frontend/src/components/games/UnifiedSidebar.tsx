@@ -15,8 +15,8 @@ interface GameEvent {
 interface UnifiedSidebarProps {
   isOpen: boolean
   onClose: () => void
-  activeTab?: 'events' | 'ai' | 'insights'
-  onTabChange?: (tab: 'events' | 'ai' | 'insights') => void
+  activeTab?: 'events' | 'ai' | 'insights' | 'downloads'
+  onTabChange?: (tab: 'events' | 'ai' | 'insights' | 'downloads') => void
   onWidthChange?: (width: number) => void
   
   // Events tab props
@@ -41,7 +41,7 @@ interface UnifiedSidebarProps {
   onSeekToTimestamp: (timestamp: number) => void
 }
 
-type TabType = 'events' | 'ai' | 'insights'
+type TabType = 'events' | 'ai' | 'insights' | 'downloads'
 
 export default function UnifiedSidebar({
   isOpen,
@@ -70,6 +70,10 @@ export default function UnifiedSidebar({
   const [sidebarWidth, setSidebarWidth] = useState(400) // Default 400px - wider for better usability
   const [isResizing, setIsResizing] = useState(false)
   
+  // Downloads state
+  const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
+  const [isCreatingClip, setIsCreatingClip] = useState(false)
+  
   // Use external active tab if provided, otherwise use internal
   const activeTab = externalActiveTab || internalActiveTab
   
@@ -91,6 +95,75 @@ export default function UnifiedSidebar({
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
       handleSendMessage()
+    }
+  }
+
+  // Downloads functions
+  const handleEventSelection = (eventIndex: number) => {
+    const newSelected = new Set(selectedEvents)
+    if (newSelected.has(eventIndex)) {
+      newSelected.delete(eventIndex)
+    } else if (newSelected.size < 5) {
+      newSelected.add(eventIndex)
+    }
+    setSelectedEvents(newSelected)
+  }
+
+  const handleCreateClip = async () => {
+    if (selectedEvents.size === 0) return
+    
+    setIsCreatingClip(true)
+    
+    try {
+      // Get selected event timestamps
+      const selectedEventData = Array.from(selectedEvents).map(index => ({
+        timestamp: allEvents[index].timestamp,
+        type: allEvents[index].type,
+        description: allEvents[index].description
+      }))
+      
+      console.log('🎬 Creating clip with events:', selectedEventData)
+      
+      // Call backend API to create clip
+      const response = await fetch('http://localhost:3002/api/clips/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({
+          gameId: gameId,
+          events: selectedEventData
+        })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to create clip')
+      }
+
+      const result = await response.json()
+      console.log('✅ Clip created successfully:', result)
+      
+      // Create download link
+      const link = document.createElement('a')
+      link.href = result.downloadUrl
+      link.download = result.fileName
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      
+      // Clear selection after successful creation
+      setSelectedEvents(new Set())
+      
+      alert(`🎉 Highlight reel created! (${result.eventCount} events, ${result.duration}s)\nDownload started automatically.`)
+      
+    } catch (error) {
+      console.error('❌ Error creating clip:', error)
+      alert(`Error creating clip: ${error.message}`)
+    } finally {
+      setIsCreatingClip(false)
     }
   }
 
@@ -129,6 +202,21 @@ export default function UnifiedSidebar({
     const minutes = Math.floor(time / 60)
     const seconds = Math.floor(time % 60)
     return `${minutes}:${seconds.toString().padStart(2, '0')}`
+  }
+
+  const getEventColor = (type: string) => {
+    const colors: { [key: string]: string } = {
+      goal: '#22c55e',
+      shot: '#3b82f6', 
+      save: '#f59e0b',
+      foul: '#ef4444',
+      'yellow card': '#eab308',
+      'red card': '#dc2626',
+      corner: '#06b6d4',
+      substitution: '#8b5cf6',
+      turnover: '#a855f7'
+    }
+    return colors[type.toLowerCase()] || '#6b7280'
   }
 
   if (!isOpen) return null
@@ -219,6 +307,20 @@ export default function UnifiedSidebar({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
             <span>Insights</span>
+          </button>
+
+          <button
+            onClick={() => handleTabChange('downloads')}
+            className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
+              activeTab === 'downloads'
+                ? 'bg-orange-500/20 text-orange-200 border border-orange-500/30'
+                : 'text-gray-400 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Downloads</span>
           </button>
           </div>
         </div>
@@ -544,8 +646,107 @@ export default function UnifiedSidebar({
                 tacticalLoading={tacticalLoading} 
                 gameId={gameId}
                 onSeekToTimestamp={onSeekToTimestamp}
-                compact={true}
               />
+            </div>
+          </div>
+        )}
+
+        {/* Downloads Tab */}
+        {activeTab === 'downloads' && (
+          <div className="h-full flex flex-col">
+            <div className="p-4 border-b border-gray-700">
+              <h4 className="text-lg font-semibold text-white mb-2">📥 Create Highlights</h4>
+              <p className="text-sm text-gray-400">Select events to create a highlight reel for social media</p>
+            </div>
+            
+            <div className="flex-1 overflow-y-auto p-4">
+              <div className="space-y-4">
+                {/* Event Selection */}
+                <div>
+                  <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
+                  <div className="space-y-2">
+                    {allEvents.slice(0, 20).map((event, index) => {
+                      const isSelected = selectedEvents.has(index)
+                      const isDisabled = !isSelected && selectedEvents.size >= 5
+                      
+                      return (
+                        <label
+                          key={`${event.timestamp}-${event.type}-${index}`}
+                          className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
+                            isSelected 
+                              ? 'bg-orange-500/20 border border-orange-500/30' 
+                              : isDisabled 
+                                ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
+                                : 'bg-gray-800/30 hover:bg-gray-800/50'
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={() => !isDisabled && handleEventSelection(index)}
+                            disabled={isDisabled}
+                            className="w-4 h-4 text-orange-500 bg-gray-700 border-gray-600 rounded focus:ring-orange-500 focus:ring-2"
+                          />
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-2">
+                              <span 
+                                className={`inline-block w-3 h-3 rounded-full`}
+                                style={{ backgroundColor: getEventColor(event.type) }}
+                              />
+                              <span className="text-white font-medium capitalize">
+                                {event.type}
+                              </span>
+                              <span className="text-gray-400 text-sm">
+                                {formatTime(event.timestamp)}
+                              </span>
+                            </div>
+                            <p className="text-gray-300 text-sm mt-1">
+                              {event.description}
+                            </p>
+                          </div>
+                        </label>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* Summary */}
+                <div className="bg-gray-800/50 rounded-lg p-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-white font-medium">Selected Events:</span>
+                    <span className="text-orange-400 font-bold">{selectedEvents.size} / 5</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white font-medium">Estimated Duration:</span>
+                    <span className="text-orange-400 font-bold">{selectedEvents.size * 10}s</span>
+                  </div>
+                </div>
+
+                {/* Create Button */}
+                <button
+                  onClick={handleCreateClip}
+                  disabled={selectedEvents.size === 0 || isCreatingClip}
+                  className={`w-full font-semibold py-3 px-4 rounded-lg transition-colors border ${
+                    selectedEvents.size === 0 || isCreatingClip
+                      ? 'bg-gray-700/50 text-gray-500 border-gray-600 cursor-not-allowed'
+                      : 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-200 border-orange-500/30 hover:border-orange-500/40'
+                  }`}
+                >
+                  {isCreatingClip ? (
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
+                      <span>Creating Clip...</span>
+                    </div>
+                  ) : (
+                    'Create Highlight Reel'
+                  )}
+                </button>
+
+                {/* Info */}
+                <div className="text-xs text-gray-500 text-center">
+                  Each event includes 10 seconds (5s before + 5s after)
+                </div>
+              </div>
             </div>
           </div>
         )}
