@@ -205,7 +205,7 @@ class ContactFinder:
 
 def main():
     # Read feasible customers
-    df = pd.read_csv('data/scotland_ni_ireland_targets.csv')
+    df = pd.read_csv('data/feasible_customers.csv')
     
     # Create data directory if it doesn't exist
     Path('data').mkdir(exist_ok=True)

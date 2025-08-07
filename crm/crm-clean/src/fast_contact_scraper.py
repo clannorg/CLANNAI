@@ -140,7 +140,7 @@ class FastContactScraper:
             logger.warning(f"Failed to scrape {url}: {e}")
             return [], []
             
-    def process_club(self, club_name, club_id, country):
+    def process_club(self, club_name, club_id, country, recordings=None):
         """Process a single club through all strategies"""
         logger.info(f"Processing: {club_name} ({country})")
         
@@ -148,6 +148,7 @@ class FastContactScraper:
             'club_name': club_name,
             'club_id': club_id,
             'country': country,
+            'recordings': recordings,
             'emails': [],
             'phones': [],
             'websites': [],
@@ -190,7 +191,7 @@ class FastContactScraper:
             
         return result
         
-    def run_scraper(self, input_file='data/scotland_ni_ireland_targets.csv', output_file='data/fast_scraper_results.csv'):
+    def run_scraper(self, input_file='data/gemini_veo_lovers.csv', output_file='data/fast_scraper_results.csv'):
         """Run the scraper on all clubs"""
         logger.info("🚀 Starting Fast Contact Scraper")
         
@@ -205,8 +206,9 @@ class FastContactScraper:
             club_name = row['Club Name']
             club_id = row['Club Identifier']
             country = row['Country']
+            recordings = row.get('Recordings', None)
             
-            result = self.process_club(club_name, club_id, country)
+            result = self.process_club(club_name, club_id, country, recordings)
             self.results.append(result)
             
             # Progress update
@@ -249,6 +251,7 @@ class FastContactScraper:
         df_export = pd.DataFrame({
             'Club Name': df_results['club_name'],
             'Country': df_results['country'],
+            'Recordings': df_results['recordings'],
             'Emails': df_results['emails'].apply(lambda x: '; '.join(x) if x else ''),
             'Phones': df_results['phones'].apply(lambda x: '; '.join(x) if x else ''),
             'Websites': df_results['websites'].apply(lambda x: '; '.join(x) if x else ''),
@@ -259,8 +262,20 @@ class FastContactScraper:
         logger.info(f"💾 Saved {len(df_export)} results to {output_file}")
 
 def main():
+    import sys
+    import argparse
+    
+    # Set up argument parser
+    parser = argparse.ArgumentParser(description='Fast Contact Scraper for Football Clubs')
+    parser.add_argument('input_file', nargs='?', default='data/gemini_veo_lovers.csv',
+                       help='Input CSV file with clubs to scrape (default: data/gemini_veo_lovers.csv)')
+    parser.add_argument('--output', '-o', default='data/fast_scraper_results.csv',
+                       help='Output CSV file (default: data/fast_scraper_results.csv)')
+    
+    args = parser.parse_args()
+    
     scraper = FastContactScraper()
-    results = scraper.run_scraper()
+    results = scraper.run_scraper(args.input_file, args.output)
     
     # Print summary
     contacts_found = sum(1 for r in results if r['contact_found'])
