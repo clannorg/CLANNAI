@@ -280,18 +280,22 @@ export default function UnifiedSidebar({
         </div>
       </div>
       {/* Tab Header */}
-      <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
+      <div className={`sticky bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10 ${
+        isMobile ? 'top-0' : 'top-0'
+      }`}>
         <div className="flex items-center justify-between">
-          {/* Subtle Close Button - Left Side */}
-          <button
-            onClick={onClose}
-            className="mr-3 flex items-center justify-center w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200"
-            title="Close Sidebar"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          {/* Subtle Close Button - Left Side (Hidden on Mobile) */}
+          {!isMobile && (
+            <button
+              onClick={onClose}
+              className="mr-3 flex items-center justify-center w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200"
+              title="Close Sidebar"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
           
           {/* Tab Navigation */}
           <div className="flex bg-gray-800/50 rounded-lg p-1 flex-1">
