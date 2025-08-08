@@ -263,10 +263,10 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                 />
               </div>
       ) : (
-        // Mobile Portrait Layout (YouTube-style)
-        <div className="h-screen overflow-y-auto">
-          {/* Top Section: Video Player - Sticky */}
-          <div className="sticky top-0 z-20 bg-black">
+                // Mobile Portrait Layout (YouTube-style)
+        <div>
+          {/* Fixed Video Player at Top */}
+          <div className="fixed top-0 left-0 right-0 z-20 bg-black">
             {/* Mobile Game Header - simplified */}
             <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4">
               <GameHeader
@@ -278,7 +278,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                 isMobile={true} // Mobile sizing
               />
             </div>
-
+            
             {/* Video Player - full width, aspect ratio maintained */}
             <div className="w-full aspect-video bg-black">
               <VideoPlayer
@@ -292,6 +292,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               />
             </div>
           </div>
+          
+          {/* Content with top margin to account for fixed video */}
+          <div style={{ marginTop: '56.25vw' }}> {/* 56.25vw = aspect-video height */}
 
         {/* Bottom Section: Dark Sidebar (YouTube-style) */}
         <UnifiedSidebar
@@ -316,6 +319,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             gameId={gameId}
           onSeekToTimestamp={seekToTimestamp}
       />
+          </div> {/* Close content div */}
         </div>
       )}
     </div>
