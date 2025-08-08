@@ -72,8 +72,8 @@ export default function GameHeader({
         </div>
       </div>
 
-      {/* Right side - AI Coach toggle button (only show when sidebar is closed) */}
-      {!showEvents && (
+      {/* Right side - AI Coach toggle button (only show when sidebar is closed and not mobile) */}
+      {!showEvents && !isMobile && (
         <div className="absolute top-4 right-4 z-50">
           <button
             onClick={onToggleEvents}
