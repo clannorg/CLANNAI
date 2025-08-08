@@ -263,7 +263,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
                 />
               </div>
       ) : (
-        /* Mobile Portrait Layout (YouTube-style) */
+        // Mobile Portrait Layout (YouTube-style)
         <div>
         {/* Top Section: Video Player */}
         <div className="relative">
@@ -331,14 +331,15 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               setTeamFilter={setTeamFilter}
               showFilters={showFilters}
               setShowFilters={setShowFilters}
-        tacticalData={tacticalData} 
-        tacticalLoading={tacticalLoading} 
+                    tacticalData={tacticalData} 
+            tacticalLoading={tacticalLoading} 
             gameId={gameId}
-              onSeekToTimestamp={seekToTimestamp}
-      />
+            onSeekToTimestamp={seekToTimestamp}
+          />
           </div>
         </div>
-      </div>
+        </div>
+      )}
     </div>
   )
 } 
