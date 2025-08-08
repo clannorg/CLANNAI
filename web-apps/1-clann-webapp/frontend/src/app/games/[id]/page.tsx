@@ -264,34 +264,34 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               </div>
       ) : (
         // Mobile Portrait Layout (YouTube-style)
-        <div>
-        {/* Top Section: Video Player - Sticky */}
-        <div className="sticky top-0 z-20 relative">
-          {/* Mobile Game Header - simplified */}
-          <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4">
-            <GameHeader
-              game={game}
-              teamScores={teamScores}
-              currentTime={currentTime}
-              showEvents={false} // Always hidden on mobile
-              onToggleEvents={() => {}} // No sidebar toggle on mobile
-              isMobile={true} // Mobile sizing
-            />
-                  </div>
-                  
-          {/* Video Player - full width, aspect ratio maintained */}
-          <div className="w-full aspect-video bg-black">
-            <VideoPlayer
-              game={game}
-              events={filteredEvents}
-              allEvents={allEvents}
-              currentEventIndex={currentEventIndex}
-              onTimeUpdate={handleTimeUpdate}
-              onEventClick={handleEventClick}
-              onSeekToTimestamp={seekToTimestamp}
-            />
-        </div>
-      </div>
+        <div className="h-screen overflow-y-auto">
+          {/* Top Section: Video Player - Sticky */}
+          <div className="sticky top-0 z-20 bg-black">
+            {/* Mobile Game Header - simplified */}
+            <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4">
+              <GameHeader
+                game={game}
+                teamScores={teamScores}
+                currentTime={currentTime}
+                showEvents={false} // Always hidden on mobile
+                onToggleEvents={() => {}} // No sidebar toggle on mobile
+                isMobile={true} // Mobile sizing
+              />
+            </div>
+
+            {/* Video Player - full width, aspect ratio maintained */}
+            <div className="w-full aspect-video bg-black">
+              <VideoPlayer
+                game={game}
+                events={filteredEvents}
+                allEvents={allEvents}
+                currentEventIndex={currentEventIndex}
+                onTimeUpdate={handleTimeUpdate}
+                onEventClick={handleEventClick}
+                onSeekToTimestamp={seekToTimestamp}
+              />
+            </div>
+          </div>
 
         {/* Bottom Section: Dark Sidebar (YouTube-style) */}
         <UnifiedSidebar
