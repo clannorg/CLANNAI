@@ -265,8 +265,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       ) : (
         // Mobile Portrait Layout (YouTube-style)
         <div>
-        {/* Top Section: Video Player */}
-        <div className="relative">
+        {/* Top Section: Video Player - Sticky */}
+        <div className="sticky top-0 z-20 relative">
           {/* Mobile Game Header - simplified */}
           <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4">
             <GameHeader
