@@ -284,7 +284,7 @@ export default function UnifiedSidebar({
         isMobile ? 'top-0' : 'top-0'
       }`}>
         <div className="flex items-center justify-between">
-          {/* Subtle Close Button - Left Side (Hidden on Mobile) */}
+          {/* Close Button - Hidden on Mobile */}
           {!isMobile && (
             <button
               onClick={onClose}
