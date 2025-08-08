@@ -316,7 +316,6 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             gameId={gameId}
           onSeekToTimestamp={seekToTimestamp}
       />
-          </div> {/* Close content div */}
         </div>
       )}
     </div>
