@@ -1,0 +1,7 @@
+The Striped team takes a free kick which results in a headed attempt on goal being saved by the Blue team's goalkeeper.
+
+**Key events:**
+- **00:04**: The Striped team takes a short free kick.
+- **00:06**: A cross is delivered into the penalty area.
+- **00:08**: A header from a Striped team player is directed towards the goal.
+- **00:09**: The Blue team's goalkeeper catches the ball, ending the attack.

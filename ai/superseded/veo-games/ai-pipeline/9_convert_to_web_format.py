@@ -1,0 +1,574 @@
+#!/usr/bin/env python3
+"""
+9. Convert to Web Format
+Converts AI pipeline outputs to web app compatible JSON format
+"""
+
+import sys
+import os
+import json
+import re
+from pathlib import Path
+from datetime import datetime
+import google.generativeai as genai
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+class WebFormatConverter:
+    def __init__(self):
+        """Initialize converter with Gemini AI and web app event format specifications"""
+        # Initialize Gemini
+        genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+        self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        
+        # Web app event types with colors (from VIDEO_PLAYER_JSON_FORMAT.md)
+        self.supported_event_types = {
+            'goal': 'Goals scored',
+            'shot': 'Shot attempts', 
+            'save': 'Goalkeeper save',
+            'foul': 'Fouls committed',
+            'yellow_card': 'Yellow card shown',
+            'red_card': 'Red card shown',
+            'substitution': 'Player substitution',
+            'corner': 'Corner kick',
+            'offside': 'Offside call',
+            'turnover': 'Possession gained'
+        }
+        
+        print(f"🔄 Web Format Converter initialized with Gemini AI")
+
+    def parse_timestamp_to_seconds(self, timestamp_str):
+        """Convert timestamp string (MM:SS or HH:MM:SS) to seconds"""
+        if not timestamp_str:
+            return 0
+            
+        # Clean timestamp string
+        timestamp_str = timestamp_str.strip()
+        
+        # Handle different timestamp formats
+        if ':' in timestamp_str:
+            parts = timestamp_str.split(':')
+            if len(parts) == 2:  # MM:SS
+                minutes, seconds = map(int, parts)
+                return minutes * 60 + seconds
+            elif len(parts) == 3:  # HH:MM:SS  
+                hours, minutes, seconds = map(int, parts)
+                return hours * 3600 + minutes * 60 + seconds
+        
+        return 0
+
+    def extract_team_from_description(self, description):
+        """Extract team information from event description"""
+        description_lower = description.lower()
+        
+        # Common team identifiers
+        if any(word in description_lower for word in ['red team', 'red player', 'red']):
+            return 'red'
+        elif any(word in description_lower for word in ['black team', 'black player', 'black']):
+            return 'black'
+        elif any(word in description_lower for word in ['yellow team', 'yellow player', 'yellow']):
+            return 'yellow'
+        elif any(word in description_lower for word in ['blue team', 'blue player', 'blue']):
+            return 'blue'
+        elif any(word in description_lower for word in ['home team', 'home']):
+            return 'home'
+        elif any(word in description_lower for word in ['away team', 'away']):
+            return 'away'
+            
+        return None
+
+    def get_web_format_prompt(self, timeline_content):
+        """Create prompt for Gemini to convert timeline to web format JSON"""
+        return f"""You are a football match data converter. Your task is to extract ALL football events from the definite events text and convert them to a specific JSON format for a web video player.
+
+INPUT: Definite Events (VEO-validated) + Other Events Text
+{timeline_content}
+
+TASK: Extract ALL events (goals, shots, fouls, cards, corners, etc.) and convert to JSON array format:
+
+[
+  {{
+    "type": "goal",
+    "timestamp": 330,
+    "description": "Brief description of the goal",
+    "team": "red"
+  }},
+  {{
+    "type": "shot", 
+    "timestamp": 450,
+    "description": "Brief description of the shot",
+    "team": "yellow"
+  }},
+  {{
+    "type": "foul",
+    "timestamp": 520,
+    "description": "Free kick awarded",
+    "team": "red"
+  }}
+]
+
+SUPPORTED EVENT TYPES (USE THESE EXACT STRINGS ONLY):
+- "goal" - Goals scored
+- "shot" - Shot attempts, headers towards goal  
+- "save" - Goalkeeper saves
+- "foul" - ALL fouls, free kicks, handballs, tackles, slide tackles
+- "yellow_card" - Yellow cards only
+- "red_card" - Red cards only
+- "corner" - Corner kicks, throw-ins near goal
+- "substitution" - Player changes only
+- "turnover" - Possession changes, interceptions, recoveries (team that GAINS possession)
+
+CRITICAL MAPPING RULES:
+- "scores a goal" / "goal scored" → "goal" (ALWAYS!)
+- Shot/header towards goal → "shot"
+- Foul/Free kick/Tackle → "foul"
+- Corner kick → "corner"
+- Throw-in → "corner" (only if near penalty area)
+- "wins possession" / "loses possession" / "gains possession" / "builds possession" → "turnover"
+- "interception" / "recovery" / "possession change" → "turnover"
+- Goal kick → ignore (not supported)
+- Pre-match → ignore (not supported)  
+- Offside → ignore (not supported)
+
+RULES:
+1. **GOAL DETECTION**: If description contains "scores", "goal scored", "goal from", ALWAYS use type "goal"
+2. **TURNOVER DETECTION**: If description contains possession change, use "turnover" and credit team that GAINS possession
+3. Convert timestamps to total seconds (86:39 = 5199 seconds, 22:04 = 1324 seconds)
+4. Extract team: "red", "yellow", "black", "blue", "claret", "light blue" (lowercase, replace spaces with _)
+5. Keep descriptions concise but descriptive (max 80 characters)  
+6. Sort by timestamp (earliest first)
+7. Map ALL events to supported types - DO NOT use unsupported types
+8. Output ONLY the JSON array, no explanation or markdown
+
+Extract events from ALL sections: goals, shots, fouls, cards, corners, substitutions, etc."""
+
+    def convert_with_gemini(self, timeline_content):
+        """Use Gemini to convert timeline to web format JSON"""
+        try:
+            prompt = self.get_web_format_prompt(timeline_content)
+            response = self.model.generate_content(prompt)
+            
+            # Parse the JSON response
+            json_text = response.text.strip()
+            
+            # Remove markdown code blocks if present
+            if json_text.startswith('```'):
+                json_text = json_text.split('```')[1]
+                if json_text.startswith('json'):
+                    json_text = json_text[4:]
+            
+            events = json.loads(json_text)
+            return events
+            
+        except Exception as e:
+            print(f"❌ Gemini conversion failed: {e}")
+            return []
+
+    def parse_validated_timeline(self, timeline_path):
+        """Parse the AI-validated timeline text file"""
+        events = []
+        
+        try:
+            with open(timeline_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except Exception as e:
+            print(f"❌ Failed to read timeline file: {e}")
+            return events
+
+        # Parse goals section - simpler approach
+        goals_section = re.search(r'### \*\*VALIDATED GOALS\*\*|### VALIDATED GOALS(.*?)(?=### |$)', content, re.DOTALL)
+        if goals_section:
+            goals_text = goals_section.group(1) if goals_section.group(1) else content.split('### VALIDATED GOALS')[1].split('###')[0]
+            
+            # Find timestamp patterns
+            timestamp_matches = re.finditer(r'(\d+)\.\s+\*\*Timestamp:\*\*\s*(\d{2}:\d{2})(.*?)(?=\d+\.\s+\*\*Timestamp:|$)', goals_text, re.DOTALL)
+            
+            for match in timestamp_matches:
+                goal_number = match.group(1)
+                timestamp_str = match.group(2)
+                goal_content = match.group(3)
+                
+                # Extract team
+                team_match = re.search(r'\*\*Team:\*\*\s*(.*?)(?=\n|$)', goal_content)
+                team_info = team_match.group(1).strip() if team_match else ""
+                
+                # Extract description
+                desc_match = re.search(r'\*\*Description:\*\*\s*(.*?)(?=\n\s*\*\s*\*\*|$)', goal_content, re.DOTALL)
+                description = desc_match.group(1).strip() if desc_match else f"Goal {goal_number}"
+                
+                # Clean up description
+                description = re.sub(r'\n.*', '', description).strip()
+                
+                # Convert timestamp to seconds
+                timestamp_seconds = self.parse_timestamp_to_seconds(timestamp_str)
+                
+                # Extract team
+                team = self.extract_team_from_description(team_info) or self.extract_team_from_description(description)
+                
+                event = {
+                    "type": "goal",
+                    "timestamp": timestamp_seconds,
+                    "description": description,
+                }
+                
+                if team:
+                    event["team"] = team
+                    
+                events.append(event)
+
+        # Parse shots section (if exists)
+        shots_section = re.search(r'### VALIDATED SHOTS\s*\n(.*?)(?=### |$)', content, re.DOTALL)
+        if shots_section:
+            shots_text = shots_section.group(1)
+            
+            # Extract individual shots
+            shot_matches = re.finditer(r'\*\*Timestamp:\*\*\s*(\d{2}:\d{2})\s*\n.*?\*\*Team:\*\*\s*(.*?)\n.*?\*\*Description:\*\*\s*(.*?)(?=\n.*?\*\*|$)', shots_text, re.DOTALL)
+            
+            for match in shot_matches:
+                timestamp_str = match.group(1)
+                team_info = match.group(2).strip()
+                description = match.group(3).strip()
+                
+                # Clean up description
+                description = re.sub(r'\n.*?\*\*.*?\*\*.*', '', description, flags=re.DOTALL).strip()
+                
+                # Convert timestamp to seconds
+                timestamp_seconds = self.parse_timestamp_to_seconds(timestamp_str)
+                
+                # Extract team
+                team = self.extract_team_from_description(team_info) or self.extract_team_from_description(description)
+                
+                event = {
+                    "type": "shot",
+                    "timestamp": timestamp_seconds,
+                    "description": description,
+                }
+                
+                if team:
+                    event["team"] = team
+                    
+                events.append(event)
+
+        return events
+
+    def parse_goals_shots_json(self, json_path):
+        """Parse the goals_and_shots_timeline.json file as backup"""
+        events = []
+        
+        try:
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except Exception as e:
+            print(f"❌ Failed to read JSON file: {e}")
+            return events
+
+        # Extract goals
+        goals = data.get('goals_and_shots_analysis', {}).get('goals', [])
+        for goal in goals:
+            team = None
+            if 'team' in goal:
+                team_str = goal['team'].lower()
+                if 'red' in team_str:
+                    team = 'red'
+                elif 'black' in team_str:
+                    team = 'black'
+                elif 'yellow' in team_str:
+                    team = 'yellow'
+                elif 'blue' in team_str:
+                    team = 'blue'
+
+            event = {
+                "type": "goal",
+                "timestamp": goal.get('precise_seconds', 0),
+                "description": goal.get('description', 'Goal scored'),
+            }
+            
+            if team:
+                event["team"] = team
+                
+            events.append(event)
+
+        # Extract shots
+        shots_saved = data.get('goals_and_shots_analysis', {}).get('shots_saved', [])
+        shots_wide = data.get('goals_and_shots_analysis', {}).get('shots_wide', [])
+        
+        for shot in shots_saved + shots_wide:
+            team = None
+            if 'team' in shot:
+                team_str = shot['team'].lower()
+                if 'red' in team_str:
+                    team = 'red'
+                elif 'black' in team_str:
+                    team = 'black'
+                elif 'yellow' in team_str:
+                    team = 'yellow'
+                elif 'blue' in team_str:
+                    team = 'blue'
+
+            event = {
+                "type": "shot",
+                "timestamp": shot.get('precise_seconds', 0),
+                "description": shot.get('description', 'Shot attempt'),
+            }
+            
+            if team:
+                event["team"] = team
+                
+            events.append(event)
+
+        return events
+
+    def convert_enhanced_events_to_web_format(self, enhanced_events):
+        """Convert enhanced_events.json to web app format"""
+        events = []
+        
+        for enhanced_event in enhanced_events:
+            # Enhanced events are already in a good format, just need minor adjustments
+            event = {
+                "type": enhanced_event.get("type", "unknown"),
+                "timestamp": enhanced_event.get("timestamp", 0),
+                "description": enhanced_event.get("description", "Event occurred"),
+            }
+            
+            # Add team if available
+            if "team" in enhanced_event:
+                event["team"] = enhanced_event["team"]
+            
+            # Keep VEO event ID for reference
+            if "veo_event_id" in enhanced_event:
+                event["veo_event_id"] = enhanced_event["veo_event_id"]
+                
+            # Keep confidence if available
+            if "confidence" in enhanced_event:
+                event["confidence"] = enhanced_event["confidence"]
+            
+            events.append(event)
+        
+        print(f"🔄 Converted {len(events)} enhanced events to web format")
+        return events
+
+    def convert_match_to_web_format(self, match_id):
+        """Convert AI pipeline outputs to web app format"""
+        print(f"🔄 Converting {match_id} to web format")
+        
+        # Define paths
+        data_dir = Path("../data") / match_id
+        if not data_dir.exists():
+            print(f"❌ Data directory not found: {data_dir}")
+            return False
+
+        # Try enhanced events first (best quality - VEO + AI enhanced)
+        enhanced_events_path = data_dir / "enhanced_events.json"
+        events = []
+        
+        if enhanced_events_path.exists():
+            print(f"🎯 Reading enhanced events (VEO + AI): {enhanced_events_path}")
+            try:
+                with open(enhanced_events_path, 'r', encoding='utf-8') as f:
+                    enhanced_events = json.load(f)
+                
+                # Convert enhanced events to web format
+                events = self.convert_enhanced_events_to_web_format(enhanced_events)
+                print(f"✅ Loaded {len(events)} enhanced events (goals, shots, fouls, cards)")
+                
+                # Also read other events for turnovers, corners, etc.
+                other_events_path = data_dir / "8.5_other_events.txt"
+                if other_events_path.exists():
+                    print(f"📖 Also reading other events for turnovers: {other_events_path}")
+                    try:
+                        with open(other_events_path, 'r', encoding='utf-8') as f:
+                            other_content = f.read()
+                        
+                        # Convert other events with Gemini
+                        other_events = self.convert_with_gemini(other_content)
+                        print(f"✅ Loaded {len(other_events)} additional events (turnovers, corners, etc.)")
+                        
+                        # Combine both sets of events
+                        events.extend(other_events)
+                        print(f"🎯 Combined total: {len(events)} events")
+                        
+                    except Exception as e:
+                        print(f"⚠️ Failed to load other events: {e}")
+                
+                if events:
+                    # We have combined enhanced + other events
+                    events.sort(key=lambda x: x['timestamp'])
+                    
+                    # Create web app compatible JSON
+                    web_events = {
+                        "match_id": match_id,
+                        "generated_timestamp": datetime.now().isoformat(),
+                        "events_count": len(events),
+                        "source": "clann_ai_pipeline_enhanced",
+                        "events": events
+                    }
+
+                    # Save web-compatible events file
+                    web_events_path = data_dir / "web_events.json"
+                    try:
+                        with open(web_events_path, 'w', encoding='utf-8') as f:
+                            json.dump(web_events, f, indent=2, ensure_ascii=False)
+                        print(f"✅ Enhanced web events saved to: {web_events_path}")
+                    except Exception as e:
+                        print(f"❌ Failed to save web events: {e}")
+                        return False
+
+                    # Also save just the events array (direct format)
+                    events_array_path = data_dir / "web_events_array.json"
+                    try:
+                        with open(events_array_path, 'w', encoding='utf-8') as f:
+                            json.dump(events, f, indent=2, ensure_ascii=False)
+                        print(f"✅ Enhanced events array saved to: {events_array_path}")
+                    except Exception as e:
+                        print(f"❌ Failed to save events array: {e}")
+
+                    # Print summary
+                    event_types = {}
+                    for event in events:
+                        event_types[event['type']] = event_types.get(event['type'], 0) + 1
+                    
+                    print(f"\n📋 ENHANCED EVENTS SUMMARY:")
+                    print(f"   🎯 Match: {match_id}")
+                    print(f"   📊 Events: {len(events)} total")
+                    for event_type, count in sorted(event_types.items()):
+                        print(f"   {self.supported_event_types.get(event_type, event_type)}: {count}")
+                    
+                    return True
+                    
+            except Exception as e:
+                print(f"❌ Failed to read enhanced events: {e}")
+                print(f"🔄 Falling back to text processing...")
+        
+        # Fallback: Try definite events + other events (original logic)
+        definite_events_path = data_dir / "7.5_definite_events.txt"
+        other_events_path = data_dir / "8.5_other_events.txt"
+        
+        # Combine definite events and other events
+        combined_content = ""
+        
+        if definite_events_path.exists():
+            print(f"📖 Reading definite events: {definite_events_path}")
+            with open(definite_events_path, 'r', encoding='utf-8') as f:
+                combined_content += f.read() + "\n\n"
+        
+        if other_events_path.exists():
+            print(f"📖 Reading other events: {other_events_path}")
+            with open(other_events_path, 'r', encoding='utf-8') as f:
+                combined_content += f.read()
+        
+        if combined_content.strip():
+            try:
+                print(f"🤖 Converting combined events with Gemini AI...")
+                events = self.convert_with_gemini(combined_content)
+                print(f"✅ Extracted {len(events)} events using Gemini")
+            except Exception as e:
+                print(f"❌ Gemini conversion failed: {e}")
+                print(f"🔄 Trying JSON fallback...")
+                # Try JSON fallback
+                json_timeline_path = data_dir / "goals_and_shots_timeline.json"
+                if json_timeline_path.exists():
+                    events = self.parse_goals_shots_json(json_timeline_path)
+                    print(f"✅ Extracted {len(events)} events from JSON fallback")
+                else:
+                    print(f"🔄 No JSON fallback available")
+        else:
+            # Fallback to old format if new files don't exist
+            validated_timeline_path = data_dir / "6_validated_timeline.txt"
+            if validated_timeline_path.exists():
+                print(f"📖 Falling back to old validated timeline: {validated_timeline_path}")
+                try:
+                    with open(validated_timeline_path, 'r', encoding='utf-8') as f:
+                        timeline_content = f.read()
+                    print(f"🤖 Converting with Gemini AI...")
+                    events = self.convert_with_gemini(timeline_content)
+                    print(f"✅ Extracted {len(events)} events using Gemini")
+                except Exception as e:
+                    print(f"❌ Gemini conversion failed: {e}")
+                    print(f"🔄 Falling back to regex parsing...")
+                    events = self.parse_validated_timeline(validated_timeline_path)
+                    print(f"✅ Extracted {len(events)} events from fallback parsing")
+                # Don't fallback to JSON if we already have events from validated timeline
+                if not events:
+                    json_timeline_path = data_dir / "goals_and_shots_timeline.json"
+                    if json_timeline_path.exists():
+                        print(f"📖 Reading JSON timeline: {json_timeline_path}")
+                        events = self.parse_goals_shots_json(json_timeline_path)
+                        print(f"✅ Extracted {len(events)} events from JSON timeline")
+                    else:
+                        print(f"❌ No timeline files found in {data_dir}")
+                        return False
+
+        if not events:
+            print(f"⚠️  No events found to convert")
+            return False
+
+        # Sort events by timestamp
+        events.sort(key=lambda x: x['timestamp'])
+
+        # Create web app compatible JSON
+        web_events = {
+            "match_id": match_id,
+            "generated_timestamp": datetime.now().isoformat(),
+            "events_count": len(events),
+            "source": "clann_ai_pipeline",
+            "events": events
+        }
+
+        # Save web-compatible events file
+        web_events_path = data_dir / "web_events.json"
+        try:
+            with open(web_events_path, 'w', encoding='utf-8') as f:
+                json.dump(web_events, f, indent=2, ensure_ascii=False)
+            print(f"✅ Web events saved to: {web_events_path}")
+        except Exception as e:
+            print(f"❌ Failed to save web events: {e}")
+            return False
+
+        # Also save just the events array (direct format)
+        events_array_path = data_dir / "web_events_array.json"
+        try:
+            with open(events_array_path, 'w', encoding='utf-8') as f:
+                json.dump(events, f, indent=2, ensure_ascii=False)
+            print(f"✅ Events array saved to: {events_array_path}")
+        except Exception as e:
+            print(f"❌ Failed to save events array: {e}")
+
+        # Print summary for easy copy-paste
+        print(f"\n📋 COPY-PASTE SUMMARY:")
+        print(f"   🎯 Match: {match_id}")
+        print(f"   📊 Events: {len(events)} total")
+        print(f"   📁 Web Events File: {web_events_path}")
+        
+        # Show sample events
+        print(f"\n🎮 Sample Events:")
+        for i, event in enumerate(events[:5]):
+            timestamp_min = event['timestamp'] // 60
+            timestamp_sec = event['timestamp'] % 60
+            print(f"   {i+1}. {timestamp_min:02d}:{timestamp_sec:02d} - {event['type'].upper()} - {event['description'][:50]}")
+        
+        if len(events) > 5:
+            print(f"   ... and {len(events) - 5} more events")
+
+        return True
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python 9_convert_to_web_format.py <match_id>")
+        sys.exit(1)
+
+    match_id = sys.argv[1]
+    converter = WebFormatConverter()
+    
+    success = converter.convert_match_to_web_format(match_id)
+    
+    if success:
+        print(f"\n🎉 Conversion completed for {match_id}")
+        print(f"🌐 Files ready for web app integration")
+    else:
+        print(f"\n❌ Conversion failed for {match_id}")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()

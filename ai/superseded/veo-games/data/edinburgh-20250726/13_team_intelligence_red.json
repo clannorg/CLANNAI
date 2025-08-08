@@ -1,0 +1,176 @@
+{
+  "team_name": "Blue Team",
+  "match_id": "edinburgh-20250726",
+  "generated_at": "2025-08-07T12:18:33.444815",
+  "summary": {
+    "overall_rating": "B+",
+    "key_identity": "A team that relies on set-piece opportunities and capitalizing on opponent's mistakes, while showing some defensive vulnerabilities.",
+    "match_outcome_assessment": "Win due to capitalizing on key scoring opportunities and a crucial penalty save, despite conceding a goal and facing numerous shots."
+  },
+  "strengths": [
+    {
+      "title": "Set-Piece Threat",
+      "description": "The Blue Team generates numerous scoring opportunities from set-pieces, particularly free kicks. They consistently win headers and force saves.",
+      "evidence_timestamps": [
+        "04:39",
+        "38:19",
+        "38:51",
+        "72:38",
+        "81:03",
+        "81:38",
+        "89:02",
+        "92:07",
+        "92:36"
+      ],
+      "impact_score": 78,
+      "key_evidence": "Multiple free kicks taken with several resulting in shots on goal or blocked shots (e.g., 04:39, 38:19, 89:02). Header from a free kick saved at 72:38."
+    },
+    {
+      "title": "Goalkeeping Prowess",
+      "description": "The Blue Team's goalkeeper makes crucial saves, including a penalty save, which significantly impacts the game's outcome.",
+      "evidence_timestamps": [
+        "05:33",
+        "17:33",
+        "17:48",
+        "26:17",
+        "71:09",
+        "72:45",
+        "80:23",
+        "99:04",
+        "113:42",
+        "113:45"
+      ],
+      "impact_score": 88,
+      "key_evidence": "Numerous saves throughout the match, including a critical penalty save at 80:23, denying the Striped Team a potential lead."
+    },
+    {
+      "title": "Capitalizing on Rebounds and Defensive Errors",
+      "description": "The Blue Team demonstrated the ability to capitalize on rebounds and capitalize on defensive lapses from the Striped Team, showcased in their goal scoring moments.",
+      "evidence_timestamps": [
+        "65:30",
+        "101:00"
+      ],
+      "impact_score": 75,
+      "key_evidence": "Strong visual evidence of team celebrating a goal at `65:30`, and a clear goal scoring chance from offensive possession deep in the oppositions half at `101:00`."
+    }
+  ],
+  "weaknesses": [
+    {
+      "title": "Defensive Vulnerability to Shots",
+      "description": "The Blue Team concedes a large number of shots, indicating potential defensive issues in closing down opponents and preventing them from shooting.",
+      "evidence_timestamps": [
+        "05:33",
+        "09:08",
+        "17:33",
+        "17:35",
+        "17:48",
+        "23:22",
+        "26:17",
+        "32:07",
+        "32:23",
+        "39:25",
+        "42:32",
+        "69:49",
+        "71:09",
+        "72:45",
+        "73:21",
+        "75:16",
+        "75:30",
+        "99:04",
+        "103:30",
+        "113:42",
+        "113:45"
+      ],
+      "severity_score": 82,
+      "cost_analysis": "Increased pressure on the goalkeeper, higher risk of conceding goals, and potential loss of control in the match."
+    },
+    {
+      "title": "Ineffective Long-Range Shooting",
+      "description": "The team takes many long-range shots that are either missed or easily saved, suggesting poor shot selection or technique.",
+      "evidence_timestamps": [
+        "04:39",
+        "19:11",
+        "44:34"
+      ],
+      "severity_score": 65,
+      "cost_analysis": "Wasted possession, missed opportunities for more effective attacking plays, and potential demoralization of attacking players."
+    }
+  ],
+  "training_drills": [
+    {
+      "focus_area": "Defensive Positioning and Pressure",
+      "drill_name": "4v4 Box Defense",
+      "description": "Divide players into two teams of 4, play in a small box. Focus on quick pressure, closing passing lanes, and blocking shots. Rotate players frequently.",
+      "duration": "20 minutes",
+      "equipment": "Cones, balls",
+      "success_metrics": "Reduced shots conceded per game, increased blocked shots."
+    },
+    {
+      "focus_area": "Set-Piece Delivery and Finishing",
+      "drill_name": "Free Kick and Corner Variation",
+      "description": "Practice different free kick and corner routines, focusing on accurate delivery, well-timed runs, and clinical finishing. Use mannequins for the defensive wall and set markers for targets.",
+      "duration": "30 minutes",
+      "equipment": "Balls, cones, mannequins",
+      "success_metrics": "Increased set-piece goals per game, improved accuracy of deliveries."
+    },
+    {
+      "focus_area": "Shot Selection and Technique",
+      "drill_name": "Shooting from Different Angles & Distances",
+      "description": "Players practice shooting from various angles and distances outside the box. Emphasize proper technique, shot placement, and recognizing when to pass instead of shoot.",
+      "duration": "25 minutes",
+      "equipment": "Balls, cones, goals",
+      "success_metrics": "Improvement in shot accuracy and conversion rate from outside the box, better decision-making on when to shoot vs. pass."
+    }
+  ],
+  "key_moments": [
+    {
+      "timestamp": "65:30",
+      "event_type": "goal",
+      "description": "The Blue Team scores, equalizing the score. The players are shown celebrating.",
+      "tactical_significance": "This goal brings the team back into the game and boosts morale.",
+      "learning_point": "The team's fighting spirit and ability to respond to setbacks."
+    },
+    {
+      "timestamp": "80:23",
+      "event_type": "saved_penalty",
+      "description": "The Blue team's goalkeeper saves a penalty, preventing the Striped team from taking the lead.",
+      "tactical_significance": "A crucial save that maintains the scoreline and boosts team confidence.",
+      "learning_point": "The importance of a strong goalkeeper in high-pressure situations."
+    },
+    {
+      "timestamp": "101:00",
+      "event_type": "goal",
+      "description": "The Blue Team scores the winning goal late in the match.",
+      "tactical_significance": "The goal secures a victory for the Blue Team and demonstrates their ability to perform under pressure.",
+      "learning_point": "The significance of maintaining focus and intensity until the final whistle."
+    }
+  ],
+  "performance_metrics": {
+    "attacking": {
+      "goals_scored": 2,
+      "shots_total": 19,
+      "conversion_rate": "10.5%",
+      "set_piece_threat": "High"
+    },
+    "defending": {
+      "goals_conceded": 1,
+      "saves_required": 16,
+      "defensive_actions": "Medium-High pressure",
+      "set_piece_vulnerability": "Medium"
+    }
+  },
+  "next_match_focus": [
+    {
+      "priority": "High",
+      "area": "Defensive Organization",
+      "action": "Drills on closing down space and intercepting passes",
+      "expected_improvement": "Reduce the number of shots conceded by the opposition"
+    },
+    {
+      "priority": "Medium",
+      "area": "Shot Selection",
+      "action": "Practice drills focusing on passing and moving into better shooting positions",
+      "expected_improvement": "Increase the efficiency of attacking plays and improve shot conversion rate"
+    }
+  ]
+}

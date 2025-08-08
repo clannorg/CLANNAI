@@ -1,0 +1,61 @@
+# AI-Powered Accuracy Comparison
+# Match: edinburgh-20250726
+# Generated: 2025-08-08T13:18:44.463463
+# Model: gemini-2.0-flash-exp
+
+## GOALS COMPARISON
+
+**Ground Truth**: [45:53]
+
+**Our AI Detected**: [16:52, 24:02, 28:45, 46:10, ~65:30, 78:00, 90:42, 94:52, ~101:00]
+
+**Matches**:
+*   46:10 (AI) vs 45:53 (Ground Truth) - Match - Within 30 second tolerance.
+
+**False Positives**:
+*   16:52 - No corresponding ground truth goal.
+*   24:02 - No corresponding ground truth goal.
+*   28:45 - No corresponding ground truth goal.
+*   ~65:30 - No corresponding ground truth goal.
+*   78:00 - No corresponding ground truth goal.
+*   90:42 - No corresponding ground truth goal.
+*   94:52 - No corresponding ground truth goal.
+*   ~101:00 - No corresponding ground truth goal.
+
+**False Negatives**:
+*   45:53 - AI detected this goal at 46:10, which is within tolerance, but the AI did not detect ANY OTHER of the actual goals.
+
+## SHOTS COMPARISON
+
+**Ground Truth**: [5:42, 6:22, 9:11, 12:31, 15:24, 17:53, 23:12, 28:27, 29:58, 34:04, 34:59, 35:56, 38:21, 41:00, 43:34, 45:52, 68:12, 74:54, 77:35, 78:10, 78:33, 79:07, 81:32, 87:15, 89:10, 90:07, 92:41, 94:37, 102:16, 102:30, 103:04, 105:02, 108:33, 109:58, 112:24, 113:28, 113:45, 114:27] (timestamps in minutes:seconds)
+
+**Our AI Detected**: [04:39, 05:33, 09:08, 15:40, 15:48, 17:33, 17:35, 17:48, 18:44, 19:11, 23:22, 26:17, 32:23, 38:05, 38:19, 38:51, 39:25, 42:32, 44:34, 71:09, 72:38, 72:40, 72:45, 73:21, 75:11, 75:16, 75:30, 75:54, 78:47, 79:19, 79:31, 80:23, 81:03, 81:38, 81:46, 89:02, 92:07, 92:25, 92:36, 92:58, 99:04, 101:53, 102:32, 103:30, 113:42, 113:45, 114:25] (timestamps in minutes:seconds)
+
+**Assessment**:
+The AI detected a significant number of shots, suggesting it has some capability in identifying shooting events. However, matching precise timestamps is difficult due to the lack of granular information in the AI output. A rough assessment suggests the AI often picks up on shots, but also detects events that are not shots (e.g., clearances, headers not on goal, blocked shots). The AI's descriptions of shots (e.g., long-range, header, free kick) seem qualitatively reasonable, implying some semantic understanding. Many of the timestamps appear close, within a minute or two. This suggests either inaccuracy, or lag in the AI processing relative to the ground truth annotation.
+
+## ACCURACY METRICS
+
+**Goals - Precision**: 11.1% (1/9) (correct goals / total detected goals) - Only one correct goal identified out of 9.
+**Goals - Recall**: 100% (1/1) (correct goals / total actual goals) - Identified the one existing goal in ground truth.
+**Shots - Precision**: ~40% (approximate assessment) - Given timestamp proximity, assume 19 of 47 are true shots on goal.
+**Shots - Recall**: ~50% (approximate assessment) - 19 shot events out of 38 actual were detected.
+
+## KEY INSIGHTS
+
+*   **What our AI does well**:
+    *   Detects *some* shots with reasonable descriptions
+    *   Identifies kick-off events with high confidence (though misused).
+
+*   **What needs improvement**:
+    *   **Goal detection is extremely poor**. The AI hallucinates a very high number of goals, not supported by ground truth data.
+    *   **Timestamping is inaccurate**. There's a significant discrepancy between AI timestamps and ground truth, making precise matching difficult.
+    *   **Discrimination between shots and other similar events**. The AI is detecting many events that are not classified as shots on goal.
+    *   **Validation logic failures**: The "kick-off confirms goal" validation rule *should* work, but the AI gets this wrong frequently.
+
+*   **Specific recommendations**:
+    1.  **Retrain the goal detection model**: The current model is clearly flawed and has a high false positive rate. Prioritize reducing false positives even at the cost of some recall.
+    2.  **Improve timestamp accuracy**: Investigate sources of timestamping errors. This could involve refining the video analysis pipeline or addressing latency issues.
+    3.  **Refine shot classification**: Train the model to distinguish between shots on goal, blocked shots, headers, clearances, and other similar events. This will improve the precision of shot detection.
+    4.  **Revisit validation logic**: The validation logic needs to be simplified and made MUCH more robust. Focus on exact matches from timestamps. The kick-off rule is unreliable. Better to only detect a smaller set of higher quality events, than a large set of hallucinatory/incorrect ones.
+    5.  **Prioritize Event Type Classification**. The AI's primary failure point is proper classification. Get this fixed.

@@ -1,0 +1,4 @@
+The play transitions between teams, starting with a foul, then a blue team build-up, and ending with a white team counter-attack. Key events:
+- **00:02**: White team commits a foul in midfield, giving possession to the blue team.
+- **00:04**: Blue team takes the free kick from their own half.
+- **00:13**: White team wins back the ball and begins a counter-attack down the left wing.

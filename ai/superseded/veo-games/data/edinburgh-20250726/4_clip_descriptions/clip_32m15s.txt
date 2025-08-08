@@ -1,0 +1,6 @@
+The Black and White team takes a corner kick from the right, which results in a shot that goes wide of the goal.
+
+Key events:
+- **00:02**: The corner kick is taken.
+- **00:08**: A player from the Black and White team takes a shot from inside the box.
+- **00:09**: The shot goes wide of the left post.

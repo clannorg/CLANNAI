@@ -1,0 +1,3 @@
+The Blue team takes a corner kick which is defended and cleared by the Black team. Key events:
+- **00:01**: The corner kick is taken by the Blue team.
+- **00:03**: The Black team's defense heads the ball clear of the penalty area.

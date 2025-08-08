@@ -1,0 +1,60 @@
+{
+  "match_summary": {
+    "key_tactical_story": "The Blue Team emerged victorious in a tightly contested match against the Striped Team, with both teams showcasing attacking intent. The Blue Team's ability to capitalize on key moments, particularly late in the game, proved to be the difference. The Striped Team struggled to convert chances despite generating numerous shots.",
+    "result_factors": [
+      "Blue Team's late-game goals",
+      "Striped Team's missed opportunities",
+      "Blue Team goalkeeper's saves"
+    ]
+  },
+  "your_team_analysis": {
+    "strengths_to_keep": [
+      {
+        "area": "Late-Game Composure",
+        "evidence": "Scored the winning goal at 101:00, demonstrating ability to perform under pressure.",
+        "keep_doing": "Continue practicing game scenarios with emphasis on maintaining focus and decision-making in the final minutes."
+      }
+    ],
+    "weaknesses_to_fix": [
+      {
+        "area": "Free Kick Defense",
+        "evidence": "The large number of free kicks conceded (especially direct ones on goal as at 79:19, 89:02, 99:04) shows a need to improve tactical discipline and avoid giving away fouls in dangerous areas. Some also got blocked (92:07) rather than cleared. ",
+        "training_focus": "Improve defensive positioning to reduce fouls near the box and refine defensive wall formation and jumping technique to effectively block or deflect free kicks. Run drills simulating pressure situations leading to fouls."
+      }
+    ]
+  },
+  "opposition_analysis": {
+    "their_threats": [
+      {
+        "pattern": "Attacking down the right wing",
+        "evidence": "The Striped Team's goal at 46:00 originated from an attack down their right wing.",
+        "how_to_defend": "Strengthen the left side of our defense and focus on winning tackles and interceptions in that area. Instruct left-back to provide additional support to prevent crosses."
+      }
+    ],
+    "their_weaknesses": [
+      {
+        "vulnerability": "Finishing chances",
+        "evidence": "The Striped Team had a high volume of shots (46 shots total) yet only scored one goal from open play, highlighting an inefficiency in their finishing. A saved penalty at 80:23 further underscores this point.",
+        "how_to_exploit": "Apply pressure consistently, forcing them into hurried shots and challenging their confidence. Focus on winning the midfield battle to disrupt their attacking flow and create counter-attacking opportunities."
+      }
+    ]
+  },
+  "training_priorities": [
+    {
+      "priority": 1,
+      "focus": "Free Kick Defense",
+      "drill": "Defensive wall positioning and jumping technique, including drills focusing on clearing/blocking free kicks effectively.",
+      "duration": "20 minutes daily",
+      "measure": "Reduce the number of free kicks conceded in dangerous areas and improve effectiveness in blocking/clearing them."
+    }
+  ],
+  "next_match_tactics": [
+    {
+      "if_facing_similar_opponent": "Focus on stifling their right wing attacks and exploit their weakness in finishing.",
+      "set_piece_focus": "Reinforce defensive wall setup and practice quick transitions from defense to counter-attack after set-piece situations.",
+      "attacking_plan": "Challenge their defense by applying pressure and exploiting turnovers. Use a counter-attacking strategy to take advantage of their finishing inefficiencies."
+    }
+  ],
+  "match_id": "edinburgh-20250726",
+  "generated_at": "2025-08-07T12:18:06.809362"
+}

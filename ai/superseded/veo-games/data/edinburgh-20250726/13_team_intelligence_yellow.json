@@ -1,0 +1,154 @@
+{
+  "team_name": "Blue Team",
+  "match_id": "edinburgh-20250726",
+  "generated_at": "2025-08-07T12:18:50.193853",
+  "summary": {
+    "overall_rating": "B+",
+    "key_identity": "The Blue Team demonstrates resilience and opportunistic finishing, securing victory despite defensive vulnerabilities.",
+    "match_outcome_assessment": "Win. Blue Team secured a 2-1 victory through clinical finishing and capitalizing on rebounds. However, defensive set-piece vulnerabilities and reliance on the goalkeeper made the game closer than it needed to be."
+  },
+  "strengths": [
+    {
+      "title": "Goalkeeping Prowess",
+      "description": "The Blue team's goalkeeper consistently made crucial saves, including a penalty, keeping the team in the game during periods of intense pressure from the Striped Team.",
+      "evidence_timestamps": [
+        "05:33",
+        "17:33",
+        "17:48",
+        "26:17",
+        "71:09",
+        "72:45",
+        "80:23",
+        "99:04",
+        "113:42",
+        "113:45"
+      ],
+      "impact_score": 90,
+      "key_evidence": "Numerous saved shots throughout the match, including a penalty at 80:23, highlight the goalkeeper's vital role."
+    },
+    {
+      "title": "Opportunistic Finishing",
+      "description": "The Blue Team demonstrated clinical finishing, particularly on rebounds, and capitalized on key moments to secure goals, showcasing composure under pressure.",
+      "evidence_timestamps": [
+        "46:00",
+        "65:30",
+        "101:00"
+      ],
+      "impact_score": 80,
+      "key_evidence": "The goals scored at 65:30 and 101:00, evidenced by celebrations and kick-off preparations, highlight their ability to convert opportunities."
+    },
+    {
+      "title": "Resilience",
+      "description": "The Blue Team demonstrates resilience by scoring two goals to come back from behind after conceding the first goal at 46:00. They kept fighting for goals until they eventually scored the winning goal at 101:00",
+      "evidence_timestamps": [
+        "46:00",
+        "65:30",
+        "101:00"
+      ],
+      "impact_score": 75,
+      "key_evidence": "Striped Team scored at 46:00. Blue Team equalized at 65:30 and scored winning goal at 101:00"
+    }
+  ],
+  "weaknesses": [
+    {
+      "title": "Set-Piece Vulnerability",
+      "description": "The Blue Team showed vulnerability in defending set-pieces, conceding several shots and requiring their goalkeeper to make crucial saves, suggesting poor organization and aerial dueling in the box.",
+      "evidence_timestamps": [
+        "15:48",
+        "38:19",
+        "72:38",
+        "79:19",
+        "79:31",
+        "92:07",
+        "92:36",
+        "101:53",
+        "102:32"
+      ],
+      "severity_score": 80,
+      "cost_analysis": "Conceded numerous shots from set-pieces, nearly leading to goals. Vulnerability requires the goalkeeper to bail the team out consistently."
+    },
+    {
+      "title": "Long Range Shooting",
+      "description": "The Blue Team players took many shots from long range that went over the crossbar, indicating poor decision-making or lack of close-range attacking options.",
+      "evidence_timestamps": [
+        "04:39",
+        "38:51",
+        "44:34",
+        "81:03",
+        "81:38",
+        "92:36"
+      ],
+      "severity_score": 65,
+      "cost_analysis": "Wasted possession and missed opportunities due to low-percentage, long-range efforts."
+    }
+  ],
+  "training_drills": [
+    {
+      "focus_area": "Defensive Set Pieces",
+      "drill_name": "Zonal Marking and Aerial Duels",
+      "description": "Players practice zonal marking responsibilities during corner kicks and free kicks, focusing on communication, positioning, and winning aerial duels.",
+      "duration": "20 minutes",
+      "equipment": "Cones, balls",
+      "success_metrics": "Reduced number of shots conceded from set-pieces, increased aerial duel win percentage in the defensive box."
+    },
+    {
+      "focus_area": "Shot Selection",
+      "drill_name": "Progressive Build-Up and Finishing",
+      "description": "Practice building attacks patiently, moving the ball into the penalty area before taking shots. Emphasize combination play and creating high-quality scoring chances.",
+      "duration": "25 minutes",
+      "equipment": "Cones, balls, goals",
+      "success_metrics": "Increased shot accuracy from inside the penalty area, reduced number of long-range shots."
+    }
+  ],
+  "key_moments": [
+    {
+      "timestamp": "65:30",
+      "event_type": "goal",
+      "description": "The Blue Team equalizes following a play, clearly celebrating the goal and preparing for the kickoff.",
+      "tactical_significance": "Demonstrates the team's ability to respond to pressure and capitalize on opportunities, shifting the momentum of the game.",
+      "learning_point": "Reinforces the importance of composure and maintaining focus after conceding a goal."
+    },
+    {
+      "timestamp": "80:23",
+      "event_type": "shot",
+      "description": "Blue Team's goalkeeper saves a penalty, denying the Striped team from potentially taking the lead or extending their lead.",
+      "tactical_significance": "Maintains the scoreline and provides a significant boost to team morale and defensive confidence.",
+      "learning_point": "Highlights the value of a strong goalkeeper in crucial moments and the impact of individual performance on team dynamics."
+    },
+    {
+      "timestamp": "101:00",
+      "event_type": "goal",
+      "description": "The Blue Team scores the winning goal, with players celebrating and the opposing team setting up for the restart.",
+      "tactical_significance": "Secures victory through late-game opportunism and highlights the team's ability to perform under pressure.",
+      "learning_point": "Demonstrates the importance of fighting until the final whistle and converting scoring opportunities."
+    }
+  ],
+  "performance_metrics": {
+    "attacking": {
+      "goals_scored": 2,
+      "shots_total": 18,
+      "conversion_rate": "11.1%",
+      "set_piece_threat": "Medium"
+    },
+    "defending": {
+      "goals_conceded": 1,
+      "saves_required": 17,
+      "defensive_actions": "Medium pressure",
+      "set_piece_vulnerability": "High"
+    }
+  },
+  "next_match_focus": [
+    {
+      "priority": "High",
+      "area": "Defensive Set Pieces",
+      "action": "Zonal marking and communication drills, aerial duel practice.",
+      "expected_improvement": "Reduce goals conceded from set pieces by 50%."
+    },
+    {
+      "priority": "Medium",
+      "area": "Shot Selection",
+      "action": "Practice close-range attacking combinations and discourage long-range shots.",
+      "expected_improvement": "Increase shot accuracy from inside the penalty area by 15%."
+    }
+  ]
+}

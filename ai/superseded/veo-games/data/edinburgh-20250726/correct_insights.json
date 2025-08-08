@@ -1,0 +1,89 @@
+{
+  "match_overview": {
+    "final_score": "0-1",
+    "total_goals": 1,
+    "total_shots": 1,
+    "key_tactical_story": "The Blue Team emerged victorious in a tightly contested match against the Striped Team, with both teams showcasing attacking intent. The Blue Team's ability to capitalize on key moments, particularly late in the game, proved to be the difference. The Striped Team struggled to convert chances despite generating numerous shots.",
+    "winning_team": "blue"
+  },
+  "tactical_analysis": {
+    "black_and_white_team": {
+      "strengths": [
+        "Attacking intent (20+ shots attempted)",
+        "Set piece variety (multiple free kicks and corners)",
+        "Midfield control and possession",
+        "Creating scoring opportunities"
+      ],
+      "weaknesses": [
+        "Poor finishing (0 goals from 20+ shots)",
+        "Shot selection (too many long-range attempts)",
+        "Defensive vulnerability (conceded decisive goal)",
+        "Inability to convert chances"
+      ],
+      "shot_accuracy": "Edinburgh United had 13+ shots but failed to score any goals. Multiple shots were saved by the opposition goalkeeper, went over the crossbar, or were blocked by defenders."
+    },
+    "blue_team": {
+      "strengths": [
+        "Clinical finishing (1 goal from limited opportunities)",
+        "Solid goalkeeping (multiple saves)",
+        "Defensive organization",
+        "Capitalizing on key moments"
+      ],
+      "weaknesses": [
+        "Limited attacking threat",
+        "Fewer scoring opportunities created",
+        "Defensive pressure under sustained attacks"
+      ],
+      "shot_accuracy": "Cowdenbeath Central scored the decisive goal at 45:53 and maintained defensive solidity throughout the match, despite being under pressure from Edinburgh United's attacks."
+    }
+  },
+  "key_moments": [
+    {
+      "timestamp": 4823,
+      "description": "Edinburgh United awarded a penalty but the shot is saved by Cowdenbeath Central's goalkeeper.",
+      "tactical_significance": "A crucial missed opportunity for Edinburgh United to equalize. Highlights their finishing problems and the opposition goalkeeper's quality."
+    },
+    {
+      "timestamp": 6060,
+      "description": "Edinburgh United celebrates what appears to be a goal, but it's not confirmed in the final result.",
+      "tactical_significance": "Shows Edinburgh United's attacking pressure and ability to create chances, but also their inability to convert opportunities into confirmed goals."
+    }
+  ],
+  "manager_recommendations": {
+    "black_and_white_team": [
+      "Focus on finishing drills and shot accuracy training",
+      "Improve decision-making in final third",
+      "Develop better shot selection (get closer to goal)",
+      "Strengthen defensive organization and communication",
+      "Practice converting set pieces more effectively"
+    ],
+    "blue_team": [
+      "Maintain defensive solidity and goalkeeping standards",
+      "Develop more consistent attacking patterns",
+      "Improve possession retention under pressure",
+      "Build on clinical finishing capabilities"
+    ]
+  },
+  "training_priorities": [
+    {
+      "priority": 1,
+      "focus": "Finishing Drills",
+      "description": "Improve shot accuracy and decision-making in final third",
+      "duration": "30 minutes daily"
+    },
+    {
+      "priority": 2,
+      "focus": "Defensive Organization",
+      "description": "Strengthen communication and positioning to prevent goals",
+      "duration": "20 minutes daily"
+    },
+    {
+      "priority": 3,
+      "focus": "Set Piece Conversion",
+      "description": "Improve free kick and corner delivery accuracy",
+      "duration": "15 minutes daily"
+    }
+  ],
+  "match_id": "edinburgh-20250726",
+  "generated_at": "2025-08-07T13:19:47.116544"
+}

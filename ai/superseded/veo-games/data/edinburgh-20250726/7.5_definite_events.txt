@@ -1,0 +1,495 @@
+# Definite Events - edinburgh-20250726
+# Generated: 2025-08-08T13:19:46.392376
+# Method: Direct VEO timestamp matching with AI descriptions
+# Quality: VEO events matched within ±30 seconds
+
+Okay, I'm ready to analyze the provided VEO ground truth events and the AI timeline to find the best matches within the given time constraints. I will follow the instructions and output format specified to identify goals and shots, providing rich context and confidence levels.
+
+=== DEFINITE SHOTS ===
+Timestamp: 05:33 (0:53)
+Team: white team (attacking)
+Description: The white team attacks down the left wing, resulting in a shot on goal. Key events: 05:33 shot taken from inside the penalty area, 05:34 the blue team's goalkeeper makes a save.
+Outcome: saved
+VEO Match: Confirmed shot at 5:42 - High Confidence (9 seconds off but clear matching description)
+
+Timestamp: 06:38 (0:16)
+Team: Black and White team (attacking)
+Description: The Black and White team scores a goal from a long ball played over the top from their own half. Key events: 06:38 shot is taken, 06:39 goal is scored.
+Outcome: scored (resulting in a goal)
+VEO Match: Confirmed shot at 6:22 - High Confidence (AI timeline describing a shot resulting in a goal)
+
+Timestamp: 09:08 (0:03)
+Team: white and black team (attacking)
+Description: The white and black team builds an attack from the right wing, resulting in a blocked shot inside the box. Key events: 09:05 A cross is sent into the penalty area, 09:08 A shot is taken by the white and black team, 09:09 The shot is blocked by a blue defender.
+Outcome: blocked
+VEO Match: Confirmed shot at 9:11 - High Confidence
+
+Timestamp: 12:31 (0:00)
+Team: unknown (description of a challenge for the ball)
+Description: The clip shows a scrappy period of play in midfield with possession changing hands multiple times between the blue team and the black & white striped team.
+Key events:
+- **12:31:** A player from the black & white team is tackled and falls to the ground while challenging for the ball.
+- **12:37:** The blue team wins possession back in the midfield.
+- **12:41:** The blue team intercepts a pass to regain control of the ball.
+Outcome: Tackle, not a shot. (lowest confidence match)
+VEO Match: Confirmed shot at 12:31 - Very Low Confidence (No shot in the description, timestamp match is the only reason for the match)
+
+Timestamp: 15:40 (0:16)
+Team: blue team (attacking)
+Description: The blue team launches a quick attack from a long pass, resulting in a shot on goal.
+
+**Key events:**
+- **15:37:** A long through ball is played down the left wing.
+- **15:40:** The blue attacker takes a shot from inside the penalty area.
+- **15:41:** The goalkeeper makes a save, parrying the ball.
+- **15:44:** The defense clears the rebound.
+Outcome: saved
+VEO Match: Confirmed shot at 15:24 - High Confidence
+
+Timestamp: 17:50 (0:03)
+Team: Black team (attacking)
+Description: The Black team takes a direct free kick, which is saved by the Red team's goalkeeper. Key events:
+- 17:48: The Black team takes the free kick.
+- 17:50: The Red team's goalkeeper catches the ball.
+Outcome: saved
+VEO Match: Confirmed shot at 17:53 - High Confidence (free kick taken *as a shot*)
+
+Timestamp: 23:22 (0:10)
+Team: white team (attacking)
+Description: The white team takes a free kick from the right flank. Key events: 23:20 the kick is taken short, 23:22 a shot is taken from outside the box, 23:23 the ball goes over the crossbar for a goal kick.
+Outcome: missed
+VEO Match: Confirmed shot at 23:12 - High Confidence (free kick taken *as a shot*)
+
+Timestamp: 28:27 (0:00)
+Team: striped team
+Description: The black and white striped team builds an attack from midfield, maintaining possession as they move the ball into the opposition's half. Key events: 28:20 The ball is switched to the left wing to advance the play, 28:27 The striped team works the ball into a central position just outside the penalty area.
+Outcome: No shot
+VEO Match: Confirmed shot at 28:27 - Very Low Confidence (Timestamp match, but no actual "shot")
+
+Timestamp: 28:45 (0:13)
+Team: Black team (attacking)
+Description: The Black team scores with a shot from outside the penalty area. Key events: 28:45 A goal is scored by the Black team.
+Outcome: scored (resulting in a goal)
+VEO Match: Confirmed shot at 29:58 - Low Confidence (Outside of the 30-second limit)
+
+Timestamp: 34:02 (0:02)
+Team: black team (attacking)
+Description: The black team wins an aerial duel in midfield and launches a quick counter-attack down the left wing.
+
+**Key events:**
+- **34:02**: The black team wins a header near the halfway line.
+- **34:09**: The black team secures possession on the ground and begins to drive forward.
+- **34:12**: A black team player receives the ball and dribbles into the opposition's penalty area.
+Outcome: No shot
+VEO Match: Confirmed shot at 34:04 - Very Low Confidence (Timestamp match, but no actual "shot")
+
+Timestamp: 34:50 (0:09)
+Team: Blue team/ Black and white team (transitional play)
+Description: The play transitions between teams in the midfield. Key events: 34:50 Blue team attempts to launch an attack, 34:54 Black and white team wins possession and starts their own attack.
+Outcome: No shot
+VEO Match: Confirmed shot at 34:59 - Very Low Confidence (Timestamp match, but no actual "shot")
+
+Timestamp: 35:58 (0:02)
+Team: black and white striped team
+Description: The clip shows a fragmented sequence of play with possession changing hands several times in the midfield. Key events:
+- **35:46:** A player from the black and white striped team has their attack broken up by a tackle from the blue team.
+- **35:49:** The blue team gains possession but quickly loses it in a midfield challenge.
+- **35:52:** The black and white striped team regains possession near the center circle.
+- **35:58:** After a camera jump, a blue player heads the ball, which is then brought under control by the black and white striped team.
+Outcome: Headed ball but not shot
+VEO Match: Confirmed shot at 35:56 - Very Low Confidence (Timestamp match, but no actual "shot")
+
+Timestamp: 38:05 (0:16)
+Team: blue team (attacking)
+Description: The blue team attacks from the midfield, leading to a long-range shot on goal. Key events: 38:05 A blue player takes a shot from well outside the penalty area.
+Outcome: not specified (likely missed given no mention of save or goal)
+VEO Match: Confirmed shot at 38:21 - Low Confidence (Outside the 30 second limit)
+
+Timestamp: 38:19 (0:01)
+Team: blue team (attacking)
+Description: The blue team takes a free kick, creating a headed chance that is defended by the black and white striped team. Key events: 38:18 free kick is taken, 38:19 a blue player heads the ball towards goal, 38:20 the striped team clears the ball.
+Outcome: Headed ball (not a shot), defended
+VEO Match: Confirmed shot at 38:21 - Low Confidence (Close timestamp, headed ball might have been a shot attempt)
+
+Timestamp: 38:51 (0:19)
+Team: blue team (attacking)
+Description: The blue team takes a direct free-kick from outside the penalty area. Key events: 38:51 the free-kick is taken, 38:53 the shot goes over the crossbar.
+Outcome: Missed
+VEO Match: Confirmed shot at 38:21 - Low Confidence (Outside the 30 second limit)
+
+Timestamp: 41:02 (0:02)
+Team: blue team (attacking)
+Description: The Blue team wins possession in the midfield and initiates an attack down the left wing. Key events: 41:02 The Blue team gains control of the ball, 41:10 A forward pass is played to the left flank to continue the attack.
+Outcome: Pass, not a shot
+VEO Match: Confirmed shot at 41:00 - Very Low Confidence (Timestamp match, but no actual "shot")
+
+Timestamp: 42:32 (0:02)
+Team: White team (attacking)
+Description: The white team attacks with a long ball, leading to a shot on goal. Key events: 42:32 a player from the white team takes a shot from the edge of the penalty area, which is saved by the goalkeeper.
+Outcome: saved
+VEO Match: Confirmed shot at 43:34 - Low Confidence (Outside of the 30 second limit)
+
+Timestamp: 44:34 (0:00)
+Team: blue team (attacking)
+Description: The blue team launches a quick attack from a flick-on at the halfway line.
+
+**Key events:**
+- **44:32**: A blue player wins a header near the halfway line, flicking the ball forward.
+- **44:34**: A teammate runs onto the ball and takes a long-range shot.
+- **44:35**: The shot goes over the crossbar.
+Outcome: missed
+VEO Match: Confirmed shot at 43:34 - Low Confidence (Outside of the 30 second limit)
+
+Timestamp: 45:52 (0:00)
+Team: blue team (attacking)
+Description: The blue team wins possession in their half and launches a counter-attack with a long ball, which is successfully defended by the striped team, leading to a midfield battle for the ball. Key events:
+- **45:46**: The blue team wins possession near the center circle.
+- **45:52**: A long pass is played by the blue team towards their left wing.
+- **45:56**: The striped team intercepts the attack on their right flank and clears the ball.
+Outcome: defended pass
+VEO Match: Confirmed shot at 45:52 - Very Low Confidence (Timestamp match, but no actual "shot")
+
+Timestamp: 68:10 (0:02)
+Team: blue team (attacking)
+Description: The blue team prepares for and takes a throw-in on the right sideline. Key events:
+- **68:10**: The blue team executes a throw-in.
+- **68:11**: A blue player successfully controls the ball from the throw-in, establishing possession in the opponent's half.
+Outcome: threw in, no shot
+VEO Match: Confirmed shot at 68:12 - Very Low Confidence (Timestamp match, but no actual "shot")
+
+Timestamp: 69:49 (0:37)
+Team: Black team
+Description: The Black team attacks from the midfield, leading to a shot on goal. Key events: 69:49: A shot is taken by the Black team, which goes wide of the goal.
+Outcome: missed
+VEO Match: Confirmed shot at 68:12 - Very Low Confidence (Well outside the 30-second limit)
+
+Timestamp: 71:09 (0:03)
+Team: White team (attacking)
+Description: White team attacks, recovering a clearance at the edge of the box. Key events: 71:09 shot taken from inside the area, 71:11 goalkeeper makes a diving save.
+Outcome: saved
+VEO Match: Confirmed shot at 74:54 - Very Low Confidence (Well outside the 30-second limit)
+
+Timestamp: 73:21 (0:06)
+Team: Black and White team (attacking)
+Description: The Black and White team initiates an attack from midfield with a long header, leading to a shot on goal. Key events:
+- **73:21**: A shot is taken from outside the penalty area by the Black and White team.
+- **73:23**: The Blue team's goalkeeper makes a diving save, deflecting the ball for a corner.
+Outcome: Saved
+VEO Match: Confirmed shot at 74:54 - Very Low Confidence (Well outside the 30-second limit)
+
+Timestamp: 75:05 (0:25)
+Team: Red Team
+Description: The Red team wins possession in midfield and launches a quick counter-attack. Key events:
+- **75:05**: The Red team gains possession near the halfway line.
+- **75:11**: A Red team player takes a shot from outside the penalty area.
+Outcome: Shot from outside the penalty area. Outcome not specified
+VEO Match: Confirmed shot at 74:54 - Very Low Confidence (Outside of the 30 second limit)
+
+Timestamp: 75:16 (0:21)
+Team: Striped team
+Description: The striped team takes a shot from outside the box which is saved, leading to a goal kick for the blue team.
+
+**Key events:**
+*   **75:16:** A player from the striped team takes a long-range shot.
+*   **75:17:** The blue team's goalkeeper dives to make a save or the shot goes wide.
+Outcome: Saved
+VEO Match: Confirmed shot at 74:54 - Very Low Confidence (Outside of the 30 second limit)
+
+Timestamp: 75:30 (2:05)
+Team: Black and White team
+Description: The black and white team has a shot blocked inside the penalty area, after which play resets and the camera zooms out to a wide view of the field. Key events: 75:30 - A player from the black and white team takes a shot from close range that is blocked.
+Outcome: Blocked
+VEO Match: Confirmed shot at 74:54 - Very Low Confidence (Well outside the 30-second limit)
+
+Timestamp: 75:54 (1:19)
+Team: Blue team (attacking)
+Description: The blue team takes a free kick which results in a shot on goal. Key events: 75:54 a blue player takes a shot from outside the box, 75:56 the black and white team's goalkeeper makes a diving save.
+Outcome: saved
+VEO Match: Confirmed shot at 74:54 - Very Low Confidence (Well outside the 30-second limit)
+
+Timestamp: 77:19 (0:04)
+Team: black and white striped team (attacking)
+Description: The black and white striped team attempts a long shot from a set-piece near the halfway line, which is caught by the blue team's goalkeeper who then starts a counter-attack.
+
+**Key events:**
+- **77:19:** The black and white striped team takes a long shot from their own half.
+- **77:22:** The blue team's goalkeeper catches the ball.
+- **77:25:** The goalkeeper throws the ball to a teammate to launch a counter-attack.
+Outcome: saved
+VEO Match: Confirmed shot at 77:35 - High Confidence (set-piece shot is a free kick)
+
+Timestamp: 77:31 (0:04)
+Team: Blue team
+Description: The Blue team takes a corner kick which is defended and cleared by the Black team. Key events:
+- **77:31**: The corner kick is taken by the Blue team.
+- **77:33**: The Black team's defense heads the ball clear of the penalty area.
+Outcome: Corner, headed clearance not a shot
+VEO Match: Confirmed shot at 77:35 - Very Low Confidence (Time stamp match)
+
+Timestamp: 77:46 (0:01)
+Team: Black team
+Description: Black team attacks with a set piece into the penalty area, but the Blue team successfully defends and clears the ball.
+**Key events:**
+*   **77:46**: A Blue defender heads the ball to clear it out of the box.
+Outcome: Headed clear, not a shot
+VEO Match: Confirmed shot at 77:35 - Very Low Confidence (Good time stamp)
+
+Timestamp: 78:00 (0:00)
+Team: white and black striped team
+Description: The white and black striped team scores a goal, and players from both teams reset for the subsequent kick-off. Key events: 78:00 Goal scored by the white and black striped team.
+Outcome: Goal, shot taken as the free kick
+VEO Match: Confirmed shot at 78:10 - Very Low Confidence (Poor time stamp)
+
+Timestamp: 78:16 (0:06)
+Team: blue team
+Description: The camera pans out from an attack to a wide, full-pitch view. Play is contested in the midfield with both teams attempting to build forward. Key events: 78:16 The blue team's goalkeeper deals with an attack from the team in striped shirts, 78:24 The striped team advances the ball through the center of the pitch.
+Outcome: No shot, save
+VEO Match: Confirmed shot at 78:10 - Very Low Confidence (Poor time stamp)
+
+Timestamp: 78:32 (0:02)
+Team: Black & White team (attacking)
+Description: The Black & White team initiates a counter-attack from their own half. Key events:
+- **78:32**: The Blue team clears the ball from their defensive area, pushing play into midfield.
+- **78:39**: The Black & White team wins possession in their own half and starts to move the ball forward.
+- **78:42**: A Black & White player carries the ball at speed into the Blue team's half.
+Outcome: Counter attack, no shot
+VEO Match: Confirmed shot at 78:33 - Very Low Confidence (time stamp)
+
+Timestamp: 78:47 (0:14)
+Team: Blue Team
+Description: The Blue team (light blue shirts) attacks down the right wing, putting a cross into the box. Key events: 78:47 a player attempts a diving volley/header, 78:48 the shot goes over the crossbar.
+Outcome: Shot goes over the crossbar
+VEO Match: Confirmed shot at 78:33 - Low Confidence (volley might have been a shot but outside 30 seconds)
+
+Timestamp: 79:03 (0:04)
+Team: blue and white
+Description: The team in blue and white takes and scores a penalty kick. Key events:
+- **79:03:** The penalty is taken by the player in blue.
+- **79:04:** The player scores the goal.
+Outcome: Scored a penalty kick
+VEO Match: Confirmed shot at 79:07 - Low Confidence
+
+Timestamp: 79:19 (0:12)
+Team: Black and White team
+Description: The Black and White team takes a direct free kick which is punched clear by the goalkeeper. The attacking team recovers the ball and maintains possession on the wing. Key events: 79:19 free kick taken, 79:20 goalkeeper punches the ball away.
+Outcome: free kick punched away
+VEO Match: Confirmed shot at 79:07 - Low Confidence (Poor time stamp)
+
+Timestamp: 79:30 (0:23)
+Team: Striped team
+Description: The Striped team takes a free kick, resulting in a header that goes over the goal. Key events: 79:30 free kick is taken, 79:31 a header is attempted, 79:32 the ball goes over the crossbar for a goal kick.
+Outcome: header, ball over the crossbar
+VEO Match: Confirmed shot at 79:07 - Very Low Confidence (Poor time stamp)
+
+Timestamp: 80:23 (0:08)
+Team: White/Black team
+Description: The White/Black team takes a penalty kick which is saved by the Blue team's goalkeeper. Key events: 80:23 penalty is taken, 80:24 the goalkeeper makes the save, 80:25 the rebound is cleared away by a defender.
+Outcome: Penalty kick saved.
+VEO Match: Confirmed shot at 81:32 - Very Low Confidence (Bad time stamp)
+
+Timestamp: 81:38 (0:06)
+Team: Blue team
+Description: The Blue team takes a direct free kick from just outside the penalty area. Key events: 81:38 the free kick is taken, 81:39 the shot goes high over the crossbar.
+Outcome: Shot goes high
+VEO Match: Confirmed shot at 81:32 - Low Confidence (Good time stamp)
+
+Timestamp: 81:46 (0:14)
+Team: black and white team
+Description: The clip pans across the entire football pitch, following the flow of the game from one end to the other. Key events: 81:46 the black and white team takes a free kick that sails over the goal.
+Outcome: Free kick that sails over the goal
+VEO Match: Confirmed shot at 81:32 - Low Confidence (Good time stamp)
+
+Timestamp: 87:02 (0:03)
+Team: White team
+Description: The Blue team's attack is broken down by an interception, leading to a turnover of possession to the White team in midfield.
+
+Key events:
+- **87:02**: An attacking through-ball from the Blue team is intercepted by a White team defender.
+- **87:03**: The White team gains possession of the ball and begins to move it out of their defensive half.
+Outcome: No shot
+VEO Match: Confirmed shot at 87:15 - Very Low Confidence (Poor time stamp)
+
+Timestamp: 89:02 (0:02)
+Team: blue team
+Description: The blue team takes a direct free kick on goal which is saved. Key events: 89:02 A shot is taken from the free kick, 89:04 The goalkeeper for the black and white team makes a diving save, 89:05 A defender clears the ball.
+Outcome: saved
+VEO Match: Confirmed shot at 89:10 - High Confidence
+
+Timestamp: 89:16 (0:01)
+Team: white team
+Description: The white team defends a free kick and launches a counter-attack. Key events: 89:16 The white team clears the ball with a header, 89:20 The white team gains possession and begins to move the ball upfield into the opposition's half.
+Outcome: No shot
+VEO Match: Confirmed shot at 89:10 - Very Low Confidence
+
+Timestamp: 90:04 (0:03)
+Team: Multiple teams
+Description: The camera pans from left to right across a large sports ground, capturing glimpses of several different youth football matches being played at the same time. There is no single point of action or clear possession for one team, as the view moves between different games.
+Outcome: No shot
+VEO Match: Confirmed shot at 90:07 - Very Low Confidence
+
+Timestamp: 90:38 (0:31)
+Team: white and black team
+Description: The white and black team launches an attack down the right side, resulting in a goal. Key events: 90:38 pass is played into the penalty box, 90:40 a left-footed shot is taken, 90:42 a goal is scored.
+Outcome: Scored
+VEO Match: Confirmed shot at 90:07 - Very Low Confidence (Poor time stamp)
+
+Timestamp: 92:07 (0:15)
+Team: Red team (blue)
+Description: The Red team (in blue) takes a direct free kick which is blocked by the defending team. Key events:
+- 92:07: After a couple of decoy runners, the Red team player takes the free kick.
+- 92:09: The shot is blocked by the Black team's (in stripes) defensive wall.
+Outcome: Blocked
+VEO Match: Confirmed shot at 92:41 - Low Confidence (Outside of the 30 second limit)
+
+Timestamp: 92:36 (0:05)
+Team: Blue team
+Description: The blue team takes a direct free kick just outside the penalty box. Key events: 92:36: A blue player takes the shot on goal. 92:37: The shot goes over the crossbar for a goal kick.
+Outcome: Missed (over the crossbar)
+VEO Match: Confirmed shot at 92:41 - High Confidence
+
+Timestamp: 92:55 (0:14)
+Team: Black and White team
+Description: The Black and White team takes a free kick from just outside the penalty area. Key events: 92:55 free kick is taken and headed away, 92:58 a follow-up volley is shot by the Black and White team, 92:59 the shot goes over the crossbar.
+Outcome: volley shot over the crossbar
+VEO Match: Confirmed shot at 92:41 - High Confidence
+
+Timestamp: 94:36 (0:01)
+Team: Red team
+Description: The Red team kicks off from the center circle, with the goalkeeper immediately sending a long ball upfield. The Black team successfully defends the long ball and gains possession in the midfield.
+
+**Key events:**
+- **94:33:** Red team's goalkeeper plays a long ball forward.
+- **94:36:** Black team wins the header in the midfield.
+- **94:37:** Black team secures possession after the initial duel.
+Outcome: Won the header
+VEO Match: Confirmed shot at 94:37 - Very Low Confidence
+
+Timestamp: 94:50 (0:13)
+Team: black and white striped team
+Description: The black and white striped team launches a quick attack from the center circle. Key events: 94:50 shot taken from outside the box, 94:52 goal scored.
+Outcome: Scored
+VEO Match: Confirmed shot at 94:37 - Low Confidence
+
+Timestamp: 102:30 (0:00)
+Team: Blue team
+Description: The Blue team takes a free-kick which leads to a goal-line clearance by the Black team, with the Blue team then regaining possession in midfield. Key events: 102:30 Free kick taken by the Blue team, 102:32 Header attempt on goal, 102:33 The Black team clears the ball away from the goal.
+Outcome: Headed shot attempt
+VEO Match: Confirmed shot at 102:16 - Low Confidence
+
+Timestamp: 102:30 (0:00)
+Team: Blue team
+Description: The Blue team takes a free-kick which leads to a goal-line clearance by the Black team, with the Blue team then regaining possession in midfield. Key events: 102:30 Free kick taken by the Blue team, 102:32 Header attempt on goal, 102:33 The Black team clears the ball away from the goal.
+Outcome: Headed shot attempt
+VEO Match: Confirmed shot at 102:30 - High Confidence
+
+Timestamp: 103:01 (0:03)
+Team: Multiple Teams
+Description: The Blue team's attack breaks down inside the penalty area, and the play transitions to midfield.
+
+**Key events:**
+*   **103:01:** A Blue team player is dispossessed by a strong tackle from a Black & White team defender inside the box.
+*   **103:09:** Following a camera cut, play has moved to the midfield, with the Black & White team in possession.
+Outcome: No shot
+VEO Match: Confirmed shot at 103:04 - Very Low Confidence
+
+Timestamp: 103:30 (0:26)
+Team: black and white team
+Description: A player from the black and white striped team has a shot that goes wide of the goal, leading to a goal kick for the blue team, who then maintain possession in their own half.
+
+**Key events:**
+*   **103:30**: The black and white striped team takes a shot at goal.
+*   **103:31**: The shot goes wide, resulting in a goal kick.
+*   **103:39**: The blue team takes the goal kick and starts building play from the back.
+Outcome: Shot goes wide.
+VEO Match: Confirmed shot at 103:04 - Very Low Confidence
+
+Timestamp: 105:06 (0:04)
+Team: black team
+Description: The black team wins possession in midfield and initiates a counter-attack down the right wing. Key events:
+- **105:06**: The black team gains control of the ball in their own half.
+- **105:12**: The black team moves the ball into the attacking half to begin their advance.
+- **105:14**: A player from the black team makes a run down the right flank with the ball.
+Outcome: Runs down the right flank with the ball.
+VEO Match: Confirmed shot at 105:02 - Very Low Confidence
+
+Timestamp: 108:36 (0:03)
+Team: Striped Team
+Description: The Striped team scores a goal from a long ball played from their own half. Key events:
+- **108:36**: The long ball is flicked on with a header by a Striped player.
+- **108:37**: A shot is taken from just inside the penalty area.
+- **108:38**: The shot results in a goal for the Striped team.
+Outcome: Scored Goal from a shot inside the penalty area
+VEO Match: Confirmed shot at 108:33 - Low Confidence
+
+Timestamp: 108:46 (0:13)
+Team: Black and White striped team
+Description: The Black and White striped team scores a goal from an attack down the left wing. Key events: 108:46 a low cross is played into the penalty box, 108:48 a shot is taken from close range, 108:49 a goal is scored.
+Outcome: Scored goal
+VEO Match: Confirmed shot at 108:33 - Low Confidence
+
+Timestamp: 108:46 (0:13)
+Team: Black and White striped team
+Description: The Black and White striped team scores a goal from an attack down the left wing. Key events: 108:46 a low cross is played into the penalty box, 108:48 a shot is taken from close range, 108:49 a goal is scored.
+Outcome: Scored goal
+VEO Match: Confirmed shot at 109:58 - Very Low Confidence
+
+Timestamp: 113:30 (0:15)
+Team: black and white team
+Description: The black and white team builds an attack down the left wing, which results in a shot from outside the box being saved.
+
+**Key events:**
+- **113:42:** A player from the black and white team takes a shot from distance.
+- **113:44:** The blue team's goalkeeper makes a diving save.
+Outcome: Diving save
+VEO Match: Confirmed shot at 113:28 - Low Confidence
+
+Timestamp: 113:45 (0:00)
+Team: Black and White team
+Description: The Black and White team has a shot on goal which is saved by the Blue team's goalkeeper, with the ball then being cleared into midfield.
+
+**Key events:**
+*   **113:45**: Black and White team takes a shot on goal.
+*   **113:46**: The Blue team's goalkeeper makes a save.
+Outcome: Shot, save
+VEO Match: Confirmed shot at 113:45 - High Confidence
+
+Timestamp: 114:00 (0:15)
+Team: white team
+Description: The team in white scores a goal against the team in blue. Key events: 114:00 shot taken, 114:01 goal scored.
+Outcome: Goal scored.
+VEO Match: Confirmed shot at 113:45 - Very Low Confidence
+
+Timestamp: 114:19 (0:08)
+Team: Black team
+Description: The Black team (in blue) takes a free kick which is cleared, leading to a follow-up shot. Key events:
+- **114:19:** The free kick is taken, sending a cross into the penalty area.
+- **114:22:** The Red team (in white) clears the cross with a header.
+- **114:25:** A Black team player takes a shot from outside the box.
+- **114:28:** The shot goes wide of the goal.
+Outcome: Follow up shot goes wide.
+VEO Match: Confirmed shot at 114:27 - High Confidence
+
+Timestamp: 114:30 (0:03)
+Team: Black team
+Description: Black team takes a corner kick from the right. Key events: 114:38 the ball is kicked into the box, 114:40 a header is attempted by the Black team, 114:41 the Red team's goalkeeper catches the ball.
+Outcome: Header attempt.
+VEO Match: Confirmed shot at 114:27 - Very Low Confidence
+
+Timestamp: 45:52 (0:00)
+Team: blue team (attacking)
+Description: The blue team wins possession in their half and launches a counter-attack with a long ball, which is successfully defended by the striped team, leading to a midfield battle for the ball. Key events:
+- **45:46**: The blue team wins possession near the center circle.
+- **45:52**: A long pass is played by the blue team towards their left wing.
+- **45:56**: The striped team intercepts the attack on their right flank and clears the ball.
+Outcome: Interception
+VEO Match: Confirmed goal at 45:53 - Very Low Confidence
+
+Timestamp: 78:00 (0:00)
+Team: white and black striped team
+Description: The white and black striped team scores a goal, and players from both teams reset for the subsequent kick-off. Key events: 78:00 Goal scored by the white and black striped team.
+Outcome: Goal
+VEO Match: Confirmed shot at 78:33 - Very Low Confidence (Poor time stamp)
+
+Timestamp: 46:07 (0:14)
+Team: Striped team
+Description: The striped team attacks down

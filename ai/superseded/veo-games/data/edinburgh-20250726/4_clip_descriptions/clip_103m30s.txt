@@ -1,0 +1,6 @@
+A player from the black and white striped team has a shot that goes wide of the goal, leading to a goal kick for the blue team, who then maintain possession in their own half.
+
+**Key events:**
+*   **00:00**: The black and white striped team takes a shot at goal.
+*   **00:01**: The shot goes wide, resulting in a goal kick.
+*   **00:09**: The blue team takes the goal kick and starts building play from the back.

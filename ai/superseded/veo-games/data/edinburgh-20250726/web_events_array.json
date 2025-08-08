@@ -1,0 +1,914 @@
+[
+  {
+    "type": "turnover",
+    "timestamp": 165,
+    "description": "Blue team establishes control in the opposition's half.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 195,
+    "description": "White team wins possession and launches a counter-attack.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 211,
+    "description": "Blue player tackles a Striped player to win possession.",
+    "team": "blue"
+  },
+  {
+    "type": "substitution",
+    "timestamp": 225,
+    "description": "Various player changes by both teams.",
+    "team": "both"
+  },
+  {
+    "type": "corner",
+    "timestamp": 242,
+    "description": "The Blue team takes a throw-in from the sideline.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 246,
+    "description": "The Blue team recovers the loose ball and builds from their own half.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 255,
+    "description": "The Blue team takes a free kick in the midfield.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 310,
+    "description": "The team in blue takes a throw-in from the right sideline.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 326,
+    "description": "The blue team intercepts a pass to regain possession.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 345,
+    "description": "The Black and White team possesses the ball in an attacking area.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 451,
+    "description": "Referee signals for a foul committed by the blue team.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 511,
+    "description": "The Striped team takes a short free kick from the right wing.",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 526,
+    "description": "The Black & White team takes a long free kick into the Blue area.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 570,
+    "description": "The blue team wins possession and clears the ball upfield.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 638,
+    "description": "The blue team clears the ball upfield.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 644,
+    "description": "The blue team intercepts a pass in midfield to win back possession.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 647,
+    "description": "Blue team wins the ball following a challenge.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 676,
+    "description": "The white team takes a short free kick near the penalty area.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 735,
+    "description": "The blue team wins possession following a defensive clearance.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 751,
+    "description": "A player from the black & white team is tackled and falls to the ground.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 757,
+    "description": "The blue team wins possession back in the midfield.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 761,
+    "description": "The blue team intercepts a pass to regain control of the ball.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 825,
+    "description": "The Striped team's attack is broken up by the Blue team.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 871,
+    "description": "A white team player is challenged and falls down. Foul against Blue team.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 928,
+    "description": "The Black and white striped team wins the ball and heads it forward.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 947,
+    "description": "The team in white takes a corner kick from the right side.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 995,
+    "description": "Black team wins possession from a long ball.",
+    "team": "black"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 999,
+    "description": "Red team (in blue) intercepts a pass.",
+    "team": "red"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1003,
+    "description": "Black team wins the ball back after a tackle.",
+    "team": "black"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1008,
+    "description": "The Black & White team makes an initial defensive header.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1035,
+    "description": "The Blue team sets up for an attacking free kick.",
+    "team": "blue_team"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1099,
+    "description": "The Black team secures possession in the middle of the pitch.",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1123,
+    "description": "A blue player crosses the ball into the penalty area",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1142,
+    "description": "The blue team intercepts a throw-in and starts a counter-attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1191,
+    "description": "The blue team wins possession in their own half.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1193,
+    "description": "The black and white team regains the ball with a tackle.",
+    "team": "black_&_white_striped"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1195,
+    "description": "The blue team intercepts a pass and wins the ball back again.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1201,
+    "description": "A player in black and white stripes tackles the blue team player.",
+    "team": "black_and_white_striped"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1217,
+    "description": "Blue team takes a long throw-in.",
+    "team": "blue_team"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1217,
+    "description": "Gaining Control of the ball in the midfield.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1228,
+    "description": "The Black/White team advances the ball down the left wing.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1231,
+    "description": "The ball goes out of play for a throw-in.",
+    "team": "unknown"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1245,
+    "description": "The black and white team has possession in the opposition half.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1255,
+    "description": "The blue team wins the ball and begins an attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1322,
+    "description": "The black and white team intercepts a long pass with a header.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1331,
+    "description": "The blue team wins back possession, ending the attack.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1337,
+    "description": "The black and white team wins an aerial ball near the center circle.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1395,
+    "description": "The white team takes a free kick from the right flank.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1460,
+    "description": "A player from the Black and White team wins the header.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1474,
+    "description": "The black team intercepts a pass to regain possession.",
+    "team": "black"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1496,
+    "description": "the Blue team intercepts a pass to win possession.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1507,
+    "description": "The blue team wins the initial aerial duel",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1513,
+    "description": "A blue player takes control of the ball and starts to dribble.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1517,
+    "description": "White team commits a foul in midfield.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1528,
+    "description": "White team wins back the ball and begins a counter-attack.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1547,
+    "description": "The Blue team wins the ball with a tackle.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1565,
+    "description": "The Blue team wins a tackle to gain possession",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1630,
+    "description": "A blue player wins the ball following a challenge.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1651,
+    "description": "The Blue team takes a free kick into the penalty area.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1672,
+    "description": "The Blue team takes a free kick towards the penalty area.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1789,
+    "description": "The corner kick is taken from the left side.",
+    "team": "black_and_white_striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1810,
+    "description": "The white team takes the free kick.",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1838,
+    "description": "The free kick is taken, sending the ball towards the penalty area.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1845,
+    "description": "The Blue team takes a free kick from the left side.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1921,
+    "description": "The white team delivers a cross into the penalty area.",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1937,
+    "description": "The corner kick is taken.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1967,
+    "description": "A corner kick is taken by the striped team",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2225,
+    "description": "The blue team plays a long ball forward.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2238,
+    "description": "A blue player plays a long forward pass.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2454,
+    "description": "A player from the white team kicks a long ball up the field.",
+    "team": "white_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2664,
+    "description": "Black team takes the free kick",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2672,
+    "description": "A blue player wins a header near the halfway line.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2718,
+    "description": "The Black team passes the ball forward from the center circle.",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2868,
+    "description": "Free kick is taken from the left wing.",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2883,
+    "description": "The free kick is taken from their own half.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 3812,
+    "description": "Kick-off taken by the black and white team",
+    "team": "black_and_white_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 3863,
+    "description": "Kick-off taken by the black and white striped team.",
+    "team": "black_and_white_striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 3896,
+    "description": "The Black team plays a long ball forward.",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 3963,
+    "description": "The striped team player takes a long kick upfield.",
+    "team": "striped_team"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4072,
+    "description": "A collision and foul occur in the midfield.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4090,
+    "description": "The blue team executes a throw-in.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4106,
+    "description": "The Blue team executes a long throw-in.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4119,
+    "description": "A long through ball is played from the midfield by the white team.",
+    "team": "white_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4201,
+    "description": "The Blue Team takes a throw-in.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4216,
+    "description": "The ball crosses the sideline for a throw-in.",
+    "team": "unknown"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4465,
+    "description": "The long free kick is taken",
+    "team": "white_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4577,
+    "description": "A header from a Black & White player sends the ball out of play.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4584,
+    "description": "The Black & White team takes the first throw-in.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4595,
+    "description": "The black and white striped team executes a throw-in.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4605,
+    "description": "A Blue player is on the ground after being fouled by a White player.",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4631,
+    "description": "The White team takes a short free kick to a teammate.",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4639,
+    "description": "The black and white striped team takes a long shot.",
+    "team": "black_and_white_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4651,
+    "description": "The corner kick is taken by the Blue team.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4666,
+    "description": "Black team attacks with a set piece into the penalty area.",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4759,
+    "description": "Free kick taken",
+    "team": "black_and_white_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4770,
+    "description": "Free kick is taken",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4823,
+    "description": "A penalty kick is taken",
+    "team": "black_and_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4846,
+    "description": "Referee points to the penalty spot. Penalty for Striped team.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4863,
+    "description": "The free kick is taken",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4898,
+    "description": "the free kick is taken",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4906,
+    "description": "the black and white team takes a free kick that sails over the goal",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4931,
+    "description": "A white attacker receives a long pass.",
+    "team": "white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 4950,
+    "description": "The Black Team gains the ball.",
+    "team": "white_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5012,
+    "description": "Blue team takes a short free-kick.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5117,
+    "description": "The free kick is taken short",
+    "team": "black_and_white_team"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5147,
+    "description": "The Striped team intercepts a pass in midfield.",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5209,
+    "description": "The white/black team takes a free kick",
+    "team": "white/black_striped"
+  },
+  {
+    "type": "foul",
+    "timestamp": 5268,
+    "description": "Play is stopped by the referee. Blue team awarded free kick.",
+    "team": "unknown"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5283,
+    "description": "The blue team plays a long ball over the top",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5342,
+    "description": "A shot is taken from the free kick.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5356,
+    "description": "The white team clears the ball with a header.",
+    "team": "white_team"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5423,
+    "description": "Blue defender intercepts a pass/cross",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5527,
+    "description": "the Red team player takes the free kick.",
+    "team": "red_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5542,
+    "description": "The free kick is taken short following a set-piece routine",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5556,
+    "description": "A blue player takes the shot on goal.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5575,
+    "description": "free kick is taken and headed away",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5600,
+    "description": "A blue player heads a long ball forward.",
+    "team": "blue_team"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 5627,
+    "description": "The White player makes a tackle.",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5763,
+    "description": "Black team plays a long ball forward",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5839,
+    "description": "Black team takes the kick-off.",
+    "team": "black_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5881,
+    "description": "A header attempt is made by the striped team.",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5928,
+    "description": "the kick is taken into the box",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5944,
+    "description": "free kick is taken",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5956,
+    "description": "The corner is headed clear by a Blue defender.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6077,
+    "description": "a long ball is played into the center of the pitch",
+    "team": "unknown"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6109,
+    "description": "The Striped team takes a short free kick.",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6150,
+    "description": "Free kick taken by the Blue team.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6210,
+    "description": "A player from the black and white team takes a shot at goal.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6234,
+    "description": "Blue team takes the kick-off from the center circle.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6257,
+    "description": "The Striped team takes the kick-off.",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6291,
+    "description": "Black team takes the kick-off",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6337,
+    "description": "A goalkeeper takes a long goal kick.",
+    "team": "black_&_white_team"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6361,
+    "description": "A Blue Player makes a tackle on a Black and White Team player.",
+    "team": "blue_team"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6363,
+    "description": "The referee awards a free kick to the Blue Team.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6397,
+    "description": "The free kick is taken.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6408,
+    "description": "The Striped team clears the ball to start an attack.",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6454,
+    "description": "Blue team takes the kickoff from the center circle.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6516,
+    "description": "The long ball is flicked on with a header by a Striped player.",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6541,
+    "description": "The Blue team's goalkeeper takes the goal kick.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6555,
+    "description": "Black team starts play from the center",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6578,
+    "description": "The Black team kicks off from the center circle.",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6666,
+    "description": "The free kick is taken",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6697,
+    "description": "The black and white team briefly wins possession.",
+    "team": "blue_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6714,
+    "description": "The Red team gains possession near the center of the pitch.",
+    "team": "red_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6720,
+    "description": "The Black team plays a long ball forward.",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6767,
+    "description": "The free kick is taken.",
+    "team": "black_and_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6808,
+    "description": "the Black and white team wins the resulting header in the midfield.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 6822,
+    "description": "A player from the black and white team takes a shot from distance.",
+    "team": "black_&_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6878,
+    "description": "the ball is kicked into the box",
+    "team": "black"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6886,
+    "description": "the corner kick is taken",
+    "team": "striped_team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6900,
+    "description": "The White team's goalkeeper takes a long goal kick.",
+    "team": "white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 7020,
+    "description": "Players from both teams are on the pitch",
+    "team": "unknown"
+  }
+]

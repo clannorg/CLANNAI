@@ -1,0 +1,84 @@
+# AI-Validated Timeline - edinburgh-20250726
+# Generated: 2025-08-08T13:48:27.910024
+# Method: Gemini 2.5 Pro intelligent validation
+# Context: Error-correcting fallible clip descriptions
+
+Here is the error-corrected analysis of the match timeline.
+
+### VALIDATED GOALS
+
+**1. Black/White Goal (Penalty)**
+*   **Timestamp:** ~46:15
+*   **Scoring Team:** Black/White team
+*   **Description:** Following a foul inside the penalty area, the Black/White team was awarded a penalty kick, which they successfully converted.
+*   **Supporting Evidence:**
+    *   **46:07:** "A foul is committed by the Blue team inside their penalty area, resulting in a penalty being awarded to the Black/White team."
+    *   **46:15:** "The Black/White team begins the clip celebrating a goal."
+    *   **46:24:** "The Blue team takes the kick-off." (This is the mandatory restart after a goal).
+*   **Confidence Level:** High
+
+**2. Blue Goal**
+*   **Timestamp:** ~65:30
+*   **Scoring Team:** Blue team
+*   **Description:** The method of scoring is not detailed in the clips, but the Blue team is seen celebrating before play is restarted from the center.
+*   **Supporting Evidence:**
+    *   **65:30:** "The video starts with the Blue team celebrating a goal as they return to their own half."
+    *   **65:30:** "The Black/White team restarts play from the center circle." (This is the mandatory restart after a goal).
+*   **Confidence Level:** High
+
+---
+### VALIDATED SHOTS
+
+*   **05:32:** Black/White team shot from inside the penalty area **SAVED** by the Blue goalkeeper. Evidence: "A shot is taken by the Black/White attacker, which is saved by the Blue goalkeeper."
+*   **09:15:** Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "A header is attempted from the corner, but the ball goes over the crossbar for a Blue team goal kick."
+*   **14:30:** Black/White team shot/cross from inside the penalty area **BLOCKED** by a Blue defender. Evidence: "A shot or cross is blocked by a Blue defender."
+*   **15:45:** Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "An attacking player heads the ball, but it goes over the crossbar for a goal kick."
+*   **16:04:** Black/White team shot from inside the penalty area **BLOCKED** by a Blue defender. Evidence: "A shot by the Black/White team from inside the penalty area is blocked by a Blue defender."
+*   **23:15:** Black/White team shot from outside the box **BLOCKED** by a Blue defender. Evidence: "A subsequent shot by a Black/White player is blocked by a Blue defender."
+*   **~28:00:** Black/White team shot from an attack **CLEARED OFF THE LINE** by a Blue defender. Evidence: "Following a series of headers from the Black/White team, a Blue defender clears the ball off the goal line."
+*   **28:51:** Black/White team header from a corner kick **SAVED** (caught) by the Blue goalkeeper. Evidence: "Black/White team takes a corner kick, which is headed towards the goal... The Blue team's goalkeeper catches the ball, securing possession."
+*   **~30:15:** Black/White team header from inside the penalty area **MISSED** (over the goal). Evidence: "The Black/White team attacks, heading the ball over the goal from inside the penalty area."
+*   **~32:15:** Black/White team shot from outside the penalty area **BLOCKED** by a defender. Evidence: "a Black/White player takes a shot from outside the penalty area which is blocked by a defender."
+*   **39:02:** Black/White team shot **MISSED** (over the bar). Evidence: "A shot by the Black/White team goes over the bar."
+*   **43:48:** Blue team header from a cross **SAVED** (diving save) by the Black/White goalkeeper. Evidence: "A Blue team player heads the ball toward the goal... The Black/White team's goalkeeper makes a diving save."
+*   **77:32:** Black/White team header **SAVED** (caught) by the Blue goalkeeper. Evidence: "Black/White team attacks with a header towards the goal... The Blue team's goalkeeper catches the ball, making a save."
+*   **~77:45:** Black/White team shot from a cleared corner **MISSED** (wide of the goal). Evidence: "Following the clearance, a Black/White player attempts a shot that goes wide of the goal."
+*   **78:47:** Blue team shot from a cross **SAVED** by the Black/White goalkeeper. Evidence: "A shot from the Blue team is saved by the Black/White goalkeeper."
+*   **79:20:** Black/White team direct free kick **MISSED** (over the crossbar). Evidence: "A shot from the free kick goes over the crossbar."
+*   **81:34:** Blue team direct free kick **MISSED** (over the crossbar). Evidence: "a player from the Blue team takes a shot, which goes over the crossbar."
+*   **82:18:** Black/White team shot **MISSED** (wide of the goal). Evidence: "a shot is taken by the Black/White team, but it goes wide of the goal."
+*   **87:31:** Blue team shot **BLOCKED** by a Black/White defender. Evidence: "a shot by the Blue team is blocked by a Black/White defender."
+*   **92:19:** Blue team free kick **MISSED** (over the crossbar). Evidence: "the shot is taken and goes over the crossbar for a goal kick."
+*   **92:35:** Black/White team direct free kick **SAVED** (diving save) by the Blue goalkeeper. Evidence: "A shot is taken on goal from the free kick... The Blue team's goalkeeper makes a diving save."
+*   **92:54:** Black/White team direct free kick **MISSED** (high over the crossbar). Evidence: "the shot is taken and goes high over the crossbar for a goal kick."
+*   **94:51:** Black/White team header from a cross **MISSED** (over the crossbar). Evidence: "A Black/White player attempts a header on goal, but the shot goes over the crossbar."
+*   **96:07:** Black/White team shot from inside the box **SAVED** (diving save) by the Blue goalkeeper. Evidence: "A Black/White player takes a shot from inside the box... The Blue team's goalkeeper makes a diving save."
+*   **98:48:** Black/White team shot from a free kick routine **MISSED** (over the crossbar). Evidence: "The Black/White team takes a shot that goes over the crossbar."
+*   **99:05:** Black/White team header from a free kick **SAVED** by the Blue goalkeeper. Evidence: "A header from the Black/White team is directed at goal... The Blue team's goalkeeper makes a save."
+*   **102:31:** Black/White team header from a free kick **SAVED** (punched clear) by the Blue goalkeeper. Evidence: "A Black/White player's header is directed toward the goal... The Blue team's goalkeeper punches the ball clear."
+*   **108:46:** Black/White team shot **BLOCKED** by a Blue defender. Evidence: "A shot from the Black/White team is blocked by a Blue defender."
+*   **110:31:** Black/White team shot **SAVED** (diving save) by the Blue goalkeeper. Evidence: "A Black/White player takes a shot, which is saved by the Blue team's diving goalkeeper."
+*   **114:22:** Black/White team direct free kick **MISSED** (high over the goal). Evidence: "A shot is taken from the free kick, which goes high over the goal."
+*   **114:40:** Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "A Black/White player heads the ball from the corner kick, but the attempt goes over the crossbar."
+
+---
+### REJECTED CLAIMS
+
+*   **69:21-69:30 - Alleged Shot:** "a Black/White player taking a shot from distance".
+    *   **Reason for Rejection:** This description appears within a montage of unrelated clips. There is no continuous play, no specified outcome (save, miss, block), and not enough context to validate it as a singular, verifiable event.
+*   **113:45 & 114:00 - Alleged Goal:** "Goal scored by the Black/White team."
+    *   **Reason for Rejection:** This claim is repeated across two clips but lacks the mandatory supporting evidence. According to the validation rules, a goal must be followed by a kickoff from the center circle. The subsequent clips at **114:15** and **114:30** describe a free kick and a corner kick, not a center-circle restart. This is a clear AI hallucination.
+
+---
+### ANALYSIS SUMMARY
+
+The match between the Blue team and the Black/White team appears to have ended in a **1-1 draw**.
+
+**Key Moments:**
+*   The Black/White team opened the scoring around the **46:15** mark by converting a penalty kick.
+*   The Blue team found an equalizer around the **65:30** mark, with the goal being celebrated before a restart from the center.
+*   The Black/White team was the more dominant attacking force throughout the match, registering at least 25 shots towards the Blue team's goal. However, they were frequently wasteful, with numerous shots blocked, missed, or saved by the Blue goalkeeper, who had a busy and effective game.
+*   The Blue team was more clinical, scoring with one of their few validated chances.
+*   A notable event occurred at **99:16**, where a Blue team player was shown a red card, meaning they likely played the end of the match with ten players.
+
+Overall, the story of the match is one of Black/White pressure and missed opportunities versus Blue's defensive resilience and clinical finishing.
