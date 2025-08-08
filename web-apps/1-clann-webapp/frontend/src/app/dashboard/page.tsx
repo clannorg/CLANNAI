@@ -722,7 +722,11 @@ export default function Dashboard() {
                     </div>
                   </button>
                   
-                  <div className="p-6 border border-gray-300 rounded-lg">
+                  <button
+                    type="button"
+                    onClick={handleUploadVideoClick}
+                    className="p-6 border border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors w-full text-left"
+                  >
                     <div className="text-center mb-4">
                       <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3">
                         <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -732,7 +736,7 @@ export default function Dashboard() {
                       <h3 className="font-semibold text-gray-900 mb-1">VEO URL</h3>
                       <p className="text-sm text-gray-500">Paste URL from Veo, Trace, or Spiideo</p>
                     </div>
-                  </div>
+                  </button>
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-6">
