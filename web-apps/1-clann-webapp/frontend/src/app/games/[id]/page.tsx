@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import apiClient from '@/lib/api-client'
@@ -9,6 +9,91 @@ import GameHeader from '../../../components/games/GameHeader'
 import UnifiedSidebar from '../../../components/games/UnifiedSidebar'
 import { AIChatProvider, useAIChat } from '../../../components/ai-chat'
 import { useOrientation } from '../../../hooks/useOrientation'
+
+// Mobile Video Player with auto-hide overlay
+function MobileVideoPlayer({ 
+  game, 
+  teamScores, 
+  currentTime, 
+  filteredEvents, 
+  allEvents, 
+  currentEventIndex, 
+  handleTimeUpdate, 
+  handleEventClick, 
+  seekToTimestamp 
+}: any) {
+  const [showOverlay, setShowOverlay] = useState(true)
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Auto-hide after 4 seconds
+  const resetHideTimer = useCallback(() => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current)
+    }
+    
+    setShowOverlay(true)
+    hideTimeoutRef.current = setTimeout(() => {
+      setShowOverlay(false)
+    }, 4000)
+  }, [])
+
+  // Toggle overlay on tap
+  const handleVideoTap = useCallback(() => {
+    if (showOverlay) {
+      // If overlay is showing, hide it immediately
+      setShowOverlay(false)
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current)
+      }
+    } else {
+      // If overlay is hidden, show it and start timer
+      resetHideTimer()
+    }
+  }, [showOverlay, resetHideTimer])
+
+  // Reset timer on any interaction
+  useEffect(() => {
+    resetHideTimer()
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current)
+      }
+    }
+  }, [resetHideTimer])
+
+  return (
+    <div className="relative" onClick={handleVideoTap}>
+      {/* Mobile Game Header - with fade animation */}
+      <div 
+        className={`absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4 transition-opacity duration-300 ${
+          showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <GameHeader
+          game={game}
+          teamScores={teamScores}
+          currentTime={currentTime}
+          showEvents={false}
+          onToggleEvents={() => {}}
+          isMobile={true}
+        />
+      </div>
+      
+      {/* Video Player - full width, aspect ratio maintained */}
+      <div className="w-full aspect-video bg-black">
+        <VideoPlayer
+          game={game}
+          events={filteredEvents}
+          allEvents={allEvents}
+          currentEventIndex={currentEventIndex}
+          onTimeUpdate={handleTimeUpdate}
+          onEventClick={handleEventClick}
+          onSeekToTimestamp={seekToTimestamp}
+        />
+      </div>
+    </div>
+  )
+}
 
 interface GameEvent {
   type: string
@@ -264,7 +349,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               </div>
       ) : (
         // Mobile Portrait Layout (YouTube-style)
-        <div>
+                <div>
 
         {/* Bottom Section: Dark Sidebar (YouTube-style) */}
         <UnifiedSidebar
@@ -272,31 +357,17 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           onClose={() => {}} // No close on mobile  
           isMobile={true} // Mobile positioning
           mobileVideoComponent={
-            <div className="relative">
-              {/* Mobile Game Header - simplified */}
-              <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4">
-                <GameHeader
-                  game={game}
-                  teamScores={teamScores}
-                  currentTime={currentTime}
-                  showEvents={false} // Always hidden on mobile
-                  onToggleEvents={() => {}} // No sidebar toggle on mobile
-                  isMobile={true} // Mobile sizing
-                />
-              </div>
-              {/* Video Player - full width, aspect ratio maintained */}
-              <div className="w-full aspect-video bg-black">
-                <VideoPlayer
-                  game={game}
-                  events={filteredEvents}
-                  allEvents={allEvents}
-                  currentEventIndex={currentEventIndex}
-                  onTimeUpdate={handleTimeUpdate}
-                  onEventClick={handleEventClick}
-                  onSeekToTimestamp={seekToTimestamp}
-                />
-              </div>
-            </div>
+            <MobileVideoPlayer
+              game={game}
+              teamScores={teamScores}
+              currentTime={currentTime}
+              filteredEvents={filteredEvents}
+              allEvents={allEvents}
+              currentEventIndex={currentEventIndex}
+              handleTimeUpdate={handleTimeUpdate}
+              handleEventClick={handleEventClick}
+              seekToTimestamp={seekToTimestamp}
+            />
           }
           activeTab={sidebarTab}
           onTabChange={setSidebarTab}
