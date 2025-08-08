@@ -292,52 +292,29 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
         </div>
       </div>
 
-        {/* Bottom Section: Tabbed Content */}
-        <div className="bg-white">
-          {/* Tab Navigation */}
-          <div className="flex border-b border-gray-200 bg-white sticky top-0 z-10">
-            {(['events', 'ai', 'insights', 'downloads'] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setSidebarTab(tab)}
-                className={`flex-1 px-4 py-3 text-sm font-medium text-center ${
-                  sidebarTab === tab
-                    ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
-                    : 'text-gray-500 hover:text-gray-700'
-                }`}
-              >
-                {tab === 'events' ? 'Events' : 
-                 tab === 'ai' ? 'AI Coach' : 
-                 tab === 'insights' ? 'Insights' : 'Downloads'}
-              </button>
-            ))}
-          </div>
-          
-          {/* Tab Content */}
-          <div className="min-h-screen bg-white">
-            <UnifiedSidebar
-              isOpen={true} // Always open on mobile, but rendered as content
-              onClose={() => {}} // No close on mobile
-              activeTab={sidebarTab}
-              onTabChange={setSidebarTab}
-              onWidthChange={() => {}} // No width change on mobile
-              events={filteredEvents}
-              allEvents={allEvents}
-              currentEventIndex={currentEventIndex}
-              onEventClick={handleEventClick}
-              eventTypeFilters={eventTypeFilters}
-              setEventTypeFilters={setEventTypeFilters}
-              teamFilter={teamFilter}
-              setTeamFilter={setTeamFilter}
-              showFilters={showFilters}
-              setShowFilters={setShowFilters}
-                    tacticalData={tacticalData} 
-            tacticalLoading={tacticalLoading} 
+        {/* Bottom Section: Dark Sidebar (YouTube-style) */}
+        <UnifiedSidebar
+          isOpen={true} // Always open on mobile
+          onClose={() => {}} // No close on mobile  
+          isMobile={true} // Mobile positioning
+          activeTab={sidebarTab}
+          onTabChange={setSidebarTab}
+          onWidthChange={() => {}} // No width change on mobile
+          events={filteredEvents}
+          allEvents={allEvents}
+          currentEventIndex={currentEventIndex}
+          onEventClick={handleEventClick}
+          eventTypeFilters={eventTypeFilters}
+          setEventTypeFilters={setEventTypeFilters}
+          teamFilter={teamFilter}
+          setTeamFilter={setTeamFilter}
+          showFilters={showFilters}
+          setShowFilters={setShowFilters}
+        tacticalData={tacticalData} 
+        tacticalLoading={tacticalLoading} 
             gameId={gameId}
-            onSeekToTimestamp={seekToTimestamp}
-          />
-          </div>
-        </div>
+          onSeekToTimestamp={seekToTimestamp}
+      />
         </div>
       )}
     </div>

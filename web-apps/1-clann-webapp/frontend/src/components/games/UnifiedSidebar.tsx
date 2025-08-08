@@ -18,6 +18,7 @@ interface UnifiedSidebarProps {
   activeTab?: 'events' | 'ai' | 'insights' | 'downloads'
   onTabChange?: (tab: 'events' | 'ai' | 'insights' | 'downloads') => void
   onWidthChange?: (width: number) => void
+  isMobile?: boolean // New prop for mobile positioning
   
   // Events tab props
   events: GameEvent[]
@@ -49,6 +50,7 @@ export default function UnifiedSidebar({
   activeTab: externalActiveTab,
   onTabChange,
   onWidthChange,
+  isMobile = false,
   events,
   allEvents,
   currentEventIndex,
@@ -243,8 +245,12 @@ export default function UnifiedSidebar({
 
   return (
     <div 
-      className="absolute top-0 right-0 h-full bg-black/90 backdrop-blur-sm border-l border-gray-700 flex flex-col z-30"
-      style={{ 
+      className={`${
+        isMobile 
+          ? 'relative w-full bg-black/90 backdrop-blur-sm border-t border-gray-700'
+          : 'absolute top-0 right-0 h-full bg-black/90 backdrop-blur-sm border-l border-gray-700'
+      } flex flex-col z-30`}
+      style={isMobile ? {} : { 
         width: `${sidebarWidth}px`,
         minWidth: '280px',
         maxWidth: '600px'
