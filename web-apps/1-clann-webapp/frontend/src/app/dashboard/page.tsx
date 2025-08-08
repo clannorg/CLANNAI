@@ -343,6 +343,14 @@ export default function Dashboard() {
                 </svg>
                 </button>
 
+              {/* Upgrade to Premium */}
+              <button
+                onClick={() => window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')}
+                className="border border-[#016F32] text-[#016F32] px-6 py-2.5 rounded-lg font-medium w-full md:w-auto hover:bg-[#016F32]/10 transition-colors"
+              >
+                Upgrade to Premium
+              </button>
+
               {/* Company Tools - Only show for company users */}
               {user?.role === 'company' && (
                 <button 
@@ -378,12 +386,6 @@ export default function Dashboard() {
             </button>
                   </div>
                 }
-                <span 
-                  onClick={() => window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')}
-                  className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400 hover:bg-green-400/10 hover:text-green-400 cursor-pointer transition-colors"
-                >
-                  FREE TIER - Upgrade
-                </span>
               </h1>
               <div className="flex items-center gap-2 text-gray-600">
                 <span>⚽</span>
@@ -555,6 +557,10 @@ export default function Dashboard() {
               </div>
             ) : (
               <div className="space-y-4">
+                {/* Recent Games */}
+                {games.length > 0 && (
+                  <h2 className="text-lg font-semibold text-gray-900 pb-2">Recent Games</h2>
+                )}
                 {games.map((game: any) => (
                   <div
                     key={game.id}
@@ -605,6 +611,12 @@ export default function Dashboard() {
                           {game.status.toUpperCase()}
                           {game.status === 'analyzed' && <span className="text-lg">→</span>}
                         </div>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); router.push(`/games/${game.id}`) }}
+                          className="text-[#016F32] hover:underline text-sm"
+                        >
+                          Open
+                        </button>
                         
                         {game.status === 'analyzed' && (
                           <span className="text-sm text-gray-500 whitespace-nowrap">
