@@ -408,6 +408,24 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+          
+          {/* Tab Navigation - Moved from content area */}
+          <div className="flex justify-center border-t border-gray-200 mt-8">
+            {(['games', 'teams'] as const).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-4 font-medium text-lg ${
+                  activeTab === tab
+                    ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
+                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                }`}
+              >
+                {tab === 'games' ? 'My Games' : 'Teams'}
+              </button>
+            ))}
+          </div>
+          
           </div>
         </div>
       </div>
@@ -427,22 +445,6 @@ export default function Dashboard() {
           <div className="space-y-6">
             {/* Matches List - CONTENT FIRST */}
           <div className="bg-white rounded-xl shadow-sm">
-              {/* Tab Navigation */}
-              <div className="flex justify-center border-b border-gray-200">
-                {(['games', 'teams'] as const).map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
-                    className={`px-6 py-4 font-medium text-lg ${
-                      activeTab === tab
-                        ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
-                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
-                    }`}
-                  >
-                    {tab === 'games' ? 'My Games' : 'Teams'}
-                  </button>
-                ))}
-            </div>
                           <div className="p-6">
                 {loading ? (
                   <div className="text-center py-12">
