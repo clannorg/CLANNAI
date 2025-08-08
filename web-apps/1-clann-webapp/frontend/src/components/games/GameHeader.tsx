@@ -14,6 +14,7 @@ interface GameHeaderProps {
   currentTime: number
   showEvents: boolean
   onToggleEvents: () => void
+  isMobile?: boolean
 }
 
 export default function GameHeader({
@@ -21,7 +22,8 @@ export default function GameHeader({
   teamScores,
   currentTime,
   showEvents,
-  onToggleEvents
+  onToggleEvents,
+  isMobile = false
 }: GameHeaderProps) {
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60)
@@ -43,25 +45,29 @@ export default function GameHeader({
           <span className="font-medium" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>Dashboard</span>
         </Link>
         
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl px-6 py-3 border border-white/20 shadow-lg">
-          <div className="flex items-center space-x-4 text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-            <span className="font-semibold text-base">{game.team_name}</span>
-            <div className="w-px h-5 bg-white/30"></div>
-            <div className="flex items-center space-x-3">
+        <div className={`bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-lg ${
+          isMobile ? 'px-3 py-2' : 'px-6 py-3'
+        }`}>
+          <div className={`flex items-center text-white ${
+            isMobile ? 'space-x-2' : 'space-x-4'
+          }`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
+            <span className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>{game.team_name}</span>
+            <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>
+            <div className={`flex items-center ${isMobile ? 'space-x-1.5' : 'space-x-3'}`}>
               <div className="flex items-center space-x-1">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                <span className="font-bold text-base">{teamScores.red}</span>
+                <div className={`rounded-full bg-red-400 ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
+                <span className={`font-bold ${isMobile ? 'text-sm' : 'text-base'}`}>{teamScores.red}</span>
               </div>
-              <span className="text-white/60 font-medium text-base">-</span>
+              <span className={`text-white/60 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>-</span>
               <div className="flex items-center space-x-1">
-                <div className="w-2.5 h-2.5 rounded-full bg-blue-400"></div>
-                <span className="font-bold text-base">{teamScores.black}</span>
+                <div className={`rounded-full bg-blue-400 ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
+                <span className={`font-bold ${isMobile ? 'text-sm' : 'text-base'}`}>{teamScores.black}</span>
               </div>
             </div>
-            <div className="w-px h-5 bg-white/30"></div>
-            <span className="font-medium text-base text-white/90">{game.title}</span>
-            <div className="w-px h-5 bg-white/30"></div>
-            <span className="font-mono text-base text-white/80">{formatTime(currentTime)}</span>
+            <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>
+            <span className={`font-medium text-white/90 ${isMobile ? 'text-sm' : 'text-base'}`}>{game.title}</span>
+            <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>
+            <span className={`font-mono text-white/80 ${isMobile ? 'text-sm' : 'text-base'}`}>{formatTime(currentTime)}</span>
           </div>
         </div>
       </div>

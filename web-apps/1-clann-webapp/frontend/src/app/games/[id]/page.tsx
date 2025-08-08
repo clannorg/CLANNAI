@@ -275,6 +275,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               currentTime={currentTime}
               showEvents={false} // Always hidden on mobile
               onToggleEvents={() => {}} // No sidebar toggle on mobile
+              isMobile={true} // Mobile sizing
             />
                   </div>
                   
