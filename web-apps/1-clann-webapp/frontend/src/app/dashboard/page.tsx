@@ -577,7 +577,7 @@ export default function Dashboard() {
                         className="flex justify-between items-start cursor-pointer"
                   >
                       <div className="space-y-3 min-w-0 flex-1 mr-4">
-                        <h3 className="text-xl font-bold truncate">{game.title}</h3>
+                        <h3 className="text-xl font-bold truncate text-gray-900">{game.title}</h3>
                         
                         <div className="space-y-2 text-sm text-gray-600">
                           <div className="flex items-center gap-2">
@@ -765,7 +765,7 @@ export default function Dashboard() {
                           type="text"
                           value={uploadGameTitle}
                           onChange={(e) => setUploadGameTitle(e.target.value)}
-                          placeholder="e.g. vs Arsenal, vs Chelsea"
+                          placeholder="Arsenal"
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
                           required
                         />
