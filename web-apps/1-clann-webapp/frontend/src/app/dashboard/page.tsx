@@ -162,7 +162,6 @@ export default function Dashboard() {
       
       const response = await apiClient.createTeam({
         name: createTeamName.trim(),
-        description: createTeamDescription.trim() || undefined,
         color: '#016F32'
       })
       
@@ -891,78 +890,69 @@ export default function Dashboard() {
             </div>
               )}
               
-              {/* Join Team Section */}
-              <div id="join-team-section" className="border-t border-gray-200 pt-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Join Team</h3>
-                <form onSubmit={handleJoinTeam} className="bg-gray-50 rounded-lg p-4">
-                  <div className="mb-4">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Team Code</label>
-                    <input
-                      type="text"
-                      value={joinTeamCode}
-                      onChange={(e) => setJoinTeamCode(e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                      placeholder="e.g., ARS269"
-                      required
-                      disabled={joinTeamLoading}
-                    />
-                    <p className="text-xs text-gray-500 mt-1">
-                      Try demo codes: ARS269, CHE277, LIV297, MCI298, MUN304
-                    </p>
+              {/* Join/Create Team Section */}
+              <div className="border-t border-gray-200 pt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Join Team */}
+                  <div id="join-team-section">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Join Team</h3>
+                    <form onSubmit={handleJoinTeam} className="bg-gray-50 rounded-lg p-4">
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Team Code</label>
+                        <input
+                          type="text"
+                          value={joinTeamCode}
+                          onChange={(e) => setJoinTeamCode(e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          placeholder="e.g., ARS269"
+                          required
+                          disabled={joinTeamLoading}
+                        />
+                        <p className="text-xs text-gray-500 mt-1">
+                          Try demo codes: ARS269, CHE277, LIV297, MCI298, MUN304
+                        </p>
+                      </div>
+                      <div className="flex justify-end">
+                        <button
+                          type="submit"
+                          disabled={joinTeamLoading || !joinTeamCode.trim()}
+                          className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {joinTeamLoading ? 'Joining...' : 'Join Team'}
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                  <div className="flex justify-end">
-                    <button
-                      type="submit"
-                      disabled={joinTeamLoading || !joinTeamCode.trim()}
-                      className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {joinTeamLoading ? 'Joining...' : 'Join Team'}
-                    </button>
-                  </div>
-                </form>
-              </div>
 
-              {/* Create Team Section */}
-              <div id="create-team-section" className="border-t border-gray-200 pt-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Create Team</h3>
-                <form onSubmit={handleCreateTeam} className="bg-gray-50 rounded-lg p-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
-                      <input
-                        type="text"
-                        value={createTeamName}
-                        onChange={(e) => setCreateTeamName(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                        placeholder="My Football Club"
-                        required
-                        disabled={createTeamLoading}
-                        maxLength={255}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Description (Optional)</label>
-                      <input
-                        type="text"
-                        value={createTeamDescription}
-                        onChange={(e) => setCreateTeamDescription(e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
-                        placeholder="Brief description"
-                        disabled={createTeamLoading}
-                        maxLength={500}
-                      />
-                    </div>
+                  {/* Create Team */}
+                  <div id="create-team-section">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Create Team</h3>
+                    <form onSubmit={handleCreateTeam} className="bg-gray-50 rounded-lg p-4">
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
+                        <input
+                          type="text"
+                          value={createTeamName}
+                          onChange={(e) => setCreateTeamName(e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          placeholder="My Football Club"
+                          required
+                          disabled={createTeamLoading}
+                          maxLength={255}
+                        />
+                      </div>
+                      <div className="flex justify-end">
+                        <button
+                          type="submit"
+                          disabled={createTeamLoading || !createTeamName.trim()}
+                          className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {createTeamLoading ? 'Creating...' : 'Create Team'}
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                  <div className="flex justify-end">
-                    <button
-                      type="submit"
-                      disabled={createTeamLoading || !createTeamName.trim()}
-                      className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {createTeamLoading ? 'Creating...' : 'Create Team'}
-                    </button>
-                  </div>
-                </form>
+                </div>
               </div>
                   </div>
               </div>
