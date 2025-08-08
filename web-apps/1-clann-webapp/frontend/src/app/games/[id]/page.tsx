@@ -201,61 +201,139 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Video Section */}
+      {/* Mobile-first YouTube-style Layout */}
+      
+      {/* Desktop Layout (hidden on mobile) */}
+      <div className="hidden lg:block">
+        {/* Original desktop layout */}
     <div className="h-screen bg-black relative overflow-hidden">
-        
-        {/* Game Header */}
-        <GameHeader
-          game={game}
-          teamScores={teamScores}
-          currentTime={currentTime}
-          showEvents={showSidebar}
-          onToggleEvents={() => setShowSidebar(!showSidebar)}
-        />
-
-      {/* Video Container - with dynamic margins for sidebars */}
-      <div 
-        className="relative h-full flex items-center justify-center transition-all duration-300"
-        style={{
-          marginRight: showSidebar ? `${sidebarWidth}px` : '0'
-        }}
-      >
-          
-          <VideoPlayer
+          {/* Game Header */}
+          <GameHeader
             game={game}
+            teamScores={teamScores}
+            currentTime={currentTime}
+            showEvents={showSidebar}
+            onToggleEvents={() => setShowSidebar(!showSidebar)}
+          />
+
+          {/* Video Container - with dynamic margins for sidebars */}
+          <div 
+            className="relative h-full flex items-center justify-center transition-all duration-300"
+            style={{
+              marginRight: showSidebar ? `${sidebarWidth}px` : '0'
+            }}
+          >
+            <VideoPlayer
+              game={game}
+              events={filteredEvents}
+              allEvents={allEvents}
+              currentEventIndex={currentEventIndex}
+          onTimeUpdate={handleTimeUpdate}
+              onEventClick={handleEventClick}
+              onSeekToTimestamp={seekToTimestamp}
+            />
+              </div>
+          
+          {/* Unified Sidebar */}
+          <UnifiedSidebar
+            isOpen={showSidebar}
+            onClose={() => setShowSidebar(false)}
+            activeTab={sidebarTab}
+            onTabChange={setSidebarTab}
+            onWidthChange={setSidebarWidth}
             events={filteredEvents}
             allEvents={allEvents}
             currentEventIndex={currentEventIndex}
-          onTimeUpdate={handleTimeUpdate}
             onEventClick={handleEventClick}
+            eventTypeFilters={eventTypeFilters}
+            setEventTypeFilters={setEventTypeFilters}
+            teamFilter={teamFilter}
+            setTeamFilter={setTeamFilter}
+            showFilters={showFilters}
+            setShowFilters={setShowFilters}
+            tacticalData={tacticalData} 
+            tacticalLoading={tacticalLoading} 
+            gameId={gameId}
             onSeekToTimestamp={seekToTimestamp}
-          />
+                />
+              </div>
+            </div>
 
+      {/* Mobile Layout (YouTube-style) */}
+      <div className="lg:hidden">
+        {/* Top Section: Video Player */}
+        <div className="relative">
+          {/* Mobile Game Header - simplified */}
+          <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4">
+            <GameHeader
+              game={game}
+              teamScores={teamScores}
+              currentTime={currentTime}
+              showEvents={false} // Always hidden on mobile
+              onToggleEvents={() => {}} // No sidebar toggle on mobile
+            />
+                  </div>
+                  
+          {/* Video Player - full width, aspect ratio maintained */}
+          <div className="w-full aspect-video bg-black">
+            <VideoPlayer
+              game={game}
+              events={filteredEvents}
+              allEvents={allEvents}
+              currentEventIndex={currentEventIndex}
+              onTimeUpdate={handleTimeUpdate}
+              onEventClick={handleEventClick}
+              onSeekToTimestamp={seekToTimestamp}
+            />
+        </div>
+      </div>
+
+        {/* Bottom Section: Tabbed Content */}
+        <div className="bg-white">
+          {/* Tab Navigation */}
+          <div className="flex border-b border-gray-200 bg-white sticky top-0 z-10">
+            {(['events', 'ai', 'insights', 'downloads'] as const).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setSidebarTab(tab)}
+                className={`flex-1 px-4 py-3 text-sm font-medium text-center ${
+                  sidebarTab === tab
+                    ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {tab === 'events' ? 'Events' : 
+                 tab === 'ai' ? 'AI Coach' : 
+                 tab === 'insights' ? 'Insights' : 'Downloads'}
+              </button>
+            ))}
           </div>
           
-        {/* Unified Sidebar */}
-                <UnifiedSidebar
-          isOpen={showSidebar}
-          onClose={() => setShowSidebar(false)}
-          activeTab={sidebarTab}
-          onTabChange={setSidebarTab}
-          onWidthChange={setSidebarWidth}
-          events={filteredEvents}
-          allEvents={allEvents}
-          currentEventIndex={currentEventIndex}
-          onEventClick={handleEventClick}
-          eventTypeFilters={eventTypeFilters}
-          setEventTypeFilters={setEventTypeFilters}
-          teamFilter={teamFilter}
-          setTeamFilter={setTeamFilter}
-          showFilters={showFilters}
-          setShowFilters={setShowFilters}
+          {/* Tab Content */}
+          <div className="min-h-screen bg-white">
+            <UnifiedSidebar
+              isOpen={true} // Always open on mobile, but rendered as content
+              onClose={() => {}} // No close on mobile
+              activeTab={sidebarTab}
+              onTabChange={setSidebarTab}
+              onWidthChange={() => {}} // No width change on mobile
+              events={filteredEvents}
+              allEvents={allEvents}
+              currentEventIndex={currentEventIndex}
+              onEventClick={handleEventClick}
+              eventTypeFilters={eventTypeFilters}
+              setEventTypeFilters={setEventTypeFilters}
+              teamFilter={teamFilter}
+              setTeamFilter={setTeamFilter}
+              showFilters={showFilters}
+              setShowFilters={setShowFilters}
         tacticalData={tacticalData} 
         tacticalLoading={tacticalLoading} 
             gameId={gameId}
-          onSeekToTimestamp={seekToTimestamp}
+              onSeekToTimestamp={seekToTimestamp}
       />
-
+          </div>
+        </div>
       </div>
     </div>
   )
