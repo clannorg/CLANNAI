@@ -817,46 +817,7 @@ export default function Dashboard() {
                 </button>
               ))}
             </div>
-            <div className="p-6 border-b border-gray-100">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Team Sharing</h2>
-                  <p className="text-gray-600">Share your team codes to invite others</p>
-                </div>
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => {
-                      setActiveTab('teams')
-                      // Scroll to the join section
-                      setTimeout(() => {
-                        document.getElementById('join-team-section')?.scrollIntoView({ 
-                          behavior: 'smooth', 
-                          block: 'center' 
-                        })
-                      }, 100)
-                    }}
-                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50"
-                  >
-                    Join Team
-                  </button>
-                  <button
-                    onClick={() => {
-                      setActiveTab('teams')
-                      // Scroll to the create section  
-                      setTimeout(() => {
-                        document.getElementById('create-team-section')?.scrollIntoView({ 
-                          behavior: 'smooth', 
-                          block: 'center' 
-                        })
-                      }, 100)
-                    }}
-                    className="px-4 py-2 bg-[#016F32] text-white rounded-lg font-medium hover:bg-[#016F32]/90"
-                  >
-                    Create Team
-                  </button>
-                </div>
-              </div>
-            </div>
+
             
             <div className="p-6 space-y-6">
               {/* Your Teams for Sharing */}
