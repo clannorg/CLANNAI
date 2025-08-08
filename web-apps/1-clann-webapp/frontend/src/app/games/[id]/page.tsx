@@ -8,6 +8,7 @@ import VideoPlayer from '../../../components/games/VideoPlayer'
 import GameHeader from '../../../components/games/GameHeader'
 import UnifiedSidebar from '../../../components/games/UnifiedSidebar'
 import { AIChatProvider, useAIChat } from '../../../components/ai-chat'
+import { useOrientation } from '../../../hooks/useOrientation'
 
 interface GameEvent {
   type: string
@@ -36,6 +37,7 @@ interface Game {
 
 const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   const { isOpen: showChat, toggleChat, sendMessage } = useAIChat()
+  const { isPortrait, isLandscape, orientation } = useOrientation()
   const params = useParams()
   const gameId = params.id as string
   const [currentTime, setCurrentTime] = useState(0)
@@ -201,12 +203,15 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Mobile-first YouTube-style Layout */}
-      
-      {/* Desktop Layout (hidden on mobile) */}
-      <div className="hidden lg:block">
-        {/* Original desktop layout */}
-    <div className="h-screen bg-black relative overflow-hidden">
+      {/* Orientation Debug Indicator */}
+      <div className="fixed top-4 left-4 z-50 bg-blue-600 text-white px-3 py-1 rounded text-sm font-mono">
+        {orientation} ({isPortrait ? 'portrait' : 'landscape'})
+        </div>
+
+      {/* Layout based on orientation */}
+      {isLandscape ? (
+        /* Desktop/Landscape Layout */
+        <div className="h-screen bg-black relative overflow-hidden">
           {/* Game Header */}
           <GameHeader
             game={game}
@@ -257,10 +262,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             onSeekToTimestamp={seekToTimestamp}
                 />
               </div>
-            </div>
-
-      {/* Mobile Layout (YouTube-style) */}
-      <div className="lg:hidden">
+      ) : (
+        /* Mobile Portrait Layout (YouTube-style) */
+        <div>
         {/* Top Section: Video Player */}
         <div className="relative">
           {/* Mobile Game Header - simplified */}
