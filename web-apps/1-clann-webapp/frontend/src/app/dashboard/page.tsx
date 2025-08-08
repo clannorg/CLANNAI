@@ -433,7 +433,7 @@ export default function Dashboard() {
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`px-6 py-4 font-medium ${tab === 'games' ? 'text-lg' : 'text-sm'} ${
+                    className={`px-6 py-4 font-medium text-sm ${
                       activeTab === tab
                         ? 'text-[#016F32] border-b-2 border-[#016F32] bg-gray-50'
                         : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
