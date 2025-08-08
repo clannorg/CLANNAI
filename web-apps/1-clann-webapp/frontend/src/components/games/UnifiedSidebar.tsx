@@ -19,6 +19,7 @@ interface UnifiedSidebarProps {
   onTabChange?: (tab: 'events' | 'ai' | 'insights' | 'downloads') => void
   onWidthChange?: (width: number) => void
   isMobile?: boolean // New prop for mobile positioning
+  mobileVideoComponent?: React.ReactNode // Video component for mobile header
   
   // Events tab props
   events: GameEvent[]
@@ -51,6 +52,7 @@ export default function UnifiedSidebar({
   onTabChange,
   onWidthChange,
   isMobile = false,
+  mobileVideoComponent,
   events,
   allEvents,
   currentEventIndex,
@@ -256,7 +258,12 @@ export default function UnifiedSidebar({
         maxWidth: '600px'
       }}
     >
-
+      {/* Mobile Video Header */}
+      {isMobile && mobileVideoComponent && (
+        <div className="sticky top-0 z-30 bg-black">
+          {mobileVideoComponent}
+        </div>
+      )}
 
       {/* Resize Handle */}
       <div
