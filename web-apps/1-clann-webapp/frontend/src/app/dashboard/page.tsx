@@ -1173,6 +1173,15 @@ export default function Dashboard() {
             <div className="space-y-4">
               <button
                 onClick={() => {
+                  window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')
+                  setShowSettingsModal(false)
+                }}
+                className="w-full text-left px-4 py-2 text-[#016F32] hover:bg-[#016F32]/10 rounded-lg font-medium"
+              >
+                Upgrade to Premium
+              </button>
+              <button
+                onClick={() => {
                   localStorage.removeItem('auth_token')
                   localStorage.removeItem('user')
                   router.push('/')
