@@ -88,6 +88,11 @@ export default function Dashboard() {
       setGames(gamesResponse.games || [])
       setDemoGames(demoGamesResponse.games || [])
       setTeams(userTeams)
+      
+      // Auto-fill team name with user's first real team (not demo)
+      if (userTeams.length > 0 && !uploadTeamName) {
+        setUploadTeamName(userTeams[0].name)
+      }
     } catch (err: any) {
       console.error('Failed to load user data:', err)
       setError(err.message || 'Failed to load data')
@@ -755,12 +760,12 @@ export default function Dashboard() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Match Title</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Opposition</label>
                         <input
                           type="text"
                           value={uploadGameTitle}
                           onChange={(e) => setUploadGameTitle(e.target.value)}
-                          placeholder="Enter match title"
+                          placeholder="e.g. vs Arsenal, vs Chelsea"
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
                           required
                         />
