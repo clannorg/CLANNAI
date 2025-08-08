@@ -379,7 +379,7 @@ export default function Dashboard() {
         <div className="flex items-center gap-6 mb-12">
           <div className="flex items-center gap-8">
             <div>
-              <h1 className="text-3xl font-bold mb-2">
+              <h1 className="text-3xl font-bold mb-2 text-gray-900">
                 {teams.length > 0 ? teams[0].name : 
                   <div className="flex items-center gap-2 text-gray-500">
                     Upload footage to create a team
