@@ -249,7 +249,7 @@ export default function UnifiedSidebar({
     <div 
       className={`${
         isMobile 
-          ? 'relative w-full bg-black/90 backdrop-blur-sm border-t border-gray-700'
+          ? 'relative w-full min-h-svh bg-black/90 backdrop-blur-sm border-t border-gray-700'
           : 'absolute top-0 right-0 h-full bg-black/90 backdrop-blur-sm border-l border-gray-700'
       } flex flex-col z-30`}
       style={isMobile ? {} : { 
@@ -636,7 +636,7 @@ export default function UnifiedSidebar({
             </div>
             
             {/* Chat Input */}
-            <div className="border-t border-gray-700 p-4">
+            <div className="sticky bottom-0 z-20 bg-black/95 border-t border-gray-700 p-4 pb-[max(env(safe-area-inset-bottom),16px)]">
               <div className="flex items-end space-x-3">
                 <input
                   type="text"

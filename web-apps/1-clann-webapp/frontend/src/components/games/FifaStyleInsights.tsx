@@ -76,8 +76,6 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
     managerRecommendations = tacticalData.analysis.manager_recommendations
     keyMoments = tacticalData.analysis.key_moments || []
   }
-
-<<<<<<< HEAD
   // Normalize manager recommendations shape
   const normalizeRecommendations = (value: any): string[] => {
     if (!value) return []
@@ -101,6 +99,20 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
   }
 
   const redTeamRecommendations: string[] = normalizeRecommendations(managerRecommendations?.red_team)
+
+  // Normalize list items that could be strings or rich objects {title, description, ...}
+  const normalizeDetailList = (list: any): string[] => {
+    if (!Array.isArray(list)) return []
+    return list.map((item: any) => {
+      if (typeof item === 'string') return item
+      if (item && typeof item === 'object') {
+        const title = item.title || ''
+        const desc = item.description || ''
+        return [title, desc].filter(Boolean).join(' — ')
+      }
+      return String(item)
+    })
+  }
 
   return (
     <div className="space-y-6">
@@ -153,7 +165,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
                 💪 Strengths
               </h4>
               <div className="space-y-2">
-                {redTeamData.strengths?.map((strength: string, i: number) => (
+                {normalizeDetailList(redTeamData.strengths)?.map((strength: string, i: number) => (
                   <div key={i} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-gray-200 text-sm">{strength}</span>
@@ -168,7 +180,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
                 ⚠️ Areas to Improve
               </h4>
               <div className="space-y-2">
-                {redTeamData.weaknesses?.map((weakness: string, i: number) => (
+                {normalizeDetailList(redTeamData.weaknesses)?.map((weakness: string, i: number) => (
                   <div key={i} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-gray-200 text-sm">{weakness}</span>

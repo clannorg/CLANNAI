@@ -26,10 +26,11 @@ router.get('/games', [authenticateToken, requireCompanyRole], async (req, res) =
         // Extract tactical analysis URL from metadata
         const metadata = game.metadata || {};
         const tacticalFiles = metadata.tactical_files || {};
-        const tacticalAnalysisUrl = tacticalFiles.coaching_insights?.url || 
-                                  tacticalFiles.match_summary?.url || 
-                                  tacticalFiles.general?.url ||
-                                  Object.values(tacticalFiles)[0]?.url || null;
+        const tacticalAnalysisUrl = tacticalFiles.latest?.url ||
+                                    tacticalFiles.coaching_insights?.url || 
+                                    tacticalFiles.match_summary?.url || 
+                                    tacticalFiles.general?.url ||
+                                    Object.values(tacticalFiles)[0]?.url || null;
 
         // Extract events S3 URL from metadata
         const eventsFiles = metadata.events_files || {};

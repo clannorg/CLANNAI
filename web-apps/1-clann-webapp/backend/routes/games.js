@@ -525,6 +525,13 @@ router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], asy
       uploaded_at: new Date().toISOString()
     };
 
+    // Always keep a canonical pointer to the latest tactical file so the UI can display it directly
+    tacticalFiles.latest = {
+      url: s3Key,
+      filename: originalFilename,
+      uploaded_at: new Date().toISOString()
+    };
+
     const updatedGame = await updateGame(gameId, {
       metadata: {
         ...currentMetadata,
