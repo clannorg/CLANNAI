@@ -258,7 +258,7 @@ export default function UnifiedSidebar({
         maxWidth: '600px'
       }}
     >
-      {/* Mobile Video Header */}
+      {/* Mobile Video Header - sticky so it does not scroll */}
       {isMobile && mobileVideoComponent && (
         <div className="sticky top-0 z-30 bg-black">
           {mobileVideoComponent}
@@ -279,9 +279,9 @@ export default function UnifiedSidebar({
           }`} />
         </div>
       </div>
-      {/* Tab Header */}
+      {/* Tab Header - sticky; on mobile, offset by video height (16:9 => 56.25vw) */}
       <div className={`sticky bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10 ${
-        isMobile ? 'top-0' : 'top-0'
+        isMobile ? 'top-[56.25vw]' : 'top-0'
       }`}>
         <div className="flex items-center justify-between">
           {/* Close Button - Hidden on Mobile */}

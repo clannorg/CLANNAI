@@ -89,6 +89,8 @@ function MobileVideoPlayer({
           onTimeUpdate={handleTimeUpdate}
           onEventClick={handleEventClick}
           onSeekToTimestamp={seekToTimestamp}
+          overlayVisible={showOverlay}
+          onUserInteract={resetHideTimer}
         />
       </div>
     </div>
