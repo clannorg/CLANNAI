@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
 import apiClient from '@/lib/api-client'
@@ -8,6 +8,94 @@ import VideoPlayer from '../../../components/games/VideoPlayer'
 import GameHeader from '../../../components/games/GameHeader'
 import UnifiedSidebar from '../../../components/games/UnifiedSidebar'
 import { AIChatProvider, useAIChat } from '../../../components/ai-chat'
+import { useOrientation } from '../../../hooks/useOrientation'
+
+// Mobile Video Player with auto-hide overlay
+function MobileVideoPlayer({ 
+  game, 
+  teamScores, 
+  currentTime, 
+  filteredEvents, 
+  allEvents, 
+  currentEventIndex, 
+  handleTimeUpdate, 
+  handleEventClick, 
+  seekToTimestamp 
+}: any) {
+  const [showOverlay, setShowOverlay] = useState(true)
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Auto-hide after 4 seconds
+  const resetHideTimer = useCallback(() => {
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current)
+    }
+    
+    setShowOverlay(true)
+    hideTimeoutRef.current = setTimeout(() => {
+      setShowOverlay(false)
+    }, 4000)
+  }, [])
+
+  // Toggle overlay on tap
+  const handleVideoTap = useCallback(() => {
+    if (showOverlay) {
+      // If overlay is showing, hide it immediately
+      setShowOverlay(false)
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current)
+      }
+    } else {
+      // If overlay is hidden, show it and start timer
+      resetHideTimer()
+    }
+  }, [showOverlay, resetHideTimer])
+
+  // Reset timer on any interaction
+  useEffect(() => {
+    resetHideTimer()
+    return () => {
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current)
+      }
+    }
+  }, [resetHideTimer])
+
+  return (
+    <div className="relative" onClick={handleVideoTap}>
+      {/* Mobile Game Header - with fade animation */}
+      <div 
+        className={`absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/70 to-transparent p-4 transition-opacity duration-300 ${
+          showOverlay ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <GameHeader
+          game={game}
+          teamScores={teamScores}
+          currentTime={currentTime}
+          showEvents={false}
+          onToggleEvents={() => {}}
+          isMobile={true}
+        />
+      </div>
+      
+      {/* Video Player - full width, aspect ratio maintained */}
+      <div className="w-full aspect-video bg-black">
+        <VideoPlayer
+          game={game}
+          events={filteredEvents}
+          allEvents={allEvents}
+          currentEventIndex={currentEventIndex}
+          onTimeUpdate={handleTimeUpdate}
+          onEventClick={handleEventClick}
+          onSeekToTimestamp={seekToTimestamp}
+          overlayVisible={showOverlay}
+          onUserInteract={resetHideTimer}
+        />
+      </div>
+    </div>
+  )
+}
 
 interface GameEvent {
   type: string
@@ -36,6 +124,7 @@ interface Game {
 
 const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   const { isOpen: showChat, toggleChat, sendMessage } = useAIChat()
+  const { isPortrait, isLandscape, orientation } = useOrientation()
   const params = useParams()
   const gameId = params.id as string
   const [currentTime, setCurrentTime] = useState(0)
@@ -201,45 +290,90 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Video Section */}
-    <div className="h-screen bg-black relative overflow-hidden">
-        
-        {/* Game Header */}
-        <GameHeader
-          game={game}
-          teamScores={teamScores}
-          currentTime={currentTime}
-          showEvents={showSidebar}
-          onToggleEvents={() => setShowSidebar(!showSidebar)}
-        />
+      {/* Orientation Debug Indicator */}
+      <div className="fixed top-4 left-4 z-50 bg-blue-600 text-white px-3 py-1 rounded text-sm font-mono">
+        {orientation} ({isPortrait ? 'portrait' : 'landscape'})
+        </div>
 
-      {/* Video Container - with dynamic margins for sidebars */}
-      <div 
-        className="relative h-full flex items-center justify-center transition-all duration-300"
-        style={{
-          marginRight: showSidebar ? `${sidebarWidth}px` : '0'
-        }}
-      >
-          
-          <VideoPlayer
+      {/* Layout based on orientation */}
+      {isLandscape ? (
+        /* Desktop/Landscape Layout */
+        <div className="h-screen bg-black relative overflow-hidden">
+          {/* Game Header */}
+          <GameHeader
             game={game}
+            teamScores={teamScores}
+            currentTime={currentTime}
+            showEvents={showSidebar}
+            onToggleEvents={() => setShowSidebar(!showSidebar)}
+          />
+
+          {/* Video Container - with dynamic margins for sidebars */}
+          <div 
+            className="relative h-full flex items-center justify-center transition-all duration-300"
+            style={{
+              marginRight: showSidebar ? `${sidebarWidth}px` : '0'
+            }}
+          >
+            <VideoPlayer
+              game={game}
+              events={filteredEvents}
+              allEvents={allEvents}
+              currentEventIndex={currentEventIndex}
+          onTimeUpdate={handleTimeUpdate}
+              onEventClick={handleEventClick}
+              onSeekToTimestamp={seekToTimestamp}
+            />
+              </div>
+          
+          {/* Unified Sidebar */}
+          <UnifiedSidebar
+            isOpen={showSidebar}
+            onClose={() => setShowSidebar(false)}
+            activeTab={sidebarTab}
+            onTabChange={setSidebarTab}
+            onWidthChange={setSidebarWidth}
             events={filteredEvents}
             allEvents={allEvents}
             currentEventIndex={currentEventIndex}
-          onTimeUpdate={handleTimeUpdate}
             onEventClick={handleEventClick}
+            eventTypeFilters={eventTypeFilters}
+            setEventTypeFilters={setEventTypeFilters}
+            teamFilter={teamFilter}
+            setTeamFilter={setTeamFilter}
+            showFilters={showFilters}
+            setShowFilters={setShowFilters}
+            tacticalData={tacticalData} 
+            tacticalLoading={tacticalLoading} 
+            gameId={gameId}
             onSeekToTimestamp={seekToTimestamp}
-          />
+                />
+              </div>
+      ) : (
+        // Mobile Portrait Layout (YouTube-style)
+                <div>
 
-          </div>
-          
-        {/* Unified Sidebar */}
-                <UnifiedSidebar
-          isOpen={showSidebar}
-          onClose={() => setShowSidebar(false)}
+        {/* Bottom Section: Dark Sidebar (YouTube-style) */}
+        <UnifiedSidebar
+          isOpen={true} // Always open on mobile
+          onClose={() => {}} // No close on mobile  
+          isMobile={true} // Mobile positioning
+          mobileVideoComponent={
+            <MobileVideoPlayer
+              game={game}
+              teamScores={teamScores}
+              currentTime={currentTime}
+              filteredEvents={filteredEvents}
+              allEvents={allEvents}
+              currentEventIndex={currentEventIndex}
+              handleTimeUpdate={handleTimeUpdate}
+              handleEventClick={handleEventClick}
+              seekToTimestamp={seekToTimestamp}
+            />
+          }
           activeTab={sidebarTab}
           onTabChange={setSidebarTab}
-          onWidthChange={setSidebarWidth}
+          onWidthChange={() => {}} // No width change on mobile
           events={filteredEvents}
           allEvents={allEvents}
           currentEventIndex={currentEventIndex}
@@ -255,8 +389,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             gameId={gameId}
           onSeekToTimestamp={seekToTimestamp}
       />
-
-      </div>
+        </div>
+      )}
     </div>
   )
 } 

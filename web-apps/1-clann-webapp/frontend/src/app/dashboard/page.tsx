@@ -88,6 +88,11 @@ export default function Dashboard() {
       setGames(gamesResponse.games || [])
       setDemoGames(demoGamesResponse.games || [])
       setTeams(userTeams)
+      
+      // Auto-fill team name with user's first real team (not demo)
+      if (userTeams.length > 0 && !uploadTeamName) {
+        setUploadTeamName(userTeams[0].name)
+      }
     } catch (err: any) {
       console.error('Failed to load user data:', err)
       setError(err.message || 'Failed to load data')
@@ -157,7 +162,6 @@ export default function Dashboard() {
       
       const response = await apiClient.createTeam({
         name: createTeamName.trim(),
-        description: createTeamDescription.trim() || undefined,
         color: '#016F32'
       })
       
@@ -319,6 +323,14 @@ export default function Dashboard() {
             
             {/* Action buttons - stacked on mobile, horizontal on desktop */}
             <div className="flex flex-col w-full md:flex-row md:w-auto md:items-center gap-3 md:gap-4">
+              {/* Upgrade to Premium */}
+              <button
+                onClick={() => window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')}
+                className="border border-[#016F32] text-[#016F32] px-6 py-2.5 rounded-lg font-medium w-full md:w-auto hover:bg-[#016F32]/10 transition-colors"
+              >
+                Upgrade to Premium
+              </button>
+
               <button 
                 onClick={handleUploadVideoClick}
                 className="bg-[#016F32] text-white px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
@@ -327,7 +339,15 @@ export default function Dashboard() {
               </button>
               
               <button 
-                onClick={() => setShowJoinModal(true)}
+                onClick={() => {
+                  setActiveTab('teams')
+                  setTimeout(() => {
+                    document.getElementById('join-team-section')?.scrollIntoView({ 
+                      behavior: 'smooth', 
+                      block: 'center' 
+                    })
+                  }, 100)
+                }}
                 className="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg font-medium w-full md:w-auto"
               >
                 Join Team
@@ -366,7 +386,7 @@ export default function Dashboard() {
         <div className="flex items-center gap-6 mb-12">
           <div className="flex items-center gap-8">
             <div>
-              <h1 className="text-3xl font-bold mb-2">
+              <h1 className="text-3xl font-bold mb-2 text-gray-900">
                 {teams.length > 0 ? teams[0].name : 
                   <div className="flex items-center gap-2 text-gray-500">
                     Upload footage to create a team
@@ -378,12 +398,6 @@ export default function Dashboard() {
             </button>
                   </div>
                 }
-                <span 
-                  onClick={() => window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')}
-                  className="ml-2 px-2 py-1 text-sm rounded-full bg-gray-400/10 text-gray-400 hover:bg-green-400/10 hover:text-green-400 cursor-pointer transition-colors"
-                >
-                  FREE TIER - Upgrade
-                </span>
               </h1>
               <div className="flex items-center gap-2 text-gray-600">
                 <span>⚽</span>
@@ -555,6 +569,10 @@ export default function Dashboard() {
               </div>
             ) : (
               <div className="space-y-4">
+                {/* Recent Games */}
+                {games.length > 0 && (
+                  <h2 className="text-lg font-semibold text-gray-900 pb-2">Recent Games</h2>
+                )}
                 {games.map((game: any) => (
                   <div
                     key={game.id}
@@ -566,7 +584,7 @@ export default function Dashboard() {
                         className="flex justify-between items-start cursor-pointer"
                   >
                       <div className="space-y-3 min-w-0 flex-1 mr-4">
-                        <h3 className="text-xl font-bold truncate">{game.title}</h3>
+                        <h3 className="text-xl font-bold truncate text-gray-900">{game.title}</h3>
                         
                         <div className="space-y-2 text-sm text-gray-600">
                           <div className="flex items-center gap-2">
@@ -605,12 +623,7 @@ export default function Dashboard() {
                           {game.status.toUpperCase()}
                           {game.status === 'analyzed' && <span className="text-lg">→</span>}
                         </div>
-                        
-                        {game.status === 'analyzed' && (
-                          <span className="text-sm text-gray-500 whitespace-nowrap">
-                            Click to view analysis
-                          </span>
-                        )}
+
                       </div>
                     </div>
 
@@ -710,7 +723,11 @@ export default function Dashboard() {
                     </div>
                   </button>
                   
-                  <div className="p-6 border border-gray-300 rounded-lg">
+                  <button
+                    type="button"
+                    onClick={handleUploadVideoClick}
+                    className="p-6 border border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors w-full text-left"
+                  >
                     <div className="text-center mb-4">
                       <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3">
                         <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -720,7 +737,7 @@ export default function Dashboard() {
                       <h3 className="font-semibold text-gray-900 mb-1">VEO URL</h3>
                       <p className="text-sm text-gray-500">Paste URL from Veo, Trace, or Spiideo</p>
                     </div>
-                  </div>
+                  </button>
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-6">
@@ -750,12 +767,12 @@ export default function Dashboard() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Match Title</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Opposition</label>
                         <input
                           type="text"
                           value={uploadGameTitle}
                           onChange={(e) => setUploadGameTitle(e.target.value)}
-                          placeholder="Enter match title"
+                          placeholder="Arsenal"
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
                           required
                         />
@@ -799,10 +816,7 @@ export default function Dashboard() {
                 </button>
               ))}
             </div>
-            <div className="p-6 border-b border-gray-100">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Team Sharing</h2>
-              <p className="text-gray-600">Share your team codes to invite others</p>
-            </div>
+
             
             <div className="p-6 space-y-6">
               {/* Your Teams for Sharing */}
@@ -876,25 +890,69 @@ export default function Dashboard() {
             </div>
               )}
               
-              {/* Quick Actions */}
+              {/* Join/Create Team Section */}
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
-                <div className="flex flex-wrap gap-3">
-                  <button
-                    onClick={() => setShowJoinModal(true)}
-                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50"
-                  >
-                    Join Team
-                  </button>
-                  <button
-                    onClick={() => setShowCreateTeamModal(true)}
-                    className="px-4 py-2 bg-[#016F32] text-white rounded-lg font-medium hover:bg-[#016F32]/90"
-                  >
-                    Create Team
-                  </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Join Team */}
+                  <div id="join-team-section">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Join Team</h3>
+                    <form onSubmit={handleJoinTeam} className="bg-gray-50 rounded-lg p-4">
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Team Code</label>
+                        <input
+                          type="text"
+                          value={joinTeamCode}
+                          onChange={(e) => setJoinTeamCode(e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          placeholder="e.g., ARS269"
+                          required
+                          disabled={joinTeamLoading}
+                        />
+                        <p className="text-xs text-gray-500 mt-1">
+                          Try demo codes: ARS269, CHE277, LIV297, MCI298, MUN304
+                        </p>
+                      </div>
+                      <div className="flex justify-end">
+                        <button
+                          type="submit"
+                          disabled={joinTeamLoading || !joinTeamCode.trim()}
+                          className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {joinTeamLoading ? 'Joining...' : 'Join Team'}
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+
+                  {/* Create Team */}
+                  <div id="create-team-section">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Create Team</h3>
+                    <form onSubmit={handleCreateTeam} className="bg-gray-50 rounded-lg p-4">
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
+                        <input
+                          type="text"
+                          value={createTeamName}
+                          onChange={(e) => setCreateTeamName(e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500"
+                          placeholder="My Football Club"
+                          required
+                          disabled={createTeamLoading}
+                          maxLength={255}
+                        />
+                      </div>
+                      <div className="flex justify-end">
+                        <button
+                          type="submit"
+                          disabled={createTeamLoading || !createTeamName.trim()}
+                          className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {createTeamLoading ? 'Creating...' : 'Create Team'}
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                
-                
               </div>
                   </div>
               </div>
@@ -1113,6 +1171,15 @@ export default function Dashboard() {
             </div>
 
             <div className="space-y-4">
+              <button
+                onClick={() => {
+                  window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')
+                  setShowSettingsModal(false)
+                }}
+                className="w-full text-left px-4 py-2 text-[#016F32] hover:bg-[#016F32]/10 rounded-lg font-medium"
+              >
+                Upgrade to Premium
+              </button>
               <button
                 onClick={() => {
                   localStorage.removeItem('auth_token')
