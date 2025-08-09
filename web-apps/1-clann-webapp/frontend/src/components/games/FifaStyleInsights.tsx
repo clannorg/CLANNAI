@@ -57,8 +57,8 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
   // Parse the raw tactical data to extract structured insights
   let matchOverview = null
   let redTeamData = null
-  let managerRecommendations = null
-  let keyMoments = []
+  let managerRecommendations: any = null
+  let keyMoments: any[] = []
 
   // Extract data from tactical analysis
   if (tacticalData.tactical?.red_team) {
@@ -77,23 +77,30 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
     keyMoments = tacticalData.analysis.key_moments || []
   }
 
-  // Normalize manager recommendations structure
-  // Supports both array form and object-of-arrays form
-  let redRecommendationsList: string[] = []
-  if (managerRecommendations?.red_team) {
-    const redRec = managerRecommendations.red_team as any
-    if (Array.isArray(redRec)) {
-      redRecommendationsList = redRec.filter((v: any) => typeof v === 'string')
-    } else if (redRec && typeof redRec === 'object') {
-      try {
-        redRecommendationsList = Object.values(redRec)
-          .flat()
-          .filter((v: any) => typeof v === 'string')
-      } catch {
-        redRecommendationsList = []
-      }
+<<<<<<< HEAD
+  // Normalize manager recommendations shape
+  const normalizeRecommendations = (value: any): string[] => {
+    if (!value) return []
+    if (Array.isArray(value)) return value
+    if (typeof value === 'string') return [value]
+    if (typeof value === 'object') {
+      const flat: string[] = []
+      Object.values(value).forEach((section: any) => {
+        if (!section) return
+        if (Array.isArray(section)) {
+          section.forEach((item) => {
+            if (typeof item === 'string') flat.push(item)
+          })
+        } else if (typeof section === 'string') {
+          flat.push(section)
+        }
+      })
+      return flat
     }
+    return []
   }
+
+  const redTeamRecommendations: string[] = normalizeRecommendations(managerRecommendations?.red_team)
 
   return (
     <div className="space-y-6">
@@ -184,7 +191,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
       )}
 
       {/* FIFA-Style Manager Recommendations */}
-      {redRecommendationsList.length > 0 && (
+      {redTeamRecommendations.length > 0 && (
         <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-500/30 rounded-xl p-6 backdrop-blur-sm">
           <div className="flex items-center mb-4">
             <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
@@ -194,7 +201,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
           </div>
 
           <div className="space-y-3">
-            {redRecommendationsList.map((recommendation: string, i: number) => (
+            {redTeamRecommendations.map((recommendation: string, i: number) => (
               <div key={i} className="bg-black/20 rounded-lg p-4 flex items-start space-x-3">
                 <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-xs font-bold">{i + 1}</span>
