@@ -105,10 +105,10 @@ QUALITY FOCUS:
         """Create definitive events list using direct timestamp matching"""
         print(f"🎯 Building definite events for {match_id}")
         
-        data_dir = Path("../data") / match_id
+        data_dir = Path("../outputs") / match_id
         veo_ground_truth_path = data_dir / "1_veo_ground_truth.json"
-        ai_timeline_path = data_dir / "5_complete_timeline.txt"  # Use complete timeline, not just validated
-        output_path = data_dir / "7.5_definite_events.txt"
+        ai_timeline_path = data_dir / "6_validated_timeline.txt"  # Use validated timeline from step 6
+        output_path = data_dir / "7_definite_events.txt"
         
         # Check input files exist
         if not veo_ground_truth_path.exists():

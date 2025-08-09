@@ -1,0 +1,968 @@
+[
+  {
+    "type": "turnover",
+    "timestamp": 180,
+    "description": "Blue team defends and wins possession.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 285,
+    "description": "Header from the Blue team clears the ball.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 300,
+    "description": "Black/White team takes a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 315,
+    "description": "Blue team takes a corner kick from the right side.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 332,
+    "description": "Shot saved by the Blue goalkeeper.",
+    "team": "black_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 360,
+    "description": "Blue defender intercepts and clears the ball.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 452,
+    "description": "Foul by the Blue team, free kick for Black/White.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 480,
+    "description": "Blue team wins the ball and launches a counter-attack.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 510,
+    "description": "Blue team takes a set piece from the left side.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 525,
+    "description": "Black/White team takes a free kick from their own half.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 540,
+    "description": "Black/White team takes a set piece from the right wing.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 555,
+    "description": "Black/White team takes a corner kick from the right side.",
+    "team": "black_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 630,
+    "description": "Black/White team wins the ball back.",
+    "team": "black_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 645,
+    "description": "Black/White team gains possession in the midfield.",
+    "team": "black_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 675,
+    "description": "Blue team takes a free kick.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 720,
+    "description": "Black/White team takes a free kick from their own half.",
+    "team": "black_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 750,
+    "description": "Blue team intercepts a pass and takes control.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 825,
+    "description": "Black/White team gains possession after an aerial duel.",
+    "team": "black_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 855,
+    "description": "Blue team wins possession and moves into Black/White team's territory.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 911,
+    "description": "Header goes over the crossbar.",
+    "team": "black_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 930,
+    "description": "Blue defender intercepts with a header.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 945,
+    "description": "Black/White team takes a corner kick from the left side.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 960,
+    "description": "Black/White team attacks from a set piece, corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 975,
+    "description": "Black/White team takes a corner kick, scramble in front of goal.",
+    "team": "black_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1005,
+    "description": "Black/White team takes a free kick in Blue team's half.",
+    "team": "black_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1050,
+    "description": "Blue team prepares to take a free kick outside the penalty area.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1065,
+    "description": "Black/White team on the attack with a set piece, free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 1147,
+    "description": "Shot that goes wide",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1202,
+    "description": "Foul by the Black/White team in Blue team's half.",
+    "team": "black_white"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 1320,
+    "description": "Blue Team recovers the ball and transitions into an attack.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1395,
+    "description": "Black/White team takes a free kick from an attacking position.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 1524,
+    "description": "Shot blocked by a Blue defender.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1665,
+    "description": "Black/White team takes a short corner kick from the right side.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1680,
+    "description": "Black/White team takes a free kick from their half.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 1725,
+    "description": "Black/White team takes a corner kick, headed towards the goal.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1725,
+    "description": "Black/White team takes a corner kick",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1785,
+    "description": "Black/White team takes a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1830,
+    "description": "Black/White team takes a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1920,
+    "description": "Black/White team takes a set piece from the left side.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1935,
+    "description": "Black/White team is on the attack, beginning with a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 1965,
+    "description": "Black/White team takes a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 2112,
+    "description": "Shot blocked by Blue defender.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2130,
+    "description": "Black/White team starts with an attacking free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 2287,
+    "description": "Shot blocked by Blue defender",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2295,
+    "description": "Black/White team takes a free-kick into the Blue team's penalty area.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2310,
+    "description": "Black/White team takes the throw-in.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2505,
+    "description": "Black/White team takes a free kick from their own half.",
+    "team": "black_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2520,
+    "description": "Black/White team has possession, starting with a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2610,
+    "description": "Blue team takes a throw-in.",
+    "team": "blue"
+  },
+  {
+    "type": "goal",
+    "timestamp": 2745,
+    "description": "The play begins with both teams contesting for possession",
+    "team": "unknown"
+  },
+  {
+    "type": "goal",
+    "timestamp": 2753,
+    "description": "The Black/White team is celebrating a goal.",
+    "team": "unknown"
+  },
+  {
+    "type": "foul",
+    "timestamp": 2767,
+    "description": "Foul by the Blue team inside their own penalty area.",
+    "team": "blue"
+  },
+  {
+    "type": "save",
+    "timestamp": 2827,
+    "description": "Blue goalkeeper catches the ball.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 2865,
+    "description": "Black/White team takes a free kick into the penalty area.",
+    "team": "black_white"
+  },
+  {
+    "type": "save",
+    "timestamp": 2958,
+    "description": "Blue goalkeeper punches the ball clear.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 3404,
+    "description": "Shot by the Black/White team goes over the bar.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 3821,
+    "description": "Free-kick into penalty area.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4334,
+    "description": "Blue team player heads the ball towards goal. Saved.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4350,
+    "description": "Blue team takes a corner kick from the right side.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4455,
+    "description": "Black/White team takes a free kick from the left side.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4470,
+    "description": "Blue team takes a long throw-in.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4530,
+    "description": "Blue team corner kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4545,
+    "description": "Black/White team initiates play from a set piece.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4635,
+    "description": "Black/White team initiates a set piece with a long free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4665,
+    "description": "Black/White team takes a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "save",
+    "timestamp": 4733,
+    "description": "Shot from the Blue team is saved by the Black/White goalkeeper.",
+    "team": "blue"
+  },
+  {
+    "type": "save",
+    "timestamp": 4735,
+    "description": "Blue team's goalkeeper catches the ball, making a save.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4740,
+    "description": "Blue team takes a free kick from the left side.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4740,
+    "description": "Blue team takes a free kick.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4740,
+    "description": "The Blue team takes a free kick from the left side.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4755,
+    "description": "Black/White team takes an attacking free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4770,
+    "description": "Black/White team takes a corner kick from the left.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4800,
+    "description": "Blue team takes a goal kick.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 4810,
+    "description": "Shot from Blue team is saved",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4815,
+    "description": "Blue team takes a goal kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4845,
+    "description": "Black/White team prepares to take a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4860,
+    "description": "Blue team prepares to take an attacking free kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4875,
+    "description": "Black/White team prepares to take a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4905,
+    "description": "Blue team takes a free kick near the Black/White team's penalty area.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 4950,
+    "description": "Blue team takes a free kick from inside their own half.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 4965,
+    "description": "Black/White team starts with possession from the kick-off.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5010,
+    "description": "Blue team prepares to take a free kick from their own half.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5100,
+    "description": "Black/White team prepares to take a set piece.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5130,
+    "description": "Blue team wins possession and takes a throw-in.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5145,
+    "description": "Blue player takes a quick throw-in.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5205,
+    "description": "Blue team takes a long goal kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5325,
+    "description": "Black/White team prepares to take a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5340,
+    "description": "Blue team takes a free kick into the penalty area.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5355,
+    "description": "Black/White team takes a corner kick from the left side.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5385,
+    "description": "Play stopped, Black/White team preparing to take a goal kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5400,
+    "description": "Blue team goalkeeper distributes the ball long upfield.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5505,
+    "description": "Black/White team prepares to take a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5520,
+    "description": "Black/White team takes a free-kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5535,
+    "description": "Blue team takes a free kick from outside the penalty area.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5550,
+    "description": "Black/White team takes a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "save",
+    "timestamp": 5561,
+    "description": "The Blue team's goalkeeper makes a diving save.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5565,
+    "description": "Black/White team takes an attacking free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5595,
+    "description": "The Blue team wins possession in the opposition's half.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5685,
+    "description": "Play results in a goal kick for the Blue team.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5700,
+    "description": "Teams repositioning for set piece by Black/White team.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5715,
+    "description": "Blue team initiates play with a kick-off.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5760,
+    "description": "Black/White team launches an attack from a long free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "save",
+    "timestamp": 5767,
+    "description": "The Blue team's goalkeeper makes a diving save.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5820,
+    "description": "Blue team takes a throw-in.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5835,
+    "description": "Black/White team initiates play from a restart.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5850,
+    "description": "The Blue team takes a free kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5865,
+    "description": "Blue team prepares to take a free kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5880,
+    "description": "Black/White team takes a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5910,
+    "description": "Black/White team takes an attacking free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5925,
+    "description": "Black/White team takes a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5940,
+    "description": "Black/White team takes a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "save",
+    "timestamp": 5946,
+    "description": "The Blue team's goalkeeper makes a save.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5955,
+    "description": "The Blue team takes a free kick from their own penalty area.",
+    "team": "blue"
+  },
+  {
+    "type": "yellow_card",
+    "timestamp": 5956,
+    "description": "Blue team player is shown a red card.",
+    "team": "blue"
+  },
+  {
+    "type": "red_card",
+    "timestamp": 5956,
+    "description": "Blue team player is shown a red card.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 5970,
+    "description": "The Blue team wins possession in the opposition's half.",
+    "team": "blue"
+  },
+  {
+    "type": "turnover",
+    "timestamp": 6000,
+    "description": "Blue Team intercepts forward pass upfield.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6060,
+    "description": "The clip begins with the Blue team taking a goal kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6075,
+    "description": "Black/White team kicks off from the center circle.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6105,
+    "description": "Black/White team initiates an attack from a set piece.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6120,
+    "description": "Black/White team prepares to take a direct free-kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6135,
+    "description": "Black/White team takes a corner kick from the right side.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6150,
+    "description": "Black/White team takes a free-kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "save",
+    "timestamp": 6150,
+    "description": "Header is directed toward the goal. Saved.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6165,
+    "description": "Blue team successfully defends the attack and clears the ball.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6210,
+    "description": "Blue team's goalkeeper collects the ball and plays it out to a defender.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6225,
+    "description": "Blue team sets up for a goal kick.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6240,
+    "description": "Black/White team prepares to take a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6255,
+    "description": "Black/White team kicks off and maintains possession.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6270,
+    "description": "Black/White team kicks off to start the match.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6285,
+    "description": "The Black/White team kicks off.",
+    "team": "black_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6360,
+    "description": "Foul awarded to Black/White team.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6480,
+    "description": "Blue team Taking free kick",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 6487,
+    "description": "Shot is blocked by a Blue defender.",
+    "team": "black_white"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6491,
+    "description": "Offside foul against the Black/White team.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6495,
+    "description": "Blue team kicks off and establishes possession.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6540,
+    "description": "Black/White team takes a goal kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6555,
+    "description": "Blue team takes a throw-in.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6570,
+    "description": "Black/White team kicks off to start the play.",
+    "team": "black_white"
+  },
+  {
+    "type": "save",
+    "timestamp": 6598,
+    "description": "Shot is saved by the Blue team's diving goalkeeper.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6660,
+    "description": "The Blue team takes a short corner kick.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6675,
+    "description": "Free-kick to Blue team inside their own half.",
+    "team": "blue"
+  },
+  {
+    "type": "foul",
+    "timestamp": 6678,
+    "description": "Free-kick to Blue team inside their own half.",
+    "team": "blue"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6720,
+    "description": "Black/White team takes a long kick upfield.",
+    "team": "black_white"
+  },
+  {
+    "type": "goal",
+    "timestamp": 6825,
+    "description": "Goal scored by the Black/White team.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6855,
+    "description": "Black/White team takes a free kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 6862,
+    "description": "Shot is taken from the free kick, which goes high.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6870,
+    "description": "Black/White team takes a corner kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6885,
+    "description": "Blue team clears the ball from their penalty area following a set piece.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6900,
+    "description": "Black/White team takes a goal kick.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6930,
+    "description": "Black/White team substitution.",
+    "team": "black_white"
+  },
+  {
+    "type": "substitution",
+    "timestamp": 6930,
+    "description": "Black/White team substitution.",
+    "team": "black_white"
+  },
+  {
+    "type": "corner",
+    "timestamp": 6960,
+    "description": "Black/White and Blue teams preparing for kick-off.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 7735,
+    "description": "Blue team's goalkeeper catches the ball, making a save.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 7833,
+    "description": "Shot from the Blue team is saved by the Black/White goalkeeper.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 7907,
+    "description": "Shot from the free kick goes over the crossbar.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 8132,
+    "description": "Shot from the Blue team goes over the crossbar.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 8910,
+    "description": "Black/White team clears the ball with a header.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 9007,
+    "description": "Shot taken and goes over the crossbar for a goal kick.",
+    "team": "blue"
+  },
+  {
+    "type": "shot",
+    "timestamp": 9241,
+    "description": "The Blue team's goalkeeper makes a diving save.",
+    "team": "black_white"
+  },
+  {
+    "type": "shot",
+    "timestamp": 9437,
+    "description": "The shot goes over the crossbar for a goal kick.",
+    "team": "black_white"
+  }
+]

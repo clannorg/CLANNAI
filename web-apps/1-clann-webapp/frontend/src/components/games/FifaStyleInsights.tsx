@@ -77,6 +77,24 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
     keyMoments = tacticalData.analysis.key_moments || []
   }
 
+  // Normalize manager recommendations structure
+  // Supports both array form and object-of-arrays form
+  let redRecommendationsList: string[] = []
+  if (managerRecommendations?.red_team) {
+    const redRec = managerRecommendations.red_team as any
+    if (Array.isArray(redRec)) {
+      redRecommendationsList = redRec.filter((v: any) => typeof v === 'string')
+    } else if (redRec && typeof redRec === 'object') {
+      try {
+        redRecommendationsList = Object.values(redRec)
+          .flat()
+          .filter((v: any) => typeof v === 'string')
+      } catch {
+        redRecommendationsList = []
+      }
+    }
+  }
+
   return (
     <div className="space-y-6">
       {/* FIFA-Style Match Overview Header */}
@@ -166,7 +184,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
       )}
 
       {/* FIFA-Style Manager Recommendations */}
-      {managerRecommendations?.red_team && (
+      {redRecommendationsList.length > 0 && (
         <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-500/30 rounded-xl p-6 backdrop-blur-sm">
           <div className="flex items-center mb-4">
             <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
@@ -176,7 +194,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
           </div>
 
           <div className="space-y-3">
-            {managerRecommendations.red_team.map((recommendation: string, i: number) => (
+            {redRecommendationsList.map((recommendation: string, i: number) => (
               <div key={i} className="bg-black/20 rounded-lg p-4 flex items-start space-x-3">
                 <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-xs font-bold">{i + 1}</span>

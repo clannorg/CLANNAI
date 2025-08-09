@@ -1,0 +1,233 @@
+{
+  "tactical_analysis": {
+    "blue_team": {
+      "strengths": [
+        {
+          "title": "Strong Defensive Set Piece Organization",
+          "description": "The team consistently demonstrated excellent organization and aerial dominance when defending set pieces. On numerous occasions, corners and free kicks into the box were effectively dealt with through strong first-contact headers and organized clearances, preventing the opposition from creating clear-cut chances from these situations.",
+          "evidence": [
+            "05:00 - The Black/White team takes a corner kick which is defended and cleared by the Blue team.",
+            "09:00 - The Black/White team takes a set piece from the right wing, sending the ball into the penalty area. The Blue team's defense successfully heads the ball clear of the box.",
+            "12:00 - Black/White team takes a free kick from their own half, sending a long ball towards the blue team's penalty area. The blue team defends the ball, heading it clear.",
+            "28:00 - Following a series of headers from the Black/White team, a Blue defender clears the ball off the goal line.",
+            "38:15 - Black/White team takes a free-kick into the Blue team's penalty area. The Blue team successfully defends the set piece by heading the ball clear..."
+          ],
+          "coaching_tip": "Maintain this defensive standard. Continue to drill zonal/man-marking responsibilities and reinforce the importance of aggressive first contact on all set piece deliveries."
+        },
+        {
+          "title": "Effective Counter-Attacking Intent",
+          "description": "The team's primary offensive threat comes from quick transitions after winning possession. There's a clear tactical instruction to attack space immediately upon a turnover, often utilizing the wings. This pattern was repeated throughout the match, showing good intent to play vertically and exploit the opposition's disorganization.",
+          "evidence": [
+            "05:00 - The Blue team gains possession and begins a counter-attack, moving the ball up the right side of the field...",
+            "06:30 - Blue team wins possession in midfield and immediately launches a quick attack. A player dribbles at speed down the right wing...",
+            "08:00 - The Blue team wins the ball and launches a quick counter-attack down the left side of the field.",
+            "16:15 - The Blue team successfully defends the set piece, clears the ball, and begins a counter-attack, moving play into the opposition's half."
+          ],
+          "coaching_tip": "Reinforce this positive intent, but focus on the quality of the first pass after the turnover. The decision-making (pass vs. dribble) and execution of this initial action is key to turning these counters into goal-scoring opportunities."
+        }
+      ],
+      "weaknesses": [
+        {
+          "title": "Lack of Offensive Final Product",
+          "description": "Despite successfully progressing the ball into the final third, particularly on the counter-attack, attacks consistently broke down. The team struggles to create clear goal-scoring opportunities, with play often fizzling out near the penalty area due to a lack of coherent movement, poor decision-making, or an inability to break down the opponent's organized defense.",
+          "evidence": [
+            "06:30 - ...advancing deep into the Black/White team's half, but the attack breaks down near the penalty area.",
+            "08:15 - The Blue team initiates an attack from an aerial win in the midfield... The Black/White team's defense successfully breaks up the attack and clears the ball...",
+            "43:48 - A Blue team player heads the ball toward the goal. 43:49 - The Black/White team's goalkeeper makes a diving save. (This was the only notable chance created)."
+          ],
+          "improvement": "Dedicate training sessions to final third patterns. Work on 2v1 and 3v2 scenarios, combination play between wingers and midfielders, and movement from the striker to create space. Emphasize shooting practice under pressure."
+        },
+        {
+          "title": "Defensive Discipline in the Penalty Area",
+          "description": "A single, critical lapse in defensive discipline inside the box decided the match. Conceding a penalty undid all the hard work from strong open play and set-piece defending. This points to a potential issue with rash decision-making in high-pressure defensive moments.",
+          "evidence": [
+            "46:07 - A foul is committed by the Blue team inside their penalty area, resulting in a penalty being awarded to the Black/White team."
+          ],
+          "improvement": "Drill 1v1 defensive scenarios inside the box. Coach defenders to stay on their feet, show attackers to their weaker foot or away from goal, and prioritize blocking shots over making risky tackles."
+        },
+        {
+          "title": "Losing Possession on Own Long Kicks & Throw-Ins",
+          "description": "The team consistently fails to secure possession from its own goal kicks and throw-ins. The opposition frequently wins the first or second ball, immediately putting the team back under pressure and negating the restart.",
+          "evidence": [
+            "06:15 - The Blue team takes a goal kick. The Black/White team wins the resulting aerial duel and gains possession...",
+            "12:15 - The Blue team takes the throw but loses possession...",
+            "19:00 - Blue team takes a throw-in from the left sideline. The Black/White team wins the initial header and gains control of the ball.",
+            "34:15 - The Blue team takes the throw-in but quickly loses the ball."
+          ],
+          "improvement": "Develop structured set-ups for goal kicks to fight for the second ball. Implement 2-3 simple but effective throw-in routines in the attacking and middle thirds to ensure possession is retained."
+        }
+      ],
+      "key_players": [
+        {
+          "impact": "Goalkeeper: A commanding presence who made crucial saves and was reliable when collecting crosses and long balls, preventing several opposition attacks from developing.",
+          "evidence": "05:32: A shot is taken by the Black/White attacker, which is saved by the Blue goalkeeper. 08:55 the Blue team goalkeeper catches the ball. 28:51 The Blue team's goalkeeper catches the ball, securing possession. 40:00 - The Blue team's goalkeeper comes out of his goal to comfortably collect the ball..."
+        },
+        {
+          "impact": "Central Defenders: A dominant aerial unit that was key to the team's strength in defending set pieces. They made numerous vital clearances and blocks throughout the match.",
+          "evidence": "09:00 - The Blue team's defense successfully heads the ball clear of the box. 16:04: A shot by the Black/White team from inside the penalty area is blocked by a Blue defender. 28:00 - ...a Blue defender clears the ball off the goal line."
+        }
+      ],
+      "formation_analysis": {
+        "observed_formation": "4-3-3 (Best Guess)",
+        "effectiveness": "The formation provided a solid defensive structure, particularly in the midfield, which allowed the team to win the ball and launch counters. However, it often left the lone striker isolated, contributing to attacks breaking down in the final third. The midfield and attack appeared disconnected.",
+        "adjustments": "Encourage the two wider central midfielders to make more aggressive forward runs to support the attack and create overloads. This will provide more passing options in the final third and prevent the striker from being isolated against the opposition's backline."
+      },
+      "set_pieces": {
+        "attacking": "Ineffective. Attacking set pieces, including free kicks and corners, failed to threaten the opposition. Deliveries were often cleared by the first defender or possession was lost on the second ball.",
+        "defending": "Excellent. The team was well-drilled and aerially dominant, consistently clearing danger from corners and free kicks. This was a major strength, undone only by a single lapse in concentration leading to the penalty."
+      },
+      "transitions": {
+        "attack_to_defense": "Organized and quick to recover. The team generally gets back into its defensive shape effectively after losing the ball, forcing the opposition into slow build-up play rather than allowing counters.",
+        "defense_to_attack": "The team's core attacking identity. The first look is always to play forward quickly into space for the wingers after a turnover. This is a clear strength in intent, but needs refinement in execution to be more potent."
+      }
+    },
+    "red_team": {
+      "strengths": [
+        {
+          "title": "Dominance in Aerial Duels and Second Balls",
+          "description": "The team consistently won aerial challenges in midfield, especially from goal kicks and long balls. This physicality allowed them to disrupt the opponent's build-up and launch direct attacks by immediately gaining possession in advanced areas.",
+          "evidence": [
+            "06:15 - The Blue team takes a goal kick. The Black/White team wins the resulting aerial duel and gains possession...",
+            "06:45 - The Black/White team takes a goal kick... The Black/White team gains possession from the second ball.",
+            "09:45 - After an aerial duel in the midfield, the Black/White team wins the initial header...",
+            "15:15 - The Black/White team wins the aerial duel to gain possession.",
+            "28:30 - Black/White team wins an aerial duel in the midfield and launches a quick attack.",
+            "36:00 - The clip begins with an aerial duel in midfield, which is won by the Black/White team."
+          ],
+          "coaching_tip": "Continue to coach aggressive positioning and timing on opposition goal kicks. Ensure midfielders are drilled to anticipate the landing zone of the first header to secure the second ball decisively."
+        },
+        {
+          "title": "Threat from Attacking Set Pieces",
+          "description": "The team consistently created scoring opportunities from free kicks and corner kicks. While finishing was inconsistent, the quality of delivery and organised movement in the box generated numerous shots, scrambles, and sustained pressure, culminating in a decisive penalty.",
+          "evidence": [
+            "09:15 - Black/White team takes a corner kick from the right side. A header is attempted...",
+            "16:00 - ...A shot by the Black/White team from inside the penalty area is blocked by a Blue defender.",
+            "23:15 - ...A subsequent shot by a Black/White player is blocked by a Blue defender.",
+            "28:00 - Following a series of headers from the Black/White team, a Blue defender clears the ball off the goal line.",
+            "32:15 - Following the initial clearance by the Blue team, a Black/White player takes a shot from outside the penalty area which is blocked...",
+            "46:07 - A foul is committed by the Blue team inside their penalty area, resulting in a penalty being awarded to the Black/White team."
+          ],
+          "coaching_tip": "Maintain this strength by continuing to drill set-piece routines. Add variations, such as short corners (used at 27:45), to keep opponents guessing. Focus training on reactive finishing from second balls and rebounds in the box."
+        }
+      ],
+      "weaknesses": [
+        {
+          "title": "Vulnerability to Counter-Attacks",
+          "description": "After losing possession in the attacking third, particularly after our own set pieces were cleared, the team was frequently exposed to quick counter-attacks by the Blue team. This suggests a poor rest-defense structure or slow transitions from attack to defense.",
+          "evidence": [
+            "05:00 - The Black/White team takes a corner kick which is defended and cleared... The Blue team gains possession and begins a counter-attack...",
+            "16:15 - The Blue team successfully defends the set piece, clears the ball, and begins a counter-attack...",
+            "29:45 - The Blue team's goalkeeper punches the ball clear... Following the clearance, the Blue team gains possession and begins a counter-attack...",
+            "30:45 - The Black/White team loses possession in the attacking half. The Blue team recovers the ball and starts a counter-attack...",
+            "36:15 - The Blue team gains possession and transitions into an attack, moving the ball up the field..."
+          ],
+          "improvement": "Implement a clear rest-defense structure. On all attacking set pieces, designate three players (e.g., both CBs and a holding midfielder) to stay back and form a compact defensive triangle, preventing easy through balls and delaying the counter."
+        },
+        {
+          "title": "Over-reliance on Direct, Long Balls",
+          "description": "While effective at times, the default attacking plan often involved a long ball from deep. This led to many contested 50/50 situations and frequent turnovers, ceding possession and control to the opponent unnecessarily. The build-up became predictable.",
+          "evidence": [
+            "02:30 - They play a long ball forward, which is then won by the Blue team.",
+            "07:45 - The Black/White team plays a long ball from deep inside their own half... Possession remains contested...",
+            "08:45 - Black/White team takes a free kick from their own half, launching the ball towards the Blue team's penalty area... the Blue team goalkeeper catches the ball.",
+            "12:00 - Black/White team takes a free kick from their own half, sending a long ball... The blue team defends the ball, heading it clear.",
+            "25:00 - Black/White team initiates play with a long aerial pass from their own half. The Blue team wins the initial header...",
+            "27:00 - The Black/White team kicks off and plays a long ball into the Blue team's half. The Blue team wins the initial header..."
+          ],
+          "improvement": "Encourage defenders and midfielders to be braver in possession. Drill patterns for playing through the midfield as a primary option, using the long ball as a tactical variation rather than the default plan. This will improve possession stats and reduce predictability."
+        }
+      ],
+      "key_players": [
+        {
+          "impact": "Aerial Specialist/Target Man: Consistently won headers in midfield from goal kicks and long balls, providing a crucial platform for attacks and disrupting the opponent's rhythm.",
+          "evidence": "06:15, 06:45, 09:45, 11:45, 15:15, 28:30, 36:00"
+        },
+        {
+          "impact": "Set-Piece Taker: The quality of delivery from corners and free kicks was a primary source of attacking threat throughout the match, repeatedly putting the Blue defense under pressure.",
+          "evidence": "09:00, 16:00, 17:45, 23:15, 28:00, 30:30"
+        },
+        {
+          "impact": "Goalkeeper: Made a crucial diving save late in the game to deny the opponent a clear scoring opportunity, protecting the result.",
+          "evidence": "43:49: The Black/White team's goalkeeper makes a diving save."
+        }
+      ],
+      "formation_analysis": {
+        "observed_formation": "4-4-2 or 4-2-3-1 (Direct)",
+        "effectiveness": "The formation was effective in facilitating a direct, physical game plan centered on winning aerial duels and creating chances from set pieces. However, it often left the team stretched during transitions, making them vulnerable to counter-attacks when midfielders pushed forward.",
+        "adjustments": "Maintain the formation but emphasize the defensive responsibilities of the holding midfielders. They must provide better cover for the backline when possession is lost in the attacking half, ensuring the gap between defense and midfield is not exploited."
+      },
+      "set_pieces": {
+        "attacking": "Excellent. A clear strength. Generated numerous shots, forced a goal-line clearance (28:00), and ultimately won the penalty (46:07). Finishing could be more clinical, but chance creation was high.",
+        "defending": "Generally solid. The team dealt with Blue's corners and free kicks effectively, often clearing with decisive headers and initiating their own forward moves. The one major chance conceded was well-handled by the goalkeeper (43:49)."
+      },
+      "transitions": {
+        "attack_to_defense": "A significant weakness. The team was slow to react after losing the ball high up the pitch, leaving large spaces for the opposition to counter-attack into. This was most evident after cleared set pieces.",
+        "defense_to_attack": "Functional but one-dimensional. Transitions were often initiated by winning a header and playing a direct forward pass immediately. While this created some quick attacks (28:30, 36:00), it lacked the composure to build sustained pressure through controlled counter-attacks."
+      }
+    }
+  },
+  "match_overview": {
+    "final_score": "1-0 (Black/White)",
+    "match_summary": "A highly physical and direct contest where the Black/White team leveraged their aerial superiority and set-piece threat. While vulnerable on the counter-attack, their defense held firm, and sustained pressure in the final third eventually earned a game-winning penalty late in the match.",
+    "key_moments": [
+      {
+        "timestamp": "28:00",
+        "event": "Black/White free kick results in a goal-line clearance by a Blue defender.",
+        "significance": "Demonstrated the severe pressure Black/White was creating from set pieces and how close they were to scoring."
+      },
+      {
+        "timestamp": "43:49",
+        "event": "Black/White goalkeeper makes a crucial diving save from a Blue header.",
+        "significance": "A match-saving moment that preserved the clean sheet and kept the game level, allowing for the later victory."
+      },
+      {
+        "timestamp": "46:07",
+        "event": "A penalty is awarded to the Black/White team after a foul in the box.",
+        "significance": "The decisive moment of the match, rewarding persistent attacking play in the final third."
+      },
+      {
+        "timestamp": "46:15",
+        "event": "Black/White team celebrates a goal, indicating a successful penalty conversion.",
+        "significance": "The game-winning goal, securing the victory."
+      }
+    ],
+    "tempo_analysis": "The match was played at a frantic, high tempo with play concentrated in transitional phases. Frequent long balls, aerial duels, and turnovers in midfield created a chaotic rhythm, favoring physical dominance over patient, controlled possession."
+  },
+  "manager_recommendations": {
+    "blue_team": {
+      "immediate_fixes": [
+        "Conduct a tactical review of the penalty incident (46:07) with the entire defensive unit, reinforcing principles of staying on feet and channeling attackers away from goal.",
+        "Implement two basic, possession-retaining throw-in routines to be used in the next match to address the repeated loss of possession from restarts (e.g., 12:15, 19:00)."
+      ],
+      "training_focus": [
+        "Final Third Combination Play: Design drills focused on movement, passing triangles, and overlaps between midfielders and attackers to improve cohesion and create higher quality chances.",
+        "Counter-Attack Execution: Practice transition scenarios (4v3, 3v2) with an emphasis on the quality and speed of the first forward pass to turn counter-attacking intent into goals.",
+        "Winning Second Balls: Structure training games around winning second balls from long kicks (both offensive and defensive) to gain a competitive edge in the midfield battle."
+      ],
+      "player_development": [
+        "Attacking Midfielders/Wingers: Focus on individual coaching to improve decision-making in the final third. Review clips to identify moments to pass, cross, or shoot to increase attacking efficiency.",
+        "Defenders: While strong overall, continue 1v1 defensive coaching to build confidence and ensure composed decision-making under pressure inside the penalty area."
+      ]
+    },
+    "red_team": {
+      "immediate_fixes": [
+        "Reinforce Rest-Defense Principles: For the next match, explicitly assign and drill the positions of 2 CBs and 1 DM during all attacking corners and wide free kicks to immediately nullify counter-attacks.",
+        "Diversify Build-Up Play: Instruct defenders to look for short passes into the midfielders' feet as the first option, using the long ball as a surprise tactic rather than a primary strategy."
+      ],
+      "training_focus": [
+        "Attack vs. Defense Transition Drills: Focus on the moment possession is lost. Run drills where attackers lose the ball and must immediately transition to a defensive mindset, practicing recovery runs and communication to reform the defensive block.",
+        "Finishing Under Pressure (Set Pieces): Recreate set-piece scenarios in training, focusing on players reacting to second balls and rebounds inside a crowded penalty area to improve composure and finishing.",
+        "Possession-Based Build-Up Patterns: Work on patterns involving defenders, holding midfielders, and checking forwards to create reliable pathways to progress the ball on the ground through the thirds of the pitch."
+      ],
+      "player_development": [
+        "Central Midfielders: Work on securing the second ball and immediately connecting a simple pass to a teammate to establish controlled possession, rather than flicking it into another contested area.",
+        "Defenders: Improve decision-making on the ball to recognize when to play a short, safe pass to build from the back versus when a direct long ball is the correct option.",
+        "Wingers/Forwards: Develop movement to provide short passing options during build-up phases, helping the team break the opponent's press without resorting to a long ball."
+      ]
+    },
+    "general": {
+      "match_summary": "Tactical analysis for Blue vs Red teams (Red = Black/White)",
+      "generated_at": "2025-08-08T17:26:34.812667"
+    }
+  }
+}

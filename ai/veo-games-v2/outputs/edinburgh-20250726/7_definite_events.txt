@@ -1,0 +1,300 @@
+# Definite Events - edinburgh-20250726
+# Generated: 2025-08-08T16:35:32.365249
+# Method: Direct VEO timestamp matching with AI descriptions
+# Quality: VEO events matched within ±30 seconds
+
+Okay, let's analyze the AI timeline and match the VEO ground truth events using the specified ±30 second tolerance and output format.
+
+=== DEFINITE SHOTS ===
+Timestamp: 05:32 (-10 seconds)
+Team: Black/White
+Description: Black/White team shot from inside the penalty area **SAVED** by the Blue goalkeeper. Evidence: "A shot is taken by the Black/White attacker, which is saved by the Blue goalkeeper."
+Outcome: saved
+VEO Match: Confirmed shot at 5:42 - [High confidence]
+
+Timestamp: 09:15 (+4 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "A header is attempted from the corner, but the ball goes over the crossbar for a Blue team goal kick."
+Outcome: missed
+VEO Match: Confirmed shot at 9:11 - [High confidence]
+
+Timestamp: 15:45 (+21 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "An attacking player heads the ball, but it goes over the crossbar for a goal kick."
+Outcome: missed
+VEO Match: Confirmed shot at 15:24 - [Medium confidence - AI description slightly generic]
+
+Timestamp: 14:30 (-1 second, could also include AI at 15:45)
+Team: Black/White
+Description: Black/White team shot/cross from inside the penalty area **BLOCKED** by a Blue defender. Evidence: "A shot or cross is blocked by a Blue defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 12:31 - [Low confidence, less accurate timestamp match, possible confusion with event at 14:30]
+
+Timestamp: 16:04 (+11 seconds)
+Team: Black/White
+Description: Black/White team shot from inside the penalty area **BLOCKED** by a Blue defender. Evidence: "A shot by the Black/White team from inside the penalty area is blocked by a Blue defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 15:24 - [Low confidence - further confirmation that there are multiple events in a short period of time - might have matched with the wrong event]
+
+Timestamp: 15:45 (-11 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "An attacking player heads the ball, but it goes over the crossbar for a goal kick."
+Outcome: missed
+VEO Match: Confirmed shot at 15:24 - [Low confidence - as there is also an AI event at 16:04 - not able to distinguish which event is which at this timestamp. Possible multiple events at this time]
+
+Timestamp: None within range
+Team: N/A
+Description: No matching AI descriptions within ±30 seconds.
+Outcome: N/A
+VEO Match: Confirmed shot at 6:22 - [No confidence]
+
+Timestamp: None within range
+Team: N/A
+Description: No matching AI descriptions within ±30 seconds.
+Outcome: N/A
+VEO Match: Confirmed shot at 17:53 - [No confidence]
+
+Timestamp: 23:15 (+3 seconds)
+Team: Black/White
+Description: Black/White team shot from outside the box **BLOCKED** by a Blue defender. Evidence: "A subsequent shot by a Black/White player is blocked by a Blue defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 23:12 - [High confidence]
+
+Timestamp: ~28:00 (-27 seconds)
+Team: Black/White
+Description: Black/White team shot from an attack **CLEARED OFF THE LINE** by a Blue defender. Evidence: "Following a series of headers from the Black/White team, a Blue defender clears the ball off the goal line."
+Outcome: Cleared off the line
+VEO Match: Confirmed shot at 28:27 - [Medium confidence]
+
+Timestamp: 28:51 (+24 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **SAVED** (caught) by the Blue goalkeeper. Evidence: "Black/White team takes a corner kick, which is headed towards the goal... The Blue team's goalkeeper catches the ball, securing possession."
+Outcome: saved
+VEO Match: Confirmed shot at 28:27 - [Low confidence]
+
+Timestamp: ~30:15 (+17 seconds)
+Team: Black/White
+Description: Black/White team header from inside the penalty area **MISSED** (over the goal). Evidence: "The Black/White team attacks, heading the ball over the goal from inside the penalty area."
+Outcome: missed
+VEO Match: Confirmed shot at 29:58 - [Medium confidence]
+
+Timestamp: ~32:15 (-1:49 seconds)
+Team: Black/White
+Description: Black/White team shot from outside the penalty area **BLOCKED** by a defender. Evidence: "a Black/White player takes a shot from outside the penalty area which is blocked by a defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 34:04 - [No confidence, event too far away]
+
+Timestamp: ~32:15 (-2:44 seconds)
+Team: Black/White
+Description: Black/White team shot from outside the penalty area **BLOCKED** by a defender. Evidence: "a Black/White player takes a shot from outside the penalty area which is blocked by a defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 34:59 - [No confidence, event too far away]
+
+Timestamp: ~32:15 (-3:41 seconds)
+Team: Black/White
+Description: Black/White team shot from outside the penalty area **BLOCKED** by a defender. Evidence: "a Black/White player takes a shot from outside the penalty area which is blocked by a defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 35:56 - [No confidence, event too far away]
+
+Timestamp: 39:02 (+41 seconds)
+Team: Black/White
+Description: Black/White team shot **MISSED** (over the bar). Evidence: "A shot by the Black/White team goes over the bar."
+Outcome: missed
+VEO Match: Confirmed shot at 38:21 - [No confidence, event too far away]
+
+Timestamp: 43:48 (+14 seconds)
+Team: Blue
+Description: Blue team header from a cross **SAVED** (diving save) by the Black/White goalkeeper. Evidence: "A Blue team player heads the ball toward the goal... The Black/White team's goalkeeper makes a diving save."
+Outcome: saved
+VEO Match: Confirmed shot at 43:34 - [High confidence]
+
+Timestamp: 46:07 (+15 seconds)
+Team: Blue
+Description: "A foul is committed by the Blue team inside their penalty area, resulting in a penalty being awarded to the Black/White team."
+Outcome: N/A
+VEO Match: Confirmed shot at 45:52 - [Medium confidence - relevant context leading to a shot/goal]
+
+=== DEFINITE GOALS ===
+Timestamp: ~46:15 (+22 seconds)
+Team: Black/White
+Description: Black/White Goal (Penalty). Following a foul inside the penalty area, the Black/White team was awarded a penalty kick, which they successfully converted. The Black/White team begins the clip celebrating a goal. The Blue team takes the kick-off.
+VEO Match: Confirmed goal at 45:53 - [High confidence]
+
+Timestamp: ~65:30 (-2:42 seconds)
+Team: Blue
+Description: Blue Goal. The video starts with the Blue team celebrating a goal as they return to their own half. The Black/White team restarts play from the center circle.
+VEO Match: No match for the VEO shots logged at [68:12] - [No confidence - Goal scored too far away from 68:12]
+
+Timestamp: 77:32 (-3 seconds)
+Team: Black/White
+Description: Black/White team header **SAVED** (caught) by the Blue goalkeeper. Evidence: "Black/White team attacks with a header towards the goal... The Blue team's goalkeeper catches the ball, making a save."
+Outcome: saved
+VEO Match: Confirmed shot at 77:35 - [High confidence]
+
+Timestamp: ~77:45 (+35 seconds)
+Team: Black/White
+Description: Black/White team shot from a cleared corner **MISSED** (wide of the goal). Evidence: "Following the clearance, a Black/White player attempts a shot that goes wide of the goal."
+Outcome: missed
+VEO Match: Confirmed shot at 77:35 - [No Confidence - event too far away]
+
+Timestamp: 78:47 (+37 seconds)
+Team: Blue
+Description: Blue team shot from a cross **SAVED** by the Black/White goalkeeper. Evidence: "A shot from the Blue team is saved by the Black/White goalkeeper."
+Outcome: saved
+VEO Match: Confirmed shot at 78:10 - [No Confidence - event too far away]
+
+Timestamp: 78:47 (+14 seconds)
+Team: Blue
+Description: Blue team shot from a cross **SAVED** by the Black/White goalkeeper. Evidence: "A shot from the Blue team is saved by the Black/White goalkeeper."
+Outcome: saved
+VEO Match: Confirmed shot at 78:33 - [Medium confidence]
+
+Timestamp: 79:20 (+13 seconds)
+Team: Black/White
+Description: Black/White team direct free kick **MISSED** (over the crossbar). Evidence: "A shot from the free kick goes over the crossbar."
+Outcome: missed
+VEO Match: Confirmed shot at 79:07 - [High confidence]
+
+Timestamp: 81:34 (+2 seconds)
+Team: Blue
+Description: Blue team direct free kick **MISSED** (over the crossbar). Evidence: "a player from the Blue team takes a shot, which goes over the crossbar."
+Outcome: missed
+VEO Match: Confirmed shot at 81:32 - [High confidence]
+
+Timestamp: 87:31 (+16 seconds)
+Team: Blue
+Description: Blue team shot **BLOCKED** by a Black/White defender. Evidence: "a shot by the Blue team is blocked by a Black/White defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 87:15 - [High confidence]
+
+Timestamp: None within range
+Team: N/A
+Description: No matching AI descriptions within ±30 seconds.
+Outcome: N/A
+VEO Match: Confirmed shot at 68:12 - [No confidence]
+
+Timestamp: None within range
+Team: N/A
+Description: No matching AI descriptions within ±30 seconds.
+Outcome: N/A
+VEO Match: Confirmed shot at 74:54 - [No confidence]
+
+Timestamp: None within range
+Team: N/A
+Description: No matching AI descriptions within ±30 seconds.
+Outcome: N/A
+VEO Match: Confirmed shot at 89:10 - [No confidence]
+
+Timestamp: None within range
+Team: N/A
+Description: No matching AI descriptions within ±30 seconds.
+Outcome: N/A
+VEO Match: Confirmed shot at 90:07 - [No confidence]
+
+Timestamp: 92:19 (-22 seconds)
+Team: Blue
+Description: Blue team free kick **MISSED** (over the crossbar). Evidence: "the shot is taken and goes over the crossbar for a goal kick."
+Outcome: missed
+VEO Match: Confirmed shot at 92:41 - [Low confidence]
+
+Timestamp: 92:35 (-6 seconds)
+Team: Black/White
+Description: Black/White team direct free kick **SAVED** (diving save) by the Blue goalkeeper. Evidence: "A shot is taken on goal from the free kick... The Blue team's goalkeeper makes a diving save."
+Outcome: saved
+VEO Match: Confirmed shot at 92:41 - [High confidence]
+
+Timestamp: 92:54 (+13 seconds)
+Team: Black/White
+Description: Black/White team direct free kick **MISSED** (high over the crossbar). Evidence: "the shot is taken and goes high over the crossbar for a goal kick."
+Outcome: missed
+VEO Match: Confirmed shot at 92:41 - [High confidence]
+
+Timestamp: 94:51 (+14 seconds)
+Team: Black/White
+Description: Black/White team header from a cross **MISSED** (over the crossbar). Evidence: "A Black/White player attempts a header on goal, but the shot goes over the crossbar."
+Outcome: missed
+VEO Match: Confirmed shot at 94:37 - [High confidence]
+
+Timestamp: 102:31 (+1 second)
+Team: Black/White
+Description: Black/White team header from a free kick **SAVED** (punched clear) by the Blue goalkeeper. Evidence: "A Black/White player's header is directed toward the goal... The Blue team's goalkeeper punches the ball clear."
+Outcome: saved
+VEO Match: Confirmed shot at 102:30 - [High confidence]
+
+Timestamp: 102:31 (+15 seconds)
+Team: Black/White
+Description: Black/White team header from a free kick **SAVED** (punched clear) by the Blue goalkeeper. Evidence: "A Black/White player's header is directed toward the goal... The Blue team's goalkeeper punches the ball clear."
+Outcome: saved
+VEO Match: Confirmed shot at 102:16 - [High confidence]
+
+Timestamp: 103:04 (0 seconds)
+Team: Black/White
+Description: Black/White team header from a free kick **SAVED** (punched clear) by the Blue goalkeeper. Evidence: "A Black/White player's header is directed toward the goal... The Blue team's goalkeeper punches the ball clear."
+Outcome: saved
+VEO Match: Confirmed shot at 103:04 - [High confidence]
+
+Timestamp: 105:02 (0 seconds)
+Team: Black/White
+Description: Black/White team header from a free kick **SAVED** (punched clear) by the Blue goalkeeper. Evidence: "A Black/White player's header is directed toward the goal... The Blue team's goalkeeper punches the ball clear."
+Outcome: saved
+VEO Match: Confirmed shot at 105:02 - [High confidence]
+
+Timestamp: 108:46 (+13 seconds)
+Team: Black/White
+Description: Black/White team shot **BLOCKED** by a Blue defender. Evidence: "A shot from the Black/White team is blocked by a Blue defender."
+Outcome: blocked
+VEO Match: Confirmed shot at 108:33 - [High confidence]
+
+Timestamp: 110:31 (+33 seconds)
+Team: Black/White
+Description: Black/White team shot **SAVED** (diving save) by the Blue goalkeeper. Evidence: "A Black/White player takes a shot, which is saved by the Blue team's diving goalkeeper."
+Outcome: saved
+VEO Match: Confirmed shot at 109:58 - [Low Confidence - Event too far away]
+
+Timestamp: 112:24 (0 seconds)
+Team: Black/White
+Description: Black/White team shot **SAVED** (diving save) by the Blue goalkeeper. Evidence: "A Black/White player takes a shot, which is saved by the Blue team's diving goalkeeper."
+Outcome: saved
+VEO Match: Confirmed shot at 112:24 - [High confidence]
+
+Timestamp: 114:22 (-6 seconds)
+Team: Black/White
+Description: Black/White team direct free kick **MISSED** (high over the goal). Evidence: "A shot is taken from the free kick, which goes high over the goal."
+Outcome: missed
+VEO Match: Confirmed shot at 114:27 - [High confidence]
+
+Timestamp: 114:22 (-23 seconds)
+Team: Black/White
+Description: Black/White team direct free kick **MISSED** (high over the goal). Evidence: "A shot is taken from the free kick, which goes high over the goal."
+Outcome: missed
+VEO Match: Confirmed shot at 113:45 - [Low confidence, possibly matches the event with free kick. Alternative would be the 114:40 header]
+
+Timestamp: 114:22 (-2 seconds)
+Team: Black/White
+Description: Black/White team direct free kick **MISSED** (high over the goal). Evidence: "A shot is taken from the free kick, which goes high over the goal."
+Outcome: missed
+VEO Match: Confirmed shot at 114:27 - [High confidence]
+
+Timestamp: 114:40 (-5 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "A Black/White player heads the ball from the corner kick, but the attempt goes over the crossbar."
+Outcome: missed
+VEO Match: Confirmed shot at 114:27 - [High confidence, alternative to free kick]
+
+Timestamp: 114:40 (-7 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "A Black/White player heads the ball from the corner kick, but the attempt goes over the crossbar."
+Outcome: missed
+VEO Match: Confirmed shot at 113:45 - [High confidence]
+
+Timestamp: 114:40 (+12 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "A Black/White player heads the ball from the corner kick, but the attempt goes over the crossbar."
+Outcome: missed
+VEO Match: Confirmed shot at 114:27 - [High confidence]
+
+Timestamp: 113:45 (+17 seconds)
+Team: Black/White
+Description: Black/White team header from a corner kick **MISSED** (over the crossbar). Evidence: "A Black/White player heads the ball from the corner kick, but the attempt goes over the crossbar."
+Outcome: missed
+VEO Match: Confirmed shot at 113:28 - [High confidence]

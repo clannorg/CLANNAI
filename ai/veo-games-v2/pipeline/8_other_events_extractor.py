@@ -116,9 +116,9 @@ Focus on events that coaches would want to review or that significantly affected
         """Extract other events using Gemini analysis"""
         print(f"📋 Extracting other events for {match_id}")
         
-        data_dir = Path("../data") / match_id
+        data_dir = Path("../outputs") / match_id
         timeline_path = data_dir / "5_complete_timeline.txt"
-        output_path = data_dir / "8.5_other_events.txt"
+        output_path = data_dir / "8_other_events.txt"
         
         # Check input file exists
         if not timeline_path.exists():

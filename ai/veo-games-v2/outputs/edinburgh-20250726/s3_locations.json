@@ -1,0 +1,74 @@
+{
+  "match_id": "edinburgh-20250726",
+  "upload_timestamp": "2025-08-08T17:26:44.320976",
+  "bucket": "end-nov-webapp-clann",
+  "region": "eu-west-1",
+  "s3_urls": {
+    "web_events.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-web_events-json.json",
+      "s3_key": "analysis-data/edinburgh-20250726-web_events-json.json",
+      "description": "Web app compatible events timeline",
+      "file_size_mb": 0.02
+    },
+    "web_events_array.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-web_events_array-json.json",
+      "s3_key": "analysis-data/edinburgh-20250726-web_events_array-json.json",
+      "description": "Direct events array for web app",
+      "file_size_mb": 0.02
+    },
+    "6_validated_timeline.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-6_validated_timeline-txt.txt",
+      "s3_key": "analysis-data/edinburgh-20250726-6_validated_timeline-txt.txt",
+      "description": "AI validated match timeline (goals/shots)",
+      "file_size_mb": 0.01
+    },
+    "6.5_accuracy_comparison.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-6-5_accuracy_comparison-txt.txt",
+      "s3_key": "analysis-data/edinburgh-20250726-6-5_accuracy_comparison-txt.txt",
+      "description": "AI vs VEO accuracy comparison",
+      "file_size_mb": 0.01
+    },
+    "7_definite_events.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-7_definite_events-txt.txt",
+      "s3_key": "analysis-data/edinburgh-20250726-7_definite_events-txt.txt",
+      "description": "VEO-confirmed events only",
+      "file_size_mb": 0.01
+    },
+    "8_other_events.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-8_other_events-txt.txt",
+      "s3_key": "analysis-data/edinburgh-20250726-8_other_events-txt.txt",
+      "description": "Fouls, cards, corners and other events",
+      "file_size_mb": 0.03
+    },
+    "11_tactical_analysis.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-11_tactical_analysis-json.json",
+      "s3_key": "analysis-data/edinburgh-20250726-11_tactical_analysis-json.json",
+      "description": "Complete tactical analysis for both teams",
+      "file_size_mb": 0.02
+    },
+    "5_complete_timeline.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-5_complete_timeline-txt.txt",
+      "s3_key": "analysis-data/edinburgh-20250726-5_complete_timeline-txt.txt",
+      "description": "Complete detailed play-by-play timeline",
+      "file_size_mb": 0.11
+    },
+    "1_veo_ground_truth.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/edinburgh-20250726-1_veo_ground_truth-json.json",
+      "s3_key": "analysis-data/edinburgh-20250726-1_veo_ground_truth-json.json",
+      "description": "Original Veo ground truth data for comparison",
+      "file_size_mb": 0.02
+    },
+    "video.mp4": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/edinburgh-20250726-video-mp4.mp4",
+      "s3_key": "analysis-videos/edinburgh-20250726-video-mp4.mp4",
+      "description": "Full match video",
+      "file_size_mb": 3766.18
+    }
+  },
+  "upload_summary": {
+    "total_files": 10,
+    "successful_uploads": 10,
+    "failed_uploads": 0,
+    "total_size_mb": 3766.43
+  }
+}

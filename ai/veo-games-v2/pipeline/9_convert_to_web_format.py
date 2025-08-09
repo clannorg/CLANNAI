@@ -354,7 +354,7 @@ Extract events from ALL sections: goals, shots, fouls, cards, corners, substitut
         print(f"🔄 Converting {match_id} to web format")
         
         # Define paths
-        data_dir = Path("../data") / match_id
+        data_dir = Path("../outputs") / match_id
         if not data_dir.exists():
             print(f"❌ Data directory not found: {data_dir}")
             return False
@@ -374,7 +374,7 @@ Extract events from ALL sections: goals, shots, fouls, cards, corners, substitut
                 print(f"✅ Loaded {len(events)} enhanced events (goals, shots, fouls, cards)")
                 
                 # Also read other events for turnovers, corners, etc.
-                other_events_path = data_dir / "8.5_other_events.txt"
+                other_events_path = data_dir / "8_other_events.txt"
                 if other_events_path.exists():
                     print(f"📖 Also reading other events for turnovers: {other_events_path}")
                     try:
@@ -442,8 +442,8 @@ Extract events from ALL sections: goals, shots, fouls, cards, corners, substitut
                 print(f"🔄 Falling back to text processing...")
         
         # Fallback: Try definite events + other events (original logic)
-        definite_events_path = data_dir / "7.5_definite_events.txt"
-        other_events_path = data_dir / "8.5_other_events.txt"
+        definite_events_path = data_dir / "7_definite_events.txt"
+        other_events_path = data_dir / "8_other_events.txt"
         
         # Combine definite events and other events
         combined_content = ""

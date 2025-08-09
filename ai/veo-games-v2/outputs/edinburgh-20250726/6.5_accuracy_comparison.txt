@@ -1,0 +1,134 @@
+# AI-Powered Accuracy Comparison
+# Match: edinburgh-20250726
+# Generated: 2025-08-08T14:27:26.570335
+# Model: gemini-2.0-flash-exp
+
+## GOALS COMPARISON
+
+**Ground Truth**:
+*   45:53 (Goal)
+
+**Our AI Detected**:
+*   46:15 (Goal - Black/White team, Penalty)
+*   65:30 (Goal - Blue team)
+
+**Matches**:
+*   45:53 Ground Truth matches 46:15 AI Detection (Within ~22-second tolerance, close enough to be considered a true positive given the context of a penalty and resulting celebration).
+
+**False Positives**:
+*   65:30 (AI detected a Blue team goal, which is NOT present in ground truth data)
+
+**False Negatives**:
+*   None (Our AI detected the actual goal, despite timestamp variance)
+
+## SHOTS COMPARISON
+
+**Ground Truth**:
+*   5:42 (Shot on goal)
+*   6:22 (Shot on goal)
+*   9:11 (Shot on goal)
+*   12:31 (Shot on goal)
+*   15:24 (Shot on goal)
+*   17:53 (Shot on goal)
+*   23:12 (Shot on goal)
+*   28:27 (Shot on goal)
+*   29:58 (Shot on goal)
+*   34:04 (Shot on goal)
+*   34:59 (Shot on goal)
+*   35:56 (Shot on goal)
+*   38:21 (Shot on goal)
+*   41:00 (Shot on goal)
+*   43:34 (Shot on goal)
+*   45:52 (Shot on goal)
+*   68:12 (Shot on goal)
+*   74:54 (Shot on goal)
+*   77:35 (Shot on goal)
+*   78:10 (Shot on goal)
+*   78:33 (Shot on goal)
+*   79:07 (Shot on goal)
+*   81:32 (Shot on goal)
+*   87:15 (Shot on goal)
+*   89:10 (Shot on goal)
+*   90:07 (Shot on goal)
+*   92:41 (Shot on goal)
+*   94:37 (Shot on goal)
+*   102:16 (Shot on goal)
+*   102:30 (Shot on goal)
+*   103:04 (Shot on goal)
+*   105:02 (Shot on goal)
+*   108:33 (Shot on goal)
+*   109:58 (Shot on goal)
+*   112:24 (Shot on goal)
+*   113:28 (Shot on goal)
+*   113:45 (Shot on goal)
+*   114:27 (Shot on goal)
+
+**Our AI Detected**:
+*   05:32 (Shot on goal)
+*   09:15 (Header, Missed)
+*   14:30 (Shot/Cross, Blocked)
+*   15:45 (Header, Missed)
+*   16:04 (Shot, Blocked)
+*   23:15 (Shot, Blocked)
+*   28:00 (Shot, Cleared off the line)
+*   28:51 (Header, Saved)
+*   30:15 (Header, Missed)
+*   32:15 (Shot, Blocked)
+*   39:02 (Shot, Missed)
+*   43:48 (Header, Saved)
+*   77:32 (Header, Saved)
+*   77:45 (Shot, Missed)
+*   78:47 (Shot, Saved)
+*   79:20 (Free Kick, Missed)
+*   81:34 (Free Kick, Missed)
+*   82:18 (Shot, Missed)
+*   87:31 (Shot, Blocked)
+*   92:19 (Free Kick, Missed)
+*   92:35 (Free Kick, Saved)
+*   92:54 (Free Kick, Missed)
+*   94:51 (Header, Missed)
+*   96:07 (Shot, Saved)
+*   98:48 (Shot, Missed)
+*   99:05 (Header, Saved)
+*   102:31 (Header, Saved)
+*   108:46 (Shot, Blocked)
+*   110:31 (Shot, Saved)
+*   114:22 (Free Kick, Missed)
+*   114:40 (Header, Missed)
+
+**Assessment**:
+
+The AI detected a significant number of shots, with decent timestamp proximity to the ground truth data. The AI does reasonably well at detecting shots *in general*, but struggles with these problems:
+*   Discriminating between shots on goal vs shots that are blocked/missed/saved.  This information isn't consistently extracted.
+*   Incomplete/inaccurate timestamping (the AI's timestamps are often off by several seconds/tens of seconds).
+*   The AI is including shots that *did not go on goal*.
+*   Many shots on goal from the ground truth are not represented in the AI data.
+
+## ACCURACY METRICS
+
+**Goals - Precision**: 50% (1 correct goal / 2 total detected goals)
+**Goals - Recall**: 100% (1 correct goal / 1 total actual goal)
+**Shots - Precision**: Difficult to quantify exactly due to the variety of shot outcomes being included in the AI data, but is *roughly* in the 40-50% range.  Our AI is detecting many shots, but also detecting a lot of events that are *not* shots on goal.
+**Shots - Recall**: Difficult to quantify exactly due to the imprecise nature of matching events, but is *roughly* in the 60-70% range, perhaps lower. Our AI is missing many of the shots included in the ground truth.
+
+## KEY INSIGHTS
+
+*   **What our AI does well:**
+    *   Detecting the presence of goals within a reasonable timeframe (although not always perfectly accurate).
+    *   Identifying many of the shot events within a match, demonstrating its ability to recognize attacking play.
+
+*   **What needs improvement:**
+    *   **Timestamp accuracy is crucial.** The AI needs to be more precise in pinpointing the exact moments of events.
+    *   **Distinguishing between "Shot on Goal" vs other shot types.** The AI needs to be able to differentiate a shot *on target* from a blocked shot, a missed shot, a saved shot, or a cross. The precision of shot detection needs to improve significantly.
+    *   **Reduce false positives.** The AI is hallucinating non-existent goals.
+    *   **Increase shot recall.** Many shots on goal are not even present in the AI shot list.
+    *   **Improve accuracy of shot type classification (header vs foot shot).**
+    *   **Reduce hallucinated red cards and other claims.**
+
+*   **Specific recommendations:**
+    *   **Refine the AI model's training data:** Focus on providing more examples of "Shot on Goal" events *specifically*, with clear differentiations from blocked shots, missed shots, crosses, etc.
+    *   **Implement stricter timestamp validation rules:** Develop algorithms that can more accurately synchronize the AI's event detections with the video timeline. Consider using more advanced video analysis techniques to identify frame-by-frame changes indicative of a shot.
+    *   **Introduce a "confidence score" for event detections:** This would allow for filtering out lower-confidence detections that are more likely to be false positives.
+    *   **Implement a system for validating key game events (especially goals) using multiple sources of evidence:** The AI should look for corroborating information (e.g., the ball entering the net, players celebrating, a kickoff from the center circle) before definitively labeling an event as a goal.
+    *   **Focus on the primary task of extracting the most important events like goals and shots *accurately*,** before moving on to more nuanced event types. Quality over quantity!
+    *   **Double check validation rules.** The AI incorrectly marked a rejected claim as a goal.
