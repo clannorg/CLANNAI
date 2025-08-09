@@ -21,6 +21,10 @@ interface VideoPlayerProps {
   onTimeUpdate: (currentTime: number, duration: number) => void
   onEventClick: (event: GameEvent) => void
   onSeekToTimestamp: (timestamp: number) => void
+  // When false, hide timeline/controls overlays (used on mobile portrait)
+  overlayVisible?: boolean
+  // Notify parent about user interaction to reset auto-hide timers
+  onUserInteract?: () => void
 }
 
 export default function VideoPlayer({
@@ -30,7 +34,9 @@ export default function VideoPlayer({
   currentEventIndex,
   onTimeUpdate,
   onEventClick,
-  onSeekToTimestamp
+  onSeekToTimestamp,
+  overlayVisible = true,
+  onUserInteract
 }: VideoPlayerProps) {
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
@@ -158,7 +164,13 @@ export default function VideoPlayer({
   }, [onSeekToTimestamp])
 
   return (
-    <div className="relative h-full flex items-center justify-center">
+    <div
+      className="relative h-full flex items-center justify-center"
+      onMouseMove={onUserInteract}
+      onClick={onUserInteract}
+      onKeyDown={onUserInteract as any}
+      role="presentation"
+    >
       {/* Video Element */}
       <video
         ref={videoRef}
@@ -175,8 +187,12 @@ export default function VideoPlayer({
         preload="metadata"
       />
 
-      {/* Progress Bar - Attached to Video Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 z-40">
+      {/* Progress Bar + Controls Overlay (auto-hide capable) */}
+      <div
+        className={`absolute bottom-0 left-0 right-0 z-40 transition-opacity duration-300 ${
+          overlayVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="bg-transparent">
           {/* Timeline Dots Overlay */}
           {events.length > 0 && duration > 0 && (

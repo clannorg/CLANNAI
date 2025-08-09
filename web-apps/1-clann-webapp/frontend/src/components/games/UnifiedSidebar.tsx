@@ -18,6 +18,8 @@ interface UnifiedSidebarProps {
   activeTab?: 'events' | 'ai' | 'insights' | 'downloads'
   onTabChange?: (tab: 'events' | 'ai' | 'insights' | 'downloads') => void
   onWidthChange?: (width: number) => void
+  isMobile?: boolean // New prop for mobile positioning
+  mobileVideoComponent?: React.ReactNode // Video component for mobile header
   
   // Events tab props
   events: GameEvent[]
@@ -49,6 +51,8 @@ export default function UnifiedSidebar({
   activeTab: externalActiveTab,
   onTabChange,
   onWidthChange,
+  isMobile = false,
+  mobileVideoComponent,
   events,
   allEvents,
   currentEventIndex,
@@ -243,14 +247,23 @@ export default function UnifiedSidebar({
 
   return (
     <div 
-      className="absolute top-0 right-0 h-full bg-black/90 backdrop-blur-sm border-l border-gray-700 flex flex-col z-30"
-      style={{ 
+      className={`${
+        isMobile 
+          ? 'relative w-full bg-black/90 backdrop-blur-sm border-t border-gray-700'
+          : 'absolute top-0 right-0 h-full bg-black/90 backdrop-blur-sm border-l border-gray-700'
+      } flex flex-col z-30`}
+      style={isMobile ? {} : { 
         width: `${sidebarWidth}px`,
         minWidth: '280px',
         maxWidth: '600px'
       }}
     >
-
+      {/* Mobile Video Header - sticky so it does not scroll */}
+      {isMobile && mobileVideoComponent && (
+        <div className="sticky top-0 z-30 bg-black">
+          {mobileVideoComponent}
+        </div>
+      )}
 
       {/* Resize Handle */}
       <div
@@ -266,19 +279,23 @@ export default function UnifiedSidebar({
           }`} />
         </div>
       </div>
-      {/* Tab Header */}
-      <div className="sticky top-0 bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10">
+      {/* Tab Header - sticky; on mobile, offset by video height (16:9 => 56.25vw) */}
+      <div className={`sticky bg-black/90 backdrop-blur-sm border-b border-gray-700 p-4 z-10 ${
+        isMobile ? 'top-[56.25vw]' : 'top-0'
+      }`}>
         <div className="flex items-center justify-between">
-          {/* Subtle Close Button - Left Side */}
-          <button
-            onClick={onClose}
-            className="mr-3 flex items-center justify-center w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200"
-            title="Close Sidebar"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          {/* Close Button - Hidden on Mobile */}
+          {!isMobile && (
+            <button
+              onClick={onClose}
+              className="mr-3 flex items-center justify-center w-8 h-8 text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-all duration-200"
+              title="Close Sidebar"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
           
           {/* Tab Navigation */}
           <div className="flex bg-gray-800/50 rounded-lg p-1 flex-1">
