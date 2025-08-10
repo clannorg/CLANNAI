@@ -1,1 +1,26 @@
-{}
+{
+  "match_id": "20250523-match-23-may-2025-3fc1de88",
+  "teams": {
+    "red_team": {
+      "name": "Black/White Team",
+      "jersey_color": "black and white striped"
+    },
+    "blue_team": {
+      "name": "Blue Team",
+      "jersey_color": "blue"
+    }
+  },
+  "counts": {
+    "goals": 0,
+    "shots": 0
+  },
+  "files": {
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250523-match-23-may-2025-3fc1de88-video-mp4.mp4",
+    "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events_array-json.json",
+    "web_events_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events-json.json",
+    "timeline_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-5_complete_timeline-txt.txt",
+    "ground_truth_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-1_veo_ground_truth-json.json",
+    "other_events_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-8_other_events-txt.txt",
+    "tactical_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-11_tactical_analysis-json.json"
+  }
+}
