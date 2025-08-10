@@ -358,23 +358,23 @@ function HomePage() {
                 />
               </div>
               
-              {/* VEO Input Box - Positioned with proper spacing */}
-              <div className="relative bg-gray-800/90 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 shadow-2xl mt-24">
+              {/* VEO Input Box - Styled to match black CTA */}
+              <div className="relative bg-black/90 backdrop-blur-sm rounded-xl p-6 border border-gray-800 shadow-2xl mt-24">
                 <div className="space-y-4">
                   <input
                     type="text"
                     value={veoUrl}
                     onChange={(e) => setVeoUrl(e.target.value)}
                     placeholder="e.g. https://app.veo.co/matches/527e6a4e-f323-4524..."
-                    className="w-full bg-gray-900/50 text-white px-4 py-3 rounded-lg border border-gray-700/50 focus:border-green-500/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none placeholder-gray-400"
+                    className="w-full bg-black text-white placeholder-gray-400/80 px-4 py-3 rounded-lg border border-gray-800 focus:outline-none focus:border-white/20 focus:ring-0"
                   />
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-gray-300/80">
                       Paste your game footage URL from Veo, Trace, or Spiideo
                     </p>
                     <button 
                       onClick={handleAnalyzeClick}
-                      className="px-8 py-3 rounded-lg font-medium text-white transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900"
+                      className="px-8 py-3 rounded-lg font-medium text-white transition-all duration-200 hover:shadow-lg focus:outline-none"
                       style={{ 
                         backgroundColor: 'var(--clann-green)',
                         boxShadow: '0 4px 20px rgba(1, 111, 50, 0.3)'
@@ -553,32 +553,7 @@ function HomePage() {
                 </div>
               </div>
 
-              {/* Team Codes */}
-              <div className="text-center mt-16">
-                <h3 className="text-xl font-bold text-white mb-6">Demo Team Join Codes</h3>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm max-w-4xl mx-auto">
-                  <div className="bg-red-900/40 backdrop-blur-sm p-4 rounded-lg border border-red-700/30 hover:border-red-500/50 transition-all">
-                    <div className="font-bold text-white">ARS269</div>
-                    <div className="text-gray-400">Arsenal FC</div>
-                  </div>
-                  <div className="bg-blue-900/40 backdrop-blur-sm p-4 rounded-lg border border-blue-700/30 hover:border-blue-500/50 transition-all">
-                    <div className="font-bold text-white">CHE277</div>
-                    <div className="text-gray-400">Chelsea Youth</div>
-                  </div>
-                  <div className="bg-red-900/40 backdrop-blur-sm p-4 rounded-lg border border-red-700/30 hover:border-red-500/50 transition-all">
-                    <div className="font-bold text-white">LIV297</div>
-                    <div className="text-gray-400">Liverpool Reserves</div>
-                  </div>
-                  <div className="bg-sky-900/40 backdrop-blur-sm p-4 rounded-lg border border-sky-700/30 hover:border-sky-500/50 transition-all">
-                    <div className="font-bold text-white">MCI298</div>
-                    <div className="text-gray-400">City Development</div>
-                  </div>
-                  <div className="bg-red-900/40 backdrop-blur-sm p-4 rounded-lg border border-red-700/30 hover:border-red-500/50 transition-all">
-                    <div className="font-bold text-white">MUN304</div>
-                    <div className="text-gray-400">United U21s</div>
-                  </div>
-                </div>
-              </div>
+              {/* Demo team codes removed */}
             </div>
           </div>
         </div>
@@ -756,13 +731,7 @@ function HomePage() {
               </button>
             </div>
 
-            {/* Demo Credentials */}
-            <div className="mt-6 p-4 bg-black/40 rounded-xl border border-gray-800/30">
-              <p className="text-xs text-gray-400 mb-3 font-medium">Demo Credentials:</p>
-              <div className="space-y-1">
-                              <p className="text-xs text-gray-300">Company: admin@clann.ai / demo123</p>
-              </div>
-            </div>
+            {/* Demo credentials removed */}
           </div>
         </div>
       )}

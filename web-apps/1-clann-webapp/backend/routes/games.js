@@ -52,6 +52,138 @@ router.get('/', authenticateToken, async (req, res) => {
   }
 });
 
+// Upload a single metadata JSON (company only) to configure video, events, tactical, and team identity
+// Expected schema (minimal):
+// {
+//   "video_url": "https://...mp4",
+//   "events_url": "https://...web_events_array-json.json",
+//   "tactical_url": "https://...tactical_analysis-json.json",
+//   "team_identity": { "home": {...}, "away": {...}, "mapping": {...} }
+// }
+router.post('/:id/upload-metadata', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { metadataUrl } = req.body;
+
+    if (!metadataUrl) {
+      return res.status(400).json({ error: 'metadataUrl is required' });
+    }
+
+    const axios = require('axios');
+    console.log('📥 Fetching game metadata from:', metadataUrl);
+    const metaResp = await axios.get(metadataUrl, { responseType: 'json' });
+    const meta = typeof metaResp.data === 'string' ? JSON.parse(metaResp.data) : metaResp.data;
+
+    const updates = {};
+    const currentGame = await getGameById(gameId);
+    if (!currentGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    const currentMetadata = currentGame.metadata || {};
+    const tacticalFiles = currentMetadata.tactical_files || {};
+    const analysisFiles = currentMetadata.analysis_files || {};
+
+    // 1) Video
+    if (meta.video_url) {
+      updates.s3_key = meta.video_url;
+      console.log('✅ metadata set video_url');
+    }
+
+    // 2) Events
+    let hasEvents = false;
+    if (meta.events_url) {
+      try {
+        const ev = await axios.get(meta.events_url);
+        const eventsData = ev.data;
+        const events = Array.isArray(eventsData) ? eventsData : eventsData.events || [];
+        if (events.length > 0) {
+          updates.ai_analysis = events;
+          hasEvents = true;
+          console.log(`✅ metadata loaded ${events.length} events`);
+        }
+        // Also store canonical reference
+        analysisFiles.latest_events = {
+          url: meta.events_url,
+          filename: meta.events_url.split('/').pop() || 'events.json',
+          uploaded_at: new Date().toISOString()
+        };
+      } catch (e) {
+        console.log('⚠️ metadata events fetch failed:', e.message);
+      }
+    }
+
+    // 3) Tactical
+    if (meta.tactical_url) {
+      try {
+        const ta = await axios.get(meta.tactical_url, { responseType: 'text' });
+        let analysisData = ta.data;
+        if (typeof analysisData === 'string') {
+          try { analysisData = JSON.parse(analysisData); } catch {}
+        }
+        const transformedData = { tactical: {}, analysis: {} };
+        if (analysisData && analysisData.tactical_analysis) {
+          const t = analysisData.tactical_analysis;
+          if (t.red_team) transformedData.tactical.red_team = { content: JSON.stringify(t.red_team, null, 2) };
+          if (t.blue_team) transformedData.tactical.blue_team = { content: JSON.stringify(t.blue_team, null, 2) };
+        }
+        if (analysisData && analysisData.match_overview) transformedData.analysis.match_overview = analysisData.match_overview;
+        if (analysisData && analysisData.key_moments) transformedData.analysis.key_moments = analysisData.key_moments;
+        if (analysisData && analysisData.manager_recommendations) transformedData.analysis.manager_recommendations = analysisData.manager_recommendations;
+
+        updates.tactical_analysis = JSON.stringify(transformedData);
+
+        tacticalFiles.latest = {
+          url: meta.tactical_url,
+          filename: meta.tactical_url.split('/').pop() || 'tactical.json',
+          uploaded_at: new Date().toISOString()
+        };
+        console.log('✅ metadata set tactical');
+      } catch (e) {
+        console.log('⚠️ metadata tactical fetch failed:', e.message);
+      }
+    }
+
+    // 4) Team identity
+    if (meta.team_identity && typeof meta.team_identity === 'object') {
+      updates.metadata = {
+        ...currentMetadata,
+        team_identity: meta.team_identity,
+        tactical_files: { ...tacticalFiles },
+        analysis_files: { ...analysisFiles }
+      };
+      console.log('✅ metadata set team_identity');
+    } else {
+      // still persist updated files maps
+      updates.metadata = {
+        ...currentMetadata,
+        tactical_files: { ...tacticalFiles },
+        analysis_files: { ...analysisFiles }
+      };
+    }
+
+    // 5) Status auto-advance
+    if (updates.s3_key && (hasEvents || updates.tactical_analysis)) {
+      updates.status = 'analyzed';
+    }
+
+    const updated = await updateGame(gameId, updates);
+    return res.json({
+      message: 'Metadata applied successfully',
+      applied: {
+        video: !!updates.s3_key,
+        events: hasEvents,
+        tactical: !!updates.tactical_analysis,
+        team_identity: !!(meta.team_identity)
+      },
+      game: { id: updated.id, status: updated.status }
+    });
+  } catch (error) {
+    console.error('Upload metadata error:', error);
+    return res.status(500).json({ error: 'Failed to upload metadata' });
+  }
+});
+
 // Get demo games (visible to all users)
 router.get('/demo', authenticateToken, async (req, res) => {
   try {

@@ -241,7 +241,7 @@ export default function VideoPlayer({
           </div>
 
           {/* Video Controls */}
-          <div className="bg-black/60 backdrop-blur-md mx-6 mb-3 rounded-lg border border-white/5 shadow-md">
+          <div className="bg-black/60 backdrop-blur-md mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),12px)] rounded-lg border border-white/5 shadow-md">
             <div className="flex items-center justify-between px-4 py-3">
               {/* Left Side - Main Controls */}
               <div className="flex items-center space-x-4">
@@ -310,24 +310,24 @@ export default function VideoPlayer({
                 </div>
               </div>
 
-              {/* Right Side - Event Navigation */}
-              <div className="flex items-center space-x-3">
+              {/* Right Side - Event Navigation (Desktop Only) */}
+              <div className="hidden lg:flex items-center space-x-3">
                 <div className="flex items-center space-x-2">
-                <button
-                  onClick={handlePreviousEvent}
+                  <button
+                    onClick={handlePreviousEvent}
                     disabled={events.length === 0}
-                    className={`group flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
+                    className={`inline-flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
                       events.length > 0
                         ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
                         : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
                     }`}
-                  title="Previous Event"
-                >
+                    title="Previous Event"
+                  >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                     <span>Prev</span>
-                </button>
+                  </button>
 
                   <div className="px-4 py-2 bg-white/5 rounded-xl border border-white/10 min-w-[120px] text-center">
                     <div className="text-white/90 text-xs font-medium">
@@ -339,21 +339,21 @@ export default function VideoPlayer({
                     </div>
                 </div>
 
-                <button
-                  onClick={handleNextEvent}
+                  <button
+                    onClick={handleNextEvent}
                     disabled={events.length === 0}
                     className={`group flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
                       events.length > 0
                         ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
                         : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
                     }`}
-                  title="Next Event"
-                >
+                    title="Next Event"
+                  >
                     <span>Next</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                </button>
+                  </button>
                 </div>
 
                 <button

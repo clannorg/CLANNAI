@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
+import CoachSelector from '../ai-chat/CoachSelector'
+import { COACHES } from '../ai-chat/coaches'
 
 interface GameEvent {
   type: string
@@ -68,11 +70,13 @@ export default function UnifiedSidebar({
   gameId,
   onSeekToTimestamp
 }: UnifiedSidebarProps) {
-  const [internalActiveTab, setInternalActiveTab] = useState<TabType>('events')
-  const { messages, sendMessage, isLoading, inputValue, setInputValue, clearMessages } = useAIChat()
+  // Auto-open AI Coach by default (mobile and desktop)
+  const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
+  const { messages, sendMessage, isLoading, inputValue, setInputValue, clearMessages, selectedCoach, setSelectedCoach } = useAIChat()
   const [chatInputValue, setChatInputValue] = useState('')
   const [sidebarWidth, setSidebarWidth] = useState(400) // Default 400px - wider for better usability
   const [isResizing, setIsResizing] = useState(false)
+  const [showCoachSelector, setShowCoachSelector] = useState(false)
   
   // Downloads state
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
@@ -368,7 +372,7 @@ export default function UnifiedSidebar({
         {/* Events Tab */}
         {activeTab === 'events' && (
           <div className="h-full flex flex-col">
-            {/* Filter Controls */}
+            {/* Filter Controls - Fixed at top like video/tabs */}
             <div className="p-4 border-b border-gray-700">
               <button
                 onClick={() => setShowFilters(!showFilters)}
@@ -517,22 +521,22 @@ export default function UnifiedSidebar({
               )}
             </div>
             
-            {/* Events List */}
+            {/* Events List - Only events scroll */}
             <div className="flex-1 overflow-y-auto p-4">
               <div className="space-y-2">
                 {events.map((event, index) => {
                   const originalIndex = allEvents.indexOf(event)
                   return (
-                  <button
+                    <button
                       key={`${event.timestamp}-${event.type}-${index}`}
                       id={`event-${originalIndex}`}
-                    onClick={() => onEventClick(event)}
-                    className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
+                      onClick={() => onEventClick(event)}
+                      className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
                         originalIndex === currentEventIndex 
-                        ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
-                        : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
-                    }`}
-                  >
+                          ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
+                          : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
+                      }`}
+                    >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         {/* Event Type Badge */}
@@ -581,6 +585,7 @@ export default function UnifiedSidebar({
                   )
                 })}
               </div>
+              </div>
             </div>
           </div>
         )}
@@ -589,7 +594,30 @@ export default function UnifiedSidebar({
         {activeTab === 'ai' && (
           <div className="h-full flex flex-col">
             <div className="p-4 border-b border-gray-700">
-              <h4 className="text-lg font-semibold text-white mb-2">AI Coach</h4>
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-lg font-semibold text-white">AI Coach</h4>
+                <button
+                  onClick={() => setShowCoachSelector(true)}
+                  className="text-xs bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full transition-colors"
+                >
+                  {selectedCoach ? selectedCoach.name : 'Choose Coach'}
+                </button>
+              </div>
+              {selectedCoach ? (
+                <div className="flex items-center space-x-2 mb-2">
+                  <div className="w-8 h-8 rounded-lg overflow-hidden border border-gray-600">
+                    <img 
+                      src={selectedCoach.image} 
+                      alt={selectedCoach.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white">{selectedCoach.name}</div>
+                    <div className="text-xs text-gray-400">{selectedCoach.title}</div>
+                  </div>
+                </div>
+              ) : null}
               <p className="text-sm text-gray-400">Get personalized coaching insights and training recommendations.</p>
             </div>
             
@@ -671,6 +699,18 @@ export default function UnifiedSidebar({
               )}
             </div>
           </div>
+        )}
+
+        {/* Coach Selector Modal */}
+        {showCoachSelector && (
+          <CoachSelector
+            selectedCoach={selectedCoach}
+            onCoachSelect={(coach) => {
+              setSelectedCoach(coach)
+              setShowCoachSelector(false)
+            }}
+            onClose={() => setShowCoachSelector(false)}
+          />
         )}
 
         {/* Insights Tab */}
