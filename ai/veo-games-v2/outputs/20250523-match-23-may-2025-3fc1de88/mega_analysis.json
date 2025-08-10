@@ -1,0 +1,1146 @@
+{
+  "title": "Football Match Analysis: Blue Team vs. Black/White Team",
+  "introduction": "This comprehensive analysis examines a football match between the Blue team (blue jerseys) and the Black/White team (black and white striped jerseys), leveraging a detailed AI timeline and verified VEO ground truth events. The primary focus is on the Black/White team's performance, tactics, and key moments.",
+  "metadata": {
+    "teams": [
+      "Blue team",
+      "Black/White team"
+    ],
+    "jersey_colors": {
+      "blue_team": {
+        "primary": "blue",
+        "ai_descriptions": [
+          "greenish-blue",
+          "green",
+          "green/white"
+        ],
+        "ai_interpretation_note": "For consistency, all \"Green team\" mentions in the AI timeline will be interpreted as the Blue team."
+      },
+      "black_white_team": {
+        "primary": "black and white striped",
+        "ai_descriptions": [
+          "all white",
+          "white"
+        ],
+        "ai_interpretation_note": "All \"White team\" mentions in the AI timeline will be interpreted as the Black/White team."
+      }
+    },
+    "match_duration": {
+      "core_match": "90 minutes",
+      "ai_timeline_span": "00:00 to 149:45",
+      "note": "indicating the inclusion of extensive pre-match warm-ups, stoppages, and post-match activities."
+    },
+    "verified_events_summary": {
+      "goals_count": 5,
+      "shots_count": 18
+    }
+  },
+  "goals_analysis": {
+    "overview": "Based on the VEO ground truth, there were 5 verified goals in the match. The AI timeline successfully identified and described these goals, demonstrating high accuracy in confirming verified scoring events.",
+    "verified_goals": [
+      {
+        "team": "Black/White Team",
+        "veo_timestamp": "32:48",
+        "ai_corroboration": {
+          "clip_timestamp": "33:00",
+          "description": "Black/White team attacks. Key events: 33:03 Black/White team scores a goal with a header.",
+          "alignment_note": "This perfectly aligns with the VEO goal, confirming a Black/White team goal."
+        }
+      },
+      {
+        "team": "Blue Team",
+        "veo_timestamp": "35:37",
+        "ai_corroboration": {
+          "clip_timestamp": "35:45",
+          "description": "Blue team takes a free kick. 35:51 Goal scored by the Blue team.",
+          "alignment_note": "This confirms the Blue team's goal."
+        }
+      },
+      {
+        "team": "Black/White Team",
+        "veo_timestamp": "41:19",
+        "ai_corroboration": {
+          "clip_timestamp": "41:30",
+          "description": "Black/White team is on the attack in the Blue team's penalty area. Key events: 41:33 - Goal: The Black/White team scores with a header from a cross into the box.",
+          "alignment_note": "This confirms another Black/White team goal, scored from a header following a cross."
+        }
+      },
+      {
+        "team": "Black/White Team",
+        "veo_timestamp": "52:02",
+        "ai_corroboration": {
+          "clip_timestamp": "52:15",
+          "description": "White team attacks in the Blue team's penalty area. Key events: 52:17 A shot is taken by the White team and saved by the Blue team's goalkeeper. 52:18 The White team scores from the rebound.",
+          "alignment_note": "This confirms a Black/White team goal, a follow-up from a saved shot."
+        }
+      },
+      {
+        "team": "Blue Team",
+        "veo_timestamp": "101:16",
+        "ai_corroboration": {
+          "clip_timestamp": "101:30",
+          "description": "Green team attacks in the final third. An initial shot is saved by the White team's goalkeeper, but the rebound is scored by another Green team player. Key events: 101:32: Goal scored by the Green team.",
+          "alignment_note": "Interpreting \"Green team\" as the Blue team, this confirms a Blue team goal from a rebound."
+        }
+      }
+    ]
+  },
+  "shots_analysis": {
+    "overview": "The VEO ground truth verified 18 shots on goal. The AI timeline provided corroborating evidence for 12 of these shots, including 2 that explicitly led to goals. There were 4 instances where the AI timeline did not explicitly describe a shot, and 2 instances where the AI described a different outcome (wide/over goal vs. on goal).",
+    "verified_shots": [
+      {
+        "id": 1,
+        "team": "Black/White Team",
+        "veo_timestamp": "26:11",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "26:15",
+          "description": "A shot is taken at 26:25 and saved by the Blue team's goalkeeper at 26:26",
+          "note": "confirming a Black/White team shot on goal saved by the goalkeeper."
+        }
+      },
+      {
+        "id": 2,
+        "team": "Black/White Team",
+        "veo_timestamp": "32:47",
+        "ai_corroboration": {
+          "status": "led_to_goal",
+          "clip_timestamp": "33:00",
+          "description": "confirms a goal at 33:03",
+          "note": "implying this shot directly led to the goal."
+        }
+      },
+      {
+        "id": 3,
+        "team": "Blue Team",
+        "veo_timestamp": "35:36",
+        "ai_corroboration": {
+          "status": "led_to_goal",
+          "clip_timestamp": "35:45",
+          "description": "confirms a goal at 35:51",
+          "note": "implying this shot directly led to the goal."
+        }
+      },
+      {
+        "id": 4,
+        "team": "Blue Team",
+        "veo_timestamp": "39:44",
+        "ai_corroboration": {
+          "status": "no_explicit_mention",
+          "clip_timestamp": "39:45",
+          "description": "only mentions a corner kick being cleared",
+          "note": "with no explicit mention of a shot."
+        }
+      },
+      {
+        "id": 5,
+        "team": "Blue Team",
+        "veo_timestamp": "41:18",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "41:15",
+          "description": "41:20 The shot from the Blue team goes over the goal",
+          "note": "confirming a Blue team shot."
+        }
+      },
+      {
+        "id": 6,
+        "team": "Blue Team",
+        "veo_timestamp": "44:58",
+        "ai_corroboration": {
+          "status": "no_explicit_mention",
+          "clip_timestamp": "45:00",
+          "description": "mentions a corner kick being cleared",
+          "note": "with no explicit mention of a shot."
+        }
+      },
+      {
+        "id": 7,
+        "team": "Black/White Team",
+        "veo_timestamp": "52:01",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "52:15",
+          "description": "52:17 A shot is taken by the White team and saved by the Blue team's goalkeeper",
+          "note": "confirming a Black/White team shot on goal. This shot was followed by a rebound goal (52:18)."
+        }
+      },
+      {
+        "id": 8,
+        "team": "Black/White Team",
+        "veo_timestamp": "63:31",
+        "ai_corroboration": {
+          "status": "discrepant_outcome_and_timing",
+          "clip_timestamp": "63:30 / 63:45",
+          "description": "AI 63:30 mentions an attacking free kick but no shot. AI 63:45 describes a Black/White shot going wide",
+          "note": "which is a different outcome and 14 seconds later than the VEO event."
+        }
+      },
+      {
+        "id": 9,
+        "team": "Black/White Team",
+        "veo_timestamp": "64:09",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "64:00",
+          "description": "64:14 shot taken by the white team",
+          "note": "confirming a Black/White team shot."
+        }
+      },
+      {
+        "id": 10,
+        "team": "Black/White Team",
+        "veo_timestamp": "91:37",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "91:30",
+          "description": "91:37 The Blue team's goalkeeper catches the ball",
+          "note": "confirming a Black/White attempt on goal."
+        }
+      },
+      {
+        "id": 11,
+        "team": "Black/White Team",
+        "veo_timestamp": "97:27",
+        "ai_corroboration": {
+          "status": "discrepant_outcome",
+          "clip_timestamp": "97:30",
+          "description": "97:42 - A shot is taken from outside the penalty area, which goes wide of the goal.",
+          "note": "The AI confirms a shot but states it went wide, whereas VEO lists it as \"Shot on goal.\""
+        }
+      },
+      {
+        "id": 12,
+        "team": "Blue Team",
+        "veo_timestamp": "99:26",
+        "ai_corroboration": {
+          "status": "no_explicit_mention",
+          "clip_timestamp": "99:30",
+          "description": "mentions a long pass being collected by the goalkeeper",
+          "note": "with no explicit mention of a shot."
+        }
+      },
+      {
+        "id": 13,
+        "team": "Black/White Team",
+        "veo_timestamp": "101:15",
+        "ai_corroboration": {
+          "status": "discrepant_outcome",
+          "clip_timestamp": "101:15",
+          "description": "101:29 A shot from the White team goes over the goal.",
+          "note": "The AI confirms a shot but states it went over the goal, whereas VEO lists it as \"Shot on goal.\""
+        }
+      },
+      {
+        "id": 14,
+        "team": "Black/White Team",
+        "veo_timestamp": "107:01",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "107:15",
+          "description": "107:16 a Black/White team player takes a shot with a header, 107:17 which is saved by the Blue team's goalkeeper",
+          "note": "confirming a Black/White team header on goal."
+        }
+      },
+      {
+        "id": 15,
+        "team": "Black/White Team",
+        "veo_timestamp": "122:04",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "122:15",
+          "description": "resulting in a blocked shot from inside the penalty area",
+          "note": "confirming a Black/White team shot."
+        }
+      },
+      {
+        "id": 16,
+        "team": "Black/White Team",
+        "veo_timestamp": "128:38",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "128:45",
+          "description": "128:54 a shot on goal is taken by the Black/White team, 128:55 the shot is saved by the Blue team's goalkeeper",
+          "note": "confirming a Black/White team shot on goal saved by the goalkeeper."
+        }
+      },
+      {
+        "id": 17,
+        "team": "Black/White Team",
+        "veo_timestamp": "130:58",
+        "ai_corroboration": {
+          "status": "confirmed",
+          "clip_timestamp": "131:00",
+          "description": "a shot attempt is blocked by the Blue team's defence",
+          "note": "confirming a Black/White team shot."
+        }
+      },
+      {
+        "id": 18,
+        "team": "Black/White Team",
+        "veo_timestamp": "135:07",
+        "ai_corroboration": {
+          "status": "led_to_goal",
+          "clip_timestamp": "135:00",
+          "description": "135:10: Black/White team takes a shot on goal. 135:11: Black/White team scores a goal",
+          "note": "confirming a Black/White team shot leading to a goal."
+        }
+      }
+    ]
+  },
+  "other_significant_events": {
+    "pre_match_kick_off": {
+      "duration_span": "00:00 - 23:00",
+      "description": "The initial 23 minutes of the timeline are dominated by pre-match warm-ups for both teams, including passing drills, shooting drills (e.g., Black/White team 10:00, 10:15 - penalty goal in warm-up, Blue team 06:30, 06:45, 07:15), and team huddles (e.g., Black/White 02:00, Blue 07:30-09:30). Both teams are seen lining up and performing pre-match formalities, handshakes, and coin tosses (16:00-16:45, 18:30-19:30, 20:15-22:15). Actual kick-off appears around 17:00 (Black/White), 20:15 (White), 23:00 (Blue), 23:15 (Green), indicating multiple \"kick-off\" events within the AI clips, possibly representing different halves or restarts without explicit labeling.",
+      "focus_note": "For match play analysis, we focus on events occurring after the initial warm-up phase."
+    },
+    "fouls_cards": {
+      "fouls_against_blue_team": [
+        {
+          "timestamp": "24:48",
+          "note": null
+        },
+        {
+          "timestamp": "37:40",
+          "note": null
+        },
+        {
+          "timestamp": "46:51",
+          "note": null
+        },
+        {
+          "timestamp": "56:02",
+          "note": null
+        },
+        {
+          "timestamp": "58:11",
+          "note": null
+        },
+        {
+          "timestamp": "66:03",
+          "note": null
+        },
+        {
+          "timestamp": "92:34",
+          "note": null
+        },
+        {
+          "timestamp": "97:09",
+          "note": null
+        },
+        {
+          "timestamp": "97:21",
+          "note": null
+        },
+        {
+          "timestamp": "102:50",
+          "note": null
+        },
+        {
+          "timestamp": "105:01",
+          "note": "leading to Yellow Card for Blue"
+        },
+        {
+          "timestamp": "111:19",
+          "note": null
+        },
+        {
+          "timestamp": "120:40",
+          "note": null
+        },
+        {
+          "timestamp": "123:38",
+          "note": null
+        },
+        {
+          "timestamp": "137:42",
+          "note": null
+        }
+      ],
+      "fouls_against_black_white_team": [
+        {
+          "timestamp": "31:25",
+          "note": "offside"
+        },
+        {
+          "timestamp": "39:22",
+          "note": null
+        },
+        {
+          "timestamp": "42:55",
+          "note": null
+        },
+        {
+          "timestamp": "45:15",
+          "note": null
+        },
+        {
+          "timestamp": "89:50",
+          "note": null
+        },
+        {
+          "timestamp": "110:27",
+          "note": null
+        },
+        {
+          "timestamp": "131:17",
+          "note": null
+        },
+        {
+          "timestamp": "131:41",
+          "note": null
+        },
+        {
+          "timestamp": "131:57",
+          "note": null
+        }
+      ],
+      "yellow_cards": [
+        {
+          "team": "Blue team",
+          "timestamp": "105:01"
+        },
+        {
+          "team": "Black/White team",
+          "timestamp": "105:56"
+        }
+      ]
+    },
+    "set_pieces": {
+      "black_white_team": {
+        "free_kicks": [
+          {
+            "timestamp": "18:00",
+            "note": null
+          },
+          {
+            "timestamp": "26:45",
+            "note": "over crossbar"
+          },
+          {
+            "timestamp": "35:30",
+            "note": null
+          },
+          {
+            "timestamp": "45:30",
+            "note": "short"
+          },
+          {
+            "timestamp": "52:45",
+            "note": null
+          },
+          {
+            "timestamp": "56:00",
+            "note": "long ball"
+          },
+          {
+            "timestamp": "62:00",
+            "note": "long ball"
+          },
+          {
+            "timestamp": "63:30",
+            "note": "short"
+          },
+          {
+            "timestamp": "66:15",
+            "note": null
+          },
+          {
+            "timestamp": "68:15",
+            "note": null
+          },
+          {
+            "timestamp": "68:45",
+            "note": "short"
+          },
+          {
+            "timestamp": "69:15",
+            "note": null
+          },
+          {
+            "timestamp": "87:15",
+            "note": "goal"
+          },
+          {
+            "timestamp": "87:45",
+            "note": null
+          },
+          {
+            "timestamp": "88:00",
+            "note": "over goal"
+          },
+          {
+            "timestamp": "89:30",
+            "note": "goal"
+          },
+          {
+            "timestamp": "91:30",
+            "note": "GK catches"
+          },
+          {
+            "timestamp": "92:30",
+            "note": null
+          },
+          {
+            "timestamp": "97:00",
+            "note": null
+          },
+          {
+            "timestamp": "99:45",
+            "note": null
+          },
+          {
+            "timestamp": "100:15",
+            "note": null
+          },
+          {
+            "timestamp": "100:30",
+            "note": "high ball"
+          },
+          {
+            "timestamp": "102:45",
+            "note": null
+          },
+          {
+            "timestamp": "104:00",
+            "note": "injury-related"
+          },
+          {
+            "timestamp": "108:00",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "108:15",
+            "note": null
+          },
+          {
+            "timestamp": "111:15",
+            "note": null
+          },
+          {
+            "timestamp": "111:45",
+            "note": "GK gathers"
+          },
+          {
+            "timestamp": "114:15",
+            "note": "blocked"
+          },
+          {
+            "timestamp": "118:15",
+            "note": "goal"
+          },
+          {
+            "timestamp": "121:00",
+            "note": null
+          },
+          {
+            "timestamp": "121:15",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "121:45",
+            "note": null
+          },
+          {
+            "timestamp": "127:30",
+            "note": null
+          },
+          {
+            "timestamp": "127:45",
+            "note": "over goal"
+          },
+          {
+            "timestamp": "131:15",
+            "note": "Blue FK awarded"
+          },
+          {
+            "timestamp": "131:30",
+            "note": "Blue FK awarded"
+          },
+          {
+            "timestamp": "132:00",
+            "note": null
+          },
+          {
+            "timestamp": "134:00",
+            "note": null
+          },
+          {
+            "timestamp": "137:00",
+            "note": null
+          },
+          {
+            "timestamp": "137:15",
+            "note": null
+          }
+        ],
+        "corners": [
+          {
+            "timestamp": "60:15",
+            "note": "out of play"
+          },
+          {
+            "timestamp": "69:00",
+            "note": "defended"
+          },
+          {
+            "timestamp": "88:15",
+            "note": "shot saved, another corner"
+          },
+          {
+            "timestamp": "89:15",
+            "note": null
+          },
+          {
+            "timestamp": "114:45",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "135:45",
+            "note": "cleared"
+          }
+        ],
+        "throw_ins": [
+          {
+            "timestamp": "43:15",
+            "note": null
+          },
+          {
+            "timestamp": "55:42",
+            "note": null
+          },
+          {
+            "timestamp": "61:45",
+            "note": null
+          },
+          {
+            "timestamp": "66:30",
+            "note": null
+          },
+          {
+            "timestamp": "110:45",
+            "note": null
+          },
+          {
+            "timestamp": "120:30",
+            "note": null
+          },
+          {
+            "timestamp": "129:30",
+            "note": null
+          }
+        ]
+      },
+      "blue_team": {
+        "free_kicks": [
+          {
+            "timestamp": "17:15",
+            "note": "short"
+          },
+          {
+            "timestamp": "19:45",
+            "note": null
+          },
+          {
+            "timestamp": "34:30",
+            "note": "header saved"
+          },
+          {
+            "timestamp": "34:45",
+            "note": null
+          },
+          {
+            "timestamp": "35:00",
+            "note": null
+          },
+          {
+            "timestamp": "35:15",
+            "note": null
+          },
+          {
+            "timestamp": "35:45",
+            "note": "goal"
+          },
+          {
+            "timestamp": "37:30",
+            "note": null
+          },
+          {
+            "timestamp": "40:30",
+            "note": null
+          },
+          {
+            "timestamp": "41:15",
+            "note": "shot over goal"
+          },
+          {
+            "timestamp": "44:45",
+            "note": null
+          },
+          {
+            "timestamp": "68:30",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "69:30",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "82:15",
+            "note": "wide"
+          },
+          {
+            "timestamp": "84:30",
+            "note": null
+          },
+          {
+            "timestamp": "104:45",
+            "note": null
+          },
+          {
+            "timestamp": "105:00",
+            "note": null
+          },
+          {
+            "timestamp": "105:15",
+            "note": null
+          },
+          {
+            "timestamp": "111:30",
+            "note": null
+          },
+          {
+            "timestamp": "114:30",
+            "note": null
+          },
+          {
+            "timestamp": "120:00",
+            "note": null
+          },
+          {
+            "timestamp": "122:00",
+            "note": null
+          },
+          {
+            "timestamp": "131:17",
+            "note": null
+          },
+          {
+            "timestamp": "131:41",
+            "note": null
+          },
+          {
+            "timestamp": "131:57",
+            "note": null
+          },
+          {
+            "timestamp": "136:45",
+            "note": null
+          }
+        ],
+        "corners": [
+          {
+            "timestamp": "27:00",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "39:45",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "45:00",
+            "note": "cleared"
+          },
+          {
+            "timestamp": "109:45",
+            "note": "cleared"
+          }
+        ],
+        "throw_ins": [
+          {
+            "timestamp": "42:45",
+            "note": null
+          },
+          {
+            "timestamp": "61:00",
+            "note": null
+          },
+          {
+            "timestamp": "65:30",
+            "note": null
+          },
+          {
+            "timestamp": "65:45",
+            "note": null
+          },
+          {
+            "timestamp": "126:15",
+            "note": null
+          },
+          {
+            "timestamp": "126:30",
+            "note": null
+          }
+        ]
+      }
+    },
+    "turnovers_possession_changes": {
+      "description": "Frequent turnovers are noted, with both teams winning and losing possession in midfield. This indicates a dynamic midfield battle and frequent counter-attacking opportunities for both sides.",
+      "examples": [
+        "25:30",
+        "25:45",
+        "27:30",
+        "27:45",
+        "28:30",
+        "28:45",
+        "29:15",
+        "31:30",
+        "34:00",
+        "46:00",
+        "47:30",
+        "48:30",
+        "53:45",
+        "57:00",
+        "59:30",
+        "61:00",
+        "65:00",
+        "86:30",
+        "88:30",
+        "90:45",
+        "93:00",
+        "93:15",
+        "93:45",
+        "94:45",
+        "96:00",
+        "102:30",
+        "107:30",
+        "111:00",
+        "112:15",
+        "117:00",
+        "117:45",
+        "119:15",
+        "123:15",
+        "123:30",
+        "128:30",
+        "129:15",
+        "129:30",
+        "131:00",
+        "136:15",
+        "136:30"
+      ]
+    },
+    "stoppages_injuries": {
+      "description": "Several stoppages occurred, mainly due to injuries. These breaks often preceded restarts like free kicks or kick-offs, impacting the match flow.",
+      "examples": [
+        "103:00",
+        "103:45",
+        "104:00",
+        "104:15",
+        "104:30",
+        "105:15",
+        "105:30",
+        "123:45",
+        "124:00",
+        "124:15",
+        "124:30",
+        "124:45",
+        "125:00",
+        "125:15",
+        "125:30"
+      ]
+    }
+  },
+  "team_tactical_analysis": {
+    "black_white_team": {
+      "overview": "The Black/White team demonstrated a versatile approach, capable of both structured build-up play and rapid transitions. They were highly effective in attacking and converting opportunities, as evidenced by their high number of AI-detected goals and shots.",
+      "attacking_patterns": {
+        "direct_play_and_counter_attacks": {
+          "description": "The Black/White team frequently employed long balls and through balls, particularly from midfield and defense, to launch quick attacks. They were adept at counter-attacking, turning defensive clearances or turnovers into scoring opportunities.",
+          "examples": [
+            "38:00",
+            "44:15",
+            "49:30",
+            "54:00",
+            "56:15",
+            "95:15",
+            "117:30",
+            "118:30",
+            "27:00",
+            "40:00",
+            "57:00",
+            "113:45",
+            "116:45",
+            "131:00",
+            "133:30",
+            "135:00"
+          ]
+        },
+        "wing_play_and_crosses": {
+          "description": "Attacks down the flanks were common, with crosses into the penalty area often leading to headers or shots. Their first AI-corroborated VEO goal (32:48) was a header from a cross.",
+          "examples": [
+            "25:00",
+            "32:45/33:00",
+            "41:30",
+            "87:00",
+            "116:15",
+            "122:30",
+            "134:45"
+          ]
+        },
+        "set_piece_threat": {
+          "description": "The Black/White team showed a strong presence on set pieces. They took numerous free kicks in attacking positions and corners. Multiple AI-detected goals (not VEO verified) came from free kicks or penalties, indicating this was a significant part of their offensive strategy.",
+          "free_kick_examples": [
+            "18:00",
+            "35:30",
+            "68:15",
+            "99:45",
+            "127:30"
+          ],
+          "corner_examples": [
+            "60:15",
+            "88:15"
+          ],
+          "ai_detected_goal_examples": [
+            "87:15",
+            "89:00",
+            "89:30",
+            "118:15",
+            "129:01"
+          ]
+        },
+        "possession_build_up": {
+          "description": "Despite their directness, the Black/White team also engaged in patient possession play, circulating the ball in their own half and midfield to build attacks against the Blue team's press.",
+          "examples": [
+            "23:45",
+            "24:15",
+            "30:00",
+            "36:00",
+            "46:30",
+            "54:30",
+            "57:30",
+            "70:15",
+            "90:30",
+            "94:15",
+            "116:00"
+          ]
+        }
+      },
+      "defensive_actions": {
+        "clearances_and_interceptions": {
+          "description": "They effectively cleared crosses and corners and intercepted passes in midfield, often initiating counter-attacks.",
+          "clearance_examples": [
+            "45:00",
+            "60:15",
+            "69:00"
+          ],
+          "interception_examples": [
+            "27:30",
+            "47:30",
+            "53:45",
+            "93:00"
+          ]
+        },
+        "goalkeeping": {
+          "description": "The Black/White goalkeeper was active, coming off their line to collect long balls and making crucial saves on opponent shots. They also played a role in distributing the ball from goal kicks or through long passes.",
+          "collecting_long_balls_examples": [
+            "27:15",
+            "72:15"
+          ],
+          "saves_examples": [
+            "10:10 (in warm-up)",
+            "34:33"
+          ],
+          "distribution_examples": [
+            "65:00",
+            "98:00",
+            "115:45"
+          ]
+        },
+        "fouling": {
+          "description": "The Black/White team committed several fouls, sometimes in attacking areas or in midfield, indicating pressure application.",
+          "examples": [
+            "55:26",
+            "58:11",
+            "123:38"
+          ]
+        }
+      },
+      "overall_team_dynamics": {
+        "description": "The Black/White team appeared dominant in attack, generating a high volume of shots and goals (as per AI detections). Their ability to transition quickly and capitalize on set pieces were notable strengths.",
+        "ai_timeline_depiction": "The AI timeline consistently depicts the Black/White team as the attacking force, often in the opposition's final third."
+      }
+    },
+    "blue_team": {
+      "overview": "The Blue team, while ultimately conceding more goals based on AI detections, demonstrated resilience in defense and attempted to build attacks through various means.",
+      "attacking_patterns": {
+        "possession_from_the_back": {
+          "description": "The Blue team often built play from their own half, passing the ball among defenders and midfielders.",
+          "examples": [
+            "20:00",
+            "26:30",
+            "30:15",
+            "38:15",
+            "40:15",
+            "49:00",
+            "54:45",
+            "115:15"
+          ]
+        },
+        "long_balls": {
+          "description": "They used long passes to launch attacks into the opposition's half, particularly over the top of the Black/White defense.",
+          "examples": [
+            "23:30",
+            "31:00",
+            "47:45",
+            "95:30",
+            "133:00"
+          ]
+        },
+        "set_piece_opportunities": {
+          "description": "The Blue team frequently had opportunities from free kicks and corners, though many were cleared or went wide/over the goal. Their first VEO-verified goal was from a free kick (35:37).",
+          "examples": [
+            "27:00",
+            "34:30",
+            "39:45",
+            "41:15",
+            "45:00"
+          ]
+        },
+        "counter_attacks": {
+          "description": "They capitalized on turnovers to launch quick counter-attacks.",
+          "examples": [
+            "24:00",
+            "27:30",
+            "109:30"
+          ]
+        }
+      },
+      "defensive_actions": {
+        "goalkeeping": {
+          "description": "The Blue team's goalkeeper was crucial, making numerous saves and collecting many long balls into the box.",
+          "saves_examples": [
+            "25:12",
+            "34:33",
+            "52:17",
+            "62:20",
+            "85:56",
+            "88:17",
+            "106:31",
+            "107:17",
+            "128:55",
+            "132:35"
+          ],
+          "collecting_long_balls_examples": [
+            "43:45",
+            "64:30",
+            "72:15",
+            "99:30",
+            "101:00",
+            "106:15",
+            "107:45",
+            "111:45"
+          ]
+        },
+        "clearances_and_interceptions": {
+          "description": "Blue defenders were active in clearing the ball from their penalty area and intercepting passes in midfield to regain possession.",
+          "clearance_examples": [
+            "32:00",
+            "32:45",
+            "41:30",
+            "45:00"
+          ],
+          "interception_examples": [
+            "25:30",
+            "47:30",
+            "53:45"
+          ]
+        },
+        "defensive_pressure": {
+          "description": "They often applied pressure in midfield to win back possession.",
+          "examples": [
+            "27:30",
+            "28:30"
+          ]
+        }
+      }
+    }
+  },
+  "match_statistics": {
+    "official_score_veo": {
+      "black_white_team_goals": 3,
+      "blue_team_goals": 2,
+      "final_score": "Black/White Team 3 - Blue Team 2"
+    },
+    "ai_detected_goals": {
+      "black_white_team": {
+        "total_goals_including_disallowed": 19,
+        "veo_verified": 3,
+        "ai_only_detections": 16,
+        "ai_detected_disallowed_goal": 1
+      },
+      "blue_team": {
+        "total_goals": 3,
+        "veo_verified": 2,
+        "ai_only_detection": 1
+      },
+      "note": "The disparity between VEO verified goals and total AI-detected goals suggests the AI may have a higher sensitivity, identifying more events that it classifies as goals."
+    },
+    "ai_detected_shots": {
+      "black_white_team_shots": 18,
+      "blue_team_shots": 5,
+      "note": "A precise count of all AI-detected shots (including those not in VEO) would require a dedicated scan beyond the scope of matching VEO events, but the descriptions indicate a high volume."
+    },
+    "other_key_statistics_approximate": {
+      "fouls": {
+        "blue_team": "Approximately 15+",
+        "black_white_team": "Approximately 15+"
+      },
+      "yellow_cards": {
+        "count": 2,
+        "breakdown": "1 for Blue, 1 for Black/White"
+      },
+      "corners": {
+        "black_white_team": "At least 6",
+        "blue_team": 4
+      },
+      "long_stoppages_for_injury": "Multiple instances, significantly impacting match flow."
+    }
+  },
+  "accuracy_metrics_ai_vs_veo": {
+    "goals": {
+      "recall_for_veo_goals": {
+        "value": "5 out of 5 (100%)",
+        "description": "The AI timeline successfully corroborated all VEO verified goals, providing a clear description and accurate team attribution for each."
+      },
+      "precision_for_ai_detected_goals": {
+        "ai_detected_total_events_excluding_disallowed_and_warmup_goal": 22,
+        "veo_confirmed": 5,
+        "false_positives": 17,
+        "description": "The AI detected 22 goal events (excluding the disallowed goal and warm-up goal). However, only 5 of these are confirmed by VEO. This indicates a lower precision for AI goal detection, with 17 AI-detected goals being false positives relative to the VEO ground truth."
+      }
+    },
+    "shots": {
+      "recall_for_veo_shots": {
+        "strong_corroboration": {
+          "value": "12 out of 18 (66.7%)",
+          "description": "For these, the AI described a shot, save, block, or a goal directly resulting from the shot, with good temporal alignment."
+        },
+        "discrepant_outcome": {
+          "count": 2,
+          "description": "For 2 shots (97:27, 101:15), the AI identified a shot but described a different outcome (wide/over goal vs. on goal), indicating a difference in classification detail."
+        },
+        "missed_detection": {
+          "count": 4,
+          "description": "For 4 shots (39:44, 44:58, 63:31, 99:26), the AI timeline clips around the VEO timestamp did not explicitly describe a shot, only general play or clearances."
+        }
+      },
+      "precision_for_ai_detected_shots": {
+        "description": "The AI timeline contains numerous instances of shots not listed in the 18 VEO verified shots. This suggests that while AI has good recall for VEO shots, it also generates a significant number of detections (false positives) that are not considered \"verified\" by VEO, or VEO itself only lists a subset of all shots."
+      }
+    }
+  },
+  "summary_and_key_takeaways": {
+    "match_summary": "The Black/White team emerged as the dominant offensive force in the match, scoring 3 goals according to VEO ground truth and demonstrating a diverse attacking repertoire including counter-attacks, wing play, and powerful set pieces. Their goalkeeper also played a significant role in their defensive solidity. The Blue team, while scoring 2 goals, relied on possession from the back and set-piece opportunities, with their goalkeeper being instrumental in fending off numerous Black/White attacks.",
+    "ai_analysis_conclusion": "The AI timeline proved highly effective in corroborating all VEO-verified goals and a majority of the VEO-verified shots, demonstrating strong recall for these critical events. However, the AI also detected a substantial number of additional goal and shot events that were not included in the VEO ground truth. This indicates that while the AI accurately identifies major events when they align with ground truth, its broader detection capabilities might include events deemed less significant by human curation or represent false positives. This highlights the importance of combining AI analysis with verified ground truth for a complete and accurate understanding of match dynamics."
+  }
+}

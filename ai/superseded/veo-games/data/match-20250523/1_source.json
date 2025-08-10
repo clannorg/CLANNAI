@@ -1,0 +1,12 @@
+{
+  "url": "https://app.veo.co/matches/20250523-match-23-may-2025-3fc1de88/",
+  "match_id": "match-20250523",
+  "veo_match_id": "20250523-match-23-may-2025-3fc1de88",
+  "extracted_at": "2025-08-10T11:54:20.092919",
+  "total_events": 23,
+  "extraction_method": "veo_api_highlights",
+  "status": "ready_for_analysis",
+  "date": "2025-05-23",
+  "primary_team": "Match",
+  "venue": "Match"
+}

@@ -101,6 +101,11 @@ def upload_match_to_s3(match_id):
             "content_type": "application/json", 
             "description": "Direct events array for web app"
         },
+        "match_metadata.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Match metadata with team colors and stats"
+        },
         
         # V2 pipeline intermediate files
         "6_validated_timeline.txt": {
