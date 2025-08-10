@@ -1,0 +1,4 @@
+Black/White team scores and maintains possession after the subsequent kick-off.
+**Key events:**
+- **00:00:** Goal scored by the Black/White team.
+- **00:05:** Black/White team takes the kick-off.

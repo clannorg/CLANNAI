@@ -1,0 +1,235 @@
+{
+  "tactical_analysis": {
+    "blue_team": {
+      "strengths": [
+        {
+          "title": "Potent Attacking Set-Pieces",
+          "description": "The team demonstrates a significant threat from dead-ball situations, particularly free kicks and corners. We are capable of scoring directly and creating high-quality chances from secondary phases of play. This is our most reliable source of offense.",
+          "evidence": [
+            "35:51 - Goal scored by the Blue team. (Direct Free Kick)",
+            "40:47 - Goal scored by the Green team from the rebound. (Following a corner kick)",
+            "34:33 - The Black/White team's goalkeeper saves the header. (From a free kick crossed into the box)"
+          ],
+          "coaching_tip": "Continue to drill and innovate set-piece routines. Ensure our best taker is always on the ball and that we commit numbers to the box to attack the first ball and capitalize on rebounds. This is a key weapon we must maintain."
+        },
+        {
+          "title": "Intentional Use of Long Passes",
+          "description": "We consistently attempt to play long, direct balls over the top of the opposition's defense to initiate quick attacks. While the execution varies, the tactical intent to bypass the midfield and exploit space behind the defensive line is clear.",
+          "evidence": [
+            "23:30 - Blue team builds an attack from their own half. A long pass is played forward over the Black/White team's defence...",
+            "31:00 - Blue team maintains possession in their own half and midfield before launching a long pass forward into the attacking third.",
+            "47:55 - a player launches a long ball over the top of the Black/White defence, initiating a fast attack into the opposition's final third."
+          ],
+          "coaching_tip": "Maintain this as a tactical option, but improve the quality of the pass and the timing of the forward's run to increase the success rate. Ensure we have players ready to compete for the second ball if the initial pass is contested."
+        }
+      ],
+      "weaknesses": [
+        {
+          "title": "Vulnerability to Aerial Balls and Crosses",
+          "description": "The team struggles significantly to defend crosses into the penalty area, resulting in direct headed goals. There appears to be a lack of communication, poor marking, and an inability to win crucial aerial duels in our own box.",
+          "evidence": [
+            "33:03 - Black/White team scores a goal with a header.",
+            "41:33 - Goal: The Black/White team scores with a header from a cross into the box."
+          ],
+          "improvement": "Dedicate training sessions to defensive heading. Drill zonal and man-marking systems for crosses, focusing on defenders' body shape, communication, and aggression in attacking the ball. Full-backs must be coached to prevent crosses from wide areas."
+        },
+        {
+          "title": "Defensive Line Susceptible to Through Balls",
+          "description": "Our defensive line is frequently caught out by long balls played over the top or through the channels. This suggests either a poorly executed offside trap, a lack of pace, or a defensive line that is positioned too high without adequate pressure on the ball.",
+          "evidence": [
+            "31:15 - Black/White team attempts a long attacking pass over the top of the defence. An offside is called...",
+            "44:15 - Black/White team wins possession in their own half and launches a quick counter-attack with a long through-ball down the right flank.",
+            "51:15 - Black/White team launches a quick attack from the centre circle with a long through-ball. Key events: 51:25 Black/White team scores a goal."
+          ],
+          "improvement": "Drill the defensive unit on maintaining appropriate depth based on the ball's position. Improve the coordination between the backline and midfield to ensure pressure is applied to the passer, preventing uncontested long balls. Consider lowering the line of engagement."
+        },
+        {
+          "title": "Poor Defensive Transitions",
+          "description": "Upon losing possession, particularly from our own attacking situations, the team is slow to transition into a defensive shape. This leaves us exposed and vulnerable to rapid counter-attacks, a weakness the opposition repeatedly exploited.",
+          "evidence": [
+            "27:00 - Blue team takes a corner kick, which is cleared by the Black/White team. The Black/White team then launches a counter-attack...",
+            "67:30 - The Blue team takes a throw-in deep in the attacking half. The White team wins the aerial ball and launches a counter-attack..."
+          ],
+          "improvement": "Implement immediate pressing triggers upon possession loss (counter-pressing). If unable to win the ball back quickly, players must be drilled on recovery runs to get behind the ball and re-establish a compact defensive block as quickly as possible."
+        },
+        {
+          "title": "Losing Possession in Build-Up Play",
+          "description": "We are often careless in possession in our own half, leading to turnovers that put immediate pressure on our defense. This happens via intercepted passes or losing the ball while being pressed.",
+          "evidence": [
+            "28:30 - Blue team takes a throw-in and passes the ball in their own half. The Black/White team presses, wins possession...",
+            "47:30 - A forward pass is intercepted by the Black/White team, who then gain control of the ball in the midfield.",
+            "59:30 - Blue team initiates a counter-attack with a long pass forward, which is intercepted by the Black/White team's defense..."
+          ],
+          "improvement": "Work on possession-based drills under pressure (e.g., Rondos, small-sided games). Emphasize better support angles from teammates and quicker decision-making from the player on the ball to ensure safer build-up play."
+        }
+      ],
+      "key_players": [
+        {
+          "impact": "Goalkeeper",
+          "evidence": "Made several crucial saves (25:12, 26:26, 52:17, 62:20) but was also let down by the defense, conceding from a rebound (52:18). Actively swept behind a high line (43:45, 46:15), indicating an awareness of the team's key defensive vulnerability."
+        },
+        {
+          "impact": "Primary Set-Piece Specialist",
+          "evidence": "Scored the direct free-kick goal at 35:51 and delivered dangerous balls that led to a goal (40:47) and a saved header (34:33). This player is our most consistent offensive threat."
+        }
+      ],
+      "formation_analysis": {
+        "observed_formation": "4-3-3 or 4-4-2",
+        "effectiveness": "Highly ineffective. The formation left vast spaces between the defensive and midfield lines, which the opponent exploited with through balls. We were consistently outnumbered or poorly positioned when defending crosses from wide areas. We failed to control the midfield or sustain pressure.",
+        "adjustments": "Shift to a more compact and defensively stable formation like a 4-1-4-1 or a 4-5-1. Introducing a dedicated defensive midfielder would provide a crucial screen for the back four, helping to cut out through balls and provide better cover during defensive transitions."
+      },
+      "set_pieces": {
+        "attacking": "This is a clear area of strength. We scored twice from set-pieces (35:51, 40:47) and created other quality chances (34:33). Our delivery and movement are effective.",
+        "defending": "A critical weakness. While we cleared some set-pieces (69:00, 69:15), we conceded numerous free kicks in dangerous areas (18:00, 66:00, 68:15) and appeared disorganized, leading to constant pressure and confirming our broader weakness against aerial balls."
+      },
+      "transitions": {
+        "attack_to_defense": "Extremely poor. The team is structurally disorganized after losing the ball. We are too slow to react, leaving us wide open to counter-attacks, as evidenced after losing possession from our own corner (27:00) and throw-in (67:30).",
+        "defense_to_attack": "Our primary method is a direct long ball over the top (47:55). We show little evidence of building quick, incisive counter-attacks through midfield. After winning the ball, the tendency is to play a hopeful forward pass or recycle possession slowly rather than launching a coordinated break."
+      }
+    },
+    "red_team": {
+      "strengths": [
+        {
+          "title": "Threat from Set Pieces",
+          "description": "The opponent's primary source of attack came from set-piece situations. They scored directly from a free kick and also scored from a rebound following a corner, indicating well-rehearsed routines and a danger on the second phase.",
+          "evidence": [
+            "35:51 Goal scored by the Blue team.",
+            "40:47: Goal scored by the Green team from the rebound.",
+            "34:30 - Blue team takes a free kick. The ball is crossed into the penalty area, and a header is directed towards the goal.",
+            "40:45 - Green team attacks from a corner kick. A header is saved by the White team goalkeeper, but the rebound is put into the net."
+          ],
+          "coaching_tip": "Drill defensive set-piece organization. Assign specific man-markers for their key aerial threats and emphasize alertness for tracking runners on the second ball and rebounds."
+        },
+        {
+          "title": "Direct Attacking with Long Balls",
+          "description": "The opponent frequently attempted to bypass our midfield press by playing long, direct balls over the top of our defense to initiate their attacks. This was their main strategy in open play to create chances quickly.",
+          "evidence": [
+            "23:30 - Blue team builds an attack from their own half. A long pass is played forward over the Black/White team's defence...",
+            "47:55, a player launches a long ball over the top of the Black/White defence, initiating a fast attack...",
+            "59:00 - The Green team takes the kick-off and immediately plays a long ball into the White team's penalty area."
+          ],
+          "coaching_tip": "Maintain a disciplined, slightly deeper defensive line to nullify the space behind. The goalkeeper's starting position must be aggressive to sweep up these through balls. Trigger a coordinated press on their defenders to prevent them from having the time to play these long passes."
+        }
+      ],
+      "weaknesses": [
+        {
+          "title": "Vulnerability to Crosses and Aerial Duels",
+          "description": "The opponent consistently failed to defend crosses into their penalty area, conceding at least two headed goals. This suggests poor marking, a lack of communication, and an inability to deal with aerial threats from wide positions.",
+          "evidence": [
+            "33:03 Black/White team scores a goal with a header.",
+            "41:33 - Goal: The Black/White team scores with a header from a cross into the box."
+          ],
+          "improvement": "Focus attacks down the flanks. Instruct wingers to deliver early crosses and encourage midfielders and opposite-side wingers to make aggressive runs into the box to create overloads."
+        },
+        {
+          "title": "Defensive Indiscipline",
+          "description": "The opponent repeatedly committed fouls in their own defensive third, leading to numerous dangerous free-kick opportunities and a penalty. Their defenders seem to panic when faced with direct dribbling.",
+          "evidence": [
+            "34:22 The Green/White team commits a foul in the penalty area.",
+            "34:23 The referee awards a penalty to the White team.",
+            "46:51 Foul committed by the Blue team, resulting in a free kick for the Black/White team near the center circle.",
+            "56:02: Foul committed by the Blue team.",
+            "66:03 foul committed by the Blue team."
+          ],
+          "improvement": "Instruct our forwards and attacking midfielders to be direct, run at their defenders, and initiate 1v1 situations. This will exploit their tendency to foul and generate high-quality scoring chances from set pieces."
+        },
+        {
+          "title": "Slow Defensive Transitions",
+          "description": "After losing possession, particularly following their own set pieces or attacks, the opponent was slow to reorganise defensively. This left them highly vulnerable to our counter-attacks.",
+          "evidence": [
+            "27:00 - Blue team takes a corner kick, which is cleared by the Black/White team. The Black/White team then launches a counter-attack...",
+            "40:00 - The White team wins possession in their defensive third and launches a counter-attack.",
+            "24:00 - The Green team is in possession... The White team wins the ball back and starts a counter-attack..."
+          ],
+          "improvement": "Upon winning possession, our first look must be a quick, vertical pass into the space behind their midfield. Our forwards should be coached to anticipate these turnovers and make immediate forward runs."
+        }
+      ],
+      "key_players": [
+        {
+          "impact": "The Goalkeeper",
+          "evidence": "Their goalkeeper was extremely active, frequently coming off his line to sweep behind his defense ('46:15 - The Blue team's goalkeeper comes out of his box to collect the ball.', '56:45 - The Green team's goalkeeper comes out of his box to clear the danger.'). While he made several saves ('62:20 the Blue team's goalkeeper saves the shot.'), his aggressive positioning is a risk that can be exploited with chips or quick shots."
+        },
+        {
+          "impact": "The Set-Piece Specialist",
+          "evidence": "This player was their most significant goal threat, scoring directly from a free kick ('35:51 Goal scored by the Blue team.') and delivering the dangerous balls that led to other key chances ('34:30', '40:45')."
+        }
+      ],
+      "formation_analysis": {
+        "observed_formation": "4-4-2",
+        "effectiveness": "Their formation was ineffective defensively. While the two forwards allowed for a direct, long-ball game, it left their midfield easily bypassed and their back four exposed to wide attacks and runners from deep. They were consistently outnumbered and disorganized when defending their box.",
+        "adjustments": "Continue to exploit the channels between their full-backs and centre-backs with diagonal runs from our wingers. Utilize a central attacking midfielder to find pockets of space between their midfield and defensive lines."
+      },
+      "set_pieces": {
+        "attacking": "This was their biggest strength. They scored from a direct free kick (35:51) and a corner rebound (40:47), posing a constant threat from dead-ball situations.",
+        "defending": "Extremely poor. They conceded a penalty (34:23) and were consistently susceptible to our free kicks and corners, showing a lack of organization and discipline."
+      },
+      "transitions": {
+        "attack_to_defense": "Slow and disorganized. They were frequently caught out of position after losing the ball, leading to multiple successful counter-attacks for our team (27:00, 40:00).",
+        "defense_to_attack": "Predictable and direct. Their primary tactic was to launch a long ball forward immediately after winning possession (24:00, 47:55), which became easier to read and defend as the match progressed."
+      }
+    }
+  },
+  "match_overview": {
+    "final_score": "8-2 (Best guess based on timeline)",
+    "match_summary": "A dominant performance by the Black/White team, who systematically exploited the opponent's defensive weaknesses. While the opponent showed some threat from set pieces, their inability to defend crosses, track runners, or manage defensive transitions led to a comprehensive defeat. Black/White controlled the tempo, created numerous chances, and were clinical in front of goal.",
+    "key_moments": [
+      {
+        "timestamp": "33:03",
+        "event": "Black/White team scores with a header.",
+        "significance": "This goal established a clear pattern of attacking success, highlighting the opponent's critical weakness in defending aerial balls from wide areas."
+      },
+      {
+        "timestamp": "35:51",
+        "event": "Blue team scores from a direct free kick.",
+        "significance": "Showcased the opponent's primary strength and their most reliable route to goal. It served as a warning about giving away cheap fouls in our defensive third."
+      },
+      {
+        "timestamp": "40:47",
+        "event": "Green team scores from a corner rebound.",
+        "significance": "Exposed a lapse in concentration for our team on the second phase of a set piece, reinforcing the need to play until the whistle and secure all rebounds."
+      },
+      {
+        "timestamp": "51:15 - 51:25",
+        "event": "Black/White team attacks from kick-off with a long through-ball and scores.",
+        "significance": "Demonstrated our ability to punish a disorganized opponent, showcasing our speed in transition and clinical finishing even immediately after a restart."
+      }
+    ],
+    "tempo_analysis": "The tempo was largely controlled by the Black/White team, who effectively mixed patient, possession-based build-up ('24:15', '56:30') with devastatingly quick counter-attacks ('44:15', '51:15'). The opponent's attempts to force a frantic, direct style of play were largely unsuccessful and only served to open them up defensively."
+  },
+  "manager_recommendations": {
+    "blue_team": {
+      "immediate_fixes": [
+        "Lower the defensive line by 5-10 yards to reduce the space for attackers to run into. This is a short-term fix to prevent being beaten by simple through balls.",
+        "Implement a 'no cross' policy in wide areas for the next match. Drill full-backs and wide midfielders to prioritize showing attackers down the line and blocking any attempt to cross the ball into the box.",
+        "Assign specific man-marking duties on all defensive set-pieces to ensure every opponent is accounted for."
+      ],
+      "training_focus": [
+        "Defensive Shape and Compactness: Use whole-team drills (e.g., shadow play, 11v8) to train the vertical and horizontal distances between players, ensuring we are hard to play through, especially in transition.",
+        "Defending the Box: Repetitive drills with crosses from various angles. Focus on defenders' positioning, communication ('keeper's call!'), and clearing headers. Emphasize tracking runners and reacting to second balls.",
+        "Build-up Play Under Pressure: Improve players' ability to retain possession when pressed in our own half. Use Rondos and position-specific drills to increase comfort on the ball and provide better passing options."
+      ],
+      "player_development": [
+        "Center-Backs: Intensive one-on-one coaching on body positioning when defending crosses and timing of jumps for aerial duels. Communication with goalkeeper and full-backs is paramount.",
+        "Full-Backs: Focus on 1v1 defensive techniques to stop crosses at the source. Improve awareness of when to tuck in to support the center-backs versus when to hold the width.",
+        "Central Midfielders: Work on defensive discipline, scanning, and tracking runners from deep. Must understand their role in screening the back four and delaying opposition attacks."
+      ]
+    },
+    "red_team": {
+      "immediate_fixes": [
+        "Reinforce defensive set-piece responsibilities. The two goals conceded came from a direct free kick and a corner rebound (35:51, 40:47). We must improve our wall setup, man-marking, and boxing out on second balls to eliminate these threats."
+      ],
+      "training_focus": [
+        "Wide-area attacks: Continue to drill patterns involving wingers and overlapping full-backs to deliver crosses. This was our most effective offensive weapon (33:03, 41:33) and should be further refined.",
+        "Counter-attacking transitions: Focus on the speed of the first forward pass after winning possession. Drill scenarios where midfielders and forwards react instantly to turnovers to exploit the opponent's slow defensive transition (27:00)."
+      ],
+      "player_development": [
+        "Forwards: Work on varied movements inside the penalty box to attack crosses from different angles. Practice dribbling directly at defenders to continue drawing fouls in the final third (34:22).",
+        "Defenders & Goalkeeper: Improve communication and organization on defensive set pieces. The entire unit must be accountable for tracking runners and attacking the second ball to prevent rebound goals (40:47)."
+      ]
+    },
+    "general": {
+      "match_summary": "Tactical analysis for Blue vs Red teams (Red = Black/White)",
+      "generated_at": "2025-08-10T11:37:02.316694"
+    }
+  }
+}

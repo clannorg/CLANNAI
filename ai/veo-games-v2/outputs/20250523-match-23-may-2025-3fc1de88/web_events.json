@@ -1,0 +1,704 @@
+{
+  "match_id": "20250523-match-23-may-2025-3fc1de88",
+  "generated_timestamp": "2025-08-10T11:34:31.068462",
+  "events_count": 116,
+  "source": "clann_ai_pipeline",
+  "events": [
+    {
+      "type": "substitution",
+      "timestamp": 1095,
+      "description": "Substitution managed by the referee. Players from both teams are present.",
+      "team": "both"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1440,
+      "description": "White team wins the ball back, starts a counter-attack.",
+      "team": "white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1488,
+      "description": "Green team commits a foul, free kick for the White team.",
+      "team": "green"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1530,
+      "description": "Black/White team loses possession to the Blue team.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1545,
+      "description": "Black/White team loses possession to the Blue team.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 1620,
+      "description": "Blue team takes a corner kick, which is cleared by the Black/White team.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1650,
+      "description": "Green team wins back possession in the midfield.",
+      "team": "green"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1665,
+      "description": "Blue team wins possession in the centre circle.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1710,
+      "description": "Black/White team presses, wins possession in the centre of the pitch.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1725,
+      "description": "Blue team recovers the ball and maintains possession.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 1755,
+      "description": "Blue team intercepts a pass and maintains possession.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 2040,
+      "description": "Blue team defends a long pass and intercepts the ball in midfield.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2070,
+      "description": "Blue team takes a free kick, crossed into the penalty area.",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2260,
+      "description": "Foul committed by the Black/White team, free kick for the Blue team.",
+      "team": "black/white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2362,
+      "description": "Foul committed by the Black/White team, free-kick for the Blue team.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2385,
+      "description": "Blue team takes a corner kick. Defended by Black/White team.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 2400,
+      "description": "The White team wins possession in their defensive third.",
+      "team": "white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2575,
+      "description": "Foul against the Blue team in the middle of the pitch.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 2625,
+      "description": "Blue team's goalkeeper intercepts a long pass.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 2655,
+      "description": "Black/White team wins possession in their own half.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2685,
+      "description": "Blue team initiates an attacking set piece.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2700,
+      "description": "Blue team takes a corner kick. Cleared by Black/White team.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2730,
+      "description": "Black/White team sets up for a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 2760,
+      "description": "Blue Team wins the ball and plays a long pass forward.",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2811,
+      "description": "Foul committed by the Blue team, free kick for the Black/White team.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 2850,
+      "description": "Black/White team intercepts a forward pass in the midfield.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 2910,
+      "description": "The White team wins the ball, quickly won by the Blue team.",
+      "team": "both"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2928,
+      "description": "A Green team player commits a foul, free kick for the White team.",
+      "team": "green"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 3045,
+      "description": "The White team gains possession.",
+      "team": "white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 3060,
+      "description": "Blue team intercepts the ball.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3165,
+      "description": "Black/White team has an attacking set piece.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 3225,
+      "description": "Blue team intercepts the ball and gains possession.",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3326,
+      "description": "Black/White team commits a foul inside the penalty area.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3330,
+      "description": "Black/White team takes a throw-in.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3345,
+      "description": "Green team takes a throw-in from the left sideline.",
+      "team": "green"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3362,
+      "description": "The Black/White team is awarded a free kick.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 3420,
+      "description": "White team regains possession and starts an attack.",
+      "team": "white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 3480,
+      "description": "The Green team intercepts a pass with a header.",
+      "team": "green"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3491,
+      "description": "Foul by the Green team on a White team player.",
+      "team": "green"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3615,
+      "description": "Black/White team takes a corner kick from the left side.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 3660,
+      "description": "Blue team gains control after a forward pass.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3945,
+      "description": "Blue team takes a throw-in on the right flank.",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3963,
+      "description": "Black/White team is awarded a free kick in the Blue team's half.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3990,
+      "description": "White team takes a throw-in from the right sideline.",
+      "team": "white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 4050,
+      "description": "White Team wins the aerial ball and launches a counter-attack",
+      "team": "white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4080,
+      "description": "The White team is setting up for a free kick.",
+      "team": "white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4110,
+      "description": "Blue team takes a set piece. Long-range free kick.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4125,
+      "description": "Black/White team prepares for and takes a short free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4140,
+      "description": "Black/White team attacks with a corner kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4155,
+      "description": "Black/White team takes a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4170,
+      "description": "Blue Team takes a set piece.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4905,
+      "description": "Black team restarts play from the center circle.",
+      "team": "black"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5190,
+      "description": "Green team wins the ball and launches an attack.",
+      "team": "green"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5205,
+      "description": "Black/White team wins possession in the center circle.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5290,
+      "description": "Blue Team gains possession in the midfield and begins an attack.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 5295,
+      "description": "Black/White team takes a corner kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 5355,
+      "description": "Black/White team takes a corner kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5430,
+      "description": "The White team loses possession to the Green team.",
+      "team": "white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5640,
+      "description": "White Team attacks with a long throw-in.",
+      "team": "white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5685,
+      "description": "The Blue team recovers the ball and starts an attack.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5760,
+      "description": "Black/White team regains possession in the midfield.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 5775,
+      "description": "White team wins possession in the midfield",
+      "team": "white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5802,
+      "description": "Foul committed by the White team in the penalty box.",
+      "team": "white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5829,
+      "description": "A foul is called against the Blue team.",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5841,
+      "description": "A foul is called against the Green team.",
+      "team": "green"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6170,
+      "description": "Foul committed by a Blue team player.",
+      "team": "blue"
+    },
+    {
+      "type": "yellow_card",
+      "timestamp": 6301,
+      "description": "The referee issues a yellow card to a Blue team player.",
+      "team": "blue"
+    },
+    {
+      "type": "yellow_card",
+      "timestamp": 6356,
+      "description": "The referee gives a yellow card to a player on the team in white.",
+      "team": "white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 6420,
+      "description": "A Green team player challenges the White team.",
+      "team": "green"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 6450,
+      "description": "Blue Team wins back possession in the midfield.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 6465,
+      "description": "The Blue team's goalkeeper gathered the ball",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6480,
+      "description": "Black/White team takes a set piece.",
+      "team": "black/white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6495,
+      "description": "A foul is awarded to the White team.",
+      "team": "green"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6585,
+      "description": "Blue team takes a corner kick.",
+      "team": "blue"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 6600,
+      "description": "The team in green intercepts the ball and begins a counter-attack.",
+      "team": "green"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6627,
+      "description": "The referee blows the whistle to award a free kick.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6645,
+      "description": "Black/White team takes a throw-in.",
+      "team": "black/white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6679,
+      "description": "A foul is committed by a Blue team player.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6690,
+      "description": "Blue team sets up for a free kick.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6705,
+      "description": "Black/White team takes a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 6735,
+      "description": "The Black/White team recovers the ball",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 6750,
+      "description": "Black",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6855,
+      "description": "Black/White team takes an attacking free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6870,
+      "description": "Blue team sets up for a free kick.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6885,
+      "description": "Black/White team takes a corner kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6930,
+      "description": "Black/White team prepares to take a goal kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "turnover",
+      "timestamp": 7155,
+      "description": "Black/White team takes a throw-in.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7170,
+      "description": "Black/White team takes a goal kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7230,
+      "description": "White team takes a throw-in.",
+      "team": "white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 7240,
+      "description": "A foul is committed by the Green/Blue team.",
+      "team": "green/blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7260,
+      "description": "Black/White team sets up for a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7275,
+      "description": "Black/White team attacks with a set piece.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7305,
+      "description": "Black/White team takes a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7320,
+      "description": "Blue team takes a free kick.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7410,
+      "description": "White team takes a throw-in on the left wing.",
+      "team": "white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 7418,
+      "description": "A foul is committed by the White team on a Green team player.",
+      "team": "white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7575,
+      "description": "Blue team prepares for a throw-in.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7590,
+      "description": "Blue team takes a throw-in.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7620,
+      "description": "Black/White team takes a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7635,
+      "description": "The Black/White team attempts a long pass forward.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7650,
+      "description": "Black/White team takes an attacking free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7665,
+      "description": "Black/White team takes a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7680,
+      "description": "Black/White team attacks from a set piece.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7695,
+      "description": "Black/White team is on the attack with a set piece.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7755,
+      "description": "Blue Team Launches a long pass down the right flank",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7770,
+      "description": "Black/White team takes a throw-in.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7875,
+      "description": "Black/White team takes a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 7890,
+      "description": "Black/White team is on the attack with a set piece.",
+      "team": "black/white"
+    },
+    {
+      "type": "foul",
+      "timestamp": 7901,
+      "description": "The referee blows the whistle, awarding a free kick to the Blue team.",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 7917,
+      "description": "A free kick is awarded to the Blue team.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 8160,
+      "description": "Black/White team takes a set piece.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 8205,
+      "description": "Blue team prepares to take a free kick.",
+      "team": "blue"
+    },
+    {
+      "type": "corner",
+      "timestamp": 8220,
+      "description": "The Black/White team takes a free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 8235,
+      "description": "Black/White team takes an attacking free kick.",
+      "team": "black/white"
+    },
+    {
+      "type": "corner",
+      "timestamp": 8250,
+      "description": "Blue Team makes a tackle in their defensive third",
+      "team": "blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 8262,
+      "description": "Foul awarded to the Black/White team.",
+      "team": "-"
+    }
+  ]
+}
