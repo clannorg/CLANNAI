@@ -372,7 +372,7 @@ export default function UnifiedSidebar({
         {/* Events Tab */}
         {activeTab === 'events' && (
           <div className="h-full flex flex-col">
-            {/* Filter Controls */}
+            {/* Filter Controls - Fixed at top like video/tabs */}
             <div className="p-4 border-b border-gray-700">
               <button
                 onClick={() => setShowFilters(!showFilters)}
@@ -521,22 +521,22 @@ export default function UnifiedSidebar({
               )}
             </div>
             
-            {/* Events List */}
+            {/* Events List - Only events scroll */}
             <div className="flex-1 overflow-y-auto p-4">
               <div className="space-y-2">
                 {events.map((event, index) => {
                   const originalIndex = allEvents.indexOf(event)
                   return (
-                  <button
+                    <button
                       key={`${event.timestamp}-${event.type}-${index}`}
                       id={`event-${originalIndex}`}
-                    onClick={() => onEventClick(event)}
-                    className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
+                      onClick={() => onEventClick(event)}
+                      className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
                         originalIndex === currentEventIndex 
-                        ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
-                        : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
-                    }`}
-                  >
+                          ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
+                          : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
+                      }`}
+                    >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         {/* Event Type Badge */}
@@ -584,6 +584,7 @@ export default function UnifiedSidebar({
                   </button>
                   )
                 })}
+              </div>
               </div>
             </div>
           </div>
