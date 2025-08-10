@@ -1,0 +1,3 @@
+Ground truth not found. Either run v1 extractor or provide 1_veo_ground_truth.json
+Expected v1 path: /home/ubuntu/CLANNAI/ai/veo-games/ai-pipeline/data/20250523-match-23-may-2025-3fc1de88/1_veo_ground_truth.json
+v2 outputs path: /home/ubuntu/CLANNAI/ai/veo-games-v2/outputs/20250523-match-23-may-2025-3fc1de88/1_veo_ground_truth.json

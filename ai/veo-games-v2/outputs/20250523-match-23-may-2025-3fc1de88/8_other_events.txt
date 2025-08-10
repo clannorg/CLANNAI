@@ -1,0 +1,783 @@
+# Other Events - 20250523-match-23-may-2025-3fc1de88
+# Generated: 2025-08-10T11:33:43.697693
+# Method: Gemini intelligent event extraction
+# Source: Complete timeline analysis
+# Focus: Fouls, cards, corners, substitutions, turnovers, decisions
+
+Okay, I'm ready to analyze the provided match timeline and extract the significant non-goal/shot events according to the given criteria.
+
+=== FOULS & FREE KICKS ===
+Timestamp: 24:48 (1488 seconds)
+Type: Foul
+Team: Green team
+Description: Green team commits a foul, leading to a free kick for the White team in their own half.
+Significance: Stops White team's possession, gives White team a chance to reorganize.
+
+Timestamp: 31:15 (1875 seconds)
+Type: Offside
+Team: Black/White Team
+Description: An offside is called against the Black/White team attacker at 31:25, resulting in a free-kick for the Blue team.
+Significance: Wipes out potential Black/White attack.
+
+Timestamp: 37:40 (2260 seconds)
+Type: Foul
+Team: Black/White team
+Description: A foul is committed by the Black/White team, resulting in a free kick for the Blue team.
+Significance: Gives Blue team opportunity to attack.
+
+Timestamp: 39:22 (2362 seconds)
+Type: Foul
+Team: Black/White team
+Description: A foul is committed by the Black/White team, and a free-kick is awarded to the Blue team.
+Significance: Disrupts Blue team's possession.
+
+Timestamp: 42:55 (2575 seconds)
+Type: Foul
+Team: Blue team
+Description: The referee blows the whistle for a foul against the Blue team in the middle of the pitch.
+Significance: Allows Black/White team to regain possession.
+
+Timestamp: 46:51 (2811 seconds)
+Type: Foul
+Team: Blue team
+Description: Foul committed by the Blue team, resulting in a free kick for the Black/White team near the center circle.
+Significance: Halts attack by Blue team, sets up Black/White to build from midfield
+
+Timestamp: 48:48 (2928 seconds)
+Type: Foul
+Team: Green team
+Description: A Green team player commits a foul, resulting in a free kick for the White team.
+Significance: Sets up White team attack.
+
+Timestamp: 55:26 (3326 seconds)
+Type: Foul
+Team: Black/White team
+Description: a foul is committed by the Black/White team inside the penalty area, resulting in a free-kick for the Blue team.
+Significance: Gives Blue team a valuable free kick from a dangerous area.
+
+Timestamp: 56:02 (3362 seconds)
+Type: Foul
+Team: Blue team.
+Description: The Black/White team is awarded a free kick near the halfway line
+Significance: Gives Black/White team opportunity to launch a long ball attack.
+
+Timestamp: 58:11 (3491 seconds)
+Type: Foul
+Team: Green team
+Description: Foul by the Green team on a White team player near the center circle.
+Significance: Stops Green team from building an attack, gives White team a free kick.
+
+Timestamp: 66:03 (3963 seconds)
+Type: Foul
+Team: Blue team
+Description: Black/White team is awarded a free kick in the Blue team's half.
+Significance: Sets up Black/White team for a possible set play in Blue team territory.
+
+Timestamp: 92:34 (5554 seconds)
+Type: Foul
+Team: Blue team
+Description: Foul by the Blue team.
+Significance: Allows Black/White team to regain possession.
+
+Timestamp: 96:42 (5802 seconds)
+Type: Foul
+Team: White team
+Description: Foul committed by the White team in the penalty box, penalty awarded to the Green team.
+Significance: Gives Green team a penalty shot.
+
+Timestamp: 97:09 (5829 seconds)
+Type: Foul
+Team: Blue team
+Description: A foul is called against the Blue team, resulting in a free kick for the Black/White team.
+Significance: Disrupts the Blue team's possession.
+
+Timestamp: 97:21 (5841 seconds)
+Type: Foul
+Team: Green team
+Description: A foul is called against the Green team.
+Significance: Gives White team free kick in the center of the pitch.
+
+Timestamp: 102:50 (6170 seconds)
+Type: Foul
+Team: Blue team
+Description: A foul is committed by a Blue team player on a Black/White team player, resulting in a free kick.
+Significance: Stops the Blue team's attack.
+
+Timestamp: 104:48 (6288 seconds)
+Type: Foul
+Team: Blue team
+Description: The referee signals for a free kick.
+Significance: Stops the Blue team's attack.
+
+Timestamp: 105:01 (6301 seconds)
+Type: Foul
+Team: Blue team
+Description: The referee issues a yellow card to a Blue team player.
+Significance: Stops the Blue team's attack.
+
+Timestamp: 108:15 (6495 seconds)
+Type: Foul
+Team: Green Team
+Description: A foul is awarded to the White team.
+Significance: Stops the Green Team's possession, sets up the White Team with a possible set play.
+
+Timestamp: 110:27 (6627 seconds)
+Type: Foul
+Team: Blue Team
+Description: The referee blows the whistle to award a free kick to the Black/White team, ending the attack.
+Significance: Stops the Blue Team counter-attack.
+
+Timestamp: 111:19 (6679 seconds)
+Type: Foul
+Team: Blue Team
+Description: A foul is committed by a Blue team player, resulting in a free kick for the Black/White team.
+Significance: Stops the Black/White Team attack.
+
+Timestamp: 120:40 (7240 seconds)
+Type: Foul
+Team: Green/Blue team
+Description: A foul is committed by the Green/Blue team.
+Significance: Changes possession to the White team.
+
+Timestamp: 123:38 (7418 seconds)
+Type: Foul
+Team: White team
+Description: A foul is committed by the White team on a Green team player, stopping play.
+Significance: Changes possession to the Green team.
+
+Timestamp: 131:41 (7901 seconds)
+Type: Foul
+Team: Blue team
+Description: The referee blows the whistle, awarding a free kick to the Blue team.
+Significance: Gives Blue team a valuable free kick from a dangerous area.
+
+Timestamp: 131:57 (7917 seconds)
+Type: Foul
+Team: Blue team
+Description: a free kick is awarded to the Blue team near the center circle.
+Significance: Gives Blue team a valuable free kick from a dangerous area.
+
+Timestamp: 137:42 (8262 seconds)
+Type: Foul
+Team: -
+Description: Foul awarded to the Black/White team.
+Significance: Sets up Black/White team for a possible set play.
+
+=== CARDS & DISCIPLINE ===
+Timestamp: 105:01 (6301 seconds)
+Type: Yellow card
+Team: Blue team
+Description: The referee issues a yellow card to a Blue team player.
+Impact: Puts the Blue team player on notice, could influence future tackles.
+
+Timestamp: 105:56 (6356 seconds)
+Type: Yellow card
+Team: White team
+Description: The referee gives a yellow card to a player on the team in white.
+Impact: Puts the White team player on notice, could influence future tackles.
+
+=== CORNERS & SET PIECES ===
+Timestamp: 27:00 (1620 seconds)
+Type: Corner kick
+Team: Blue team
+Description: Blue team takes a corner kick, which is cleared by the Black/White team.
+Danger Level: Medium threat
+
+Timestamp: 34:30 (2070 seconds)
+Type: Free kick
+Team: Blue team
+Description: Blue team takes a free kick. The ball is crossed into the penalty area, and a header is directed towards the goal.
+Danger Level: High threat
+
+Timestamp: 39:45 (2385 seconds)
+Type: Corner kick
+Team: Blue team
+Description: Blue team takes a corner kick. The Black/White team successfully defends the corner with a headed clearance.
+Danger Level: Medium threat
+
+Timestamp: 44:45 (2685 seconds)
+Type: Set piece
+Team: Blue team
+Description: Blue team initiates an attacking set piece on the left side of the pitch.
+Danger Level: Medium threat
+
+Timestamp: 45:00 (2700 seconds)
+Type: Corner kick
+Team: Blue team
+Description: Blue team takes a corner kick. The Black/White team defends and clears the ball with a header from the penalty area.
+Danger Level: Medium threat
+
+Timestamp: 45:30 (2730 seconds)
+Type: Free Kick
+Team: Black/White team
+Description: Black/White team sets up for a free kick in the Blue team's half. The free kick is taken short.
+Danger Level: Medium threat
+
+Timestamp: 52:45 (3165 seconds)
+Type: Set Piece
+Team: Black/White team
+Description: Black/White team has an attacking set piece. Black/White team takes a free kick, sending the ball into the Blue team's penalty area.
+Danger Level: High Threat
+
+Timestamp: 55:30 (3330 seconds)
+Type: Throw-in
+Team: Black/White team
+Description: The ball is played out of bounds for a throw-in. Black/White team takes a throw-in.
+Danger Level: Low Threat
+
+Timestamp: 55:45 (3345 seconds)
+Type: Throw-in
+Team: Green Team
+Description: Green team takes a throw-in from the left sideline. White team gains possession and plays the ball in their own half.
+Danger Level: Low Threat
+
+Timestamp: 60:15 (3615 seconds)
+Type: Corner kick
+Team: Black/White team
+Description: Black/White team takes a corner kick from the left side. The ball is crossed into the penalty area and goes out of play beyond the far post.
+Danger Level: Medium threat
+
+Timestamp: 65:45 (3945 seconds)
+Type: Throw-in
+Team: Blue team
+Description: Blue team takes a throw-in on the right flank. They maintain possession with a few short passes under pressure from the Black/White team, before the ball goes out for another throw-in for the Blue team.
+Danger Level: Low Threat
+
+Timestamp: 66:30 (3990 seconds)
+Type: Throw-in
+Team: White Team
+Description: White team takes a throw-in from the right sideline into the Green team's half.
+Danger Level: Medium Threat
+
+Timestamp: 68:00 (4080 seconds)
+Type: Free kick
+Team: White Team
+Description: The White team is setting up for a free kick from the left side of the pitch.
+Danger Level: High Threat
+
+Timestamp: 68:30 (4110 seconds)
+Type: Set piece
+Team: Blue team
+Description: Blue team takes a set piece. A long-range free kick is taken towards the goal, which is defended and cleared by the Black/White team inside their penalty area.
+Danger Level: Medium threat
+
+Timestamp: 68:45 (4125 seconds)
+Type: Free Kick
+Team: Black/White Team
+Description: Black/White team prepares for and takes a short free kick from outside the penalty area. The ball is played short to a teammate, and they maintain possession.
+Danger Level: Medium Threat
+
+Timestamp: 69:00 (4140 seconds)
+Type: Corner kick
+Team: Black/White Team
+Description: Black/White team attacks with a corner kick. The Blue team successfully defends the set piece, heading the initial cross clear and then blocking a subsequent attempt to put the ball back into the penalty area.
+Danger Level: Medium Threat
+
+Timestamp: 69:15 (4155 seconds)
+Type: Free kick
+Team: Black/White Team
+Description: Black/White team takes a free kick from outside the penalty area. The Blue team defends the set piece and clears the ball from danger.
+Danger Level: Medium Threat
+
+Timestamp: 69:30 (4170 seconds)
+Type: Set Piece
+Team: Blue Team
+Description: Blue team takes a set piece, crossing the ball into the penalty area. The White team defends the cross and clears the ball. A free kick is awarded to the White team in their own half.
+Danger Level: Medium Threat
+
+Timestamp: 81:45 (4905 seconds)
+Type: Restart
+Team: Black team
+Description: Black team restarts play from the center circle.
+Danger Level: Low Threat
+
+Timestamp: 86:00 (5160 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team attacks with a set piece from the right side. The ball is crossed into the Blue team's penalty area and is then headed out of play for a goal kick.
+Danger Level: Medium Threat
+
+Timestamp: 88:15 (5295 seconds)
+Type: Corner kick
+Team: Black/White Team
+Description: Black/White team takes a corner kick. The goalkeeper makes a diving save, pushing the ball onto the post. The play results in another corner kick for the Black/White team.
+Danger Level: High Threat
+
+Timestamp: 89:15 (5355 seconds)
+Type: Corner kick
+Team: Black/White Team
+Description: Black/White team takes a corner kick from the right side. The delivery goes into the penalty area, but the attacking move concludes without a clear attempt on goal.
+Danger Level: Medium Threat
+
+Timestamp: 94:00 (5640 seconds)
+Type: Throw-in
+Team: White Team
+Description: White team attacks with a long throw-in from the left side into the Green team's penalty area. The Green team defends the ensuing scramble for the ball inside their box.
+Danger Level: Medium Threat
+
+Timestamp: 104:45 (6285 seconds)
+Type: Set Piece
+Team: Blue Team
+Description: Blue team prepares to take a free kick following a foul.
+Danger Level: Medium Threat
+
+Timestamp: 108:00 (6480 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team takes a set piece. A free kick is taken by the Black/White team, which is cleared by the Blue team's defense.
+Danger Level: Medium Threat
+
+Timestamp: 109:45 (6585 seconds)
+Type: Corner kick
+Team: Blue team
+Description: Blue team takes a corner kick from the left. The cross is delivered into the penalty area and is headed clear by the Black/White team's defence, with possession then contested outside the box.
+Danger Level: Medium Threat
+
+Timestamp: 110:45 (6645 seconds)
+Type: Throw-in
+Team: Black/White Team
+Description: Black/White team takes a throw-in on the right side of the pitch, playing the ball into the Blue team's half.
+Danger Level: Medium Threat
+
+Timestamp: 111:30 (6690 seconds)
+Type: Set Piece
+Team: Blue Team
+Description: Blue team sets up for a free kick while the Black/White team forms a defensive wall.
+Danger Level: Medium Threat
+
+Timestamp: 111:45 (6705 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team takes a free kick from their own half, playing a long ball into the Blue team's penalty area. The Blue team's goalkeeper safely gathers the ball.
+Danger Level: Low Threat
+
+Timestamp: 114:15 (6855 seconds)
+Type: Free Kick
+Team: Black/White Team
+Description: Black/White team takes an attacking free kick. The free kick is taken but blocked by the Blue team's defence. The Blue team clears the ball and gains possession, moving the play into their own half.
+Danger Level: Medium Threat
+
+Timestamp: 114:30 (6870 seconds)
+Type: Free Kick
+Team: Blue Team
+Description: Blue team sets up for a free kick in an attacking position.
+Danger Level: Medium Threat
+
+Timestamp: 114:45 (6885 seconds)
+Type: Corner kick
+Team: Black/White Team
+Description: Black/White team takes a corner kick. The cross is headed clear by the Blue team.
+Danger Level: Medium Threat
+
+Timestamp: 115:30 (6930 seconds)
+Type: Goal Kick
+Team: Black/White Team
+Description: Black/White team prepares to take a goal kick.
+Danger Level: Low Threat
+
+Timestamp: 119:15 (7155 seconds)
+Type: Throw-in
+Team: Black/White Team
+Description: Black/White team takes a throw-in. The Blue team intercepts the ball and gains possession in their own half.
+Danger Level: Low Threat
+
+Timestamp: 119:30 (7170 seconds)
+Type: Goal Kick
+Team: Black/White Team
+Description: Black/White team takes a goal kick.
+Danger Level: Low Threat
+
+Timestamp: 120:30 (7230 seconds)
+Type: Throw-in
+Team: White team
+Description: White team takes a throw-in, which leads to a challenge in the midfield.
+Danger Level: Low Threat
+
+Timestamp: 121:00 (7260 seconds)
+Type: Free kick
+Team: Black/White Team
+Description: Black/White team sets up for a free kick in the Blue team's half.
+Danger Level: High Threat
+
+Timestamp: 121:15 (7275 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team attacks with a set piece. They take a free kick into the penalty area, which is headed clear by the Blue team. The Black/White team recovers the ball on the right wing and sends it back into the box.
+Danger Level: High Threat
+
+Timestamp: 121:45 (7305 seconds)
+Type: Free kick
+Team: Black/White Team
+Description: Black/White team takes a free kick from their own half.
+Danger Level: Low Threat
+
+Timestamp: 122:00 (7320 seconds)
+Type: Free kick
+Team: Blue Team
+Description: Blue team takes a free kick from their own half and plays a long pass down the left flank.
+Danger Level: Low Threat
+
+Timestamp: 123:30 (7410 seconds)
+Type: Throw-in
+Team: White Team
+Description: White team takes a throw-in on the left wing. The pass is intercepted in the center of the pitch by the Green team.
+Danger Level: Low Threat
+
+Timestamp: 126:15 (7575 seconds)
+Type: Throw-in
+Team: Blue Team
+Description: Blue team prepares for a throw-in on the right sideline.
+Danger Level: Low Threat
+
+Timestamp: 126:30 (7590 seconds)
+Type: Throw-in
+Team: Blue Team
+Description: Blue team takes a throw-in. The ball is contested in the air and goes out for another Blue team throw-in further up the pitch.
+Danger Level: Low Threat
+
+Timestamp: 127:00 (7620 seconds)
+Type: Free Kick
+Team: Black/White Team
+Description: Black/White team takes a free kick from their own half. The Blue team wins the resulting aerial ball and gains possession, moving the ball into the Black/White team's half.
+Danger Level: Low Threat
+
+Timestamp: 127:15 (7635 seconds)
+Type: Throw-in
+Team: Blue Team
+Description: The Black/White team attempts a long pass forward from their half. The Blue team defends by heading the ball clear, and it goes out of play for a throw-in.
+Danger Level: Low Threat
+
+Timestamp: 127:30 (7650 seconds)
+Type: Free Kick
+Team: Black/White Team
+Description: Black/White team takes an attacking free kick. The referee blows the whistle and the free kick is taken.
+Danger Level: Medium Threat
+
+Timestamp: 127:45 (7665 seconds)
+Type: Free Kick
+Team: Black/White Team
+Description: Black/White team takes a free kick. A shot is taken from the free kick, which goes over the goal.
+Danger Level: Medium Threat
+
+Timestamp: 128:00 (7680 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team attacks from a set piece into the Blue team's penalty area. The Blue team defends the cross and gains possession, beginning to move upfield.
+Danger Level: Medium Threat
+
+Timestamp: 128:15 (7695 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team is on the attack with a set piece. A free kick is taken. A shot is taken from the rebound which goes wide of the goal. The Blue team recovers the ball and begins a counter-attack.
+Danger Level: Medium Threat
+
+Timestamp: 129:15 (7755 seconds)
+Type: Throw-in
+Team: Blue Team
+Description: The Black/White team loses possession in their own half. The Blue team launches a long pass down the right flank which is intercepted and knocked out of play for a Blue team throw-in.
+Danger Level: Low Threat
+
+Timestamp: 129:30 (7770 seconds)
+Type: Throw-in
+Team: Black/White Team
+Description: The Blue team dispossesses the Black/White team in midfield. The ball goes out of play, and the Black/White team takes a throw-in on the right sideline, regaining possession and playing the ball in their own half.
+Danger Level: Low Threat
+
+Timestamp: 131:15 (7875 seconds)
+Type: Free kick
+Team: Black/White Team
+Description: Black/White team takes a free kick into the penalty area. The referee awards a free kick to the Blue team in their own box.
+Danger Level: Medium Threat
+
+Timestamp: 131:30 (7890 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team is on the attack with a set piece just outside the Blue team's penalty area. They play the ball short and maintain possession.
+Danger Level: Medium Threat
+
+Timestamp: 136:00 (8160 seconds)
+Type: Set Piece
+Team: Black/White Team
+Description: Black/White team takes a set piece which is initially cleared by the Blue team. The Black/White team regains possession on the right wing and delivers a cross into the penalty area, which is then defended and cleared by the Blue team with two headers.
+Danger Level: Medium Threat
+
+Timestamp: 136:45 (8205 seconds)
+Type: Free Kick
+Team: Blue Team
+Description: Blue team prepares to take a free kick from their own half while the Black/White team gets into a defensive formation.
+Danger Level: Low Threat
+
+Timestamp: 137:00 (8220 seconds)
+Type: Free Kick
+Team: Black/White Team
+Description: The Black/White team takes a free kick from deep in their own half.
+Danger Level: Low Threat
+
+Timestamp: 137:15 (8235 seconds)
+Type: Free Kick
+Team: Black/White Team
+Description: Black/White team takes an attacking free kick. They play a short pass and work the ball into the penalty area, attempting to create a chance in front of the goal as the Blue team defends.
+Danger Level: Medium Threat
+
+Timestamp: 137:30 (8250 seconds)
+Type: Foul
+Team: Blue Team
+Description: The Black/White team attacks from their own half. The Blue team makes a tackle in their defensive third, and a foul is committed.
+Danger Level: High Threat
+
+=== SUBSTITUTIONS ===
+Timestamp: 18:15 (1095 seconds)
+Team: Both
+Change: N/A
+Tactical Reason: Play is stopped for a substitution managed by the referee. Players from both teams are present.
+
+=== TURNOVERS & POSSESSION CHANGES ===
+Timestamp: 24:00 (1440 seconds)
+Type: Turnover
+Team: White team
+Description: The Green team is in possession, attacking the White team's goal. The White team wins the ball back.
+Context: Attacking third, counter-attack opportunity.
+Impact: White team starts a counter-attack, advancing past the halfway line.
+
+Timestamp: 25:30 (1530 seconds)
+Type: Turnover
+Team: Blue team
+Description: Black/White team loses possession to the Blue team.
+Context: Midfield.
+Impact: Blue team transitions into an attack, moving the ball into the final third and maintaining pressure.
+
+Timestamp: 25:45 (1545 seconds)
+Type: Turnover
+Team: Blue team
+Description: The Black/White team builds play from their half, advancing the ball into the center of the pitch where they lose possession to the Blue team.
+Context: Midfield.
+Impact: The Blue team recovers the ball and starts moving forward.
+
+Timestamp: 27:30 (1650 seconds)
+Type: Turnover
+Team: Green team
+Description: White team maintains possession in their own half and passes the ball into the center circle. Green team presses and wins back possession in the midfield.
+Context: Midfield.
+Impact: Green team wins back possession.
+
+Timestamp: 27:45 (1665 seconds)
+Type: Turnover
+Team: Black/White team
+Description: Black/White team maintains possession, moving the ball around midfield. Blue team wins possession in the centre circle and passes the ball in their own half.
+Context: Midfield.
+Impact: Blue team wins back possession.
+
+Timestamp: 28:30 (1710 seconds)
+Type: Turnover
+Team: Black/White team
+Description: Blue team takes a throw-in and passes the ball in their own half. The Black/White team presses, wins possession in the centre of the pitch.
+Context: Midfield.
+Impact: Black/White team begins an attack.
+
+Timestamp: 28:45 (1725 seconds)
+Type: Recovery
+Team: Blue team
+Description: The Black/White team loses possession in the opposition's half. The Blue team recovers the ball and maintains possession, passing it amongst their players in their own half.
+Context: Attacking Third.
+Impact: Blue team has possession to set up attack
+
+Timestamp: 29:15 (1755 seconds)
+Type: Interception
+Team: Blue Team
+Description: White team in possession, attempting to build an attack, but the pass is intercepted by the Blue team.
+Context: Midfield.
+Impact: The Blue team then maintains possession in their own half.
+
+Timestamp: 34:00 (2040 seconds)
+Type: Interception
+Team: Blue team
+Description: The Black/White team maintains possession, moving the ball from their own half towards the Blue team's final third. The Blue team defends a long pass and then intercepts the ball in midfield.
+Context: Midfield.
+Impact: Blue team regains possession and starts a new phase of play.
+
+Timestamp: 40:00 (2400 seconds)
+Type: Turnover
+Team: White Team
+Description: The White team wins possession in their defensive third and launches a counter-attack.
+Context: Defensive Third.
+Impact: White team moves the ball into the Green/Black team's half and continues to build their attack.
+
+Timestamp: 43:45 (2625 seconds)
+Type: Interception
+Team: Blue team
+Description: Black/White team attacks, playing a long ball into the Blue team's penalty area. The Blue team's goalkeeper intercepts the pass
+Context: Attacking third
+Impact: Blue team regains possession
+
+Timestamp: 44:15 (2655 seconds)
+Type: Recovery
+Team: Black/White team
+Description: Black/White team wins possession in their own half and launches a quick counter-attack with a long through-ball down the right flank.
+Context: Defensive third, long counter attack.
+Impact: Black/White attack.
+
+Timestamp: 46:00 (2760 seconds)
+Type: Turnover
+Team: Blue Team
+Description: Black/White team is under pressure in their own half and loses possession. The Blue team wins the ball and plays a long pass forward from their half into the attacking third.
+Context: Defensive third
+Impact: Long Ball towards attacking third
+
+Timestamp: 47:30 (2850 seconds)
+Type: Interception
+Team: Black/White team
+Description: Blue team maintains possession in their own half, passing the ball from left to center. A forward pass is intercepted by the Black/White team, who then gain control of the ball in the midfield.
+Context: Midfield
+Impact: Black/White team gains possession in the midfield.
+
+Timestamp: 48:30 (2910 seconds)
+Type: Turnover
+Team: Both Teams
+Description: The teams contest possession in the midfield. The White team starts with the ball but it is quickly won by the Blue team. The White team then regains possession
+Context: Midfield
+Impact: Black/White team regains possession and attempts to drive forward.
+
+Timestamp: 50:45 (3045 seconds)
+Type: Recovery
+Team: White Team
+Description: The Green team heads the ball forward from the center circle. The White team gains possession.
+Context: Center Circle
+Impact: White team gains possession
+
+Timestamp: 51:00 (3060 seconds)
+Type: Interception
+Team: Blue team
+Description: Black/White team restarts play from the center circle. The ball is headed clear by the Blue team
+Context: Center Circle
+Impact: Play is stopped by the referee's whistle
+
+Timestamp: 53:45 (3225 seconds)
+Type: Interception
+Team: Blue team
+Description: The Black/White team passes in midfield, but the Blue team intercepts the ball and gains possession, moving into the opposition's half.
+Context: Midfield
+Impact: Blue team initiates an attack.
+
+Timestamp: 57:00 (3420 seconds)
+Type: Tackle/Recovery
+Team: White team
+Description: The white team passes the ball in their own half under pressure from the green team. The green team wins the ball with a tackle in the centre of the pitch, but the white team immediately regains possession and starts an attack.
+Context: Midfield.
+Impact: Quick transition with the White team launching an attack.
+
+Timestamp: 58:00 (3480 seconds)
+Type: Interception
+Team: Green Team
+Description: The Green team intercepts a pass with a header in the center of the pitch. The ball is contested in midfield.
+Context: Center of the pitch
+Impact: Green team briefly takes possession and the Green team commits a foul.
+
+Timestamp: 61:00 (3660 seconds)
+Type: Interception
+Team: Blue team
+Description: The Black/White team loses possession following a forward pass. The Blue team gains control.
+Context: -
+Impact: Blue team wins possession and starts an attack.
+
+Timestamp: 67:30 (4050 seconds)
+Type: Recovery
+Team: White Team
+Description: The Blue team takes a throw-in deep in the attacking half. The White team wins the aerial ball and launches a counter-attack
+Context: Attacking third
+Impact: White Team starts a counter-attack
+
+Timestamp: 86:30 (5190 seconds)
+Type: Recovery
+Team: Green Team
+Description: The White team loses possession in midfield. The Green team wins the ball and launches an attack with a long pass down the left wing, eventually playing the ball into the penalty area.
+Context: Midfield.
+Impact: Green team launches attack.
+
+Timestamp: 86:45 (5205 seconds)
+Type: Recovery
+Team: Black/White Team
+Description: The Black/White team wins possession in the center circle and builds an attack down the right flank, progressing into the Blue team's half.
+Context: Midfield.
+Impact: Black/White attack.
+
+Timestamp: 88:30 (5290 seconds)
+Type: Recovery
+Team: Blue Team
+Description: The Black/White team plays a long ball from their goalkeeper upfield. The Blue team gains possession in the midfield and begins an attack.
+Context: Goalkeeper clearance.
+Impact: Change of possession to Blue Team.
+
+Timestamp: 90:30 (5430 seconds)
+Type: Turnover
+Team: Black/White Team
+Description: The White team loses possession to the Green team in the middle of the pitch.
+Context: Middle of the Pitch
+Impact: The White team quickly regains possession and plays a long pass down the right wing to launch an attack.
+
+Timestamp: 91:15 (5475 seconds)
+Type: Offside
+Team: Black/White team
+Description: Black/White team is flagged for offside while in an attacking position
+Context: High Threat
+Impact: The Green team takes the resulting indirect free-kick and gains possession.
+
+Timestamp: 94:45 (5685 seconds)
+Type: Turnover
+Team: Blue Team
+Description: The Black/White team loses possession in the midfield. The Blue team recovers the ball and starts an attack down the left side of the pitch.
+Context: Midfield
+Impact: Blue Team gains possession and attacks
+
+Timestamp: 96:00 (5760 seconds)
+Type: Turnover
+Team: Black/White Team
+Description: The Blue team defends against an attack. The Blue team wins possession but quickly loses it to the Black/White team in the midfield.
+Context: Midfield
+Impact: The Black/White team maintains possession and plays the ball forward in the Blue team's half.
+
+Timestamp: 96:15 (5775 seconds)
+Type: Turnover
+Team: White Team
+Description: The Green team clears the ball long from their own half. The White team wins possession in the midfield
+Context: Open Play
+Impact: White team begins to build an attack
+
+Timestamp: 107:00 (6420 seconds)
+Type: Clearance
+Team: Green Team
+Description: A Green team player challenges the White team for possession and clears the ball downfield.
+Context: Half
+Impact: White team recovers the ball and maintains possession in the attacking half.
+
+Timestamp: 107:30 (6450 seconds)
+Type: Recovery
+Team: Blue Team
+Description: Black/White team possesses the ball in their own half. The Blue team wins back possession in the midfield
+Context: Midfield.
+Impact: Blue team plays a long pass forward.
+
+Timestamp: 107:45 (6465 seconds)
+Type: Recovery
+Team: Blue Team
+Description: The Black/White team's attack into the box is gathered by the Blue team's goalkeeper
+Context: Possession on the attack
+Impact: The Blue team then maintains possession
+
+Timestamp: 110:00 (6600 seconds)
+Type: Interception
+Team: Green team
+Description: The team in white has possession and plays a pass forward. The team in green intercepts the ball near the halfway line and begins a counter-attack.
+Context: Midfield.
+Impact: Change of possession to the Green Team.
+
+Timestamp: 112:15 (6735 seconds)
+Type: Recovery
+Team: Black/White Team
+Description: The Blue team loses possession in midfield. The Black/White team recovers the ball
+Context: Loss of possession by Blue Team
+Impact: Black/White Team Launches Counter-Attack
+
+Timestamp: 112:30 (6750 seconds)
+Type: Recovery
+Team: Black/White Team
+Description: Black

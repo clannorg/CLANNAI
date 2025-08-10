@@ -1,0 +1,3 @@
+Black/White team has possession in midfield. The Blue team commits a foul, and the Black/White team is awarded a free-kick.
+**Event:** 00:04 Foul by the Blue team.
+The Black/White team takes the free-kick and maintains possession.
