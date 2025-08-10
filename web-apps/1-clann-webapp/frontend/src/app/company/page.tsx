@@ -224,6 +224,22 @@ export default function CompanyDashboard() {
     }
   };
 
+  // Metadata upload handler (single JSON to set video, events, tactical, team identity)
+  const handleMetadataSave = async (game: Game, url: string) => {
+    try {
+      setUpdating(true);
+      setError('');
+      await apiClient.applyGameMetadata(game.id, url);
+      console.log('✅ Metadata applied');
+      await loadDashboardData();
+    } catch (err: any) {
+      console.error('Failed to apply metadata URL:', err);
+      setError(err.message || 'Failed to apply metadata URL');
+    } finally {
+      setUpdating(false);
+    }
+  };
+
 
 
 
@@ -250,10 +266,7 @@ export default function CompanyDashboard() {
                 width={160}
                 height={42}
                 className="h-10 w-auto"
-                priority 
-                alt="ClannAI" 
-                width={48} 
-                height={48}
+                priority
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Company Dashboard</h1>
@@ -494,6 +507,39 @@ export default function CompanyDashboard() {
                               const input = e.currentTarget.previousElementSibling as HTMLInputElement;
                               if (input?.value.trim()) {
                                 handleAnalysisSave(game, input.value.trim());
+                                input.value = '';
+                              }
+                            }}
+                          >
+                            Save
+                          </button>
+                        </div>
+
+                        {/* Metadata URL Input */}
+                        <div className="flex items-center space-x-2">
+                          <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                            Metadata:
+                          </label>
+                          <input
+                            type="url"
+                            placeholder="Paste metadata JSON URL..."
+                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
+                            onKeyPress={(e) => {
+                              if (e.key === 'Enter') {
+                                const input = e.target as HTMLInputElement;
+                                if (input.value.trim()) {
+                                  handleMetadataSave(game, input.value.trim());
+                                  input.value = '';
+                                }
+                              }
+                            }}
+                          />
+                          <button
+                            className="bg-indigo-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-indigo-700 transition-colors"
+                            onClick={(e) => {
+                              const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                              if (input?.value.trim()) {
+                                handleMetadataSave(game, input.value.trim());
                                 input.value = '';
                               }
                             }}

@@ -11,7 +11,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
 router.post('/game/:gameId', authenticateToken, async (req, res) => {
   try {
     const { gameId } = req.params
-    const { message, chatHistory = [] } = req.body
+    const { message, chatHistory = [], systemPrompt } = req.body
 
     if (!message) {
       return res.status(400).json({ error: 'Message is required' })
@@ -123,7 +123,8 @@ ${events.slice(-10).map(event =>
 ).join('\n')}${tacticalContext}
     `
 
-    const systemPrompt = `You are an AI football analyst and coach assistant. You have access to detailed game data, events, and tactical analysis. Provide helpful analysis, tactical insights, and coaching advice based on the comprehensive game context provided. Be specific and reference actual events, tactical insights, and analysis when possible.
+    // Use coach-specific system prompt or default
+    const defaultSystemPrompt = `You are an AI football analyst and coach assistant. You have access to detailed game data, events, and tactical analysis. Provide helpful analysis, tactical insights, and coaching advice based on the comprehensive game context provided. Be specific and reference actual events, tactical insights, and analysis when possible.
 
 Current Game Context:
 ${gameContext}
@@ -138,8 +139,13 @@ Guidelines:
 - Focus on actionable advice for players and coaches
 - When tactical analysis is available, use it to give deeper context to your advice`
 
+    const finalSystemPrompt = systemPrompt ? `${systemPrompt}
+
+Current Game Context:
+${gameContext}` : defaultSystemPrompt
+
     // Build conversation history for Gemini
-    let conversationText = systemPrompt + '\n\n'
+    let conversationText = finalSystemPrompt + '\n\n'
     
     // Add chat history
     chatHistory.forEach(msg => {

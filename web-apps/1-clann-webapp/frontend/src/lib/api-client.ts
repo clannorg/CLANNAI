@@ -182,14 +182,14 @@ class ApiClient {
   }
 
   // AI Chat
-  async chatWithAI(gameId: string, message: string, chatHistory: any[] = []) {
+  async chatWithAI(gameId: string, message: string, chatHistory: any[] = [], systemPrompt?: string) {
     return this.request<{
       response: string
       gameStats: any
       timestamp: string
     }>(`/api/ai-chat/game/${gameId}`, {
       method: 'POST',
-      body: JSON.stringify({ message, chatHistory })
+      body: JSON.stringify({ message, chatHistory, systemPrompt })
     })
   }
 
@@ -225,6 +225,14 @@ class ApiClient {
     return this.request(`/api/games/${gameId}/analysis-files`, {
       method: 'POST',
       body: JSON.stringify({ s3AnalysisFiles })
+    })
+  }
+
+  // Apply a single metadata JSON to configure game resources
+  async applyGameMetadata(gameId: string, metadataUrl: string) {
+    return this.request(`/api/games/${gameId}/upload-metadata`, {
+      method: 'POST',
+      body: JSON.stringify({ metadataUrl })
     })
   }
 

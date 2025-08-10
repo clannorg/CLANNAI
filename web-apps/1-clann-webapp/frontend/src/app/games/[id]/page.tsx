@@ -290,10 +290,12 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Orientation Debug Indicator */}
+      {/* Orientation Debug Indicator - removed for production */}
+      {/* 
       <div className="fixed top-4 left-4 z-50 bg-blue-600 text-white px-3 py-1 rounded text-sm font-mono">
         {orientation} ({isPortrait ? 'portrait' : 'landscape'})
-        </div>
+      </div>
+      */}
 
       {/* Layout based on orientation */}
       {isLandscape ? (

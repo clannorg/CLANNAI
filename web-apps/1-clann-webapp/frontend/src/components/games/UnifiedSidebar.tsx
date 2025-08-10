@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
+import CoachSelector from '../ai-chat/CoachSelector'
+import { COACHES } from '../ai-chat/coaches'
 
 interface GameEvent {
   type: string
@@ -68,11 +70,13 @@ export default function UnifiedSidebar({
   gameId,
   onSeekToTimestamp
 }: UnifiedSidebarProps) {
-  const [internalActiveTab, setInternalActiveTab] = useState<TabType>('events')
-  const { messages, sendMessage, isLoading, inputValue, setInputValue, clearMessages } = useAIChat()
+  // Auto-open AI Coach by default (mobile and desktop)
+  const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
+  const { messages, sendMessage, isLoading, inputValue, setInputValue, clearMessages, selectedCoach, setSelectedCoach } = useAIChat()
   const [chatInputValue, setChatInputValue] = useState('')
   const [sidebarWidth, setSidebarWidth] = useState(400) // Default 400px - wider for better usability
   const [isResizing, setIsResizing] = useState(false)
+  const [showCoachSelector, setShowCoachSelector] = useState(false)
   
   // Downloads state
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
@@ -589,7 +593,30 @@ export default function UnifiedSidebar({
         {activeTab === 'ai' && (
           <div className="h-full flex flex-col">
             <div className="p-4 border-b border-gray-700">
-              <h4 className="text-lg font-semibold text-white mb-2">AI Coach</h4>
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-lg font-semibold text-white">AI Coach</h4>
+                <button
+                  onClick={() => setShowCoachSelector(true)}
+                  className="text-xs bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full transition-colors"
+                >
+                  {selectedCoach ? selectedCoach.name : 'Choose Coach'}
+                </button>
+              </div>
+              {selectedCoach ? (
+                <div className="flex items-center space-x-2 mb-2">
+                  <div className="w-8 h-8 rounded-lg overflow-hidden border border-gray-600">
+                    <img 
+                      src={selectedCoach.image} 
+                      alt={selectedCoach.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white">{selectedCoach.name}</div>
+                    <div className="text-xs text-gray-400">{selectedCoach.title}</div>
+                  </div>
+                </div>
+              ) : null}
               <p className="text-sm text-gray-400">Get personalized coaching insights and training recommendations.</p>
             </div>
             
@@ -671,6 +698,18 @@ export default function UnifiedSidebar({
               )}
             </div>
           </div>
+        )}
+
+        {/* Coach Selector Modal */}
+        {showCoachSelector && (
+          <CoachSelector
+            selectedCoach={selectedCoach}
+            onCoachSelect={(coach) => {
+              setSelectedCoach(coach)
+              setShowCoachSelector(false)
+            }}
+            onClose={() => setShowCoachSelector(false)}
+          />
         )}
 
         {/* Insights Tab */}

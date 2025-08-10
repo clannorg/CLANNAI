@@ -2,7 +2,8 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import apiClient from '@/lib/api-client'
-import { ChatMessage, Game, AIChatContextType } from './types'
+import { ChatMessage, Game, AIChatContextType, Coach } from './types'
+import { getDefaultCoach } from './coaches'
 
 const AIChatContext = createContext<AIChatContextType | undefined>(undefined)
 
@@ -16,6 +17,7 @@ export const AIChatProvider: React.FC<AIChatProviderProps> = ({ children, game }
   const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [inputValue, setInputValue] = useState('')
+  const [selectedCoach, setSelectedCoach] = useState<Coach | null>(getDefaultCoach())
 
   const sendMessage = async (message: string) => {
     if (!message.trim() || isLoading || !game) return
@@ -31,10 +33,14 @@ export const AIChatProvider: React.FC<AIChatProviderProps> = ({ children, game }
     setIsLoading(true)
 
     try {
+      // Get current coach or default
+      const coach = selectedCoach || getDefaultCoach()
+      
       const response = await apiClient.chatWithAI(
         game.id,
         userMessage.content,
-        messages.map(msg => ({ role: msg.role, content: msg.content }))
+        messages.map(msg => ({ role: msg.role, content: msg.content })),
+        coach.systemPrompt
       )
 
       const aiMessage: ChatMessage = {
@@ -112,10 +118,12 @@ export const AIChatProvider: React.FC<AIChatProviderProps> = ({ children, game }
     isOpen,
     isLoading,
     inputValue,
+    selectedCoach,
     sendMessage,
     toggleChat,
     clearMessages,
     setInputValue,
+    setSelectedCoach,
     game
   }
 
