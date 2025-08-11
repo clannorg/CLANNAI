@@ -1,1 +1,52 @@
-{}
+{
+  "red_team": {
+    "team_name": "Black/White Team",
+    "strengths": [
+      "Effective counter-attacks",
+      "Strong wing play and crosses",
+      "Set-piece threat",
+      "Versatile attacking approach"
+    ],
+    "weaknesses": [
+      "Fouling in pressure situations",
+      "Reliance on direct play can lead to turnovers"
+    ],
+    "key_players": [
+      "Attacking players capitalizing on crosses",
+      "Goalkeeper effective in distribution"
+    ],
+    "tactical_setup": "Versatile approach with both structured build-up play and rapid transitions. High effectiveness in converting opportunities.",
+    "performance_summary": "The Black/White team dominated in attack, effectively transitioning quickly and capitalizing on set pieces. Their direct play and wing play were key to creating scoring chances. Their goalkeeper's distribution was also a valuable asset."
+  },
+  "blue_team": {
+    "team_name": "Blue Team",
+    "strengths": [
+      "Resilient goalkeeping",
+      "Possession from the back"
+    ],
+    "weaknesses": [
+      "Conceding possession in midfield",
+      "Inconsistent set-piece delivery",
+      "Difficulty defending against crosses"
+    ],
+    "key_players": [
+      "Goalkeeper making crucial saves",
+      "Midfielders attempting to build from the back"
+    ],
+    "tactical_setup": "Relied on building from the back and launching long balls. Set-piece opportunities were a key attacking outlet. Defensive focus on goalkeeping and clearances.",
+    "performance_summary": "The Blue team demonstrated resilience in defense, with their goalkeeper playing a crucial role. While they attempted to build from the back, they struggled to contain the Black/White team's attacks and capitalize on their own set-piece opportunities consistently."
+  },
+  "match_summary": {
+    "final_score": "Black/White Team 3 - Blue Team 2",
+    "key_moments": [
+      "Black/White goals from headers",
+      "Blue Team goal from a free kick",
+      "Stoppages due to injuries impacted flow"
+    ],
+    "turning_points": [
+      "Black/White capitalizing on counter-attacks",
+      "Blue team failing to convert corners"
+    ],
+    "overall_narrative": "The Black/White team emerged as the dominant offensive force, leveraging their direct attacking style and set-piece prowess. The Blue team's resilience in defense and attempts to build from the back were ultimately insufficient to contain the Black/White team's attacking threat."
+  }
+}
