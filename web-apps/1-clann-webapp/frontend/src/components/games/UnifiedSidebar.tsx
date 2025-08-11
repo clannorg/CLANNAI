@@ -453,7 +453,7 @@ export default function UnifiedSidebar({
                             }}
                             className={`h-9 text-xs font-medium rounded-lg border-2 transition-colors hover:scale-105 ${getFilterColor(type)}`}
                           >
-                            {type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                            {type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
                           </button>
                         )
                       })}
@@ -548,7 +548,7 @@ export default function UnifiedSidebar({
                           event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
                           'bg-gray-500/20 text-gray-300 border-gray-500/30'
                         }`}>
-                          {event.type.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                          {event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
                         </span>
                         
                         {/* Team Badge */}
@@ -582,9 +582,8 @@ export default function UnifiedSidebar({
                       <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
                     )}
                   </button>
-                  )
+                )
                 })}
-              </div>
               </div>
             </div>
           </div>
