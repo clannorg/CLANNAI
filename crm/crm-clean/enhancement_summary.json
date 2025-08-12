@@ -1,0 +1,17 @@
+{
+  "total_clubs": 2181,
+  "clubs_with_website": 729,
+  "clubs_with_email": 268,
+  "clubs_with_phone": 317,
+  "website_coverage": "33.4%",
+  "email_coverage": "12.3%",
+  "phone_coverage": "14.5%",
+  "tier_distribution": {
+    "Non-League": 1164,
+    "Unknown": 719,
+    "Premier League": 149,
+    "Academy/Youth": 90,
+    "Championship": 45,
+    "League One": 14
+  }
+}
