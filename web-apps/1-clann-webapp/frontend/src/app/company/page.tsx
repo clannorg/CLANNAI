@@ -42,6 +42,14 @@ export default function CompanyDashboard() {
   const [error, setError] = useState('')
   const [statusFilter, setStatusFilter] = useState<string>('all')
   
+  // New state for database overview
+  const [activeTab, setActiveTab] = useState<'games' | 'database'>('games')
+  const [dbData, setDbData] = useState<any>(null)
+  const [dbLoading, setDbLoading] = useState(false)
+  const [showAllUsers, setShowAllUsers] = useState(false)
+  const [showAllTeams, setShowAllTeams] = useState(false)
+  const [showAllGames, setShowAllGames] = useState(false)
+  
   // Simplified state
   const [updating, setUpdating] = useState(false)
 
@@ -240,6 +248,32 @@ export default function CompanyDashboard() {
     }
   };
 
+  // Load comprehensive database data
+  const loadDatabaseData = async () => {
+    try {
+      setDbLoading(true);
+      setError('');
+      
+      const response = await fetch(`${API_BASE_URL}/api/database/overview`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to load database data');
+      }
+      
+      const data = await response.json();
+      setDbData(data);
+    } catch (err: any) {
+      console.error('Database load error:', err);
+      setError(err.message || 'Failed to load database data');
+    } finally {
+      setDbLoading(false);
+    }
+  };
+
 
 
 
@@ -321,8 +355,42 @@ export default function CompanyDashboard() {
           </div>
         )}
 
-        {/* Filters */}
-        <div className="bg-white rounded-xl shadow-sm mb-6">
+        {/* Tab Navigation */}
+        <div className="mb-8">
+          <div className="border-b border-gray-200">
+            <nav className="-mb-px flex space-x-8">
+              <button
+                onClick={() => setActiveTab('games')}
+                className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
+                  activeTab === 'games'
+                    ? 'border-[#016F32] text-[#016F32]'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                Games Management
+              </button>
+              <button
+                onClick={() => {
+                  setActiveTab('database');
+                  if (!dbData) loadDatabaseData();
+                }}
+                className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
+                  activeTab === 'database'
+                    ? 'border-[#016F32] text-[#016F32]'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                Database Overview
+              </button>
+            </nav>
+          </div>
+        </div>
+
+        {/* Games Management Tab */}
+        {activeTab === 'games' && (
+          <>
+            {/* Filters */}
+            <div className="bg-white rounded-xl shadow-sm mb-6">
           <div className="p-6 border-b border-gray-100">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-gray-900">All Games</h2>
@@ -582,6 +650,209 @@ export default function CompanyDashboard() {
             )}
           </div>
         </div>
+          </>
+        )}
+
+        {/* Database Overview Tab */}
+        {activeTab === 'database' && (
+          <div className="bg-white rounded-xl shadow-sm">
+            <div className="p-6 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900">Database Overview</h2>
+              <p className="text-gray-600 mt-1">Comprehensive view of all platform data</p>
+            </div>
+            
+            <div className="p-6">
+              {dbLoading ? (
+                <div className="text-center py-12">
+                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
+                  <p className="mt-2 text-gray-900">Loading database data...</p>
+                </div>
+              ) : dbData ? (
+                <div className="space-y-8">
+                  {/* Users Section */}
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-lg font-semibold text-gray-900">👤 Users ({dbData.users?.length || 0})</h3>
+                      {dbData.users?.length > 10 && (
+                        <button
+                          onClick={() => setShowAllUsers(!showAllUsers)}
+                          className="bg-[#016F32] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#014d24] transition-colors"
+                        >
+                          {showAllUsers ? 'Show Less' : 'Show All Users'}
+                        </button>
+                      )}
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full divide-y divide-gray-200">
+                        <thead className="bg-gray-50">
+                          <tr>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Email</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Role</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Team Memberships</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Games</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Joined</th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-gray-200">
+                          {(showAllUsers ? dbData.users : dbData.users?.slice(0, 10))?.map((user: any, index: number) => (
+                            <tr key={index} className="hover:bg-gray-50">
+                              <td className="px-6 py-4 text-sm text-gray-900">{user.email}</td>
+                              <td className="px-6 py-4 text-sm text-gray-900">{user.name}</td>
+                              <td className="px-6 py-4">
+                                <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                                  user.role === 'company' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'
+                                }`}>
+                                  {user.role}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4 text-sm text-gray-900">
+                                {user.team_names && user.team_names.length > 0 ? (
+                                  <div className="flex flex-wrap gap-1">
+                                    {user.team_names.map((teamName: string, idx: number) => (
+                                      <span key={idx} className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                                        {teamName}
+                                      </span>
+                                    ))}
+                                  </div>
+                                ) : (
+                                  <span className="text-gray-400 text-xs">No teams</span>
+                                )}
+                              </td>
+                              <td className="px-6 py-4 text-sm text-gray-900">{user.games_uploaded}</td>
+                              <td className="px-6 py-4 text-sm text-gray-500">
+                                {new Date(user.created_at).toLocaleDateString()}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {!showAllUsers && dbData.users?.length > 10 && (
+                        <p className="text-sm text-gray-500 mt-2">Showing first 10 of {dbData.users.length} users</p>
+                      )}
+                      {showAllUsers && (
+                        <p className="text-sm text-gray-500 mt-2">Showing all {dbData.users?.length} users</p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Teams Section */}
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-lg font-semibold text-gray-900">⚽ Teams ({dbData.teams?.length || 0})</h3>
+                      {dbData.teams?.length > 5 && (
+                        <button
+                          onClick={() => setShowAllTeams(!showAllTeams)}
+                          className="bg-[#016F32] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#014d24] transition-colors"
+                        >
+                          {showAllTeams ? 'Show Less' : 'Show All Teams'}
+                        </button>
+                      )}
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full divide-y divide-gray-200">
+                        <thead className="bg-gray-50">
+                          <tr>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Code</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Members</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Games</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-gray-200">
+                          {(showAllTeams ? dbData.teams : dbData.teams?.slice(0, 5))?.map((team: any, index: number) => (
+                            <tr key={index} className="hover:bg-gray-50">
+                              <td className="px-6 py-4 text-sm font-medium text-gray-900">{team.name}</td>
+                              <td className="px-6 py-4 text-sm text-gray-900 font-mono">{team.team_code}</td>
+                              <td className="px-6 py-4 text-sm text-gray-900">{team.members_count}</td>
+                              <td className="px-6 py-4 text-sm text-gray-900">{team.games_count}</td>
+                              <td className="px-6 py-4 text-sm text-gray-500">
+                                {new Date(team.created_at).toLocaleDateString()}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {!showAllTeams && dbData.teams?.length > 5 && (
+                        <p className="text-sm text-gray-500 mt-2">Showing first 5 of {dbData.teams.length} teams</p>
+                      )}
+                      {showAllTeams && (
+                        <p className="text-sm text-gray-500 mt-2">Showing all {dbData.teams?.length} teams</p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Games Section */}
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-lg font-semibold text-gray-900">🎮 Games ({dbData.games?.length || 0})</h3>
+                      {dbData.games?.length > 5 && (
+                        <button
+                          onClick={() => setShowAllGames(!showAllGames)}
+                          className="bg-[#016F32] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#014d24] transition-colors"
+                        >
+                          {showAllGames ? 'Show Less' : 'Show All Games'}
+                        </button>
+                      )}
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full divide-y divide-gray-200">
+                        <thead className="bg-gray-50">
+                          <tr>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Title</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Team</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Analysis</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Events</th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Uploaded By</th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-gray-200">
+                          {(showAllGames ? dbData.games : dbData.games?.slice(0, 5))?.map((game: any, index: number) => (
+                            <tr key={index} className="hover:bg-gray-50">
+                              <td className="px-6 py-4 text-sm font-medium text-gray-900">{game.title}</td>
+                              <td className="px-6 py-4 text-sm text-gray-900">{game.team_name}</td>
+                              <td className="px-6 py-4">
+                                <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                                  game.status === 'analyzed' ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'
+                                }`}>
+                                  {game.status}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4 text-sm text-gray-900">
+                                {game.has_analysis === 'Yes' ? '✅' : '❌'}
+                                {game.has_tactical === 'Yes' ? ' 📊' : ''}
+                              </td>
+                              <td className="px-6 py-4 text-sm text-gray-900">{game.events_count || 0}</td>
+                              <td className="px-6 py-4 text-sm text-gray-500">{game.uploaded_by}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {!showAllGames && dbData.games?.length > 5 && (
+                        <p className="text-sm text-gray-500 mt-2">Showing first 5 of {dbData.games.length} games</p>
+                      )}
+                      {showAllGames && (
+                        <p className="text-sm text-gray-500 mt-2">Showing all {dbData.games?.length} games</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-gray-500">No database data available</p>
+                  <button
+                    onClick={loadDatabaseData}
+                    className="mt-4 bg-[#016F32] text-white px-4 py-2 rounded-lg hover:bg-[#014d24] transition-colors"
+                  >
+                    Load Database Data
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

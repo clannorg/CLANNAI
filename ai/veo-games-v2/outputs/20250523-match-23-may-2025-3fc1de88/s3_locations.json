@@ -1,6 +1,6 @@
 {
   "match_id": "20250523-match-23-may-2025-3fc1de88",
-  "upload_timestamp": "2025-08-10T17:35:00.153241",
+  "upload_timestamp": "2025-08-11T16:06:45.534279",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "s3_urls": {
@@ -45,18 +45,12 @@
       "s3_key": "analysis-data/20250523-match-23-may-2025-3fc1de88-1_veo_ground_truth-json.json",
       "description": "Original Veo ground truth data for comparison",
       "file_size_mb": 0.01
-    },
-    "video.mp4": {
-      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250523-match-23-may-2025-3fc1de88-video-mp4.mp4",
-      "s3_key": "analysis-videos/20250523-match-23-may-2025-3fc1de88-video-mp4.mp4",
-      "description": "Full match video",
-      "file_size_mb": 4995.14
     }
   },
   "upload_summary": {
     "total_files": 11,
-    "successful_uploads": 8,
-    "failed_uploads": 3,
-    "total_size_mb": 4995.31
+    "successful_uploads": 7,
+    "failed_uploads": 4,
+    "total_size_mb": 0.17
   }
 }

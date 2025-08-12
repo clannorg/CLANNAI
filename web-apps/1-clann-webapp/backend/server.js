@@ -65,7 +65,8 @@ app.get('/api', (req, res) => {
       teams: '/api/teams/*',
       company: '/api/company/*',
       aiChat: '/api/ai-chat/*',
-      clips: '/api/clips/*'
+      clips: '/api/clips/*',
+      database: '/api/database/*'
     }
   });
 });
@@ -77,6 +78,7 @@ const teamsRoutes = require('./routes/teams');
 const companyRoutes = require('./routes/company');
 const aiChatRoutes = require('./routes/ai-chat');
 const clipsRoutes = require('./routes/clips');
+const databaseRoutes = require('./routes/database');
 
 // Register routes
 app.use('/api/auth', authRoutes);
@@ -85,6 +87,7 @@ app.use('/api/teams', teamsRoutes);
 app.use('/api/company', companyRoutes);
 app.use('/api/ai-chat', aiChatRoutes);
 app.use('/api/clips', clipsRoutes);
+app.use('/api/database', databaseRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
