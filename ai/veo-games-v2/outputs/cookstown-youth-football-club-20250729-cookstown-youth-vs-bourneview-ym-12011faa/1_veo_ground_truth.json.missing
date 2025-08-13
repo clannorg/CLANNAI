@@ -1,0 +1,3 @@
+Ground truth not found. Either run v1 extractor or provide 1_veo_ground_truth.json
+Expected v1 path: /Users/thomasbradley/CLANNAI/ai/veo-games/ai-pipeline/data/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa/1_veo_ground_truth.json
+v2 outputs path: /Users/thomasbradley/CLANNAI/ai/veo-games-v2/outputs/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa/1_veo_ground_truth.json

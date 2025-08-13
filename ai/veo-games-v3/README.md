@@ -9,15 +9,23 @@
 3. **`3_make_clips.py`** - Split video into 15-second clips
 4. **`mega_analyzer.py`** - 🧠 **MEGA GEMINI** (replaces steps 4-11 from v2)
    - Analyzes all clips in one context-aware call
-   - Generates events, tactical analysis, accuracy metrics
-5. **`10_s3_uploader.py`** - Upload all outputs to S3
-6. **`12_write_metadata.py`** - Generate match metadata JSON
+   - Outputs natural language analysis in plain text files
+5. **`format_for_webapp.py`** - 📊 **WEBAPP FORMATTER** 
+   - Converts mega analyzer plain text outputs to webapp JSON formats
+   - Generates web_events_array.json, 11_tactical_analysis.json
+6. **`10_s3_uploader.py`** - Upload all outputs to S3
+7. **`12_write_metadata.py`** - Generate match metadata JSON
 
 ## Key Outputs
 
+**Plain text (from mega analyzer):**
+- `mega_events.txt` - Natural language event descriptions
+- `mega_tactical.txt` - Tactical analysis in plain text
+- `mega_summary.txt` - Match overview and context
+
+**JSON (from formatter):**
 - `web_events_array.json` - Events for webapp UI
 - `11_tactical_analysis.json` - Tactical insights  
-- `mega_analysis.json` - Complete analysis
 - `match_metadata.json` - Game metadata for dashboard
 - `s3_locations.json` - S3 upload URLs
 
@@ -31,6 +39,7 @@ python3 1_fetch_veo.py <veo-url>
 python3 2_download_video.py <match-id>  
 python3 3_make_clips.py <match-id>
 python3 mega_analyzer.py <match-id>
+python3 format_for_webapp.py <match-id>
 python3 10_s3_uploader.py <match-id>
 python3 12_write_metadata.py <match-id>
 ```
