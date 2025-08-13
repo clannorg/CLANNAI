@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""
+Alternative Scraper - Uses Google search instead of DuckDuckGo
+Since DuckDuckGo appears to be blocked on this server
+"""
+
 import csv
 import requests
 import re
@@ -10,10 +16,10 @@ from urllib3.util.retry import Retry
 
 # Config
 INPUT_CSV = 'data/ni_clubs/ni_football_clubs_only.csv'
-OUTPUT_CSV = 'data/ni_clubs/duckduckgo_contacts.csv'
-PROGRESS_FILE = 'data/ni_clubs/ddg_progress.json'
+OUTPUT_CSV = 'data/ni_clubs/google_contacts.csv'
+PROGRESS_FILE = 'data/ni_clubs/google_progress.json'
 
-class DuckDuckGoNIScraper:
+class GoogleScraper:
     def __init__(self):
         self.session = requests.Session()
         
@@ -28,7 +34,7 @@ class DuckDuckGoNIScraper:
         self.session.mount("http://", adapter)
         self.session.mount("https://", adapter)
         
-        # DuckDuckGo-friendly headers
+        # Google-friendly headers
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -69,26 +75,25 @@ class DuckDuckGoNIScraper:
             
         return list(phones), list(emails)
     
-    def search_duckduckgo(self, query):
-        """Search DuckDuckGo for the given query with improved error handling"""
+    def search_google(self, query):
+        """Search Google for the given query"""
         try:
-            # DuckDuckGo search URL
-            search_url = f"https://duckduckgo.com/html/?q={query.replace(' ', '+')}"
+            # Google search URL
+            search_url = f"https://www.google.com/search?q={query.replace(' ', '+')}"
             
-            # Longer delay between requests to avoid rate limiting
-            time.sleep(random.uniform(5, 10))
+            # Add random delay
+            time.sleep(random.uniform(3, 6))
             
-            # Increased timeout and better error handling
             response = self.session.get(search_url, headers=self.headers, timeout=30)
             
             if response.status_code == 200:
                 return response.text
             elif response.status_code == 429:
-                print(f"  ⚠️  Rate limited by DuckDuckGo - waiting 60 seconds...")
+                print(f"  ⚠️  Rate limited by Google - waiting 60 seconds...")
                 time.sleep(60)
                 return ""
             else:
-                print(f"  ⚠️  DuckDuckGo returned status {response.status_code}")
+                print(f"  ⚠️  Google returned status {response.status_code}")
                 return ""
                 
         except requests.exceptions.Timeout:
@@ -98,11 +103,11 @@ class DuckDuckGoNIScraper:
             print(f"  🔌 Connection error - will retry later")
             return ""
         except Exception as e:
-            print(f"  ❌ Error searching DuckDuckGo: {e}")
+            print(f"  ❌ Error searching Google: {e}")
             return ""
     
     def search_club_online(self, club_name, location=None):
-        """Search for club contact information using DuckDuckGo"""
+        """Search for club contact information using Google"""
         contacts = {
             'phones': [],
             'emails': [],
@@ -111,9 +116,10 @@ class DuckDuckGoNIScraper:
             'search_queries': []
         }
         
-        # Build search queries - reduced to just 1 search per club to avoid rate limiting
+        # Build search queries
         search_terms = [
             f'{club_name} Northern Ireland contact phone email',
+            f'{club_name} football club contact details',
         ]
         
         if location:
@@ -126,8 +132,8 @@ class DuckDuckGoNIScraper:
                 
                 print(f"    🔍 Searching: {search_term}")
                 
-                # Search DuckDuckGo
-                html_content = self.search_duckduckgo(search_term)
+                # Search Google
+                html_content = self.search_google(search_term)
                 
                 if html_content:
                     soup = BeautifulSoup(html_content, 'html.parser')
@@ -145,8 +151,8 @@ class DuckDuckGoNIScraper:
                         elif any(term in href.lower() for term in ['fc.', 'football', 'club']) and not contacts['website']:
                             contacts['website'] = href
                 
-                # Longer delay between searches
-                time.sleep(random.uniform(10, 15))
+                # Delay between searches
+                time.sleep(random.uniform(5, 10))
                 
             except Exception as e:
                 print(f"  ❌ Error searching for {club_name}: {e}")
@@ -172,18 +178,22 @@ class DuckDuckGoNIScraper:
             json.dump(progress, f, indent=2)
     
     def scrape_contacts(self):
-        """Main scraping function using DuckDuckGo"""
+        """Main scraping function using Google"""
         progress = self.load_progress()
         
         # Read clubs
         clubs = []
-        with open(INPUT_CSV, 'r', newline='', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                clubs.append(row)
+        try:
+            with open(INPUT_CSV, 'r', newline='', encoding='utf-8') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    clubs.append(row)
+        except FileNotFoundError:
+            print(f"❌ Input file {INPUT_CSV} not found!")
+            return
         
-        print(f"🦆 Found {len(clubs)} Northern Ireland football clubs to process")
-        print("🔍 Using DuckDuckGo search engine (no blocking!)")
+        print(f"🔍 Found {len(clubs)} Northern Ireland football clubs to process")
+        print("🔍 Using Google search engine (DuckDuckGo was blocked)")
         
         # Prepare output data
         output_data = []
@@ -259,18 +269,7 @@ class DuckDuckGoNIScraper:
         print(f"  📞 {total_phones} clubs with phone numbers")
         print(f"  📧 {total_emails} clubs with email addresses")  
         print(f"  🎯 {total_contacts}/{len(output_data)} clubs with contacts ({success_rate}% success rate)")
-        
-        # Show top results
-        successful_clubs = [row for row in output_data if row['Phones'] or row['Emails']]
-        if successful_clubs:
-            print(f"\n🔥 Top contacts found:")
-            for club in successful_clubs[:5]:
-                print(f"  • {club['Club Name']}: {club['Recordings']} recordings")
-                if club['Phones']:
-                    print(f"    📞 {club['Phones']}")
-                if club['Emails']:
-                    print(f"    📧 {club['Emails']}")
 
 if __name__ == '__main__':
-    scraper = DuckDuckGoNIScraper()
-    scraper.scrape_contacts()
+    scraper = GoogleScraper()
+    scraper.scrape_contacts() 
