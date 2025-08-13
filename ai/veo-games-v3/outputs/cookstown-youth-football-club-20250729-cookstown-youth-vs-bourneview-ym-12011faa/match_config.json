@@ -1,0 +1,13 @@
+{
+  "match_id": "cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa",
+  "team_a": {
+    "name": "Cookstown Youth",
+    "jersey": "yellow",
+    "ui_color": "red"
+  },
+  "team_b": {
+    "name": "Bourneview YM",
+    "jersey": "all blue",
+    "ui_color": "blue"
+  }
+}

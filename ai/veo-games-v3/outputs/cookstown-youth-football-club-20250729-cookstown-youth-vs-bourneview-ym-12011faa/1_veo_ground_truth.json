@@ -1,0 +1,561 @@
+{
+  "match_url": "https://app.veo.co/matches/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa/",
+  "extraction_time": "2025-08-13T15:23:25.422519",
+  "total_events": 32,
+  "events": [
+    {
+      "timestamp": "8:26",
+      "timestamp_seconds": 506,
+      "event_type": "Shot on goal",
+      "event_id": "358003d9-d5f7-476d-aa73-e5665d36be31",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.904918+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "9:47",
+      "timestamp_seconds": 587,
+      "event_type": "Shot on goal",
+      "event_id": "9a456ca3-d420-4ebd-8eae-763bb7e0e352",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.909749+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "14:57",
+      "timestamp_seconds": 897,
+      "event_type": "Shot on goal",
+      "event_id": "6fc3f6e9-0770-4490-b448-9fc7b9bcd306",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.912962+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "15:59",
+      "timestamp_seconds": 959,
+      "event_type": "Shot on goal",
+      "event_id": "830ca814-8723-43f4-88a7-126bcc73ee42",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.916145+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "19:50",
+      "timestamp_seconds": 1190,
+      "event_type": "Shot on goal",
+      "event_id": "1db030e9-f555-43f1-899c-7f4dd89e102c",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.924454+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "27:26",
+      "timestamp_seconds": 1646,
+      "event_type": "Shot on goal",
+      "event_id": "329cbdae-b196-44d8-aa22-597f5738ae9d",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.927600+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "30:49",
+      "timestamp_seconds": 1849,
+      "event_type": "Shot on goal",
+      "event_id": "443e7b5b-7761-4f1c-9816-30355858fb55",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.930661+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "30:50",
+      "timestamp_seconds": 1850,
+      "event_type": "Goal",
+      "event_id": "cebf285b-7103-4619-9122-073c08e68b56",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.933683+02:00",
+      "tags": [
+        {
+          "name": "Goal",
+          "slug": "goal",
+          "origin": "1",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "31:31",
+      "timestamp_seconds": 1891,
+      "event_type": "Shot on goal",
+      "event_id": "5c9a5aa1-32a0-424e-8143-f3ce08bcb4b8",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.936933+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "35:04",
+      "timestamp_seconds": 2104,
+      "event_type": "Shot on goal",
+      "event_id": "e34e02b2-8638-48ae-9543-ad69e687eb82",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.940111+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "35:57",
+      "timestamp_seconds": 2157,
+      "event_type": "Shot on goal",
+      "event_id": "91d46f69-26b1-4a59-a5ab-0977e06c525e",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.944702+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "40:03",
+      "timestamp_seconds": 2403,
+      "event_type": "Shot on goal",
+      "event_id": "60a3e77f-2218-49c5-84b2-ecc60af3db53",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.950216+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "41:03",
+      "timestamp_seconds": 2463,
+      "event_type": "Shot on goal",
+      "event_id": "d0d0904b-ad4c-4ca3-a37b-73e99a5982c8",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.953308+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "59:27",
+      "timestamp_seconds": 3567,
+      "event_type": "Shot on goal",
+      "event_id": "7ef8295b-5f76-4fa6-b61a-1cbbc193ba95",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.958342+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "61:53",
+      "timestamp_seconds": 3713,
+      "event_type": "Shot on goal",
+      "event_id": "c692cd0e-30f6-457e-945b-074e8db5783f",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.962875+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "62:11",
+      "timestamp_seconds": 3731,
+      "event_type": "Shot on goal",
+      "event_id": "7191392c-1618-494f-8213-8a2976236212",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.966413+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "63:33",
+      "timestamp_seconds": 3813,
+      "event_type": "Shot on goal",
+      "event_id": "a54f388f-acea-41c2-b70e-af6630c65ac9",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.970005+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "66:14",
+      "timestamp_seconds": 3974,
+      "event_type": "Shot on goal",
+      "event_id": "72d68571-dadc-48cf-9bda-a072f37e612a",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.973105+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "67:16",
+      "timestamp_seconds": 4036,
+      "event_type": "Shot on goal",
+      "event_id": "d30f60d2-e7bb-49d2-9e10-d6220b4a2501",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.976440+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "68:40",
+      "timestamp_seconds": 4120,
+      "event_type": "Shot on goal",
+      "event_id": "e44da199-cc76-4b5c-b7e8-af3e80044670",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.979801+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "71:13",
+      "timestamp_seconds": 4273,
+      "event_type": "Shot on goal",
+      "event_id": "8bbf3166-446f-4642-bb12-9a349baa8e45",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.986308+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "71:13",
+      "timestamp_seconds": 4273,
+      "event_type": "Goal",
+      "event_id": "cae20139-18f3-4ca3-8154-5dab344537a8",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.982958+02:00",
+      "tags": [
+        {
+          "name": "Goal",
+          "slug": "goal",
+          "origin": "1",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "77:35",
+      "timestamp_seconds": 4655,
+      "event_type": "Shot on goal",
+      "event_id": "7d77cdb6-a5f4-4f22-97fc-1897db2159b4",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.989512+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "80:17",
+      "timestamp_seconds": 4817,
+      "event_type": "Shot on goal",
+      "event_id": "f7ce2bff-02a1-4a53-96b5-dcc5f28ab8bb",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.994372+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "80:43",
+      "timestamp_seconds": 4843,
+      "event_type": "Shot on goal",
+      "event_id": "752bdaeb-f631-4187-978e-2a93b9e191bb",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:12.998942+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "81:49",
+      "timestamp_seconds": 4909,
+      "event_type": "Shot on goal",
+      "event_id": "e24607f3-4f29-460c-8ba1-8091c21f507c",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:13.008199+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "81:50",
+      "timestamp_seconds": 4910,
+      "event_type": "Goal",
+      "event_id": "ee77b11f-23ec-4c72-bb7b-7467eef84522",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:13.017333+02:00",
+      "tags": [
+        {
+          "name": "Goal",
+          "slug": "goal",
+          "origin": "1",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "84:08",
+      "timestamp_seconds": 5048,
+      "event_type": "Shot on goal",
+      "event_id": "abb09866-551c-435d-9042-bb38da1abea2",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:13.020585+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "87:21",
+      "timestamp_seconds": 5241,
+      "event_type": "Shot on goal",
+      "event_id": "646a7663-8b56-4598-a9d4-248cb79b87ee",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:13.023937+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "98:16",
+      "timestamp_seconds": 5896,
+      "event_type": "Shot on goal",
+      "event_id": "4eacc633-f398-4047-af9b-ec2b907e1e43",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:13.033618+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "101:01",
+      "timestamp_seconds": 6061,
+      "event_type": "Shot on goal",
+      "event_id": "921eea70-6581-4a49-a12e-84254950146f",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:13.038560+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "102:40",
+      "timestamp_seconds": 6160,
+      "event_type": "Shot on goal",
+      "event_id": "00b064db-d142-4073-9e15-22d3ae11bc26",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-11T11:02:13.043061+02:00",
+      "tags": [
+        {
+          "name": "Shot on goal",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_events": 32,
+    "goals": 3,
+    "shots_on_goal": 29,
+    "ai_generated_events": 32,
+    "event_types": {
+      "Shot on goal": 29,
+      "Goal": 3
+    }
+  }
+}

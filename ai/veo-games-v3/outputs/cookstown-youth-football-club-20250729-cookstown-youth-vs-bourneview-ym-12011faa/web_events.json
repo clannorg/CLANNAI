@@ -1,0 +1,418 @@
+{
+  "events": [
+    {
+      "type": "kick_off",
+      "timestamp": 6,
+      "team": "red",
+      "description": "Match starts"
+    },
+    {
+      "type": "foul",
+      "timestamp": 490,
+      "team": "blue",
+      "description": "Foul on red, Free kick to red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 506,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 587,
+      "team": "unspecified",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "foul",
+      "timestamp": 728,
+      "team": "red",
+      "description": "Foul on blue, Free kick to blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 807,
+      "team": "red",
+      "description": "Foul on blue, Free kick to blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 897,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 959,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1029,
+      "team": "red",
+      "description": "Foul on blue, Free kick to blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1056,
+      "team": "blue",
+      "description": "Foul on red, Free kick to red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1082,
+      "team": "red",
+      "description": "Foul on blue, Free kick to blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1157,
+      "team": "red",
+      "description": "Shot goes wide"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1190,
+      "team": "unspecified",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "save",
+      "timestamp": 1236,
+      "team": "red",
+      "description": "Goalkeeper saves shot"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1646,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1849,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 1850,
+      "team": "red",
+      "description": "Goal scored from free kick"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1891,
+      "team": "unspecified",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2072,
+      "team": "blue",
+      "description": "Free kick hits crossbar"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2104,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "penalty",
+      "timestamp": 2141,
+      "team": "blue",
+      "description": "Penalty awarded"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2157,
+      "team": "blue",
+      "description": "Shot on goal (Penalty kick)"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2347,
+      "team": "blue",
+      "description": "Foul on red, Free kick to red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2403,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2463,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2514,
+      "team": "red",
+      "description": "Foul on blue, Free kick to blue"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 2545,
+      "team": "red",
+      "description": "Match restarts"
+    },
+    {
+      "type": "whistle",
+      "timestamp": 2741,
+      "team": "unspecified",
+      "description": "End of first half"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3465,
+      "team": "blue",
+      "description": "Second half begins"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3567,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3606,
+      "team": "blue",
+      "description": "Foul on red, Free kick to red"
+    },
+    {
+      "type": "interruption",
+      "timestamp": 3672,
+      "team": "unspecified",
+      "description": "Dog runs onto pitch"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3713,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3731,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "whistle",
+      "timestamp": 3745,
+      "team": "unspecified",
+      "description": "End of period"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3813,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "save",
+      "timestamp": 3829,
+      "team": "red",
+      "description": "Goalkeeper saves shot"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3974,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4036,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4120,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "penalty",
+      "timestamp": 4225,
+      "team": "red",
+      "description": "Penalty awarded"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4264,
+      "team": "blue",
+      "description": "Free kick taken"
+    },
+    {
+      "type": "goal",
+      "timestamp": 4273,
+      "team": "red",
+      "description": "Goal scored from penalty"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4286,
+      "team": "red",
+      "description": "Free kick goes over"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 4290,
+      "team": "red",
+      "description": "After goal"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 4320,
+      "team": "blue",
+      "description": "After goal"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 4365,
+      "team": "blue",
+      "description": "Match restarts"
+    },
+    {
+      "type": "foul",
+      "timestamp": 4552,
+      "team": "blue",
+      "description": "Foul on red, Free kick to red"
+    },
+    {
+      "type": "foul",
+      "timestamp": 4641,
+      "team": "red",
+      "description": "Foul on blue, Free kick to blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4655,
+      "team": "unspecified",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4817,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "save",
+      "timestamp": 4829,
+      "team": "blue",
+      "description": "Goalkeeper catches shot"
+    },
+    {
+      "type": "save",
+      "timestamp": 4833,
+      "team": "blue",
+      "description": "Diving save"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4833,
+      "team": "red",
+      "description": "Corner awarded after save"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4843,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 4901,
+      "team": "red",
+      "description": "After goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4909,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 4910,
+      "team": "red",
+      "description": "Goal scored"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5048,
+      "team": "unspecified",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5241,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5558,
+      "team": "red",
+      "description": "Match restarts"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5606,
+      "team": "red",
+      "description": "Header goes over"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5650,
+      "team": "red",
+      "description": "Foul on blue, Free kick to blue"
+    },
+    {
+      "type": "save",
+      "timestamp": 5740,
+      "team": "red",
+      "description": "Goalkeeper saves shot"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5896,
+      "team": "red",
+      "description": "Shot on goal (free kick)"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6061,
+      "team": "red",
+      "description": "Shot on goal (free kick)"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6113,
+      "team": "blue",
+      "description": "Foul on red, Free kick to red"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6160,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "whistle",
+      "timestamp": 6179,
+      "team": "unspecified",
+      "description": "End of match"
+    }
+  ]
+}
