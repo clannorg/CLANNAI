@@ -598,21 +598,28 @@ router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], asy
       analysis: {}
     };
 
-    // If the S3 data has tactical_analysis.red_team, transform it
+    // Handle both nested (tactical_analysis.red_team) and direct (red_team) structures
+    let tacticalData = analysisData;
     if (analysisData.tactical_analysis) {
-      const tactical = analysisData.tactical_analysis;
-      
-      if (tactical.red_team) {
-        transformedData.tactical.red_team = {
-          content: JSON.stringify(tactical.red_team, null, 2)
-        };
-      }
-      
-      if (tactical.blue_team) {
-        transformedData.tactical.blue_team = {
-          content: JSON.stringify(tactical.blue_team, null, 2)
-        };
-      }
+      tacticalData = analysisData.tactical_analysis;
+    }
+    
+    // Transform team data
+    if (tacticalData.red_team) {
+      transformedData.tactical.red_team = {
+        content: JSON.stringify(tacticalData.red_team, null, 2)
+      };
+    }
+    
+    if (tacticalData.blue_team) {
+      transformedData.tactical.blue_team = {
+        content: JSON.stringify(tacticalData.blue_team, null, 2)
+      };
+    }
+    
+    // Handle match summary
+    if (tacticalData.match_summary) {
+      transformedData.analysis.match_summary = tacticalData.match_summary;
     }
 
     // Include other analysis data
