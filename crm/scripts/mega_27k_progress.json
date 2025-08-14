@@ -1,10 +1,10 @@
 {
-  "total_processed": 27674,
-  "clubs_with_websites": 7567,
-  "clubs_with_emails": 3106,
-  "clubs_with_phones": 265,
-  "website_rate": "27.3%",
-  "email_rate": "11.2%",
-  "phone_rate": "1.0%",
-  "timestamp": 1755165827.1830142
+  "total_processed": 1325,
+  "clubs_with_websites": 272,
+  "clubs_with_emails": 120,
+  "clubs_with_phones": 14,
+  "website_rate": "20.5%",
+  "email_rate": "9.1%",
+  "phone_rate": "1.1%",
+  "timestamp": 1755165904.0094085
 }
