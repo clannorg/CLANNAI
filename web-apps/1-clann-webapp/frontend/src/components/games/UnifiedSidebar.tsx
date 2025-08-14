@@ -96,6 +96,47 @@ export default function UnifiedSidebar({
   // Get dynamic colors for team filter buttons
   const redTeamColorClass = getTeamColorClass(redTeam.jersey_color)
   const blueTeamColorClass = getTeamColorClass(blueTeam.jersey_color)
+
+  // Function to replace "red" and "blue" with actual team names in descriptions
+  const transformDescription = (description: string) => {
+    if (!description) return description
+    
+    return description
+      .replace(/\bred\b/gi, redTeam.name)
+      .replace(/\bblue\b/gi, blueTeam.name)
+      .replace(/\bblack\b/gi, blueTeam.name) // Legacy support for "black" team
+  }
+
+  // Function to get team name from team type
+  const getTeamName = (teamType: string) => {
+    switch (teamType.toLowerCase()) {
+      case 'red': return redTeam.name
+      case 'blue':
+      case 'black': return blueTeam.name
+      default: return teamType.charAt(0).toUpperCase() + teamType.slice(1)
+    }
+  }
+
+  // Function to get team badge colors from team type
+  const getTeamBadgeColors = (teamType: string) => {
+    switch (teamType.toLowerCase()) {
+      case 'red': {
+        // Extract the main color from redTeamColorClass (e.g., 'bg-yellow-500' -> 'yellow')
+        const colorMatch = redTeamColorClass.match(/bg-(\w+)-\d+/)
+        const color = colorMatch ? colorMatch[1] : 'yellow'
+        return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
+      }
+      case 'blue':
+      case 'black': {
+        // Extract the main color from blueTeamColorClass (e.g., 'bg-blue-500' -> 'blue')
+        const colorMatch = blueTeamColorClass.match(/bg-(\w+)-\d+/)
+        const color = colorMatch ? colorMatch[1] : 'blue'
+        return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
+      }
+      default:
+        return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
+    }
+  }
   const [isResizing, setIsResizing] = useState(false)
   const [showCoachSelector, setShowCoachSelector] = useState(false)
   
@@ -582,12 +623,8 @@ export default function UnifiedSidebar({
                         
                         {/* Team Badge */}
                         {event.team && (
-                          <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${
-                            event.team === 'red' 
-                              ? 'bg-red-500/20 text-red-300 border-red-500/30' 
-                              : 'bg-blue-500/20 text-blue-300 border-blue-500/30'
-                          }`}>
-                            {event.team.charAt(0).toUpperCase() + event.team.slice(1)}
+                          <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${getTeamBadgeColors(event.team)}`}>
+                            {getTeamName(event.team)}
                           </span>
                         )}
                       </div>
@@ -603,7 +640,7 @@ export default function UnifiedSidebar({
                     
                     {/* Description */}
                     {event.description && (
-                      <div className="text-xs text-gray-400 mt-2 leading-relaxed">{event.description}</div>
+                      <div className="text-xs text-gray-400 mt-2 leading-relaxed">{transformDescription(event.description)}</div>
                     )}
                     
                     {/* Player */}
