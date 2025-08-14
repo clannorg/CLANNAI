@@ -267,6 +267,42 @@ class ApiClient {
       }
     }
   }
+
+  // Clips methods
+  async createClip(gameId: string, events: Array<{timestamp: number, type: string, description?: string}>) {
+    return this.request<{
+      success: boolean
+      downloadUrl: string
+      fileName: string
+      duration: number
+      eventCount: number
+    }>('/api/clips/create', {
+      method: 'POST',
+      body: JSON.stringify({ gameId, events })
+    })
+  }
+
+  async downloadClip(downloadUrl: string): Promise<Blob> {
+    const fullUrl = `${API_BASE_URL}${downloadUrl}`
+    console.log('🔗 Attempting to download from:', fullUrl)
+    
+    const token = localStorage.getItem('token')
+    const response = await fetch(fullUrl, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+
+    console.log('📥 Download response status:', response.status)
+    
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error('Download error response:', errorText)
+      throw new Error(`Download failed: ${response.status} - ${errorText}`)
+    }
+
+    return response.blob()
+  }
 }
 
 export const apiClient = new ApiClient()

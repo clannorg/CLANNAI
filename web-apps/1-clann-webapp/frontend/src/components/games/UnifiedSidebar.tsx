@@ -6,6 +6,7 @@ import FifaStyleInsights from './FifaStyleInsights'
 import CoachSelector from '../ai-chat/CoachSelector'
 import { COACHES } from '../ai-chat/coaches'
 import { getTeamInfo, getTeamColorClass } from '../../lib/team-utils'
+import apiClient from '../../lib/api-client'
 
 interface GameEvent {
   type: string
@@ -194,42 +195,13 @@ export default function UnifiedSidebar({
       
       console.log('🎬 Creating clip with events:', selectedEventData)
       
-      // Call backend API to create clip
-      const response = await fetch('http://localhost:3002/api/clips/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        },
-        body: JSON.stringify({
-          gameId: gameId,
-          events: selectedEventData
-        })
-      })
-
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || 'Failed to create clip')
-      }
-
-      const result = await response.json()
+      // Call backend API using ApiClient (same pattern as everything else)
+      const result = await apiClient.createClip(gameId, selectedEventData)
       console.log('✅ Clip created successfully:', result)
       
-      // Create download link with authentication token
-      const token = localStorage.getItem('token')
-      const link = document.createElement('a')
-      link.href = `http://localhost:3002${result.downloadUrl}`
-      link.download = result.fileName
-      link.style.display = 'none'
-      
-      // Add authorization header by creating a fetch request instead of direct link
-      fetch(`http://localhost:3002${result.downloadUrl}`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      })
-      .then(response => response.blob())
-      .then(blob => {
+      // Download the clip using ApiClient
+      try {
+        const blob = await apiClient.downloadClip(result.downloadUrl)
         const url = window.URL.createObjectURL(blob)
         const link = document.createElement('a')
         link.href = url
@@ -238,16 +210,18 @@ export default function UnifiedSidebar({
         link.click()
         document.body.removeChild(link)
         window.URL.revokeObjectURL(url)
-      })
-      .catch((error: any) => {
-        console.error('Download failed:', error)
-        alert('Download failed. Please try again.')
-      })
+      } catch (downloadError: any) {
+        console.error('Download failed:', downloadError)
+        alert('Clip created but download failed. Please try again.')
+        return
+      }
       
       // Clear selection after successful creation
       setSelectedEvents(new Set())
       
-      alert(`🎉 Highlight reel created! (${result.eventCount} events, ${result.duration}s)\nDownload started automatically.`)
+      // Show success message with better formatting
+      const message = `🎉 Highlight reel created!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download completed!`
+      alert(message)
       
     } catch (error: any) {
       console.error('❌ Error creating clip:', error)
@@ -843,7 +817,7 @@ export default function UnifiedSidebar({
                               </span>
                             </div>
                             <p className="text-gray-300 text-sm mt-1">
-                              {event.description}
+                              {transformDescription(event.description || '')}
                             </p>
                           </div>
                         </label>
