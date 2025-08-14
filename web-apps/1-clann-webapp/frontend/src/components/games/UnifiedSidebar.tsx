@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
-import CoachSelector from '../ai-chat/CoachSelector'
+
 import { COACHES } from '../ai-chat/coaches'
 import { getTeamInfo, getTeamColorClass } from '../../lib/team-utils'
 import apiClient from '../../lib/api-client'
@@ -139,7 +139,7 @@ export default function UnifiedSidebar({
     }
   }
   const [isResizing, setIsResizing] = useState(false)
-  const [showCoachSelector, setShowCoachSelector] = useState(false)
+
   
   // Downloads state
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
@@ -369,7 +369,7 @@ export default function UnifiedSidebar({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            <span>AI Coach</span>
+            <span>Coach</span>
           </button>
 
           <button
@@ -383,7 +383,7 @@ export default function UnifiedSidebar({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
-            <span>Insights</span>
+            <span>Stats</span>
           </button>
 
           <button
@@ -397,7 +397,7 @@ export default function UnifiedSidebar({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            <span>Downloads</span>
+            <span>Clips</span>
           </button>
           </div>
         </div>
@@ -633,31 +633,44 @@ export default function UnifiedSidebar({
         {activeTab === 'ai' && (
           <div className="h-full flex flex-col">
             <div className="p-4 border-b border-gray-700">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="text-lg font-semibold text-white">AI Coach</h4>
-                <button
-                  onClick={() => setShowCoachSelector(true)}
-                  className="text-xs bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full transition-colors"
-                >
-                  {selectedCoach ? selectedCoach.name : 'Choose Coach'}
-                </button>
+              <h4 className="text-lg font-semibold text-white mb-3">AI Coach</h4>
+              
+              {/* Coach Selection Cards */}
+              <div className="grid grid-cols-3 gap-2 mb-3">
+                {COACHES.map((coach) => (
+                  <button
+                    key={coach.id}
+                    onClick={() => setSelectedCoach(coach)}
+                    className={`p-3 rounded-lg border-2 transition-all duration-200 ${
+                      selectedCoach?.id === coach.id
+                        ? 'border-green-500 bg-green-500/10'
+                        : 'border-gray-600 bg-gray-800/30 hover:border-gray-500 hover:bg-gray-800/50'
+                    }`}
+                  >
+                    <div className="flex flex-col items-center space-y-2">
+                      <div className="w-20 h-20 rounded-lg overflow-hidden border border-gray-600">
+                        <img 
+                          src={coach.image} 
+                          alt={coach.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-xs font-medium text-white leading-tight">
+                          {coach.name.split(' ')[0]} {/* First name only for space */}
+                        </div>
+                        <div className={`text-xs px-1.5 py-0.5 rounded-full mt-1 ${
+                          selectedCoach?.id === coach.id
+                            ? 'bg-green-600 text-white'
+                            : 'bg-gray-700 text-gray-300'
+                        }`}>
+                          {coach.title}
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                ))}
               </div>
-              {selectedCoach ? (
-                <div className="flex items-center space-x-2 mb-2">
-                  <div className="w-8 h-8 rounded-lg overflow-hidden border border-gray-600">
-                    <img 
-                      src={selectedCoach.image} 
-                      alt={selectedCoach.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-white">{selectedCoach.name}</div>
-                    <div className="text-xs text-gray-400">{selectedCoach.title}</div>
-                  </div>
-                </div>
-              ) : null}
-              <p className="text-sm text-gray-400">Get personalized coaching insights and training recommendations.</p>
             </div>
             
             {/* Chat Messages */}
@@ -668,7 +681,6 @@ export default function UnifiedSidebar({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                   <h5 className="text-white font-medium mb-2">Ready to Coach!</h5>
-                  <p className="text-gray-400 text-sm mb-4">Ask me about:</p>
                   <div className="space-y-2 text-sm text-gray-300">
                     <div>• Training drills recommendations</div>
                     <div>• Tactical analysis</div>
@@ -738,18 +750,6 @@ export default function UnifiedSidebar({
               )}
             </div>
           </div>
-        )}
-
-        {/* Coach Selector Modal */}
-        {showCoachSelector && (
-          <CoachSelector
-            selectedCoach={selectedCoach}
-            onCoachSelect={(coach) => {
-              setSelectedCoach(coach)
-              setShowCoachSelector(false)
-            }}
-            onClose={() => setShowCoachSelector(false)}
-          />
         )}
 
         {/* Insights Tab */}
