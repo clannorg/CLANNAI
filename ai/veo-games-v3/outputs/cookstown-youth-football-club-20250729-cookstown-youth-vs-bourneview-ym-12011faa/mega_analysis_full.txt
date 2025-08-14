@@ -1,0 +1,131 @@
+=== MEGA_EVENTS.TXT ===
+00:06 - KICK-OFF: Yellow team - Match starts
+07:32 - RESTART: Unspecified team - Play restarts
+08:10 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+08:26 - SHOT: Yellow team - Shot on goal
+09:47 - SHOT: Unspecified team - Shot on goal
+10:44 - RESTART: Unspecified team - Play restarts
+12:08 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+13:27 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+14:57 - SHOT: Yellow team - Shot on goal
+15:59 - SHOT: Yellow team - Shot on goal
+17:09 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+17:24 - RESTART: Unspecified team - Play restarts
+17:36 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+18:02 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+19:17 - SHOT: Yellow team - Shot goes wide
+19:50 - SHOT: Unspecified team - Shot on goal
+20:36 - SAVE: Yellow team - Goalkeeper saves shot from Blue team's free kick
+27:26 - SHOT: Blue team - Shot on goal
+30:49 - SHOT: Yellow team - Shot on goal
+30:50 - GOAL: Yellow team - Goal scored from free kick
+31:31 - SHOT: Unspecified team - Shot on goal
+34:32 - SHOT: Blue team - Free kick hits crossbar
+35:04 - SHOT: Yellow team - Shot on goal
+35:41 - PENALTY: Blue team - Penalty awarded
+35:57 - SHOT: Blue team - Shot on goal (Penalty kick)
+39:07 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+40:03 - SHOT: Blue team - Shot on goal
+41:03 - SHOT: Blue team - Shot on goal
+41:54 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+42:25 - KICK-OFF: Yellow team - Match restarts
+45:41 - WHISTLE: Unspecified team - End of first half
+57:45 - KICK-OFF: Blue team - Second half begins
+59:27 - SHOT: Yellow team - Shot on goal
+60:06 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+61:12 - INTERRUPTION: Unspecified team - Dog runs onto pitch
+61:53 - SHOT: Yellow team - Shot on goal
+62:11 - SHOT: Blue team - Shot on goal
+62:25 - WHISTLE: Unspecified team - End of period
+63:33 - SHOT: Blue team - Shot on goal
+63:49 - SAVE: Yellow team - Goalkeeper saves shot from Blue team
+66:14 - SHOT: Yellow team - Shot on goal
+67:16 - SHOT: Yellow team - Shot on goal
+68:40 - SHOT: Yellow team - Shot on goal
+70:25 - PENALTY: Yellow team - Penalty awarded
+71:04 - FREE KICK: Blue team - Free kick taken into penalty area
+71:13 - GOAL: Yellow team - Goal scored from penalty kick
+71:26 - SHOT: Yellow team - Free kick goes over goal
+71:30 - KICK-OFF: Yellow team - After goal
+72:00 - KICK-OFF: Blue team - After goal
+72:45 - KICK-OFF: Blue team - Match restarts
+75:52 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+77:21 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+77:35 - SHOT: Unspecified team - Shot on goal
+80:17 - SHOT: Yellow team - Shot on goal
+80:29 - SAVE: Blue team - Goalkeeper catches Yellow team shot
+80:33 - SAVE: Blue team - Goalkeeper makes diving save from Yellow team shot
+80:33 - CORNER: Yellow team - Corner awarded after save
+80:43 - SHOT: Yellow team - Shot on goal
+81:41 - KICK-OFF: Yellow team - After goal
+81:49 - SHOT: Yellow team - Shot on goal
+81:50 - GOAL: Yellow team - Goal scored
+84:08 - SHOT: Unspecified team - Shot on goal
+87:21 - SHOT: Yellow team - Shot on goal
+92:38 - KICK-OFF: Yellow team - Match restarts
+93:26 - SHOT: Yellow team - Header goes over crossbar
+94:10 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+95:40 - SAVE: Yellow team - Goalkeeper saves shot from Blue team
+98:16 - SHOT: Yellow team - Shot on goal (from free kick)
+101:01 - SHOT: Yellow team - Shot on goal (from free kick)
+101:53 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+102:40 - SHOT: Blue team - Shot on goal
+102:59 - WHISTLE: Unspecified team - End of match
+
+=== MEGA_TACTICAL.TXT ===
+=== YELLOW TEAM ===
+Strengths:
+- Effective at building attacks from their own half with long passes and through wide flanks.
+- Dangerous from set pieces, scoring multiple goals directly from free kicks and penalties.
+- Maintains possession well in midfield and the opposition's half, creating numerous scoring opportunities.
+- Good at winning aerial duels and regaining possession after clearances.
+
+Weaknesses:
+- Prone to conceding fouls, sometimes in dangerous areas.
+- Attacks can sometimes break down due to overhit passes or strong defensive tackles.
+
+Key Moments:
+- 30:50 - GOAL: Goal scored from a free kick.
+- 70:25 - PENALTY: Penalty awarded, which led to their second goal at 71:13.
+- 71:13 - GOAL: Goal scored from the penalty kick.
+- 81:50 - GOAL: Third goal scored.
+- Numerous shots on target and several shots that went wide or over.
+
+=== BLUE TEAM ===
+Strengths:
+- Strong in defensive clearances and intercepting passes in midfield.
+- Goalkeeper makes crucial saves, keeping them in the game.
+- Capable of building attacks from their own half, often utilizing long passes to the flanks.
+- Created significant scoring chances, including a free kick that hit the crossbar and a penalty award.
+
+Weaknesses:
+- Tends to commit fouls, sometimes in defensive areas leading to set pieces.
+- Struggles under pressure, occasionally losing possession in their own half.
+- Conceded multiple goals from opponent's set pieces.
+
+Key Moments:
+- 20:36 - SAVE: Goalkeeper saves a shot from Yellow team's free kick.
+- 34:32 - SHOT: Free kick hits the crossbar, a close scoring opportunity.
+- 35:41 - PENALTY: Awarded a penalty kick.
+- 63:49 - SAVE: Goalkeeper makes a save from a Yellow team shot.
+- 95:40 - SAVE: Goalkeeper saves another shot from Yellow team.
+
+=== MEGA_SUMMARY.TXT ===
+Match overview:
+
+Match: Yellow team vs Blue team
+Final Score: 3-0
+Duration: 104 minutes (including stoppage)
+
+Key Statistics:
+- Goals: 3 (All Yellow team)
+- Shots: 29 (19 Yellow, 8 Blue, 2 Unspecified)
+- Fouls: 15 (7 by Yellow team, 8 by Blue team)
+- Penalties: 2 (1 for Yellow, 1 for Blue)
+- Saves: 6 (3 by Yellow team, 3 by Blue team)
+- Corners: 1 (for Yellow team)
+
+Match Narrative:
+The 90-minute football match, extending to approximately 104 minutes with stoppages, saw the Yellow team emerge victorious with a dominant 3-0 scoreline against the Blue team. The Yellow team's offensive prowess was evident throughout, particularly from set-piece situations, with their first goal coming from a free kick at 30:50 and their second from a penalty kick at 71:13. They continued their scoring run with a third goal at 81:50, showcasing their consistent pressure and ability to convert chances.
+
+The Blue team, despite their defensive efforts and some crucial saves from their goalkeeper, struggled to contain the Yellow team's attacks. They did create several significant opportunities themselves, including a free kick that rattled the crossbar at 34:32 and a penalty award at 35:41, but ultimately failed to convert any of their 8 recorded shots into goals. The match featured a fair amount of physical play, resulting in 15 fouls called against both teams, and even a brief interruption by a dog on the pitch at 61:12. The Yellow team's strategic use of long balls and flank attacks, combined with their proficiency in dead-ball situations, proved to be the decisive factor in securing a comfortable win.

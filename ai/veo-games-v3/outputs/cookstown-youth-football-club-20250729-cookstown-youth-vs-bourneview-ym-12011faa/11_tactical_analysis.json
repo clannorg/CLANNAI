@@ -1,0 +1,52 @@
+{
+  "red_team": {
+    "team_name": "Yellow Team",
+    "strengths": [
+      "Set-piece proficiency",
+      "Consistent offensive pressure",
+      "Effective flank attacks",
+      "Strategic use of long balls"
+    ],
+    "weaknesses": [
+      "Discipline (7 fouls)"
+    ],
+    "key_players": [
+      "Effective free-kick taker",
+      "Clinical penalty taker"
+    ],
+    "tactical_setup": "Favored a direct style with long balls and width, capitalizing on set-piece opportunities.",
+    "performance_summary": "Dominated the match with consistent offensive pressure, converting set-pieces and capitalizing on chances to secure a comfortable 3-0 victory."
+  },
+  "blue_team": {
+    "team_name": "Blue Team",
+    "strengths": [
+      "Defensive efforts",
+      "Goalkeeper saves"
+    ],
+    "weaknesses": [
+      "Inability to convert chances",
+      "Struggled to contain attacks",
+      "Lack of offensive output"
+    ],
+    "key_players": [
+      "Goalkeeper (3 saves)",
+      "Crossbar-hitting free kick taker"
+    ],
+    "tactical_setup": "Focused on defensive stability, but struggled to create and convert scoring opportunities.",
+    "performance_summary": "Struggled to contain the Yellow team's attacks and failed to convert their own chances, resulting in a 3-0 defeat despite some defensive efforts and saves."
+  },
+  "match_summary": {
+    "final_score": "3-0",
+    "key_moments": [
+      "Yellow team's free-kick goal at 30:50",
+      "Blue team's free kick hitting the crossbar at 34:32",
+      "Yellow team's penalty goal at 71:13",
+      "Dog on the pitch at 61:12"
+    ],
+    "turning_points": [
+      "Yellow team's first goal shifting momentum",
+      "Yellow team's penalty conversion extending lead"
+    ],
+    "overall_narrative": "The Yellow team showcased their offensive prowess and set-piece efficiency, securing a dominant 3-0 victory over the Blue team, who struggled to convert chances despite some defensive efforts."
+  }
+}

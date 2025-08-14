@@ -1,0 +1,26 @@
+{
+  "match_id": "cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa",
+  "teams": {
+    "red_team": {
+      "name": "Cookstown Youth",
+      "jersey_color": "yellow"
+    },
+    "blue_team": {
+      "name": "Bourneview YM",
+      "jersey_color": "all blue"
+    }
+  },
+  "counts": {
+    "goals": 3,
+    "shots": 32
+  },
+  "files": {
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa-video-mp4.mp4",
+    "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa-web_events_array-json.json",
+    "web_events_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa-web_events-json.json",
+    "timeline_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa-5_complete_timeline-txt.txt",
+    "ground_truth_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa-1_veo_ground_truth-json.json",
+    "other_events_txt": null,
+    "tactical_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/cookstown-youth-football-club-20250729-cookstown-youth-vs-bourneview-ym-12011faa-11_tactical_analysis-json.json"
+  }
+}

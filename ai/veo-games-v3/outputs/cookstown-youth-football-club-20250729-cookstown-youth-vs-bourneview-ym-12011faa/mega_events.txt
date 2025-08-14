@@ -1,0 +1,72 @@
+00:06 - KICK-OFF: Yellow team - Match starts
+07:32 - RESTART: Unspecified team - Play restarts
+08:10 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+08:26 - SHOT: Yellow team - Shot on goal
+09:47 - SHOT: Unspecified team - Shot on goal
+10:44 - RESTART: Unspecified team - Play restarts
+12:08 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+13:27 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+14:57 - SHOT: Yellow team - Shot on goal
+15:59 - SHOT: Yellow team - Shot on goal
+17:09 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+17:24 - RESTART: Unspecified team - Play restarts
+17:36 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+18:02 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+19:17 - SHOT: Yellow team - Shot goes wide
+19:50 - SHOT: Unspecified team - Shot on goal
+20:36 - SAVE: Yellow team - Goalkeeper saves shot from Blue team's free kick
+27:26 - SHOT: Blue team - Shot on goal
+30:49 - SHOT: Yellow team - Shot on goal
+30:50 - GOAL: Yellow team - Goal scored from free kick
+31:31 - SHOT: Unspecified team - Shot on goal
+34:32 - SHOT: Blue team - Free kick hits crossbar
+35:04 - SHOT: Yellow team - Shot on goal
+35:41 - PENALTY: Blue team - Penalty awarded
+35:57 - SHOT: Blue team - Shot on goal (Penalty kick)
+39:07 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+40:03 - SHOT: Blue team - Shot on goal
+41:03 - SHOT: Blue team - Shot on goal
+41:54 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+42:25 - KICK-OFF: Yellow team - Match restarts
+45:41 - WHISTLE: Unspecified team - End of first half
+57:45 - KICK-OFF: Blue team - Second half begins
+59:27 - SHOT: Yellow team - Shot on goal
+60:06 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+61:12 - INTERRUPTION: Unspecified team - Dog runs onto pitch
+61:53 - SHOT: Yellow team - Shot on goal
+62:11 - SHOT: Blue team - Shot on goal
+62:25 - WHISTLE: Unspecified team - End of period
+63:33 - SHOT: Blue team - Shot on goal
+63:49 - SAVE: Yellow team - Goalkeeper saves shot from Blue team
+66:14 - SHOT: Yellow team - Shot on goal
+67:16 - SHOT: Yellow team - Shot on goal
+68:40 - SHOT: Yellow team - Shot on goal
+70:25 - PENALTY: Yellow team - Penalty awarded
+71:04 - FREE KICK: Blue team - Free kick taken into penalty area
+71:13 - GOAL: Yellow team - Goal scored from penalty kick
+71:26 - SHOT: Yellow team - Free kick goes over goal
+71:30 - KICK-OFF: Yellow team - After goal
+72:00 - KICK-OFF: Blue team - After goal
+72:45 - KICK-OFF: Blue team - Match restarts
+75:52 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+77:21 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+77:35 - SHOT: Unspecified team - Shot on goal
+80:17 - SHOT: Yellow team - Shot on goal
+80:29 - SAVE: Blue team - Goalkeeper catches Yellow team shot
+80:33 - SAVE: Blue team - Goalkeeper makes diving save from Yellow team shot
+80:33 - CORNER: Yellow team - Corner awarded after save
+80:43 - SHOT: Yellow team - Shot on goal
+81:41 - KICK-OFF: Yellow team - After goal
+81:49 - SHOT: Yellow team - Shot on goal
+81:50 - GOAL: Yellow team - Goal scored
+84:08 - SHOT: Unspecified team - Shot on goal
+87:21 - SHOT: Yellow team - Shot on goal
+92:38 - KICK-OFF: Yellow team - Match restarts
+93:26 - SHOT: Yellow team - Header goes over crossbar
+94:10 - FOUL: Yellow team - Foul on Blue team, Free kick awarded to Blue team
+95:40 - SAVE: Yellow team - Goalkeeper saves shot from Blue team
+98:16 - SHOT: Yellow team - Shot on goal (from free kick)
+101:01 - SHOT: Yellow team - Shot on goal (from free kick)
+101:53 - FOUL: Blue team - Foul on Yellow team, Free kick awarded to Yellow team
+102:40 - SHOT: Blue team - Shot on goal
+102:59 - WHISTLE: Unspecified team - End of match
