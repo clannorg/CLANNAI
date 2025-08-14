@@ -770,98 +770,100 @@ export default function UnifiedSidebar({
         {/* Downloads Tab */}
         {activeTab === 'downloads' && (
           <div className="h-full flex flex-col">
+            {/* Header - Fixed at top */}
             <div className="p-4 border-b border-gray-700">
               <h4 className="text-lg font-semibold text-white mb-2">📥 Create Highlights</h4>
               <p className="text-sm text-gray-400">Select events to create a highlight reel for social media</p>
             </div>
             
+            {/* Event Selection - Scrollable middle */}
             <div className="flex-1 overflow-y-auto p-4">
-              <div className="space-y-4">
-                {/* Event Selection */}
-                <div>
-                  <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
-                  <div className="space-y-2">
-                    {allEvents.slice(0, 20).map((event, index) => {
-                      const isSelected = selectedEvents.has(index)
-                      const isDisabled = !isSelected && selectedEvents.size >= 5
-                      
-                      return (
-                        <label
-                          key={`${event.timestamp}-${event.type}-${index}`}
-                          className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
-                            isSelected 
-                              ? 'bg-orange-500/20 border border-orange-500/30' 
-                              : isDisabled 
-                                ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
-                                : 'bg-gray-800/30 hover:bg-gray-800/50'
-                          }`}
-                        >
-                          <input
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={() => !isDisabled && handleEventSelection(index)}
-                            disabled={isDisabled}
-                            className="w-4 h-4 text-orange-500 bg-gray-700 border-gray-600 rounded focus:ring-orange-500 focus:ring-2"
-                          />
-                          <div className="flex-1">
-                            <div className="flex items-center space-x-2">
-                              <span 
-                                className={`inline-block w-3 h-3 rounded-full`}
-                                style={{ backgroundColor: getEventColor(event.type) }}
-                              />
-                              <span className="text-white font-medium capitalize">
-                                {event.type}
-                              </span>
-                              <span className="text-gray-400 text-sm">
-                                {formatTime(event.timestamp)}
-                              </span>
-                            </div>
-                            <p className="text-gray-300 text-sm mt-1">
-                              {transformDescription(event.description || '')}
-                            </p>
+              <div>
+                <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
+                <div className="space-y-2">
+                  {allEvents.slice(0, 20).map((event, index) => {
+                    const isSelected = selectedEvents.has(index)
+                    const isDisabled = !isSelected && selectedEvents.size >= 5
+                    
+                    return (
+                      <label
+                        key={`${event.timestamp}-${event.type}-${index}`}
+                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
+                          isSelected 
+                            ? 'bg-orange-500/20 border border-orange-500/30' 
+                            : isDisabled 
+                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
+                              : 'bg-gray-800/30 hover:bg-gray-800/50'
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => !isDisabled && handleEventSelection(index)}
+                          disabled={isDisabled}
+                          className="w-4 h-4 text-orange-500 bg-gray-700 border-gray-600 rounded focus:ring-orange-500 focus:ring-2"
+                        />
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2">
+                            <span 
+                              className={`inline-block w-3 h-3 rounded-full`}
+                              style={{ backgroundColor: getEventColor(event.type) }}
+                            />
+                            <span className="text-white font-medium capitalize">
+                              {event.type}
+                            </span>
+                            <span className="text-gray-400 text-sm">
+                              {formatTime(event.timestamp)}
+                            </span>
                           </div>
-                        </label>
-                      )
-                    })}
-                  </div>
+                          <p className="text-gray-300 text-sm mt-1">
+                            {transformDescription(event.description || '')}
+                          </p>
+                        </div>
+                      </label>
+                    )
+                  })}
                 </div>
+              </div>
+            </div>
 
-                {/* Summary */}
-                <div className="bg-gray-800/50 rounded-lg p-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-white font-medium">Selected Events:</span>
-                    <span className="text-orange-400 font-bold">{selectedEvents.size} / 5</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Estimated Duration:</span>
-                    <span className="text-orange-400 font-bold">{selectedEvents.size * 10}s</span>
-                  </div>
+            {/* Summary + Button - Pinned at bottom */}
+            <div className="border-t border-gray-700 p-4 space-y-4">
+              {/* Summary */}
+              <div className="bg-gray-800/50 rounded-lg p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-white font-medium">Selected Events:</span>
+                  <span className="text-orange-400 font-bold">{selectedEvents.size} / 5</span>
                 </div>
-
-                {/* Create Button */}
-                <button
-                  onClick={handleCreateClip}
-                  disabled={selectedEvents.size === 0 || isCreatingClip}
-                  className={`w-full font-semibold py-3 px-4 rounded-lg transition-colors border ${
-                    selectedEvents.size === 0 || isCreatingClip
-                      ? 'bg-gray-700/50 text-gray-500 border-gray-600 cursor-not-allowed'
-                      : 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-200 border-orange-500/30 hover:border-orange-500/40'
-                  }`}
-                >
-                  {isCreatingClip ? (
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
-                      <span>Creating Clip...</span>
-                    </div>
-                  ) : (
-                    'Create Highlight Reel'
-                  )}
-                </button>
-
-                {/* Info */}
-                <div className="text-xs text-gray-500 text-center">
-                  Each event includes 10 seconds (5s before + 5s after)
+                <div className="flex justify-between items-center">
+                  <span className="text-white font-medium">Estimated Duration:</span>
+                  <span className="text-orange-400 font-bold">{selectedEvents.size * 10}s</span>
                 </div>
+              </div>
+
+              {/* Create Button */}
+              <button
+                onClick={handleCreateClip}
+                disabled={selectedEvents.size === 0 || isCreatingClip}
+                className={`w-full font-semibold py-3 px-4 rounded-lg transition-colors border ${
+                  selectedEvents.size === 0 || isCreatingClip
+                    ? 'bg-gray-700/50 text-gray-500 border-gray-600 cursor-not-allowed'
+                    : 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-200 border-orange-500/30 hover:border-orange-500/40'
+                }`}
+              >
+                {isCreatingClip ? (
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
+                    <span>Creating Clip...</span>
+                  </div>
+                ) : (
+                  'Create Highlight Reel'
+                )}
+              </button>
+
+              {/* Info */}
+              <div className="text-xs text-gray-500 text-center">
+                Each event includes 10 seconds (5s before + 5s after)
               </div>
             </div>
           </div>
