@@ -138,6 +138,27 @@ export default function UnifiedSidebar({
         return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
     }
   }
+
+  // Get emoji for event type
+  const getEventEmoji = (eventType: string) => {
+    switch (eventType.toLowerCase()) {
+      case 'goal': return '⚽'
+      case 'shot': return '🎯'
+      case 'foul': return '🚨'
+      case 'turnover': return '🔄'
+      case 'save': return '🥅'
+      case 'kick_off': return '⚽'
+      case 'corner': return '📐'
+      case 'throw_in': return '👐'
+      case 'free_kick': return '🦶'
+      case 'penalty': return '🥅'
+      case 'offside': return '🚫'
+      case 'substitution': return '🔄'
+      case 'yellow_card': return '🟨'
+      case 'red_card': return '🟥'
+      default: return '⚡'
+    }
+  }
   const [isResizing, setIsResizing] = useState(false)
 
   
@@ -343,7 +364,7 @@ export default function UnifiedSidebar({
             onClick={() => handleTabChange('events')}
             className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
               activeTab === 'events'
-                ? 'bg-green-500/20 text-green-200 border border-green-500/30'
+                ? 'bg-green-500/10 text-green-300 border border-green-500/20'
                 : 'text-gray-400 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -413,19 +434,17 @@ export default function UnifiedSidebar({
               <div className="space-y-4">
                 <div>
                   <label className="text-gray-300 block mb-3 font-medium">Team:</label>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 gap-2">
                     <button
-                      onClick={() => setTeamFilter('both')}
-                      className={`h-12 text-sm font-semibold rounded-lg border-2 transition-colors ${
-                        teamFilter === 'both'
-                          ? 'bg-white text-black hover:bg-gray-200 border-white'
-                          : 'bg-white/10 text-white hover:bg-white/20 border-white/30'
-                      }`}
-                    >
-                      Both
-                    </button>
-                    <button
-                      onClick={() => setTeamFilter('red')}
+                      onClick={() => {
+                        if (teamFilter === 'both') {
+                          setTeamFilter('red') // Both selected -> Red only
+                        } else if (teamFilter === 'red') {
+                          setTeamFilter('blue') // Red only -> Blue only
+                        } else {
+                          setTeamFilter('both') // Blue only -> Both
+                        }
+                      }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
                         teamFilter === 'red' || teamFilter === 'both'
                           ? `${redTeamColorClass} hover:opacity-90`
@@ -436,7 +455,15 @@ export default function UnifiedSidebar({
                       {redTeam.name.length > 8 ? redTeam.name.split(' ')[0] : redTeam.name}
                     </button>
                     <button
-                      onClick={() => setTeamFilter('blue')}
+                      onClick={() => {
+                        if (teamFilter === 'both') {
+                          setTeamFilter('blue') // Both selected -> Blue only
+                        } else if (teamFilter === 'blue' || teamFilter === 'black') {
+                          setTeamFilter('red') // Blue only -> Red only
+                        } else {
+                          setTeamFilter('both') // Red only -> Both
+                        }
+                      }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
                         teamFilter === 'blue' || teamFilter === 'black' || teamFilter === 'both'
                           ? `${blueTeamColorClass} hover:opacity-90`
@@ -584,7 +611,7 @@ export default function UnifiedSidebar({
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         {/* Event Type Badge */}
-                        <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${
+                        <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
                           event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
                           event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
                           event.type === 'foul' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' :
@@ -592,7 +619,8 @@ export default function UnifiedSidebar({
                           event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
                           'bg-gray-500/20 text-gray-300 border-gray-500/30'
                         }`}>
-                          {event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                          <span>{getEventEmoji(event.type)}</span>
+                          <span>{event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
                         </span>
                         
                         {/* Team Badge */}
