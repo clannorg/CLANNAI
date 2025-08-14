@@ -9,6 +9,7 @@ import GameHeader from '../../../components/games/GameHeader'
 import UnifiedSidebar from '../../../components/games/UnifiedSidebar'
 import { AIChatProvider, useAIChat } from '../../../components/ai-chat'
 import { useOrientation } from '../../../hooks/useOrientation'
+import { getTeamInfo } from '../../../lib/team-utils'
 
 // Mobile Video Player with auto-hide overlay
 function MobileVideoPlayer({ 
@@ -120,6 +121,14 @@ interface Game {
   team_name: string
   team_color: string
   created_at: string
+  metadata?: {
+    teams?: {
+      red_team: { name: string, jersey_color: string }
+      blue_team: { name: string, jersey_color: string }
+    }
+    counts?: { goals: number, shots: number }
+    match_id?: string
+  }
 }
 
 const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
@@ -133,7 +142,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   const [showSidebar, setShowSidebar] = useState(true)
   const [sidebarTab, setSidebarTab] = useState<'events' | 'ai' | 'insights' | 'downloads'>('events')
   const [sidebarWidth, setSidebarWidth] = useState(400)
-  const [teamScores, setTeamScores] = useState({ red: 0, black: 0 })
+  const [teamScores, setTeamScores] = useState({ red: 0, blue: 0 })
   
   // Filter state
   const [eventTypeFilters, setEventTypeFilters] = useState({
@@ -147,7 +156,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
     substitution: true,
     turnover: true
   })
-  const [teamFilter, setTeamFilter] = useState('both') // 'red', 'black', 'both'
+  const [teamFilter, setTeamFilter] = useState('both') // 'red', 'blue', 'both' (red=red_team, blue=blue_team from metadata)
   const [showFilters, setShowFilters] = useState(false)
   
   // Tactical analysis state
@@ -256,14 +265,14 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       event.type === 'goal' && event.timestamp <= currentTime && event.team === 'red'
     ).length
     
-    const blackGoals = allEvents.filter(event => 
-      event.type === 'goal' && event.timestamp <= currentTime && event.team === 'black'
+    const blueGoals = allEvents.filter(event => 
+      event.type === 'goal' && event.timestamp <= currentTime && (event.team === 'blue' || event.team === 'black')
     ).length
     
-    if (redGoals !== teamScores.red || blackGoals !== teamScores.black) {
-      setTeamScores({ red: redGoals, black: blackGoals })
+    if (redGoals !== teamScores.red || blueGoals !== teamScores.blue) {
+      setTeamScores({ red: redGoals, blue: blueGoals })
     }
-  }, [currentTime, game?.ai_analysis, currentEventIndex, teamScores.red, teamScores.black, allEvents])
+  }, [currentTime, game?.ai_analysis, currentEventIndex, teamScores.red, teamScores.blue, allEvents])
 
   // Auto-scroll to current event in sidebar
   useEffect(() => {

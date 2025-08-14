@@ -144,25 +144,44 @@ router.post('/:id/upload-metadata', [authenticateToken, requireCompanyRole], asy
       }
     }
 
-    // 4) Team identity
-    if (meta.team_identity && typeof meta.team_identity === 'object') {
-      updates.metadata = {
-        ...currentMetadata,
-        team_identity: meta.team_identity,
-        tactical_files: { ...tacticalFiles },
-        analysis_files: { ...analysisFiles }
-      };
-      console.log('✅ metadata set team_identity');
-    } else {
-      // still persist updated files maps
-      updates.metadata = {
-        ...currentMetadata,
-        tactical_files: { ...tacticalFiles },
-        analysis_files: { ...analysisFiles }
-      };
+    // 4) Team identity and match metadata
+    const metadataUpdates = {
+      ...currentMetadata,
+      tactical_files: { ...tacticalFiles },
+      analysis_files: { ...analysisFiles }
+    };
+
+    // Store teams data (red_team/blue_team with jersey colors)
+    if (meta.teams && typeof meta.teams === 'object') {
+      metadataUpdates.teams = meta.teams;
+      console.log('✅ metadata set teams');
     }
 
-    // 5) Status auto-advance
+    // Store match counts (goals, shots, etc.)
+    if (meta.counts && typeof meta.counts === 'object') {
+      metadataUpdates.counts = meta.counts;
+      console.log('✅ metadata set counts');
+    }
+
+    // Store match_id
+    if (meta.match_id) {
+      metadataUpdates.match_id = meta.match_id;
+      console.log('✅ metadata set match_id');
+    }
+
+    // Legacy team_identity support
+    if (meta.team_identity && typeof meta.team_identity === 'object') {
+      metadataUpdates.team_identity = meta.team_identity;
+      console.log('✅ metadata set team_identity');
+    }
+
+    updates.metadata = metadataUpdates;
+
+    // 5) Store the metadata URL itself for display in company dashboard
+    updates.metadata_url = metadataUrl;
+    console.log('✅ metadata_url stored');
+
+    // 6) Status auto-advance
     if (updates.s3_key && (hasEvents || updates.tactical_analysis)) {
       updates.status = 'analyzed';
     }
@@ -262,6 +281,7 @@ router.get('/:id', authenticateToken, async (req, res) => {
         team_id: game.team_id,
         team_name: game.team_name,
         team_color: game.team_color,
+        metadata: game.metadata,
         created_at: game.created_at,
         // Video player needs browser-compatible HTTPS URL
         s3Url: s3Url

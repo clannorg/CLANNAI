@@ -616,6 +616,16 @@ export default function CompanyDashboard() {
                           </button>
                         </div>
 
+                        {/* Show Metadata Location if uploaded */}
+                        {game.metadata_url && (
+                          <div className="mt-2 text-sm">
+                            <p className="text-base font-semibold text-gray-900"><strong>Current Metadata:</strong></p>
+                            <p className="text-purple-600 font-mono text-xs break-all">
+                              {game.metadata_url}
+                            </p>
+                          </div>
+                        )}
+
                         {/* Show Tactical Analysis Location if uploaded */}
                         {game.tactical_analysis_url && (
                           <div className="mt-2 text-sm">

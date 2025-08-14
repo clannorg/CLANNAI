@@ -1,15 +1,22 @@
 'use client'
 
 import Link from 'next/link'
+import { getTeamInfo, getTeamColorClass } from '@/lib/team-utils'
 
 interface GameHeaderProps {
   game: {
     team_name: string
     title: string
+    metadata?: {
+      teams?: {
+        red_team: { name: string, jersey_color: string }
+        blue_team: { name: string, jersey_color: string }
+      }
+    }
   }
   teamScores: {
     red: number
-    black: number
+    blue: number
   }
   currentTime: number
   showEvents: boolean
@@ -29,6 +36,19 @@ export default function GameHeader({
     const minutes = Math.floor(time / 60)
     const seconds = Math.floor(time % 60)
     return `${minutes}:${seconds.toString().padStart(2, '0')}`
+  }
+
+  // Get team information from metadata
+  const { redTeam, blueTeam } = getTeamInfo(game)
+  
+  // Get dynamic colors for team indicators
+  const redTeamColorClass = getTeamColorClass(redTeam.jersey_color)
+  const blueTeamColorClass = getTeamColorClass(blueTeam.jersey_color)
+  
+  // Extract just the background color part for the small indicator dots
+  const getIndicatorColor = (colorClass: string) => {
+    const bgMatch = colorClass.match(/bg-(\w+-\d+)/)
+    return bgMatch ? bgMatch[1] : 'gray-500'
   }
 
   return (
@@ -54,14 +74,20 @@ export default function GameHeader({
             <span className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>{game.team_name}</span>
             <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>
             <div className={`flex items-center ${isMobile ? 'space-x-1.5' : 'space-x-3'}`}>
-              <div className="flex items-center space-x-1">
-                <div className={`rounded-full bg-red-400 ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
+              <div className="flex items-center space-x-1" title={`${redTeam.name} (${redTeam.jersey_color})`}>
+                <div className={`rounded-full bg-${getIndicatorColor(redTeamColorClass)} ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
+                <span className={`font-bold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+                  {isMobile ? redTeam.name.split(' ')[0] : redTeam.name}
+                </span>
                 <span className={`font-bold ${isMobile ? 'text-sm' : 'text-base'}`}>{teamScores.red}</span>
               </div>
               <span className={`text-white/60 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>-</span>
-              <div className="flex items-center space-x-1">
-                <div className={`rounded-full bg-blue-400 ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
-                <span className={`font-bold ${isMobile ? 'text-sm' : 'text-base'}`}>{teamScores.black}</span>
+              <div className="flex items-center space-x-1" title={`${blueTeam.name} (${blueTeam.jersey_color})`}>
+                <div className={`rounded-full bg-${getIndicatorColor(blueTeamColorClass)} ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
+                <span className={`font-bold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+                  {isMobile ? blueTeam.name.split(' ')[0] : blueTeam.name}
+                </span>
+                <span className={`font-bold ${isMobile ? 'text-sm' : 'text-base'}`}>{teamScores.blue}</span>
               </div>
             </div>
             <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>

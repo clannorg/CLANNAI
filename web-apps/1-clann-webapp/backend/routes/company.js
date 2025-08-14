@@ -60,6 +60,7 @@ router.get('/games', [authenticateToken, requireCompanyRole], async (req, res) =
           has_analysis: !!game.ai_analysis,
           has_tactical: !!game.tactical_analysis,
           tactical_analysis_url: tacticalAnalysisUrl,
+          metadata_url: game.metadata_url,
           events_url: eventsUrl,
           created_at: game.created_at,
           updated_at: game.updated_at
