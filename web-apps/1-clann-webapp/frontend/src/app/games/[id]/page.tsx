@@ -344,6 +344,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             activeTab={sidebarTab}
             onTabChange={setSidebarTab}
             onWidthChange={setSidebarWidth}
+            game={game}
             events={filteredEvents}
             allEvents={allEvents}
             currentEventIndex={currentEventIndex}
@@ -385,6 +386,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           activeTab={sidebarTab}
           onTabChange={setSidebarTab}
           onWidthChange={() => {}} // No width change on mobile
+          game={game}
           events={filteredEvents}
           allEvents={allEvents}
           currentEventIndex={currentEventIndex}

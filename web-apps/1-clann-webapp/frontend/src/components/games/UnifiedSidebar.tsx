@@ -5,6 +5,7 @@ import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
 import CoachSelector from '../ai-chat/CoachSelector'
 import { COACHES } from '../ai-chat/coaches'
+import { getTeamInfo, getTeamColorClass } from '../../lib/team-utils'
 
 interface GameEvent {
   type: string
@@ -22,6 +23,18 @@ interface UnifiedSidebarProps {
   onWidthChange?: (width: number) => void
   isMobile?: boolean // New prop for mobile positioning
   mobileVideoComponent?: React.ReactNode // Video component for mobile header
+  
+  // Game data for team metadata
+  game: {
+    id: string
+    title: string
+    metadata?: {
+      teams?: {
+        red_team: { name: string, jersey_color: string }
+        blue_team: { name: string, jersey_color: string }
+      }
+    }
+  }
   
   // Events tab props
   events: GameEvent[]
@@ -55,6 +68,7 @@ export default function UnifiedSidebar({
   onWidthChange,
   isMobile = false,
   mobileVideoComponent,
+  game,
   events,
   allEvents,
   currentEventIndex,
@@ -75,6 +89,13 @@ export default function UnifiedSidebar({
   const { messages, sendMessage, isLoading, inputValue, setInputValue, clearMessages, selectedCoach, setSelectedCoach } = useAIChat()
   const [chatInputValue, setChatInputValue] = useState('')
   const [sidebarWidth, setSidebarWidth] = useState(400) // Default 400px - wider for better usability
+
+  // Get team information from metadata
+  const { redTeam, blueTeam } = getTeamInfo(game)
+  
+  // Get dynamic colors for team filter buttons
+  const redTeamColorClass = getTeamColorClass(redTeam.jersey_color)
+  const blueTeamColorClass = getTeamColorClass(blueTeam.jersey_color)
   const [isResizing, setIsResizing] = useState(false)
   const [showCoachSelector, setShowCoachSelector] = useState(false)
   
@@ -476,23 +497,25 @@ export default function UnifiedSidebar({
                       </button>
                       <button
                         onClick={() => setTeamFilter('red')}
-                        className={`h-10 text-sm font-semibold rounded-lg border-2 transition-colors ${
+                        className={`h-10 text-xs font-semibold rounded-lg border-2 transition-colors ${
                           teamFilter === 'red'
-                            ? 'bg-red-500 text-white hover:bg-red-600 border-red-500'
-                            : 'bg-red-500/20 text-red-400 hover:bg-red-500/30 border-red-500/30'
+                            ? `${redTeamColorClass} hover:opacity-90`
+                            : `${redTeamColorClass.replace('bg-', 'bg-').replace('text-', 'text-')}/20 hover:opacity-75`
                         }`}
+                        title={`${redTeam.name} (${redTeam.jersey_color})`}
                       >
-                        Red
+                        {redTeam.name.length > 8 ? redTeam.name.split(' ')[0] : redTeam.name}
                       </button>
                       <button
-                        onClick={() => setTeamFilter('black')}
-                        className={`h-10 text-sm font-semibold rounded-lg border-2 transition-colors ${
-                          teamFilter === 'black'
-                            ? 'bg-blue-500 text-white hover:bg-blue-600 border-blue-500'
-                            : 'bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 border-blue-500/30'
+                        onClick={() => setTeamFilter('blue')}
+                        className={`h-10 text-xs font-semibold rounded-lg border-2 transition-colors ${
+                          teamFilter === 'blue' || teamFilter === 'black'
+                            ? `${blueTeamColorClass} hover:opacity-90`
+                            : `${blueTeamColorClass.replace('bg-', 'bg-').replace('text-', 'text-')}/20 hover:opacity-75`
                         }`}
+                        title={`${blueTeam.name} (${blueTeam.jersey_color})`}
                       >
-                        Black
+                        {blueTeam.name.length > 8 ? blueTeam.name.split(' ')[0] : blueTeam.name}
                       </button>
                     </div>
                   </div>
