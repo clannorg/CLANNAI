@@ -71,12 +71,10 @@ export default function GameHeader({
           <div className={`flex items-center text-white ${
             isMobile ? 'space-x-2' : 'space-x-4'
           }`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-            <span className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`}>{game.team_name}</span>
-            <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>
             <div className={`flex items-center ${isMobile ? 'space-x-1.5' : 'space-x-3'}`}>
               <div className="flex items-center space-x-1" title={`${redTeam.name} (${redTeam.jersey_color})`}>
                 <div className={`rounded-full bg-${getIndicatorColor(redTeamColorClass)} ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
-                <span className={`font-bold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+                <span className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
                   {isMobile ? redTeam.name.split(' ')[0] : redTeam.name}
                 </span>
                 <span className={`font-bold ${isMobile ? 'text-sm' : 'text-base'}`}>{teamScores.red}</span>
@@ -84,14 +82,12 @@ export default function GameHeader({
               <span className={`text-white/60 font-medium ${isMobile ? 'text-sm' : 'text-base'}`}>-</span>
               <div className="flex items-center space-x-1" title={`${blueTeam.name} (${blueTeam.jersey_color})`}>
                 <div className={`rounded-full bg-${getIndicatorColor(blueTeamColorClass)} ${isMobile ? 'w-1.5 h-1.5' : 'w-2.5 h-2.5'}`}></div>
-                <span className={`font-bold ${isMobile ? 'text-xs' : 'text-sm'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+                <span className={`font-semibold ${isMobile ? 'text-sm' : 'text-base'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
                   {isMobile ? blueTeam.name.split(' ')[0] : blueTeam.name}
                 </span>
                 <span className={`font-bold ${isMobile ? 'text-sm' : 'text-base'}`}>{teamScores.blue}</span>
               </div>
             </div>
-            <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>
-            <span className={`font-medium text-white/90 ${isMobile ? 'text-sm' : 'text-base'}`}>{game.title}</span>
             <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-5'}`}></div>
             <span className={`font-mono text-white/80 ${isMobile ? 'text-sm' : 'text-base'}`}>{formatTime(currentTime)}</span>
           </div>
