@@ -232,21 +232,24 @@ class EnhancedContactScraper:
 def main():
     scraper = EnhancedContactScraper()
     
-    # Process each country separately
-    countries = ['England', 'Scotland', 'Northern Ireland']
+    # Updated to use our current data files
+    countries_files = {
+        'Scotland': '../data/scotland_clubs.csv',
+        'Northern Ireland': '../data/northern_ireland_clubs.csv'
+    }
     
-    for country in countries:
+    for country, input_file in countries_files.items():
         print(f"\n🚀 Processing {country} clubs...")
         
-        output_file = f'data/contacts/{country.lower().replace(" ", "_")}_clubs_with_contacts.csv'
+        output_file = f'../data/contacts/{country.lower().replace(" ", "_")}_clubs_with_contacts_FULL.csv'
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         
-        # Process first 100 clubs per country for testing
+        # Process ALL clubs for these countries (no limit)
         results = scraper.process_clubs(
-            input_csv='data/processed/all_clubs_by_country.csv',
+            input_csv=input_file,
             output_csv=output_file,
             country_filter=country,
-            max_clubs=100  # Start with 100 per country
+            max_clubs=None  # Process ALL clubs
         )
         
         print(f"📊 {country}: {len(results)} clubs processed")
