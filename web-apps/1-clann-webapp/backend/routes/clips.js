@@ -97,8 +97,9 @@ router.post('/create', authenticateToken, async (req, res) => {
             console.log('📤 Attempting to upload to S3...');
             console.log('📤 File size to upload:', finalClipBuffer.length, 'bytes');
             
+            let uploadResult;
             try {
-                const uploadResult = await uploadToS3(finalClipBuffer, clipFileName, 'video/mp4');
+                uploadResult = await uploadToS3(finalClipBuffer, clipFileName, 'video/mp4');
                 console.log('📤 Upload result:', uploadResult);
                 console.log('📤 S3 Key:', uploadResult.s3Key);
             } catch (uploadError) {

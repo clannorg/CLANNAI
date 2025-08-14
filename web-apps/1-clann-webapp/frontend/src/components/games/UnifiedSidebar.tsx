@@ -393,155 +393,161 @@ export default function UnifiedSidebar({
         {/* Events Tab */}
         {activeTab === 'events' && (
           <div className="h-full flex flex-col">
-            {/* Filter Controls - Fixed at top like video/tabs */}
+            {/* Team Filters - Always Visible */}
             <div className="p-4 border-b border-gray-700">
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full ${
-                  showFilters 
-                    ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/60 text-green-200 shadow-lg shadow-green-500/10' 
-                    : 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/60 text-blue-200 shadow-lg shadow-blue-500/10'
-                }`}
-                title="Toggle Filters"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
-                </svg>
-                <span>{showFilters ? 'Hide Filters' : 'Show Filters'}</span>
-                {!showFilters && (
-                  <span className="inline-flex items-center justify-center w-5 h-5 text-xs bg-blue-500 text-white rounded-full ml-auto">
-                    {Object.values(eventTypeFilters).filter(Boolean).length}
-                  </span>
-                )}
-              </button>
-
-              {/* Filter Controls */}
-              {showFilters && (
-                <div className="mt-4 space-y-4 text-sm">
-                  {/* Event Type Filters - Pill Buttons */}
-                  <div>
-                    <label className="text-gray-300 block mb-3 font-medium">Event Types:</label>
-                    <div className="grid grid-cols-2 gap-2">
-                      {Object.entries(eventTypeFilters).map(([type, enabled]) => {
-                        const getFilterColor = (eventType: string) => {
-                          switch (eventType.toLowerCase()) {
-                            case 'goal': return enabled ? 'bg-green-500 text-white border-green-500' : 'bg-green-500/20 text-green-400 border-green-500/30'
-                            case 'shot': return enabled ? 'bg-blue-500 text-white border-blue-500' : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
-                            case 'foul': return enabled ? 'bg-red-500 text-white border-red-500' : 'bg-red-500/20 text-red-400 border-red-500/30'
-                            case 'yellow_card': return enabled ? 'bg-yellow-500 text-black border-yellow-500' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
-                            case 'red_card': return enabled ? 'bg-red-600 text-white border-red-600' : 'bg-red-600/20 text-red-400 border-red-600/30'
-                            case 'substitution': return enabled ? 'bg-purple-500 text-white border-purple-500' : 'bg-purple-500/20 text-purple-400 border-purple-500/30'
-                            case 'corner': return enabled ? 'bg-cyan-500 text-white border-cyan-500' : 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'
-                            case 'turnover': return enabled ? 'bg-purple-500 text-white border-purple-500' : 'bg-purple-500/20 text-purple-400 border-purple-500/30'
-                            case 'save': return enabled ? 'bg-orange-500 text-white border-orange-500' : 'bg-orange-500/20 text-orange-400 border-orange-500/30'
-                            default: return enabled ? 'bg-gray-500 text-white border-gray-500' : 'bg-gray-500/20 text-gray-400 border-gray-500/30'
-                          }
-                        }
-                        
-                        return (
-                          <button
-                            key={type}
-                            onClick={() => {
-                              setEventTypeFilters(prev => {
-                                const currentValues = Object.values(prev)
-                                const allSelected = currentValues.every(val => val === true)
-                                const selectedCount = currentValues.filter(val => val === true).length
-                                
-                                // If all are selected, clicking one should show only that one
-                                if (allSelected) {
-                                  const newFilters = Object.keys(prev).reduce((acc, key) => {
-                                    acc[key] = key === type
-                                    return acc
-                                  }, {} as typeof prev)
-                                  return newFilters
-                                }
-                                
-                                // If only this one is selected, clicking it should show all
-                                if (selectedCount === 1 && prev[type]) {
-                                  const newFilters = Object.keys(prev).reduce((acc, key) => {
-                                    acc[key] = true
-                                    return acc
-                                  }, {} as typeof prev)
-                                  return newFilters
-                                }
-                                
-                                // Otherwise, normal toggle
-                                return {
-                                  ...prev,
-                                  [type]: !prev[type]
-                                }
-                              })
-                            }}
-                            className={`h-9 text-xs font-medium rounded-lg border-2 transition-colors hover:scale-105 ${getFilterColor(type)}`}
-                          >
-                            {type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
-                          </button>
-                        )
-                      })}
-                    </div>
+              <div className="space-y-4">
+                <div>
+                  <label className="text-gray-300 block mb-3 font-medium">Team:</label>
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      onClick={() => setTeamFilter('both')}
+                      className={`h-12 text-sm font-semibold rounded-lg border-2 transition-colors ${
+                        teamFilter === 'both'
+                          ? 'bg-white text-black hover:bg-gray-200 border-white'
+                          : 'bg-white/10 text-white hover:bg-white/20 border-white/30'
+                      }`}
+                    >
+                      Both
+                    </button>
+                    <button
+                      onClick={() => setTeamFilter('red')}
+                      className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
+                        teamFilter === 'red' || teamFilter === 'both'
+                          ? `${redTeamColorClass} hover:opacity-90`
+                          : `bg-gray-500/20 text-gray-400 border-gray-500/30 hover:bg-gray-500/30`
+                      }`}
+                      title={`${redTeam.name} (${redTeam.jersey_color})`}
+                    >
+                      {redTeam.name.length > 8 ? redTeam.name.split(' ')[0] : redTeam.name}
+                    </button>
+                    <button
+                      onClick={() => setTeamFilter('blue')}
+                      className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
+                        teamFilter === 'blue' || teamFilter === 'black' || teamFilter === 'both'
+                          ? `${blueTeamColorClass} hover:opacity-90`
+                          : `bg-gray-500/20 text-gray-400 border-gray-500/30 hover:bg-gray-500/30`
+                      }`}
+                      title={`${blueTeam.name} (${blueTeam.jersey_color})`}
+                    >
+                      {blueTeam.name.length > 8 ? blueTeam.name.split(' ')[0] : blueTeam.name}
+                    </button>
                   </div>
-
-                  {/* Team Filter - Big Buttons */}
-                  <div>
-                    <label className="text-gray-300 block mb-3 font-medium">Team:</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      <button
-                        onClick={() => setTeamFilter('both')}
-                        className={`h-10 text-sm font-semibold rounded-lg border-2 transition-colors ${
-                          teamFilter === 'both'
-                            ? 'bg-white text-black hover:bg-gray-200 border-white'
-                            : 'bg-white/10 text-white hover:bg-white/20 border-white/30'
-                        }`}
-                      >
-                        Both
-                      </button>
-                      <button
-                        onClick={() => setTeamFilter('red')}
-                        className={`h-10 text-xs font-semibold rounded-lg border-2 transition-colors ${
-                          teamFilter === 'red'
-                            ? `${redTeamColorClass} hover:opacity-90`
-                            : `${redTeamColorClass.replace('bg-', 'bg-').replace('text-', 'text-')}/20 hover:opacity-75`
-                        }`}
-                        title={`${redTeam.name} (${redTeam.jersey_color})`}
-                      >
-                        {redTeam.name.length > 8 ? redTeam.name.split(' ')[0] : redTeam.name}
-                      </button>
-                      <button
-                        onClick={() => setTeamFilter('blue')}
-                        className={`h-10 text-xs font-semibold rounded-lg border-2 transition-colors ${
-                          teamFilter === 'blue' || teamFilter === 'black'
-                            ? `${blueTeamColorClass} hover:opacity-90`
-                            : `${blueTeamColorClass.replace('bg-', 'bg-').replace('text-', 'text-')}/20 hover:opacity-75`
-                        }`}
-                        title={`${blueTeam.name} (${blueTeam.jersey_color})`}
-                      >
-                        {blueTeam.name.length > 8 ? blueTeam.name.split(' ')[0] : blueTeam.name}
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Reset Filters */}
-                  <button
-                    onClick={() => {
-                      setEventTypeFilters({
-                        goal: true,
-                        shot: true,
-                        save: true,
-                        foul: true,
-                        yellow_card: true,
-                        red_card: true,
-                        corner: true,
-                        substitution: true,
-                        turnover: true
-                      })
-                      setTeamFilter('both')
-                    }}
-                    className="w-full bg-gray-600/80 hover:bg-gray-500/80 text-white text-sm py-2.5 rounded-lg transition-colors font-medium"
-                  >
-                    Reset All Filters
-                  </button>
                 </div>
-              )}
+
+                {/* More Filters - Collapsible */}
+                <div>
+                  <button
+                    onClick={() => setShowFilters(!showFilters)}
+                    className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full ${
+                      showFilters 
+                        ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/60 text-green-200 shadow-lg shadow-green-500/10' 
+                        : 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/60 text-blue-200 shadow-lg shadow-blue-500/10'
+                    }`}
+                    title="Toggle More Filters"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
+                    </svg>
+                    <span>More Filters</span>
+                    <svg className={`w-4 h-4 ml-auto transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                    {!showFilters && (
+                      <span className="inline-flex items-center justify-center w-5 h-5 text-xs bg-blue-500 text-white rounded-full">
+                        {Object.values(eventTypeFilters).filter(Boolean).length}
+                      </span>
+                    )}
+                  </button>
+
+                  {/* Event Type Filters - Collapsible */}
+                  {showFilters && (
+                    <div className="mt-4 space-y-4 text-sm">
+                      <div>
+                        <label className="text-gray-300 block mb-3 font-medium">Event Types:</label>
+                        <div className="grid grid-cols-2 gap-2">
+                          {Object.entries(eventTypeFilters).map(([type, enabled]) => {
+                            const getFilterColor = (eventType: string) => {
+                              switch (eventType.toLowerCase()) {
+                                case 'goal': return enabled ? 'bg-green-500 text-white border-green-500' : 'bg-green-500/20 text-green-400 border-green-500/30'
+                                case 'shot': return enabled ? 'bg-blue-500 text-white border-blue-500' : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                                case 'foul': return enabled ? 'bg-red-500 text-white border-red-500' : 'bg-red-500/20 text-red-400 border-red-500/30'
+                                case 'yellow_card': return enabled ? 'bg-yellow-500 text-black border-yellow-500' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+                                case 'red_card': return enabled ? 'bg-red-600 text-white border-red-600' : 'bg-red-600/20 text-red-400 border-red-600/30'
+                                case 'substitution': return enabled ? 'bg-purple-500 text-white border-purple-500' : 'bg-purple-500/20 text-purple-400 border-purple-500/30'
+                                case 'corner': return enabled ? 'bg-cyan-500 text-white border-cyan-500' : 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'
+                                case 'turnover': return enabled ? 'bg-purple-500 text-white border-purple-500' : 'bg-purple-500/20 text-purple-400 border-purple-500/30'
+                                case 'save': return enabled ? 'bg-orange-500 text-white border-orange-500' : 'bg-orange-500/20 text-orange-400 border-orange-500/30'
+                                default: return enabled ? 'bg-gray-500 text-white border-gray-500' : 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+                              }
+                            }
+                            
+                            return (
+                              <button
+                                key={type}
+                                onClick={() => {
+                                  setEventTypeFilters(prev => {
+                                    const currentValues = Object.values(prev)
+                                    const allSelected = currentValues.every(val => val === true)
+                                    const selectedCount = currentValues.filter(val => val === true).length
+                                    
+                                    // If all are selected, clicking one should show only that one
+                                    if (allSelected) {
+                                      const newFilters = Object.keys(prev).reduce((acc, key) => {
+                                        acc[key] = key === type
+                                        return acc
+                                      }, {} as typeof prev)
+                                      return newFilters
+                                    }
+                                    
+                                    // If only this one is selected, clicking it should show all
+                                    if (selectedCount === 1 && prev[type]) {
+                                      const newFilters = Object.keys(prev).reduce((acc, key) => {
+                                        acc[key] = true
+                                        return acc
+                                      }, {} as typeof prev)
+                                      return newFilters
+                                    }
+                                    
+                                    // Otherwise, normal toggle
+                                    return {
+                                      ...prev,
+                                      [type]: !prev[type]
+                                    }
+                                  })
+                                }}
+                                className={`h-9 text-xs font-medium rounded-lg border-2 transition-colors hover:scale-105 ${getFilterColor(type)}`}
+                              >
+                                {type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Reset Filters */}
+                      <button
+                        onClick={() => {
+                          setEventTypeFilters({
+                            goal: true,
+                            shot: true,
+                            save: true,
+                            foul: true,
+                            yellow_card: true,
+                            red_card: true,
+                            corner: true,
+                            substitution: true,
+                            turnover: true
+                          })
+                          setTeamFilter('both')
+                        }}
+                        className="w-full bg-gray-600/80 hover:bg-gray-500/80 text-white text-sm py-2.5 rounded-lg transition-colors font-medium"
+                      >
+                        Reset All Filters
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
             
             {/* Events List - Only events scroll */}
