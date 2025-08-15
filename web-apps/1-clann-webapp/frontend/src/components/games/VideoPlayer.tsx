@@ -207,8 +207,8 @@ export default function VideoPlayer({
         onLoadedMetadata={handleTimeUpdate}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
-        onError={(e) => {
-          console.error('Video loading error:', e)
+        onError={() => {
+          // Video loading failed - this is normal for pending uploads
         }}
         preload="metadata"
       />

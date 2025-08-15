@@ -20,10 +20,10 @@ const generatePresignedUploadUrl = async (fileName, fileType, fileSize) => {
             throw new Error('Invalid file type. Only MP4, MOV, and AVI files are allowed.');
         }
 
-        // Validate file size (max 2GB)
-        const maxSize = 2 * 1024 * 1024 * 1024; // 2GB
+        // Validate file size (max 5GB)
+        const maxSize = 5 * 1024 * 1024 * 1024; // 5GB
         if (fileSize > maxSize) {
-            throw new Error('File size too large. Maximum size is 2GB.');
+            throw new Error('File size too large. Maximum size is 5GB.');
         }
 
         // Generate unique key
