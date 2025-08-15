@@ -12,9 +12,19 @@ interface Props {
   tacticalLoading: boolean
   gameId: string
   onSeekToTimestamp?: (timestampInSeconds: number) => void
+  game?: {
+    id: string
+    title: string
+    metadata?: {
+      teams?: {
+        red_team: { name: string, jersey_color: string }
+        blue_team: { name: string, jersey_color: string }
+      }
+    }
+  }
 }
 
-export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameId, onSeekToTimestamp }: Props) {
+export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameId, onSeekToTimestamp, game }: Props) {
   // Helper function to parse JSON content if it's a string
   const parseContent = (content: any) => {
     if (typeof content === 'string') {
@@ -57,6 +67,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
   // Parse the raw tactical data to extract structured insights
   let matchOverview = null
   let redTeamData = null
+  let blueTeamData = null
   let managerRecommendations: any = null
   let keyMoments: any[] = []
 
@@ -67,6 +78,15 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
       redTeamData = redTeamContent
     } catch (e) {
       console.log('Failed to parse red team data:', e)
+    }
+  }
+
+  if (tacticalData.tactical?.blue_team) {
+    try {
+      const blueTeamContent = parseContent(tacticalData.tactical.blue_team.content)
+      blueTeamData = blueTeamContent
+    } catch (e) {
+      console.log('Failed to parse blue team data:', e)
     }
   }
 
@@ -155,7 +175,7 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
         <div className="bg-gradient-to-br from-red-900/30 to-red-800/20 border border-red-500/30 rounded-xl p-6 backdrop-blur-sm">
           <div className="flex items-center mb-4">
             <div className="w-4 h-4 bg-red-500 rounded-full mr-3"></div>
-            <h3 className="text-xl font-bold text-white">Red Team Performance</h3>
+            <h3 className="text-xl font-bold text-white">{redTeamData?.team_name || 'Red Team'} Performance</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -197,6 +217,58 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
                 🎯 Shooting Analysis
               </h4>
               <p className="text-gray-200 text-sm">{redTeamData.shot_accuracy}</p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* FIFA-Style Blue Team Performance */}
+      {blueTeamData && (
+        <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-500/30 rounded-xl p-6 backdrop-blur-sm">
+          <div className="flex items-center mb-4">
+            <div className="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
+            <h3 className="text-xl font-bold text-white">{blueTeamData?.team_name || 'Blue Team'} Performance</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Strengths */}
+            <div className="bg-black/20 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-3 flex items-center">
+                💪 Strengths
+              </h4>
+              <div className="space-y-2">
+                {normalizeDetailList(blueTeamData.strengths)?.map((strength: string, i: number) => (
+                  <div key={i} className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-200 text-sm">{strength}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Weaknesses */}
+            <div className="bg-black/20 rounded-lg p-4">
+              <h4 className="text-yellow-400 font-semibold mb-3 flex items-center">
+                ⚠️ Areas to Improve
+              </h4>
+              <div className="space-y-2">
+                {normalizeDetailList(blueTeamData.weaknesses)?.map((weakness: string, i: number) => (
+                  <div key={i} className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-200 text-sm">{weakness}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Shot Accuracy */}
+          {blueTeamData.shot_accuracy && (
+            <div className="mt-4 bg-black/20 rounded-lg p-4">
+              <h4 className="text-blue-400 font-semibold mb-2 flex items-center">
+                🎯 Shooting Analysis
+              </h4>
+              <p className="text-gray-200 text-sm">{blueTeamData.shot_accuracy}</p>
             </div>
           )}
         </div>

@@ -142,9 +142,10 @@ router.post('/create', authenticateToken, async (req, res) => {
 });
 
 // Download route - serves files from S3 through our backend
-router.get('/download/:s3Key(*)', authenticateToken, async (req, res) => {
+router.get('/download/*', authenticateToken, async (req, res) => {
     try {
-        const s3Key = req.params.s3Key;
+        // Extract S3 key from the full path (remove '/download/' prefix)
+        const s3Key = req.params[0];
         console.log(`📥 Serving download for: ${s3Key}`);
         
         const command = new GetObjectCommand({

@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react'
 import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
-import CoachSelector from '../ai-chat/CoachSelector'
+
 import { COACHES } from '../ai-chat/coaches'
 import { getTeamInfo, getTeamColorClass } from '../../lib/team-utils'
+import apiClient from '../../lib/api-client'
 
 interface GameEvent {
   type: string
@@ -137,8 +138,29 @@ export default function UnifiedSidebar({
         return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
     }
   }
+
+  // Get emoji for event type
+  const getEventEmoji = (eventType: string) => {
+    switch (eventType.toLowerCase()) {
+      case 'goal': return '⚽'
+      case 'shot': return '🎯'
+      case 'foul': return '🚨'
+      case 'turnover': return '🔄'
+      case 'save': return '🥅'
+      case 'kick_off': return '⚽'
+      case 'corner': return '📐'
+      case 'throw_in': return '👐'
+      case 'free_kick': return '🦶'
+      case 'penalty': return '🥅'
+      case 'offside': return '🚫'
+      case 'substitution': return '🔄'
+      case 'yellow_card': return '🟨'
+      case 'red_card': return '🟥'
+      default: return '⚡'
+    }
+  }
   const [isResizing, setIsResizing] = useState(false)
-  const [showCoachSelector, setShowCoachSelector] = useState(false)
+
   
   // Downloads state
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
@@ -194,42 +216,13 @@ export default function UnifiedSidebar({
       
       console.log('🎬 Creating clip with events:', selectedEventData)
       
-      // Call backend API to create clip
-      const response = await fetch('http://localhost:3002/api/clips/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        },
-        body: JSON.stringify({
-          gameId: gameId,
-          events: selectedEventData
-        })
-      })
-
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || 'Failed to create clip')
-      }
-
-      const result = await response.json()
+      // Call backend API using ApiClient (same pattern as everything else)
+      const result = await apiClient.createClip(gameId, selectedEventData)
       console.log('✅ Clip created successfully:', result)
       
-      // Create download link with authentication token
-      const token = localStorage.getItem('token')
-      const link = document.createElement('a')
-      link.href = `http://localhost:3002${result.downloadUrl}`
-      link.download = result.fileName
-      link.style.display = 'none'
-      
-      // Add authorization header by creating a fetch request instead of direct link
-      fetch(`http://localhost:3002${result.downloadUrl}`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      })
-      .then(response => response.blob())
-      .then(blob => {
+      // Download the clip using ApiClient
+      try {
+        const blob = await apiClient.downloadClip(result.downloadUrl)
         const url = window.URL.createObjectURL(blob)
         const link = document.createElement('a')
         link.href = url
@@ -238,16 +231,18 @@ export default function UnifiedSidebar({
         link.click()
         document.body.removeChild(link)
         window.URL.revokeObjectURL(url)
-      })
-      .catch((error: any) => {
-        console.error('Download failed:', error)
-        alert('Download failed. Please try again.')
-      })
+      } catch (downloadError: any) {
+        console.error('Download failed:', downloadError)
+        alert('Clip created but download failed. Please try again.')
+        return
+      }
       
       // Clear selection after successful creation
       setSelectedEvents(new Set())
       
-      alert(`🎉 Highlight reel created! (${result.eventCount} events, ${result.duration}s)\nDownload started automatically.`)
+      // Show success message with better formatting
+      const message = `🎉 Highlight reel created!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download completed!`
+      alert(message)
       
     } catch (error: any) {
       console.error('❌ Error creating clip:', error)
@@ -369,7 +364,7 @@ export default function UnifiedSidebar({
             onClick={() => handleTabChange('events')}
             className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
               activeTab === 'events'
-                ? 'bg-green-500/20 text-green-200 border border-green-500/30'
+                ? 'bg-green-500/10 text-green-300 border border-green-500/20'
                 : 'text-gray-400 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -395,7 +390,7 @@ export default function UnifiedSidebar({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            <span>AI Coach</span>
+            <span>Coach</span>
           </button>
 
           <button
@@ -409,7 +404,7 @@ export default function UnifiedSidebar({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
-            <span>Insights</span>
+            <span>Stats</span>
           </button>
 
           <button
@@ -423,7 +418,7 @@ export default function UnifiedSidebar({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            <span>Downloads</span>
+            <span>Clips</span>
           </button>
           </div>
         </div>
@@ -439,19 +434,17 @@ export default function UnifiedSidebar({
               <div className="space-y-4">
                 <div>
                   <label className="text-gray-300 block mb-3 font-medium">Team:</label>
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 gap-2">
                     <button
-                      onClick={() => setTeamFilter('both')}
-                      className={`h-12 text-sm font-semibold rounded-lg border-2 transition-colors ${
-                        teamFilter === 'both'
-                          ? 'bg-white text-black hover:bg-gray-200 border-white'
-                          : 'bg-white/10 text-white hover:bg-white/20 border-white/30'
-                      }`}
-                    >
-                      Both
-                    </button>
-                    <button
-                      onClick={() => setTeamFilter('red')}
+                      onClick={() => {
+                        if (teamFilter === 'both') {
+                          setTeamFilter('red') // Both selected -> Red only
+                        } else if (teamFilter === 'red') {
+                          setTeamFilter('blue') // Red only -> Blue only
+                        } else {
+                          setTeamFilter('both') // Blue only -> Both
+                        }
+                      }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
                         teamFilter === 'red' || teamFilter === 'both'
                           ? `${redTeamColorClass} hover:opacity-90`
@@ -462,7 +455,15 @@ export default function UnifiedSidebar({
                       {redTeam.name.length > 8 ? redTeam.name.split(' ')[0] : redTeam.name}
                     </button>
                     <button
-                      onClick={() => setTeamFilter('blue')}
+                      onClick={() => {
+                        if (teamFilter === 'both') {
+                          setTeamFilter('blue') // Both selected -> Blue only
+                        } else if (teamFilter === 'blue' || teamFilter === 'black') {
+                          setTeamFilter('red') // Blue only -> Red only
+                        } else {
+                          setTeamFilter('both') // Red only -> Both
+                        }
+                      }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
                         teamFilter === 'blue' || teamFilter === 'black' || teamFilter === 'both'
                           ? `${blueTeamColorClass} hover:opacity-90`
@@ -610,7 +611,7 @@ export default function UnifiedSidebar({
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
                         {/* Event Type Badge */}
-                        <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${
+                        <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
                           event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
                           event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
                           event.type === 'foul' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' :
@@ -618,7 +619,8 @@ export default function UnifiedSidebar({
                           event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
                           'bg-gray-500/20 text-gray-300 border-gray-500/30'
                         }`}>
-                          {event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                          <span>{getEventEmoji(event.type)}</span>
+                          <span>{event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
                         </span>
                         
                         {/* Team Badge */}
@@ -659,31 +661,44 @@ export default function UnifiedSidebar({
         {activeTab === 'ai' && (
           <div className="h-full flex flex-col">
             <div className="p-4 border-b border-gray-700">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="text-lg font-semibold text-white">AI Coach</h4>
-                <button
-                  onClick={() => setShowCoachSelector(true)}
-                  className="text-xs bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full transition-colors"
-                >
-                  {selectedCoach ? selectedCoach.name : 'Choose Coach'}
-                </button>
+              <h4 className="text-lg font-semibold text-white mb-3">AI Coach</h4>
+              
+              {/* Coach Selection Cards */}
+              <div className="grid grid-cols-3 gap-2 mb-3">
+                {COACHES.map((coach) => (
+                  <button
+                    key={coach.id}
+                    onClick={() => setSelectedCoach(coach)}
+                    className={`p-3 rounded-lg border-2 transition-all duration-200 ${
+                      selectedCoach?.id === coach.id
+                        ? 'border-green-500 bg-green-500/10'
+                        : 'border-gray-600 bg-gray-800/30 hover:border-gray-500 hover:bg-gray-800/50'
+                    }`}
+                  >
+                    <div className="flex flex-col items-center space-y-2">
+                      <div className="w-20 h-20 rounded-lg overflow-hidden border border-gray-600">
+                        <img 
+                          src={coach.image} 
+                          alt={coach.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-xs font-medium text-white leading-tight">
+                          {coach.name.split(' ')[0]} {/* First name only for space */}
+                        </div>
+                        <div className={`text-xs px-1.5 py-0.5 rounded-full mt-1 ${
+                          selectedCoach?.id === coach.id
+                            ? 'bg-green-600 text-white'
+                            : 'bg-gray-700 text-gray-300'
+                        }`}>
+                          {coach.title}
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                ))}
               </div>
-              {selectedCoach ? (
-                <div className="flex items-center space-x-2 mb-2">
-                  <div className="w-8 h-8 rounded-lg overflow-hidden border border-gray-600">
-                    <img 
-                      src={selectedCoach.image} 
-                      alt={selectedCoach.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-white">{selectedCoach.name}</div>
-                    <div className="text-xs text-gray-400">{selectedCoach.title}</div>
-                  </div>
-                </div>
-              ) : null}
-              <p className="text-sm text-gray-400">Get personalized coaching insights and training recommendations.</p>
             </div>
             
             {/* Chat Messages */}
@@ -694,7 +709,6 @@ export default function UnifiedSidebar({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                   <h5 className="text-white font-medium mb-2">Ready to Coach!</h5>
-                  <p className="text-gray-400 text-sm mb-4">Ask me about:</p>
                   <div className="space-y-2 text-sm text-gray-300">
                     <div>• Training drills recommendations</div>
                     <div>• Tactical analysis</div>
@@ -766,18 +780,6 @@ export default function UnifiedSidebar({
           </div>
         )}
 
-        {/* Coach Selector Modal */}
-        {showCoachSelector && (
-          <CoachSelector
-            selectedCoach={selectedCoach}
-            onCoachSelect={(coach) => {
-              setSelectedCoach(coach)
-              setShowCoachSelector(false)
-            }}
-            onClose={() => setShowCoachSelector(false)}
-          />
-        )}
-
         {/* Insights Tab */}
         {activeTab === 'insights' && (
           <div className="h-full overflow-y-auto">
@@ -788,6 +790,7 @@ export default function UnifiedSidebar({
                 tacticalLoading={tacticalLoading} 
                 gameId={gameId}
                 onSeekToTimestamp={onSeekToTimestamp}
+                game={game}
               />
             </div>
           </div>
@@ -796,98 +799,100 @@ export default function UnifiedSidebar({
         {/* Downloads Tab */}
         {activeTab === 'downloads' && (
           <div className="h-full flex flex-col">
+            {/* Header - Fixed at top */}
             <div className="p-4 border-b border-gray-700">
               <h4 className="text-lg font-semibold text-white mb-2">📥 Create Highlights</h4>
               <p className="text-sm text-gray-400">Select events to create a highlight reel for social media</p>
             </div>
             
+            {/* Event Selection - Scrollable middle */}
             <div className="flex-1 overflow-y-auto p-4">
-              <div className="space-y-4">
-                {/* Event Selection */}
-                <div>
-                  <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
-                  <div className="space-y-2">
-                    {allEvents.slice(0, 20).map((event, index) => {
-                      const isSelected = selectedEvents.has(index)
-                      const isDisabled = !isSelected && selectedEvents.size >= 5
-                      
-                      return (
-                        <label
-                          key={`${event.timestamp}-${event.type}-${index}`}
-                          className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
-                            isSelected 
-                              ? 'bg-orange-500/20 border border-orange-500/30' 
-                              : isDisabled 
-                                ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
-                                : 'bg-gray-800/30 hover:bg-gray-800/50'
-                          }`}
-                        >
-                          <input
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={() => !isDisabled && handleEventSelection(index)}
-                            disabled={isDisabled}
-                            className="w-4 h-4 text-orange-500 bg-gray-700 border-gray-600 rounded focus:ring-orange-500 focus:ring-2"
-                          />
-                          <div className="flex-1">
-                            <div className="flex items-center space-x-2">
-                              <span 
-                                className={`inline-block w-3 h-3 rounded-full`}
-                                style={{ backgroundColor: getEventColor(event.type) }}
-                              />
-                              <span className="text-white font-medium capitalize">
-                                {event.type}
-                              </span>
-                              <span className="text-gray-400 text-sm">
-                                {formatTime(event.timestamp)}
-                              </span>
-                            </div>
-                            <p className="text-gray-300 text-sm mt-1">
-                              {event.description}
-                            </p>
+              <div>
+                <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
+                <div className="space-y-2">
+                  {allEvents.slice(0, 20).map((event, index) => {
+                    const isSelected = selectedEvents.has(index)
+                    const isDisabled = !isSelected && selectedEvents.size >= 5
+                    
+                    return (
+                      <label
+                        key={`${event.timestamp}-${event.type}-${index}`}
+                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
+                          isSelected 
+                            ? 'bg-orange-500/20 border border-orange-500/30' 
+                            : isDisabled 
+                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
+                              : 'bg-gray-800/30 hover:bg-gray-800/50'
+                        }`}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => !isDisabled && handleEventSelection(index)}
+                          disabled={isDisabled}
+                          className="w-4 h-4 text-orange-500 bg-gray-700 border-gray-600 rounded focus:ring-orange-500 focus:ring-2"
+                        />
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2">
+                            <span 
+                              className={`inline-block w-3 h-3 rounded-full`}
+                              style={{ backgroundColor: getEventColor(event.type) }}
+                            />
+                            <span className="text-white font-medium capitalize">
+                              {event.type}
+                            </span>
+                            <span className="text-gray-400 text-sm">
+                              {formatTime(event.timestamp)}
+                            </span>
                           </div>
-                        </label>
-                      )
-                    })}
-                  </div>
+                          <p className="text-gray-300 text-sm mt-1">
+                            {transformDescription(event.description || '')}
+                          </p>
+                        </div>
+                      </label>
+                    )
+                  })}
                 </div>
+              </div>
+            </div>
 
-                {/* Summary */}
-                <div className="bg-gray-800/50 rounded-lg p-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-white font-medium">Selected Events:</span>
-                    <span className="text-orange-400 font-bold">{selectedEvents.size} / 5</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white font-medium">Estimated Duration:</span>
-                    <span className="text-orange-400 font-bold">{selectedEvents.size * 10}s</span>
-                  </div>
+            {/* Summary + Button - Pinned at bottom */}
+            <div className="border-t border-gray-700 p-4 space-y-4">
+              {/* Summary */}
+              <div className="bg-gray-800/50 rounded-lg p-4">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-white font-medium">Selected Events:</span>
+                  <span className="text-orange-400 font-bold">{selectedEvents.size} / 5</span>
                 </div>
-
-                {/* Create Button */}
-                <button
-                  onClick={handleCreateClip}
-                  disabled={selectedEvents.size === 0 || isCreatingClip}
-                  className={`w-full font-semibold py-3 px-4 rounded-lg transition-colors border ${
-                    selectedEvents.size === 0 || isCreatingClip
-                      ? 'bg-gray-700/50 text-gray-500 border-gray-600 cursor-not-allowed'
-                      : 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-200 border-orange-500/30 hover:border-orange-500/40'
-                  }`}
-                >
-                  {isCreatingClip ? (
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
-                      <span>Creating Clip...</span>
-                    </div>
-                  ) : (
-                    'Create Highlight Reel'
-                  )}
-                </button>
-
-                {/* Info */}
-                <div className="text-xs text-gray-500 text-center">
-                  Each event includes 10 seconds (5s before + 5s after)
+                <div className="flex justify-between items-center">
+                  <span className="text-white font-medium">Estimated Duration:</span>
+                  <span className="text-orange-400 font-bold">{selectedEvents.size * 10}s</span>
                 </div>
+              </div>
+
+              {/* Create Button */}
+              <button
+                onClick={handleCreateClip}
+                disabled={selectedEvents.size === 0 || isCreatingClip}
+                className={`w-full font-semibold py-3 px-4 rounded-lg transition-colors border ${
+                  selectedEvents.size === 0 || isCreatingClip
+                    ? 'bg-gray-700/50 text-gray-500 border-gray-600 cursor-not-allowed'
+                    : 'bg-orange-500/20 hover:bg-orange-500/30 text-orange-200 border-orange-500/30 hover:border-orange-500/40'
+                }`}
+              >
+                {isCreatingClip ? (
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-4 h-4 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
+                    <span>Creating Clip...</span>
+                  </div>
+                ) : (
+                  'Create Highlight Reel'
+                )}
+              </button>
+
+              {/* Info */}
+              <div className="text-xs text-gray-500 text-center">
+                Each event includes 10 seconds (5s before + 5s after)
               </div>
             </div>
           </div>

@@ -14,6 +14,12 @@ interface VideoPlayerProps {
   game: {
     s3Url: string
     title: string
+    metadata?: {
+      teams?: {
+        red_team?: { name: string; jersey_color: string }
+        blue_team?: { name: string; jersey_color: string }
+      }
+    }
   }
   events: GameEvent[]
   allEvents: GameEvent[]
@@ -44,6 +50,26 @@ export default function VideoPlayer({
   const [isMuted, setIsMuted] = useState(false)
   
   const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Extract team colors from metadata
+  const redTeam = game.metadata?.teams?.red_team || { name: 'Red Team', jersey_color: '#DC2626' }
+  const blueTeam = game.metadata?.teams?.blue_team || { name: 'Blue Team', jersey_color: '#2563EB' }
+
+  // Function to get event color - use team colors for team events, fallback to event type colors
+  const getTimelineEventColor = (event: GameEvent) => {
+    if (event.team === 'red') return redTeam.jersey_color
+    if (event.team === 'blue') return blueTeam.jersey_color
+    
+    // Fallback to event type colors for neutral events
+    switch (event.type) {
+      case 'goal': return '#22C55E'
+      case 'shot': return '#3B82F6'
+      case 'foul': return '#F59E0B'
+      case 'turnover': return '#A855F7'
+      case 'save': return '#F97316'
+      default: return '#6B7280'
+    }
+  }
 
   const handleTimeUpdate = () => {
     if (videoRef.current) {
@@ -207,9 +233,9 @@ export default function VideoPlayer({
                     key={`${event.timestamp}-${event.type}-${index}`}
                     onClick={() => onEventClick(event)}
                     className={`absolute top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 hover:scale-200 hover:shadow-xl pointer-events-auto ${
-                      getEventColor(event.type)
-                    } ${isCurrent ? 'ring-3 ring-yellow-400 ring-offset-2 ring-offset-black shadow-xl scale-125' : 'hover:ring-2 hover:ring-white/70'}`}
-                    style={{ left: `${position}%` }}
+                      isCurrent ? 'ring-3 ring-yellow-400 ring-offset-2 ring-offset-black shadow-xl scale-125' : 'hover:ring-2 hover:ring-white/70'
+                    }`}
+                    style={{ backgroundColor: getTimelineEventColor(event), left: `${position}%` }}
                     title={`${event.type} - ${formatTime(event.timestamp)}`}
                   />
                 )

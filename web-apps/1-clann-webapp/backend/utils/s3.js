@@ -9,7 +9,7 @@ const s3Client = new S3Client({
     }
 });
 
-const BUCKET_NAME = 'clannai-uploads';
+const BUCKET_NAME = process.env.AWS_BUCKET_NAME || 'clannai-uploads';
 
 // Generate pre-signed URL for direct browser upload
 const generatePresignedUploadUrl = async (fileName, fileType, fileSize) => {
