@@ -166,6 +166,11 @@ export default function Dashboard() {
     setActiveTab('games'); setUploadMode('file'); setSelectedFile(null)
     setUploadProgress(0); setUploadSpeed(0); setTimeRemaining(0); setError('')
   }
+  
+  const handleVeoModeClick = () => {
+    setActiveTab('games'); setUploadMode('veo'); setUploadGameUrl('')
+    setError('')
+  }
 
   const handleFileUpload = async () => {
     if (!selectedFile || !uploadGameTitle.trim()) {
@@ -911,33 +916,45 @@ export default function Dashboard() {
                 {/* Upload Options */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <button
-                    onClick={handleFileUploadModeClick}
-                    className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors group"
+                    type="button"
+                    onClick={handleVeoModeClick}
+                    className={`p-6 border rounded-lg transition-colors w-full ${
+                      uploadMode === 'veo' 
+                        ? 'border-[#016F32] bg-green-50 text-[#016F32]' 
+                        : 'border-gray-300 hover:border-[#016F32] hover:bg-green-50'
+                    }`}
                   >
                     <div className="text-center">
-                      <div className="w-12 h-12 mx-auto bg-[#016F32] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-              </svg>
-                      </div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Upload Video File</h3>
-                      <p className="text-sm text-gray-500">MP4, MOV, AVI files (max 2GB)</p>
-                    </div>
-                  </button>
-                  
-                  <button
-                    type="button"
-                    onClick={handleUploadVideoClick}
-                    className="p-6 border border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors w-full text-left"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3">
-                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 ${
+                        uploadMode === 'veo' ? 'bg-[#016F32]' : 'bg-blue-100'
+                      }`}>
+                        <svg className={`w-6 h-6 ${uploadMode === 'veo' ? 'text-white' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                         </svg>
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">VEO URL</h3>
                       <p className="text-sm text-gray-500">Paste URL from Veo, Trace, or Spiideo</p>
+                    </div>
+                  </button>
+                  
+                  <button
+                    onClick={handleFileUploadModeClick}
+                    className={`p-6 border-2 border-dashed rounded-lg transition-colors group ${
+                      uploadMode === 'file' 
+                        ? 'border-[#016F32] bg-green-50' 
+                        : 'border-gray-300 hover:border-[#016F32] hover:bg-green-50'
+                    }`}
+                  >
+                    <div className="text-center">
+                      <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform ${
+                        uploadMode === 'file' ? 'bg-[#016F32]' : 'bg-gray-100'
+                      }`}>
+                        <svg className={`w-6 h-6 ${uploadMode === 'file' ? 'text-white' : 'text-gray-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Upload Video File</h3>
+                      <p className="text-sm text-gray-500">MP4, MOV, AVI files (max 5GB)</p>
                     </div>
                   </button>
                 </div>
