@@ -372,11 +372,6 @@ export default function UnifiedSidebar({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
             <span>Events</span>
-            {activeTab === 'events' && (
-              <span className="inline-flex items-center justify-center w-5 h-5 text-xs bg-green-500 text-white rounded-full">
-                {events.length}
-              </span>
-            )}
           </button>
 
           <button
@@ -708,12 +703,39 @@ export default function UnifiedSidebar({
                   <svg className="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
-                  <h5 className="text-white font-medium mb-2">Ready to Coach!</h5>
-                  <div className="space-y-2 text-sm text-gray-300">
-                    <div>• Training drills recommendations</div>
-                    <div>• Tactical analysis</div>
-                    <div>• Player performance insights</div>
-                    <div>• Match preparation tips</div>
+                  <h5 className="text-white font-medium mb-3">Ready to Coach!</h5>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => sendMessage("What specific training drills should we focus on based on this match?")}
+                      className="w-full text-left p-3 bg-gray-700/50 hover:bg-gray-600/50 rounded-lg transition-colors border border-gray-600 hover:border-green-500"
+                    >
+                      <span className="text-green-400 mr-2">🏃</span>
+                      <span className="text-gray-300 text-sm">Training drills recommendations</span>
+                    </button>
+                    
+                    <button
+                      onClick={() => sendMessage("What tactical adjustments should we make based on this match analysis?")}
+                      className="w-full text-left p-3 bg-gray-700/50 hover:bg-gray-600/50 rounded-lg transition-colors border border-gray-600 hover:border-green-500"
+                    >
+                      <span className="text-blue-400 mr-2">⚽</span>
+                      <span className="text-gray-300 text-sm">Tactical analysis</span>
+                    </button>
+                    
+                    <button
+                      onClick={() => sendMessage("What key moments from this match should we review and learn from?")}
+                      className="w-full text-left p-3 bg-gray-700/50 hover:bg-gray-600/50 rounded-lg transition-colors border border-gray-600 hover:border-green-500"
+                    >
+                      <span className="text-yellow-400 mr-2">🎯</span>
+                      <span className="text-gray-300 text-sm">Key moments analysis</span>
+                    </button>
+                    
+                    <button
+                      onClick={() => sendMessage("How should we prepare for our next match based on this analysis?")}
+                      className="w-full text-left p-3 bg-gray-700/50 hover:bg-gray-600/50 rounded-lg transition-colors border border-gray-600 hover:border-green-500"
+                    >
+                      <span className="text-purple-400 mr-2">📈</span>
+                      <span className="text-gray-300 text-sm">Match preparation tips</span>
+                    </button>
                   </div>
                 </div>
               ) : (
