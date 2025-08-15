@@ -474,27 +474,27 @@ function HomePage() {
                   {/* Coach Preview for Free Trial too */}
                   <div className="mb-8 text-center">
                     <div className="flex justify-center mb-3">
-                      <div className="flex -space-x-4">
+                      <div className="flex -space-x-5">
                         <Image
                           src="/coaches/alex.jpg"
                           alt="Ferguson"
-                          width={56}
-                          height={56}
-                          className="w-14 h-14 rounded-full object-cover border-3 border-green-500/50"
+                          width={72}
+                          height={72}
+                          className="w-18 h-18 rounded-full object-cover border-4 border-green-500/50"
                         />
                         <Image
                           src="/coaches/jose.jpg"
                           alt="Mourinho"
-                          width={56}
-                          height={56}
-                          className="w-14 h-14 rounded-full object-cover border-3 border-green-500/50"
+                          width={72}
+                          height={72}
+                          className="w-18 h-18 rounded-full object-cover border-4 border-green-500/50"
                         />
                         <Image
                           src="/coaches/wegner.jpg"
                           alt="Wenger"
-                          width={56}
-                          height={56}
-                          className="w-14 h-14 rounded-full object-cover border-3 border-green-500/50"
+                          width={72}
+                          height={72}
+                          className="w-18 h-18 rounded-full object-cover border-4 border-green-500/50"
                         />
                       </div>
                     </div>
