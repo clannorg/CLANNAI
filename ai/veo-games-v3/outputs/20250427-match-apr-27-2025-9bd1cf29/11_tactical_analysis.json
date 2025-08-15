@@ -1,0 +1,52 @@
+{
+  "red_team": {
+    "team_name": "Yellow Team",
+    "strengths": [
+      "Strong defensive organization",
+      "Effective counter-attacking",
+      "Good set-piece delivery"
+    ],
+    "weaknesses": [
+      "Lack of creativity in midfield",
+      "Struggled to break down a low block"
+    ],
+    "key_players": [
+      "Defensive midfielder",
+      "Right winger"
+    ],
+    "tactical_setup": "4-4-2 formation, focusing on compact defense and quick transitions.",
+    "performance_summary": "Yellow Team showed resilience defensively but lacked the spark needed to consistently threaten the opponent's goal. Counter-attacks were promising but often fizzled out in the final third."
+  },
+  "blue_team": {
+    "team_name": "Blue Team",
+    "strengths": [
+      "Dominant midfield possession",
+      "Fluid attacking movement",
+      "High pressing intensity"
+    ],
+    "weaknesses": [
+      "Vulnerable on the counter-attack",
+      "Defensive lapses in concentration",
+      "Lack of aerial presence in defence"
+    ],
+    "key_players": [
+      "Central midfielder",
+      "Left-back"
+    ],
+    "tactical_setup": "4-3-3 formation, emphasizing ball retention and aggressive pressing to win the ball back high up the pitch.",
+    "performance_summary": "Blue Team controlled the majority of possession and created several scoring opportunities. However, defensive vulnerabilities allowed Yellow Team to exploit them on the counter."
+  },
+  "match_summary": {
+    "final_score": "1-0",
+    "key_moments": [
+      "Blue Team's early goal",
+      "Yellow Team's missed penalty",
+      "Blue Team goalkeeper's crucial save"
+    ],
+    "turning_points": [
+      "Yellow Team's injury early in the second half",
+      "Blue Team tightening their midfield after the missed penalty"
+    ],
+    "overall_narrative": "A closely contested match where Blue Team's early goal proved to be the difference. Yellow Team fought hard, but couldn't find the breakthrough, and wasted key chances."
+  }
+}

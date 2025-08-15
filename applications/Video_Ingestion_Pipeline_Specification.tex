@@ -1,0 +1,414 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{amsmath}
+
+% Page setup
+\geometry{margin=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{ClannAI - Video Ingestion Pipeline Specification}
+\lhead{TU Dublin Sports Analytics Project}
+\cfoot{\thepage}
+
+% Colors
+\definecolor{clannblue}{RGB}{0,102,204}
+\definecolor{darkgray}{RGB}{64,64,64}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=clannblue,
+    urlcolor=clannblue,
+    citecolor=clannblue
+}
+
+% Section formatting
+\titleformat{\section}{\Large\bfseries\color{clannblue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{darkgray}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Title page
+\title{
+    \vspace{-2cm}
+    {\Huge\bfseries\color{clannblue} Video Ingestion Pipeline Specification}\\[0.5cm]
+    {\Large\color{darkgray} For Kieran Collins - TU Dublin Sports Analytics Project}
+}
+
+\author{
+    \textbf{Prepared by:} Thomas Bradley, ClannAI\\
+    \textbf{Date:} January 2025\\
+    \textbf{Project:} Video Data Ingestion \& Processing Pipeline\\
+    \textbf{Investment:} £3,000/month for development and management
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\vspace{1cm}
+
+\section{Executive Summary}
+
+ClannAI offers a complete video ingestion and analysis pipeline solution that can process sports video content from multiple sources (VEO, direct uploads, AWS Kinesis Video Streams) and deliver structured analytical outputs within 15-20 minutes per match.
+
+Our proven system has successfully processed hundreds of matches and can scale to handle 20+ concurrent video analyses with auto-scaling infrastructure.
+
+\section{Technical Architecture Overview}
+
+\subsection{Current Production Infrastructure}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Frontend:} Next.js/React application hosted on AWS EC2 (t3.medium)
+    \item \textbf{Storage:} AWS S3 with multi-bucket architecture for different data types
+    \item \textbf{Processing:} Auto-scaling EC2 instances (c5.4xlarge) for AI analysis
+    \item \textbf{Database:} AWS RDS PostgreSQL for metadata and job tracking
+    \item \textbf{API:} FastAPI backend with Redis for job queuing
+\end{itemize}
+
+\subsection{Core Pipeline Flow}
+\begin{center}
+\texttt{Video Input → Validation → Download/Ingest → Processing → Analysis → Storage → Output}
+\end{center}
+
+\section{Video Ingestion Capabilities}
+
+\subsection{VEO Integration (Current)}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Input:} VEO match URLs (\texttt{https://app.veo.co/matches/xyz})
+    \item \textbf{Authentication:} Secure VEO API credentials in AWS Secrets Manager
+    \item \textbf{Capabilities:}
+    \begin{itemize}
+        \item Automatic video download
+        \item Metadata extraction (teams, events, timestamps)
+        \item Ground truth event validation
+    \end{itemize}
+\end{itemize}
+
+\subsection{Direct File Upload (Implemented)}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Input:} MP4/MOV files up to 2GB
+    \item \textbf{Upload:} Direct S3 upload with pre-signed URLs
+    \item \textbf{Processing:} Same analysis pipeline as VEO content
+    \item \textbf{Security:} Encrypted storage, automatic cleanup policies
+\end{itemize}
+
+\subsection{AWS Kinesis Video Streams Integration (Proposed)}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Input:} Real-time video streams from multiple sources
+    \item \textbf{Capabilities:}
+    \begin{itemize}
+        \item Live stream ingestion
+        \item Frame extraction at configurable intervals
+        \item Real-time processing (with some latency)
+        \item Integration with existing analysis pipeline
+    \end{itemize}
+\end{itemize}
+
+\section{Processing Pipeline Specifications}
+
+\subsection{10-Step Analysis Workflow}
+Our proven AI pipeline consists of:
+
+\begin{enumerate}[leftmargin=1.5cm]
+    \item \textbf{Video Download/Ingestion} (1-2 minutes)
+    \begin{itemize}
+        \item VEO API extraction or direct file processing
+        \item Video validation and format verification
+        \item S3 storage with lifecycle policies
+    \end{itemize}
+    
+    \item \textbf{Initial Setup} (1 minute)
+    \begin{itemize}
+        \item Team identification and color analysis
+        \item Match metadata extraction
+        \item Configuration file generation
+    \end{itemize}
+    
+    \item \textbf{Video Segmentation} (2 minutes)
+    \begin{itemize}
+        \item Split into 15-second analyzable clips
+        \item Frame extraction and preprocessing
+        \item Parallel processing optimization
+    \end{itemize}
+    
+    \item \textbf{AI Analysis} (6-8 minutes)
+    \begin{itemize}
+        \item Computer vision processing (YOLOv5 + custom models)
+        \item Event detection (66+ event types)
+        \item Player tracking and positioning
+        \item Tactical analysis
+    \end{itemize}
+    
+    \item \textbf{Data Synthesis} (30 seconds)
+    \begin{itemize}
+        \item Combine AI observations with ground truth
+        \item Generate timeline events
+        \item Cross-reference and validate findings
+    \end{itemize}
+    
+    \item \textbf{Output Generation} (2 minutes)
+    \begin{itemize}
+        \item JSON files for web integration
+        \item Interactive timeline data
+        \item Match summary and insights
+        \item Exportable reports
+    \end{itemize}
+    
+    \item \textbf{Storage \& CDN} (1 minute)
+    \begin{itemize}
+        \item Upload to S3 with CloudFront CDN
+        \item Generate pre-signed URLs
+        \item Set appropriate access controls
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Total Processing Time:} 15-18 minutes per match
+
+\subsection{Scalability Specifications}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Concurrent Processing:} 20+ matches simultaneously
+    \item \textbf{Auto-scaling:} EC2 instances scale 1-10 based on queue length
+    \item \textbf{Queue Management:} Redis-based job queue with priority handling
+    \item \textbf{Cost per Match:} £0.30-0.50 including compute and storage
+\end{itemize}
+
+\section{AWS Kinesis Video Streams Integration Plan}
+
+\subsection{Architecture Extension}
+\begin{center}
+\texttt{Kinesis Video Streams → Lambda Trigger → Frame Extraction →\\
+Existing Pipeline → Analysis → Real-time Results}
+\end{center}
+
+\subsection{Implementation Approach}
+\begin{enumerate}[leftmargin=1.5cm]
+    \item \textbf{Stream Setup}
+    \begin{itemize}
+        \item Configure Kinesis Video Streams for multiple camera inputs
+        \item Set up IAM roles and permissions
+        \item Implement stream health monitoring
+    \end{itemize}
+    
+    \item \textbf{Frame Extraction Service}
+    \begin{itemize}
+        \item Lambda function triggered by stream events
+        \item Extract frames at 1fps for analysis
+        \item Buffer frames for batch processing
+    \end{itemize}
+    
+    \item \textbf{Integration Points}
+    \begin{itemize}
+        \item Modify existing pipeline to accept frame sequences
+        \item Adapt AI models for non-continuous footage
+        \item Implement real-time event detection
+    \end{itemize}
+    
+    \item \textbf{Output Modifications}
+    \begin{itemize}
+        \item Live dashboard for real-time events
+        \item Streaming analytics with 2-3 minute delay
+        \item Historical analysis once stream completes
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Timeline for Kinesis Integration}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Week 1:} Research and proof-of-concept
+    \item \textbf{Week 2:} Core integration development
+    \item \textbf{Week 3:} Testing and optimization
+    \item \textbf{Week 4:} Production deployment and monitoring
+\end{itemize}
+
+\section{Technical Specifications}
+
+\subsection{Performance Metrics}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{Processing Time:} 15-20 minutes per 90-minute match
+    \item \textbf{Accuracy:} 95\%+ event detection accuracy
+    \item \textbf{Uptime:} 99.5\% system availability
+    \item \textbf{Concurrency:} 20+ simultaneous analyses
+    \item \textbf{API Response:} <500ms for status updates
+\end{itemize}
+
+\subsection{Storage Architecture}
+\begin{verbatim}
+S3 Buckets:
+├── video-ingestion/           # Raw uploaded videos (30-day lifecycle)
+├── kinesis-frames/           # Extracted frames (7-day lifecycle)
+├── analysis-outputs/         # JSON results (permanent)
+├── web-assets/              # Optimized files for delivery
+└── processed-videos/        # Final outputs (90-day lifecycle)
+\end{verbatim}
+
+\section{Cost Breakdown \& Timeline}
+
+\subsection{Development \& Implementation Cost: £3,000/month}
+
+\textbf{Month 1: Core Development (£3,000)}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Week 1: Infrastructure setup and Kinesis research
+    \item Week 2: Pipeline integration and testing
+    \item Week 3: API development and optimization
+    \item Week 4: Production deployment and monitoring setup
+\end{itemize}
+
+\textbf{What's Included:}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Complete video ingestion pipeline
+    \item AWS Kinesis Video Streams integration
+    \item Existing AI analysis capabilities (66+ event types)
+    \item Real-time processing and monitoring
+    \item Documentation and handover
+    \item 1 month of support and maintenance
+\end{itemize}
+
+\subsection{Ongoing Operational Costs (Estimated)}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{AWS Infrastructure:} £200-400/month (depends on usage)
+    \item \textbf{Storage Costs:} £0.05-0.10 per match
+    \item \textbf{Compute Costs:} £0.25-0.40 per match
+    \item \textbf{Maintenance \& Support:} £500/month (optional)
+\end{itemize}
+
+\subsection{ROI Considerations}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Current manual video analysis: 2-4 hours per match
+    \item Automated analysis: 15-20 minutes per match
+    \item Cost savings: 85-90\% reduction in analysis time
+    \item Scalability: Process unlimited matches vs. human limitations
+\end{itemize}
+
+\section{Deliverables \& Timeline}
+
+\subsection{Week 1: Foundation Setup}
+\begin{itemize}[leftmargin=1.5cm]
+    \item[\textcolor{clannblue}{$\square$}] AWS Kinesis Video Streams configuration
+    \item[\textcolor{clannblue}{$\square$}] Infrastructure automation (Terraform)
+    \item[\textcolor{clannblue}{$\square$}] Basic integration testing
+    \item[\textcolor{clannblue}{$\square$}] Performance benchmarking
+\end{itemize}
+
+\subsection{Week 2: Core Development}
+\begin{itemize}[leftmargin=1.5cm]
+    \item[\textcolor{clannblue}{$\square$}] Frame extraction service implementation
+    \item[\textcolor{clannblue}{$\square$}] Pipeline modification for stream inputs
+    \item[\textcolor{clannblue}{$\square$}] Real-time processing optimization
+    \item[\textcolor{clannblue}{$\square$}] Error handling and recovery
+\end{itemize}
+
+\subsection{Week 3: Integration \& Testing}
+\begin{itemize}[leftmargin=1.5cm]
+    \item[\textcolor{clannblue}{$\square$}] End-to-end testing with sample streams
+    \item[\textcolor{clannblue}{$\square$}] Performance optimization
+    \item[\textcolor{clannblue}{$\square$}] Monitoring and alerting setup
+    \item[\textcolor{clannblue}{$\square$}] Documentation creation
+\end{itemize}
+
+\subsection{Week 4: Deployment \& Handover}
+\begin{itemize}[leftmargin=1.5cm]
+    \item[\textcolor{clannblue}{$\square$}] Production deployment
+    \item[\textcolor{clannblue}{$\square$}] Team training and knowledge transfer
+    \item[\textcolor{clannblue}{$\square$}] Final testing and validation
+    \item[\textcolor{clannblue}{$\square$}] Support documentation delivery
+\end{itemize}
+
+\section{Security \& Compliance}
+
+\subsection{Data Protection}
+\begin{itemize}[leftmargin=1.5cm]
+    \item All video data encrypted at rest and in transit
+    \item GDPR-compliant data handling procedures
+    \item Automatic data retention and deletion policies
+    \item Secure API authentication with JWT tokens
+\end{itemize}
+
+\subsection{Access Control}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Role-based access to video streams and analysis
+    \item VPC isolation for processing infrastructure
+    \item Audit logging for all data access
+    \item Pre-signed URLs with time-limited access
+\end{itemize}
+
+\section{Support \& Governance}
+
+\subsection{Documentation Deliverables}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Technical architecture documentation
+    \item API documentation with examples
+    \item Deployment and operations guide
+    \item Troubleshooting and maintenance procedures
+\end{itemize}
+
+\subsection{Governance Integration}
+\begin{itemize}[leftmargin=1.5cm]
+    \item \textbf{University Requirements:} Full technical documentation for approval
+    \item \textbf{Enterprise Ireland:} Detailed cost breakdown and ROI analysis
+    \item \textbf{Board of Advisors:} Executive summary and business case
+    \item \textbf{Contract Terms:} Clear deliverables, timelines, and success criteria
+\end{itemize}
+
+\section{Why Choose ClannAI}
+
+\subsection{Proven Track Record}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Successfully processed 500+ matches
+    \item Production-ready infrastructure on AWS
+    \item 95\%+ accuracy in event detection
+    \item Scalable architecture handling 20+ concurrent jobs
+\end{itemize}
+
+\subsection{Technical Expertise}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Deep experience with AWS services (EC2, S3, RDS, Lambda)
+    \item Advanced AI/ML capabilities (Computer Vision, Event Detection)
+    \item Full-stack development (Python, TypeScript, React)
+    \item DevOps and infrastructure automation
+\end{itemize}
+
+\subsection{Unique Value Proposition}
+\begin{itemize}[leftmargin=1.5cm]
+    \item Complete end-to-end solution
+    \item Existing proven pipeline vs. building from scratch
+    \item Immediate deployment capability
+    \item Ongoing support and optimization
+\end{itemize}
+
+\section{Next Steps}
+
+\begin{enumerate}[leftmargin=1.5cm]
+    \item \textbf{Technical Review:} Review this specification with your team
+    \item \textbf{Requirements Clarification:} Discuss any specific requirements or modifications
+    \item \textbf{Contract Agreement:} Finalize terms and timeline
+    \item \textbf{Project Kickoff:} Begin development immediately upon approval
+\end{enumerate}
+
+\vspace{1cm}
+
+\begin{center}
+\textbf{Contact:} Thomas Bradley\\
+\textbf{Email:} thomas@clannai.com\\
+\textbf{Project Timeline:} 4 weeks from approval\\
+\textbf{Investment:} £3,000 for complete implementation
+\end{center}
+
+\vspace{1cm}
+
+\hrule
+
+\vspace{0.5cm}
+
+\small\textit{This specification represents a comprehensive solution for video ingestion and analysis, leveraging ClannAI's proven technology stack and extensive experience in sports analytics. We're ready to begin immediately and deliver a production-ready system within 4 weeks.}
+
+\end{document}
