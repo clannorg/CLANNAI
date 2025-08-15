@@ -211,6 +211,10 @@ export default function VideoPlayer({
           // Video loading failed - this is normal for pending uploads
         }}
         preload="metadata"
+        playsInline
+        controls={false}
+        webkit-playsinline="true"
+        x-webkit-airplay="deny"
       />
 
       {/* Progress Bar + Controls Overlay (auto-hide capable) */}

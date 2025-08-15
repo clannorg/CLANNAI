@@ -81,7 +81,10 @@ function MobileVideoPlayer({
       </div>
       
       {/* Video Player - full width, aspect ratio maintained */}
-      <div className="w-full aspect-video bg-black">
+      <div 
+        className="w-full aspect-video bg-black relative"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
+      >
         <VideoPlayer
           game={game}
           events={filteredEvents}
