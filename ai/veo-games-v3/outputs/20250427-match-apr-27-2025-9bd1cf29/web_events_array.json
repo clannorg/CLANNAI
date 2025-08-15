@@ -1,0 +1,74 @@
+[
+  {
+    "type": "kick_off",
+    "timestamp": 0,
+    "team": "red",
+    "description": "Kick-off!"
+  },
+  {
+    "type": "foul",
+    "timestamp": 55,
+    "team": "blue",
+    "description": "Foul by Blue team"
+  },
+  {
+    "type": "shot",
+    "timestamp": 112,
+    "team": "red",
+    "description": "Shot by Yellow team"
+  },
+  {
+    "type": "corner",
+    "timestamp": 230,
+    "team": "blue",
+    "description": "Corner for Blue team"
+  },
+  {
+    "type": "goal",
+    "timestamp": 287,
+    "team": "red",
+    "description": "GOAL! Yellow team scores"
+  },
+  {
+    "type": "yellow_card",
+    "timestamp": 642,
+    "team": "blue",
+    "description": "Yellow card for Blue player"
+  },
+  {
+    "type": "substitution",
+    "timestamp": 1251,
+    "team": "red",
+    "description": "Substitution for Yellow team"
+  },
+  {
+    "type": "shot",
+    "timestamp": 1654,
+    "team": "blue",
+    "description": "Shot by Blue team, saved"
+  },
+  {
+    "type": "foul",
+    "timestamp": 1798,
+    "team": "red",
+    "description": "Foul by Yellow team"
+  },
+  {
+    "type": "goal",
+    "timestamp": 1968,
+    "team": "blue",
+    "description": "GOAL! Blue team equalizes"
+  },
+  {
+    "type": "yellow_card",
+    "timestamp": 2111,
+    "team": "red",
+    "description": "Yellow card for Yellow player"
+  },
+  {
+    "type": "substitution",
+    "timestamp": 2345,
+    "team": "blue",
+    "description": "Substitution for Blue team"
+  }
+]
