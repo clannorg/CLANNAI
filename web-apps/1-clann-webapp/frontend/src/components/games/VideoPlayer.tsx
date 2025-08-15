@@ -29,8 +29,6 @@ interface VideoPlayerProps {
   onSeekToTimestamp: (timestamp: number) => void
   // When false, hide timeline/controls overlays (used on mobile portrait)
   overlayVisible?: boolean
-  // Mobile mode for slim Safari-style controls
-  isMobile?: boolean
   // Notify parent about user interaction to reset auto-hide timers
   onUserInteract?: () => void
 }
@@ -44,7 +42,6 @@ export default function VideoPlayer({
   onEventClick,
   onSeekToTimestamp,
   overlayVisible = true,
-  isMobile = false,
   onUserInteract
 }: VideoPlayerProps) {
   const [currentTime, setCurrentTime] = useState(0)
@@ -273,40 +270,11 @@ export default function VideoPlayer({
             </div>
           </div>
 
-          {/* Video Controls - Mobile vs Desktop */}
-          {isMobile ? (
-            /* Mobile: Safari-style slim controls */
-            <div className="bg-transparent">
-              {/* Minimal progress bar with integrated time */}
-              <div className="flex items-center px-4 pb-2">
-                <span className="text-white text-xs font-mono mr-2 min-w-[40px]">
-                  {formatTime(currentTime)}
-                </span>
-                <div className="flex-1 mx-2">
-                  <input
-                    type="range"
-                    min="0"
-                    max={duration || 0}
-                    step="0.1"
-                    value={currentTime}
-                    onChange={handleSeek}
-                    className="w-full h-1 bg-white/20 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:w-3 [&::-moz-range-thumb]:h-3 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full"
-                    style={{
-                      background: `linear-gradient(to right, white 0%, white ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) 100%)`
-                    }}
-                  />
-                </div>
-                <span className="text-white text-xs font-mono ml-2 min-w-[40px]">
-                  {formatTime(duration)}
-                </span>
-              </div>
-            </div>
-          ) : (
-            /* Desktop: Current chunky controls */
-            <div className="bg-black/60 backdrop-blur-md mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),12px)] rounded-lg border border-white/5 shadow-md">
-              <div className="flex items-center justify-between px-4 py-3">
-                {/* Left Side - Main Controls */}
-                <div className="flex items-center space-x-4">
+          {/* Video Controls */}
+          <div className="bg-black/60 backdrop-blur-md mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),12px)] rounded-lg border border-white/5 shadow-md">
+            <div className="flex items-center justify-between px-4 py-3">
+              {/* Left Side - Main Controls */}
+              <div className="flex items-center space-x-4">
                 <button
                   onClick={handlePlayPause}
                   className="group flex items-center justify-center w-12 h-12 bg-white/15 hover:bg-white/25 rounded-full transition-all duration-200 border border-white/20 hover:border-white/30 shadow-lg"
@@ -435,7 +403,7 @@ export default function VideoPlayer({
                 </button>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
