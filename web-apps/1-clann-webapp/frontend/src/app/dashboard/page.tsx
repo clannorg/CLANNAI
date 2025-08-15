@@ -589,11 +589,11 @@ export default function Dashboard() {
 
       {/* User Profile Section - Match UserDashboard.js exactly */}
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
         <div className="flex items-center gap-6 mb-12">
           <div className="flex items-center gap-8">
             <div>
-              <h1 className="text-3xl font-bold mb-2 text-gray-900">
+              <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900">
                 {teams.length > 0 ? teams[0].name : 
                   <div className="flex items-center gap-2 text-gray-500">
                     Upload footage to create a team
@@ -624,7 +624,7 @@ export default function Dashboard() {
 
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-8 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8">
 
         {/* Content Area */}
         <div className="space-y-4">
@@ -799,6 +799,40 @@ export default function Dashboard() {
                             <span className="truncate">Team: {game.team_name}</span>
                           </div>
                           
+                          {/* Team matchup from metadata */}
+                          {game.metadata?.teams && (
+                            <div className="flex items-center gap-2">
+                              <span className="flex-shrink-0">🆚</span>
+                              <div className="flex items-center gap-2 truncate">
+                                <span className="px-2 py-0.5 rounded text-xs font-medium" style={{ backgroundColor: game.metadata.teams.red_team.jersey_color + '20', color: game.metadata.teams.red_team.jersey_color }}>
+                                  {game.metadata.teams.red_team.name}
+                                </span>
+                                <span>vs</span>
+                                <span className="px-2 py-0.5 rounded text-xs font-medium" style={{ backgroundColor: game.metadata.teams.blue_team.jersey_color + '20', color: game.metadata.teams.blue_team.jersey_color }}>
+                                  {game.metadata.teams.blue_team.name}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Match stats from metadata */}
+                          {game.metadata?.counts && (
+                            <div className="flex items-center gap-4">
+                              {game.metadata.counts.goals !== undefined && (
+                                <div className="flex items-center gap-1">
+                                  <span className="flex-shrink-0">⚽</span>
+                                  <span className="text-xs">{game.metadata.counts.goals} goals</span>
+                                </div>
+                              )}
+                              {game.metadata.counts.shots !== undefined && (
+                                <div className="flex items-center gap-1">
+                                  <span className="flex-shrink-0">🎯</span>
+                                  <span className="text-xs">{game.metadata.counts.shots} shots</span>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          
                           <div className="flex items-center gap-2">
                             <span className="flex-shrink-0">📅</span>
                             <span className="truncate">{new Date(game.created_at).toLocaleDateString()}</span>
@@ -838,7 +872,8 @@ export default function Dashboard() {
                       {game.status === 'analyzed' && (
                         <div className="border-t border-gray-200 pt-4">
                           <p className="text-sm font-medium text-gray-700 mb-3">💬 Start AI coaching conversation:</p>
-                          <div className="grid grid-cols-2 gap-2">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {/* Core prompts - always show */}
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
@@ -884,20 +919,73 @@ export default function Dashboard() {
                               <span>Player Analysis</span>
                             </button>
                             
-                            <button 
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                sessionStorage.setItem('autoChat', JSON.stringify({
-                                  message: "How should we prepare for our next opponent based on this match analysis and what formation should we use?",
-                                  timestamp: Date.now()
-                                }))
-                                router.push(`/games/${game.id}`)
-                              }}
-                              className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
-                            >
-                              <span>📈</span>
-                              <span>Next Match Prep</span>
-                            </button>
+                            {/* Dynamic prompt based on metadata */}
+                            {game.metadata?.teams ? (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: `How did we perform against ${game.metadata.teams.blue_team.name} and what should we focus on when we play similar opponents?`,
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 hover:border-blue-300 text-blue-700 hover:text-blue-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>🆚</span>
+                                <span>vs {game.metadata.teams.blue_team.name}</span>
+                              </button>
+                            ) : (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: "How should we prepare for our next opponent based on this match analysis and what formation should we use?",
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>📈</span>
+                                <span>Next Match Prep</span>
+                              </button>
+                            )}
+                            
+                            {/* Additional contextual prompts */}
+                            {game.metadata?.counts?.goals > 0 && (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: `We scored ${game.metadata.counts.goals} goals in this match. What made our attacking play effective and how can we replicate this?`,
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-green-50 hover:bg-green-100 border border-green-200 hover:border-green-300 text-green-700 hover:text-green-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>🎯</span>
+                                <span>Goal Analysis</span>
+                              </button>
+                            )}
+                            
+                            {game.metadata?.counts?.shots > 5 && (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: `We had ${game.metadata.counts.shots} shots this match. How can we improve our shot conversion rate and finishing?`,
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-orange-50 hover:bg-orange-100 border border-orange-200 hover:border-orange-300 text-orange-700 hover:text-orange-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>🎯</span>
+                                <span>Shot Efficiency</span>
+                              </button>
+                            )}
                   </div>
               </div>
             )}
@@ -914,7 +1002,7 @@ export default function Dashboard() {
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Upload New Match</h2>
                 
                 {/* Upload Options */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <button
                     type="button"
                     onClick={handleVeoModeClick}
@@ -974,7 +1062,7 @@ export default function Dashboard() {
                         required
                       />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
                                          <input
@@ -1044,7 +1132,7 @@ export default function Dashboard() {
                         <input ref={fileInputRef} type="file" accept="video/mp4,video/mov,video/quicktime,video/avi" onChange={handleFileInputChange} className="hidden" disabled={uploading} />
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
                           <input type="text" value={uploadTeamName} onChange={(e) => setUploadTeamName(e.target.value)} placeholder="Enter team name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500" disabled={uploading} required />
@@ -1181,7 +1269,7 @@ export default function Dashboard() {
               
               {/* Join/Create Team Section */}
               <div className="border-t border-gray-200 pt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {/* Join Team */}
                   <div id="join-team-section">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Join Team</h3>
