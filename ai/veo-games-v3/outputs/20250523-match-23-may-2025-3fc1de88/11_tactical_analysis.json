@@ -1,53 +1,58 @@
 {
-  "red_team": {
-    "team_name": "Yellow Team",
+  "team_a": {
+    "team_name": "East London Ballers",
+    "team_color": "blue",
     "strengths": [
-      "Set-piece proficiency",
-      "Aerial play",
-      "Attacking prowess",
-      "Chance conversion"
+      "Early attacking intent",
+      "Resilience when down to 10 men",
+      "Effective goal-scoring opportunities",
+      "Strong finishing in the first half"
     ],
     "weaknesses": [
-      "Discipline (cards)",
-      "Defensive solidity under pressure"
+      "Discipline (Red Card)",
+      "Defensive lapses allowing equalisation"
     ],
     "key_players": [
-      "Set-piece takers",
-      "Forwards in the final third"
+      "Goal Scorers (Unspecified)",
+      "Player who received Red Card"
     ],
-    "tactical_setup": "Attacking-minded, focused on set-pieces and aerial dominance.",
-    "performance_summary": "The Yellow team displayed strong attacking capabilities and effectiveness in set-piece situations. Despite some disciplinary issues, they secured a comfortable victory through their attacking output."
+    "tactical_setup": "Aggressive attacking style, particularly in the early stages of the match. Likely focused on quick transitions and exploiting space.",
+    "performance_summary": "East London Ballers demonstrated a strong attacking presence, securing an early lead and ultimately winning the match. However, a lack of discipline resulting in a red card put them under pressure, requiring significant resilience to maintain their lead."
   },
-  "blue_team": {
-    "team_name": "Blue Team",
+  "team_b": {
+    "team_name": "Opposition",
+    "team_color": "white",
     "strengths": [
-      "Set-piece threat (corners)",
-      "Opportunistic finishing"
+      "Capitalizing on opponent's mistakes",
+      "Ability to equalize after going down",
+      "Strong pressure with a man advantage"
     ],
     "weaknesses": [
-      "Defensive vulnerabilities",
-      "Inability to contain Yellow team's attack",
-      "Midfield control"
+      "Slow start to the match",
+      "Inability to fully exploit man advantage",
+      "Defensive vulnerabilities leading to goals"
     ],
     "key_players": [
-      "Set-piece specialists",
-      "Goalkeeper"
+      "Goal Scorers (Unspecified)",
+      "Attacking players exploiting numerical advantage"
     ],
-    "tactical_setup": "Mixed approach with periods of possession and counter-attacking, struggling defensively.",
-    "performance_summary": "The Blue team struggled to contain the Yellow team's attack, with their defense frequently tested. Despite moments of attacking threat, they ultimately fell short and conceded a significant number of goals."
+    "tactical_setup": "A reactive approach, focusing on capitalizing on opponent's errors. Likely aimed to exploit the space created by the East London Ballers' attacking focus.",
+    "performance_summary": "The Opposition showed resilience in equalizing the score twice, but ultimately failed to capitalize on the East London Ballers' red card, indicating potential weaknesses in their ability to close out games or exploit numerical advantages."
   },
   "match_summary": {
-    "final_score": "4-1",
+    "final_score": "East London Ballers 3 - 2 Opposition",
     "key_moments": [
-      "Yellow's early goals",
-      "Blue's goal from open play",
-      "Yellow's second half goals",
-      "Yellow team's red card"
+      "East London Ballers' two quick goals in the first half",
+      "Opposition's first-half goal",
+      "Opposition's equalizing goal early in the second half",
+      "East London Ballers regaining the lead",
+      "East London Ballers' Red Card"
     ],
     "turning_points": [
-      "Yellow's initial dominance",
-      "Yellow team maintaining pressure despite red card"
+      "East London Ballers securing a two-goal lead",
+      "Opposition's equalizer",
+      "East London Ballers player receiving a red card"
     ],
-    "overall_narrative": "The Yellow team dominated the match with their superior attacking ability, ultimately securing a convincing win despite a period of indiscipline. The Blue team showed moments of promise but couldn't match Yellow's overall performance."
+    "overall_narrative": "A hard-fought match saw East London Ballers secure a narrow victory over the Opposition. Despite an early lead and later being reduced to ten men, East London Ballers displayed resilience to hold on for the win. The Opposition demonstrated fight but ultimately fell short."
   }
 }

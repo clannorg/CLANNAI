@@ -50,6 +50,24 @@ class WebappFormatter:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
         print(f"🔄 Webapp Formatter initialized with Gemini 2.0 Flash")
+    
+    def load_team_config(self, match_id: str) -> dict:
+        """Load team configuration"""
+        config_path = Path("../outputs") / match_id / "match_config.json"
+        if config_path.exists():
+            with open(config_path, 'r') as f:
+                return json.load(f)
+        return {'team_a': {'name': 'Team A', 'jersey': 'blue'}, 'team_b': {'name': 'Team B', 'jersey': 'white'}}
+    
+    def extract_primary_color(self, jersey_description: str) -> str:
+        """Extract primary color from jersey description"""
+        jersey_lower = jersey_description.lower()
+        # Common colors in order of priority
+        colors = ['blue', 'red', 'white', 'black', 'yellow', 'green', 'orange', 'purple']
+        for color in colors:
+            if color in jersey_lower:
+                return color
+        return 'blue'  # fallback
 
     def load_mega_analysis(self, match_id: str) -> dict:
         """Load the mega analysis text files"""
@@ -81,13 +99,24 @@ class WebappFormatter:
             'summary_text': summary_text
         }
 
-    def format_events(self, mega_analysis: dict) -> list:
+    def format_events(self, mega_analysis: dict, match_id: str) -> list:
         """Convert mega events text to web events array"""
         
         events_text = mega_analysis['events_text']
         
+        # Load team config to get actual colors
+        team_config = self.load_team_config(match_id)
+        team_a_name = team_config['team_a']['name']
+        team_b_name = team_config['team_b']['name']
+        team_a_color = self.extract_primary_color(team_config['team_a']['jersey'])
+        team_b_color = self.extract_primary_color(team_config['team_b']['jersey'])
+        
         prompt = f"""
 Convert this football match events list into a JSON array for a webapp timeline.
+
+TEAM MAPPING:
+- {team_a_name} → team: "{team_a_color}"
+- {team_b_name} → team: "{team_b_color}"
 
 EVENTS TEXT:
 {events_text}
@@ -96,15 +125,15 @@ OUTPUT FORMAT - Return a JSON array where each event has:
 {{
   "type": "goal" | "shot" | "foul" | "corner" | "substitution" | "yellow_card" | "red_card" | "kick_off",
   "timestamp": <seconds from match start>,
-  "team": "red" | "blue",
+  "team": "{team_a_color}" | "{team_b_color}",
   "description": "<brief description max 100 chars>"
 }}
 
 RULES:
 1. Parse each line in format: "MM:SS - TYPE: Team - Description"
 2. Convert timestamps like "32:48" to seconds (32*60 + 48 = 1968)
-3. Map teams: Yellow team -> "red", Blue team -> "blue"
-4. Map event types: GOAL->goal, SHOT->shot, FOUL->foul, KICK-OFF->kick_off, etc.
+3. Map teams: {team_a_name} → "{team_a_color}", {team_b_name} → "{team_b_color}"
+4. Map event types: GOAL→goal, SHOT→shot, FOUL→foul, KICK-OFF→kick_off, etc.
 5. Keep descriptions concise and clear
 6. Sort by timestamp ascending
 7. Only include events with clear timestamps
@@ -130,11 +159,18 @@ Return ONLY the JSON array, no other text.
             print(f"❌ Failed to format events: {e}")
             return []
 
-    def format_tactical(self, mega_analysis: dict) -> dict:
+    def format_tactical(self, mega_analysis: dict, match_id: str) -> dict:
         """Convert mega tactical text to tactical insights"""
         
         tactical_text = mega_analysis['tactical_text']
         summary_text = mega_analysis['summary_text']
+        
+        # Load team config to get actual colors
+        team_config = self.load_team_config(match_id)
+        team_a_name = team_config['team_a']['name']
+        team_b_name = team_config['team_b']['name']
+        team_a_color = self.extract_primary_color(team_config['team_a']['jersey'])
+        team_b_color = self.extract_primary_color(team_config['team_b']['jersey'])
         
         prompt = f"""
 Convert this football match tactical analysis into structured insights for a webapp.
@@ -147,16 +183,18 @@ MATCH SUMMARY:
 
 OUTPUT FORMAT - Return JSON with this exact structure:
 {{
-  "red_team": {{
-    "team_name": "Yellow Team",
+  "team_a": {{
+    "team_name": "{team_a_name}",
+    "team_color": "{team_a_color}",
     "strengths": ["strength1", "strength2", "strength3"],
     "weaknesses": ["weakness1", "weakness2"],
     "key_players": ["player1", "player2"],
     "tactical_setup": "Formation and style description",
     "performance_summary": "Overall performance paragraph"
   }},
-  "blue_team": {{
-    "team_name": "Blue Team", 
+  "team_b": {{
+    "team_name": "{team_b_name}",
+    "team_color": "{team_b_color}", 
     "strengths": ["strength1", "strength2"],
     "weaknesses": ["weakness1", "weakness2", "weakness3"],
     "key_players": ["player1", "player2"],
@@ -164,7 +202,7 @@ OUTPUT FORMAT - Return JSON with this exact structure:
     "performance_summary": "Overall performance paragraph"
   }},
   "match_summary": {{
-    "final_score": "X-Y",
+    "final_score": "{team_a_name} X - Y {team_b_name}",
     "key_moments": ["moment1", "moment2", "moment3"],
     "turning_points": ["point1", "point2"],
     "overall_narrative": "Match story paragraph"
@@ -172,11 +210,11 @@ OUTPUT FORMAT - Return JSON with this exact structure:
 }}
 
 RULES:
-1. Map Yellow Team to red_team, Blue Team to blue_team
+1. Use actual team names and their primary jersey colors
 2. Extract insights from the tactical analysis sections
 3. Keep arrays to 2-4 items each
 4. Make descriptions coach-friendly and actionable
-5. Extract final score and key moments from summary
+5. Extract final score with actual team names from summary
 6. If specific players aren't mentioned, use generic descriptions
 
 Return ONLY the JSON object, no other text.
@@ -242,11 +280,11 @@ def main():
         
         # Format events
         print("🎮 Formatting events for timeline...")
-        events = formatter.format_events(mega_analysis)
+        events = formatter.format_events(mega_analysis, match_id)
         
         # Format tactical analysis
         print("🧠 Formatting tactical insights...")
-        tactical = formatter.format_tactical(mega_analysis)
+        tactical = formatter.format_tactical(mega_analysis, match_id)
         
         # Save outputs
         print("💾 Saving webapp outputs...")

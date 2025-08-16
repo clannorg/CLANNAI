@@ -48,6 +48,19 @@ class MegaAnalyzer:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-2.5-flash')
         print("🧠 Mega Analyzer initialized with Gemini 2.5 Flash")
+    
+    def load_team_config(self, match_id: str) -> dict:
+        """Load team configuration for consistent naming"""
+        config_path = Path(f"../outputs/{match_id}/match_config.json")
+        if config_path.exists():
+            with open(config_path, 'r') as f:
+                return json.load(f)
+        else:
+            # Fallback to generic names if config missing
+            return {
+                'team_a': {'name': 'Team A', 'jersey': 'first team colors'},
+                'team_b': {'name': 'Team B', 'jersey': 'second team colors'}
+            }
 
     def load_match_data(self, match_id: str):
         """Load all input data for analysis"""
@@ -140,20 +153,22 @@ OUTPUT 3 SEPARATE SECTIONS:
 List all significant events in chronological order, one per line:
 Format: MM:SS - TYPE: Team - Description
 
-Include:
-- All VEO verified goals and shots (these are 100% accurate)
-- Other events from timeline: fouls, corners, cards, substitutions
-- Use "Yellow team" and "Blue team" consistently
+CRITICAL RULES:
+- VEO goals are the ONLY goals that count - use exactly {len(veo_goals)} goals from VEO data
+- Use AI timeline to add DETAILS to VEO goals (who scored, how, from where, etc.)
+- Add other events from AI timeline: fouls, corners, cards, substitutions, throw-ins, free kicks
+- NEVER add AI-detected goals that aren't in VEO data
+- Use "{team_a_name}" and "{team_b_name}" consistently
 
 Example:
-30:50 - GOAL: Yellow team - Header from corner kick
-31:31 - SHOT: Blue team - Long range effort saved
-70:15 - PENALTY: Yellow team - Penalty awarded
+30:50 - GOAL: {team_a_name} - Header from corner kick, player #10 scores with powerful header
+31:31 - SHOT: {team_b_name} - Long range effort from 25 yards, saved by goalkeeper
+70:15 - PENALTY: {team_a_name} - Penalty awarded after defender handball in box
 
 === MEGA_TACTICAL.TXT ===
 Team analysis in plain text sections:
 
-=== YELLOW TEAM ===
+=== {team_a_name.upper()} ===
 Strengths:
 - [List 3-4 strengths based on timeline evidence]
 
@@ -161,9 +176,9 @@ Weaknesses:
 - [List 2-3 weaknesses]
 
 Key Moments:
-- [Key plays involving yellow team]
+- [Key plays involving {team_a_name}]
 
-=== BLUE TEAM ===
+=== {team_b_name.upper()} ===
 Strengths:
 - [List 3-4 strengths]
 
@@ -171,22 +186,22 @@ Weaknesses:
 - [List 2-3 weaknesses]
 
 Key Moments:
-- [Key plays involving blue team]
+- [Key plays involving {team_b_name}]
 
 === MEGA_SUMMARY.TXT ===
 Match overview:
 
-Match: Yellow team vs Blue team
-Final Score: [X-Y based on VEO goals]
+Match: {team_a_name} vs {team_b_name}
+Final Score: [X-Y based on VEO goals ONLY]
 Duration: 104 minutes (including stoppage)
 
 Key Statistics:
-- Goals: [total from VEO]
-- Shots: [total from VEO]
-- [Other stats from timeline]
+- Goals: {len(veo_goals)} (VEO Verified - 100% accurate)
+- Shots: {len(veo_shots)} (VEO Verified - 100% accurate)
+- [Other stats from AI timeline: fouls, corners, cards, throw-ins, free kicks]
 
 Match Narrative:
-[2-3 paragraph summary of match flow]
+[2-3 paragraph summary of match flow, using VEO goals as the definitive scoring record]
 
 Generate these 3 sections now:"""
 

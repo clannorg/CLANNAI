@@ -1,3 +1,934 @@
 {
-  "events": []
+  "events": [
+    {
+      "type": "shot",
+      "timestamp": 98,
+      "team": "blue",
+      "description": "Shot from distance, saved by goalkeeper"
+    },
+    {
+      "type": "corner",
+      "timestamp": 120,
+      "team": "blue",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 407,
+      "team": "white",
+      "description": "Shot goes wide of the goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 579,
+      "team": "white",
+      "description": "Shot saved by goalkeeper"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1201,
+      "team": "white",
+      "description": "Shot on goal, saved by goalkeeper"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1203,
+      "team": "white",
+      "description": "Second shot on rebound"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1488,
+      "team": "white",
+      "description": "Foul committed"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1511,
+      "team": "blue",
+      "description": "Shot taken, saved by goalkeeper"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1571,
+      "team": "blue",
+      "description": "Shot on goal, saved by goalkeeper"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1605,
+      "team": "blue",
+      "description": "Free kick from left flank"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1760,
+      "team": "blue",
+      "description": "Shot from distance goes over the goal"
+    },
+    {
+      "type": "offside",
+      "timestamp": 1885,
+      "team": "blue",
+      "description": "Offside foul"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1967,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 1968,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2062,
+      "team": "white",
+      "description": "Goal scored"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2070,
+      "team": "white",
+      "description": "Free kick from just outside penalty box"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2085,
+      "team": "blue",
+      "description": "Free kick in attacking position"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2100,
+      "team": "white",
+      "description": "Free kick from left side"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2115,
+      "team": "blue",
+      "description": "Attacking free kick"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2136,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2137,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2143,
+      "team": "blue",
+      "description": "Shot from free kick, goes over crossbar"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2231,
+      "team": "blue",
+      "description": "Shot from inside penalty area, saved by goalkeeper"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2260,
+      "team": "blue",
+      "description": "Foul committed"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2351,
+      "team": "blue",
+      "description": "Shot from inside box, blocked by defender"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2353,
+      "team": "blue",
+      "description": "Follow-up shot goes wide"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2384,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2385,
+      "team": "white",
+      "description": "Corner kick taken from left"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2460,
+      "team": "blue",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2476,
+      "team": "blue",
+      "description": "Header goes wide of goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2478,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2479,
+      "team": "white",
+      "description": "Goal scored"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2505,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2574,
+      "team": "blue",
+      "description": "Foul awarded against them"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2595,
+      "team": "blue",
+      "description": "Throw-in on right sideline"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2675,
+      "team": "blue",
+      "description": "Shot goes wide of the goal"
+    },
+    {
+      "type": "corner",
+      "timestamp": 2685,
+      "team": "blue",
+      "description": "Corner kick from left"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2700,
+      "team": "white",
+      "description": "Attacking free kick from left side"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2715,
+      "team": "blue",
+      "description": "Foul committed, leading to free kick"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2730,
+      "team": "blue",
+      "description": "Free kick taken from own half"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2811,
+      "team": "white",
+      "description": "Foul committed in midfield"
+    },
+    {
+      "type": "foul",
+      "timestamp": 2925,
+      "team": "white",
+      "description": "Foul in East London Ballers' half"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2955,
+      "team": "white",
+      "description": "Long throw-in into penalty area"
+    },
+    {
+      "type": "goal",
+      "timestamp": 3015,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3120,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3121,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 3122,
+      "team": "white",
+      "description": "Goal scored"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3150,
+      "team": "blue",
+      "description": "Free kick from Opposition's half"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3165,
+      "team": "white",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3325,
+      "team": "blue",
+      "description": "Shot taken, saved by goalkeeper"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3330,
+      "team": "blue",
+      "description": "Throw-in"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3345,
+      "team": "white",
+      "description": "Throw-in from left sideline"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3361,
+      "team": "white",
+      "description": "Foul committed"
+    },
+    {
+      "type": "goal",
+      "timestamp": 3440,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3491,
+      "team": "white",
+      "description": "Foul committed by player"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3585,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3615,
+      "team": "white",
+      "description": "Attacking free kick"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3739,
+      "team": "blue",
+      "description": "Shot leads to a corner kick"
+    },
+    {
+      "type": "corner",
+      "timestamp": 3735,
+      "team": "blue",
+      "description": "Corner kick taken short"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3811,
+      "team": "blue",
+      "description": "Free kick played into penalty area"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3826,
+      "team": "blue",
+      "description": "Header goes over crossbar for goal kick"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3849,
+      "team": "blue",
+      "description": "Shot blocked by defender"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3863,
+      "team": "blue",
+      "description": "Shot taken, blocked by defender"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3866,
+      "team": "blue",
+      "description": "Second shot from rebound, blocked"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3930,
+      "team": "white",
+      "description": "Throw-in preparation"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3945,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3960,
+      "team": "white",
+      "description": "Foul committed, Free kick to blue"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3990,
+      "team": "blue",
+      "description": "Throw-in from right sideline"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4065,
+      "team": "blue",
+      "description": "Shot from inside penalty area goes wide"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4095,
+      "team": "white",
+      "description": "Corner kick preparation"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4110,
+      "team": "white",
+      "description": "Free kick from left flank"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4125,
+      "team": "white",
+      "description": "Short corner kick from left"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4140,
+      "team": "white",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4155,
+      "team": "white",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4170,
+      "team": "blue",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "goal",
+      "timestamp": 5472,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5476,
+      "team": "white",
+      "description": "Shot hits the post"
+    },
+    {
+      "type": "corner",
+      "timestamp": 5490,
+      "team": "blue",
+      "description": "Corner kick from left"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5497,
+      "team": "white",
+      "description": "Shot on goal, hits post"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5512,
+      "team": "blue",
+      "description": "Shot inside box, blocked by defender"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5554,
+      "team": "white",
+      "description": "Foul committed, free kick to blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5580,
+      "team": "white",
+      "description": "Foul committed, free kick to blue"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5595,
+      "team": "blue",
+      "description": "Foul committed, free kick to white"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 5640,
+      "team": "blue",
+      "description": "Throw-in played deep into penalty area"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 5655,
+      "team": "white",
+      "description": "Free kick preparation"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 5670,
+      "team": "blue",
+      "description": "Throw-in in attacking half"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5742,
+      "team": "white",
+      "description": "Shot saved by goalkeeper"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5830,
+      "team": "blue",
+      "description": "Foul committed, free kick to white"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 5841,
+      "team": "blue",
+      "description": "Free kick awarded"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5847,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5862,
+      "team": "blue",
+      "description": "Shot from inside penalty area goes wide"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5966,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "incident",
+      "timestamp": 5993,
+      "team": "blue",
+      "description": "Player challenged and goes to ground, play continues"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6075,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 6076,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "goal",
+      "timestamp": 6092,
+      "team": "white",
+      "description": "Goal scored"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6171,
+      "team": "white",
+      "description": "Foul committed, free kick to blue"
+    },
+    {
+      "type": "yellow_card",
+      "timestamp": 6288,
+      "team": "white",
+      "description": "Yellow card shown"
+    },
+    {
+      "type": "red_card",
+      "timestamp": 6301,
+      "team": "blue",
+      "description": "Red card shown to player"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6391,
+      "team": "blue",
+      "description": "Shot saved by goalkeeper"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6421,
+      "team": "blue",
+      "description": "Header towards goal, saved by goalkeeper"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6436,
+      "team": "blue",
+      "description": "Header towards goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6437,
+      "team": "blue",
+      "description": "Shot saved by goalkeeper"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6439,
+      "team": "blue",
+      "description": "Second shot blocked by defender"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6484,
+      "team": "blue",
+      "description": "Free kick awarded to white"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 6495,
+      "team": "blue",
+      "description": "Free kick awarded"
+    },
+    {
+      "type": "cross",
+      "timestamp": 6570,
+      "team": "blue",
+      "description": "Cross into penalty area blocked by defender"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6585,
+      "team": "blue",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "offside",
+      "timestamp": 6626,
+      "team": "white",
+      "description": "Offside infringement"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 6645,
+      "team": "blue",
+      "description": "Throw-in on right sideline"
+    },
+    {
+      "type": "foul",
+      "timestamp": 6709,
+      "team": "white",
+      "description": "Foul committed, free kick to blue"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 6720,
+      "team": "white",
+      "description": "Free kick preparation"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 6735,
+      "team": "blue",
+      "description": "Attacking free kick"
+    },
+    {
+      "type": "goal",
+      "timestamp": 6830,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6840,
+      "team": "blue",
+      "description": "Corner kick taken from left"
+    },
+    {
+      "type": "shot",
+      "timestamp": 6855,
+      "team": "blue",
+      "description": "Direct free kick taken, goes over crossbar"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 6870,
+      "team": "white",
+      "description": "Free kick taken"
+    },
+    {
+      "type": "corner",
+      "timestamp": 6885,
+      "team": "white",
+      "description": "Short corner kick taken"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 6930,
+      "team": "blue",
+      "description": "Long free kick taken from own half"
+    },
+    {
+      "type": "goal",
+      "timestamp": 7011,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "goal",
+      "timestamp": 7096,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "goal",
+      "timestamp": 7123,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7123,
+      "team": "blue",
+      "description": "Shot goes across face of goal"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 7155,
+      "team": "blue",
+      "description": "Throw-in from left sideline"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 7170,
+      "team": "white",
+      "description": "Free kick taken"
+    },
+    {
+      "type": "foul",
+      "timestamp": 7241,
+      "team": "white",
+      "description": "Foul committed, free kick to blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7324,
+      "team": "blue",
+      "description": "Shot on goal, saved by goalkeeper"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7339,
+      "team": "blue",
+      "description": "Shot on goal from inside penalty area"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7340,
+      "team": "blue",
+      "description": "Shot saved by goalkeeper"
+    },
+    {
+      "type": "foul",
+      "timestamp": 7419,
+      "team": "blue",
+      "description": "Foul committed"
+    },
+    {
+      "type": "goal",
+      "timestamp": 7640,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 7650,
+      "team": "white",
+      "description": "Attacking free kick"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 7665,
+      "team": "blue",
+      "description": "Free kick taken from own half"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7688,
+      "team": "blue",
+      "description": "Shot from distance goes over the goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7705,
+      "team": "blue",
+      "description": "Shot from edge of box"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7706,
+      "team": "blue",
+      "description": "Shot hits crossbar"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7718,
+      "team": "blue",
+      "description": "Shot on goal, hits crossbar"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7734,
+      "team": "blue",
+      "description": "Shot from inside penalty area goes wide"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 7770,
+      "team": "blue",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "foul",
+      "timestamp": 7793,
+      "team": "white",
+      "description": "Free kick awarded to blue"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7858,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7874,
+      "team": "blue",
+      "description": "Shot from inside box goes over crossbar"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7875,
+      "team": "white",
+      "description": "Shot goes over the goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 7901,
+      "team": "blue",
+      "description": "Free kick taken, goes over the goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 7968,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "goal",
+      "timestamp": 8022,
+      "team": "white",
+      "description": "Goal scored"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 8040,
+      "team": "blue",
+      "description": "Attacking free kick"
+    },
+    {
+      "type": "shot",
+      "timestamp": 8107,
+      "team": "blue",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal",
+      "timestamp": 8112,
+      "team": "blue",
+      "description": "Goal scored"
+    },
+    {
+      "type": "goal",
+      "timestamp": 8123,
+      "team": "blue",
+      "description": "Goal scored with a header"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 8145,
+      "team": "blue",
+      "description": "Long throw-in into penalty area"
+    },
+    {
+      "type": "goal",
+      "timestamp": 8170,
+      "team": "white",
+      "description": "Goal scored"
+    },
+    {
+      "type": "corner",
+      "timestamp": 8220,
+      "team": "white",
+      "description": "Corner kick from left"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 8235,
+      "team": "blue",
+      "description": "Short free kick from attacking position"
+    },
+    {
+      "type": "foul",
+      "timestamp": 8262,
+      "team": "blue",
+      "description": "Foul committed, free kick to white"
+    }
+  ]
 }

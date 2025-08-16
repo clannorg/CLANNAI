@@ -1,6 +1,6 @@
 {
   "match_id": "20250523-match-23-may-2025-3fc1de88",
-  "upload_timestamp": "2025-08-15T13:49:24.607508",
+  "upload_timestamp": "2025-08-16T14:26:25.685976",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "s3_urls": {
@@ -8,13 +8,13 @@
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events-json.json",
       "s3_key": "analysis-data/20250523-match-23-may-2025-3fc1de88-web_events-json.json",
       "description": "Web app compatible events timeline",
-      "file_size_mb": 0.0
+      "file_size_mb": 0.02
     },
     "web_events_array.json": {
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events_array-json.json",
       "s3_key": "analysis-data/20250523-match-23-may-2025-3fc1de88-web_events_array-json.json",
       "description": "Direct events array for web app",
-      "file_size_mb": 0.0
+      "file_size_mb": 0.02
     },
     "match_metadata.json": {
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-match_metadata-json.json",
@@ -51,6 +51,6 @@
     "total_files": 11,
     "successful_uploads": 7,
     "failed_uploads": 4,
-    "total_size_mb": 4995.240000000001
+    "total_size_mb": 4995.280000000001
   }
 }

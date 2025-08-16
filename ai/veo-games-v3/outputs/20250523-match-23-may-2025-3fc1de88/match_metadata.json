@@ -11,16 +11,19 @@
     }
   },
   "counts": {
-    "goals": 0,
-    "shots": 0
+    "goals": 21,
+    "shots": 55
   },
   "files": {
-    "video_mp4": null,
-    "web_events_array_json": null,
-    "web_events_json": null,
-    "timeline_txt": null,
-    "ground_truth_json": null,
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250523-match-23-may-2025-3fc1de88-video-mp4.mp4",
+    "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events_array-json.json",
+    "web_events_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events-json.json",
+    "timeline_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-5_complete_timeline-txt.txt",
+    "ground_truth_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-1_veo_ground_truth-json.json",
     "other_events_txt": null,
-    "tactical_json": null
-  }
+    "tactical_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-11_tactical_analysis-json.json"
+  },
+  "final_score": "East London Ballers 3 - 2 Opposition",
+  "winner": "East London Ballers",
+  "match_summary": "Match: East London Ballers vs Opposition\nFinal Score: East London Ballers 3 - 2 Opposition\nDuration: 90 minutes plus added time, with verified match play concluding around 138:00 of the recording.\n\nKey Statistics:\n- Goals: 5 (VEO Verified)\n- Shots: 18 (VEO Verified, including goals)\n- Fouls: 19 (East London Ballers: 8, Opposition: 11)\n- Corners: 15 (East London Ballers: 8, Opposition: 7)\n- Cards: 2 (Opposition: 1 Yellow, East London Ballers: 1 Red)\n- Throw-ins: 16 (East London Ballers: 9, Opposition: 7)\n- Offsides: 2 (East London Ballers: 1, Opposition: 1)\n\nMatch Narrative:\nThe football match between East London Ballers and Opposition was a competitive contest, concluding with a narrow 3-2 victory for East London Ballers based on VEO-verified goals. The recorded timeline began with extensive pre-match warm-ups, with the actual play initiating around the 18:26 mark. East London Ballers demonstrated early attacking intent, securing a two-goal lead in the first half with strikes at 32:48 and 35:37. However, the Opposition managed to pull one back at 41:19, keeping the match closely contested heading into the break.\n\nThe second half, commencing after an apparent significant break in the recording around 84:30, saw the Opposition quickly equalize at 52:02, setting the stage for a tense period of play. East London Ballers responded by regaining their lead at 101:16. A pivotal moment occurred at 105:01 when an East London Ballers player received a red card, leaving them to play the remainder of the match with ten men.\n\nDespite being numerically disadvantaged, East London Ballers showed remarkable resilience, continuing to create goal-scoring opportunities and register shots. The Opposition, spurred on by the man advantage, pressed hard for another equalizer, resulting in a dynamic and end-to-end conclusion to the game. The final whistle, indicated by players shaking hands, occurred around 138:00, confirming East London Ballers' hard-fought 3-2 victory."
 }

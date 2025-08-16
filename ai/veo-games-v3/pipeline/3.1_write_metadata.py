@@ -28,10 +28,57 @@ def load_json(path: Path) -> dict:
         return {}
 
 
+def parse_final_score(outputs_dir: Path) -> dict:
+    """Parse final score and match summary from mega_summary.txt"""
+    summary_path = outputs_dir / "mega_summary.txt"
+    if not summary_path.exists():
+        return {}
+    
+    try:
+        with open(summary_path, "r") as f:
+            content = f.read()
+        
+        # Extract final score line
+        final_score = None
+        winner = None
+        match_summary = content.strip()
+        
+        for line in content.split('\n'):
+            if line.startswith("Final Score:"):
+                final_score = line.replace("Final Score: ", "").strip()
+                # Determine winner from score (assumes format "Team A X - Y Team B")
+                if " - " in final_score:
+                    parts = final_score.split(" - ")
+                    if len(parts) == 2:
+                        left_part = parts[0].strip()
+                        right_part = parts[1].strip()
+                        # Extract scores (last word of each part should be the number)
+                        left_score = int(left_part.split()[-1])
+                        right_score = int(right_part.split()[0])
+                        if left_score > right_score:
+                            winner = " ".join(left_part.split()[:-1])
+                        elif right_score > left_score:
+                            winner = " ".join(right_part.split()[1:])
+                        else:
+                            winner = "Draw"
+                break
+        
+        return {
+            "final_score": final_score,
+            "winner": winner,
+            "match_summary": match_summary
+        }
+    except Exception:
+        return {}
+
+
 def build_metadata(match_id: str, outputs_dir: Path) -> dict:
     s3_locations = load_json(outputs_dir / "s3_locations.json")
     web_events = load_json(outputs_dir / "web_events_array.json")
     match_config = load_json(outputs_dir / "match_config.json")
+    
+    # Parse final score and match summary
+    score_info = parse_final_score(outputs_dir)
 
     # S3 URLs if available; else None
     s3_urls = (s3_locations or {}).get("s3_urls", {})
@@ -86,6 +133,14 @@ def build_metadata(match_id: str, outputs_dir: Path) -> dict:
             "tactical_json": url_for("11_tactical_analysis.json"),
         },
     }
+    
+    # Add final score info if available
+    if score_info.get("final_score"):
+        metadata["final_score"] = score_info["final_score"]
+    if score_info.get("winner"):
+        metadata["winner"] = score_info["winner"]
+    if score_info.get("match_summary"):
+        metadata["match_summary"] = score_info["match_summary"]
 
     return metadata
 
