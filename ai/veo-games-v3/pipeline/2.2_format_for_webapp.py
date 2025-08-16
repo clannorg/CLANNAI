@@ -22,9 +22,23 @@ from pathlib import Path
 from dotenv import load_dotenv
 import google.generativeai as genai
 
-# Load environment variables
-env_path = Path(__file__).parent.parent / '.env'
-load_dotenv(env_path)
+def load_env_multisource() -> None:
+    """Load env vars from multiple locations without overriding existing ones."""
+    load_dotenv()  # keep shell values
+
+    candidates = [
+        Path(__file__).resolve().parent.parent / '.env',   # ai/veo-games-v3/.env
+        Path(__file__).resolve().parents[2] / '.env',      # ai/.env
+        Path(__file__).resolve().parents[3] / '.env',      # repo root .env
+    ]
+    for env_path in candidates:
+        try:
+            if env_path.exists():
+                load_dotenv(env_path, override=False)
+        except Exception:
+            pass
+
+load_env_multisource()
 
 class WebappFormatter:
     def __init__(self):

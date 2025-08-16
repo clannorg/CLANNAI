@@ -14,8 +14,32 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-# Load environment variables from parent directory
-load_dotenv(Path(__file__).parent.parent / '.env')
+def load_env_multisource() -> None:
+    """Load environment variables from multiple likely locations without overriding.
+
+    Search order:
+    1) Current shell environment (default load_dotenv with no path keeps env intact)
+    2) ai/veo-games-v3/.env
+    3) ai/.env
+    4) repo-root/.env
+    """
+    # Keep anything already exported in the shell
+    load_dotenv()  # override=False by default
+
+    candidates = [
+        Path(__file__).resolve().parent.parent / '.env',   # ai/veo-games-v3/.env
+        Path(__file__).resolve().parents[2] / '.env',      # ai/.env
+        Path(__file__).resolve().parents[3] / '.env',      # repo root .env
+    ]
+    for env_path in candidates:
+        try:
+            if env_path.exists():
+                load_dotenv(env_path, override=False)
+        except Exception:
+            # Best-effort loading; ignore malformed files
+            pass
+
+load_env_multisource()
 
 class SimpleClipAnalyzer:
     def __init__(self):

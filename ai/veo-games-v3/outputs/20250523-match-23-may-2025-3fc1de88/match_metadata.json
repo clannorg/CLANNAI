@@ -1,0 +1,26 @@
+{
+  "match_id": "20250523-match-23-may-2025-3fc1de88",
+  "teams": {
+    "red_team": {
+      "name": "East London Ballers",
+      "jersey_color": "blue and turquoise"
+    },
+    "blue_team": {
+      "name": "Opposition",
+      "jersey_color": "white"
+    }
+  },
+  "counts": {
+    "goals": 0,
+    "shots": 0
+  },
+  "files": {
+    "video_mp4": null,
+    "web_events_array_json": null,
+    "web_events_json": null,
+    "timeline_txt": null,
+    "ground_truth_json": null,
+    "other_events_txt": null,
+    "tactical_json": null
+  }
+}

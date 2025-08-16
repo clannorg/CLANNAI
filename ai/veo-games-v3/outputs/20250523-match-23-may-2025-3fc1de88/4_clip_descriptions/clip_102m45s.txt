@@ -1,0 +1,6 @@
+The team in green jerseys is referred to as the Green team, and the team in white jerseys is referred to as the White team.
+
+White team has possession in the midfield. A Green team player makes a tackle to win the ball.
+
+**Key events:**
+- **00:06:** Foul committed by the Green team player. The referee awards a free kick to the White team.

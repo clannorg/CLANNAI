@@ -1,0 +1,53 @@
+{
+  "red_team": {
+    "team_name": "Yellow Team",
+    "strengths": [
+      "Set-piece proficiency",
+      "Aerial play",
+      "Attacking prowess",
+      "Chance conversion"
+    ],
+    "weaknesses": [
+      "Discipline (cards)",
+      "Defensive solidity under pressure"
+    ],
+    "key_players": [
+      "Set-piece takers",
+      "Forwards in the final third"
+    ],
+    "tactical_setup": "Attacking-minded, focused on set-pieces and aerial dominance.",
+    "performance_summary": "The Yellow team displayed strong attacking capabilities and effectiveness in set-piece situations. Despite some disciplinary issues, they secured a comfortable victory through their attacking output."
+  },
+  "blue_team": {
+    "team_name": "Blue Team",
+    "strengths": [
+      "Set-piece threat (corners)",
+      "Opportunistic finishing"
+    ],
+    "weaknesses": [
+      "Defensive vulnerabilities",
+      "Inability to contain Yellow team's attack",
+      "Midfield control"
+    ],
+    "key_players": [
+      "Set-piece specialists",
+      "Goalkeeper"
+    ],
+    "tactical_setup": "Mixed approach with periods of possession and counter-attacking, struggling defensively.",
+    "performance_summary": "The Blue team struggled to contain the Yellow team's attack, with their defense frequently tested. Despite moments of attacking threat, they ultimately fell short and conceded a significant number of goals."
+  },
+  "match_summary": {
+    "final_score": "4-1",
+    "key_moments": [
+      "Yellow's early goals",
+      "Blue's goal from open play",
+      "Yellow's second half goals",
+      "Yellow team's red card"
+    ],
+    "turning_points": [
+      "Yellow's initial dominance",
+      "Yellow team maintaining pressure despite red card"
+    ],
+    "overall_narrative": "The Yellow team dominated the match with their superior attacking ability, ultimately securing a convincing win despite a period of indiscipline. The Blue team showed moments of promise but couldn't match Yellow's overall performance."
+  }
+}
