@@ -51,24 +51,46 @@ export default function VideoPlayer({
   
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  // Extract team colors from metadata
+  // Extract team colors from metadata and convert to CSS colors
   const redTeam = game.metadata?.teams?.red_team || { name: 'Red Team', jersey_color: '#DC2626' }
   const blueTeam = game.metadata?.teams?.blue_team || { name: 'Blue Team', jersey_color: '#2563EB' }
-
-  // Function to get event color - use team colors for team events, fallback to event type colors
-  const getTimelineEventColor = (event: GameEvent) => {
-    if (event.team === 'red') return redTeam.jersey_color
-    if (event.team === 'blue') return blueTeam.jersey_color
+  
+  // Convert jersey color descriptions to actual CSS colors
+  const getTeamCSSColor = (jerseyColor: string) => {
+    const color = jerseyColor.toLowerCase().trim()
+    const primaryColor = color.split(' ')[0]
     
-    // Fallback to event type colors for neutral events
-    switch (event.type) {
-      case 'goal': return '#22C55E'
-      case 'shot': return '#3B82F6'
-      case 'foul': return '#F59E0B'
-      case 'turnover': return '#A855F7'
-      case 'save': return '#F97316'
-      default: return '#6B7280'
+    switch (primaryColor) {
+      case 'blue': return '#3B82F6'      // Blue
+      case 'white': return '#FFFFFF'     // White  
+      case 'red': return '#DC2626'       // Red
+      case 'green': return '#22C55E'     // Green
+      case 'black': return '#000000'     // Black
+      case 'yellow': return '#EAB308'    // Yellow
+      case 'orange': return '#F97316'    // Orange
+      case 'purple': return '#A855F7'    // Purple
+      case 'turquoise': return '#14B8A6' // Turquoise
+      case 'teal': return '#14B8A6'      // Teal
+      case 'navy': return '#1E40AF'      // Navy
+      default: return '#6B7280'          // Gray fallback
     }
+  }
+
+  // Function to get event color - ALWAYS use team colors, never event type colors
+  const getTimelineEventColor = (event: GameEvent) => {
+    // Use team colors for all events
+    if (event.team === 'red' || event.team === 'white') return getTeamCSSColor(redTeam.jersey_color)
+    if (event.team === 'blue' || event.team === 'black') return getTeamCSSColor(blueTeam.jersey_color)
+    
+    // For events without team info, try to infer from description
+    if (event.description) {
+      const desc = event.description.toLowerCase()
+      if (desc.includes('white') || desc.includes('east')) return getTeamCSSColor(redTeam.jersey_color)
+      if (desc.includes('opposition') || desc.includes('blue') || desc.includes('black')) return getTeamCSSColor(blueTeam.jersey_color)
+    }
+    
+    // Last resort - use neutral color
+    return '#6B7280'
   }
 
   const handleTimeUpdate = () => {
@@ -250,18 +272,6 @@ export default function VideoPlayer({
                     {/* Clean Controls + Progress Bar */}
           <div className="mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),8px)]">
             <div className="flex items-center space-x-3">
-              {/* Previous Event */}
-              <button
-                onClick={handlePreviousEvent}
-                disabled={events.length === 0}
-                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Previous Event"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
               {/* Play/Pause */}
               <button
                 onClick={handlePlayPause}
@@ -276,6 +286,36 @@ export default function VideoPlayer({
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 )}
+              </button>
+
+              {/* Jump Backward 5s */}
+              <button
+                onClick={handleJumpBackward}
+                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
+                title="Jump Backward 5s"
+              >
+                -5s
+              </button>
+
+              {/* Jump Forward 5s */}
+              <button
+                onClick={handleJumpForward}
+                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
+                title="Jump Forward 5s"
+              >
+                +5s
+              </button>
+
+              {/* Previous Event */}
+              <button
+                onClick={handlePreviousEvent}
+                disabled={events.length === 0}
+                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                title="Previous Event"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
               </button>
 
               {/* Next Event */}
