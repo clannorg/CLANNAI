@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
-import VideoUpload from '@/components/VideoUpload'
+ 
 
 
 interface Game {
@@ -29,9 +29,9 @@ export default function Dashboard() {
   const [games, setGames] = useState<Game[]>([])
   const [demoGames, setDemoGames] = useState<Game[]>([])
   const [teams, setTeams] = useState<Team[]>([])
-  const [activeTab, setActiveTab] = useState('games')
+  const [activeTab, setActiveTab] = useState<'games' | 'teams'>('games')
   const [showUploadModal, setShowUploadModal] = useState(false)
-  const [showVideoUploadModal, setShowVideoUploadModal] = useState(false)
+
   const [showJoinModal, setShowJoinModal] = useState(false)
   const [showCreateTeamModal, setShowCreateTeamModal] = useState(false)
   const [showSettingsModal, setShowSettingsModal] = useState(false)
@@ -47,6 +47,15 @@ export default function Dashboard() {
   const [uploadGameUrl, setUploadGameUrl] = useState('')
   const [uploadTeamName, setUploadTeamName] = useState('')
   const [uploadGameLoading, setUploadGameLoading] = useState(false)
+  // Inline file upload
+  const [uploadMode, setUploadMode] = useState<'veo' | 'file'>('veo')
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [uploading, setUploading] = useState(false)
+  const [uploadProgress, setUploadProgress] = useState(0)
+  const [uploadSpeed, setUploadSpeed] = useState(0)
+  const [timeRemaining, setTimeRemaining] = useState(0)
+  const [isDragOver, setIsDragOver] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
@@ -105,6 +114,204 @@ export default function Dashboard() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     window.location.href = '/'
+  }
+
+  // File upload helpers
+  const validateFile = (file: File) => {
+    const allowed = ['video/mp4', 'video/mov', 'video/quicktime', 'video/avi']
+    const maxSize = 5 * 1024 * 1024 * 1024
+    if (!allowed.includes(file.type)) throw new Error('Invalid file type. Only MP4, MOV, AVI allowed.')
+    if (file.size > maxSize) throw new Error('File size too large. Max 5GB.')
+    return true
+  }
+  const handleFileSelect = (file: File) => {
+    try {
+      validateFile(file)
+      setSelectedFile(file)
+      setError('')
+      if (!uploadGameTitle) {
+        const name = file.name.replace(/\.[^/.]+$/, '')
+        setUploadGameTitle(name)
+      }
+    } catch (e: any) {
+      setError(e.message)
+      setSelectedFile(null)
+    }
+  }
+  const handleDragOver = (e: React.DragEvent) => { e.preventDefault(); setIsDragOver(true) }
+  const handleDragLeave = (e: React.DragEvent) => { e.preventDefault(); setIsDragOver(false) }
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault(); setIsDragOver(false)
+    const files = Array.from(e.dataTransfer.files)
+    if (files.length > 0) handleFileSelect(files[0])
+  }
+  const handleFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files
+    if (files && files.length > 0) handleFileSelect(files[0])
+  }
+  const formatFileSize = (bytes: number) => {
+    if (bytes === 0) return '0 Bytes'
+    const k = 1024; const sizes = ['Bytes', 'KB', 'MB', 'GB']
+    const i = Math.floor(Math.log(bytes) / Math.log(k))
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(2))} ${sizes[i]}`
+  }
+  const formatTimeRemaining = (seconds: number) => {
+    if (seconds < 60) return `${seconds}s`
+    const m = Math.floor(seconds / 60); const s = seconds % 60
+    if (m < 60) return `${m}m ${s}s`
+    const h = Math.floor(m / 60); const rm = m % 60
+    return `${h}h ${rm}m`
+  }
+  const handleFileUploadModeClick = () => {
+    setActiveTab('games'); setUploadMode('file'); setSelectedFile(null)
+    setUploadProgress(0); setUploadSpeed(0); setTimeRemaining(0); setError('')
+  }
+  
+  const handleVeoModeClick = () => {
+    setActiveTab('games'); setUploadMode('veo'); setUploadGameUrl('')
+    setError('')
+  }
+
+  const handleFileUpload = async () => {
+    if (!selectedFile || !uploadGameTitle.trim()) {
+      setError('Please select a file and enter a title')
+      return
+    }
+
+    let selectedTeam: any
+    if (teams.length === 0) {
+      if (!uploadTeamName.trim()) { setError('Please enter a team name'); return }
+      try {
+        setUploading(true)
+        setError('')
+        const newTeam = await apiClient.createTeam({ name: uploadTeamName.trim(), description: `Team for ${uploadTeamName.trim()}` })
+        selectedTeam = newTeam
+        const teamsResponse = await apiClient.getUserTeams()
+        setTeams(teamsResponse.teams || [])
+      } catch (err: any) {
+        setError(err.message || 'Failed to create team')
+        setUploading(false)
+        return
+      }
+    } else {
+      if (uploadTeamName.trim()) {
+        const existing = teams.find(t => t.name.toLowerCase() === uploadTeamName.trim().toLowerCase())
+        if (existing) selectedTeam = existing
+        else {
+          try {
+            const newTeam = await apiClient.createTeam({ name: uploadTeamName.trim(), description: `Team for ${uploadTeamName.trim()}` })
+            selectedTeam = newTeam
+            const teamsResponse = await apiClient.getUserTeams()
+            setTeams(teamsResponse.teams || [])
+          } catch (err: any) {
+            setError(err.message || 'Failed to create team')
+            setUploading(false)
+            return
+          }
+        }
+      } else {
+        selectedTeam = teams[0]
+      }
+    }
+
+    try {
+      setUploading(true)
+      setError('')
+      setUploadProgress(0)
+      setUploadSpeed(0)
+      setTimeRemaining(0)
+
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
+      const token = localStorage.getItem('token')
+      if (!token) throw new Error('Authentication required')
+
+      // Get presigned URL
+      const presignedResponse = await fetch(`${API_BASE_URL}/api/games/upload/presigned-url`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify({
+          fileName: selectedFile.name,
+          fileType: selectedFile.type,
+          fileSize: selectedFile.size,
+          teamId: (selectedTeam as any).team?.id || (selectedTeam as any).id
+        })
+      })
+      if (!presignedResponse.ok) {
+        const errData = await presignedResponse.json()
+        throw new Error(errData.error || 'Failed to get upload URL')
+      }
+      const { uploadUrl, s3Key } = await presignedResponse.json()
+
+      // Upload with progress tracking
+      setUploadProgress(25)
+      await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        const start = Date.now()
+        let lastLoaded = 0
+        let lastTime = start
+        xhr.upload.addEventListener('progress', (e) => {
+          if (e.lengthComputable) {
+            const now = Date.now()
+            const dt = (now - lastTime) / 1000
+            if (dt > 0.5) {
+              const bytes = e.loaded - lastLoaded
+              const bps = bytes / dt
+              const mbps = (bps / (1024 * 1024)).toFixed(1)
+              const remain = e.total - e.loaded
+              const est = remain / bps
+              setUploadSpeed(parseFloat(mbps))
+              setTimeRemaining(Math.ceil(est))
+              lastLoaded = e.loaded
+              lastTime = now
+            }
+            const prog = (e.loaded / e.total) * 50
+            setUploadProgress(25 + prog)
+          }
+        })
+        xhr.addEventListener('load', () => {
+          if (xhr.status >= 200 && xhr.status < 300) resolve(xhr)
+          else reject(new Error(`S3 upload failed with status ${xhr.status}`))
+        })
+        xhr.addEventListener('error', () => reject(new Error('Failed to upload file to S3')))
+        xhr.open('PUT', uploadUrl)
+        xhr.setRequestHeader('Content-Type', selectedFile.type)
+        xhr.send(selectedFile)
+      })
+
+      setUploadProgress(75)
+      // Confirm upload
+      const confirmResponse = await fetch(`${API_BASE_URL}/api/games/upload/confirm`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify({
+          title: uploadGameTitle.trim(),
+          description: uploadGameDescription.trim() || undefined,
+          teamId: (selectedTeam as any).team?.id || (selectedTeam as any).id,
+          s3Key,
+          originalFilename: selectedFile.name,
+          fileSize: selectedFile.size,
+          fileType: selectedFile.type
+        })
+      })
+      if (!confirmResponse.ok) {
+        const errData = await confirmResponse.json()
+        throw new Error(errData.error || 'Failed to confirm upload')
+      }
+      setUploadProgress(100)
+      setTimeout(async () => { 
+        await loadUserData()
+        setUploadGameTitle('')
+        setUploadGameDescription('')
+        setUploadTeamName('')
+        setSelectedFile(null)
+        setUploadMode('veo')
+      }, 500)
+    } catch (err: any) {
+      setError(err.message || 'Upload failed')
+      setUploadProgress(0)
+    } finally {
+      setUploading(false)
+    }
   }
 
   const handleUploadVideoClick = () => {
@@ -382,11 +589,11 @@ export default function Dashboard() {
 
       {/* User Profile Section - Match UserDashboard.js exactly */}
       <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
         <div className="flex items-center gap-6 mb-12">
           <div className="flex items-center gap-8">
             <div>
-              <h1 className="text-3xl font-bold mb-2 text-gray-900">
+              <h1 className="text-2xl sm:text-3xl font-bold mb-2 text-gray-900">
                 {teams.length > 0 ? teams[0].name : 
                   <div className="flex items-center gap-2 text-gray-500">
                     Upload footage to create a team
@@ -417,7 +624,7 @@ export default function Dashboard() {
 
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-8 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8">
 
         {/* Content Area */}
         <div className="space-y-4">
@@ -443,7 +650,7 @@ export default function Dashboard() {
                   </button>
                 ))}
             </div>
-                          <div className="p-6">
+            <div className="p-6">
                 {loading ? (
                   <div className="text-center py-12">
                     <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#016F32]"></div>
@@ -592,6 +799,40 @@ export default function Dashboard() {
                             <span className="truncate">Team: {game.team_name}</span>
                           </div>
                           
+                          {/* Team matchup from metadata */}
+                          {game.metadata?.teams && (
+                            <div className="flex items-center gap-2">
+                              <span className="flex-shrink-0">🆚</span>
+                              <div className="flex items-center gap-2 truncate">
+                                <span className="px-2 py-0.5 rounded text-xs font-medium" style={{ backgroundColor: game.metadata.teams.red_team.jersey_color + '20', color: game.metadata.teams.red_team.jersey_color }}>
+                                  {game.metadata.teams.red_team.name}
+                                </span>
+                                <span>vs</span>
+                                <span className="px-2 py-0.5 rounded text-xs font-medium" style={{ backgroundColor: game.metadata.teams.blue_team.jersey_color + '20', color: game.metadata.teams.blue_team.jersey_color }}>
+                                  {game.metadata.teams.blue_team.name}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Match stats from metadata */}
+                          {game.metadata?.counts && (
+                            <div className="flex items-center gap-4">
+                              {game.metadata.counts.goals !== undefined && (
+                                <div className="flex items-center gap-1">
+                                  <span className="flex-shrink-0">⚽</span>
+                                  <span className="text-xs">{game.metadata.counts.goals} goals</span>
+                                </div>
+                              )}
+                              {game.metadata.counts.shots !== undefined && (
+                                <div className="flex items-center gap-1">
+                                  <span className="flex-shrink-0">🎯</span>
+                                  <span className="text-xs">{game.metadata.counts.shots} shots</span>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          
                           <div className="flex items-center gap-2">
                             <span className="flex-shrink-0">📅</span>
                             <span className="truncate">{new Date(game.created_at).toLocaleDateString()}</span>
@@ -631,7 +872,8 @@ export default function Dashboard() {
                       {game.status === 'analyzed' && (
                         <div className="border-t border-gray-200 pt-4">
                           <p className="text-sm font-medium text-gray-700 mb-3">💬 Start AI coaching conversation:</p>
-                          <div className="grid grid-cols-2 gap-2">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {/* Core prompts - always show */}
                             <button 
                               onClick={(e) => {
                                 e.stopPropagation()
@@ -677,20 +919,73 @@ export default function Dashboard() {
                               <span>Player Analysis</span>
                             </button>
                             
-                            <button 
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                sessionStorage.setItem('autoChat', JSON.stringify({
-                                  message: "How should we prepare for our next opponent based on this match analysis and what formation should we use?",
-                                  timestamp: Date.now()
-                                }))
-                                router.push(`/games/${game.id}`)
-                              }}
-                              className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
-                            >
-                              <span>📈</span>
-                              <span>Next Match Prep</span>
-                            </button>
+                            {/* Dynamic prompt based on metadata */}
+                            {game.metadata?.teams ? (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: `How did we perform against ${game.metadata.teams.blue_team.name} and what should we focus on when we play similar opponents?`,
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-blue-50 hover:bg-blue-100 border border-blue-200 hover:border-blue-300 text-blue-700 hover:text-blue-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>🆚</span>
+                                <span>vs {game.metadata.teams.blue_team.name}</span>
+                              </button>
+                            ) : (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: "How should we prepare for our next opponent based on this match analysis and what formation should we use?",
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-purple-50 hover:bg-purple-100 border border-purple-200 hover:border-purple-300 text-purple-700 hover:text-purple-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>📈</span>
+                                <span>Next Match Prep</span>
+                              </button>
+                            )}
+                            
+                            {/* Additional contextual prompts */}
+                            {game.metadata?.counts?.goals > 0 && (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: `We scored ${game.metadata.counts.goals} goals in this match. What made our attacking play effective and how can we replicate this?`,
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-green-50 hover:bg-green-100 border border-green-200 hover:border-green-300 text-green-700 hover:text-green-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>🎯</span>
+                                <span>Goal Analysis</span>
+                              </button>
+                            )}
+                            
+                            {game.metadata?.counts?.shots > 5 && (
+                              <button 
+                                onClick={(e) => {
+                                  e.stopPropagation()
+                                  sessionStorage.setItem('autoChat', JSON.stringify({
+                                    message: `We had ${game.metadata.counts.shots} shots this match. How can we improve our shot conversion rate and finishing?`,
+                                    timestamp: Date.now()
+                                  }))
+                                  router.push(`/games/${game.id}`)
+                                }}
+                                className="flex items-center space-x-2 bg-orange-50 hover:bg-orange-100 border border-orange-200 hover:border-orange-300 text-orange-700 hover:text-orange-800 px-3 py-2 rounded-lg text-sm transition-all font-medium"
+                              >
+                                <span>🎯</span>
+                                <span>Shot Efficiency</span>
+                              </button>
+                            )}
                   </div>
               </div>
             )}
@@ -699,7 +994,7 @@ export default function Dashboard() {
                 ))}
           </div>
         )}
-            </div>
+        </div>
 
             {/* Upload New Match - Moved to Bottom */}
             <div className="bg-white rounded-xl shadow-sm">
@@ -707,30 +1002,21 @@ export default function Dashboard() {
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Upload New Match</h2>
                 
                 {/* Upload Options */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  <button
-                    onClick={() => setShowVideoUploadModal(true)}
-                    className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors group"
-                  >
-                    <div className="text-center">
-                      <div className="w-12 h-12 mx-auto bg-[#016F32] rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-              </svg>
-                      </div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Upload Video File</h3>
-                      <p className="text-sm text-gray-500">MP4, MOV, AVI files (max 2GB)</p>
-                    </div>
-                  </button>
-                  
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <button
                     type="button"
-                    onClick={handleUploadVideoClick}
-                    className="p-6 border border-gray-300 rounded-lg hover:border-[#016F32] hover:bg-green-50 transition-colors w-full text-left"
+                    onClick={handleVeoModeClick}
+                    className={`p-6 border rounded-lg transition-colors w-full ${
+                      uploadMode === 'veo' 
+                        ? 'border-[#016F32] bg-green-50 text-[#016F32]' 
+                        : 'border-gray-300 hover:border-[#016F32] hover:bg-green-50'
+                    }`}
                   >
-                    <div className="text-center mb-4">
-                      <div className="w-12 h-12 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-3">
-                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="text-center">
+                      <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 ${
+                        uploadMode === 'veo' ? 'bg-[#016F32]' : 'bg-blue-100'
+                      }`}>
+                        <svg className={`w-6 h-6 ${uploadMode === 'veo' ? 'text-white' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                         </svg>
                       </div>
@@ -738,9 +1024,31 @@ export default function Dashboard() {
                       <p className="text-sm text-gray-500">Paste URL from Veo, Trace, or Spiideo</p>
                     </div>
                   </button>
+                  
+                  <button
+                    onClick={handleFileUploadModeClick}
+                    className={`p-6 border-2 border-dashed rounded-lg transition-colors group ${
+                      uploadMode === 'file' 
+                        ? 'border-[#016F32] bg-green-50' 
+                        : 'border-gray-300 hover:border-[#016F32] hover:bg-green-50'
+                    }`}
+                  >
+                    <div className="text-center">
+                      <div className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform ${
+                        uploadMode === 'file' ? 'bg-[#016F32]' : 'bg-gray-100'
+                      }`}>
+                        <svg className={`w-6 h-6 ${uploadMode === 'file' ? 'text-white' : 'text-gray-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Upload Video File</h3>
+                      <p className="text-sm text-gray-500">MP4, MOV, AVI files (max 5GB)</p>
+                    </div>
+                  </button>
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-6">
+                  {uploadMode === 'veo' ? (
                   <form onSubmit={handleUploadGame} className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">VEO URL</label>
@@ -754,7 +1062,7 @@ export default function Dashboard() {
                         required
                       />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
                                          <input
@@ -788,6 +1096,75 @@ export default function Dashboard() {
                     </button>
                   </div>
                   </form>
+                  ) : (
+                    <div className="space-y-4">
+                      <div
+                        className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+                          isDragOver ? 'border-[#016F32] bg-green-50' : selectedFile ? 'border-green-500 bg-green-50' : 'border-gray-300 hover:border-gray-400'
+                        }`}
+                        onDragOver={handleDragOver}
+                        onDragLeave={handleDragLeave}
+                        onDrop={handleDrop}
+                      >
+                        {selectedFile ? (
+                          <div className="space-y-3">
+                            <div className="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center">
+                              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div>
+                              <p className="font-medium text-gray-900">{selectedFile.name}</p>
+                              <p className="text-sm text-gray-500">{formatFileSize(selectedFile.size)}</p>
+                            </div>
+                            <button onClick={() => setSelectedFile(null)} className="text-sm text-red-600 hover:text-red-700" disabled={uploading}>Remove file</button>
+                          </div>
+                        ) : (
+                          <div className="space-y-3">
+                            <div className="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center">
+                              <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+                            </div>
+                            <div>
+                              <p className="text-lg font-medium text-gray-900">Drop your video file here</p>
+                              <p className="text-sm text-gray-500">or click to browse (MP4, MOV, AVI - max 5GB)</p>
+                            </div>
+                            <button onClick={() => fileInputRef.current?.click()} className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50" disabled={uploading}>Browse Files</button>
+                          </div>
+                        )}
+                        <input ref={fileInputRef} type="file" accept="video/mp4,video/mov,video/quicktime,video/avi" onChange={handleFileInputChange} className="hidden" disabled={uploading} />
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Team Name</label>
+                          <input type="text" value={uploadTeamName} onChange={(e) => setUploadTeamName(e.target.value)} placeholder="Enter team name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500" disabled={uploading} required />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Opposition</label>
+                          <input type="text" value={uploadGameTitle} onChange={(e) => setUploadGameTitle(e.target.value)} placeholder="Arsenal" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#016F32] focus:border-[#016F32] text-gray-900 placeholder-gray-500" disabled={uploading} required />
+                        </div>
+                      </div>
+
+                      {uploading && (
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-sm">
+                            <div className="flex flex-col">
+                              <span className="text-gray-600">Uploading...</span>
+                              {uploadSpeed > 0 && (
+                                <span className="text-xs text-gray-500 mt-1">{uploadSpeed} MB/s{timeRemaining > 0 && (<> • {formatTimeRemaining(timeRemaining)} remaining</>)}</span>
+                              )}
+                            </div>
+                            <span className="text-gray-600">{Math.round(uploadProgress)}%</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div className="bg-[#016F32] h-2 rounded-full transition-all duration-300" style={{ width: `${uploadProgress}%` }} />
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="flex justify-end">
+                        <button onClick={handleFileUpload} disabled={!selectedFile || !uploadGameTitle.trim() || uploading} className="bg-[#016F32] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#016F32]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">{uploading ? 'Uploading...' : 'Upload Video'}</button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -892,7 +1269,7 @@ export default function Dashboard() {
               
               {/* Join/Create Team Section */}
               <div className="border-t border-gray-200 pt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {/* Join Team */}
                   <div id="join-team-section">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Join Team</h3>
@@ -1202,18 +1579,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      {/* Video Upload Modal */}
-      {showVideoUploadModal && (
-        <VideoUpload
-          onUploadSuccess={(gameData) => {
-            console.log('Video uploaded successfully:', gameData)
-            // Refresh the games list
-            loadUserData()
-          }}
-          onClose={() => setShowVideoUploadModal(false)}
-          teams={teams}
-        />
-      )}
+
       </div>
       </div>
 

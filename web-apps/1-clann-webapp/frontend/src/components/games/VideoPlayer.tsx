@@ -207,10 +207,14 @@ export default function VideoPlayer({
         onLoadedMetadata={handleTimeUpdate}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
-        onError={(e) => {
-          console.error('Video loading error:', e)
+        onError={() => {
+          // Video loading failed - this is normal for pending uploads
         }}
         preload="metadata"
+        playsInline
+        controls={false}
+        webkit-playsinline="true"
+        x-webkit-airplay="deny"
       />
 
       {/* Progress Bar + Controls Overlay (auto-hide capable) */}
@@ -243,161 +247,92 @@ export default function VideoPlayer({
             </div>
           )}
 
-          {/* Progress/Scrub Bar */}
-          <div className="relative px-4 pb-3">
-            <div className="relative">
-              <input
-                type="range"
-                min="0"
-                max={duration || 0}
-                step="0.1"
-                value={currentTime}
-                onChange={handleSeek}
-                className="w-full h-2 bg-white/20 rounded-full appearance-none cursor-pointer range-slider hover:h-3 transition-all duration-150 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-0 [&::-webkit-slider-thumb]:h-0 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:w-0 [&::-moz-range-thumb]:h-0"
-                style={{
-                  background: `linear-gradient(to right, #016F32 0%, #016F32 ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.2) 100%)`
-                }}
-              />
-              {/* Progress indicator thumb */}
-              <div 
-                className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-lg transform -translate-y-1/2 pointer-events-none border-2 border-[#016F32] transition-all duration-150"
-                style={{ left: `calc(${(currentTime / (duration || 1)) * 100}% - 8px)` }}
-              />
-            </div>
-          </div>
+                    {/* Clean Controls + Progress Bar */}
+          <div className="mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),8px)]">
+            <div className="flex items-center space-x-3">
+              {/* Previous Event */}
+              <button
+                onClick={handlePreviousEvent}
+                disabled={events.length === 0}
+                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                title="Previous Event"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
 
-          {/* Video Controls */}
-          <div className="bg-black/60 backdrop-blur-md mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),12px)] rounded-lg border border-white/5 shadow-md">
-            <div className="flex items-center justify-between px-4 py-3">
-              {/* Left Side - Main Controls */}
-              <div className="flex items-center space-x-4">
-                <button
-                  onClick={handlePlayPause}
-                  className="group flex items-center justify-center w-12 h-12 bg-white/15 hover:bg-white/25 rounded-full transition-all duration-200 border border-white/20 hover:border-white/30 shadow-lg"
-                >
-                  {isPlaying ? (
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
-                    </svg>
-                  ) : (
-                    <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  )}
-                </button>
-
-                <div className="flex items-center space-x-2">
-                <button
-                  onClick={handleJumpBackward}
-                    className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
-                    title="Jump back 5s"
-                >
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.334 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
-                    </svg>
-                </button>
-
-                <button
-                  onClick={handleJumpForward}
-                    className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
-                    title="Jump forward 5s"
-                >
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
-                    </svg>
-                </button>
-
-                <button
-                  onClick={handleMuteToggle}
-                    className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
-                  title={isMuted ? 'Unmute' : 'Mute'}
-                >
-                    {isMuted ? (
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                      </svg>
-                    ) : (
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                      </svg>
-                    )}
-                </button>
-                </div>
-                
-                <div className="flex items-center space-x-3 text-white/90">
-                  <div className="font-mono text-sm">
-                    {formatTime(currentTime)}
-                  </div>
-                  <div className="w-px h-4 bg-white/20"></div>
-                  <div className="font-mono text-sm text-white/60">
-                    {formatTime(duration)}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side - Event Navigation (Desktop Only) */}
-              <div className="hidden lg:flex items-center space-x-3">
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={handlePreviousEvent}
-                    disabled={events.length === 0}
-                    className={`inline-flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
-                      events.length > 0
-                        ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
-                        : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
-                    }`}
-                    title="Previous Event"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                    <span>Prev</span>
-                  </button>
-
-                  <div className="px-4 py-2 bg-white/5 rounded-xl border border-white/10 min-w-[120px] text-center">
-                    <div className="text-white/90 text-xs font-medium">
-                      {currentEventIndex >= 0 && allEvents[currentEventIndex] ? (
-                        <span className="capitalize">{allEvents[currentEventIndex].type}</span>
-                      ) : (
-                        <span className="text-white/60">No event</span>
-                      )}
-                    </div>
-                </div>
-
-                  <button
-                    onClick={handleNextEvent}
-                    disabled={events.length === 0}
-                    className={`group flex items-center space-x-2 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 border ${
-                      events.length > 0
-                        ? 'bg-white/10 hover:bg-white/20 border-white/20 hover:border-white/30 text-white'
-                        : 'bg-white/5 border-white/10 text-white/40 cursor-not-allowed'
-                    }`}
-                    title="Next Event"
-                  >
-                    <span>Next</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-
-                <button
-                  onClick={() => {
-                    if (document.fullscreenElement) {
-                      document.exitFullscreen()
-                    } else {
-                      document.documentElement.requestFullscreen()
-                    }
-                  }}
-                  className="group flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-xl transition-all duration-200 border border-white/10 hover:border-white/20"
-                  title="Toggle Fullscreen"
-                >
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              {/* Play/Pause */}
+              <button
+                onClick={handlePlayPause}
+                className="flex items-center justify-center w-8 h-8 text-white hover:text-gray-300 transition-colors"
+              >
+                {isPlaying ? (
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
                   </svg>
-                </button>
+                ) : (
+                  <svg className="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                )}
+              </button>
+
+              {/* Next Event */}
+              <button
+                onClick={handleNextEvent}
+                disabled={events.length === 0}
+                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                title="Next Event"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Current Time */}
+              <span className="text-white text-sm font-mono whitespace-nowrap">
+                {formatTime(currentTime)}
+              </span>
+
+              {/* Progress Bar */}
+              <div className="flex-1 relative min-w-0">
+                <input
+                  type="range"
+                  min="0"
+                  max={duration || 0}
+                  step="0.1"
+                  value={currentTime}
+                  onChange={handleSeek}
+                  className="w-full h-1 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-3 [&::-moz-range-thumb]:h-3 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
+                  style={{
+                    background: `linear-gradient(to right, #016F32 0%, #016F32 ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) 100%)`
+                  }}
+                />
               </div>
+
+              {/* Duration */}
+              <span className="text-white/80 text-sm font-mono whitespace-nowrap">
+                {formatTime(duration)}
+              </span>
+
+              {/* Volume */}
+              <button
+                onClick={handleMuteToggle}
+                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 transition-colors"
+                title={isMuted ? "Unmute" : "Mute"}
+              >
+                {isMuted ? (
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clipRule="evenodd" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                  </svg>
+                ) : (
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </div>

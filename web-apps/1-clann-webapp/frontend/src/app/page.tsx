@@ -341,7 +341,7 @@ function HomePage() {
                 </div>
               </h1>
               <p className="text-gray-400 text-xl mt-6">
-                Transform footage into winning game insights
+                AI-powered match analysis with tactical insights and coaching recommendations
               </p>
             </div>
 
@@ -392,10 +392,10 @@ function HomePage() {
             {/* Features Section Header */}
             <div className="mt-24 mb-12 px-4">
               <div className="flex flex-col items-center mb-12">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Track Without GPS Devices</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Complete Match Analysis Platform</h2>
                 <p className="text-gray-300 text-center max-w-2xl">
-                  Get metrics for both <span className="font-semibold" style={{ color: 'var(--clann-bright-green)' }}>your team</span> and{' '}
-                  <span className="font-semibold" style={{ color: 'var(--clann-light-blue)' }}>your opponent</span> from just your match footage.
+                  Event detection, tactical insights, and AI coaching for <span className="font-semibold" style={{ color: 'var(--clann-bright-green)' }}>your team</span> and{' '}
+                  <span className="font-semibold" style={{ color: 'var(--clann-light-blue)' }}>your opponent</span> from VEO footage.
                 </p>
               </div>
             </div>
@@ -405,22 +405,22 @@ function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
-                    title: 'Team Position Tracking',
-                    description: 'Track real-time team formations and tactical positioning throughout the match',
+                    title: 'Event Detection',
+                    description: 'Automatically detect 112+ events including goals, shots, fouls, and tactical actions',
                     image: '/clann-position.png',
-                    icon: '📈'
+                    icon: '⚽'
                   },
                   {
-                    title: 'Heat Mapping',
-                    description: 'Visualize player positioning and movement patterns',
+                    title: 'AI Coaching',
+                    description: 'Chat with legendary managers for tactical analysis and training recommendations',
                     image: '/heatmap_team_0.png',
-                    icon: '🔥'
+                    icon: '🤖'
                   },
                   {
-                    title: 'Sprint Analysis',
-                    description: 'Automatically detect key sprints and player movements',
+                    title: 'Tactical Insights',
+                    description: 'Team performance analysis with strengths, weaknesses, and actionable insights',
                     image: '/sprint_diagram_team_0_distance.png',
-                    icon: '⚡️'
+                    icon: '📊'
                   }
                 ].map(feature => (
                   <div key={feature.title} 
@@ -443,11 +443,11 @@ function HomePage() {
             </div>
 
             {/* Pricing & Call to Action */}
-            <div className="max-w-4xl mx-auto px-4 pt-24 pb-24">
-              <div className="grid grid-cols-1 md:grid-cols-7 gap-8">
+            <div className="max-w-5xl mx-auto px-4 pt-24 pb-24">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 {/* Free Trial */}
-                <div className="md:col-span-2 bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-green-500/30 transition-all">
+                <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-green-500/30 transition-all">
                   <div className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4"
                        style={{ 
                          backgroundColor: 'rgba(209, 251, 122, 0.1)',
@@ -455,21 +455,51 @@ function HomePage() {
                        }}>
                     STEP 1
                   </div>
-                  <h2 className="text-2xl font-bold text-white mb-6">Start Your Free Trial</h2>
-                  <ul className="text-gray-300 space-y-4 mb-8">
+                  <h2 className="text-3xl font-bold text-white mb-6">Join as Pilot Club</h2>
+                  <ul className="text-gray-300 space-y-4 mb-6">
                     <li className="flex items-center gap-3">
                       <span className="text-xl" style={{ color: 'var(--clann-bright-green)' }}>✓</span>
                       First Game Analysis
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="text-xl" style={{ color: 'var(--clann-bright-green)' }}>✓</span>
-                      Team Position Tracking
+                      Event Detection (112+ events)
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="text-xl" style={{ color: 'var(--clann-bright-green)' }}>✓</span>
-                      Full Feature Access
+                      AI Coaching Access
                     </li>
                   </ul>
+                  
+                  {/* Coach Preview for Free Trial too */}
+                  <div className="mb-8 text-center">
+                    <div className="flex justify-center mb-3">
+                      <div className="flex -space-x-5">
+                        <Image
+                          src="/coaches/alex.jpg"
+                          alt="Ferguson"
+                          width={72}
+                          height={72}
+                          className="w-18 h-18 rounded-full object-cover border-4 border-green-500/50"
+                        />
+                        <Image
+                          src="/coaches/jose.jpg"
+                          alt="Mourinho"
+                          width={72}
+                          height={72}
+                          className="w-18 h-18 rounded-full object-cover border-4 border-green-500/50"
+                        />
+                        <Image
+                          src="/coaches/wegner.jpg"
+                          alt="Wenger"
+                          width={72}
+                          height={72}
+                          className="w-18 h-18 rounded-full object-cover border-4 border-green-500/50"
+                        />
+                      </div>
+                    </div>
+                    <span className="text-sm text-green-400 font-medium">Chat with legendary managers</span>
+                  </div>
                   <button
                     onClick={openGetStarted}
                     className="w-full px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
@@ -484,8 +514,8 @@ function HomePage() {
                   </button>
                 </div>
 
-                {/* Premium */}
-                <div className="md:col-span-3 bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-blue-500/30 transition-all">
+                {/* Premium with AI Coaching */}
+                <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-blue-500/30 transition-all">
                   <div className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4"
                        style={{ 
                          backgroundColor: 'rgba(78, 194, 202, 0.1)',
@@ -493,14 +523,15 @@ function HomePage() {
                        }}>
                     STEP 2
                   </div>
-                  <h2 className="text-3xl font-bold text-white mb-6">Continue with Premium</h2>
-                  <div className="text-4xl font-bold mb-4" style={{ color: 'var(--clann-blue)' }}>
+                  <h2 className="text-3xl font-bold text-white mb-4">Lock in Grandfather Pricing</h2>
+                  <div className="text-4xl font-bold mb-2" style={{ color: 'var(--clann-blue)' }}>
                     £50/month
                   </div>
+                  <div className="text-lg text-white/80 mb-6">For your team, for life - no price increases</div>
                   <div className="text-sm text-green-400 font-medium mb-6 bg-green-500/10 px-3 py-2 rounded-lg border border-green-500/20">
-                    🔒 Grandfather Price - £50 for life!
+                    🔒 Pilot clubs only: Lock in £50 for your team + all future features!
                   </div>
-                  <div className="text-gray-300 space-y-4">
+                  <div className="text-gray-300 space-y-4 mb-8">
                     <div className="flex items-center gap-3">
                       <span className="text-xl" style={{ color: 'var(--clann-blue)' }}>✓</span>
                       Unlimited Games
@@ -509,10 +540,19 @@ function HomePage() {
                       <span className="text-xl" style={{ color: 'var(--clann-blue)' }}>✓</span>
                       Priority Analysis
                     </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl" style={{ color: 'var(--clann-blue)' }}>✓</span>
+                      Individual Player Analytics
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl" style={{ color: 'var(--clann-blue)' }}>✓</span>
+                      All Future Features
+                    </div>
                   </div>
+
                   <button
                     onClick={() => window.open('https://buy.stripe.com/4gM5kD0Ss4tAboQ7ODfrW00', '_blank')}
-                    className="w-full mt-6 px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
+                    className="w-full px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg"
                     style={{ 
                       backgroundColor: 'var(--clann-blue)',
                       color: 'white'
@@ -522,34 +562,6 @@ function HomePage() {
                   >
                     Upgrade to Premium - £50/month
                   </button>
-                </div>
-
-                {/* AI Coaching Insights */}
-                <div className="md:col-span-2 bg-gray-800/50 rounded-xl p-8 border border-gray-700/50">
-                  <div className="inline-block bg-purple-500/10 text-purple-400 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                    COMING SOON
-                  </div>
-                  <h2 className="text-2xl font-bold text-white mb-6">AI Coaching</h2>
-                  <div className="space-y-6">
-                    <div className="text-gray-400">
-                      <div className="flex items-center gap-3">
-                        <span className="text-purple-400 text-xl">✓</span>
-                        Tactical Recommendations
-                      </div>
-                    </div>
-                    <div className="text-gray-400">
-                      <div className="flex items-center gap-3">
-                        <span className="text-purple-400 text-xl">✓</span>
-                        Counter-Attack Analysis
-                      </div>
-                    </div>
-                    <div className="text-gray-400">
-                      <div className="flex items-center gap-3">
-                        <span className="text-purple-400 text-xl">✓</span>
-                        Formation Optimization
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
 

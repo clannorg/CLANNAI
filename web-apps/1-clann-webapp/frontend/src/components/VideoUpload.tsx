@@ -12,6 +12,8 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUploadSuccess, onClose, tea
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [uploading, setUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
+  const [uploadSpeed, setUploadSpeed] = useState(0)
+  const [timeRemaining, setTimeRemaining] = useState(0)
   const [error, setError] = useState('')
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
@@ -24,14 +26,14 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUploadSuccess, onClose, tea
   // File validation
   const validateFile = (file: File) => {
     const allowedTypes = ['video/mp4', 'video/mov', 'video/quicktime', 'video/avi']
-    const maxSize = 2 * 1024 * 1024 * 1024 // 2GB
+    const maxSize = 5 * 1024 * 1024 * 1024 // 5GB
 
     if (!allowedTypes.includes(file.type)) {
       throw new Error('Invalid file type. Only MP4, MOV, and AVI files are allowed.')
     }
 
     if (file.size > maxSize) {
-      throw new Error('File size too large. Maximum size is 2GB.')
+      throw new Error('File size too large. Maximum size is 5GB.')
     }
 
     return true
@@ -95,6 +97,8 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUploadSuccess, onClose, tea
       setUploading(true)
       setError('')
       setUploadProgress(0)
+      setUploadSpeed(0)
+      setTimeRemaining(0)
 
       const token = localStorage.getItem('token')
       if (!token) {
@@ -123,20 +127,60 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUploadSuccess, onClose, tea
 
       const { uploadUrl, s3Key, publicUrl } = await presignedResponse.json()
 
-      // Step 2: Upload file directly to S3
+      // Step 2: Upload file directly to S3 with progress tracking
       setUploadProgress(25)
       
-      const uploadResponse = await fetch(uploadUrl, {
-        method: 'PUT',
-        body: selectedFile,
-        headers: {
-          'Content-Type': selectedFile.type
-        }
+      const uploadResponse = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        const startTime = Date.now()
+        let lastLoaded = 0
+        let lastTime = startTime
+        
+        // Track upload progress
+        xhr.upload.addEventListener('progress', (event) => {
+          if (event.lengthComputable) {
+            const currentTime = Date.now()
+            const timeElapsed = (currentTime - lastTime) / 1000 // seconds
+            
+            if (timeElapsed > 0.5) { // Update every 500ms to avoid too frequent updates
+              // Calculate speed
+              const bytesUploaded = event.loaded - lastLoaded
+              const speedBps = bytesUploaded / timeElapsed // bytes per second
+              const speedMbps = (speedBps / (1024 * 1024)).toFixed(1) // MB/s
+              
+              // Calculate time remaining
+              const remainingBytes = event.total - event.loaded
+              const estimatedSeconds = remainingBytes / speedBps
+              
+              setUploadSpeed(parseFloat(speedMbps))
+              setTimeRemaining(Math.ceil(estimatedSeconds))
+              
+              lastLoaded = event.loaded
+              lastTime = currentTime
+            }
+            
+            // Progress from 25% to 75% based on upload completion
+            const uploadProgress = (event.loaded / event.total) * 50 // 50% of total progress
+            setUploadProgress(25 + uploadProgress)
+          }
+        })
+        
+        xhr.addEventListener('load', () => {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(xhr)
+          } else {
+            reject(new Error(`S3 upload failed with status ${xhr.status}`))
+          }
+        })
+        
+        xhr.addEventListener('error', () => {
+          reject(new Error('Failed to upload file to S3'))
+        })
+        
+        xhr.open('PUT', uploadUrl)
+        xhr.setRequestHeader('Content-Type', selectedFile.type)
+        xhr.send(selectedFile)
       })
-
-      if (!uploadResponse.ok) {
-        throw new Error('Failed to upload file to S3')
-      }
 
       setUploadProgress(75)
 
@@ -187,6 +231,16 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUploadSuccess, onClose, tea
     const sizes = ['Bytes', 'KB', 'MB', 'GB']
     const i = Math.floor(Math.log(bytes) / Math.log(k))
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
+  }
+
+  const formatTimeRemaining = (seconds: number) => {
+    if (seconds < 60) return `${seconds}s`
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    if (minutes < 60) return `${minutes}m ${remainingSeconds}s`
+    const hours = Math.floor(minutes / 60)
+    const remainingMinutes = minutes % 60
+    return `${hours}h ${remainingMinutes}m`
   }
 
   return (
@@ -249,7 +303,7 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUploadSuccess, onClose, tea
                 </div>
                 <div>
                   <p className="text-lg font-medium text-gray-900">Drop your video file here</p>
-                  <p className="text-sm text-gray-500">or click to browse (MP4, MOV, AVI - max 2GB)</p>
+                  <p className="text-sm text-gray-500">or click to browse (MP4, MOV, AVI - max 5GB)</p>
                 </div>
                 <button
                   onClick={() => fileInputRef.current?.click()}
@@ -326,8 +380,18 @@ const VideoUpload: React.FC<VideoUploadProps> = ({ onUploadSuccess, onClose, tea
           {uploading && (
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Uploading...</span>
-                <span className="text-gray-600">{uploadProgress}%</span>
+                <div className="flex flex-col">
+                  <span className="text-gray-600">Uploading...</span>
+                  {uploadSpeed > 0 && (
+                    <span className="text-xs text-gray-500 mt-1">
+                      {uploadSpeed} MB/s
+                      {timeRemaining > 0 && (
+                        <> • {formatTimeRemaining(timeRemaining)} remaining</>
+                      )}
+                    </span>
+                  )}
+                </div>
+                <span className="text-gray-600">{Math.round(uploadProgress)}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div 

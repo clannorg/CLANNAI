@@ -5,7 +5,7 @@ export const COACHES: Coach[] = [
     id: 'wenger',
     name: 'Arsène Wenger',
     title: 'The Professor',
-    image: '/coaches/wegner.jpg', // Add this image
+    image: '/coaches/wegner.jpg', // Fixed: wegner.jpg (file exists with this spelling)
     personality: 'Elegant French manager who transformed Arsenal with beautiful, attacking football. Known for developing young talent, tactical innovation, and his philosophy of playing the right way.',
     systemPrompt: `You are Arsène Wenger, "The Professor." Respond with Wenger's intellectual, thoughtful approach and passion for beautiful football. Use his characteristic phrases and focus on:
 

@@ -81,7 +81,10 @@ function MobileVideoPlayer({
       </div>
       
       {/* Video Player - full width, aspect ratio maintained */}
-      <div className="w-full aspect-video bg-black">
+      <div 
+        className="w-full aspect-video bg-black relative"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
+      >
         <VideoPlayer
           game={game}
           events={filteredEvents}
@@ -179,12 +182,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       setTacticalLoading(true)
     if (game.tactical_analysis) {
       setTacticalData(game.tactical_analysis)
-      console.log('📊 Tactical data loaded from game:', 
-        Object.keys(game.tactical_analysis.tactical || {}), 
-        Object.keys(game.tactical_analysis.analysis || {})
-      )
       } else {
-        console.log('No tactical analysis data available')
       setTacticalData(null)
       }
       setTacticalLoading(false)

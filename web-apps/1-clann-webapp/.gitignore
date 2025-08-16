@@ -18,6 +18,7 @@ dist/
 
 # Sensitive implementation details - NEVER COMMIT
 SENSITIVE_IMPLEMENTATION_DETAILS.md
+ENVIRONMENT_CONFIG.md
 
 # IDE files
 .vscode/

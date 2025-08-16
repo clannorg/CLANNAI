@@ -1110,17 +1110,20 @@ router.post('/upload/confirm', authenticateToken, async (req, res) => {
     }
 
     // Create game record in database
-    const newGame = await createGame({
-      title: title.trim(),
-      description: description?.trim() || '',
-      video_url: null, // This is for VEO URLs
+    const newGame = await createGame(
+      title.trim(),
+      description?.trim() || '',
+      null, // video_url (this is for VEO URLs)
+      teamId,
+      req.user.id,
+      'upload' // file_type
+    );
+
+    // Update with S3 details
+    const updatedGame = await updateGame(newGame.id, {
       s3_key: s3Key,
       original_filename: originalFilename,
-      file_size: fileSize,
-      file_type: 'upload', // vs 'veo'
-      team_id: teamId,
-      uploaded_by: req.user.id,
-      status: 'pending'
+      file_size: fileSize
     });
 
     console.log(`📹 New video uploaded: ${title} (${originalFilename}) for team ${teamId}`);
@@ -1129,21 +1132,58 @@ router.post('/upload/confirm', authenticateToken, async (req, res) => {
       success: true,
       message: 'Video uploaded successfully',
       game: {
-        id: newGame.id,
-        title: newGame.title,
-        description: newGame.description,
-        s3_key: newGame.s3_key,
-        original_filename: newGame.original_filename,
-        file_size: newGame.file_size,
-        file_type: newGame.file_type,
-        team_id: newGame.team_id,
-        status: newGame.status,
-        created_at: newGame.created_at
+        id: updatedGame.id,
+        title: updatedGame.title,
+        description: updatedGame.description,
+        s3_key: updatedGame.s3_key,
+        original_filename: updatedGame.original_filename,
+        file_size: updatedGame.file_size,
+        file_type: updatedGame.file_type,
+        team_id: updatedGame.team_id,
+        status: updatedGame.status,
+        created_at: updatedGame.created_at
       }
     });
   } catch (error) {
     console.error('Upload confirmation error:', error);
     res.status(500).json({ error: 'Failed to confirm upload' });
+  }
+});
+
+// Delete game (only for game creators or company admins)
+router.delete('/:id', authenticateToken, async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    // Check if user has permission to delete this game
+    const isCreator = game.uploaded_by === req.user.id;
+    const isCompanyAdmin = req.user.role === 'company';
+    const isMemberOfTeam = await isTeamMember(req.user.id, game.team_id);
+
+    if (!isCreator && !isCompanyAdmin && !isMemberOfTeam) {
+      return res.status(403).json({ 
+        error: 'You do not have permission to delete this game' 
+      });
+    }
+
+    // Delete the game from database
+    const { pool } = require('../utils/database');
+    await pool.query('DELETE FROM games WHERE id = $1', [gameId]);
+
+    console.log(`🗑️ Game deleted: ${game.title} (${gameId}) by user ${req.user.id}`);
+
+    res.json({
+      success: true,
+      message: 'Game deleted successfully'
+    });
+  } catch (error) {
+    console.error('Delete game error:', error);
+    res.status(500).json({ error: 'Failed to delete game' });
   }
 });
 

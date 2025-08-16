@@ -3,8 +3,6 @@
 ## Current Ship List (Website)
 
 - [ ] Make insights better - Evidence pls, analytics display, suggested drills, embed youtube videos of recommended drills
-- [ ] AI coaches' ui needs to be easier to select other coaches
-- [ ] Revise everything to display nicely on the phone 
 - [ ] Get an AI coach to use evidence - Be ideal
 - [ ] Landing page - Updated with actual functionality 
 - [ ] Manual user correction
@@ -12,7 +10,8 @@
 - [ ] Ship this fucking shit pls
 
 ## Completed Recently
-- [x] Get meta data to display on user dash
+- [x] Get meta data to display on user dash ← Shows team matchups, goals, shots with colors
+- [x] Revise everything to display nicely on the phone ← Mobile responsive grids and layouts  
 - [x] Filtering events, team colours / emojis
 - [x] Download highlights (working properly now)
 
