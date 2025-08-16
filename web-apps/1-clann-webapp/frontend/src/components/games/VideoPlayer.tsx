@@ -272,18 +272,6 @@ export default function VideoPlayer({
                     {/* Clean Controls + Progress Bar */}
           <div className="mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),8px)]">
             <div className="flex items-center space-x-3">
-              {/* Previous Event */}
-              <button
-                onClick={handlePreviousEvent}
-                disabled={events.length === 0}
-                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Previous Event"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
               {/* Play/Pause */}
               <button
                 onClick={handlePlayPause}
@@ -298,6 +286,36 @@ export default function VideoPlayer({
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 )}
+              </button>
+
+              {/* Jump Backward 5s */}
+              <button
+                onClick={handleJumpBackward}
+                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
+                title="Jump Backward 5s"
+              >
+                -5s
+              </button>
+
+              {/* Jump Forward 5s */}
+              <button
+                onClick={handleJumpForward}
+                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
+                title="Jump Forward 5s"
+              >
+                +5s
+              </button>
+
+              {/* Previous Event */}
+              <button
+                onClick={handlePreviousEvent}
+                disabled={events.length === 0}
+                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                title="Previous Event"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
               </button>
 
               {/* Next Event */}
