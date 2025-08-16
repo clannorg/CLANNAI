@@ -5,7 +5,10 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import apiClient from '@/lib/api-client'
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
+if (!API_BASE_URL) {
+  throw new Error('NEXT_PUBLIC_API_URL environment variable is not set')
+}
 
 interface Game {
   id: string
