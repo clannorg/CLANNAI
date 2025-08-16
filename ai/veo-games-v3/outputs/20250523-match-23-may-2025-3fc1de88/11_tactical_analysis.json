@@ -3,56 +3,54 @@
     "team_name": "East London Ballers",
     "team_color": "blue",
     "strengths": [
-      "Early attacking intent",
-      "Resilience when down to 10 men",
-      "Effective goal-scoring opportunities",
-      "Strong finishing in the first half"
+      "Ability to break through defense",
+      "Counter-attacking potential"
     ],
     "weaknesses": [
-      "Discipline (Red Card)",
-      "Defensive lapses allowing equalisation"
+      "Inability to convert chances",
+      "Defensive vulnerabilities",
+      "Discipline (fouls)"
     ],
     "key_players": [
-      "Goal Scorers (Unspecified)",
-      "Player who received Red Card"
+      "Attacking midfielders",
+      "Defensive unit needing reinforcement"
     ],
-    "tactical_setup": "Aggressive attacking style, particularly in the early stages of the match. Likely focused on quick transitions and exploiting space.",
-    "performance_summary": "East London Ballers demonstrated a strong attacking presence, securing an early lead and ultimately winning the match. However, a lack of discipline resulting in a red card put them under pressure, requiring significant resilience to maintain their lead."
+    "tactical_setup": "Attempted to build from the back and launch counter-attacks.",
+    "performance_summary": "Showed moments of attacking promise but struggled to convert chances against a clinical opponent. Defensive vulnerabilities were exploited."
   },
   "team_b": {
     "team_name": "Opposition",
     "team_color": "white",
     "strengths": [
-      "Capitalizing on opponent's mistakes",
-      "Ability to equalize after going down",
-      "Strong pressure with a man advantage"
+      "Clinical finishing",
+      "Strong attacking intent",
+      "Effective counter-attacks"
     ],
     "weaknesses": [
-      "Slow start to the match",
-      "Inability to fully exploit man advantage",
-      "Defensive vulnerabilities leading to goals"
+      "Discipline (red card)",
+      "Defensive pressure from counter-attacks",
+      "Midfield contestation"
     ],
     "key_players": [
-      "Goal Scorers (Unspecified)",
-      "Attacking players exploiting numerical advantage"
+      "Attacking forwards",
+      "Midfield orchestrator"
     ],
-    "tactical_setup": "A reactive approach, focusing on capitalizing on opponent's errors. Likely aimed to exploit the space created by the East London Ballers' attacking focus.",
-    "performance_summary": "The Opposition showed resilience in equalizing the score twice, but ultimately failed to capitalize on the East London Ballers' red card, indicating potential weaknesses in their ability to close out games or exploit numerical advantages."
+    "tactical_setup": "Established attacking intent early, pressing high and converting chances effectively.",
+    "performance_summary": "Dominated the scoring with clinical finishing and effective counter-attacks. Maintained pressure throughout the game, despite a late red card."
   },
   "match_summary": {
-    "final_score": "East London Ballers 3 - 2 Opposition",
+    "final_score": "East London Ballers 1 - 4 Opposition",
     "key_moments": [
-      "East London Ballers' two quick goals in the first half",
-      "Opposition's first-half goal",
-      "Opposition's equalizing goal early in the second half",
-      "East London Ballers regaining the lead",
-      "East London Ballers' Red Card"
+      "Opposition's opening header at 32:48",
+      "Opposition's free kick goal at 35:37",
+      "East London Ballers' goal at 41:19",
+      "Opposition's counter-attack goal at 101:16"
     ],
     "turning_points": [
-      "East London Ballers securing a two-goal lead",
-      "Opposition's equalizer",
-      "East London Ballers player receiving a red card"
+      "Opposition's early goal surge",
+      "Opposition's rebound goal",
+      "Red card affecting Opposition's late game"
     ],
-    "overall_narrative": "A hard-fought match saw East London Ballers secure a narrow victory over the Opposition. Despite an early lead and later being reduced to ten men, East London Ballers displayed resilience to hold on for the win. The Opposition demonstrated fight but ultimately fell short."
+    "overall_narrative": "Opposition dominated the match with clinical finishing and strong attacking intent, securing a 4-1 victory over East London Ballers. East London Ballers showed moments of promise but struggled to convert chances and contain Opposition's attack."
   }
 }

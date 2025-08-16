@@ -235,14 +235,12 @@ def upload_match_to_s3(match_id):
             "core_files": {}
         }
         
-        # Core file mapping for website (no AI insights)
+        # Core file mapping for website (essential files only)
         core_file_mapping = {
-            "web_events_json": "web_events.json",
-            "web_events_array_json": "web_events_array.json", 
-            "match_summary_json": "9.5_match_summary.json",
-            "video_mp4": "video.mp4",
-            "definite_events_txt": "7.5_definite_events.txt",
-            "other_events_txt": "8.5_other_events.txt"
+            "web_events_array_json": "web_events_array.json",  # Main events file
+            "video_mp4": "video.mp4",                          # Match video
+            "match_metadata_json": "match_metadata.json",       # Final score, teams
+            "11_tactical_analysis_json": "11_tactical_analysis.json"  # Coaching insights
         }
         
         for key, filename in core_file_mapping.items():

@@ -114,6 +114,8 @@ class WebappFormatter:
         prompt = f"""
 Convert this football match events list into a JSON array for a webapp timeline.
 
+CRITICAL: You must return ONLY valid JSON that can be parsed by json.loads()
+
 TEAM MAPPING:
 - {team_a_name} → team: "{team_a_color}"
 - {team_b_name} → team: "{team_b_color}"
@@ -138,8 +140,20 @@ RULES:
 6. Sort by timestamp ascending
 7. Only include events with clear timestamps
 
-Return ONLY the JSON array, no other text.
-"""
+JSON REQUIREMENTS:
+- Start with [ and end with ]
+- Each event separated by comma
+- No trailing comma after last event
+- All strings in double quotes
+- No line breaks in strings
+- No markdown formatting
+- Return ONLY the JSON array, no explanations
+
+Example valid output:
+[
+  {{"type": "goal", "timestamp": 1948, "team": "{team_a_color}", "description": "Header from cross"}},
+  {{"type": "shot", "timestamp": 2137, "team": "{team_b_color}", "description": "Long range effort saved"}}
+]"""
 
         try:
             response = self.model.generate_content(prompt)
