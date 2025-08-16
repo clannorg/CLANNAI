@@ -113,12 +113,17 @@ class MegaAnalyzer:
         if len(timeline) > 100000:
             timeline = timeline[:100000] + "\n... (timeline truncated for analysis)"
         
+        # Load team config for actual names
+        team_config = self.load_team_config(data['match_id'])
+        team_a_name = team_config['team_a']['name']
+        team_b_name = team_config['team_b']['name']
+        
         prompt = f"""You are analyzing a 90-minute football match. You will create 3 separate plain text files:
 
 INPUTS:
 1. AI TIMELINE: Descriptions of 416x15-second clips covering the entire match
 2. VEO GROUND TRUTH: {data['veo_data']['total_events']} verified events including {len(veo_goals)} goals and {len(veo_shots)} shots
-3. TEAMS: Yellow team vs Blue team (use colors consistently)
+3. TEAMS: {team_a_name} vs {team_b_name} (use actual team names consistently)
 
 VEO VERIFIED GOALS ({len(veo_goals)} total):
 {json.dumps(veo_goals, indent=2)}

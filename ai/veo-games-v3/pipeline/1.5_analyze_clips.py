@@ -50,16 +50,29 @@ class SimpleClipAnalyzer:
         
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-2.5-pro')
+    
+    def load_team_config(self, match_id: str) -> dict:
+        """Load team configuration for consistent naming"""
+        config_path = Path(f"../outputs/{match_id}/match_config.json")
+        if config_path.exists():
+            with open(config_path, 'r') as f:
+                return json.load(f)
+        else:
+            # Fallback to generic names if config missing
+            return {
+                'team_a': {'name': 'Team A', 'jersey': 'first team colors'},
+                'team_b': {'name': 'Team B', 'jersey': 'second team colors'}
+            }
 
-    def get_simple_analysis_prompt(self) -> str:
-        """Neutral prompt for accurate clip analysis"""
-        return """Analyze this 15-second football clip. This is one segment from a 90-minute match.
+    def get_simple_analysis_prompt(self, team_a_name: str, team_a_colors: str, team_b_name: str, team_b_colors: str) -> str:
+        """Generate analysis prompt with actual team names and colors"""
+        return f"""Analyze this 15-second football clip. This is one segment from a 90-minute match.
 
 Describe what is happening as accurately as possible. Your analysis will be combined with other clips to create a complete match timeline.
 
 Team identification:
-- Blue team (in blue jerseys)
-- Black/White team (in black and white striped jerseys)
+- {team_a_name} (wearing {team_a_colors})
+- {team_b_name} (wearing {team_b_colors})
 
 Focus on:
 - Which team has possession
@@ -69,9 +82,9 @@ Focus on:
 
 Be precise and avoid speculation. Most clips will show routine play - that's normal.
 
-Format: "[Team] [main action]. [Any clear events with timing if they occur]"
+Format: "[Team Name] [main action]. [Any clear events with timing if they occur]"
 
-Example: "Blue team maintains possession in midfield" or "Black/White team takes throw-in. Key events: 00:08 shot taken, 00:10 saved by keeper" """
+Example: "{team_a_name} maintains possession in midfield" or "{team_b_name} takes throw-in. Key events: 00:08 shot taken, 00:10 saved by keeper" """
 
     def analyze_single_clip(self, clip_path: Path) -> tuple:
         """Analyze a single clip and return timestamp + description"""
@@ -102,10 +115,19 @@ Example: "Blue team maintains possession in midfield" or "Black/White team takes
             if uploaded_file.state.name == "FAILED":
                 return timestamp, "Analysis failed"
 
-            # Generate analysis
+            # Load team config for this match
+            match_id = clip_path.parent.parent.name  # Extract match_id from path
+            team_config = self.load_team_config(match_id)
+            
+            # Generate analysis with actual team names
             response = self.model.generate_content([
                 uploaded_file,
-                self.get_simple_analysis_prompt()
+                self.get_simple_analysis_prompt(
+                    team_config['team_a']['name'],
+                    team_config['team_a']['jersey'],
+                    team_config['team_b']['name'], 
+                    team_config['team_b']['jersey']
+                )
             ])
             
             # Clean up uploaded file
