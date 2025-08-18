@@ -39,30 +39,37 @@ class ClipAnalyzer:
             raise ValueError("GEMINI_API_KEY not found in environment variables")
         
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        self.model = genai.GenerativeModel('gemini-2.5-pro')
     
-    def get_analysis_prompt(self, team_a_name: str, team_a_colors: str, team_b_name: str, team_b_colors: str) -> str:
-        """Generate analysis prompt focused on 5-a-side goals and cool moments"""
-        return f"""Analyze this 15-second clip from a 5-a-side football game.
-
-**FOCUS ON: Goals and particularly cool moments**
+    def get_analysis_prompt(self, team_a_colors: str, team_b_colors: str) -> str:
+        """Generate analysis prompt focused on event detection for 5-a-side games"""
+        return f"""Analyze this 15-second clip from a 5-a-side football game for notable events.
 
 Team identification:
-- {team_a_name} (wearing {team_a_colors})
-- {team_b_name} (wearing {team_b_colors})
+- Team A: {team_a_colors}
+- Team B: {team_b_colors}
 
-Describe what happens in this clip, focusing on:
+**TASK**: Detect if there's a notable event worth highlighting. If yes, provide ONE sentence with:
+1. Exact timestamp (MM:SS format)
+2. What happened
+3. Who was involved (by team colors only)
 
-🥅 **GOALS**: Any goals scored - describe how it happened
-⚡ **COOL MOMENTS**: Skills, nutmegs, great saves, near-misses, tackles
-🏃 **KEY ACTIONS**: Who has the ball, attacking moves, defensive plays
-⏰ **TIMING**: When in the clip things happen (e.g., "at 0:08")
+**Notable events include:**
+- Goals or shots on target
+- Great saves by keeper
+- Skills (nutmegs, turns, dribbles)
+- Near misses or post hits
+- Fouls or cards
+- Key tackles or interceptions
 
-**5-a-side context**: Fast-paced, smaller pitch, fewer players, more individual skill
+**Format:**
+- If notable event: "[MM:SS] [Team color] [player action] - [brief why it's notable]"
+- If routine play: "No notable events - routine possession play"
 
-Keep it concise but capture the excitement. If nothing interesting happens, just say "Routine play - [brief description]".
-
-Format: One paragraph describing the action."""
+**Examples:**
+- "03:42 Orange bibs player scores from close range - clinical finish"
+- "08:15 Non-bibs keeper makes diving save - excellent reflexes"
+- "No notable events - routine possession play" """
     
     def analyze_clip(self, clip_path: Path, team_config: dict) -> str:
         """Analyze a single clip"""
@@ -80,9 +87,7 @@ Format: One paragraph describing the action."""
             
             # Get analysis prompt
             prompt = self.get_analysis_prompt(
-                team_config['team_a']['name'],
                 team_config['team_a']['colors'],
-                team_config['team_b']['name'],
                 team_config['team_b']['colors']
             )
             
@@ -131,19 +136,16 @@ def main():
     with open(team_config_file, 'r') as f:
         team_config = json.load(f)
     
-    # Load clips manifest
-    manifest_file = outputs_dir / 'clips_manifest.json'
-    if not manifest_file.exists():
-        print(f"❌ Error: Clips manifest not found: {manifest_file}")
+    # Get all clip files
+    clip_files = sorted(clips_dir.glob("clip_*.mp4"))
+    if not clip_files:
+        print(f"❌ No clips found in {clips_dir}")
         sys.exit(1)
-    
-    with open(manifest_file, 'r') as f:
-        manifest = json.load(f)
     
     print(f"🎬 Analyzing clips for: {match_id}")
     print(f"👕 Teams: {team_config['team_a']['name']} vs {team_config['team_b']['name']}")
-    print(f"📊 Clips to analyze: {len(manifest['clips'])}")
-    print("🎯 Focus: Goals and cool moments")
+    print(f"📊 Clips to analyze: {len(clip_files)}")
+    print("🎯 Focus: Goals and cool moments (factual analysis)")
     print("=" * 50)
     
     # Initialize analyzer
@@ -153,56 +155,54 @@ def main():
     successful_analyses = []
     failed_analyses = []
     
-    def analyze_single_clip(clip_filename):
-        clip_path = clips_dir / clip_filename
+    def analyze_single_clip(clip_path):
         if not clip_path.exists():
-            return clip_filename, f"Error: Clip file not found: {clip_path}"
+            return clip_path.name, f"Error: Clip file not found: {clip_path}"
+        
+        # Check if already analyzed
+        description_filename = clip_path.name.replace('.mp4', '.txt')
+        description_path = descriptions_dir / description_filename
+        
+        if description_path.exists():
+            print(f"⏭️  Skipping {clip_path.name} (already analyzed)")
+            return clip_path.name, "Already analyzed"
         
         description = analyzer.analyze_clip(clip_path, team_config)
         
         # Save description
-        description_filename = clip_filename.replace('.mp4', '.txt')
-        description_path = descriptions_dir / description_filename
-        
         with open(description_path, 'w') as f:
             f.write(description)
         
-        return clip_filename, description
+        return clip_path.name, description
     
     # Process clips in parallel (but limit concurrency for API limits)
     with ThreadPoolExecutor(max_workers=2) as executor:
         future_to_clip = {
-            executor.submit(analyze_single_clip, clip): clip 
-            for clip in manifest['clips']
+            executor.submit(analyze_single_clip, clip_path): clip_path 
+            for clip_path in clip_files
         }
         
         for i, future in enumerate(as_completed(future_to_clip)):
-            clip_filename = future_to_clip[future]
+            clip_path = future_to_clip[future]
             try:
                 clip_name, description = future.result()
-                if description.startswith("Error:"):
-                    failed_analyses.append(clip_name)
-                    print(f"❌ [{i+1}/{len(manifest['clips'])}] Failed: {clip_name}")
+                if description.startswith("Error:") or description == "Already analyzed":
+                    if description != "Already analyzed":
+                        failed_analyses.append(clip_name)
+                        print(f"❌ [{i+1}/{len(clip_files)}] Failed: {clip_name}")
                 else:
                     successful_analyses.append(clip_name)
-                    print(f"✅ [{i+1}/{len(manifest['clips'])}] {clip_name}")
+                    print(f"✅ [{i+1}/{len(clip_files)}] {clip_name}")
                     # Show preview of interesting clips
-                    if any(keyword in description.lower() for keyword in ['goal', 'cool', 'skill', 'save', 'shot']):
+                    if any(keyword in description.lower() for keyword in ['goal', 'skill', 'save', 'shot', 'nutmeg']):
                         preview = description[:100] + "..." if len(description) > 100 else description
-                        print(f"   🎯 {preview}")
+                        print(f"   🎯 HIGHLIGHT: {preview}")
             except Exception as e:
-                failed_analyses.append(clip_filename)
-                print(f"❌ [{i+1}/{len(manifest['clips'])}] Error: {clip_filename} - {e}")
-    
-    # Update manifest with analysis results
-    manifest['analyzed_clips'] = len(successful_analyses)
-    manifest['failed_analyses'] = len(failed_analyses)
-    
-    with open(manifest_file, 'w') as f:
-        json.dump(manifest, f, indent=2)
+                failed_analyses.append(clip_path.name)
+                print(f"❌ [{i+1}/{len(clip_files)}] Error: {clip_path.name} - {e}")
     
     print(f"\n✅ Clip analysis complete!")
-    print(f"📊 Success: {len(successful_analyses)}/{len(manifest['clips'])} clips")
+    print(f"📊 Success: {len(successful_analyses)}/{len(clip_files)} clips")
     if failed_analyses:
         print(f"❌ Failed: {len(failed_analyses)} clips")
     print(f"📁 Descriptions saved to: {descriptions_dir}")

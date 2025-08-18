@@ -9,12 +9,15 @@ import json
 from pathlib import Path
 
 def main():
-    if len(sys.argv) != 2:
-        print("Usage: python 1_setup_teams.py <match-id>")
+    if len(sys.argv) < 2 or len(sys.argv) > 3:
+        print("Usage: python 1_setup_teams.py <match-id> [game-type]")
         print("Example: python 1_setup_teams.py sunday-league-game-1")
+        print("Example: python 1_setup_teams.py leo1 6-a-side")
+        print("Game types: 5-a-side, 6-a-side, 7-a-side, 8-a-side, 11-a-side, futsal")
         sys.exit(1)
     
     match_id = sys.argv[1]
+    game_type = sys.argv[2] if len(sys.argv) == 3 else '5-a-side'
     
     # Create outputs directory
     outputs_dir = Path(__file__).parent.parent / 'outputs' / match_id

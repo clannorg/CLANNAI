@@ -1,0 +1,98 @@
+[
+  {
+    "timestamp": 20,
+    "type": "goal",
+    "team": "blue",
+    "description": "lostthehead opens the scoring with a quick interception and a low shot from outside the area that beats the diving keeper.",
+    "excitement_level": 8,
+    "original_team_name": "lostthehead"
+  },
+  {
+    "timestamp": 36,
+    "type": "goal",
+    "team": "blue",
+    "description": "lostthehead scores again with a powerful shot from the center of the pitch that finds the back of the net.",
+    "excitement_level": 8,
+    "original_team_name": "lostthehead"
+  },
+  {
+    "timestamp": 49,
+    "type": "goal",
+    "team": "blue",
+    "description": "Following an interception, a low shot from the lostthehead player flies past the keeper to make it three.",
+    "excitement_level": 8,
+    "original_team_name": "lostthehead"
+  },
+  {
+    "timestamp": 89,
+    "type": "goal",
+    "team": "red",
+    "description": "clannai gets one back! A well-taken shot from outside the D loops just over the goalie's head and into the net.",
+    "excitement_level": 9,
+    "original_team_name": "clannai"
+  },
+  {
+    "timestamp": 97,
+    "type": "goal",
+    "team": "blue",
+    "description": "lostthehead responds immediately with a goal from the center of the field after intercepting the ball.",
+    "excitement_level": 9,
+    "original_team_name": "lostthehead"
+  },
+  {
+    "timestamp": 131,
+    "type": "goal",
+    "team": "red",
+    "description": "A great long-range effort from clannai, who shoot from just outside the center circle and score with a low, straight strike.",
+    "excitement_level": 9,
+    "original_team_name": "clannai"
+  },
+  {
+    "timestamp": 171,
+    "type": "save",
+    "team": "blue",
+    "description": "The lostthehead goalkeeper makes a great save, blocking a powerful shot taken from the center circle.",
+    "excitement_level": 7,
+    "original_team_name": "lostthehead"
+  },
+  {
+    "timestamp": 421,
+    "type": "goal",
+    "team": "red",
+    "description": "clannai scores right at the start of the clip with a quick shot from the center of the pitch.",
+    "excitement_level": 8,
+    "original_team_name": "clannai"
+  },
+  {
+    "timestamp": 465,
+    "type": "goal",
+    "team": "red",
+    "description": "clannai completes the comeback, scoring from the left-hand side to level the match.",
+    "excitement_level": 8,
+    "original_team_name": "clannai"
+  },
+  {
+    "timestamp": 474,
+    "type": "near_miss",
+    "team": "blue",
+    "description": "A fantastic counter-attack and shot from just outside the D by lostthehead narrowly misses the top corner.",
+    "excitement_level": 7,
+    "original_team_name": "lostthehead"
+  },
+  {
+    "timestamp": 596,
+    "type": "save",
+    "team": "red",
+    "description": "The clannai keeper makes an important save to keep the scores level.",
+    "excitement_level": 7,
+    "original_team_name": "clannai"
+  },
+  {
+    "timestamp": 607,
+    "type": "near_miss",
+    "team": "red",
+    "description": "Agonizingly close for clannai as a low, hard shot smashes against the crossbar and bounces out.",
+    "excitement_level": 8,
+    "original_team_name": "clannai"
+  }
+]

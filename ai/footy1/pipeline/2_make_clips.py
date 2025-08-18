@@ -49,7 +49,7 @@ def extract_clip_fast(video_path, start_time, duration, output_path):
             return False
 
 def get_video_duration(video_path):
-    """Get video duration in seconds"""
+    """Get video duration in seconds using ffprobe"""
     cmd = [
         'ffprobe',
         '-v', 'quiet',
@@ -61,8 +61,69 @@ def get_video_duration(video_path):
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
         data = json.loads(result.stdout)
-        return float(data['format']['duration'])
-    except:
+        duration = float(data['format']['duration'])
+        return duration
+    except (subprocess.CalledProcessError, KeyError, ValueError):
+        print("⚠️  Could not determine video duration, using 90 minutes default")
+        return 5400  # 90 minutes default
+
+def generate_clips_ultra_fast(video_path, clips_dir, video_duration):
+    """ULTRA FAST: Single ffmpeg command to generate all clips at once"""
+    print("🚀 ULTRA FAST MODE: Using ffmpeg segment (10-50x faster!)")
+    
+    try:
+        # Single GPU-accelerated command to create ALL clips
+        cmd = [
+            'ffmpeg',
+            '-hwaccel', 'cuda',  # GPU acceleration
+            '-i', str(video_path),
+            '-f', 'segment',  # Segment mode - creates all clips in one pass!
+            '-segment_time', '15',  # 15-second segments
+            '-segment_format', 'mp4',
+            '-c', 'copy',  # Stream copy - no re-encoding
+            '-reset_timestamps', '1',  # Reset timestamps for each clip
+            '-segment_start_number', '0',
+            '-y',  # Overwrite
+            str(clips_dir / 'temp_clip_%04d.mp4')  # Temporary naming
+        ]
+        
+        print("⚡ Running single ffmpeg command for all clips...")
+        start_time = time.time()
+        
+        subprocess.run(cmd, capture_output=True, text=True, check=True)
+        
+        segment_time = time.time() - start_time
+        print(f"✅ Segmentation complete in {segment_time:.1f} seconds!")
+        
+        # Rename clips to our time-based format
+        print("🔄 Renaming clips to time-based format...")
+        rename_start = time.time()
+        
+        temp_clips = sorted(clips_dir.glob('temp_clip_*.mp4'))
+        renamed_count = 0
+        
+        for i, temp_clip in enumerate(temp_clips):
+            start_seconds = i * 15
+            minutes = int(start_seconds // 60)
+            seconds = int(start_seconds % 60)
+            
+            new_name = f"clip_{minutes:02d}m{seconds:02d}s.mp4"
+            new_path = clips_dir / new_name
+            
+            temp_clip.rename(new_path)
+            renamed_count += 1
+        
+        rename_time = time.time() - rename_start
+        total_time = time.time() - start_time
+        
+        print(f"✅ Renamed {renamed_count} clips in {rename_time:.1f} seconds")
+        print(f"🚀 TOTAL TIME: {total_time:.1f} seconds ({renamed_count/total_time:.1f} clips/sec)")
+        
+        return renamed_count
+        
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Ultra-fast mode failed: {e}")
+        print("🔄 Falling back to parallel processing...")
         return None
 
 def main():
@@ -95,15 +156,46 @@ def main():
     
     print(f"⏱️  Video duration: {duration:.1f} seconds ({duration/60:.1f} minutes)")
     
-    # Generate clips every 15 seconds
+    # Calculate expected clips
     clip_duration = 15
-    clips_to_make = []
+    num_clips = int(duration // clip_duration)
+    print(f"📊 Will create {num_clips} clips")
     
+    print("⚡ Attempting ULTRA FAST mode with GPU acceleration...")
+    
+    # Try ultra-fast mode first
+    ultra_fast_result = generate_clips_ultra_fast(video_path, clips_dir, duration)
+    if ultra_fast_result:
+        print(f"🎯 ULTRA FAST SUCCESS! Created {ultra_fast_result} clips")
+        
+        # Create manifest for compatibility
+        manifest = {
+            'match_id': match_id,
+            'video_path': str(video_path),
+            'video_duration': duration,
+            'clip_duration': clip_duration,
+            'total_clips': ultra_fast_result,
+            'successful_clips': ultra_fast_result,
+            'failed_clips': 0,
+            'method': 'ultra_fast_segment'
+        }
+        
+        manifest_file = outputs_dir / 'clips_manifest.json'
+        with open(manifest_file, 'w') as f:
+            json.dump(manifest, f, indent=2)
+        
+        print(f"📄 Manifest saved to: {manifest_file}")
+        print(f"\n🎯 Ready for step 3: python 3_analyze_clips.py {match_id}")
+        return
+    
+    # Fallback to parallel processing if ultra-fast fails
+    print("🔄 Using parallel processing fallback...")
+    
+    # Generate clips every 15 seconds
+    clips_to_make = []
     current_time = 0
-    clip_number = 0
     
     while current_time < duration:
-        # Don't make clips that would extend past the video
         actual_duration = min(clip_duration, duration - current_time)
         if actual_duration < 5:  # Skip very short clips at the end
             break
@@ -121,16 +213,12 @@ def main():
         })
         
         current_time += clip_duration
-        clip_number += 1
-    
-    print(f"📊 Will create {len(clips_to_make)} clips")
     
     # Extract clips in parallel
     successful_clips = []
     failed_clips = []
     
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        # Submit all clip extraction jobs
+    with ThreadPoolExecutor(max_workers=8) as executor:
         future_to_clip = {
             executor.submit(
                 extract_clip_fast, 
@@ -141,7 +229,6 @@ def main():
             ): clip for clip in clips_to_make
         }
         
-        # Process completed clips
         for i, future in enumerate(as_completed(future_to_clip)):
             clip = future_to_clip[future]
             try:
@@ -165,7 +252,7 @@ def main():
         'total_clips': len(clips_to_make),
         'successful_clips': len(successful_clips),
         'failed_clips': len(failed_clips),
-        'clips': successful_clips
+        'method': 'parallel_fallback'
     }
     
     manifest_file = outputs_dir / 'clips_manifest.json'
