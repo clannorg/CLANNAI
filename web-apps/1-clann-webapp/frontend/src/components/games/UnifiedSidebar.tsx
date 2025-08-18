@@ -812,7 +812,10 @@ export default function UnifiedSidebar({
                 tacticalLoading={tacticalLoading} 
                 gameId={gameId}
                 onSeekToTimestamp={onSeekToTimestamp}
-                game={game}
+                game={{
+                  ...game,
+                  ai_analysis: allEvents
+                }}
               />
             </div>
           </div>
