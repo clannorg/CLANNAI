@@ -1,95 +1,167 @@
 {
-  "match_summary": "An action-packed and high-scoring game where lostthehead stormed into an early lead with a flurry of goals. However, clannai fought back resiliently, scoring several impressive goals to level the match, which also featured some key saves and near-misses.",
-  "final_score": "clannai 4 - 4 lostthehead",
+  "match_summary": "This was a high-scoring match completely dominated by the Non-bibs team, who consistently found the back of the net. The Orange bibs team scored some powerful goals of their own, but were ultimately overwhelmed by the relentless attack from their opponents.",
+  "final_score": "Non-bibs 17 - 6 Orange bibs",
   "highlights": [
     {
-      "timestamp": "00:20",
+      "timestamp": "02:00",
       "type": "goal",
-      "team": "lostthehead",
-      "description": "lostthehead opens the scoring with a quick interception and a low shot from outside the area that beats the diving keeper.",
+      "team": "Non-bibs",
+      "description": "Non-bibs player scores from distance, with the ball clearly visible and stationary in the back of the net.",
       "excitement_level": 8
     },
     {
-      "timestamp": "00:36",
+      "timestamp": "02:30",
       "type": "goal",
-      "team": "lostthehead",
-      "description": "lostthehead scores again with a powerful shot from the center of the pitch that finds the back of the net.",
+      "team": "Non-bibs",
+      "description": "A Non-bibs player shoots, with overwhelming evidence of the ball stationary in the net.",
       "excitement_level": 8
     },
     {
-      "timestamp": "00:49",
+      "timestamp": "02:45",
       "type": "goal",
-      "team": "lostthehead",
-      "description": "Following an interception, a low shot from the lostthehead player flies past the keeper to make it three.",
-      "excitement_level": 8
-    },
-    {
-      "timestamp": "01:29",
-      "type": "goal",
-      "team": "clannai",
-      "description": "clannai gets one back! A well-taken shot from outside the D loops just over the goalie's head and into the net.",
+      "team": "Non-bibs",
+      "description": "A clear goal for the Non-bibs team, confirmed by the ball being stationary in the net and a wild celebration.",
       "excitement_level": 9
     },
     {
-      "timestamp": "01:37",
+      "timestamp": "03:45",
       "type": "goal",
-      "team": "lostthehead",
-      "description": "lostthehead responds immediately with a goal from the center of the field after intercepting the ball.",
+      "team": "Orange bibs",
+      "description": "An Orange bibs player scores a definite goal, with the ball clearly shown entering and resting inside the net.",
+      "excitement_level": 8
+    },
+    {
+      "timestamp": "06:15",
+      "type": "goal",
+      "team": "Orange bibs",
+      "description": "Goal for Orange bibs, with the ball stationary in the net followed by a wild celebration.",
       "excitement_level": 9
     },
     {
-      "timestamp": "02:11",
+      "timestamp": "06:45",
       "type": "goal",
-      "team": "clannai",
-      "description": "A great long-range effort from clannai, who shoot from just outside the center circle and score with a low, straight strike.",
+      "team": "Non-bibs",
+      "description": "A Non-bibs player shoots and the ball hits the back of the net with force.",
       "excitement_level": 9
     },
     {
-      "timestamp": "02:51",
-      "type": "save",
-      "team": "lostthehead",
-      "description": "The lostthehead goalkeeper makes a great save, blocking a powerful shot taken from the center circle.",
-      "excitement_level": 7
-    },
-    {
-      "timestamp": "07:01",
+      "timestamp": "07:30",
       "type": "goal",
-      "team": "clannai",
-      "description": "clannai scores right at the start of the clip with a quick shot from the center of the pitch.",
-      "excitement_level": 8
+      "team": "Non-bibs",
+      "description": "A Non-bibs player shoots, the ball flies past the keeper and hits the back of the net.",
+      "excitement_level": 9
     },
     {
-      "timestamp": "07:45",
+      "timestamp": "08:15",
       "type": "goal",
-      "team": "clannai",
-      "description": "clannai completes the comeback, scoring from the left-hand side to level the match.",
+      "team": "Orange bibs",
+      "description": "An Orange bibs player scores, confirmed by the ball being stationary in the net and a wild celebration.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "08:45",
+      "type": "goal",
+      "team": "Orange bibs",
+      "description": "An emphatic goal for Orange bibs as the ball smashes into the back of the net, causing it to bulge as teammates celebrate.",
+      "excitement_level": 10
+    },
+    {
+      "timestamp": "09:30",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "A Non-bibs player scores, with the ball stationary in the net followed by a wild celebration.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "12:15",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "Goal for Non-bibs, the ball is stationary in the net and players engage in a wild celebration.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "12:30",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "A Non-bibs player scores a clear goal, with the ball entering the net and the player celebrating.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "13:00",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "Another goal for the Non-bibs team, confirmed by the ball stationary in the net and a wild celebration.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "23:30",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "Goal for the Non-bibs team, with the ball stationary in the net leading to a wild celebration.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "26:15",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "A Non-bibs player scores, evidenced by the ball stationary in the net and a wild celebration.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "26:30",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "A clear goal for the Non-bibs team as the ball is seen stationary in the net.",
       "excitement_level": 8
     },
     {
-      "timestamp": "07:54",
-      "type": "near_miss",
-      "team": "lostthehead",
-      "description": "A fantastic counter-attack and shot from just outside the D by lostthehead narrowly misses the top corner.",
-      "excitement_level": 7
+      "timestamp": "27:30",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "A fantastic long-range goal from a Non-bibs player, with the ball clearly crossing the line and hitting the back of the net.",
+      "excitement_level": 9
     },
     {
-      "timestamp": "09:56",
-      "type": "save",
-      "team": "clannai",
-      "description": "The clannai keeper makes an important save to keep the scores level.",
-      "excitement_level": 7
+      "timestamp": "30:15",
+      "type": "goal",
+      "team": "Orange bibs",
+      "description": "A powerful shot from an Orange bibs player causes the net to bulge as the ball flies in.",
+      "excitement_level": 10
     },
     {
-      "timestamp": "10:07",
-      "type": "near_miss",
-      "team": "clannai",
-      "description": "Agonizingly close for clannai as a low, hard shot smashes against the crossbar and bounces out.",
-      "excitement_level": 8
+      "timestamp": "30:30",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "A Non-bibs player scores, followed by a celebration with the ball stationary in the net.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "31:30",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "Goal for the Non-bibs team, the ball rests in the net and the team engages in a wild celebration.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "34:45",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "A thunderous strike from a Non-bibs player slams into the back of the net, causing it to bulge dramatically.",
+      "excitement_level": 10
+    },
+    {
+      "timestamp": "35:15",
+      "type": "goal",
+      "team": "Orange bibs",
+      "description": "An Orange bibs player scores a clear goal, with the ball stationary in the net and the player celebrating.",
+      "excitement_level": 9
+    },
+    {
+      "timestamp": "37:45",
+      "type": "goal",
+      "team": "Non-bibs",
+      "description": "The Non-bibs team scores again, confirmed by the ball resting in the net and a wild celebration.",
+      "excitement_level": 9
     }
-  ],
-  "top_moments": [
-    "A fantastic long-range goal from clannai, scored from outside the center circle (02:11).",
-    "clannai comes inches away from taking the lead as a powerful shot ricochets off the crossbar (10:07).",
-    "lostthehead scores a rapid-response goal from midfield immediately after an interception (01:37)."
   ]
 }

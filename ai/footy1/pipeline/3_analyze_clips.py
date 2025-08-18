@@ -41,35 +41,68 @@ class ClipAnalyzer:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-2.5-pro')
     
-    def get_analysis_prompt(self, team_a_colors: str, team_b_colors: str) -> str:
-        """Generate analysis prompt focused on event detection for 5-a-side games"""
-        return f"""Analyze this 15-second clip from a 5-a-side football game for notable events.
+    def get_analysis_prompt(self, team_a_colors: str, team_b_colors: str, clip_name: str) -> str:
+        """Generate analysis prompt for precise goal detection with global timestamps"""
+        
+        # Extract global start time from clip name (e.g., clip_03m30s.mp4 -> 210 seconds)
+        import re
+        match = re.search(r'clip_(\d+)m(\d+)s', clip_name)
+        if match:
+            minutes = int(match.group(1))
+            seconds = int(match.group(2))
+            global_start_seconds = minutes * 60 + seconds
+        else:
+            global_start_seconds = 0
+            
+        return f"""Analyze this 15-second clip from a 5-a-side football game.
 
-Team identification:
+**CLIP CONTEXT:**
+- Global match time starts at: {global_start_seconds//60:02d}m{global_start_seconds%60:02d}s
 - Team A: {team_a_colors}
 - Team B: {team_b_colors}
 
-**TASK**: Detect if there's a notable event worth highlighting. If yes, provide ONE sentence with:
-1. Exact timestamp (MM:SS format)
-2. What happened
-3. Who was involved (by team colors only)
+**STATISTICAL REALITY - GOALS ARE EXTREMELY RARE:**
+**CRITICAL CONTEXT:** In a typical 5-a-side match:
+- Total goals in entire match: ~24 goals (12 per team)
+- Total clips to analyze: 209 clips
+- **PROBABILITY: Only ~11% of clips contain a goal**
+- **89% of clips have NO GOALS - just shots, saves, misses**
 
-**Notable events include:**
-- Goals or shots on target
-- Great saves by keeper
-- Skills (nutmegs, turns, dribbles)
-- Near misses or post hits
-- Fouls or cards
-- Key tackles or interceptions
+**YOUR JOB:** You are analyzing 1 random clip out of 209. Statistically, there's only an 11% chance this clip contains a goal.
 
-**Format:**
-- If notable event: "[MM:SS] [Team color] [player action] - [brief why it's notable]"
-- If routine play: "No notable events - routine possession play"
+**GOAL = ABSOLUTE CERTAINTY REQUIRED (EXTREMELY RARE):**
+- Ball is COMPLETELY STATIONARY in back of net for multiple seconds
+- Net is dramatically bulging with ball clearly visible inside
+- Players are celebrating wildly + keeper looks defeated
+- Multiple simultaneous visual proofs
+- You would bet your life that it's definitely a goal
+- ZERO doubt whatsoever - if you have ANY hesitation = SHOT
+
+**MOST CLIPS = NOTHING SIGNIFICANT (89% PROBABILITY):**
+- Most clips have no notable events worth reporting
+- Only report SHOT if it's a clear, significant attempt on goal
+- Random ball movement = "No notable events detected"
+- Unclear ball direction = "No notable events detected"
+- Minor attempts = "No notable events detected"
+- SHOT = Only clear, significant goal attempts worth highlighting
+
+**STATISTICAL MINDSET:**
+- Start with assumption: "Nothing significant happens in this clip"
+- Most clips = "No notable events detected"
+- Only report SHOT for clear, significant goal attempts
+- Only report GOAL if evidence is absolutely overwhelming AND you have zero doubt
+- Remember: 9 out of 10 clips have no goals
+- Be EXTREMELY conservative - err on the side of "No notable events detected"
+
+**REQUIRED FORMAT:**
+- "GOAL at [MM:SS] - [Team] player shoots, overwhelming evidence: ball stationary in net + wild celebration"
+- "SHOT at [MM:SS] - [Team] player shoots from [location], statistically likely not a goal"
+- "No notable events detected"
 
 **Examples:**
-- "03:42 Orange bibs player scores from close range - clinical finish"
-- "08:15 Non-bibs keeper makes diving save - excellent reflexes"
-- "No notable events - routine possession play" """
+- "GOAL at 03:37 - Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration"
+- "SHOT at 05:22 - Orange bibs player shoots toward goal, statistically likely not a goal"
+- "SHOT at 12:43 - Non-bibs player shoots, outcome unclear, assume not a goal"""
     
     def analyze_clip(self, clip_path: Path, team_config: dict) -> str:
         """Analyze a single clip"""
@@ -88,7 +121,8 @@ Team identification:
             # Get analysis prompt
             prompt = self.get_analysis_prompt(
                 team_config['team_a']['colors'],
-                team_config['team_b']['colors']
+                team_config['team_b']['colors'],
+                clip_path.name
             )
             
             # Analyze clip
@@ -176,7 +210,7 @@ def main():
         return clip_path.name, description
     
     # Process clips in parallel (but limit concurrency for API limits)
-    with ThreadPoolExecutor(max_workers=2) as executor:
+    with ThreadPoolExecutor(max_workers=30) as executor:
         future_to_clip = {
             executor.submit(analyze_single_clip, clip_path): clip_path 
             for clip_path in clip_files

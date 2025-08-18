@@ -1,19 +1,17 @@
 {
   "match_id": "leo1",
   "match_type": "5-a-side",
-  "team_a_name": "clannai",
+  "team_a_name": "clann",
   "team_b_name": "lostthehead",
-  "team_a_colors": "non-bibs / colours",
+  "team_a_colors": "non bibs / colours",
   "team_b_colors": "orange bibs",
-  "final_score": "clannai 4 - 4 lostthehead",
-  "total_events": 12,
+  "final_score": "Non-bibs 17 - 6 Orange bibs",
+  "total_events": 23,
   "event_counts": {
-    "goal": 8,
-    "save": 2,
-    "near_miss": 2
+    "goal": 23
   },
   "has_goals": true,
-  "goals_scored": 8,
-  "match_summary": "An action-packed and high-scoring game where lostthehead stormed into an early lead with a flurry of goals. However, clannai fought back resiliently, scoring several impressive goals to level the match, which also featured some key saves and near-misses.",
+  "goals_scored": 23,
+  "match_summary": "This was a high-scoring match completely dominated by the Non-bibs team, who consistently found the back of the net. The Orange bibs team scored some powerful goals of their own, but were ultimately overwhelmed by the relentless attack from their opponents.",
   "analysis_focus": "goals_and_cool_moments"
 }
