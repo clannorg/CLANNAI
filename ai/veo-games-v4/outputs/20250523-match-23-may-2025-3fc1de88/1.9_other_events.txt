@@ -1,0 +1,216 @@
+# Other Events (V4 Pure Color) - 20250523-match-23-may-2025-3fc1de88
+# Generated: 2025-08-16T21:24:25.945790
+# Method: AI extraction from complete timeline
+# Colors: blue team vs white team
+# Focus: Fouls, cards, corners, substitutions, other significant events
+
+Here is the analysis of significant non-goal/shot events from the match timeline, adhering to the pure color identification rules.
+
+### **Significant Match Events**
+
+=== FOULS & FREE KICKS ===
+Timestamp: 01:15 (75s)
+Team: white team
+Type: Free kick
+Description: The white team takes an attacking free kick from outside the penalty area, with the blue team defending with a wall.
+
+Timestamp: 17:15 (1035s)
+Team: white team
+Type: Free kick
+Description: The white team prepares for a free kick outside the blue team's penalty area.
+
+Timestamp: 18:00 (1080s)
+Team: blue team
+Type: Free kick
+Description: The blue team prepares for a free kick from deep in the opposition's half.
+
+Timestamp: 24:45 (1485s)
+Team: blue team
+Type: Foul
+Description: A foul is committed by the blue team at 24:48. The white team is awarded a free kick from their own half.
+
+Timestamp: 34:30 (2070s)
+Team: blue team
+Type: Free kick
+Description: The blue team takes a free kick from just outside the penalty box, which the white team defends.
+
+Timestamp: 37:30 (2250s)
+Team: white team
+Type: Foul
+Description: A player from the white team commits a foul near the centre circle at 37:40, resulting in a free kick for the blue team.
+
+Timestamp: 42:45 (2565s)
+Team: white team
+Type: Foul
+Description: A white team player commits a foul at 42:54, and the referee awards a free kick to the blue team.
+
+Timestamp: 45:15 (2715s)
+Team: white team
+Type: Foul
+Description: Following an attack, the blue team wins a free kick after a foul is committed by the white team.
+
+Timestamp: 48:45 (2925s)
+Team: blue team
+Type: Foul
+Description: The white team wins a free kick in the blue team's half after a foul by the blue team.
+
+Timestamp: 56:00 (3360s)
+Team: blue team
+Type: Foul
+Description: A foul is committed by the blue team at 56:01. The white team takes the resulting free kick and plays a long ball forward.
+
+Timestamp: 58:00 (3480s)
+Team: blue team
+Type: Foul
+Description: A foul is committed by a blue team player at 58:11, resulting in a stoppage of play.
+
+Timestamp: 66:00 (3960s)
+Team: blue team
+Type: Foul
+Description: A foul is committed by a blue team player, leading the referee to award a free kick to the white team in their own half.
+
+Timestamp: 92:30 (5550s)
+Team: blue team
+Type: Foul
+Description: A blue team player commits a foul at 92:34, and the referee awards a free kick to the white team.
+
+Timestamp: 93:15 (5595s)
+Team: white team
+Type: Foul
+Description: The referee whistles for a foul against the white team at 93:26, awarding a free kick to the blue team in the center of the pitch.
+
+Timestamp: 97:00 (5820s)
+Team: white team
+Type: Foul
+Description: A foul is committed by the white team at 97:10, resulting in a free kick for the blue team.
+
+Timestamp: 108:00 (6480s)
+Team: white team
+Type: Foul
+Description: A free kick is awarded to the blue team at 108:04 inside their own half following a foul by the white team.
+
+Timestamp: 111:15 (6675s)
+Team: blue team
+Type: Foul
+Description: A foul is committed by the blue team at 111:19, resulting in a free kick for the white team.
+
+Timestamp: 120:30 (7230s)
+Team: blue team
+Type: Foul
+Description: A white team player is tackled just outside the penalty area. At 120:41, the referee whistles for a foul against the blue team.
+
+Timestamp: 137:30 (8250s)
+Team: white team
+Type: Foul
+Description: A blue team player is brought down in the center of the pitch. A foul is awarded to the blue team at 137:42.
+
+=== CARDS ===
+Timestamp: 104:45 (6285s)
+Team: blue team
+Type: Yellow card
+Description: Following a foul on a player from the white team, the referee stops play and shows a yellow card at 104:48.
+
+Timestamp: 105:00 (6300s)
+Team: white team
+Type: Red card
+Description: Play is stopped following an incident involving a player on the ground. A red card is shown to a white team player at 105:01.
+
+=== CORNERS ===
+Timestamp: 02:00 (120s)
+Team: white team
+Type: Corner
+Description: The white team prepares to take a corner kick from the left side of the pitch.
+
+Timestamp: 39:45 (2385s)
+Team: blue team
+Type: Corner
+Description: The blue team takes a corner kick from the left, which is cleared by the white team's defense.
+
+Timestamp: 41:00 (2460s)
+Team: white team
+Type: Corner
+Description: The white team takes a corner kick. They recover the ball after the initial clearance and maintain possession.
+
+Timestamp: 44:45 (2685s)
+Team: white team
+Type: Corner
+Description: The white team takes a corner kick from the left. The initial cross is cleared, but they recover the loose ball.
+
+Timestamp: 52:45 (3165s)
+Team: blue team
+Type: Corner
+Description: The blue team takes a corner kick, which is headed clear by a white team defender.
+
+Timestamp: 62:15 (3735s)
+Team: white team
+Type: Corner
+Description: An attack from the white team leads to a corner kick at 62:19, which is taken short.
+
+Timestamp: 68:15 (4095s)
+Team: blue team
+Type: Corner
+Description: The blue team prepares to take a corner kick.
+
+Timestamp: 69:00 (4140s)
+Team: blue team
+Type: Corner
+Description: The blue team takes a corner kick, which is cleared by the white team's defense.
+
+Timestamp: 69:30 (4170s)
+Team: white team
+Type: Corner
+Description: The white team takes a corner kick, which is defended and cleared by the blue team.
+
+Timestamp: 87:15 (5235s)
+Team: white team
+Type: Corner
+Description: The white team scores a goal at 87:21 immediately following a corner kick.
+
+Timestamp: 88:15 (5295s)
+Team: white team
+Type: Corner
+Description: The white team attacks from a corner kick, which leads to a shot that hits the crossbar.
+
+Timestamp: 89:30 (5370s)
+Team: white team
+Type: Corner
+Description: The white team takes a corner kick, resulting in a goal from a header at 89:34.
+
+Timestamp: 109:45 (6585s)
+Team: white team
+Type: Corner
+Description: The white team takes a corner kick, which the blue team defends and clears.
+
+Timestamp: 114:00 (6840s)
+Team: white team
+Type: Corner
+Description: The white team's attack begins with a corner kick from the left side.
+
+Timestamp: 114:45 (6885s)
+Team: blue team
+Type: Corner
+Description: The blue team takes a short corner kick and maintains an attacking position.
+
+=== SUBSTITUTIONS ===
+*(No substitutions were clearly described in the provided timeline.)*
+
+=== OTHER SIGNIFICANT EVENTS ===
+Timestamp: 31:15 (1875s)
+Team: white team
+Type: Offside
+Description: The white team's attack is stopped at 31:25 for an offside foul.
+
+Timestamp: 49:15 (2955s)
+Team: blue team
+Type: Throw-in
+Description: The blue team takes a long throw-in, sending the ball directly into the penalty area.
+
+Timestamp: 110:15 (6615s)
+Team: blue team
+Type: Offside
+Description: A quick counter-attack by the blue team is halted when the referee blows the whistle for an offside infringement at 110:26.
+
+Timestamp: 113:00 (6780s)
+Team: blue team
+Type: Goalkeeper action
+Description: The blue team's goalkeeper comes out to the halfway line to punch the ball away at 113:07, a highly unusual defensive action.

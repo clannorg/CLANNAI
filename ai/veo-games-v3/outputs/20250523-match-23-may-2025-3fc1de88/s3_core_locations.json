@@ -1,11 +1,12 @@
 {
   "match_id": "20250523-match-23-may-2025-3fc1de88",
-  "upload_timestamp": "2025-08-16T14:26:25.685976",
+  "upload_timestamp": "2025-08-16T16:05:42.092621",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "core_files": {
-    "web_events_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events-json.json",
     "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-web_events_array-json.json",
-    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250523-match-23-may-2025-3fc1de88-video-mp4.mp4"
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250523-match-23-may-2025-3fc1de88-video-mp4.mp4",
+    "match_metadata_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-match_metadata-json.json",
+    "11_tactical_analysis_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250523-match-23-may-2025-3fc1de88-11_tactical_analysis-json.json"
   }
 }

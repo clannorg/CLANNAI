@@ -1,180 +1,133 @@
-18:15 - KICK-OFF: Opposition - Match begins.
-19:30 - FREE KICK: East London Ballers - From their own half following a stoppage.
-19:45 - FREE KICK: Opposition - From their own half, maintains possession.
-24:45 - FOUL: Opposition - Foul committed by Opposition.
-24:45 - FREE KICK: East London Ballers - From their own half.
-26:11 - SHOT: Opposition - Shot on goal, saved by the goalkeeper.
-26:45 - FREE KICK: Opposition - From the left flank, delivered into penalty area.
-28:30 - THROW-IN: Opposition - Possession turned over.
-30:30 - GOAL KICK: Opposition - Ball goes out for a goal kick.
-31:15 - OFFSIDE: East London Ballers - Offside foul against East London Ballers.
-32:48 - GOAL: East London Ballers - Scored with a header following a cross from the right wing.
-33:30 - KICK-OFF: Opposition - Restart after East London Ballers goal.
-34:30 - FREE KICK: Opposition - From just outside penalty box.
-34:45 - FREE KICK: East London Ballers - In attacking position just outside penalty area.
-35:00 - FREE KICK: Opposition - From left side, just outside penalty area.
-35:15 - FREE KICK: East London Ballers - Attacking free kick just outside penalty area.
-35:37 - GOAL: East London Ballers - Scored from a direct free kick.
-37:30 - FOUL: Opposition - Foul committed by Opposition.
-38:00 - GOAL KICK: Opposition - Long forward pass collected by goalkeeper.
-39:15 - THROW-IN: Opposition - Near halfway line.
-39:44 - SHOT: East London Ballers - Shot on goal.
-39:45 - CORNER KICK: Opposition - From the left, cleared by East London Ballers defense.
-41:19 - GOAL: Opposition - Scored from a corner kick.
-42:00 - KICK-OFF: East London Ballers - Restart after Opposition goal.
-42:45 - FOUL: Opposition - Foul committed by Opposition.
-43:00 - FREE KICK: East London Ballers - Following a stoppage in play.
-43:15 - THROW-IN: East London Ballers - On the right sideline.
-43:30 - THROW-IN: East London Ballers - On the right sideline.
-44:45 - CORNER KICK: East London Ballers - From the left, cleared by Opposition defense.
-44:58 - SHOT: East London Ballers - Shot on goal.
-45:00 - FREE KICK: Opposition - Attacking free kick from left side.
-45:15 - FREE KICK: Opposition - Awarded free kick following a foul.
-45:30 - FREE KICK: East London Ballers - From their own half.
-46:15 - GOAL KICK: Opposition - Long ball collected by Opposition goalkeeper.
-46:45 - FOUL: Opposition - Foul committed by Opposition in midfield.
-48:45 - FREE KICK: East London Ballers - Following a foul by Opposition.
-49:15 - THROW-IN: Opposition - Long throw-in into penalty area.
-52:02 - GOAL: East London Ballers - Scored from a rebound after a shot was saved.
-52:30 - FREE KICK: East London Ballers - From Opposition's half, ball crossed into penalty area.
-52:45 - CORNER KICK: Opposition - Cleared by East London Ballers defender.
-55:30 - THROW-IN: Opposition - Resulting from a tackle.
-55:45 - THROW-IN: Opposition - From left sideline in attacking half.
-56:00 - FOUL: Opposition - Foul committed by Opposition.
-56:00 - FREE KICK: East London Ballers - Following a foul by Opposition.
-58:00 - FOUL: Opposition - Foul committed by Opposition.
-58:15 - KICK-OFF: Opposition - Restart after East London Ballers goal.
-59:45 - THROW-IN: Opposition - Builds up play from defensive half.
-60:15 - FREE KICK: Opposition - Attacking free kick, cross into penalty area.
-60:30 - GOAL KICK: East London Ballers - Wins possession in midfield.
-61:00 - THROW-IN: Opposition - Maintains possession in own half.
-61:45 - FREE KICK: Opposition - From their own half, ball played long.
-62:45 - GOAL KICK: Opposition - Cleared by East London Ballers.
-63:30 - FREE KICK: Opposition - Ball played short into penalty area.
-63:31 - SHOT: Opposition - Shot on goal from a free kick, cleared by defense.
-63:45 - CORNER KICK: Opposition - From the left, header goes over crossbar.
-64:09 - SHOT: East London Ballers - Shot on goal, blocked by defender; follow-up shot blocked.
-64:30 - GOAL KICK: Opposition - Goalkeeper collects ball ending attack.
-65:30 - THROW-IN: Opposition - Prepares to take throw-in.
-65:45 - THROW-IN: Opposition - Takes throw-in.
-66:00 - FOUL: Opposition - Foul committed by Opposition.
-66:00 - FREE KICK: East London Ballers - Following a foul by Opposition.
-66:30 - THROW-IN: East London Ballers - From right sideline in own half.
-66:45 - GOAL KICK: Opposition - Goalkeeper collects ball and establishes possession.
-67:45 - GOAL KICK: Opposition - Prepared for goal kick.
-68:15 - CORNER KICK: Opposition - East London Ballers organizing defense.
-68:30 - FREE KICK: Opposition - From left flank, ball delivered into penalty area.
-68:45 - CORNER KICK: Opposition - Short corner kick from the left.
-69:00 - CORNER KICK: Opposition - Cross cleared by East London Ballers defense.
-69:15 - CORNER KICK: Opposition - Ball cleared by East London Ballers defense.
-69:30 - CORNER KICK: East London Ballers - Opposition defends, play stopped by referee's whistle.
-70:30 - KICK-OFF: East London Ballers - Kicks off and maintains possession.
-91:30 - CORNER KICK: East London Ballers - From the left, headed clear by Opposition.
-91:37 - SHOT: East London Ballers - Shot on goal.
-92:30 - FOUL: Opposition - Foul committed by Opposition.
-92:30 - FREE KICK: Opposition - Awarded free kick.
-92:45 - KICK-OFF: East London Ballers - Kicks off, long ball forward.
-93:00 - FOUL: Opposition - Foul against Opposition.
-93:15 - FOUL: Opposition - Foul on Opposition.
-93:15 - FREE KICK: Opposition - Awarded free kick in center of pitch.
-94:00 - THROW-IN: Opposition - Played deep into penalty area.
-94:15 - FREE KICK: Opposition - From inside their own half.
-94:30 - THROW-IN: East London Ballers - In attacking half, forced to pass backwards.
-97:00 - FOUL: East London Ballers - Foul committed by East London Ballers.
-97:00 - FREE KICK: Opposition - Resulting from a foul by East London Ballers.
-97:15 - FREE KICK: Opposition - Opposition sets up for free kick.
-97:27 - SHOT: Opposition - Shot on goal.
+19:30 - Free Kick: Opposition prepares to take a free kick from their half.
+19:45 - Free Kick: East London Ballers takes a free kick from their own half.
+24:48 - Foul: East London Ballers commits a foul against Opposition.
+24:48 - Free Kick: Opposition takes a free kick from their own half.
+26:11 - SHOT: Opposition - Shot on goal, saved by goalkeeper.
+26:45 - Free Kick: Opposition takes a free kick from the left flank.
+28:30 - Throw-in: East London Ballers takes a throw-in.
+31:25 - Offside: Offside foul against Opposition.
+32:47 - SHOT: Opposition - Shot on goal, immediately preceding a goal.
+32:48 - GOAL: Opposition - Header following a cross from the right wing.
+33:15 - Free Kick: Opposition prepares to take a long free kick from their own half.
+34:30 - Free Kick: East London Ballers takes a free kick from just outside the penalty box.
+34:45 - Free Kick: Opposition prepares for a free kick in an attacking position.
+35:00 - Free Kick: East London Ballers prepares to take a free kick from the left side.
+35:15 - Free Kick: Opposition prepares to take an attacking free kick.
+35:36 - SHOT: Opposition - Shot on goal, immediately preceding a goal from a free kick.
+35:37 - GOAL: Opposition - Direct free kick.
+37:40 - Foul: Opposition commits a foul against East London Ballers.
+37:40 - Free Kick: East London Ballers awarded a free kick.
+38:15 - Free Kick: East London Ballers takes a free kick from deep in their own half.
+39:45 - Corner: East London Ballers takes a corner kick from the left.
+40:30 - Free Kick: East London Ballers takes a free kick from their own half.
+41:18 - SHOT: East London Ballers - Shot on goal, immediately preceding a goal.
+41:19 - GOAL: East London Ballers - Attacking play.
+42:54 - Foul: Opposition commits a foul against East London Ballers.
+42:54 - Free Kick: East London Ballers awarded a free kick.
+43:00 - Free Kick: Opposition prepares to take a free-kick in East London Ballers' half.
+43:15 - Throw-in: Opposition prepares for a throw-in on the right sideline.
+44:45 - Corner: Opposition takes a corner kick from the left.
+44:58 - SHOT: Opposition - Shot on goal.
+45:00 - Free Kick: East London Ballers takes an attacking free kick from the left side.
+45:15 - Foul: Opposition commits a foul, East London Ballers wins a free kick.
+45:15 - Free Kick: East London Ballers takes a free kick.
+45:30 - Free Kick: Opposition prepares for and takes a free kick from their own half.
+46:51 - Foul: East London Ballers commits a foul against Opposition.
+48:45 - Foul: East London Ballers commits a foul, Opposition wins a free kick.
+48:45 - Free Kick: Opposition takes a free kick.
+49:15 - Throw-in: East London Ballers takes a long throw-in into the penalty area.
+52:01 - SHOT: Opposition - Shot on goal, saved by keeper, immediately preceding a goal from rebound.
+52:02 - GOAL: Opposition - From a rebound after initial shot saved.
+52:30 - Free Kick: Opposition takes a free kick from East London Ballers' half.
+52:45 - Corner: East London Ballers takes a corner kick.
+55:30 - Throw-in: Opposition takes a throw-in.
+55:45 - Throw-in: East London Ballers takes a throw-in from the left sideline.
+56:01 - Foul: East London Ballers commits a foul against Opposition.
+56:01 - Free Kick: Opposition takes a free kick.
+58:11 - Foul: East London Ballers commits a foul.
+60:15 - Free Kick: East London Ballers takes an attacking free kick.
+61:00 - Throw-in: East London Ballers takes a throw-in.
+62:15 - Corner: Opposition shot leads to a corner kick.
+63:30 - Free Kick: Opposition takes a free kick.
+63:31 - SHOT: Opposition - Shot on goal from a free kick situation, cleared by East London Ballers defense.
+63:45 - Corner: Opposition takes a corner kick from the left.
+64:09 - SHOT: Opposition - Shot blocked by defender, follow-up shot also blocked.
+65:30 - Throw-in: East London Ballers prepares to take a throw-in.
+65:45 - Throw-in: East London Ballers takes a throw-in.
+66:01 - Foul: East London Ballers commits a foul against Opposition.
+66:01 - Free Kick: Opposition awarded a free kick in their own half.
+68:15 - Corner: East London Ballers prepares to take a corner kick.
+68:30 - Free Kick: East London Ballers takes a free kick from the left flank.
+68:45 - Corner: East London Ballers takes a short corner kick.
+69:00 - Corner: East London Ballers takes a corner kick.
+69:15 - Corner: East London Ballers takes a corner kick.
+69:30 - Corner: Opposition takes a corner kick.
+91:30 - Corner: Opposition takes a corner kick from the left.
+91:37 - SHOT: East London Ballers - Shot on goal, hits the post during an attack.
+92:34 - Foul: East London Ballers commits a foul against Opposition.
+92:34 - Free Kick: Opposition awarded a free kick.
+93:00 - Foul: East London Ballers commits a foul against Opposition.
+93:00 - Free Kick: Opposition awarded a free kick.
+93:26 - Foul: Opposition commits a foul against East London Ballers.
+93:26 - Free Kick: East London Ballers awarded a free kick.
+94:15 - Free Kick: East London Ballers prepares to take a free kick from inside their own half.
+97:10 - Foul: Opposition commits a foul against East London Ballers.
+97:10 - Free Kick: East London Ballers awarded a free kick.
+97:15 - Free Kick: Opposition takes a free kick.
+97:27 - SHOT: Opposition - Shot from inside penalty area, goes wide.
 99:26 - SHOT: East London Ballers - Shot on goal.
-100:00 - FREE KICK: Opposition - From deep in their own half.
-101:16 - GOAL: East London Ballers - Scored from a quick counter-attack after intercepting the ball.
-102:15 - KICK-OFF: Opposition - Restart after East London Ballers goal.
-102:45 - FOUL: Opposition - Foul committed by Opposition.
-103:00 - INJURY: East London Ballers - Player down on pitch.
-103:15 - KICK-OFF: East London Ballers - Takes kick-off and passes ball.
-103:30 - FREE KICK: Opposition - In their own half after a stoppage for a foul.
-103:45 - INJURY: East London Ballers - Player down on pitch.
-104:00 - FREE KICK: East London Ballers - After a stoppage for injury.
-104:15 - INJURY: East London Ballers - Two players down on pitch.
-104:15 - FREE KICK: Opposition - Prepares to take free kick.
-104:30 - INJURY: East London Ballers - Player receiving attention.
-104:45 - FOUL: Opposition - Foul on East London Ballers.
-104:45 - YELLOW CARD: Opposition - Card shown.
-105:00 - INJURY: East London Ballers - Player on ground.
-105:00 - RED CARD: East London Ballers - Red card shown to East London Ballers player.
-105:00 - FREE KICK: Opposition - Prepares for free kick.
-105:15 - INJURY: East London Ballers - Player injury stoppage.
-105:30 - FREE KICK: Opposition - From their own half.
-106:15 - KICK-OFF: East London Ballers - From center circle.
-107:01 - SHOT: East London Ballers - Header towards goal, saved by goalkeeper; follow-up shot blocked.
-107:45 - GOAL KICK: Opposition - Goalkeeper collects ball.
-108:00 - FOUL: Opposition - Foul awarded to Opposition.
-108:15 - FREE KICK: East London Ballers - In their own half following a foul.
-108:30 - KICK-OFF: East London Ballers - Prepares for restart.
-108:45 - KICK-OFF: East London Ballers - Prepares to restart.
-109:00 - KICK-OFF: East London Ballers - Prepares for kick-off.
-109:15 - KICK-OFF: East London Ballers - Kicks off, long pass forward.
-109:45 - CORNER KICK: Opposition - Cross cleared by East London Ballers.
-110:26 - OFFSIDE: Opposition - Offside infringement against Opposition.
-110:30 - KICK-OFF: East London Ballers - Kicks off and maintains possession.
-110:45 - THROW-IN: East London Ballers - On the right sideline.
-111:15 - FOUL: Opposition - Foul committed by Opposition.
-111:15 - FREE KICK: East London Ballers - Resulting from foul by Opposition.
-111:30 - FREE KICK: Opposition - From central position in East London Ballers' half.
-111:45 - FREE KICK: East London Ballers - Attacking free kick into penalty area.
-114:00 - CORNER KICK: East London Ballers - From the left side.
-114:15 - FREE KICK: East London Ballers - Direct free kick goes over crossbar.
-114:30 - FREE KICK: Opposition - Takes free kick.
-114:45 - CORNER KICK: Opposition - Short corner kick.
-115:30 - FREE KICK: East London Ballers - Long free kick into penalty area, caught by Opposition goalkeeper.
-115:45 - GOAL KICK: East London Ballers - Long kick upfield from their own penalty area.
-118:45 - GOAL KICK: East London Ballers - Wins aerial duel.
-119:15 - THROW-IN: East London Ballers - From the left sideline.
-119:30 - FREE KICK: Opposition - Short free kick, cross into box.
-120:30 - FOUL: Opposition - Foul committed by Opposition.
-120:30 - FREE KICK: East London Ballers - Resulting from a foul by Opposition.
-121:00 - FREE KICK: East London Ballers - From central position, played short.
-121:15 - FREE KICK: East London Ballers - Long free kick into penalty area.
-121:30 - INJURY: East London Ballers - Player down on pitch.
-121:45 - GOAL KICK: Opposition - Ball played long into midfield.
-122:04 - SHOT: East London Ballers - Shot on goal from inside penalty area, saved by goalkeeper.
-123:30 - FOUL: East London Ballers - Foul committed by East London Ballers.
-123:45 - INJURY: Opposition - Player down in center circle.
-123:45 - INJURY: East London Ballers - Player down on left side.
-124:00 - INJURY: Multiple Players - Players down on pitch.
-124:15 - INJURY: East London Ballers - Player down on pitch.
-124:30 - INJURY: East London Ballers - Player down on pitch.
-124:45 - INJURY: Opposition - Player down in center circle.
-125:00 - INJURY: East London Ballers - Player down in center circle.
-125:15 - INJURY: East London Ballers - Player down in center circle.
-125:30 - INJURY: East London Ballers - Player down near center circle.
-125:45 - KICK-OFF: East London Ballers - Kicks off.
-126:15 - THROW-IN: Opposition - Prepares to take throw-in.
-126:30 - THROW-IN: Opposition - Takes throw-in.
-126:45 - FREE KICK: East London Ballers - Long free kick from own half.
-127:30 - FREE KICK: Opposition - Attacking free kick into penalty area.
-127:45 - FREE KICK: East London Ballers - From their own half, long ball upfield.
-128:00 - FREE KICK: East London Ballers - Into penalty area.
-128:38 - SHOT: East London Ballers - Shot on goal, hits the crossbar.
-128:45 - GOAL KICK: East London Ballers - Wins aerial duel.
-129:15 - THROW-IN: Opposition - Cleared by East London Ballers defense.
-129:30 - THROW-IN: East London Ballers - Maintains possession in Opposition's half.
-129:45 - FOUL: East London Ballers - Foul committed.
-129:45 - FREE KICK: East London Ballers - Awarded free kick.
-130:00 - KICK-OFF: East London Ballers - Long ball forward.
-130:15 - FREE KICK: East London Ballers - From their own half, maintains possession.
-130:30 - FREE KICK: East London Ballers - Prepares to restart.
-130:45 - KICK-OFF: Opposition - Kicks off.
-130:58 - SHOT: Opposition - Shot on goal, goes over the goal.
-131:30 - FREE KICK: East London Ballers - Shot goes over goal.
-131:45 - FOUL: East London Ballers - Referee whistles for a foul.
-132:00 - FREE KICK: East London Ballers - From near center circle.
-132:30 - KICK-OFF: East London Ballers - Attacks from kickoff.
-133:45 - KICK-OFF: East London Ballers - Prepares for kickoff.
-134:00 - FREE KICK: East London Ballers - Attacking free kick, cross cleared by Opposition.
-134:30 - THROW-IN: Opposition - Gains possession, starts attack.
-135:07 - SHOT: East London Ballers - Shot on goal from a long pass into the penalty area.
-135:30 - GOAL KICK: East London Ballers - Long kick towards midfield.
-135:45 - THROW-IN: East London Ballers - Long throw-in into penalty area.
-137:00 - CORNER KICK: Opposition - From the left.
-137:15 - FREE KICK: East London Ballers - Short free kick from attacking position.
-137:30 - FOUL: Opposition - Foul awarded to Opposition.
+101:15 - SHOT: Opposition - Shot on goal, immediately preceding a goal.
+101:16 - GOAL: Opposition - Quick counter-attack.
+102:51 - Foul: East London Ballers commits a foul against Opposition.
+102:51 - Free Kick: Opposition awarded a free kick.
+103:30 - Free Kick: East London Ballers sets up for a free kick in their own half.
+104:48 - Yellow Card: East London Ballers player shown a yellow card.
+105:01 - Red Card: Opposition player shown a red card.
+105:30 - Free Kick: East London Ballers set to restart play with a free kick from their own half.
+107:01 - SHOT: Opposition - Header towards goal saved, second shot blocked by defender.
+108:04 - Foul: Opposition commits a foul against East London Ballers.
+108:04 - Free Kick: East London Ballers awarded a free kick.
+108:15 - Free Kick: Opposition takes a free kick in their own half.
+109:45 - Corner: Opposition takes a corner kick.
+110:26 - Offside: Offside infringement against East London Ballers.
+110:45 - Throw-in: Opposition takes a throw-in on the right sideline.
+111:19 - Foul: East London Ballers commits a foul against Opposition.
+111:19 - Free Kick: Opposition awarded a free kick.
+111:30 - Free Kick: East London Ballers prepares to take a free kick from a central position in Opposition's half.
+111:45 - Free Kick: Opposition takes an attacking free kick.
+114:00 - Corner: Opposition takes a corner kick from the left side.
+114:15 - Free Kick: Opposition takes a direct free kick from an attacking position.
+114:30 - Free Kick: East London Ballers takes a free kick.
+114:45 - Corner: East London Ballers takes a short corner kick.
+115:30 - Free Kick: Opposition takes a long free kick from their own half.
+116:45 - Free Kick: Opposition takes a free kick from their own half.
+118:15 - Free Kick: Opposition takes a direct free kick.
+119:15 - Throw-in: Opposition takes a throw-in from the left sideline.
+119:30 - Free Kick: East London Ballers takes a free-kick.
+120:41 - Foul: East London Ballers commits a foul against Opposition.
+120:41 - Free Kick: Opposition awarded a free kick.
+121:00 - Free Kick: Opposition takes a free kick from a central position in East London Ballers' half.
+121:15 - Free Kick: Opposition attacks with a long free kick.
+122:04 - SHOT: Opposition - Shot on goal from inside penalty area, saved by goalkeeper.
+123:39 - Foul: Opposition commits a foul against East London Ballers.
+126:15 - Throw-in: East London Ballers prepares for a throw-in from the right sideline.
+126:30 - Throw-in: East London Ballers takes a throw-in from the right side.
+126:45 - Free Kick: Opposition takes a long free kick from their own half.
+127:30 - Free Kick: East London Ballers takes an attacking free kick into the penalty area.
+127:45 - Free Kick: Opposition takes a free-kick from their own half.
+128:00 - Free Kick: Opposition takes a free-kick into the penalty area.
+128:38 - SHOT: Opposition - Shot from inside penalty area, goes wide.
+129:30 - Throw-in: Opposition takes a throw-in.
+129:53 - Foul: East London Ballers commits a foul against Opposition.
+129:53 - Free Kick: Opposition awarded a free kick.
+130:15 - Free Kick: Opposition takes a free kick in their own half.
+130:58 - SHOT: Opposition - Shot from inside the box, goes over crossbar.
+131:30 - Free Kick: Opposition takes a free kick.
+131:57 - Foul: East London Ballers commits a foul against Opposition.
+132:00 - Free Kick: Opposition prepares to take a free kick near the center circle.
+134:00 - Free Kick: Opposition takes an attacking free kick.
+135:07 - SHOT: Opposition - Shot on goal from a long pass into the penalty area.
+135:45 - Throw-in: Opposition takes a long throw-in into the penalty area.
+137:00 - Corner: East London Ballers takes a corner kick from the left.
+137:15 - Free Kick: Opposition takes a short free kick from an attacking position.
+137:42 - Foul: East London Ballers commits a foul against Opposition.

@@ -1,0 +1,172 @@
+# AI-Validated Timeline - 20250523-match-23-may-2025-3fc1de88
+# Generated: 2025-08-16T19:43:40.680338
+# Method: Gemini 2.5 Pro intelligent validation
+# Teams: East London Ballers vs Opposition
+# Context: Error-correcting fallible clip descriptions
+
+Based on a rigorous analysis of the AI-generated timeline and applying the provided validation rules, here is the corrected summary of goals and shots for the match between East London Ballers and Opposition.
+
+### **VALIDATED GOALS:**
+
+1.  **Timestamp:** ~26:25
+    *   **Scoring Team:** Opposition
+    *   **Description:** The AI describes a shot by the Opposition that was saved. However, the very next clip shows a kickoff from the center circle, which is definitive evidence of a goal. The AI's "save" description is an error; a goal was scored.
+    *   **Supporting Evidence:** `26:30 - Blue team prepares for a kickoff from the center circle.`
+    *   **Confidence Level:** High
+
+2.  **Timestamp:** 33:02
+    *   **Scoring Team:** Opposition
+    *   **Description:** A goal scored with a header following a cross from the right wing.
+    *   **Supporting Evidence:** `33:30 - Blue team kicks off and maintains possession in their own half.`
+    *   **Confidence Level:** High
+
+3.  **Timestamp:** 35:51
+    *   **Scoring Team:** Opposition
+    *   **Description:** A goal scored directly from a free kick.
+    *   **Supporting Evidence:** `36:15 - Black/White team prepares for kickoff at the center circle.` and `36:30 - Black/White team kicks off.`
+    *   **Confidence Level:** High
+
+4.  **Timestamp:** ~41:45
+    *   **Scoring Team:** Opposition
+    *   **Description:** The AI describes a celebration for an Opposition goal. This is immediately followed by a kickoff, validating the event.
+    *   **Supporting Evidence:** `41:45 - Goal for Black/White team (celebration shown).` and `42:00 - Black/White team restarts play with a kickoff from the center circle.`
+    *   **Confidence Level:** High
+
+5.  **Timestamp:** ~50:15
+    *   **Scoring Team:** Opposition
+    *   **Description:** The timeline explicitly confirms a goal was scored just before this clip, showing the Opposition celebrating and then immediately taking the restart.
+    *   **Supporting Evidence:** `50:15 - The clip begins immediately after the Black/White team has scored a goal and are celebrating. The Black/White team restarts the match with a kick-off from the center circle.`
+    *   **Confidence Level:** High
+
+6.  **Timestamp:** 57:20
+    *   **Scoring Team:** Opposition
+    *   **Description:** The AI registers a goal for the Opposition, which is confirmed by a subsequent kickoff.
+    *   **Supporting Evidence:** `58:15 - White team kicks off and maintains possession.`
+    *   **Confidence Level:** High
+
+7.  **Timestamp:** 133:42
+    *   **Scoring Team:** East London Ballers
+    *   **Description:** A goal scored on a counter-attack.
+    *   **Supporting Evidence:** `133:45 - Black/White team prepares to take the kickoff from the center circle following a stoppage in play.`
+    *   **Confidence Level:** High
+
+8.  **Timestamp:** 136:10
+    *   **Scoring Team:** East London Ballers
+    *   **Description:** The AI registers a goal, which is validated by multiple subsequent entries confirming a restart.
+    *   **Supporting Evidence:** `136:45 - Black/White team prepares for kick-off... following what appears to be a goal.` and `137:45 - Blue team celebrates a goal just scored. Players from the Black/White team walk back towards the center circle for the kickoff.`
+    *   **Confidence Level:** High
+
+---
+
+### **VALIDATED SHOTS:**
+
+*   **Timestamp:** 01:38
+    *   **Team:** Opposition
+    *   **Description:** A shot taken from distance.
+    *   **Outcome:** Saved (diving save by the East London Ballers goalkeeper).
+    *   **Evidence:** `01:39 the Blue team goalkeeper makes a diving save to their left.`
+
+*   **Timestamp:** 20:01
+    *   **Team:** East London Ballers
+    *   **Description:** A quick sequence of two shots. The first shot was saved, and a second was taken on the rebound.
+    *   **Outcome:** Saved, then second shot outcome is unclear.
+    *   **Evidence:** `20:02 the White team goalkeeper makes a save. A second shot is taken... at 20:03.`
+
+*   **Timestamp:** 25:11
+    *   **Team:** Opposition
+    *   **Description:** A shot from inside the penalty area on the right side.
+    *   **Outcome:** Saved.
+    *   **Evidence:** `25:12 saved by the Blue team's goalkeeper.`
+
+*   **Timestamp:** 29:20
+    *   **Team:** Opposition
+    *   **Description:** A shot taken from distance.
+    *   **Outcome:** Missed (over the goal).
+    *   **Evidence:** `29:20 shot taken from distance goes over the goal.`
+
+*   **Timestamp:** 35:43
+    *   **Team:** Opposition
+    *   **Description:** A shot from a free kick.
+    *   **Outcome:** Missed (over the crossbar).
+    *   **Evidence:** `35:43 shot taken, going over the crossbar.`
+
+*   **Timestamp:** 37:11
+    *   **Team:** Opposition
+    *   **Description:** A shot taken from inside the penalty area.
+    *   **Outcome:** Saved.
+    *   **Evidence:** `37:12 saved by the keeper.`
+
+*   **Timestamp:** 39:11
+    *   **Team:** Opposition
+    *   **Description:** A shot from inside the box, followed by a second attempt.
+    *   **Outcome:** Blocked, then missed (wide).
+    *   **Evidence:** `39:11 shot taken from inside the box is blocked, 39:13 follow-up shot goes wide of the goal.`
+
+*   **Timestamp:** 52:16
+    *   **Team:** Opposition
+    *   **Description:** A shot on goal.
+    *   **Outcome:** Saved.
+    *   **Evidence:** `52:16 shot is taken and saved by the keeper.`
+
+*   **Timestamp:** 64:23
+    *   **Team:** Opposition
+    *   **Description:** A player runs onto a long pass into the penalty area and shoots, leading to a second shot from the rebound.
+    *   **Outcome:** Blocked (twice).
+    *   **Evidence:** `64:23 shot is taken and blocked by a defender. 64:26 a second shot from the rebound is also blocked.`
+
+*   **Timestamp:** 88:18
+    *   **Team:** Opposition
+    *   **Description:** Following a corner, a player takes a shot.
+    *   **Outcome:** Hit Crossbar.
+    *   **Evidence:** `a shot from a White team player hits the crossbar at 88:18.`
+
+*   **Timestamp:** 91:16
+    *   **Team:** East London Ballers
+    *   **Description:** A shot taken during an attack.
+    *   **Outcome:** Hit Post.
+    *   **Evidence:** `91:16 A shot is taken which hits the post, followed by a scramble.`
+
+*   **Timestamp:** 95:42
+    *   **Team:** East London Ballers
+    *   **Description:** A shot taken after a scramble in the penalty area.
+    *   **Outcome:** Saved.
+    *   **Evidence:** `95:42 A shot by the Blue team is saved by the Black/White team's goalkeeper.`
+
+*   **Timestamp:** 122:19
+    *   **Team:** Opposition
+    *   **Description:** A shot on goal from inside the penalty area.
+    *   **Outcome:** Saved.
+    *   **Evidence:** `122:19 shot on goal from inside the penalty area, 122:20 saved by the goalkeeper.`
+
+*   **Timestamp:** 128:25
+    *   **Team:** Opposition
+    *   **Description:** A shot taken from the edge of the box.
+    *   **Outcome:** Hit Crossbar.
+    *   **Evidence:** `128:26 shot hits the crossbar.`
+
+---
+
+### **REJECTED CLAIMS:**
+
+The following goal claims were rejected due to a lack of supporting evidence, primarily the absence of a kickoff from the center circle immediately following the alleged goal, or for violating the rule that two goals cannot occur without a restart.
+
+*   **10:18 Goal:** Occurred during warm-ups, not match play.
+*   **34:22 Goal:** No kickoff follows; timeline shows a free kick instead.
+*   **40:47 & 41:33 Goals:** Two goals claimed for the same team without a kickoff in between.
+*   **52:17 Goal:** No kickoff follows; timeline shows a free kick.
+*   **87:21 Goal:** No kickoff follows; timeline shows a free kick.
+*   **88:59, 89:00, 89:34 Goals:** A cluster of contradictory goal claims with no validating kickoffs.
+*   **91:12 Goal:** No kickoff follows.
+*   **101:28 & 101:32 Goals:** Two goals claimed for opposing teams with no kickoff between them.
+*   **113:50, 116:51, 118:16 Goals:** All lack a subsequent kickoff.
+*   **127:20 Goal:** No kickoff follows.
+*   **132:48 Goal:** Immediately contradicted by a goal for the other team, without a restart.
+*   **135:12 & 135:23 Goals:** Two goals claimed back-to-back with no kickoff.
+
+---
+
+### **ANALYSIS SUMMARY:**
+
+The analysis reveals a high-scoring match dominated by Opposition. Despite numerous hallucinated events by the AI, a clear narrative can be constructed by strictly adhering to the validation rules. The final score of the match was **Opposition 6 - 2 East London Ballers**.
+
+Key moments included an early scoring spree by Opposition, a direct free kick goal (`35:51`), and two late goals from East London Ballers (`133:42`, `136:10`) that were insufficient to change the outcome. The Opposition team also hit the crossbar twice (`88:18`, `128:25`), indicating a strong attacking performance throughout the game. The timeline ends with the conclusion of the match, handshakes, and celebrations.
