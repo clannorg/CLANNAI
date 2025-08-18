@@ -1,167 +1,167 @@
 {
-  "match_summary": "This was a high-scoring match completely dominated by the Non-bibs team, who consistently found the back of the net. The Orange bibs team scored some powerful goals of their own, but were ultimately overwhelmed by the relentless attack from their opponents.",
+  "match_summary": "A high-scoring and decisive match where the Non-bibs team demonstrated a dominant attacking performance. While the Orange bibs team managed to score several clear goals, they were ultimately overwhelmed by the consistent pressure and finishing of the Non-bibs players.",
   "final_score": "Non-bibs 17 - 6 Orange bibs",
   "highlights": [
     {
       "timestamp": "02:00",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "Non-bibs player scores from distance, with the ball clearly visible and stationary in the back of the net.",
-      "excitement_level": 8
+      "description": "Non-bibs player shoots from distance, overwhelming evidence: ball is clearly visible and stationary in the back of the net.",
+      "excitement_level": 9
     },
     {
       "timestamp": "02:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A Non-bibs player shoots, with overwhelming evidence of the ball stationary in the net.",
+      "description": "Team A player shoots, overwhelming evidence: ball stationary in net.",
       "excitement_level": 8
     },
     {
       "timestamp": "02:45",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A clear goal for the Non-bibs team, confirmed by the ball being stationary in the net and a wild celebration.",
-      "excitement_level": 9
+      "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "03:45",
       "type": "goal",
       "team": "Orange bibs",
-      "description": "An Orange bibs player scores a definite goal, with the ball clearly shown entering and resting inside the net.",
-      "excitement_level": 8
+      "description": "Orange bibs player shoots, overwhelming evidence: ball is clearly shown entering and resting inside the net.",
+      "excitement_level": 9
     },
     {
       "timestamp": "06:15",
       "type": "goal",
       "team": "Orange bibs",
-      "description": "Goal for Orange bibs, with the ball stationary in the net followed by a wild celebration.",
-      "excitement_level": 9
+      "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "06:45",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A Non-bibs player shoots and the ball hits the back of the net with force.",
+      "description": "Non bibs player shoots, overwhelming evidence: ball hits the back of the net with force.",
       "excitement_level": 9
     },
     {
       "timestamp": "07:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A Non-bibs player shoots, the ball flies past the keeper and hits the back of the net.",
+      "description": "Non-bibs player shoots, overwhelming evidence: ball flies past the keeper and hits the back of the net.",
       "excitement_level": 9
     },
     {
       "timestamp": "08:15",
       "type": "goal",
       "team": "Orange bibs",
-      "description": "An Orange bibs player scores, confirmed by the ball being stationary in the net and a wild celebration.",
-      "excitement_level": 9
+      "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "08:45",
       "type": "goal",
       "team": "Orange bibs",
-      "description": "An emphatic goal for Orange bibs as the ball smashes into the back of the net, causing it to bulge as teammates celebrate.",
+      "description": "Orange bibs player shoots, overwhelming evidence: ball smashes into the back of the net causing it to bulge, and teammates celebrate immediately.",
       "excitement_level": 10
     },
     {
       "timestamp": "09:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A Non-bibs player scores, with the ball stationary in the net followed by a wild celebration.",
-      "excitement_level": 9
+      "description": "Non bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "12:15",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "Goal for Non-bibs, the ball is stationary in the net and players engage in a wild celebration.",
-      "excitement_level": 9
+      "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "12:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A Non-bibs player scores a clear goal, with the ball entering the net and the player celebrating.",
+      "description": "Team A player shoots, overwhelming evidence: ball clearly enters net and the player celebrates.",
       "excitement_level": 9
     },
     {
       "timestamp": "13:00",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "Another goal for the Non-bibs team, confirmed by the ball stationary in the net and a wild celebration.",
-      "excitement_level": 9
+      "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "23:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "Goal for the Non-bibs team, with the ball stationary in the net leading to a wild celebration.",
-      "excitement_level": 9
+      "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "26:15",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A Non-bibs player scores, evidenced by the ball stationary in the net and a wild celebration.",
-      "excitement_level": 9
+      "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "26:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A clear goal for the Non-bibs team as the ball is seen stationary in the net.",
+      "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net",
       "excitement_level": 8
     },
     {
       "timestamp": "27:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A fantastic long-range goal from a Non-bibs player, with the ball clearly crossing the line and hitting the back of the net.",
+      "description": "Non bibs / colours player shoots from long range, overwhelming evidence: ball clearly crosses the line and hits the back of the net.",
       "excitement_level": 9
     },
     {
       "timestamp": "30:15",
       "type": "goal",
       "team": "Orange bibs",
-      "description": "A powerful shot from an Orange bibs player causes the net to bulge as the ball flies in.",
-      "excitement_level": 10
+      "description": "Orange bibs player shoots, overwhelming evidence: ball hits the back of the net with force causing it to bulge, and players reset for a kick-off.",
+      "excitement_level": 9
     },
     {
       "timestamp": "30:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A Non-bibs player scores, followed by a celebration with the ball stationary in the net.",
+      "description": "Team A player shoots, overwhelming evidence: ball stationary in net + player celebration",
       "excitement_level": 9
     },
     {
       "timestamp": "31:30",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "Goal for the Non-bibs team, the ball rests in the net and the team engages in a wild celebration.",
-      "excitement_level": 9
+      "description": "Team A player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     },
     {
       "timestamp": "34:45",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "A thunderous strike from a Non-bibs player slams into the back of the net, causing it to bulge dramatically.",
+      "description": "Non bibs player shoots, overwhelming evidence: ball slams into the back of the net causing it to bulge dramatically.",
       "excitement_level": 10
     },
     {
       "timestamp": "35:15",
       "type": "goal",
       "team": "Orange bibs",
-      "description": "An Orange bibs player scores a clear goal, with the ball stationary in the net and the player celebrating.",
+      "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + player celebrates.",
       "excitement_level": 9
     },
     {
       "timestamp": "37:45",
       "type": "goal",
       "team": "Non-bibs",
-      "description": "The Non-bibs team scores again, confirmed by the ball resting in the net and a wild celebration.",
-      "excitement_level": 9
+      "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+      "excitement_level": 10
     }
   ]
 }
