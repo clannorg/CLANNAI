@@ -1,98 +1,186 @@
 [
   {
-    "timestamp": 20,
+    "timestamp": 120,
     "type": "goal",
-    "team": "blue",
-    "description": "lostthehead opens the scoring with a quick interception and a low shot from outside the area that beats the diving keeper.",
-    "excitement_level": 8,
-    "original_team_name": "lostthehead"
-  },
-  {
-    "timestamp": 36,
-    "type": "goal",
-    "team": "blue",
-    "description": "lostthehead scores again with a powerful shot from the center of the pitch that finds the back of the net.",
-    "excitement_level": 8,
-    "original_team_name": "lostthehead"
-  },
-  {
-    "timestamp": 49,
-    "type": "goal",
-    "team": "blue",
-    "description": "Following an interception, a low shot from the lostthehead player flies past the keeper to make it three.",
-    "excitement_level": 8,
-    "original_team_name": "lostthehead"
-  },
-  {
-    "timestamp": 89,
-    "type": "goal",
-    "team": "red",
-    "description": "clannai gets one back! A well-taken shot from outside the D loops just over the goalie's head and into the net.",
+    "team": "non bibs / colours",
+    "description": "Non-bibs player shoots from distance, overwhelming evidence: ball is clearly visible and stationary in the back of the net.",
     "excitement_level": 9,
-    "original_team_name": "clannai"
+    "original_team_name": "Non-bibs"
   },
   {
-    "timestamp": 97,
+    "timestamp": 150,
     "type": "goal",
-    "team": "blue",
-    "description": "lostthehead responds immediately with a goal from the center of the field after intercepting the ball.",
+    "team": "non bibs / colours",
+    "description": "Team A player shoots, overwhelming evidence: ball stationary in net.",
+    "excitement_level": 8,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 165,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 225,
+    "type": "goal",
+    "team": "orange bibs",
+    "description": "Orange bibs player shoots, overwhelming evidence: ball is clearly shown entering and resting inside the net.",
     "excitement_level": 9,
-    "original_team_name": "lostthehead"
+    "original_team_name": "Orange bibs"
   },
   {
-    "timestamp": 131,
+    "timestamp": 375,
     "type": "goal",
-    "team": "red",
-    "description": "A great long-range effort from clannai, who shoot from just outside the center circle and score with a low, straight strike.",
+    "team": "orange bibs",
+    "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Orange bibs"
+  },
+  {
+    "timestamp": 405,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non bibs player shoots, overwhelming evidence: ball hits the back of the net with force.",
     "excitement_level": 9,
-    "original_team_name": "clannai"
+    "original_team_name": "Non-bibs"
   },
   {
-    "timestamp": 171,
-    "type": "save",
-    "team": "blue",
-    "description": "The lostthehead goalkeeper makes a great save, blocking a powerful shot taken from the center circle.",
-    "excitement_level": 7,
-    "original_team_name": "lostthehead"
-  },
-  {
-    "timestamp": 421,
+    "timestamp": 450,
     "type": "goal",
-    "team": "red",
-    "description": "clannai scores right at the start of the clip with a quick shot from the center of the pitch.",
-    "excitement_level": 8,
-    "original_team_name": "clannai"
+    "team": "non bibs / colours",
+    "description": "Non-bibs player shoots, overwhelming evidence: ball flies past the keeper and hits the back of the net.",
+    "excitement_level": 9,
+    "original_team_name": "Non-bibs"
   },
   {
-    "timestamp": 465,
+    "timestamp": 495,
     "type": "goal",
-    "team": "red",
-    "description": "clannai completes the comeback, scoring from the left-hand side to level the match.",
+    "team": "orange bibs",
+    "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Orange bibs"
+  },
+  {
+    "timestamp": 525,
+    "type": "goal",
+    "team": "orange bibs",
+    "description": "Orange bibs player shoots, overwhelming evidence: ball smashes into the back of the net causing it to bulge, and teammates celebrate immediately.",
+    "excitement_level": 10,
+    "original_team_name": "Orange bibs"
+  },
+  {
+    "timestamp": 570,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 735,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 750,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Team A player shoots, overwhelming evidence: ball clearly enters net and the player celebrates.",
+    "excitement_level": 9,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 780,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 1410,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 1575,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 1590,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net",
     "excitement_level": 8,
-    "original_team_name": "clannai"
+    "original_team_name": "Non-bibs"
   },
   {
-    "timestamp": 474,
-    "type": "near_miss",
-    "team": "blue",
-    "description": "A fantastic counter-attack and shot from just outside the D by lostthehead narrowly misses the top corner.",
-    "excitement_level": 7,
-    "original_team_name": "lostthehead"
+    "timestamp": 1650,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non bibs / colours player shoots from long range, overwhelming evidence: ball clearly crosses the line and hits the back of the net.",
+    "excitement_level": 9,
+    "original_team_name": "Non-bibs"
   },
   {
-    "timestamp": 596,
-    "type": "save",
-    "team": "red",
-    "description": "The clannai keeper makes an important save to keep the scores level.",
-    "excitement_level": 7,
-    "original_team_name": "clannai"
+    "timestamp": 1815,
+    "type": "goal",
+    "team": "orange bibs",
+    "description": "Orange bibs player shoots, overwhelming evidence: ball hits the back of the net with force causing it to bulge, and players reset for a kick-off.",
+    "excitement_level": 9,
+    "original_team_name": "Orange bibs"
   },
   {
-    "timestamp": 607,
-    "type": "near_miss",
-    "team": "red",
-    "description": "Agonizingly close for clannai as a low, hard shot smashes against the crossbar and bounces out.",
-    "excitement_level": 8,
-    "original_team_name": "clannai"
+    "timestamp": 1830,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Team A player shoots, overwhelming evidence: ball stationary in net + player celebration",
+    "excitement_level": 9,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 1890,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Team A player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 2085,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non bibs player shoots, overwhelming evidence: ball slams into the back of the net causing it to bulge dramatically.",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
+  },
+  {
+    "timestamp": 2115,
+    "type": "goal",
+    "team": "orange bibs",
+    "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + player celebrates.",
+    "excitement_level": 9,
+    "original_team_name": "Orange bibs"
+  },
+  {
+    "timestamp": 2265,
+    "type": "goal",
+    "team": "non bibs / colours",
+    "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "excitement_level": 10,
+    "original_team_name": "Non-bibs"
   }
 ]

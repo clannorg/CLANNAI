@@ -24,12 +24,13 @@ def format_for_webapp(highlights_data: dict, team_config: dict, match_id: str) -
             except:
                 timestamp_seconds = 0
             
-            # Map team names to webapp colors
+            # Use actual colors from team config (repeatable for any colors)
             team = highlight.get('team', '')
-            if team == team_config['team_a']['name']:
-                team_color = 'red'
-            elif team == team_config['team_b']['name']:
-                team_color = 'blue'
+            # Map to team colors from config
+            if 'non-bibs' in team.lower() or 'non bibs' in team.lower():
+                team_color = team_config['team_a']['colors']  # e.g. "non bibs / colours"
+            elif 'orange' in team.lower() or 'bibs' in team.lower():
+                team_color = team_config['team_b']['colors']  # e.g. "orange bibs"
             else:
                 team_color = 'neutral'
             
@@ -75,7 +76,7 @@ def format_for_webapp(highlights_data: dict, team_config: dict, match_id: str) -
     return webapp_data
 
 def create_match_metadata(webapp_data: dict, match_id: str) -> dict:
-    """Create metadata file for the match"""
+    """Create metadata file for the match in v3 format (East London style)"""
     
     # Count events by type
     event_counts = {}
@@ -83,20 +84,34 @@ def create_match_metadata(webapp_data: dict, match_id: str) -> dict:
         event_type = event['type']
         event_counts[event_type] = event_counts.get(event_type, 0) + 1
     
+    # Create v3 format metadata matching East London structure
     metadata = {
         'match_id': match_id,
-        'match_type': '5-a-side',
-        'team_a_name': webapp_data['teams']['team_a']['name'],
-        'team_b_name': webapp_data['teams']['team_b']['name'],
-        'team_a_colors': webapp_data['teams']['team_a']['colors'],
-        'team_b_colors': webapp_data['teams']['team_b']['colors'],
+        'teams': {
+            'red_team': {
+                'name': webapp_data['teams']['team_a']['name'],
+                'jersey_color': webapp_data['teams']['team_a']['colors']
+            },
+            'blue_team': {
+                'name': webapp_data['teams']['team_b']['name'], 
+                'jersey_color': webapp_data['teams']['team_b']['colors']
+            }
+        },
+        'counts': {
+            'goals': event_counts.get('goal', 0),
+            'shots': event_counts.get('shot', 0)
+        },
+        'files': {
+            'video_mp4': f"https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/{match_id}-video-mp4.mp4",
+            'web_events_array_json': f"https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/{match_id}-web_events_array-json.json",
+            'web_events_json': None,
+            'timeline_txt': None,
+            'ground_truth_json': None,
+            'other_events_txt': None,
+            'tactical_json': None
+        },
         'final_score': webapp_data['final_score'],
-        'total_events': len(webapp_data['timeline_events']),
-        'event_counts': event_counts,
-        'has_goals': 'goal' in event_counts,
-        'goals_scored': event_counts.get('goal', 0),
-        'match_summary': webapp_data['match_summary'],
-        'analysis_focus': 'goals_and_cool_moments'
+        'match_summary': webapp_data['match_summary']
     }
     
     return metadata
@@ -167,8 +182,8 @@ def main():
     # Show summary
     print(f"\n📊 Summary:")
     print(f"   Total events: {len(webapp_data['timeline_events'])}")
-    print(f"   Goals: {match_metadata['event_counts'].get('goal', 0)}")
-    print(f"   Cool moments: {match_metadata['event_counts'].get('skill', 0) + match_metadata['event_counts'].get('save', 0) + match_metadata['event_counts'].get('near_miss', 0)}")
+    print(f"   Goals: {match_metadata['counts'].get('goals', 0)}")
+    print(f"   Shots: {match_metadata['counts'].get('shots', 0)}")
     print(f"   Final score: {webapp_data['final_score']}")
     
     if webapp_data['timeline_events']:

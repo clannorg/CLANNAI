@@ -157,7 +157,7 @@ def main():
     print(f"⏱️  Video duration: {duration:.1f} seconds ({duration/60:.1f} minutes)")
     
     # Calculate expected clips
-    clip_duration = 15
+    clip_duration = 30
     num_clips = int(duration // clip_duration)
     print(f"📊 Will create {num_clips} clips")
     

@@ -1,3 +1,1 @@
-Okay, here's the 5-a-side football match analysis:
-
-At [00:00:00], play begins on the artificial turf pitch. The team in orange bibs are on the attack, with several players positioned in the center of the field. At [00:00:04], the non-bibs team intercepts a pass. At [00:00:06], a non-bibs player shoots from the right side of the field towards the near post. The shot is low and hard. At [00:00:07], the ball ricochets off the top crossbar of the goal and the keeper makes no save. The non-bibs team gains possession, then, at [00:00:11], a player with orange bibs gets the ball. The ball is played around by players in orange bibs. At [00:00:16], a player passes it to his teammate.
+SHOT at 10:07 - Non-bibs player shoots, statistically likely not a goal

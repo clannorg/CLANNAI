@@ -1,3 +1,1 @@
-Here's the 5-a-side football analysis:
-
-From behind the goal at [00:00], the team with non-bibs has possession. At [00:06], a player from the team with non-bibs passes the ball towards the orange bibs' goal. At [00:07], a player with orange bibs intercepts and shoots from the center of the field; the ball travels high, and finds the net, resulting in a goal.
+SHOT at 01:39 - Orange bibs player shoots from the right side, statistically likely not a goal
