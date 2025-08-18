@@ -233,19 +233,46 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
   const userTeamName = game?.team_name || ''
   const userTeamColor = game?.team_color || '#016F32'
   
-  // Filter events to show only the user's team performance
+  // Get user's team color from metadata for reliable matching
+  const getUserTeamColor = () => {
+    // Check if metadata has team mapping
+    if (game?.metadata?.teams) {
+      const { red_team, blue_team } = game.metadata.teams
+      
+      // Match user's team name to red/blue team
+      if (red_team?.name?.toLowerCase().includes(userTeamName.toLowerCase()) ||
+          userTeamName.toLowerCase().includes(red_team?.name?.toLowerCase() || '')) {
+        return 'red'
+      }
+      if (blue_team?.name?.toLowerCase().includes(userTeamName.toLowerCase()) ||
+          userTeamName.toLowerCase().includes(blue_team?.name?.toLowerCase() || '')) {
+        return 'blue'
+      }
+    }
+    
+    // Fallback: try to infer from team name
+    const teamLower = userTeamName.toLowerCase()
+    if (teamLower.includes('red') || teamLower.includes('home')) return 'red'
+    if (teamLower.includes('blue') || teamLower.includes('away')) return 'blue'
+    if (teamLower.includes('white')) return 'white'
+    if (teamLower.includes('black')) return 'black'
+    
+    // Default to red (often the home team)
+    return 'red'
+  }
+  
+  const userTeamColorIdentifier = getUserTeamColor()
+  
+  // Filter events to show only the user's team performance (by color)
   const userTeamEvents = gameEvents.filter(event => {
     if (!event.team) return false
     const eventTeam = event.team.toLowerCase()
-    const targetTeam = userTeamName.toLowerCase()
     
-    // Match by team name or common team identifiers
-    return eventTeam.includes(targetTeam) || 
-           targetTeam.includes(eventTeam) ||
-           (eventTeam === 'red' && (targetTeam.includes('red') || targetTeam.includes('home'))) ||
-           (eventTeam === 'blue' && (targetTeam.includes('blue') || targetTeam.includes('away'))) ||
-           (eventTeam === 'white' && targetTeam.includes('white')) ||
-           (eventTeam === 'black' && targetTeam.includes('black'))
+    // Match by color identifier (most reliable)
+    return eventTeam === userTeamColorIdentifier ||
+           // Fallback to name matching for legacy data
+           eventTeam.includes(userTeamName.toLowerCase()) ||
+           userTeamName.toLowerCase().includes(eventTeam)
   })
   
   const evidenceStats = extractEvidenceStats(userTeamEvents)

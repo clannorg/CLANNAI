@@ -86,7 +86,7 @@ The `format_for_webapp.py` script reads the plain text files and converts them t
   {
     "type": "goal",
     "timestamp": 930,
-    "team": "red", 
+    "team": "blue", 
     "description": "Header from corner kick by striker",
     "player": "Striker"
   }
@@ -95,8 +95,8 @@ The `format_for_webapp.py` script reads the plain text files and converts them t
 
 **Conversion rules:**
 - `15:30` → `timestamp: 930` (15*60 + 30)
-- `East London Ballers` → `team: "red"` (first team = red)
-- `Opposition FC` → `team: "blue"` (second team = blue)
+- `East London Ballers` → `team: "blue"` (map to jersey color for reliability)
+- `Opposition FC` → `team: "red"` (map to jersey color for reliability)
 - `GOAL` → `type: "goal"` (lowercase)
 
 ### `11_tactical_analysis.json`
