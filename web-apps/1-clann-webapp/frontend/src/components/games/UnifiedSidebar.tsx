@@ -155,54 +155,17 @@ export default function UnifiedSidebar({
     }
   }
 
-  // Function to get team badge colors from team type
+  // Function to get team badge colors - white for clann, orange for lostthehead
   const getTeamBadgeColors = (teamType: string) => {
     const teamLower = teamType.toLowerCase()
     
-    // Handle descriptive team names first
-    if (teamLower.includes('orange bibs') || teamLower.includes('orange bib')) {
-      return 'bg-orange-500/20 text-orange-300 border-orange-500/30'
-    }
-    if (teamLower.includes('non bibs') || teamLower.includes('colours') || teamLower.includes('colors')) {
-      return 'bg-white/20 text-white border-white/30'
+    // Lostthehead gets nice orange
+    if (teamLower.includes('lostthehead') || teamLower.includes('lost')) {
+      return 'bg-orange-500/15 text-orange-200 border-orange-500/25'
     }
     
-    // Handle team names
-    if (teamLower === redTeam.name.toLowerCase()) {
-      // Extract the main color from redTeamColorClass (e.g., 'bg-yellow-500' -> 'yellow')
-      const colorMatch = redTeamColorClass.match(/bg-(\w+)-\d+/)
-      const color = colorMatch ? colorMatch[1] : 'red'
-      return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
-    }
-    if (teamLower === blueTeam.name.toLowerCase()) {
-      // Extract the main color from blueTeamColorClass (e.g., 'bg-blue-500' -> 'blue')
-      const colorMatch = blueTeamColorClass.match(/bg-(\w+)-\d+/)
-      const color = colorMatch ? colorMatch[1] : 'blue'
-      return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
-    }
-
-    // Handle standard color identifiers
-    switch (teamLower) {
-      case 'red': {
-        // Extract the main color from redTeamColorClass (e.g., 'bg-yellow-500' -> 'yellow')
-        const colorMatch = redTeamColorClass.match(/bg-(\w+)-\d+/)
-        const color = colorMatch ? colorMatch[1] : 'red'
-        return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
-      }
-      case 'blue':
-      case 'black': {
-        // Extract the main color from blueTeamColorClass (e.g., 'bg-blue-500' -> 'blue')
-        const colorMatch = blueTeamColorClass.match(/bg-(\w+)-\d+/)
-        const color = colorMatch ? colorMatch[1] : 'blue'
-        return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
-      }
-      case 'orange':
-        return 'bg-orange-500/20 text-orange-300 border-orange-500/30'
-      case 'white':
-        return 'bg-white/20 text-white border-white/30'
-      default:
-        return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
-    }
+    // Everything else gets simple white
+    return 'bg-white/10 text-white border-white/20'
   }
 
   // Get emoji for event type
