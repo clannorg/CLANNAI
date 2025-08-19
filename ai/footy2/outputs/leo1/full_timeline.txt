@@ -1,0 +1,2040 @@
+Full Timeline - clann vs lostthehead
+============================================================
+
+[00:00] No notable events detected
+
+[00:15] SHOT at 00:04 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[00:30] SHOT at 00:44 - Orange bibs player shoots from the left side of the pitch, statistically likely not a goal
+
+[00:45] No notable events detected
+
+[01:00] No notable events detected
+
+[01:15] SHOT at 00:14 - Non-bibs player shoots, outcome unclear, assume not a goal.
+
+[01:30] SHOT at 01:39 - Orange bibs player shoots from the right side, statistically likely not a goal
+
+[01:45] No notable events detected
+
+[02:00] GOAL at 02:12 - Non-bibs player shoots from distance, overwhelming evidence: ball is clearly visible and stationary in the back of the net.
+
+[02:15] SHOT at 00:06 - Non-bibs player shoots from distance, statistically likely not a goal
+
+[02:30] GOAL at 02:47 - Team A player shoots, overwhelming evidence: ball stationary in net.
+
+[02:45] GOAL at 02:51 - Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[03:00] No notable events detected
+
+[03:15] No notable events detected
+
+[03:30] No notable events detected
+
+[03:45] GOAL at 00:12 - Orange bibs player shoots, overwhelming evidence: ball is clearly shown entering and resting inside the net.
+
+[04:00] SHOT at 00:04 - Non-bibs player shoots from a distance, statistically likely not a goal
+
+[04:15] SHOT at 00:06 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[04:30] No notable events detected
+
+[04:45] No notable events detected
+
+[05:00] SHOT at 05:08 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[05:15] No notable events detected
+
+[05:30] SHOT at 05:46 - Team A player shoots from close range, statistically likely not a goal
+
+[05:45] SHOT at 00:05 - Team A player shoots from near the center circle, statistically likely not a goal
+
+[06:00] No notable events detected
+
+[06:15] GOAL at 00:12 - Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[06:30] SHOT at 06:33 - Non-bibs player shoots from distance, statistically likely not a goal
+
+[06:45] GOAL at 06:53 - Non bibs player shoots, overwhelming evidence: ball hits the back of the net with force.
+
+[07:00] SHOT at 00:05 - Orange bibs player shoots toward goal, statistically likely not a goal
+
+[07:15] SHOT at 00:01 - Team A player shoots from the right side of the box, statistically likely not a goal
+
+[07:30] GOAL at 07:45 - Non-bibs player shoots, overwhelming evidence: ball flies past the keeper and hits the back of the net.
+
+[07:45] No notable events detected
+
+[08:00] SHOT at 08:10 - Orange bibs player shoots from the left, statistically likely not a goal
+
+[08:15] GOAL at 00:06 - Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[08:30] No notable events detected
+
+[08:45] GOAL at 08:50 - Orange bibs player shoots, overwhelming evidence: ball smashes into the back of the net causing it to bulge, and teammates celebrate immediately.
+
+[09:00] SHOT at 09:01 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[09:15] No notable events detected
+
+[09:30] GOAL at 00:02 - Non bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[09:45] Error analyzing clip: 500 An internal error has occurred. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+
+[10:00] SHOT at 10:07 - Non-bibs player shoots, statistically likely not a goal
+
+[10:15] SHOT at 10:16 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[10:30] No notable events detected
+
+[10:45] No notable events detected
+
+[11:00] SHOT at 11:10 - Orange bibs player shoots from the left, statistically likely not a goal
+
+[11:15] No notable events detected
+
+[11:30] SHOT at 00:03 - Non-bibs player shoots from a central position, statistically likely not a goal
+
+[11:45] No notable events detected
+
+[12:00] SHOT at 12:01 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[12:15] GOAL at 00:08 - Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[12:30] GOAL at 00:11 - Team A player shoots, overwhelming evidence: ball clearly enters net and the player celebrates.
+
+[12:45] No notable events detected
+
+[13:00] GOAL at 00:03 - Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[13:15] SHOT at 00:08 - Non-bibs player shoots, statistically likely not a goal
+
+[13:30] No notable events detected
+
+[13:45] No notable events detected
+
+[14:00] No notable events detected
+
+[14:15] SHOT at 00:13 - Orange bibs player shoots from long range, statistically likely not a goal
+
+[14:30] No notable events detected
+
+[14:45] No notable events detected
+
+[15:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+]
+
+[15:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+]
+
+[15:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+
+[15:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 14
+}
+]
+
+[16:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+
+[16:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 12
+}
+]
+
+[16:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 13
+}
+]
+
+[16:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 12
+}
+]
+
+[17:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 12
+}
+]
+
+[17:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 11
+}
+]
+
+[17:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 11
+}
+]
+
+[17:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 11
+}
+]
+
+[18:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+
+[18:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 11
+}
+]
+
+[18:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 11
+}
+]
+
+[18:45] SHOT at 00:08 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[19:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+
+[19:15] No notable events detected
+
+[19:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+
+[19:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+
+[20:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 9
+}
+]
+
+[20:15] No notable events detected
+
+[20:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+
+[20:45] SHOT at 00:00 - Team A player shoots from the left, statistically likely not a goal
+
+[21:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 9
+}
+]
+
+[21:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+
+[21:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 9
+}
+]
+
+[21:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+
+[22:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+
+[22:15] SHOT at 00:06 - Team A player shoots from long distance, statistically likely not a goal
+
+[22:30] SHOT at 22:43 - Non-bibs player shoots from midfield, statistically likely not a goal
+
+[22:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+
+[23:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+
+[23:15] SHOT at 00:15 - Orange bibs player shoots from the left, statistically likely not a goal
+
+[23:30] GOAL at 00:12 - Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[23:45] SHOT at 00:00 - Non-bibs player shoots from a central position, statistically likely not a goal.
+
+[24:00] SHOT at 24:09 - Non bibs / colours player shoots from near the center, statistically likely not a goal
+
+[24:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 7
+}
+]
+
+[24:30] No notable events detected
+
+[24:45] No notable events detected
+
+[25:00] SHOT at 25:00 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[25:15] No notable events detected
+
+[25:30] SHOT at 25:36 - Non bibs / colours player shoots, statistically likely not a goal
+
+[25:45] SHOT at 00:14 - Orange bibs player shoots toward goal, statistically likely not a goal
+
+[26:00] No notable events detected
+
+[26:15] GOAL at 00:07 - Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[26:30] GOAL at 00:09 - Non bibs / colours player shoots, overwhelming evidence: ball stationary in net
+
+[26:45] No notable events detected
+
+[27:00] SHOT at 00:04 - Non-bibs player shoots from the left, statistically likely not a goal
+
+[27:15] SHOT at 00:04 - Non bibs / colours player shoots from the halfway line, statistically likely not a goal
+
+[27:30] GOAL at 00:08 - Non bibs / colours player shoots from long range, overwhelming evidence: ball clearly crosses the line and hits the back of the net.
+
+[27:45] No notable events detected
+
+[28:00] SHOT at 00:10 - Non-bibs player shoots, statistically likely not a goal
+
+[28:15] SHOT at 28:23 - Orange bibs player shoots from the centre, statistically likely not a goal
+
+[28:30] SHOT at 28:40 - Orange bibs player shoots toward goal, statistically likely not a goal
+
+[28:45] SHOT at 00:13 - Orange bibs player shoots from the right, statistically likely not a goal
+
+[29:00] SHOT at 00:05 - Non-bibs player shoots toward goal, statistically likely not a goal
+
+[29:15] No notable events detected
+
+[29:30] SHOT at 29:47 - Orange bibs player shoots from close range, statistically likely not a goal
+
+[29:45] No notable events detected
+
+[30:00] SHOT at 00:10 - Non-bibs player shoots from distance, statistically likely not a goal
+
+[30:15] GOAL at 00:01 - Orange bibs player shoots, overwhelming evidence: ball hits the back of the net with force causing it to bulge, and players reset for a kick-off.
+
+[30:30] GOAL at 00:02 - Team A player shoots, overwhelming evidence: ball stationary in net + player celebration
+
+[30:45] SHOT at 00:14 - Non-bibs player shoots from distance, statistically likely not a goal
+
+[31:00] No notable events detected
+
+[31:15] SHOT at 00:01 - Non-bibs player shoots from distance, statistically likely not a goal
+
+[31:30] GOAL at 00:11 - Team A player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[31:45] SHOT at 00:05 - Team A player shoots from the center of the pitch, statistically likely not a goal
+
+[32:00] No notable events detected
+
+[32:15] SHOT at 00:05 - Non-bibs player shoots from near the centre of the pitch, statistically likely not a goal
+
+[32:30] SHOT at 00:11 - Team A player shoots from the center of the pitch, statistically likely not a goal
+
+[32:45] No notable events detected
+
+[33:00] SHOT at 00:02 - Non-bibs player shoots from distance, statistically likely not a goal
+
+[33:15] SHOT at 33:25 - Non bibs / colours player shoots from distance, statistically likely not a goal
+
+[33:30] No notable events detected
+
+[33:45] No notable events detected
+
+[34:00] SHOT at 00:10 - Non bibs player shoots from the left side, statistically likely not a goal
+
+[34:15] SHOT at 00:07 - Team A player shoots from the center, statistically likely not a goal
+
+[34:30] SHOT at 00:14 - Non-bibs player shoots from a free kick, statistically likely not a goal
+
+[34:45] GOAL at 00:12 - Non bibs player shoots, overwhelming evidence: ball slams into the back of the net causing it to bulge dramatically.
+
+[35:00] No notable events detected
+
+[35:15] GOAL at 00:13 - Orange bibs player shoots, overwhelming evidence: ball stationary in net + player celebrates.
+
+[35:30] SHOT at 00:01 - Non-bibs player shoots toward goal, statistically likely not a goal
+
+[35:45] No notable events detected
+
+[36:00] SHOT at 00:04 - Non-bibs player shoots from a central position, statistically likely not a goal
+
+[36:15] SHOT at 36:30 - Non-bibs player shoots from close range, statistically likely not a goal
+
+[36:30] No notable events detected
+
+[36:45] SHOT at 00:03 - Non-bibs player shoots toward goal, statistically likely not a goal
+
+[37:00] No notable events detected
+
+[37:15] SHOT at 00:06 - Non bibs / colours player shoots, statistically likely not a goal
+
+[37:30] SHOT at 00:12 - Non-bibs player shoots from the right, statistically likely not a goal
+
+[37:45] GOAL at 00:06 - Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration
+
+[38:00] No notable events detected
+
+[38:15] SHOT at 00:08 - Non-bibs player shoots from the left side, statistically likely not a goal
+
+[38:30] SHOT at 00:10 - Non bibs / colours player shoots from distance, statistically likely not a goal
+
+[38:45] SHOT at 00:13 - Non-bibs player shoots, statistically likely not a goal
+
+[39:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 33
+}
+]
+
+[39:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 32
+}
+]
+
+[39:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 30
+}
+]
+
+[39:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 31
+}
+]
+
+[40:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 29
+}
+]
+
+[40:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 29
+}
+]
+
+[40:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 30
+}
+]
+
+[40:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 29
+}
+]
+
+[41:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 28
+}
+]
+
+[41:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 27
+}
+]
+
+[41:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 28
+}
+]
+
+[41:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 27
+}
+]
+
+[42:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+]
+
+[42:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+]
+
+[42:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+]
+
+[42:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+]
+
+[43:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+]
+
+[43:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 25
+}
+]
+
+[43:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 25
+}
+]
+
+[43:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 26
+}
+]
+
+[44:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+
+[44:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+
+[44:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+
+[44:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+
+[45:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 25
+}
+]
+
+[45:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+
+[45:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+
+[45:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+[46:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+
+[46:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+[46:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+[46:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+
+[47:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+[47:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+
+[47:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+[47:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+[48:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+[48:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+[48:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+[48:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+[49:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+[49:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+]
+
+[49:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+[49:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+[50:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+[50:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+[50:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+[50:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 19
+}
+]
+
+[51:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 21
+}
+]
+
+[51:15] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+[51:30] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 19
+}
+]
+
+[51:45] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+
+[52:00] Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-pro"
+  }
+  quota_value: 150
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
