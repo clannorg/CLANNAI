@@ -42,8 +42,28 @@ interface UnifiedSidebarProps {
   allEvents: GameEvent[]
   currentEventIndex: number
   onEventClick: (event: GameEvent) => void
-  eventTypeFilters: Record<string, boolean>
-  setEventTypeFilters: (filters: Record<string, boolean> | ((prev: Record<string, boolean>) => Record<string, boolean>)) => void
+  eventTypeFilters: {
+    goal: boolean
+    shot: boolean
+    save: boolean
+    foul: boolean
+    yellow_card: boolean
+    red_card: boolean
+    corner: boolean
+    substitution: boolean
+    turnover: boolean
+  }
+  setEventTypeFilters: React.Dispatch<React.SetStateAction<{
+    goal: boolean
+    shot: boolean
+    save: boolean
+    foul: boolean
+    yellow_card: boolean
+    red_card: boolean
+    corner: boolean
+    substitution: boolean
+    turnover: boolean
+  }>>
   teamFilter: string
   setTeamFilter: (filter: string) => void
   showFilters: boolean
@@ -57,6 +77,9 @@ interface UnifiedSidebarProps {
   tacticalLoading: boolean
   gameId: string
   onSeekToTimestamp: (timestamp: number) => void
+  
+  // Video time for new event creation
+  currentTime?: number
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'downloads'
@@ -83,7 +106,8 @@ export default function UnifiedSidebar({
   tacticalData,
   tacticalLoading,
   gameId,
-  onSeekToTimestamp
+  onSeekToTimestamp,
+  currentTime = 0
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -198,6 +222,16 @@ export default function UnifiedSidebar({
   const [binnedEvents, setBinnedEvents] = useState<Set<number>>(new Set())
   const [isSavingEvents, setIsSavingEvents] = useState(false)
   
+  // New event creation state
+  const [isCreatingEvent, setIsCreatingEvent] = useState(false)
+  const [newEvent, setNewEvent] = useState({
+    type: 'goal',
+    timestamp: currentTime,
+    team: 'red',
+    description: '',
+    player: ''
+  })
+  
   // Use external active tab if provided, otherwise use internal
   const activeTab = externalActiveTab || internalActiveTab
   
@@ -261,6 +295,76 @@ export default function UnifiedSidebar({
     } catch (error) {
       console.error('❌ Error saving modified events:', error)
       alert('Failed to save changes. Please try again.')
+    } finally {
+      setIsSavingEvents(false)
+    }
+  }
+
+  // New event creation functions
+  const handleStartCreatingEvent = () => {
+    setNewEvent({
+      type: 'goal',
+      timestamp: Math.round(currentTime),
+      team: 'red',
+      description: '',
+      player: ''
+    })
+    setIsCreatingEvent(true)
+  }
+
+  const handleCancelNewEvent = () => {
+    setIsCreatingEvent(false)
+    setNewEvent({
+      type: 'goal',
+      timestamp: currentTime,
+      team: 'red',
+      description: '',
+      player: ''
+    })
+  }
+
+  const handleSaveNewEvent = async () => {
+    if (!gameId || isSavingEvents) return
+
+    try {
+      setIsSavingEvents(true)
+      
+      // Create the new event object
+      const eventToAdd = {
+        type: newEvent.type,
+        timestamp: newEvent.timestamp,
+        team: newEvent.team,
+        description: newEvent.description.trim() || undefined,
+        player: newEvent.player.trim() || undefined
+      }
+
+      // Get current events and add the new one
+      const currentEvents = allEvents
+        .map((event, index) => ({ ...event, originalIndex: index }))
+        .filter((_, index) => !binnedEvents.has(index))
+      
+      // Insert new event in chronological order
+      const newEvents = [...currentEvents, eventToAdd]
+        .sort((a, b) => a.timestamp - b.timestamp)
+
+      await apiClient.saveModifiedEvents(gameId, newEvents)
+      console.log('✅ New event added successfully')
+      
+      // Reset form
+      setIsCreatingEvent(false)
+      setNewEvent({
+        type: 'goal',
+        timestamp: currentTime,
+        team: 'red',
+        description: '',
+        player: ''
+      })
+      
+      // Refresh the page to show the new event
+      window.location.reload()
+    } catch (error) {
+      console.error('❌ Error adding new event:', error)
+      alert('Failed to add event. Please try again.')
     } finally {
       setIsSavingEvents(false)
     }
@@ -547,6 +651,122 @@ export default function UnifiedSidebar({
                   </div>
                 </div>
 
+                {/* Add Event Button OR Inline Form */}
+                <div>
+                  {!isCreatingEvent ? (
+                    // Add Event Button
+                    <button
+                      onClick={handleStartCreatingEvent}
+                      disabled={isSavingEvents}
+                      className="flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-purple-500/20 hover:bg-purple-500/30 border-purple-400/60 text-purple-200 shadow-lg shadow-purple-500/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                      title="Add new event at current time"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                      <span>Add Event</span>
+                      <span className="text-xs text-purple-300">({Math.floor(currentTime / 60)}:{(currentTime % 60).toFixed(0).padStart(2, '0')})</span>
+                    </button>
+                  ) : (
+                    // Inline Event Creation Form (replaces button)
+                    <div className="p-3 rounded-lg bg-purple-900/20 border border-purple-500/30 space-y-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          {/* Time Input */}
+                          <div className="flex items-center gap-1">
+                            <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <input
+                              type="number"
+                              value={newEvent.timestamp}
+                              onChange={(e) => setNewEvent({...newEvent, timestamp: parseInt(e.target.value) || 0})}
+                              className="w-16 bg-gray-800 text-gray-300 text-xs font-mono px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                              placeholder="0"
+                            />
+                            <span className="text-xs text-gray-400">s</span>
+                          </div>
+                          
+                          {/* Event Type Dropdown */}
+                          <select
+                            value={newEvent.type}
+                            onChange={(e) => setNewEvent({...newEvent, type: e.target.value})}
+                            className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                          >
+                            <option value="goal">Goal</option>
+                            <option value="shot">Shot</option>
+                            <option value="save">Save</option>
+                            <option value="foul">Foul</option>
+                            <option value="yellow_card">Yellow Card</option>
+                            <option value="red_card">Red Card</option>
+                            <option value="corner">Corner</option>
+                            <option value="substitution">Substitution</option>
+                            <option value="turnover">Turnover</option>
+                            <option value="offside">Offside</option>
+                          </select>
+                          
+                          {/* Team Dropdown */}
+                          <select
+                            value={newEvent.team}
+                            onChange={(e) => setNewEvent({...newEvent, team: e.target.value})}
+                            className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                          >
+                            <option value="red">{redTeam.name}</option>
+                            <option value="blue">{blueTeam.name}</option>
+                          </select>
+                        </div>
+                        
+                        {/* Action Buttons */}
+                        <div className="flex items-center gap-1">
+                          <button
+                            onClick={handleSaveNewEvent}
+                            disabled={isSavingEvents}
+                            className="p-1 text-green-400 hover:text-green-300 hover:bg-green-500/10 rounded transition-colors disabled:opacity-50"
+                            title="Save event"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </button>
+                          
+                          <button
+                            onClick={handleCancelNewEvent}
+                            disabled={isSavingEvents}
+                            className="p-1 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded transition-colors disabled:opacity-50"
+                            title="Cancel"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      
+                      {/* Description Input */}
+                      <div>
+                        <input
+                          type="text"
+                          value={newEvent.description}
+                          onChange={(e) => setNewEvent({...newEvent, description: e.target.value})}
+                          placeholder="Event description..."
+                          className="w-full bg-gray-800 text-gray-300 text-xs px-3 py-2 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                        />
+                      </div>
+                      
+                      {/* Player Input */}
+                      <div>
+                        <input
+                          type="text"
+                          value={newEvent.player}
+                          onChange={(e) => setNewEvent({...newEvent, player: e.target.value})}
+                          placeholder="Player name/number (optional)..."
+                          className="w-full bg-gray-800 text-gray-300 text-xs px-3 py-2 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
                 {/* More Filters - Collapsible */}
                 <div>
                   <button
@@ -606,16 +826,16 @@ export default function UnifiedSidebar({
                                     // If all are selected, clicking one should show only that one
                                     if (allSelected) {
                                       const newFilters = Object.keys(prev).reduce((acc, key) => {
-                                        acc[key] = key === type
+                                        (acc as any)[key] = key === type
                                         return acc
                                       }, {} as typeof prev)
                                       return newFilters
                                     }
                                     
                                     // If only this one is selected, clicking it should show all
-                                    if (selectedCount === 1 && prev[type]) {
+                                    if (selectedCount === 1 && (prev as any)[type]) {
                                       const newFilters = Object.keys(prev).reduce((acc, key) => {
-                                        acc[key] = true
+                                        (acc as any)[key] = true
                                         return acc
                                       }, {} as typeof prev)
                                       return newFilters
@@ -624,7 +844,7 @@ export default function UnifiedSidebar({
                                     // Otherwise, normal toggle
                                     return {
                                       ...prev,
-                                      [type]: !prev[type]
+                                      [type]: !(prev as any)[type]
                                     }
                                   })
                                 }}

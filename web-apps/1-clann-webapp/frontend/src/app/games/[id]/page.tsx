@@ -410,6 +410,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             tacticalLoading={tacticalLoading} 
             gameId={gameId}
             onSeekToTimestamp={seekToTimestamp}
+            currentTime={currentTime}
                 />
               </div>
       ) : (
@@ -452,6 +453,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
         tacticalLoading={tacticalLoading} 
             gameId={gameId}
           onSeekToTimestamp={seekToTimestamp}
+          currentTime={currentTime}
       />
         </div>
       )}
