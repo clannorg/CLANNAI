@@ -1,1 +1,12 @@
-SHOT at 00:14 - Non-bibs player shoots from distance, statistically likely not a goal
+**GAME CONTEXT:**
+- Global match time starts at: 30m45s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- **At 0 seconds:** The game is underway with players positioned around the pitch. The camera is behind the goal defended by the orange bibs team.
+- **At 3 seconds:** A no bibs/colours player in a light grey shirt and blue shorts receives a pass on the left side of the pitch.
+- **At 8 seconds:** The no bibs/colours player in the grey shirt dribbles forward along the left side.
+- **At 11 seconds:** A no bibs/colours player in a white shirt begins a run from the right side towards the center of the penalty area.
+- **At 14 seconds:** The no bibs/colours player with the ball passes it from the left wing towards his teammate in the white shirt who is now positioned centrally, just outside the penalty area.
+- **At 15 seconds:** The no bibs/colours player in the white shirt takes a first-time shot with his right foot. The ball travels wide of the left post.

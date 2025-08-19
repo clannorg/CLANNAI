@@ -1,21 +1,13 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 25
-}
-]
+Here is a description of the 15-second video segment:
+
+**GAME CONTEXT:**
+- Global match time starts at: 43m15s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- **At 0 seconds:** The game is in a static state, with players walking into position. An orange bibs player in a white t-shirt stands over the ball in the center of the pitch. A player in an orange bib is sitting on the goal crossbar in the foreground.
+- **At 3 seconds:** The orange bibs player in the white t-shirt passes the ball backwards to a teammate in a dark t-shirt.
+- **At 6 seconds:** The orange bibs player in the dark t-shirt immediately passes the ball forward to a teammate on the left wing.
+- **At 9 seconds:** The orange bibs player on the left wing receives the ball and is immediately challenged by a player from the no bibs/colours team.
+- **At 14 seconds:** The player sitting on the crossbar turns to face the camera and speaks, while the orange bibs team maintains possession on the far left side of the pitch.

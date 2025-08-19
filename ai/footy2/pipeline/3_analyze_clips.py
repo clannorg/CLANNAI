@@ -69,6 +69,7 @@ You are one of many agents analyzing different 15-second segments of this game. 
 - Be SPECIFIC about timing: "At 3 seconds:", "At 8 seconds:", etc.
 - State EXACTLY when players kick the ball, shoot, pass, tackle
 - Note which team has possession and when it changes
+- **Use team colors/appearance, NOT team names** (e.g., "orange bibs player" not "clann player")
 - Include specific details that can be verified
 
 **PLAYER IDENTIFICATION:**

@@ -1,186 +1,162 @@
 [
   {
-    "timestamp": 120,
+    "timestamp": 347,
     "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non-bibs player shoots from distance, overwhelming evidence: ball is clearly visible and stationary in the back of the net.",
+    "team": "clann",
+    "description": "A bearded player takes a powerful, first-time shot with his right foot, hitting the back-left of the net.",
     "excitement_level": 9,
-    "original_team_name": "Non-bibs"
+    "original_team_name": "no bibs/colours"
   },
   {
-    "timestamp": 150,
+    "timestamp": 387,
     "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Team A player shoots, overwhelming evidence: ball stationary in net.",
+    "team": "clann",
+    "description": "A player in a white shirt shoots with their right foot from just outside the penalty area into the top right corner.",
+    "excitement_level": 9,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 413,
+    "type": "goal",
+    "team": "clann",
+    "description": "A player in a white shirt shoots from distance, and the ball goes low into the bottom left corner of the goal.",
     "excitement_level": 8,
-    "original_team_name": "Non-bibs"
+    "original_team_name": "no bibs/colours"
   },
   {
-    "timestamp": 165,
+    "timestamp": 530,
     "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "team": "clann",
+    "description": "A powerful shot hits the top bar of the goal and deflects down into the net for a goal.",
     "excitement_level": 10,
-    "original_team_name": "Non-bibs"
+    "original_team_name": "no bibs/colours"
   },
   {
-    "timestamp": 225,
+    "timestamp": 671,
     "type": "goal",
-    "team": "orange bibs",
-    "description": "Orange bibs player shoots, overwhelming evidence: ball is clearly shown entering and resting inside the net.",
-    "excitement_level": 9,
-    "original_team_name": "Orange bibs"
-  },
-  {
-    "timestamp": 375,
-    "type": "goal",
-    "team": "orange bibs",
-    "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "team": "clann",
+    "description": "A powerful shot from a player in a white shirt hits the inside of the left goalpost and deflects into the net.",
     "excitement_level": 10,
-    "original_team_name": "Orange bibs"
+    "original_team_name": "no bibs/colours"
   },
   {
-    "timestamp": 405,
+    "timestamp": 723,
     "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non bibs player shoots, overwhelming evidence: ball hits the back of the net with force.",
-    "excitement_level": 9,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 450,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non-bibs player shoots, overwhelming evidence: ball flies past the keeper and hits the back of the net.",
-    "excitement_level": 9,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 495,
-    "type": "goal",
-    "team": "orange bibs",
-    "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
-    "excitement_level": 10,
-    "original_team_name": "Orange bibs"
-  },
-  {
-    "timestamp": 525,
-    "type": "goal",
-    "team": "orange bibs",
-    "description": "Orange bibs player shoots, overwhelming evidence: ball smashes into the back of the net causing it to bulge, and teammates celebrate immediately.",
-    "excitement_level": 10,
-    "original_team_name": "Orange bibs"
-  },
-  {
-    "timestamp": 570,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
-    "excitement_level": 10,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 735,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
-    "excitement_level": 10,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 750,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Team A player shoots, overwhelming evidence: ball clearly enters net and the player celebrates.",
-    "excitement_level": 9,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 780,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
-    "excitement_level": 10,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 1410,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non-bibs player shoots, overwhelming evidence: ball stationary in net + wild celebration",
-    "excitement_level": 10,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 1575,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration",
-    "excitement_level": 10,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 1590,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net",
+    "team": "lostthehead",
+    "description": "An orange bibs player intercepts a pass and scores with a low shot into the bottom left corner.",
     "excitement_level": 8,
-    "original_team_name": "Non-bibs"
+    "original_team_name": "orange bibs"
   },
   {
-    "timestamp": 1650,
+    "timestamp": 906,
     "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non bibs / colours player shoots from long range, overwhelming evidence: ball clearly crosses the line and hits the back of the net.",
-    "excitement_level": 9,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 1815,
-    "type": "goal",
-    "team": "orange bibs",
-    "description": "Orange bibs player shoots, overwhelming evidence: ball hits the back of the net with force causing it to bulge, and players reset for a kick-off.",
-    "excitement_level": 9,
-    "original_team_name": "Orange bibs"
-  },
-  {
-    "timestamp": 1830,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Team A player shoots, overwhelming evidence: ball stationary in net + player celebration",
-    "excitement_level": 9,
-    "original_team_name": "Non-bibs"
-  },
-  {
-    "timestamp": 1890,
-    "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Team A player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "team": "clann",
+    "description": "A powerful shot from a player in a black shirt hits the inside of the left goalpost and goes in.",
     "excitement_level": 10,
-    "original_team_name": "Non-bibs"
+    "original_team_name": "no bibs/colours"
   },
   {
-    "timestamp": 2085,
+    "timestamp": 1424,
     "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non bibs player shoots, overwhelming evidence: ball slams into the back of the net causing it to bulge dramatically.",
+    "team": "clann",
+    "description": "Following a saved shot, a player in a reddish/pink t-shirt scores on the rebound from a tight angle.",
+    "excitement_level": 8,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 1582,
+    "type": "goal",
+    "team": "lostthehead",
+    "description": "An orange bibs player scores with a long-range shot from just behind the center line into the top left corner.",
     "excitement_level": 10,
-    "original_team_name": "Non-bibs"
+    "original_team_name": "orange bibs"
   },
   {
-    "timestamp": 2115,
+    "timestamp": 1659,
     "type": "goal",
-    "team": "orange bibs",
-    "description": "Orange bibs player shoots, overwhelming evidence: ball stationary in net + player celebrates.",
+    "team": "lostthehead",
+    "description": "A player takes a shot from just outside the center circle that goes into the bottom left of the goal.",
     "excitement_level": 9,
-    "original_team_name": "Orange bibs"
+    "original_team_name": "orange bibs"
   },
   {
-    "timestamp": 2265,
+    "timestamp": 1900,
     "type": "goal",
-    "team": "non bibs / colours",
-    "description": "Non bibs / colours player shoots, overwhelming evidence: ball stationary in net + wild celebration",
+    "team": "clann",
+    "description": "A shot hits the inside of the left goalpost and deflects into the net.",
+    "excitement_level": 9,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 1941,
+    "type": "goal",
+    "team": "clann",
+    "description": "A player in a white shirt shoots from the left, scoring in the bottom left corner of the goal.",
+    "excitement_level": 8,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 2051,
+    "type": "goal",
+    "team": "lostthehead",
+    "description": "A player in blue trousers takes a powerful, low shot with his left foot into the bottom corner of the net.",
+    "excitement_level": 9,
+    "original_team_name": "orange bibs"
+  },
+  {
+    "timestamp": 2098,
+    "type": "goal",
+    "team": "clann",
+    "description": "A player in a black shirt receives a pass and shoots the ball into the top right corner of the net.",
+    "excitement_level": 9,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 2131,
+    "type": "goal",
+    "team": "clann",
+    "description": "A shot hits the underside of the crossbar and bounces down over the goal line.",
     "excitement_level": 10,
-    "original_team_name": "Non-bibs"
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 2303,
+    "type": "goal",
+    "team": "clann",
+    "description": "A player in blue shorts shoots from the left side, and the ball hits the goal frame and goes into the net.",
+    "excitement_level": 9,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 2958,
+    "type": "goal",
+    "team": "clann",
+    "description": "A player takes a long-range shot from just outside the center circle into the top left corner.",
+    "excitement_level": 10,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 3026,
+    "type": "goal",
+    "team": "clann",
+    "description": "A player shoots from near the center circle line, and the ball goes into the bottom left of the net.",
+    "excitement_level": 9,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 3062,
+    "type": "goal",
+    "team": "clann",
+    "description": "After a kick-off, a player in a dark top takes a right-footed shot that goes low into the bottom left corner.",
+    "excitement_level": 8,
+    "original_team_name": "no bibs/colours"
+  },
+  {
+    "timestamp": 3112,
+    "type": "goal",
+    "team": "clann",
+    "description": "A player shoots from just outside the center circle, scoring in the bottom left corner of the net.",
+    "excitement_level": 9,
+    "original_team_name": "no bibs/colours"
   }
 ]

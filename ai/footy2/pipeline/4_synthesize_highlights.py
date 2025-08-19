@@ -40,14 +40,21 @@ class HighlightSynthesizer:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-2.5-pro')
     
-    def synthesize_highlights(self, all_descriptions: str, team_config: dict) -> dict:
-        """Synthesize highlights from all clip descriptions"""
+    def synthesize_highlights(self, all_descriptions: str, team_config: dict) -> str:
+        """Synthesize highlights from all clip descriptions as plain text"""
         
         prompt = f"""You are analyzing a 5-a-side football game between teams identified by their visual appearance:
 - **{team_config['team_a']['colors']}** (Team A)
 - **{team_config['team_b']['colors']}** (Team B)
 
-Below are descriptions of every 15-second clip from the match. Your job is to identify ONLY THE MOST OBVIOUS HIGHLIGHTS.
+Below are descriptions of every 15-second clip from the match. Each clip description starts with [MM:SS] showing the clip start time, then contains detailed timing like "At 3 seconds:", "At 8 seconds:" etc.
+
+**YOUR JOB:** Calculate EXACT timestamps by adding clip start time + internal timing.
+
+**TIMESTAMP CALCULATION:**
+- Clip starts at [05:30] and event happens "At 8 seconds:" = 05:38 total
+- Clip starts at [12:15] and event happens "At 3 seconds:" = 12:18 total
+- Always calculate: Clip Start Time + Internal Event Time = Exact Timestamp
 
 **STRICT CRITERIA:**
 🥅 **ONLY THE MOST OBVIOUS GOALS** - Only the clearest, most definite goals
@@ -55,72 +62,46 @@ Below are descriptions of every 15-second clip from the match. Your job is to id
 
 **IMPORTANT:** 
 - Use EXACT visual identifiers from descriptions (e.g., "Orange bibs", "Non-bibs")
-- Only count events that say "GOAL" AND seem completely certain
+- Only count events that seem completely certain
 - Be conservative - when in doubt, exclude it
-- Let the actual evidence determine the count, don't force artificial limits
+- **CALCULATE EXACT TIMESTAMPS** - don't just use clip start times
 
-**FORMAT YOUR RESPONSE AS JSON:**
-```json
-{{
-  "match_summary": "Brief 2-3 sentence summary using visual identifiers",
-  "final_score": "Visual Team A X - Y Visual Team B",
-  "highlights": [
-    {{
-      "timestamp": "MM:SS",
-      "type": "goal",
-      "team": "Orange bibs|Non-bibs (exact visual identifier)",
-      "description": "Goal description using visual identifiers",
-      "excitement_level": 8-10
-    }}
-  ]
-}}
-```
+**FORMAT YOUR RESPONSE AS PLAIN TEXT:**
 
-**CRITICAL MATH RULE:** 
-- Only include the MOST OBVIOUS goals marked as "GOAL" 
-- Calculate final_score by counting ONLY the goals you include in highlights array
-- If you include 15 Non-bibs goals and 10 Orange bibs goals, final_score = "Non-bibs 15 - 10 Orange bibs"
-- DO NOT make up numbers - count your actual highlights array
+MATCH SUMMARY:
+[Brief 2-3 sentence summary using visual identifiers]
+
+FINAL SCORE:
+[Visual Team A] X - Y [Visual Team B]
+
+HIGHLIGHTS:
+MM:SS - GOAL - [Team]: [Description]
+MM:SS - GOAL - [Team]: [Description]
+[etc.]
+
+**EXAMPLE:**
+MATCH SUMMARY:
+A high-scoring match where Non-bibs team dominated with clinical finishing. Orange bibs fought hard but couldn't match the attacking prowess of their opponents.
+
+FINAL SCORE:
+Non-bibs 12 - 8 Orange bibs
+
+HIGHLIGHTS:
+02:38 - GOAL - Non-bibs: Tall player shoots from close range, ball clearly in net
+05:48 - GOAL - Orange bibs: Quick counter-attack finished by bearded player
+08:15 - GOAL - Non-bibs: Goalkeeper beaten by low shot from edge of area
 
 **CLIP DESCRIPTIONS:**
 {all_descriptions}
 
-Analyze these descriptions and extract only the most exciting highlights. Be selective - quality over quantity!"""
+Analyze these descriptions and create a plain text summary with EXACT calculated timestamps:"""
 
         try:
             response = self.model.generate_content(prompt)
-            
-            # Try to parse as JSON
-            response_text = response.text.strip()
-            
-            # Extract JSON from response (might have markdown formatting)
-            if "```json" in response_text:
-                json_start = response_text.find("```json") + 7
-                json_end = response_text.find("```", json_start)
-                json_text = response_text[json_start:json_end].strip()
-            else:
-                json_text = response_text
-            
-            try:
-                return json.loads(json_text)
-            except json.JSONDecodeError:
-                # Fallback to text format if JSON parsing fails
-                return {
-                    "match_summary": "Analysis completed but JSON parsing failed",
-                    "final_score": "Unknown",
-                    "highlights": [],
-                    "top_moments": [],
-                    "raw_response": response_text
-                }
+            return response.text.strip()
                 
         except Exception as e:
-            return {
-                "error": f"Failed to synthesize highlights: {str(e)}",
-                "match_summary": "Analysis failed",
-                "final_score": "Unknown",
-                "highlights": [],
-                "top_moments": []
-            }
+            return f"Error: Failed to synthesize highlights: {str(e)}"
 
 def extract_timestamp_from_filename(filename: str) -> str:
     """Extract timestamp from filename like clip_05m30s.txt -> 05:30"""
@@ -206,12 +187,12 @@ def main():
     
     # Initialize synthesizer and analyze
     synthesizer = HighlightSynthesizer()
-    highlights_data = synthesizer.synthesize_highlights(combined_descriptions, team_config)
+    highlights_text = synthesizer.synthesize_highlights(combined_descriptions, team_config)
     
-    # Save results
-    highlights_file = outputs_dir / 'highlights.json'
+    # Save results as plain text
+    highlights_file = outputs_dir / 'highlights.txt'
     with open(highlights_file, 'w') as f:
-        json.dump(highlights_data, f, indent=2)
+        f.write(highlights_text)
     
     # Also save the full timeline for reference
     timeline_file = outputs_dir / 'full_timeline.txt'
@@ -225,20 +206,16 @@ def main():
     print(f"📄 Full timeline saved to: {timeline_file}")
     
     # Show preview of results
-    if 'highlights' in highlights_data and highlights_data['highlights']:
-        print(f"\n🎯 Found {len(highlights_data['highlights'])} highlights:")
-        for highlight in highlights_data['highlights'][:5]:  # Show first 5
-            print(f"   {highlight.get('timestamp', '??:??')} - {highlight.get('type', 'moment').upper()}: {highlight.get('description', 'No description')}")
-        
-        if len(highlights_data['highlights']) > 5:
-            print(f"   ... and {len(highlights_data['highlights']) - 5} more")
+    print(f"\n🎯 Highlights Summary:")
+    print("=" * 50)
+    # Show first few lines of the highlights
+    lines = highlights_text.split('\n')
+    for line in lines[:10]:  # Show first 10 lines
+        if line.strip():
+            print(f"   {line}")
     
-    if 'match_summary' in highlights_data:
-        print(f"\n📋 Match Summary:")
-        print(f"   {highlights_data['match_summary']}")
-    
-    if 'final_score' in highlights_data and highlights_data['final_score'] != 'Unknown':
-        print(f"⚽ Final Score: {highlights_data['final_score']}")
+    if len(lines) > 10:
+        print(f"   ... and {len(lines) - 10} more lines")
     
     print(f"\n🎯 Ready for step 5: python 5_format_webapp.py {match_id}")
 

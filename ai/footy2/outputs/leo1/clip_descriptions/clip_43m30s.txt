@@ -1,21 +1,15 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 25
-}
-]
+At 0 seconds: A no bibs/colours player in a white shirt on the left sideline prepares to take a throw-in.
+
+At 1 second: The no bibs/colours player throws the ball into play towards the center of the pitch.
+
+At 3 seconds: An orange bibs player in the center of the pitch intercepts the throw-in with a header.
+
+At 4 seconds: Another orange bibs player controls the bouncing ball.
+
+At 5 seconds: The orange bibs player passes the ball to a teammate on the right wing.
+
+At 8 seconds: The orange bibs player on the right wing passes the ball forward to another orange bibs teammate further down the right sideline.
+
+At 10 seconds: A no bibs/colours player in a white shirt tackles the orange bibs player, and the ball goes out of play for a throw-in on the right side.
+
+At 13 seconds: The orange bibs player who was tackled picks up the ball to take the throw-in.

@@ -1,1 +1,15 @@
-GOAL at 07:45 - Non-bibs player shoots, overwhelming evidence: ball flies past the keeper and hits the back of the net.
+Here is a description of the 15-second video segment.
+
+**Teams:**
+- **Team A:** orange bibs
+- **Team B:** no bibs/colours (defending the goal in the foreground)
+
+**Description:**
+- At 0 seconds: The orange bibs team has possession on the left wing.
+- At 2 seconds: An orange bibs player passes the ball into the center.
+- At 4 seconds: A teammate receives the pass and immediately attempts a shot, which is blocked by a no bibs/colours defender.
+- At 8 seconds: An orange bibs player on the far left side crosses the ball toward the penalty area.
+- At 9 seconds: The cross is headed away by a no bibs/colours defender.
+- At 12 seconds: The ball is recovered by the orange bibs team. A player passes the ball to a teammate on the right side of the penalty area.
+- At 13 seconds: The orange bibs player in blue shorts takes a shot toward the goal.
+- At 14 seconds: The shot is blocked by a sliding no bibs/colours defender, and the ball goes out of play over the goal.

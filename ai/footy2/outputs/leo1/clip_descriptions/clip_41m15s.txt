@@ -1,21 +1,13 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 27
-}
-]
+At 0 seconds, the teams are positioned for a kickoff. The no bibs/colours team has the ball in the center circle. The camera is positioned behind the orange bibs' goal, with their goalkeeper in the foreground watching the play.
+
+At 3 seconds, a player from the no bibs/colours team kicks the ball backwards from the center circle to start the game.
+
+At 4 seconds, the teammate who received the kickoff passes the ball forward and to the right wing.
+
+At 5 seconds, a no bibs/colours player receives the pass on the right side of the pitch.
+
+At 9 seconds, the no bibs/colours player with the ball is challenged by an orange bibs player near the sideline, and the play is stopped.
+
+At 13 seconds, the orange bibs goalkeeper in the foreground scratches the back of his head with his right hand.
+
+At 15 seconds, the orange bibs goalkeeper leans forward and rests both hands on the goal's crossbar while players on the field walk and reposition themselves.

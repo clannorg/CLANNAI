@@ -1,21 +1,9 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 23
-}
-]
+**Detailed Description:**
+
+- **At 0 seconds:** A player from the no bibs/colours team, wearing a dark top on the far left, kicks the ball toward the center circle.
+- **At 1 second:** An orange bibs player in the center intercepts the pass.
+- **At 2 seconds:** The orange bibs player immediately passes the ball forward to a teammate who is running toward the opposition's goal.
+- **At 3 seconds:** The running orange bibs player receives the pass and continues dribbling forward.
+- **At 5 seconds:** As the orange bibs player approaches the penalty area, a no bibs/colours defender in a dark top makes a successful tackle, dispossessing the attacker and stopping the play.
+- **At 9 seconds:** Play has reset. A no bibs/colours player in a dark top has possession on the left side of their own half.
+- **At 11 seconds:** The no bibs/colours player passes the ball to a teammate in the center circle.

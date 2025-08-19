@@ -1,21 +1,13 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 9
-}
-]
+**_A specific play-by-play of the video is below:_**
+
+**At 0 seconds**: The game is underway with Team A (no bibs/colours) in possession near the center circle.
+
+**At 4 seconds**: A Team A player in a white shirt and white socks, positioned on the left side of the pitch, takes a long-range shot.
+
+**At 5 seconds**: The ball hits the crossbar of the goal and bounces back into the center of the field.
+
+**At 7 seconds**: An orange bibs player in the midfield jumps to head the rebounding ball but does not make clear contact.
+
+**At 12 seconds**: A Team A player in a white shirt regains possession of the loose ball on the left wing.
+
+**At 13 seconds**: The Team A player passes the ball backward towards his own half. Team A maintains possession as the clip ends.

@@ -1,21 +1,14 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 14
-}
-]
+**GAME CONTEXT:**
+- Match time starting from: 15m45s
+- Team A: No bibs/colours
+- Team B: Orange bibs
+
+**CLIP DESCRIPTION:**
+
+The clip shows the setup for a kickoff. Players from both teams are positioned in their respective halves around the center circle.
+
+- **At 0 seconds:** An orange bibs player is standing in the goal in front of the camera, acting as a goalkeeper. Players from both teams are getting into position for a restart.
+- **At 5 seconds:** An orange bibs player walks past the camera, out of the goal area, likely as a substitution.
+- **At 8 seconds:** A player from the no bibs/colours team, wearing a bright reddish-pink shirt with a black pattern on the back, walks towards the center spot to take the kickoff.
+- **At 11 seconds:** The player in the reddish-pink shirt places his foot on the ball at the center spot.
+- **At 15 seconds:** The players remain stationary, waiting for the game to begin. The kickoff has not yet been taken.

@@ -1,21 +1,11 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 24
-}
-]
+**GAME CONTEXT:**
+- Global match time starts at: 44m15s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- **At 0 seconds:** A no bibs/colours player on the left wing has possession.
+- **At 2 seconds:** The no bibs/colours player takes a powerful shot with their left foot.
+- **At 3 seconds:** The ball hits the crossbar hard and bounces back out towards the center of the pitch. The orange bibs goalkeeper, closest to the camera, turns to watch the rebound.
+- **At 6 seconds:** A no bibs/colours player in a red shirt controls the rebounded ball near the center circle.
+- **At 7 seconds - 15 seconds:** The game pauses and players from both teams walk around the pitch, getting back into position. The player in the red shirt remains with the ball at their feet in the center.

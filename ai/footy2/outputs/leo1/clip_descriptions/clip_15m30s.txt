@@ -1,21 +1,13 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 13
-}
-]
+Here is a description of the 15-second video segment:
+
+**GAME CONTEXT:**
+- Global match time: 15m30s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- At 0 seconds: The teams are positioned for kick-off. The no bibs/colours team is in possession in the center circle. The orange bibs goalkeeper stands with hands on hips, watching from the goal.
+- At 2 seconds: A no bibs/colours player takes the kick-off, passing the ball backward to a teammate.
+- At 4 seconds: The no bibs/colours player passes the ball out to a teammate on the left wing.
+- At 5 seconds: The no bibs/colours player on the left wing receives the ball and holds it.
+- At 12 seconds: A whistle is heard. For the remainder of the clip, players from both teams jog into new positions while the player on the left wing maintains possession of the stationary ball.

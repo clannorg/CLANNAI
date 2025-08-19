@@ -1,1 +1,15 @@
-GOAL at 00:11 - Team A player shoots, overwhelming evidence: ball clearly enters net and the player celebrates.
+At 0 seconds: The team with no bibs/colours has possession on the left side of the pitch.
+
+At 2 seconds: A no bibs/colours player in a red shirt receives a pass.
+
+At 3 seconds: The player in the red shirt passes the ball across the pitch to the right side.
+
+At 6 seconds: A no bibs/colours player in a dark top passes the ball from the right side back towards the center of the pitch.
+
+At 8 seconds: A no bibs/colours player in a light-coloured top passes the ball back to the left side of the pitch.
+
+At 9 seconds: The player in the red shirt receives the pass.
+
+At 11 seconds: An orange bibs player intercepts a pass attempted by the player in the red shirt. Possession changes to the orange bibs team.
+
+At 12 seconds: The orange bibs player who made the interception passes the ball forward to a teammate.

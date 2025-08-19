@@ -1,1 +1,14 @@
-SHOT at 00:14 - Non-bibs player shoots from a free kick, statistically likely not a goal
+Here is a detailed description of the 15-second video segment:
+
+**GAME CONTEXT:**
+- Global match time starts at: 34m30s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- **At 0 seconds:** The game is set to resume with an indirect free kick for the no bibs/colours team from just inside the orange bibs' half. An orange bibs player stands in front of the goal, observing the play.
+- **At 7 seconds:** A no bibs/colours player takes the free kick, tapping the ball a short distance forward and to his left for a teammate.
+- **At 8 seconds:** The receiving no bibs/colours player shoots the ball with his right foot.
+- **At 9 seconds:** An orange bibs player in the defensive wall blocks the shot.
+- **At 10 seconds:** The ball deflects off the defender and rolls towards the left side of the pitch.
+- **At 13 seconds:** The orange bibs player in front of the camera leans back against the goal's crossbar as players from both teams pursue the loose ball.

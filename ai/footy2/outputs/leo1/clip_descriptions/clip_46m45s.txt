@@ -1,21 +1,13 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 23
-}
-]
+Here is a detailed description of the 15-second video segment:
+
+**Game Context:**
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**Description:**
+*   At 0 seconds: An orange bibs player on the right side of the pitch passes the ball to a teammate in the center.
+*   At 3 seconds: The orange bibs player in the center is dispossessed by a no bibs/colours player in a black t-shirt.
+*   At 4 seconds: The no bibs/colours player in the black t-shirt gains possession and begins dribbling towards the goal.
+*   At 8 seconds: The no bibs/colours player in the black t-shirt takes a right-footed shot from just outside the center circle.
+*   At 9 seconds: The shot goes wide of the right goalpost.
+*   At 10 seconds: The orange bibs goalkeeper, wearing an orange top and blue shorts, watches the ball go out of play.

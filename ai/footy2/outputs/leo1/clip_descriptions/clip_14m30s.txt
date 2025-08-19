@@ -1,1 +1,7 @@
-No notable events detected
+At 0 seconds: The view is from behind a goal, looking through the fence. A no bibs/colours player in a white t-shirt is at the center spot, ready for kickoff.
+At 3 seconds: The no bibs/colours player in the white shirt kicks off the game, passing the ball backwards to a teammate in a red shirt.
+At 5 seconds: The player in the red shirt passes the ball to the right side of the pitch to a teammate in a black shirt.
+At 8 seconds: The player in the black shirt attempts a pass across the field towards the red-shirted player.
+At 9 seconds: An orange bibs player intercepts the pass in the middle of the pitch. Possession changes to the orange bibs team.
+At 11 seconds: The orange bibs player passes the ball forward to a teammate positioned on the right wing.
+At 13 seconds: The orange bibs player on the wing receives the pass and is immediately challenged by the no bibs/colours player in the red shirt.

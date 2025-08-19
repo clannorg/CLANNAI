@@ -1,21 +1,11 @@
-Error analyzing clip: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
-  quota_metric: "generativelanguage.googleapis.com/generate_requests_per_model"
-  quota_id: "GenerateRequestsPerMinutePerProjectPerModel"
-  quota_dimensions {
-    key: "location"
-    value: "global"
-  }
-  quota_dimensions {
-    key: "model"
-    value: "gemini-2.5-pro"
-  }
-  quota_value: 150
-}
-, links {
-  description: "Learn more about Gemini API quotas"
-  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
-}
-, retry_delay {
-  seconds: 8
-}
-]
+The game is paused for the entire duration of this 15-second clip.
+
+At 0 seconds: Players from both the orange bibs team and the no bibs/colours team are standing around the center circle, organizing themselves for a restart. The camera is positioned behind the goal of the orange bibs team.
+
+At 5 seconds: A player wearing a white t-shirt underneath an orange bib adjusts his bib while standing in the center circle.
+
+At 8 seconds: A player with long hair, wearing an orange bib and blue shorts, walks into the frame from the right and takes a position near the goal.
+
+At 11 seconds: The player with long hair in the orange bib and blue shorts places her hands on her hips, assuming a goalkeeper's stance, facing the field.
+
+At 14 seconds: The players remain in their positions, waiting for the game to resume. No play occurs.

@@ -1,1 +1,7 @@
-SHOT at 00:05 - Team A player shoots from near the center circle, statistically likely not a goal
+At 0 seconds, the orange bibs team is positioned for kickoff at the center circle.
+At 1 second, an orange bibs player kicks off, passing the ball backwards to a teammate.
+At 2 seconds, the teammate passes the ball to another orange bibs player on the left side of the pitch.
+At 5 seconds, the player on the left passes the ball back to a teammate positioned in the center of the pitch.
+At 6 seconds, the central orange bibs player takes a long-range shot with his right foot.
+At 7 seconds, the ball goes wide to the left of the goal and rolls out of play.
+At 10 seconds, the goalkeeper in the bright orange shirt walks to the side to retrieve the ball.

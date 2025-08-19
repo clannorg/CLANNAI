@@ -3,7 +3,7 @@
   "teams": {
     "red_team": {
       "name": "clann",
-      "jersey_color": "non bibs / colours"
+      "jersey_color": "no bibs/colours"
     },
     "blue_team": {
       "name": "lostthehead",
@@ -11,7 +11,7 @@
     }
   },
   "counts": {
-    "goals": 23,
+    "goals": 20,
     "shots": 0
   },
   "files": {
@@ -23,6 +23,6 @@
     "other_events_txt": null,
     "tactical_json": null
   },
-  "final_score": "Non-bibs 17 - 6 Orange bibs",
-  "match_summary": "A high-scoring and decisive match where the Non-bibs team demonstrated a dominant attacking performance. While the Orange bibs team managed to score several clear goals, they were ultimately overwhelmed by the consistent pressure and finishing of the Non-bibs players."
+  "final_score": "no bibs/colours 16 - 4 orange bibs",
+  "match_summary": "This was a one-sided match where the no bibs/colours team demonstrated superior finishing and attacking pressure, scoring consistently throughout the game. The orange bibs team scored a few notable long-range goals but were ultimately unable to keep pace with the relentless scoring from their opponents."
 }

@@ -1,1 +1,16 @@
-No notable events detected
+Here is a description of the 15-second video segment:
+
+**Game Clock:** 11m45s - 12m00s
+
+**Teams:**
+-   **Team A:** no bibs/colours (wearing various dark and white tops)
+-   **Team B:** orange bibs
+
+**Events:**
+*   **At 0 seconds:** Players are positioned for kickoff. The ball is in the center circle.
+*   **At 4 seconds:** The orange bibs team kicks off from the center, passing the ball backwards.
+*   **At 5 seconds:** The orange bibs player who received the kickoff passes the ball forward to a teammate on the left wing.
+*   **At 9 seconds:** The orange bibs player on the left wing passes the ball across the pitch towards the right wing.
+*   **At 11 seconds:** A no bibs/colours player in a white shirt intercepts the pass. Possession changes to the no bibs/colours team.
+*   **At 13 seconds:** The no bibs/colours player passes the ball forward.
+*   **At 14 seconds:** An orange bibs player intercepts the forward pass in their own half. Possession changes back to the orange bibs team.

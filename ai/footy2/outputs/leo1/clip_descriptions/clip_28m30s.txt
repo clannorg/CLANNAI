@@ -1,1 +1,13 @@
-SHOT at 28:40 - Orange bibs player shoots toward goal, statistically likely not a goal
+Here is a detailed description of the 15-second video segment:
+
+**Game Context:**
+- **Match Time:** 28m30s
+- **Team A:** no bibs/colours
+- **Team B:** orange bibs
+
+**Description:**
+*   **At 0 seconds:** The game is in progress with the orange bibs team controlling the ball in the center of the pitch. The camera's perspective is from behind the goal they are attacking.
+*   **At 8 seconds:** A player from the orange bibs team on the right wing passes the ball towards the center.
+*   **At 10 seconds:** A different orange bibs player, positioned centrally just outside the penalty area, takes a powerful right-footed shot at the goal.
+*   **At 11 seconds:** The ball hits the left goalpost with a loud bang and rebounds back into play towards the right side of the pitch.
+*   **At 12 seconds:** Another player in an orange bib runs in from the right to try and control the rebound.
