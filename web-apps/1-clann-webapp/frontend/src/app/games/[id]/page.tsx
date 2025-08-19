@@ -307,40 +307,40 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       setCurrentEventIndex(newIndex)
     }
 
-    // Calculate current scores by team based on goals up to current time
-    const goalEvents = allEvents.filter(event => event.type === 'goal' && event.timestamp <= currentTime)
-    console.log('🎯 Goal events up to', Math.floor(currentTime), 'seconds:', goalEvents.map(e => ({
-      team: e.team,
-      timestamp: e.timestamp,
-      description: e.description?.substring(0, 50)
-    })))
+    // Real-time score calculation using metadata
+    const { redTeam, blueTeam } = getTeamInfo(game)
     
-    const redGoals = goalEvents.filter(event => {
-      const eventTeam = event.team?.toLowerCase() || ''
-      const isRedTeam = eventTeam === 'red' || 
-                       eventTeam.includes('non bibs') || 
-                       eventTeam.includes('colours') || 
-                       eventTeam.includes('colors')
-      if (isRedTeam) console.log('🔴 Red goal:', event.team, event.description?.substring(0, 30))
-      return isRedTeam
-    }).length
+    const currentScores = allEvents
+      .filter(event => event.type === 'goal' && event.timestamp <= currentTime)
+      .reduce((scores, goal) => {
+        const goalTeam = goal.team?.toLowerCase() || ''
+        
+        // Check if goal belongs to red team (from metadata)
+        if (goalTeam === redTeam.name.toLowerCase() || 
+            goalTeam.includes(redTeam.name.toLowerCase()) ||
+            redTeam.name.toLowerCase().includes(goalTeam)) {
+          scores.red++
+        }
+        // Check if goal belongs to blue team (from metadata)  
+        else if (goalTeam === blueTeam.name.toLowerCase() || 
+                 goalTeam.includes(blueTeam.name.toLowerCase()) ||
+                 blueTeam.name.toLowerCase().includes(goalTeam)) {
+          scores.blue++
+        }
+        
+        return scores
+      }, { red: 0, blue: 0 })
     
-    const blueGoals = goalEvents.filter(event => {
-      const eventTeam = event.team?.toLowerCase() || ''
-      const isBlueTeam = eventTeam === 'blue' || 
-                        eventTeam === 'black' || 
-                        eventTeam === 'orange' ||
-                        eventTeam.includes('orange bibs') ||
-                        eventTeam.includes('blue bibs')
-      if (isBlueTeam) console.log('🔵 Blue goal:', event.team, event.description?.substring(0, 30))
-      return isBlueTeam
-    }).length
+    console.log('📊 Score calculation:', { 
+      currentScores, 
+      redTeam: redTeam.name, 
+      blueTeam: blueTeam.name,
+      goalCount: allEvents.filter(e => e.type === 'goal' && e.timestamp <= currentTime).length
+    })
     
-    console.log('📊 Score calculation:', { redGoals, blueGoals, currentScores: teamScores })
-    
-    if (redGoals !== teamScores.red || blueGoals !== teamScores.blue) {
-      console.log('🔄 Updating scores from', teamScores, 'to', { red: redGoals, blue: blueGoals })
-      setTeamScores({ red: redGoals, blue: blueGoals })
+    if (currentScores.red !== teamScores.red || currentScores.blue !== teamScores.blue) {
+      console.log('🔄 Updating scores from', teamScores, 'to', currentScores)
+      setTeamScores(currentScores)
     }
   }, [currentTime, game?.ai_analysis, currentEventIndex, teamScores.red, teamScores.blue, allEvents])
 
