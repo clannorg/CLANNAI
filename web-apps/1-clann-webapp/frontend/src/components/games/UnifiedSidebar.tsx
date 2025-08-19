@@ -668,6 +668,11 @@ export default function UnifiedSidebar({
               <div className="space-y-2">
                 {events.map((event, index) => {
                   const originalIndex = allEvents.indexOf(event)
+                  const isBinned = binnedEvents.has(originalIndex)
+                  
+                  // Skip binned events
+                  if (isBinned) return null
+                  
                   return (
                     <button
                       key={`${event.timestamp}-${event.type}-${index}`}
@@ -681,6 +686,14 @@ export default function UnifiedSidebar({
                     >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
+                        {/* Time Badge - moved to front */}
+                        <div className="flex items-center gap-1">
+                          <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                        </div>
+                        
                         {/* Event Type Badge */}
                         <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
                           event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
@@ -702,12 +715,37 @@ export default function UnifiedSidebar({
                         )}
                       </div>
                       
-                      {/* Time Badge */}
+                      {/* Action Buttons - bin and edit */}
                       <div className="flex items-center gap-1">
-                        <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                        {/* Bin Button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleBinEvent(originalIndex)
+                          }}
+                          disabled={isSavingEvents}
+                          className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                          title="Delete this event"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                        
+                        {/* Edit Button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            // TODO: Open edit modal
+                            console.log('Edit event:', event)
+                          }}
+                          className="p-1 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 rounded transition-colors"
+                          title="Edit this event"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                     
@@ -723,6 +761,67 @@ export default function UnifiedSidebar({
                   </button>
                 )
                 })}
+                
+                {/* Binned Events Section */}
+                {binnedEvents.size > 0 && (
+                  <div className="mt-6 pt-4 border-t border-gray-700">
+                    <h5 className="text-white font-medium mb-3">🗑️ Deleted Events ({binnedEvents.size}):</h5>
+                    <div className="space-y-2">
+                      {allEvents.map((event, index) => {
+                        if (!binnedEvents.has(index)) return null
+                        
+                        return (
+                          <div
+                            key={`binned-${event.timestamp}-${event.type}-${index}`}
+                            className="flex items-center justify-between gap-2 p-3 rounded-lg bg-red-900/20 border border-red-500/30 opacity-75"
+                          >
+                            <div className="flex items-center gap-2">
+                              {/* Time Badge */}
+                              <div className="flex items-center gap-1">
+                                <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                              </div>
+                              
+                              {/* Event Type Badge */}
+                              <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
+                                event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
+                                event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
+                                event.type === 'foul' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' :
+                                event.type === 'turnover' ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' :
+                                event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
+                                'bg-gray-500/20 text-gray-300 border-gray-500/30'
+                              }`}>
+                                <span>{getEventEmoji(event.type)}</span>
+                                <span>{event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+                              </span>
+                              
+                              {/* Team Badge */}
+                              {event.team && (
+                                <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${getTeamBadgeColors(event.team)}`}>
+                                  {getTeamName(event.team)}
+                                </span>
+                              )}
+                            </div>
+                            
+                            {/* Restore Button */}
+                            <button
+                              onClick={() => handleUnbinEvent(index)}
+                              disabled={isSavingEvents}
+                              className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
+                              title="Restore this event"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                              </svg>
+                            </button>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
