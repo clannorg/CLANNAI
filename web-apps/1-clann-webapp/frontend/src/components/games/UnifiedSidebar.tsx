@@ -646,15 +646,15 @@ export default function UnifiedSidebar({
                     <button
                       onClick={() => {
                         if (teamFilter === 'both') {
-                          setTeamFilter('red') // Both selected -> Red only
-                        } else if (teamFilter === 'red') {
-                          setTeamFilter('blue') // Red only -> Blue only
+                          setTeamFilter(redTeam.name.toLowerCase()) // Both selected -> Red team only
+                        } else if (teamFilter === redTeam.name.toLowerCase()) {
+                          setTeamFilter(blueTeam.name.toLowerCase()) // Red team only -> Blue team only
                         } else {
-                          setTeamFilter('both') // Blue only -> Both
+                          setTeamFilter('both') // Blue team only -> Both
                         }
                       }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
-                        teamFilter === 'red' || teamFilter === 'both'
+                        teamFilter === redTeam.name.toLowerCase() || teamFilter === 'both'
                           ? `${redTeamColorClass} hover:opacity-90`
                           : `bg-gray-500/20 text-gray-400 border-gray-500/30 hover:bg-gray-500/30`
                       }`}
@@ -665,15 +665,15 @@ export default function UnifiedSidebar({
                     <button
                       onClick={() => {
                         if (teamFilter === 'both') {
-                          setTeamFilter('blue') // Both selected -> Blue only
-                        } else if (teamFilter === 'blue' || teamFilter === 'black') {
-                          setTeamFilter('red') // Blue only -> Red only
+                          setTeamFilter(blueTeam.name.toLowerCase()) // Both selected -> Blue team only
+                        } else if (teamFilter === blueTeam.name.toLowerCase()) {
+                          setTeamFilter(redTeam.name.toLowerCase()) // Blue team only -> Red team only
                         } else {
-                          setTeamFilter('both') // Red only -> Both
+                          setTeamFilter('both') // Red team only -> Both
                         }
                       }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
-                        teamFilter === 'blue' || teamFilter === 'black' || teamFilter === 'both'
+                        teamFilter === blueTeam.name.toLowerCase() || teamFilter === 'both'
                           ? `${blueTeamColorClass} hover:opacity-90`
                           : `bg-gray-500/20 text-gray-400 border-gray-500/30 hover:bg-gray-500/30`
                       }`}

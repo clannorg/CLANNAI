@@ -231,37 +231,10 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
         return false
       }
       
-      // Filter by team
+      // Filter by team - direct comparison with actual team names
       if (teamFilter !== 'both' && event.team) {
         const eventTeam = event.team.toLowerCase()
-        
-        // Map event team to filter categories
-        let eventTeamCategory = 'unknown'
-        
-        // Handle descriptive team names
-        if (eventTeam.includes('orange bibs') || eventTeam.includes('orange bib')) {
-          eventTeamCategory = 'blue' // Orange bibs maps to blue team
-        } else if (eventTeam.includes('non bibs') || eventTeam.includes('colours') || eventTeam.includes('colors')) {
-          eventTeamCategory = 'red' // Non bibs maps to red team
-        } else {
-          // Handle standard color identifiers
-          switch (eventTeam) {
-            case 'red':
-            case 'white':
-              eventTeamCategory = 'red'
-              break
-            case 'blue':
-            case 'black':
-            case 'orange':
-              eventTeamCategory = 'blue'
-              break
-            default:
-              eventTeamCategory = 'unknown'
-          }
-        }
-        
-        // Filter based on mapped category
-        if (eventTeamCategory !== teamFilter) {
+        if (eventTeam !== teamFilter) {
           return false
         }
       }
