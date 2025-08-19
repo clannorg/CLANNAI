@@ -38,44 +38,49 @@ class HighlightSynthesizer:
             raise ValueError("GEMINI_API_KEY not found in environment variables")
         
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        self.model = genai.GenerativeModel('gemini-2.5-pro')
     
     def synthesize_highlights(self, all_descriptions: str, team_config: dict) -> dict:
         """Synthesize highlights from all clip descriptions"""
         
-        prompt = f"""You are analyzing a 5-a-side football game between {team_config['team_a']['name']} and {team_config['team_b']['name']}.
+        prompt = f"""You are analyzing a 5-a-side football game between teams identified by their visual appearance:
+- **{team_config['team_a']['colors']}** (Team A)
+- **{team_config['team_b']['colors']}** (Team B)
 
-Below are descriptions of every 15-second clip from the match. Your job is to identify the HIGHLIGHTS - the most important and exciting moments.
+Below are descriptions of every 15-second clip from the match. Your job is to identify ONLY THE MOST OBVIOUS HIGHLIGHTS.
 
-**FOCUS ON:**
-🥅 **GOALS** - All goals scored (most important!)
-⚡ **COOL MOMENTS** - Great skills, saves, near-misses, tackles
-🎯 **KEY EVENTS** - Important plays that shaped the game
+**STRICT CRITERIA:**
+🥅 **ONLY THE MOST OBVIOUS GOALS** - Only the clearest, most definite goals
+🚫 **BE SELECTIVE** - Quality over quantity
 
-**IGNORE:**
-- Routine passing
-- Normal possession changes
-- Boring moments
+**IMPORTANT:** 
+- Use EXACT visual identifiers from descriptions (e.g., "Orange bibs", "Non-bibs")
+- Only count events that say "GOAL" AND seem completely certain
+- Be conservative - when in doubt, exclude it
+- Let the actual evidence determine the count, don't force artificial limits
 
 **FORMAT YOUR RESPONSE AS JSON:**
 ```json
 {{
-  "match_summary": "Brief 2-3 sentence summary of the game",
-  "final_score": "Team A X - Y Team B (if determinable, otherwise 'Unknown')",
+  "match_summary": "Brief 2-3 sentence summary using visual identifiers",
+  "final_score": "Visual Team A X - Y Visual Team B",
   "highlights": [
     {{
       "timestamp": "MM:SS",
-      "type": "goal|skill|save|near_miss|key_moment",
-      "team": "Team A|Team B",
-      "description": "What happened",
-      "excitement_level": 1-10
+      "type": "goal",
+      "team": "Orange bibs|Non-bibs (exact visual identifier)",
+      "description": "Goal description using visual identifiers",
+      "excitement_level": 8-10
     }}
-  ],
-  "top_moments": [
-    "The 3 most exciting moments as brief descriptions"
   ]
 }}
 ```
+
+**CRITICAL MATH RULE:** 
+- Only include the MOST OBVIOUS goals marked as "GOAL" 
+- Calculate final_score by counting ONLY the goals you include in highlights array
+- If you include 15 Non-bibs goals and 10 Orange bibs goals, final_score = "Non-bibs 15 - 10 Orange bibs"
+- DO NOT make up numbers - count your actual highlights array
 
 **CLIP DESCRIPTIONS:**
 {all_descriptions}

@@ -1,0 +1,28 @@
+{
+  "match_id": "leo1",
+  "teams": {
+    "red_team": {
+      "name": "clann",
+      "jersey_color": "non bibs / colours"
+    },
+    "blue_team": {
+      "name": "lostthehead",
+      "jersey_color": "orange bibs"
+    }
+  },
+  "counts": {
+    "goals": 23,
+    "shots": 0
+  },
+  "files": {
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/leo1-video-mp4.mp4",
+    "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-web_events_array-json.json",
+    "web_events_json": null,
+    "timeline_txt": null,
+    "ground_truth_json": null,
+    "other_events_txt": null,
+    "tactical_json": null
+  },
+  "final_score": "Non-bibs 17 - 6 Orange bibs",
+  "match_summary": "A high-scoring and decisive match where the Non-bibs team demonstrated a dominant attacking performance. While the Orange bibs team managed to score several clear goals, they were ultimately overwhelmed by the consistent pressure and finishing of the Non-bibs players."
+}

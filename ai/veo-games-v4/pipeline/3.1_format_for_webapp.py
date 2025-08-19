@@ -116,7 +116,7 @@ Convert this football match events list into a JSON array for a webapp timeline.
 
 CRITICAL: You must return ONLY valid JSON that can be parsed by json.loads()
 
-TEAM MAPPING:
+TEAM MAPPING (Use colors for reliability):
 - {team_a_name} → team: "{team_a_color}"
 - {team_b_name} → team: "{team_b_color}"
 
@@ -134,7 +134,7 @@ OUTPUT FORMAT - Return a JSON array where each event has:
 RULES:
 1. Parse each line in format: "MM:SS - TYPE: Team - Description"
 2. Convert timestamps like "32:48" to seconds (32*60 + 48 = 1968)
-3. Map teams: {team_a_name} → "{team_a_color}", {team_b_name} → "{team_b_color}"
+3. Map teams by color for reliability: {team_a_name} → "{team_a_color}", {team_b_name} → "{team_b_color}"
 4. Map event types: GOAL→goal, SHOT→shot, FOUL→foul, KICK-OFF→kick_off, etc.
 5. Keep descriptions concise and clear
 6. Sort by timestamp ascending
