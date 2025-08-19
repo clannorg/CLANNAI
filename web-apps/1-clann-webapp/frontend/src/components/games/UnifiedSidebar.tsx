@@ -110,21 +110,45 @@ export default function UnifiedSidebar({
 
   // Function to get team name from team type
   const getTeamName = (teamType: string) => {
-    switch (teamType.toLowerCase()) {
+    const teamLower = teamType.toLowerCase()
+    
+    // Handle descriptive team names
+    if (teamLower.includes('orange bibs') || teamLower.includes('orange bib')) {
+      return blueTeam.name
+    }
+    if (teamLower.includes('non bibs') || teamLower.includes('colours') || teamLower.includes('colors')) {
+      return redTeam.name
+    }
+    
+    // Handle standard color identifiers
+    switch (teamLower) {
       case 'red': return redTeam.name
       case 'blue':
       case 'black': return blueTeam.name
+      case 'orange': return blueTeam.name
+      case 'white': return redTeam.name
       default: return teamType.charAt(0).toUpperCase() + teamType.slice(1)
     }
   }
 
   // Function to get team badge colors from team type
   const getTeamBadgeColors = (teamType: string) => {
-    switch (teamType.toLowerCase()) {
+    const teamLower = teamType.toLowerCase()
+    
+    // Handle descriptive team names first
+    if (teamLower.includes('orange bibs') || teamLower.includes('orange bib')) {
+      return 'bg-orange-500/20 text-orange-300 border-orange-500/30'
+    }
+    if (teamLower.includes('non bibs') || teamLower.includes('colours') || teamLower.includes('colors')) {
+      return 'bg-white/20 text-white border-white/30'
+    }
+    
+    // Handle standard color identifiers
+    switch (teamLower) {
       case 'red': {
         // Extract the main color from redTeamColorClass (e.g., 'bg-yellow-500' -> 'yellow')
         const colorMatch = redTeamColorClass.match(/bg-(\w+)-\d+/)
-        const color = colorMatch ? colorMatch[1] : 'yellow'
+        const color = colorMatch ? colorMatch[1] : 'red'
         return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
       }
       case 'blue':
@@ -134,6 +158,10 @@ export default function UnifiedSidebar({
         const color = colorMatch ? colorMatch[1] : 'blue'
         return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
       }
+      case 'orange':
+        return 'bg-orange-500/20 text-orange-300 border-orange-500/30'
+      case 'white':
+        return 'bg-white/20 text-white border-white/30'
       default:
         return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
     }

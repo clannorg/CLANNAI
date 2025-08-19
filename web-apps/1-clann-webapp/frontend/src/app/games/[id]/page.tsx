@@ -232,8 +232,38 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       }
       
       // Filter by team
-      if (teamFilter !== 'both' && event.team && event.team !== teamFilter) {
-        return false
+      if (teamFilter !== 'both' && event.team) {
+        const eventTeam = event.team.toLowerCase()
+        
+        // Map event team to filter categories
+        let eventTeamCategory = 'unknown'
+        
+        // Handle descriptive team names
+        if (eventTeam.includes('orange bibs') || eventTeam.includes('orange bib')) {
+          eventTeamCategory = 'blue' // Orange bibs maps to blue team
+        } else if (eventTeam.includes('non bibs') || eventTeam.includes('colours') || eventTeam.includes('colors')) {
+          eventTeamCategory = 'red' // Non bibs maps to red team
+        } else {
+          // Handle standard color identifiers
+          switch (eventTeam) {
+            case 'red':
+            case 'white':
+              eventTeamCategory = 'red'
+              break
+            case 'blue':
+            case 'black':
+            case 'orange':
+              eventTeamCategory = 'blue'
+              break
+            default:
+              eventTeamCategory = 'unknown'
+          }
+        }
+        
+        // Filter based on mapped category
+        if (eventTeamCategory !== teamFilter) {
+          return false
+        }
       }
       
       return true
@@ -259,15 +289,38 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
     }
 
     // Calculate current scores by team based on goals up to current time
-    const redGoals = allEvents.filter(event => 
-      event.type === 'goal' && event.timestamp <= currentTime && event.team === 'red'
-    ).length
+    const goalEvents = allEvents.filter(event => event.type === 'goal' && event.timestamp <= currentTime)
+    console.log('🎯 Goal events up to', Math.floor(currentTime), 'seconds:', goalEvents.map(e => ({
+      team: e.team,
+      timestamp: e.timestamp,
+      description: e.description?.substring(0, 50)
+    })))
     
-    const blueGoals = allEvents.filter(event => 
-      event.type === 'goal' && event.timestamp <= currentTime && (event.team === 'blue' || event.team === 'black')
-    ).length
+    const redGoals = goalEvents.filter(event => {
+      const eventTeam = event.team?.toLowerCase() || ''
+      const isRedTeam = eventTeam === 'red' || 
+                       eventTeam.includes('non bibs') || 
+                       eventTeam.includes('colours') || 
+                       eventTeam.includes('colors')
+      if (isRedTeam) console.log('🔴 Red goal:', event.team, event.description?.substring(0, 30))
+      return isRedTeam
+    }).length
+    
+    const blueGoals = goalEvents.filter(event => {
+      const eventTeam = event.team?.toLowerCase() || ''
+      const isBlueTeam = eventTeam === 'blue' || 
+                        eventTeam === 'black' || 
+                        eventTeam === 'orange' ||
+                        eventTeam.includes('orange bibs') ||
+                        eventTeam.includes('blue bibs')
+      if (isBlueTeam) console.log('🔵 Blue goal:', event.team, event.description?.substring(0, 30))
+      return isBlueTeam
+    }).length
+    
+    console.log('📊 Score calculation:', { redGoals, blueGoals, currentScores: teamScores })
     
     if (redGoals !== teamScores.red || blueGoals !== teamScores.blue) {
+      console.log('🔄 Updating scores from', teamScores, 'to', { red: redGoals, blue: blueGoals })
       setTeamScores({ red: redGoals, blue: blueGoals })
     }
   }, [currentTime, game?.ai_analysis, currentEventIndex, teamScores.red, teamScores.blue, allEvents])

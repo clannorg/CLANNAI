@@ -16,6 +16,26 @@ export interface TeamMetadata {
 export const getTeamColorClass = (jerseyColor: string): string => {
   const color = jerseyColor.toLowerCase().trim()
   
+  // Handle descriptive team names first
+  if (color.includes('orange bibs') || color.includes('orange bib')) {
+    return 'bg-orange-500 text-white border-orange-600'
+  }
+  if (color.includes('non bibs') || color.includes('colours') || color.includes('colors')) {
+    return 'bg-white text-black border-gray-300'
+  }
+  if (color.includes('blue bibs') || color.includes('blue bib')) {
+    return 'bg-blue-500 text-white border-blue-600'
+  }
+  if (color.includes('red bibs') || color.includes('red bib')) {
+    return 'bg-red-500 text-white border-red-600'
+  }
+  if (color.includes('yellow bibs') || color.includes('yellow bib')) {
+    return 'bg-yellow-500 text-black border-yellow-600'
+  }
+  if (color.includes('green bibs') || color.includes('green bib')) {
+    return 'bg-green-500 text-white border-green-600'
+  }
+  
   // Handle compound colors by using the first color mentioned
   // e.g., "blue and turquoise" -> use "blue"
   const primaryColor = color.split(' ')[0]

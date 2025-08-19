@@ -58,6 +58,27 @@ export default function VideoPlayer({
   // Convert jersey color descriptions to actual CSS colors
   const getTeamCSSColor = (jerseyColor: string) => {
     const color = jerseyColor.toLowerCase().trim()
+    
+    // Handle descriptive team names first
+    if (color.includes('orange bibs') || color.includes('orange bib')) {
+      return '#F97316' // Orange
+    }
+    if (color.includes('non bibs') || color.includes('colours') || color.includes('colors')) {
+      return '#FFFFFF' // White
+    }
+    if (color.includes('blue bibs') || color.includes('blue bib')) {
+      return '#3B82F6' // Blue
+    }
+    if (color.includes('red bibs') || color.includes('red bib')) {
+      return '#DC2626' // Red
+    }
+    if (color.includes('yellow bibs') || color.includes('yellow bib')) {
+      return '#EAB308' // Yellow
+    }
+    if (color.includes('green bibs') || color.includes('green bib')) {
+      return '#22C55E' // Green
+    }
+    
     const primaryColor = color.split(' ')[0]
     
     switch (primaryColor) {
@@ -78,15 +99,26 @@ export default function VideoPlayer({
 
   // Function to get event color - ALWAYS use team colors, never event type colors
   const getTimelineEventColor = (event: GameEvent) => {
-    // Use team colors for all events
+    const eventTeam = event.team?.toLowerCase() || ''
+    
+    // Handle descriptive team names directly
+    if (eventTeam.includes('orange bibs') || eventTeam.includes('orange bib')) {
+      return getTeamCSSColor(blueTeam.jersey_color) // Map to blue team
+    }
+    if (eventTeam.includes('non bibs') || eventTeam.includes('colours') || eventTeam.includes('colors')) {
+      return getTeamCSSColor(redTeam.jersey_color) // Map to red team
+    }
+    
+    // Standard color identifiers
     if (event.team === 'red' || event.team === 'white') return getTeamCSSColor(redTeam.jersey_color)
     if (event.team === 'blue' || event.team === 'black') return getTeamCSSColor(blueTeam.jersey_color)
+    if (event.team === 'orange') return getTeamCSSColor(blueTeam.jersey_color)
     
     // For events without team info, try to infer from description
     if (event.description) {
       const desc = event.description.toLowerCase()
-      if (desc.includes('white') || desc.includes('east')) return getTeamCSSColor(redTeam.jersey_color)
-      if (desc.includes('opposition') || desc.includes('blue') || desc.includes('black')) return getTeamCSSColor(blueTeam.jersey_color)
+      if (desc.includes('non-bibs') || desc.includes('white') || desc.includes('east')) return getTeamCSSColor(redTeam.jersey_color)
+      if (desc.includes('orange bibs') || desc.includes('opposition') || desc.includes('blue') || desc.includes('black')) return getTeamCSSColor(blueTeam.jersey_color)
     }
     
     // Last resort - use neutral color
