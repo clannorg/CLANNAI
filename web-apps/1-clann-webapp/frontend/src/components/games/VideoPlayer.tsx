@@ -97,32 +97,26 @@ export default function VideoPlayer({
     }
   }
 
-  // Function to get event color - ALWAYS use team colors, never event type colors
+  // Function to get event color - use metadata team colors
   const getTimelineEventColor = (event: GameEvent) => {
     const eventTeam = event.team?.toLowerCase() || ''
     
-    // Handle descriptive team names directly
-    if (eventTeam.includes('orange bibs') || eventTeam.includes('orange bib')) {
-      return getTeamCSSColor(blueTeam.jersey_color) // Map to blue team
-    }
-    if (eventTeam.includes('non bibs') || eventTeam.includes('colours') || eventTeam.includes('colors')) {
-      return getTeamCSSColor(redTeam.jersey_color) // Map to red team
-    }
-    
-    // Standard color identifiers
-    if (event.team === 'red' || event.team === 'white') return getTeamCSSColor(redTeam.jersey_color)
-    if (event.team === 'blue' || event.team === 'black') return getTeamCSSColor(blueTeam.jersey_color)
-    if (event.team === 'orange') return getTeamCSSColor(blueTeam.jersey_color)
-    
-    // For events without team info, try to infer from description
-    if (event.description) {
-      const desc = event.description.toLowerCase()
-      if (desc.includes('non-bibs') || desc.includes('white') || desc.includes('east')) return getTeamCSSColor(redTeam.jersey_color)
-      if (desc.includes('orange bibs') || desc.includes('opposition') || desc.includes('blue') || desc.includes('black')) return getTeamCSSColor(blueTeam.jersey_color)
+    // Check if event team matches red team (from metadata)
+    if (eventTeam === redTeam.name.toLowerCase() || 
+        eventTeam.includes(redTeam.name.toLowerCase()) ||
+        redTeam.name.toLowerCase().includes(eventTeam)) {
+      return getTeamCSSColor(redTeam.jersey_color)
     }
     
-    // Last resort - use neutral color
-    return '#6B7280'
+    // Check if event team matches blue team (from metadata)
+    if (eventTeam === blueTeam.name.toLowerCase() || 
+        eventTeam.includes(blueTeam.name.toLowerCase()) ||
+        blueTeam.name.toLowerCase().includes(eventTeam)) {
+      return getTeamCSSColor(blueTeam.jersey_color)
+    }
+    
+    // Fallback to red team color for unmatched events
+    return getTeamCSSColor(redTeam.jersey_color)
   }
 
   const handleTimeUpdate = () => {
