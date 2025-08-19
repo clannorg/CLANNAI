@@ -194,6 +194,10 @@ export default function UnifiedSidebar({
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
   
+  // Manual annotation state
+  const [binnedEvents, setBinnedEvents] = useState<Set<number>>(new Set())
+  const [isSavingEvents, setIsSavingEvents] = useState(false)
+  
   // Use external active tab if provided, otherwise use internal
   const activeTab = externalActiveTab || internalActiveTab
   
@@ -215,6 +219,50 @@ export default function UnifiedSidebar({
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
       handleSendMessage()
+    }
+  }
+
+  // Manual annotation functions
+  const handleBinEvent = async (eventIndex: number) => {
+    const newBinned = new Set(binnedEvents)
+    newBinned.add(eventIndex)
+    setBinnedEvents(newBinned)
+    
+    // Also remove from selected events if it was selected
+    const newSelected = new Set(selectedEvents)
+    newSelected.delete(eventIndex)
+    setSelectedEvents(newSelected)
+    
+    // Save to database
+    await saveModifiedEvents()
+  }
+  
+  const handleUnbinEvent = async (eventIndex: number) => {
+    const newBinned = new Set(binnedEvents)
+    newBinned.delete(eventIndex)
+    setBinnedEvents(newBinned)
+    
+    // Save to database
+    await saveModifiedEvents()
+  }
+  
+  const saveModifiedEvents = async () => {
+    if (!gameId || isSavingEvents) return
+    
+    setIsSavingEvents(true)
+    try {
+      // Create modified events array (filter out binned events)
+      const modifiedEvents = allEvents
+        .map((event, index) => ({ ...event, originalIndex: index }))
+        .filter((_, index) => !binnedEvents.has(index))
+      
+      await apiClient.saveModifiedEvents(gameId, modifiedEvents)
+      console.log('✅ Modified events saved successfully')
+    } catch (error) {
+      console.error('❌ Error saving modified events:', error)
+      alert('Failed to save changes. Please try again.')
+    } finally {
+      setIsSavingEvents(false)
     }
   }
 
@@ -864,17 +912,21 @@ export default function UnifiedSidebar({
                 <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
                 <div className="space-y-2">
                   {allEvents.slice(0, 20).map((event, index) => {
+                    const isBinned = binnedEvents.has(index)
                     const isSelected = selectedEvents.has(index)
                     const isDisabled = !isSelected && selectedEvents.size >= 5
                     
+                    // Skip binned events
+                    if (isBinned) return null
+                    
                     return (
-                      <label
+                      <div
                         key={`${event.timestamp}-${event.type}-${index}`}
-                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
+                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
                           isSelected 
                             ? 'bg-orange-500/20 border border-orange-500/30' 
                             : isDisabled 
-                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
+                              ? 'bg-gray-800/20 opacity-50'
                               : 'bg-gray-800/30 hover:bg-gray-800/50'
                         }`}
                       >
@@ -902,10 +954,71 @@ export default function UnifiedSidebar({
                             {transformDescription(event.description || '')}
                           </p>
                         </div>
-                      </label>
+                        
+                        {/* Bin Button */}
+                        <button
+                          onClick={() => handleBinEvent(index)}
+                          disabled={isSavingEvents}
+                          className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                          title="Delete this event"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                      </div>
                     )
                   })}
                 </div>
+                
+                {/* Binned Events Section */}
+                {binnedEvents.size > 0 && (
+                  <div className="mt-6 pt-4 border-t border-gray-700">
+                    <h5 className="text-white font-medium mb-3">🗑️ Deleted Events ({binnedEvents.size}):</h5>
+                    <div className="space-y-2">
+                      {allEvents.map((event, index) => {
+                        if (!binnedEvents.has(index)) return null
+                        
+                        return (
+                          <div
+                            key={`binned-${event.timestamp}-${event.type}-${index}`}
+                            className="flex items-center space-x-3 p-3 rounded-lg bg-red-900/20 border border-red-500/30 opacity-75"
+                          >
+                            <div className="flex-1">
+                              <div className="flex items-center space-x-2">
+                                <span 
+                                  className={`inline-block w-3 h-3 rounded-full`}
+                                  style={{ backgroundColor: getEventColor(event.type) }}
+                                />
+                                <span className="text-white font-medium capitalize">
+                                  {event.type}
+                                </span>
+                                <span className="text-gray-400 text-sm">
+                                  {formatTime(event.timestamp)}
+                                </span>
+                              </div>
+                              <p className="text-gray-300 text-sm mt-1">
+                                {transformDescription(event.description || '')}
+                              </p>
+                            </div>
+                            
+                            {/* Restore Button */}
+                            <button
+                              onClick={() => handleUnbinEvent(index)}
+                              disabled={isSavingEvents}
+                              className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
+                              title="Restore this event"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                              </svg>
+                            </button>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
