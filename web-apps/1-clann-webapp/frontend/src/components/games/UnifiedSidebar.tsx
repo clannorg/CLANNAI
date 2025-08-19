@@ -644,25 +644,19 @@ export default function UnifiedSidebar({
                 <div>
                   <button
                     onClick={() => setShowFilters(!showFilters)}
-                    className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full ${
-                      showFilters 
-                        ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/60 text-green-200 shadow-lg shadow-green-500/10' 
-                        : 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/60 text-blue-200 shadow-lg shadow-blue-500/10'
-                    }`}
+                    className="flex items-center justify-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
                     title="Toggle More Filters"
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
-                    </svg>
-                    <span>More Filters</span>
-                    <svg className={`w-4 h-4 ml-auto transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                    {!showFilters && (
-                      <span className="inline-flex items-center justify-center w-5 h-5 text-xs bg-blue-500 text-white rounded-full">
-                        {Object.values(eventTypeFilters).filter(Boolean).length}
-                      </span>
-                    )}
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
+                      </svg>
+                      <span>More Filters</span>
+                      <svg className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+
                   </button>
 
                   {/* Event Type Filters - Collapsible */}
@@ -761,14 +755,14 @@ export default function UnifiedSidebar({
                     <button
                       onClick={handleStartCreatingEvent}
                       disabled={isSavingEvents}
-                      className="flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-purple-500/20 hover:bg-purple-500/30 border-purple-400/60 text-purple-200 shadow-lg shadow-purple-500/10 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
                       title="Add new event at current time"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                       </svg>
                       <span>Add Event</span>
-                      <span className="text-xs text-purple-300">({Math.floor(currentTime / 60)}:{(currentTime % 60).toFixed(0).padStart(2, '0')})</span>
+                      <span className="text-xs text-gray-400">({Math.floor(currentTime / 60)}:{(currentTime % 60).toFixed(0).padStart(2, '0')})</span>
                     </button>
                   ) : (
                     // Inline Event Creation Form (replaces button)
