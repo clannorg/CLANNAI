@@ -167,6 +167,20 @@ export default function UnifiedSidebar({
       return 'bg-white/20 text-white border-white/30'
     }
     
+    // Handle team names
+    if (teamLower === redTeam.name.toLowerCase()) {
+      // Extract the main color from redTeamColorClass (e.g., 'bg-yellow-500' -> 'yellow')
+      const colorMatch = redTeamColorClass.match(/bg-(\w+)-\d+/)
+      const color = colorMatch ? colorMatch[1] : 'red'
+      return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
+    }
+    if (teamLower === blueTeam.name.toLowerCase()) {
+      // Extract the main color from blueTeamColorClass (e.g., 'bg-blue-500' -> 'blue')
+      const colorMatch = blueTeamColorClass.match(/bg-(\w+)-\d+/)
+      const color = colorMatch ? colorMatch[1] : 'blue'
+      return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
+    }
+
     // Handle standard color identifiers
     switch (teamLower) {
       case 'red': {
@@ -227,7 +241,7 @@ export default function UnifiedSidebar({
   const [newEvent, setNewEvent] = useState({
     type: 'goal',
     timestamp: currentTime,
-    team: 'red',
+    team: redTeam.name.toLowerCase(),
     description: '',
     player: ''
   })
@@ -305,7 +319,7 @@ export default function UnifiedSidebar({
     setNewEvent({
       type: 'goal',
       timestamp: Math.round(currentTime),
-      team: 'red',
+      team: redTeam.name.toLowerCase(),
       description: '',
       player: ''
     })
@@ -317,7 +331,7 @@ export default function UnifiedSidebar({
     setNewEvent({
       type: 'goal',
       timestamp: currentTime,
-      team: 'red',
+      team: redTeam.name.toLowerCase(),
       description: '',
       player: ''
     })
@@ -362,7 +376,7 @@ export default function UnifiedSidebar({
       setNewEvent({
         type: 'goal',
         timestamp: currentTime,
-        team: 'red',
+        team: redTeam.name.toLowerCase(),
         description: '',
         player: ''
       })
@@ -846,8 +860,8 @@ export default function UnifiedSidebar({
                             onChange={(e) => setNewEvent({...newEvent, team: e.target.value})}
                             className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
                           >
-                            <option value="red">{redTeam.name}</option>
-                            <option value="blue">{blueTeam.name}</option>
+                            <option value={redTeam.name.toLowerCase()}>{redTeam.name}</option>
+                            <option value={blueTeam.name.toLowerCase()}>{blueTeam.name}</option>
                           </select>
                         </div>
                         
