@@ -62,6 +62,12 @@ router.get('/games', [authenticateToken, requireCompanyRole], async (req, res) =
           tactical_analysis_url: tacticalAnalysisUrl,
           metadata_url: game.metadata_url,
           events_url: eventsUrl,
+          // Event modification status
+          has_modified_events: !!game.events_modified,
+          events_last_modified_by: game.events_last_modified_by,
+          events_last_modified_at: game.events_last_modified_at,
+          ai_events_count: game.ai_analysis ? game.ai_analysis.length : 0,
+          modified_events_count: game.events_modified ? game.events_modified.length : 0,
           created_at: game.created_at,
           updated_at: game.updated_at
         };
