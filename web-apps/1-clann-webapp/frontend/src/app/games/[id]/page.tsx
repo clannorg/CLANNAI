@@ -270,10 +270,29 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
     })
   }
 
-  // Get all events and filtered events
-  const allEvents = Array.isArray(game?.ai_analysis) 
-    ? game.ai_analysis 
-    : (game?.ai_analysis?.events || [])
+  // Load events from API (handles both ai_analysis and events_modified)
+  const [allEvents, setAllEvents] = useState<GameEvent[]>([])
+  
+  useEffect(() => {
+    const loadEvents = async () => {
+      try {
+        const response = await apiClient.getGameEvents(gameId)
+        setAllEvents(response.events || [])
+        console.log('📊 Events loaded:', response.events?.length, 'events', response.is_modified ? '(modified)' : '(original)')
+      } catch (error) {
+        console.error('Failed to load events:', error)
+        // Fallback to game.ai_analysis
+        const fallbackEvents = Array.isArray(game?.ai_analysis) 
+          ? game.ai_analysis 
+          : (game?.ai_analysis?.events || [])
+        setAllEvents(fallbackEvents)
+      }
+    }
+    
+    if (gameId) {
+      loadEvents()
+    }
+  }, [gameId, game])
   
   const filteredEvents = filterEvents(allEvents)
 

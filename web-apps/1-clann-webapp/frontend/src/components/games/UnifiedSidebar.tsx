@@ -324,6 +324,7 @@ export default function UnifiedSidebar({
   }
 
   const handleSaveNewEvent = async () => {
+    console.log('🔍 handleSaveNewEvent called', { gameId, isSavingEvents, newEvent })
     if (!gameId || isSavingEvents) return
 
     try {
@@ -337,16 +338,22 @@ export default function UnifiedSidebar({
         description: newEvent.description.trim() || undefined,
         player: newEvent.player.trim() || undefined
       }
+      console.log('🔍 Event to add:', eventToAdd)
 
       // Get current events and add the new one
       const currentEvents = allEvents
         .map((event, index) => ({ ...event, originalIndex: index }))
         .filter((_, index) => !binnedEvents.has(index))
       
+      console.log('🔍 Current events count:', currentEvents.length)
+      
       // Insert new event in chronological order
       const newEvents = [...currentEvents, eventToAdd]
         .sort((a, b) => a.timestamp - b.timestamp)
 
+      console.log('🔍 New events count:', newEvents.length)
+      console.log('🔍 Calling apiClient.saveModifiedEvents...')
+      
       await apiClient.saveModifiedEvents(gameId, newEvents)
       console.log('✅ New event added successfully')
       
@@ -360,8 +367,13 @@ export default function UnifiedSidebar({
         player: ''
       })
       
-      // Refresh the page to show the new event
-      window.location.reload()
+      // Show success message
+      alert('✅ Event added successfully! Refreshing to show new event...')
+      
+      // Refresh after a short delay to let user see the success
+      setTimeout(() => {
+        window.location.reload()
+      }, 1000)
     } catch (error) {
       console.error('❌ Error adding new event:', error)
       alert('Failed to add event. Please try again.')
@@ -842,7 +854,10 @@ export default function UnifiedSidebar({
                         {/* Action Buttons */}
                         <div className="flex items-center gap-1">
                           <button
-                            onClick={handleSaveNewEvent}
+                            onClick={() => {
+                              console.log('🔍 Save button clicked!')
+                              handleSaveNewEvent()
+                            }}
                             disabled={isSavingEvents}
                             className="p-1 text-green-400 hover:text-green-300 hover:bg-green-500/10 rounded transition-colors disabled:opacity-50"
                             title="Save event"
@@ -903,11 +918,11 @@ export default function UnifiedSidebar({
                   if (isBinned) return null
                   
                   return (
-                    <button
+                    <div
                       key={`${event.timestamp}-${event.type}-${index}`}
                       id={`event-${originalIndex}`}
                       onClick={() => onEventClick(event)}
-                      className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
+                      className={`w-full text-left p-3 rounded-lg transition-all duration-200 border cursor-pointer ${
                         originalIndex === currentEventIndex 
                           ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
                           : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
@@ -987,7 +1002,7 @@ export default function UnifiedSidebar({
                     {event.player && (
                       <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
                     )}
-                  </button>
+                  </div>
                 )
                 })}
                 
