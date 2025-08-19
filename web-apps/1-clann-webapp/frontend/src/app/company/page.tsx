@@ -137,6 +137,25 @@ export default function CompanyDashboard() {
     }
   }
 
+  const handleResetEvents = async (game: Game) => {
+    if (!confirm(`Reset "${game.title}" events back to AI analysis?\n\nThis will remove all user modifications and show the original ${game.ai_events_count} AI events.`)) {
+      return
+    }
+
+    try {
+      setUpdating(true)
+      setError('')
+      const response = await apiClient.resetEventsToAI(game.id)
+      console.log('✅ Events reset:', response.message)
+      await loadDashboardData()
+    } catch (err: any) {
+      console.error('Failed to reset events:', err)
+      setError(err.message || 'Failed to reset events')
+    } finally {
+      setUpdating(false)
+    }
+  }
+
 
 
   // Video upload handler
@@ -655,6 +674,60 @@ export default function CompanyDashboard() {
                             Mark as {game.status === 'pending' ? 'Analyzed' : 'Pending'}
                           </button>
                         </div>
+
+                        {/* Events Management - Enhanced */}
+                        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-4 border border-gray-200">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center space-x-3">
+                              <div className="flex items-center space-x-2">
+                                <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                </svg>
+                                <span className="text-sm font-semibold text-gray-700">Event Status</span>
+                              </div>
+                              
+                              {game.has_modified_events ? (
+                                <div className="flex items-center space-x-3">
+                                  <div className="flex items-center space-x-2">
+                                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200">
+                                      ✏️ User Modified ({game.modified_events_count} events)
+                                    </span>
+                                  </div>
+                                  <div className="text-xs text-gray-500">
+                                    Original: {game.ai_events_count} AI events
+                                  </div>
+                                </div>
+                              ) : (
+                                <div className="flex items-center space-x-3">
+                                  <div className="flex items-center space-x-2">
+                                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 border border-green-200">
+                                      🤖 Original AI Analysis ({game.ai_events_count || 0} events)
+                                    </span>
+                                  </div>
+                                  <div className="text-xs text-gray-500">
+                                    No user modifications
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                            
+                            {game.has_modified_events && (
+                              <button
+                                onClick={() => handleResetEvents(game)}
+                                disabled={updating}
+                                className="inline-flex items-center px-4 py-2 border border-red-300 shadow-sm text-sm font-medium rounded-md text-red-700 bg-white hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                                title="Reset to original AI events"
+                              >
+                                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                                Reset to AI Analysis
+                              </button>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -837,7 +910,20 @@ export default function CompanyDashboard() {
                                 {game.has_analysis === 'Yes' ? '✅' : '❌'}
                                 {game.has_tactical === 'Yes' ? ' 📊' : ''}
                               </td>
-                              <td className="px-6 py-4 text-sm text-gray-900">{game.events_count || 0}</td>
+                              <td className="px-6 py-4 text-sm text-gray-900">
+                                <div className="flex items-center space-x-2">
+                                  <span>{game.events_count || 0}</span>
+                                  {game.events_type === 'Modified' ? (
+                                    <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">
+                                      Modified
+                                    </span>
+                                  ) : (
+                                    <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">
+                                      AI
+                                    </span>
+                                  )}
+                                </div>
+                              </td>
                               <td className="px-6 py-4 text-sm text-gray-500">{game.uploaded_by}</td>
                             </tr>
                           ))}

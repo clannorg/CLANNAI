@@ -330,6 +330,16 @@ class ApiClient {
       body: JSON.stringify({ events })
     })
   }
+
+  async resetEventsToAI(gameId: string) {
+    return this.request<{
+      success: boolean
+      message: string
+      ai_events_count: number
+    }>(`/api/games/${gameId}/events`, {
+      method: 'DELETE'
+    })
+  }
 }
 
 export const apiClient = new ApiClient()

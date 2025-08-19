@@ -380,6 +380,54 @@ router.get('/:id/events', authenticateToken, async (req, res) => {
   }
 });
 
+// Reset events to AI analysis (clear modified events)
+router.delete('/:id/events', authenticateToken, async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+    
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+    
+    // Check if user has access to modify this game (company users can reset any game)
+    if (req.user.role !== 'company' && !game.is_demo) {
+      const userGames = await getUserGames(req.user.id);
+      const hasAccess = userGames.some(g => g.id === gameId);
+      
+      if (!hasAccess) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
+    }
+    
+    // Check if there are modified events to reset
+    if (!game.events_modified) {
+      return res.status(400).json({ error: 'No modified events to reset' });
+    }
+    
+    // Clear the modified events
+    const updates = {
+      events_modified: null,
+      events_last_modified_by: null,
+      events_last_modified_at: null
+    };
+    
+    await updateGame(gameId, updates);
+    
+    const aiEventsCount = game.ai_analysis ? game.ai_analysis.length : 0;
+    
+    res.json({
+      success: true,
+      message: `Events reset to AI analysis (${aiEventsCount} events)`,
+      ai_events_count: aiEventsCount
+    });
+    
+  } catch (error) {
+    console.error('Reset events error:', error);
+    res.status(500).json({ error: 'Failed to reset events' });
+  }
+});
+
 // Upload VEO URL (create new game)
 router.post('/', authenticateToken, async (req, res) => {
   try {
