@@ -448,8 +448,7 @@ export default function CompanyDashboard() {
               <div className="space-y-4">
                 {games.map((game) => (
                   <div key={game.id} className="border border-gray-200 rounded-lg p-6">
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
-                      <div className="flex-1 mb-4 lg:mb-0">
+                    <div className="space-y-4">
                         <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 mb-3">
                           <h3 className="text-lg font-medium text-gray-900 mb-2 sm:mb-0">{game.title}</h3>
                           <span className={`px-3 py-1 rounded-full text-xs font-medium w-fit ${
@@ -485,91 +484,94 @@ export default function CompanyDashboard() {
                             </a>
                           </div>
                           
+
+                        </div>
+                      
+                      {/* Management Actions */}
+                                                {/* Video URL Input */}
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                              Video:
+                            </label>
+                            <input
+                              type="url"
+                              placeholder="Paste video S3 URL..."
+                              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
+                              onKeyPress={(e) => {
+                                if (e.key === 'Enter') {
+                                  const input = e.target as HTMLInputElement;
+                                  if (input.value.trim()) {
+                                    handleVideoSave(game, input.value.trim());
+                                    input.value = '';
+                                  }
+                                }
+                              }}
+                            />
+                            <button
+                              className="bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+                              onClick={(e) => {
+                                const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                                if (input?.value.trim()) {
+                                  handleVideoSave(game, input.value.trim());
+                                  input.value = '';
+                                }
+                              }}
+                            >
+                              Save
+                            </button>
+                          </div>
                           {game.s3_key && (
-                            <div>
-                              <p className="text-base font-semibold text-gray-900"><strong>Current S3 Location:</strong></p>
+                            <div className="ml-20 pl-2">
+                              <p className="text-xs text-gray-500 mb-1">Current:</p>
                               <p className="text-sm text-green-700 font-mono bg-green-50 px-2 py-1 rounded break-all">
                                 {game.s3_key}
                               </p>
                             </div>
                           )}
-                          
+                        </div>
+
+                        {/* Events URL Input */}
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                              Events:
+                            </label>
+                            <input
+                              type="url"
+                              placeholder="Paste events JSON URL..."
+                              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                              onKeyPress={(e) => {
+                                if (e.key === 'Enter') {
+                                  const input = e.target as HTMLInputElement;
+                                  if (input.value.trim()) {
+                                    handleEventsSave(game, input.value.trim());
+                                    input.value = '';
+                                  }
+                                }
+                              }}
+                            />
+                            <button
+                              className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
+                              onClick={(e) => {
+                                const input = e.currentTarget.previousElementSibling as HTMLInputElement;
+                                if (input?.value.trim()) {
+                                  handleEventsSave(game, input.value.trim());
+                                  input.value = '';
+                                }
+                              }}
+                            >
+                              Save
+                            </button>
+                          </div>
                           {game.events_url && (
-                            <div>
-                              <p className="text-base font-semibold text-gray-900"><strong>Current Events Location:</strong></p>
+                            <div className="ml-20 pl-2">
+                              <p className="text-xs text-gray-500 mb-1">Current:</p>
                               <p className="text-sm text-blue-700 font-mono bg-blue-50 px-2 py-1 rounded break-all">
                                 {game.events_url}
                               </p>
                             </div>
                           )}
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3 lg:ml-6">
-                                                {/* Video URL Input */}
-                        <div className="flex items-center space-x-2">
-                          <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
-                            Video:
-                          </label>
-                          <input
-                            type="url"
-                            placeholder="Paste video S3 URL..."
-                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"
-                            onKeyPress={(e) => {
-                              if (e.key === 'Enter') {
-                                const input = e.target as HTMLInputElement;
-                                if (input.value.trim()) {
-                                  handleVideoSave(game, input.value.trim());
-                                  input.value = '';
-                                }
-                              }
-                            }}
-                          />
-                          <button
-                            className="bg-blue-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
-                            onClick={(e) => {
-                              const input = e.currentTarget.previousElementSibling as HTMLInputElement;
-                              if (input?.value.trim()) {
-                                handleVideoSave(game, input.value.trim());
-                                input.value = '';
-                              }
-                            }}
-                          >
-                            Save
-                          </button>
-                        </div>
-
-                        {/* Events URL Input */}
-                        <div className="flex items-center space-x-2">
-                          <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
-                            Events:
-                          </label>
-                          <input
-                            type="url"
-                            placeholder="Paste events JSON URL..."
-                            className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
-                            onKeyPress={(e) => {
-                              if (e.key === 'Enter') {
-                                const input = e.target as HTMLInputElement;
-                                if (input.value.trim()) {
-                                  handleEventsSave(game, input.value.trim());
-                                  input.value = '';
-                                }
-                              }
-                            }}
-                          />
-                          <button
-                            className="bg-green-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-green-700 transition-colors"
-                            onClick={(e) => {
-                              const input = e.currentTarget.previousElementSibling as HTMLInputElement;
-                              if (input?.value.trim()) {
-                                handleEventsSave(game, input.value.trim());
-                                input.value = '';
-                              }
-                            }}
-                          >
-                            Save
-                          </button>
                         </div>
 
                         {/* Analysis URL Input */}
@@ -728,7 +730,6 @@ export default function CompanyDashboard() {
                             )}
                           </div>
                         </div>
-                      </div>
                     </div>
                   </div>
                 ))}
