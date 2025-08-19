@@ -792,13 +792,22 @@ export default function UnifiedSidebar({
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <input
-                              type="number"
-                              value={newEvent.timestamp}
-                              onChange={(e) => setNewEvent({...newEvent, timestamp: parseInt(e.target.value) || 0})}
+                              type="text"
+                              value={`${Math.floor(newEvent.timestamp / 60)}:${(newEvent.timestamp % 60).toString().padStart(2, '0')}`}
+                              onChange={(e) => {
+                                const timeStr = e.target.value
+                                const parts = timeStr.split(':')
+                                if (parts.length === 2) {
+                                  const minutes = parseInt(parts[0]) || 0
+                                  const seconds = parseInt(parts[1]) || 0
+                                  if (seconds < 60) {
+                                    setNewEvent({...newEvent, timestamp: minutes * 60 + seconds})
+                                  }
+                                }
+                              }}
                               className="w-16 bg-gray-800 text-gray-300 text-xs font-mono px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
-                              placeholder="0"
+                              placeholder="0:00"
                             />
-                            <span className="text-xs text-gray-400">s</span>
                           </div>
                           
                           {/* Event Type Dropdown */}
