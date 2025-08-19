@@ -199,6 +199,10 @@ export default function UnifiedSidebar({
   const [binnedEvents, setBinnedEvents] = useState<Set<number>>(new Set())
   const [isSavingEvents, setIsSavingEvents] = useState(false)
   
+  // Event editing state
+  const [editingEventIndex, setEditingEventIndex] = useState<number | null>(null)
+  const [editingEvent, setEditingEvent] = useState<GameEvent | null>(null)
+  
   // New event creation state
   const [isCreatingEvent, setIsCreatingEvent] = useState(false)
   const [newEvent, setNewEvent] = useState({
@@ -255,6 +259,46 @@ export default function UnifiedSidebar({
     
     // Save to database
     await saveModifiedEvents()
+  }
+
+  // Event editing functions
+  const handleStartEditingEvent = (eventIndex: number) => {
+    const event = allEvents[eventIndex]
+    setEditingEventIndex(eventIndex)
+    setEditingEvent({
+      ...event,
+      // Keep timestamp as is for editing
+      timestamp: event.timestamp
+    })
+  }
+
+  const handleCancelEditingEvent = () => {
+    setEditingEventIndex(null)
+    setEditingEvent(null)
+  }
+
+  const handleSaveEditedEvent = async () => {
+    if (!editingEvent || editingEventIndex === null) return
+
+    try {
+      setIsSavingEvents(true)
+      
+      // Update the event in allEvents array
+      const updatedEvents = [...allEvents]
+      updatedEvents[editingEventIndex] = editingEvent
+      
+      // Save to backend
+      await apiClient.saveModifiedEvents(gameId, updatedEvents)
+      
+      // Reset editing state
+      setEditingEventIndex(null)
+      setEditingEvent(null)
+      
+    } catch (error) {
+      console.error('Error saving edited event:', error)
+    } finally {
+      setIsSavingEvents(false)
+    }
   }
   
   const saveModifiedEvents = async () => {
@@ -888,6 +932,111 @@ export default function UnifiedSidebar({
                   // Skip binned events
                   if (isBinned) return null
                   
+                  // Show edit form if this event is being edited
+                  if (editingEventIndex === originalIndex && editingEvent) {
+                    return (
+                      <div
+                        key={`${event.timestamp}-${event.type}-${index}-editing`}
+                        className="p-3 rounded-lg bg-blue-900/20 border border-blue-500/30 space-y-3"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2">
+                            {/* Time Input */}
+                            <div className="flex items-center gap-1">
+                              <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <input
+                                type="text"
+                                value={`${Math.floor(editingEvent.timestamp / 60)}:${(editingEvent.timestamp % 60).toFixed(0).padStart(2, '0')}`}
+                                onChange={(e) => {
+                                  const [minutes, seconds] = e.target.value.split(':').map(Number)
+                                  if (!isNaN(minutes) && !isNaN(seconds)) {
+                                    setEditingEvent({...editingEvent, timestamp: minutes * 60 + seconds})
+                                  }
+                                }}
+                                className="w-16 px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white font-mono"
+                                placeholder="MM:SS"
+                              />
+                            </div>
+                            
+                            {/* Event Type Dropdown */}
+                            <select
+                              value={editingEvent.type}
+                              onChange={(e) => setEditingEvent({...editingEvent, type: e.target.value})}
+                              className="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white"
+                            >
+                              <option value="goal">Goal</option>
+                              <option value="shot">Shot</option>
+                              <option value="save">Save</option>
+                              <option value="foul">Foul</option>
+                              <option value="yellow_card">Yellow Card</option>
+                              <option value="red_card">Red Card</option>
+                              <option value="corner">Corner</option>
+                              <option value="substitution">Substitution</option>
+                              <option value="turnover">Turnover</option>
+                            </select>
+                            
+                            {/* Team Dropdown */}
+                            <select
+                              value={editingEvent.team || ''}
+                              onChange={(e) => setEditingEvent({...editingEvent, team: e.target.value})}
+                              className="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white"
+                            >
+                              <option value="">No Team</option>
+                              <option value={redTeam.name.toLowerCase()}>{redTeam.name}</option>
+                              <option value={blueTeam.name.toLowerCase()}>{blueTeam.name}</option>
+                            </select>
+                          </div>
+                          
+                          {/* Save/Cancel Buttons */}
+                          <div className="flex items-center gap-1">
+                            {/* Save Button */}
+                            <button
+                              onClick={handleSaveEditedEvent}
+                              disabled={isSavingEvents}
+                              className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
+                              title="Save changes"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </button>
+                            
+                            {/* Cancel Button */}
+                            <button
+                              onClick={handleCancelEditingEvent}
+                              className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                              title="Cancel editing"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        
+                        {/* Description Input */}
+                        <textarea
+                          value={editingEvent.description || ''}
+                          onChange={(e) => setEditingEvent({...editingEvent, description: e.target.value})}
+                          className="w-full px-3 py-2 text-sm bg-gray-700 border border-gray-600 rounded text-white resize-none"
+                          placeholder="Event description..."
+                          rows={2}
+                        />
+                        
+                        {/* Player Input */}
+                        <input
+                          type="text"
+                          value={editingEvent.player || ''}
+                          onChange={(e) => setEditingEvent({...editingEvent, player: e.target.value})}
+                          className="w-full px-3 py-2 text-sm bg-gray-700 border border-gray-600 rounded text-white"
+                          placeholder="Player name (optional)..."
+                        />
+                      </div>
+                    )
+                  }
+
                   return (
                     <div
                       key={`${event.timestamp}-${event.type}-${index}`}
@@ -951,8 +1100,7 @@ export default function UnifiedSidebar({
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
-                            // TODO: Open edit modal
-                            console.log('Edit event:', event)
+                            handleStartEditingEvent(originalIndex)
                           }}
                           className="p-1 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 rounded transition-colors"
                           title="Edit this event"
@@ -1223,12 +1371,12 @@ export default function UnifiedSidebar({
             {/* Event Selection - Scrollable middle */}
             <div className="flex-1 overflow-y-auto p-4">
               <div>
-                <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
+                <h5 className="text-white font-medium mb-3">Select Events:</h5>
                 <div className="space-y-2">
                   {allEvents.slice(0, 20).map((event, index) => {
                     const isBinned = binnedEvents.has(index)
                     const isSelected = selectedEvents.has(index)
-                    const isDisabled = !isSelected && selectedEvents.size >= 5
+                    const isDisabled = !isSelected && selectedEvents.size >= 10
                     
                     // Skip binned events
                     if (isBinned) return null
@@ -1236,21 +1384,15 @@ export default function UnifiedSidebar({
                     return (
                       <div
                         key={`${event.timestamp}-${event.type}-${index}`}
-                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
+                        onClick={() => !isDisabled && handleEventSelection(index)}
+                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
                           isSelected 
                             ? 'bg-orange-500/20 border border-orange-500/30' 
                             : isDisabled 
-                              ? 'bg-gray-800/20 opacity-50'
+                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
                               : 'bg-gray-800/30 hover:bg-gray-800/50'
                         }`}
                       >
-                        <input
-                          type="checkbox"
-                          checked={isSelected}
-                          onChange={() => !isDisabled && handleEventSelection(index)}
-                          disabled={isDisabled}
-                          className="w-4 h-4 text-orange-500 bg-gray-700 border-gray-600 rounded focus:ring-orange-500 focus:ring-2"
-                        />
                         <div className="flex-1">
                           <div className="flex items-center space-x-2">
                             <span 
@@ -1271,7 +1413,10 @@ export default function UnifiedSidebar({
                         
                         {/* Bin Button */}
                         <button
-                          onClick={() => handleBinEvent(index)}
+                          onClick={(e) => {
+                            e.stopPropagation() // Prevent card selection
+                            handleBinEvent(index)
+                          }}
                           disabled={isSavingEvents}
                           className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
                           title="Delete this event"
@@ -1342,7 +1487,7 @@ export default function UnifiedSidebar({
               <div className="bg-gray-800/50 rounded-lg p-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-white font-medium">Selected Events:</span>
-                  <span className="text-orange-400 font-bold">{selectedEvents.size} / 5</span>
+                  <span className="text-orange-400 font-bold">{selectedEvents.size} / 10</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-white font-medium">Estimated Duration:</span>

@@ -331,15 +331,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
         return scores
       }, { red: 0, blue: 0 })
     
-    console.log('📊 Score calculation:', { 
-      currentScores, 
-      redTeam: redTeam.name, 
-      blueTeam: blueTeam.name,
-      goalCount: allEvents.filter(e => e.type === 'goal' && e.timestamp <= currentTime).length
-    })
-    
     if (currentScores.red !== teamScores.red || currentScores.blue !== teamScores.blue) {
-      console.log('🔄 Updating scores from', teamScores, 'to', currentScores)
       setTeamScores(currentScores)
     }
   }, [currentTime, game?.ai_analysis, currentEventIndex, teamScores.red, teamScores.blue, allEvents])
