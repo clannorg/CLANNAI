@@ -1,0 +1,11 @@
+**GAME CONTEXT:**
+- Global match time starts at: 52m00s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+*   **At 0 seconds:** A whistle blows. The players are on the pitch, getting into position for the start of the game or a restart. A player in a black t-shirt on the far left walks onto the pitch holding an orange bib.
+*   **At 3 seconds:** The player in the black t-shirt puts the orange bib on.
+*   **At 6 seconds:** A player from the no bibs/colours team stands over the ball at the center circle, preparing for kickoff.
+*   **At 10 seconds:** The players continue to take their positions on the field. The game has not yet started.
+*   **At 14 seconds:** Players are still arranging themselves, waiting for the kickoff to commence.

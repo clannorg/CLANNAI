@@ -1,0 +1,9 @@
+**Segment Start Time: 01m00s**
+
+**Description:**
+*   At 0 seconds: The clip begins with the camera positioned behind the goal, looking through a fence. An orange bibs player is acting as the goalkeeper. The ball is in the center of the pitch with the no bibs/colours team in possession.
+*   At 3 seconds: A no bibs/colours player attempts a forward pass which is intercepted near the center circle by an orange bibs player in a dark t-shirt.
+*   At 4 seconds: The orange bibs player who made the interception passes the ball to a teammate on the left wing.
+*   At 6 seconds: The orange bibs player on the left wing makes a long pass across the field to a teammate on the far right side.
+*   At 8 seconds: The orange bibs player on the right passes the ball back toward the center of the pitch to another teammate.
+*   At 12 seconds: The orange bibs team continues to pass the ball amongst themselves in their own half. The clip ends with them in possession.

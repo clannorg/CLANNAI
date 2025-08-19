@@ -1,0 +1,9 @@
+**Short clip description:**
+A player from the team with no bibs, wearing a red shirt, receives a pass and takes a shot from a central position, but the ball goes wide of the goal.
+
+**Detailed Event Log:**
+*   **At 0 seconds:** The team with no bibs has possession on the left wing. The player in the grey shirt is on the ball.
+*   **At 3 seconds:** The player in the grey shirt passes the ball centrally to a teammate in a red shirt.
+*   **At 7 seconds:** The player in the red shirt controls the ball just outside the penalty area.
+*   **At 9 seconds:** The player in the red shirt takes a right-footed shot towards the goal.
+*   **At 10 seconds:** The ball goes wide of the goal, hitting the side fence to the right of the post. The orange bibs goalkeeper did not need to make a save.

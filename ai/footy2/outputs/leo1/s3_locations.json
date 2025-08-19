@@ -1,0 +1,26 @@
+{
+  "match_id": "leo1",
+  "upload_timestamp": "2025-08-19T12:18:03.582536",
+  "bucket": "end-nov-webapp-clann",
+  "region": "eu-west-1",
+  "s3_urls": {
+    "web_events_array.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-web_events_array-json.json",
+      "s3_key": "analysis-data/leo1-web_events_array-json.json",
+      "description": "Direct events array for web app",
+      "file_size_mb": 0.01
+    },
+    "match_metadata.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-match_metadata-json.json",
+      "s3_key": "analysis-data/leo1-match_metadata-json.json",
+      "description": "Match metadata with team colors and stats",
+      "file_size_mb": 0.0
+    }
+  },
+  "upload_summary": {
+    "total_files": 11,
+    "successful_uploads": 2,
+    "failed_uploads": 9,
+    "total_size_mb": 0.01
+  }
+}

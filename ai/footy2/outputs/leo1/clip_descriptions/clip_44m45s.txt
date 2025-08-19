@@ -1,0 +1,9 @@
+**Detailed Description:**
+
+- **At 0 seconds:** A player from the no bibs/colours team, wearing a dark top on the far left, kicks the ball toward the center circle.
+- **At 1 second:** An orange bibs player in the center intercepts the pass.
+- **At 2 seconds:** The orange bibs player immediately passes the ball forward to a teammate who is running toward the opposition's goal.
+- **At 3 seconds:** The running orange bibs player receives the pass and continues dribbling forward.
+- **At 5 seconds:** As the orange bibs player approaches the penalty area, a no bibs/colours defender in a dark top makes a successful tackle, dispossessing the attacker and stopping the play.
+- **At 9 seconds:** Play has reset. A no bibs/colours player in a dark top has possession on the left side of their own half.
+- **At 11 seconds:** The no bibs/colours player passes the ball to a teammate in the center circle.

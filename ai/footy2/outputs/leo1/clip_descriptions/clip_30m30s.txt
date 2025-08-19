@@ -1,0 +1,13 @@
+**GAME CONTEXT:**
+- Global match time starts at: 30m30s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+*   **At 0 seconds:** Players are resetting their positions for a kick-off after a goal. The ball is in the center circle.
+*   **At 4 seconds:** A no bibs/colours player in a white shirt kicks off, passing the ball backward to a teammate.
+*   **At 6 seconds:** The no bibs/colours player receives the pass and immediately passes it forward to a teammate on the left wing.
+*   **At 9 seconds:** The no bibs/colours player on the left wing attempts a pass across the field towards the right side.
+*   **At 10 seconds:** An orange bibs player in the center intercepts the pass with his right foot, gaining possession for his team.
+*   **At 13 seconds:** The orange bibs player takes a shot from distance towards the goal.
+*   **At 14 seconds:** The shot is blocked by the no bibs/colours player in the white shirt who originally took the kick-off. The clip ends as the ball deflects off him.

@@ -1,0 +1,11 @@
+**Teams:**
+- **No bibs/colours:** Attacking the goal in the foreground.
+- **Orange bibs:** Defending the goal in the foreground.
+
+**Description:**
+- **At 0 seconds:** The team without bibs has possession in the middle of the pitch.
+- **At 3 seconds:** A player without a bib on the left wing passes the ball across the pitch to a teammate on the right.
+- **At 6 seconds:** The player without a bib receives the pass and shoots with their right foot from just outside the center circle.
+- **At 7 seconds:** The ball goes into the bottom left corner of the net, scoring a goal for the team without bibs. The goalkeeper in the orange bib dives to his right but is unable to make the save.
+- **At 8 seconds:** The goalscorer raises his right arm in celebration.
+- **At 11 seconds:** The orange bibs goalkeeper turns around to face the center circle as the teams prepare to restart play.

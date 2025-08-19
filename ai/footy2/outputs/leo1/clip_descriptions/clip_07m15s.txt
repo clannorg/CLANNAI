@@ -1,0 +1,10 @@
+**GAME CONTEXT:**
+- **Teams:** No bibs/colours vs. orange bibs.
+- **Camera View:** Behind the goal of the no bibs/colours team. Their goalkeeper is wearing a bright pinkish-orange shirt.
+
+**DESCRIPTION:**
+- **At 0 seconds:** A player from the no bibs/colours team in a black t-shirt, positioned just inside the penalty area on the left, attempts to control a bouncing ball.
+- **At 1 second:** An orange bibs player immediately shoots with their right foot.
+- **At 2 seconds:** The shot is blocked by the no bibs/colours player in the black t-shirt, and the ball deflects out of play on the left side of the pitch.
+- **At 3 seconds:** The play has stopped. Players from both teams begin to walk and reposition on the field while waiting for the restart.
+- **At 10 seconds:** A player in a white shirt from the no bibs/colours team walks across the pitch from right to left. The game remains paused.

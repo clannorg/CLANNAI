@@ -1,0 +1,15 @@
+Here is a description of the 15-second video clip:
+
+**GAME CONTEXT:**
+- **Global match time:** 11m30s
+- **Team A:** no bibs/colours (defending)
+- **Team B:** orange bibs (attacking)
+
+**DESCRIPTION:**
+- **At 0 seconds:** The orange bibs team has possession just outside the opposition's penalty area.
+- **At 3 seconds:** An orange bibs player passes the ball forward to a teammate positioned on the right side of the penalty area.
+- **At 4 seconds:** The orange bibs player on the right takes a low shot towards the goal with their right foot.
+- **At 5 seconds:** The no bibs/colours goalkeeper, who is wearing a pink shirt, makes a save, blocking the shot with their right foot.
+- **At 6 seconds:** The goalkeeper in the pink shirt moves to collect the deflected ball.
+- **At 7 seconds:** A whistle blows, and play stops. Players stand still.
+- **At 8 seconds - 15 seconds:** Play remains stopped. Players are stationary or walking on the pitch.

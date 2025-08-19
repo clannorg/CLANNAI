@@ -1,0 +1,13 @@
+**Segment Start Time: 04m30s**
+
+**Team A:** no bibs/colours
+**Team B:** orange bibs
+
+**Detailed Description:**
+- **At 1 second:** A no bibs/colours player in a white shirt on the left wing has possession.
+- **At 2 seconds:** The no bibs/colours player kicks the ball, attempting a pass towards the center of the field.
+- **At 3 seconds:** An orange bibs player intercepts the pass. The ball deflects to a nearby orange bibs teammate.
+- **At 4 seconds:** The orange bibs player who received the ball shoots with his right foot from just outside the center circle.
+- **At 5 seconds:** A no bibs/colours player in a black shirt blocks the shot, and the ball deflects towards the right side of the pitch.
+- **At 6 seconds:** A red double-decker bus becomes visible in the background, moving from right to left.
+- **At 12 seconds:** A no bibs/colours player in a white shirt and light-colored shorts retrieves the loose ball near the center of the pitch. Play slows as teams reset.

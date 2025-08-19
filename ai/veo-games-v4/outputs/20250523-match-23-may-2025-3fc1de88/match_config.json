@@ -1,12 +1,12 @@
 {
   "match_id": "20250523-match-23-may-2025-3fc1de88",
   "team_a": {
-    "name": "East London Ballers",
-    "jersey": "blue and turquoise",
+    "name": "east london ballers",
+    "jersey": "blue / turquoise",
     "ui_color": "red"
   },
   "team_b": {
-    "name": "Opposition",
+    "name": "opposition",
     "jersey": "white",
     "ui_color": "blue"
   }

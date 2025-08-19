@@ -1,0 +1,14 @@
+{
+  "match_id": "leo1",
+  "team_a": {
+    "name": "clann",
+    "colors": "no bibs/colours"
+  },
+  "team_b": {
+    "name": "lostthehead",
+    "colors": "orange bibs"
+  },
+  "game_type": "5-a-side",
+  "focus": "detailed play-by-play description",
+  "additional_context": ""
+}

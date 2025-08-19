@@ -1,0 +1,9 @@
+Here is a description of the 15-second video segment:
+
+- **At 0 seconds:** An orange bibs player, acting as goalkeeper, stands inside the goal. The game is underway with players positioned around the field.
+- **At 5 seconds:** A no bibs/colours player in a white shirt on the left side of the pitch has possession of the ball.
+- **At 8 seconds:** The no bibs/colours player passes the ball with his right foot from the left wing towards the center of the pitch.
+- **At 9 seconds:** An orange bibs player in the center intercepts the pass.
+- **At 10 seconds:** The orange bibs player who intercepted the ball makes a short pass to a teammate on the right side of the pitch.
+- **At 12 seconds:** The orange bibs player on the right wing now has possession of the ball.
+- **At 15 seconds:** The game continues with the orange bibs team in possession on their right side.

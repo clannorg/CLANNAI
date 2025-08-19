@@ -1,0 +1,9 @@
+At 0 seconds, the no bibs/colours team has possession in the center of the pitch.
+At 1 second, a no bibs/colours player in the center circle passes the ball forward and to the left to a teammate.
+At 3 seconds, the no bibs/colours player on the left wing receives the pass and passes it back to the original passer in the center.
+At 6 seconds, the no bibs/colours player in the center passes the ball out to the right wing to another teammate.
+At 8 seconds, the no bibs/colours player on the right wing passes the ball back towards the center.
+At 9 seconds, an orange bibs player intercepts the pass in the midfield.
+At 10 seconds, the orange bibs player dribbles forward.
+At 12 seconds, the orange bibs player passes the ball forward and to the right to a teammate.
+At 14 seconds, the orange bibs player on the right wing controls the ball.

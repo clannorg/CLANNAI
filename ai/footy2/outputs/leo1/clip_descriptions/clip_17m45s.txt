@@ -1,0 +1,10 @@
+At 0 seconds: An orange bibs player in the center-left of the pitch receives a pass.
+At 1 second: He passes the ball forward to a teammate, also in an orange bib.
+At 3 seconds: The teammate passes the ball back to the first player.
+At 4 seconds: The first player immediately passes it back to the same teammate again.
+At 6 seconds: The teammate passes the ball diagonally back towards a third orange bibs player in the center of the pitch.
+At 8 seconds: The central orange bibs player passes the ball to a teammate on the right side.
+At 10 seconds: A no bibs/colours player in a black shirt intercepts the pass.
+At 11 seconds: The no bibs/colours player passes the ball to a teammate in a white shirt.
+At 12 seconds: An orange bibs player immediately tackles the white-shirted player and takes the ball.
+At 13 seconds: The orange bibs player dribbles with the newly won possession towards the center.

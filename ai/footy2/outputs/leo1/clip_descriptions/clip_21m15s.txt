@@ -1,0 +1,9 @@
+**GAME SEGMENT DESCRIPTION:**
+
+- **At 0 seconds:** The orange bibs team has possession in the attacking half.
+- **At 1 second:** An orange bibs player on the right side passes the ball towards the center circle.
+- **At 3 seconds:** An orange bibs player in the center, just outside the D, takes a shot with his right foot.
+- **At 4 seconds:** The shot hits the left goalpost and rebounds back into play.
+- **At 5 seconds:** A player from the no bibs/colours team recovers the ball on the left side of the pitch. Possession changes to the no bibs/colours team.
+- **At 12 seconds:** The no bibs/colours player on the left side passes the ball across the field to a teammate on the right.
+- **At 14 seconds:** The teammate receives the pass.

@@ -1,0 +1,13 @@
+**GAME CONTEXT:**
+- Global match time starts at: 10m45s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- **At 0 seconds:** The game is in progress with players spread across the far half of the pitch. The no bibs/colours team has possession. The orange bibs player #7 is acting as goalkeeper in the foreground.
+- **At 1 second:** A no bibs/colours player in a white shirt on the far left side of the field passes the ball towards the center.
+- **At 3 seconds:** A different no bibs/colours player in a white shirt, positioned centrally, takes a shot towards the far goal.
+- **At 4 seconds:** An orange bibs player standing near the far goal blocks the shot with their right leg. The ball deflects to the right.
+- **At 5 seconds:** An orange bibs player and a no bibs/colours player both run towards the deflected ball on the far right side of the pitch.
+- **At 6 seconds:** The no bibs/colours player gains control of the loose ball.
+- **At 7 seconds to 15 seconds:** Play slows down and players from both teams begin to reposition themselves on the pitch. No further significant actions occur.

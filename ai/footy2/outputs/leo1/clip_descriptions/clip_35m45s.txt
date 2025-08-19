@@ -1,0 +1,14 @@
+**GAME CONTEXT:**
+- Global match time starts at: 35m45s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+*   At 0 seconds: An orange bibs player in blue shorts has possession just inside his own half.
+*   At 2 seconds: He passes the ball to a teammate in a red shirt playing on the left side.
+*   At 4 seconds: The red shirt player passes the ball back to the orange bibs player in blue shorts who has moved further forward.
+*   At 7 seconds: The orange bibs player in blue shorts passes the ball forward towards the opposition's goal.
+*   At 9 seconds: A no bibs player in a white shirt successfully tackles an orange bibs player and wins possession.
+*   At 10 seconds: The no bibs player in the white shirt immediately passes the ball to a teammate on the far right side of the pitch.
+*   At 12 seconds: The no bibs player on the right attempts a pass, which is intercepted by an orange bibs player.
+*   At 13 seconds: The orange bibs player who intercepted the ball dribbles it in his own half as the clip ends.

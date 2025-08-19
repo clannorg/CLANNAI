@@ -1,0 +1,12 @@
+Here is a detailed description of the 15-second video segment:
+
+*   **At 0 seconds:** An orange bibs player in the center circle has possession.
+*   **At 1 second:** The orange bibs player passes the ball to a teammate positioned to the right.
+*   **At 2 seconds:** The receiving orange bibs player takes a shot on goal from outside the penalty area.
+*   **At 3 seconds:** The shot goes wide to the left of the far goal.
+*   **At 4 seconds:** A no bibs/colours player, acting as the goalkeeper, collects the ball. Possession changes to the no bibs/colours team.
+*   **At 7 seconds:** The no bibs/colours goalkeeper rolls the ball out to a teammate on the left side of the pitch.
+*   **At 9 seconds:** The no bibs/colours player makes a long pass across the field towards the right side.
+*   **At 10 seconds:** An orange bibs player intercepts the pass in the middle of the pitch. Possession changes back to the orange bibs team.
+*   **At 11 seconds:** The orange bibs player passes the ball forward to a teammate.
+*   **At 13 seconds:** The receiving orange bibs player dribbles towards the left sideline while being defended by a no bibs/colours player.

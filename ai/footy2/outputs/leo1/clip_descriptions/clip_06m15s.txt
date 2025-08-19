@@ -1,0 +1,17 @@
+**_BEGIN SPORTS DATA LOG_**
+
+**Match Time:** 06m15s
+
+**Team A:** no bibs/colours
+**Team B:** orange bibs
+
+**CLIP DESCRIPTION:**
+
+*   **At 0 seconds:** The game is in play, with possession starting with the no bibs/colours team in the center circle. A player in a dark top passes the ball forward.
+*   **At 2 seconds:** A player from the no bibs/colours team wearing a black shirt and black shorts receives the pass.
+*   **At 11 seconds:** A teammate from the no bibs/colours team, wearing a white shirt and black shorts, runs onto the ball.
+*   **At 12 seconds:** The player in the white shirt shoots with their right foot from just outside the penalty area. The shot goes into the top right corner of the goal.
+*   **At 13 seconds:** Goal scored by the no bibs/colours team.
+*   **At 15 seconds:** Players from the orange bibs team begin walking back towards the center circle for the restart.
+
+**_END SPORTS DATA LOG_**

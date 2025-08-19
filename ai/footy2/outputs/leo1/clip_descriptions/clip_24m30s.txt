@@ -1,0 +1,9 @@
+This is a 5-a-side football game between a team with no bibs/colours and a team in orange bibs. The camera is positioned behind the goal defended by the orange bibs team.
+
+**Clip Description:**
+- **At 0 seconds:** The no bibs/colours team has possession in the center of the pitch.
+- **At 6 seconds:** A player from the no bibs/colours team in a white shirt attempts a pass forward on the left side.
+- **At 8 seconds:** The pass is intercepted by a defending orange bibs player.
+- **At 10 seconds:** The orange bibs player with the ball is immediately challenged by a no bibs/colours player, and the ball is knocked loose towards the center of the pitch.
+- **At 11 seconds:** Another orange bibs player runs onto the loose ball near the center circle.
+- **At 14 seconds:** The orange bibs team maintains possession in their own half under pressure from the no bibs/colours team. The orange bibs player who was standing near the goal has now moved into a defensive position on the left.

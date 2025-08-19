@@ -1,0 +1,11 @@
+**Game Context:**
+- **Teams:** No bibs/colours vs. orange bibs.
+- **Camera View:** Behind the orange bibs team's goal.
+
+**Description:**
+- **At 0 seconds:** The game begins with a kick-off from the no bibs/colours team in the center circle. A player in a white shirt and blue shorts has initial possession.
+- **At 4 seconds:** The player in the white shirt and blue shorts passes the ball backwards to a teammate in a white shirt and black shorts.
+- **At 10 seconds:** The no bibs/colours team moves the ball to the left side of the pitch, where a player in a white shirt and black shorts passes it forward.
+- **At 12 seconds:** A bearded no bibs/colours player on the left side receives the pass.
+- **At 13 seconds:** An orange bibs player immediately tackles the bearded player and wins possession of the ball.
+- **At 14 seconds:** The orange bibs player starts to dribble the ball forward into the no bibs/colours team's half.

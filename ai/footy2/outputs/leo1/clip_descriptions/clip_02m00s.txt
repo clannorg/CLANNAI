@@ -1,0 +1,9 @@
+At 0 seconds: The game is in progress, with the team in orange bibs in possession on the far side of the pitch. The camera is positioned behind the orange team's goal, with their goalkeeper in the foreground.
+
+At 4 seconds: The orange bibs goalkeeper in the foreground points towards the right side of the field, seemingly directing a teammate.
+
+At 7 seconds: The no bibs/colours team gains possession on the right wing.
+
+At 8 seconds: The no bibs/colours player passes the ball infield towards the center of the pitch.
+
+At 10 seconds: A teammate from the no bibs/colours team receives the pass in the center of the pitch. Play continues in the midfield.

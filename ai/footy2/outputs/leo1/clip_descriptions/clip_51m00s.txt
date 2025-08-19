@@ -1,0 +1,11 @@
+**GAME CONTEXT:**
+- Global match time starts at: 51m00s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+At 0 seconds: Players are getting into position for a kickoff. A player from the orange bibs team is on the ground in the center circle, getting back up. The no bibs/colours team is preparing to kick off.
+At 6 seconds: A no bibs/colours player in a grey t-shirt kicks off from the center spot, passing the ball back to a teammate in a white t-shirt.
+At 8 seconds: The no bibs/colours player in the white t-shirt makes a forward pass to a teammate on the left side of the pitch.
+At 11 seconds: An orange bibs player tackles the no bibs/colours player who just received the pass on the left wing.
+At 12 seconds: The ball is deflected by the orange bibs player and goes out of play over the left sideline for a kick-in. The no bibs/colours team retains possession.

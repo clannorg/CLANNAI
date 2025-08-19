@@ -1,0 +1,13 @@
+Here is a description of the 15-second video segment:
+
+**GAME CONTEXT:**
+- Global match time starts at: 43m15s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- **At 0 seconds:** The game is in a static state, with players walking into position. An orange bibs player in a white t-shirt stands over the ball in the center of the pitch. A player in an orange bib is sitting on the goal crossbar in the foreground.
+- **At 3 seconds:** The orange bibs player in the white t-shirt passes the ball backwards to a teammate in a dark t-shirt.
+- **At 6 seconds:** The orange bibs player in the dark t-shirt immediately passes the ball forward to a teammate on the left wing.
+- **At 9 seconds:** The orange bibs player on the left wing receives the ball and is immediately challenged by a player from the no bibs/colours team.
+- **At 14 seconds:** The player sitting on the crossbar turns to face the camera and speaks, while the orange bibs team maintains possession on the far left side of the pitch.

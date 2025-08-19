@@ -1,0 +1,13 @@
+Here is a description of the 15-second video segment:
+
+**Teams:**
+-   **no bibs/colours:** Players in various tops (e.g., white, black).
+-   **orange bibs:** Players wearing orange bibs.
+
+**Description:**
+*   **At 0 seconds:** The game is underway with the no bibs/colours team in possession on the far left side of the pitch.
+*   **At 6 seconds:** A player in a white t-shirt (no bibs/colours) on the far left receives a pass.
+*   **At 7 seconds:** The player in the white t-shirt makes a short forward pass to a teammate.
+*   **At 8 seconds:** The teammate passes the ball across the pitch towards the center.
+*   **At 9 seconds:** A player from the orange bibs team intercepts the pass in the middle of the field. Possession changes to the orange bibs team.
+*   **At 10 seconds:** The orange bibs player who made the interception passes the ball to a teammate.

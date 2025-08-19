@@ -1,0 +1,7 @@
+At 0 seconds: The game is set for a kickoff. A player in an orange bib, with the number 17 on his back, has possession of the ball at the center spot.
+
+At 2 seconds: The orange bibs player #17 passes the ball backward to a teammate.
+
+At 3 seconds: The teammate, also in an orange bib, receives the pass just inside their own half and controls the ball.
+
+From 3 to 15 seconds: The orange bibs team maintains possession in their own half. The player who received the pass holds the ball at their feet as other players slowly adjust their positions on the field. No further significant action occurs.

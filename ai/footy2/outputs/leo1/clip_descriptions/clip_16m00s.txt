@@ -1,0 +1,13 @@
+**GAME CONTEXT:**
+- Global match time starts at: 16m00s
+- Team A: no bibs/colours (white shirts, dark shorts)
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- At 0 seconds: Players from both teams are positioned in their respective halves, preparing for a kickoff. The ball is on the center spot.
+- At 4 seconds: A whistle blows to start the play.
+- At 6 seconds: An orange bibs player in the center circle kicks the ball backwards to a teammate.
+- At 8 seconds: The teammate who received the kickoff passes the ball forward and to the left to another orange bibs player.
+- At 10 seconds: The orange bibs player on the left passes the ball back towards the center to the original kickoff taker.
+- At 12 seconds: The player in the center receives the pass and immediately passes it to an orange bibs teammate on the right side of the pitch.
+- At 14 seconds: The player on the right controls the ball and begins to move forward. The orange bibs team maintains possession as the clip ends.

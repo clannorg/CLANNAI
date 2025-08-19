@@ -1,0 +1,21 @@
+At 0 seconds, a player with no bib is standing over the ball at the center circle for a kickoff. The goalkeeper in the orange bib is standing in his goal.
+
+At 2 seconds, the player with no bib kicks off, passing the ball backwards to a teammate.
+
+At 3 seconds, the no bibs team passes the ball to their right wing.
+
+At 4 seconds, the player on the right wing passes the ball back towards the center.
+
+At 5 seconds, a central player with no bib passes the ball forward to a teammate on the left.
+
+At 6 seconds, a player in an orange bib intercepts the pass on the left side of the pitch.
+
+At 8 seconds, the orange bibs player passes the ball forward along the left side to a teammate.
+
+At 10 seconds, the no bibs team has regained possession, and a player passes the ball back towards their own goal.
+
+At 11 seconds, a no bibs player passes the ball across the back to a teammate on the right.
+
+At 13 seconds, a player in an orange bib intercepts a forward pass in the midfield.
+
+At 14 seconds, the orange bibs player's subsequent pass is immediately blocked by a player with no bib. The ball is loose in the center as the clip ends.

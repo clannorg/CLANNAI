@@ -1,0 +1,8 @@
+**Segment Description:**
+
+*   **At 0 seconds:** The game is about to restart from the center circle. A no bibs/colours player is standing over the ball. The orange bibs goalkeeper is in the foreground, inside their goal area.
+*   **At 2 seconds:** The no bibs/colours player takes the kick-off, passing the ball backwards to a teammate.
+*   **At 3 seconds:** The teammate receives the pass and immediately plays a forward pass up the center of the pitch.
+*   **At 4 seconds:** An orange bibs player intercepts the forward pass just inside their own half.
+*   **At 5 seconds:** The orange bibs player passes the ball to a teammate on their right.
+*   **From 6 seconds to 15 seconds:** Play continues in the middle of the pitch. Players from both teams move around, but no further distinct passes, tackles, or shots are clearly visible from the camera's position. The orange bibs goalkeeper remains in their goal, observing the game.

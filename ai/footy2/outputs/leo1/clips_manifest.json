@@ -1,0 +1,10 @@
+{
+  "match_id": "leo1",
+  "video_path": "../leo1.mp4",
+  "video_duration": 3126.475,
+  "clip_duration": 30,
+  "total_clips": 209,
+  "successful_clips": 209,
+  "failed_clips": 0,
+  "method": "ultra_fast_segment"
+}

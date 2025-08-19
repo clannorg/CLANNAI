@@ -1,0 +1,9 @@
+**Global match time: 41m30s**
+
+**At 0 seconds:** The camera is behind the goal of the orange bibs team. The 'no bibs/colours' team has possession in the center of the pitch.
+**At 3 seconds:** A 'no bibs/colours' player passes the ball to a teammate on the left side of the field.
+**At 6 seconds:** After being pressured, the 'no bibs/colours' player passes the ball back toward the center.
+**At 8 seconds:** An 'orange bibs' player intercepts the pass in the center of the pitch, gaining possession for their team.
+**At 9 seconds:** The 'orange bibs' player makes a short forward pass to a teammate on the right.
+**At 13 seconds:** The 'orange bibs' player on the right passes the ball across the field to another teammate on the far left.
+**At 15 seconds:** The clip ends as the player from the 'orange bibs' team controls the ball on the left wing.

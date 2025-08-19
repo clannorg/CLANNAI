@@ -1,0 +1,16 @@
+**GAME CONTEXT:**
+- Global match time starts at: 08m15s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+- At 0 seconds: The no bibs/colours team is positioned for kick-off in the center circle.
+- At 2 seconds: The no bibs/colours player in the center kicks the ball to a teammate on the left wing to start the play.
+- At 4 seconds: The player on the left wing passes the ball back to a central teammate.
+- At 5 seconds: The central player passes the ball forward to a teammate on the right wing.
+- At 7 seconds: The player on the right wing attempts a pass into the penalty area.
+- At 8 seconds: An orange bibs player intercepts the pass just inside the penalty area.
+- At 9 seconds: The orange bibs player clears the ball upfield.
+- At 11 seconds: A no bibs/colours player near the halfway line controls the cleared ball with their chest.
+- At 12 seconds: The no bibs/colours player passes the ball to a teammate on the left.
+- At 14 seconds: The teammate on the left passes the ball back to the center, where another no bibs/colours player is immediately tackled by an orange bibs player, who takes possession of the ball.

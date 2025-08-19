@@ -1,0 +1,9 @@
+**Segment Description:**
+
+*   **At 0 seconds:** The game is restarting. A player from the no bibs/colours team on the far left of the pitch kicks the ball.
+*   **At 2 seconds:** The ball strikes the crossbar of the no bibs/colours team's goal with a loud clang and bounces back into the field of play.
+*   **At 5 seconds:** An orange bibs player in the centre circle takes possession.
+*   **At 9 seconds:** A no bibs/colours player in a white shirt passes the ball back towards his own goal.
+*   **At 10 seconds:** The no bibs/colours goalkeeper in the reddish-orange shirt receives the back pass.
+*   **At 11 seconds:** The goalkeeper kicks the ball upfield with his left foot.
+*   **At 13 seconds:** The ball is in the air, travelling towards an orange bibs player near the centre circle.

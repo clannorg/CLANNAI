@@ -1,0 +1,166 @@
+{
+  "timeline_events": [
+    {
+      "timestamp": 347,
+      "type": "goal",
+      "team": "clann",
+      "description": "A bearded player takes a powerful, first-time shot with his right foot, hitting the back-left of the net.",
+      "excitement_level": 9,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 387,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player in a white shirt shoots with their right foot from just outside the penalty area into the top right corner.",
+      "excitement_level": 9,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 413,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player in a white shirt shoots from distance, and the ball goes low into the bottom left corner of the goal.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 530,
+      "type": "goal",
+      "team": "clann",
+      "description": "A powerful shot hits the top bar of the goal and deflects down into the net for a goal.",
+      "excitement_level": 10,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 671,
+      "type": "goal",
+      "team": "clann",
+      "description": "A powerful shot from a player in a white shirt hits the inside of the left goalpost and deflects into the net.",
+      "excitement_level": 10,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 723,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "An orange bibs player intercepts a pass and scores with a low shot into the bottom left corner.",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 906,
+      "type": "goal",
+      "team": "clann",
+      "description": "A powerful shot from a player in a black shirt hits the inside of the left goalpost and goes in.",
+      "excitement_level": 10,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 1424,
+      "type": "goal",
+      "team": "clann",
+      "description": "Following a saved shot, a player in a reddish/pink t-shirt scores on the rebound from a tight angle.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 1582,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "An orange bibs player scores with a long-range shot from just behind the center line into the top left corner.",
+      "excitement_level": 10,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 1659,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "A player takes a shot from just outside the center circle that goes into the bottom left of the goal.",
+      "excitement_level": 9,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 1900,
+      "type": "goal",
+      "team": "clann",
+      "description": "A shot hits the inside of the left goalpost and deflects into the net.",
+      "excitement_level": 9,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 1941,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player in a white shirt shoots from the left, scoring in the bottom left corner of the goal.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2051,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "A player in blue trousers takes a powerful, low shot with his left foot into the bottom corner of the net.",
+      "excitement_level": 9,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 2098,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player in a black shirt receives a pass and shoots the ball into the top right corner of the net.",
+      "excitement_level": 9,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2131,
+      "type": "goal",
+      "team": "clann",
+      "description": "A shot hits the underside of the crossbar and bounces down over the goal line.",
+      "excitement_level": 10,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2303,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player in blue shorts shoots from the left side, and the ball hits the goal frame and goes into the net.",
+      "excitement_level": 9,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2958,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player takes a long-range shot from just outside the center circle into the top left corner.",
+      "excitement_level": 10,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 3026,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player shoots from near the center circle line, and the ball goes into the bottom left of the net.",
+      "excitement_level": 9,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 3062,
+      "type": "goal",
+      "team": "clann",
+      "description": "After a kick-off, a player in a dark top takes a right-footed shot that goes low into the bottom left corner.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 3112,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player shoots from just outside the center circle, scoring in the bottom left corner of the net.",
+      "excitement_level": 9,
+      "original_team_name": "no bibs/colours"
+    }
+  ],
+  "match_summary": "This was a one-sided match where the no bibs/colours team demonstrated superior finishing and attacking pressure, scoring consistently throughout the game. The orange bibs team scored a few notable long-range goals but were ultimately unable to keep pace with the relentless scoring from their opponents.",
+  "final_score": "no bibs/colours 16 - 4 orange bibs"
+}

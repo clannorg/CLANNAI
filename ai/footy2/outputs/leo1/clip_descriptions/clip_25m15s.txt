@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time: 25m15s - 25m30s
+- Team A: no bibs/colours (mostly black shirts)
+- Team B: orange bibs
+
+**DESCRIPTION:**
+*   **At 0 seconds:** The game is in progress. A player in an orange bib and blue shorts stands inside the goal area, facing the field. The no bibs team has possession near the center circle.
+*   **At 3 seconds:** A no bibs player in a black shirt passes the ball forward from the center circle to a teammate.
+*   **At 5 seconds:** The receiving no bibs player passes the ball to their left to another teammate in a black shirt.
+*   **At 9 seconds:** The no bibs player on the left side of the pitch passes the ball back towards the center to a teammate.
+*   **At 13 seconds:** The no bibs player in the center of the pitch maintains possession, slowly moving to their right while looking for an option.
+*   **At 15 seconds:** The clip ends with the no bibs team still in possession in the middle of the field, with the orange bibs team holding a defensive shape.

@@ -1,0 +1,8 @@
+**- Global match time: 50m30s - 50m45s**
+
+*   **At 0 seconds:** The game is about to restart. A player from the no bibs/colours team stands over the ball in the center circle. The goalkeeper for the orange bibs team stands in front of the goal.
+*   **At 2 seconds:** The no bibs/colours player in the white t-shirt kicks off, passing the ball to a teammate in a dark t-shirt.
+*   **At 4 seconds:** The no bibs/colours team has possession in the center of the pitch, passing the ball between players.
+*   **At 7 seconds:** A no bibs/colours player passes the ball out to a teammate on the left wing.
+*   **At 10 seconds:** The no bibs/colours player on the left wing passes the ball back into the center of the pitch.
+*   **At 12 seconds:** The no bibs/colours team maintains possession in the center circle area. The play is slow, with no immediate threat to the goal.

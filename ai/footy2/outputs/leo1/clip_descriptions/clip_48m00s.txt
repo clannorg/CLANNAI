@@ -1,0 +1,17 @@
+Here is a description of the 15-second video segment:
+
+**GAME CONTEXT:**
+- Global match time starts at: 48m00s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+*   **At 0 seconds:** A player from the no bibs/colours team on the far left of the pitch kicks the ball high towards the center circle.
+*   **At 2 seconds:** A player from the no bibs/colours team gains possession of the bouncing ball inside the center circle.
+*   **At 3 seconds:** The no bibs/colours player passes the ball to a teammate on the left.
+*   **At 5 seconds:** The teammate on the left passes the ball back to the player in the center.
+*   **At 7 seconds:** The central no bibs/colours player passes the ball to a teammate on the right wing.
+*   **At 8 seconds:** A whistle is heard, but play continues.
+*   **At 10 seconds:** An orange bibs player successfully tackles the no bibs/colours player on the right wing and wins possession of the ball.
+*   **At 12 seconds:** The orange bibs player passes the ball forward to a teammate positioned near the center circle.
+*   **At 13 seconds:** The central orange bibs player receives the pass and immediately makes a forward pass to a teammate running up the left side of the pitch.

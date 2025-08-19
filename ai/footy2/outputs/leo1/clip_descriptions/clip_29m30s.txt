@@ -1,0 +1,7 @@
+**Match Segment Description:**
+
+- **At 0 seconds:** The game is in progress, with the no bibs/colours team in possession near the center circle.
+- **At 4 seconds:** A no bibs/colours player on the left side of the pitch receives a pass.
+- **At 10 seconds:** A player from the orange bibs team intercepts a forward pass from the no bibs/colours team. Possession changes to the orange bibs team.
+- **At 14 seconds:** The orange bibs player passes the ball up the left wing to a teammate.
+- **At 15 seconds:** A player from the no bibs/colours team intercepts the pass near the sideline. Possession changes back to the no bibs/colours team.

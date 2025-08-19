@@ -1,0 +1,12 @@
+**Player Identification:**
+- **Team A:** orange bibs
+- **Team B:** no bibs/colours
+
+**Description:**
+- **At 0 seconds:** A Team B player wearing a grey shirt kicks the ball high from the left side of the pitch towards the Team A goal.
+- **At 3 seconds:** The ball lands near the center circle and is controlled by a Team A player.
+- **At 5 seconds:** A Team A player attempts a short pass near the center circle, which is intercepted by a Team B player in a white shirt.
+- **At 7 seconds:** The Team B player in the white shirt takes a shot with their right foot from just outside the center circle.
+- **At 9 seconds:** The shot travels low along the ground and goes wide to the left of the goal.
+- **At 13 seconds:** The Team A goalkeeper in the foreground moves to retrieve the ball to restart play.
+- **At 15 seconds:** The Team A goalkeeper squats down near the ball.

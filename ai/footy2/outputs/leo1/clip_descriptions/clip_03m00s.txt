@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time starts at: 03m00s
+- Team A: no bibs/colours
+- Team B: orange bibs
+
+**DESCRIPTION:**
+*   **At 0 seconds:** The teams are setting up in the center of the pitch for a kick-off following a goal. A "no bibs" player in a black shirt stands over the ball in the center circle. An "orange bibs" player is acting as the goalkeeper in front of the camera.
+*   **At 6 seconds:** The "no bibs" player in the black shirt kicks the ball backwards to a teammate in a white shirt to start the play.
+*   **At 8 seconds:** The "no bibs" player in the white shirt makes a first-time pass forward and to the left, towards another "no bibs" teammate.
+*   **At 10 seconds:** The "no bibs" teammate on the left side of the pitch receives the pass.
+*   **At 11 seconds:** The "no bibs" player with the ball takes a touch and begins to move forward.
+*   **At 12-15 seconds:** The "no bibs" team maintains possession on the left side of the pitch, while the "orange bibs" team sets up defensively. No further significant actions occur.

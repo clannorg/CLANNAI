@@ -1,0 +1,25 @@
+At 0 seconds: The game starts with a no bibs/colours player on the left wing in possession.
+
+At 1 second: The no bibs/colours player passes the ball to a teammate in the center.
+
+At 2 seconds: The central player passes the ball back to the left wing.
+
+At 3 seconds: The no bibs/colours player on the left wing passes the ball infield.
+
+At 4 seconds: An orange bibs player intercepts the pass.
+
+At 5 seconds: A no bibs/colours player immediately tackles and regains possession.
+
+At 6 seconds: The no bibs/colours player passes forward to a teammate in the center circle.
+
+At 7 seconds: An orange bibs player tackles the central player and wins the ball.
+
+At 9 seconds: The orange bibs player passes forward to another orange bibs teammate.
+
+At 10 seconds: The receiving orange bibs player is tackled by a no bibs/colours player, and the ball comes loose.
+
+At 11 seconds: Another orange bibs player collects the loose ball.
+
+At 12 seconds: The orange bibs player is immediately tackled by a no bibs/colours player.
+
+At 13 seconds: The no bibs/colours player who made the tackle gains control and passes the ball forward to a teammate on the left wing.

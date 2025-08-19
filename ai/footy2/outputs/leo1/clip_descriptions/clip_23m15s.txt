@@ -1,0 +1,7 @@
+At 0 seconds: The game is paused with players from both teams standing around the center circle. The score is being discussed. A player without a bib is holding the ball. The camera is positioned behind the orange bibs' goal, with their goalkeeper standing in front of the camera.
+
+At 12 seconds: The no bibs/colours team prepares to kick off from the center circle.
+
+At 13 seconds: The player without a bib in the center circle passes the ball backwards to a teammate.
+
+At 14 seconds: The receiving no bibs/colours player passes the ball to another teammate on the left side of the pitch.
