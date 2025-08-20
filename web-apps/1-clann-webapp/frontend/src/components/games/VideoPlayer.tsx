@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Hls from 'hls.js'
 
 interface GameEvent {
   type: string
@@ -13,6 +14,7 @@ interface GameEvent {
 interface VideoPlayerProps {
   game: {
     s3Url: string
+    hlsUrl?: string
     title: string
     metadata?: {
       teams?: {
@@ -57,6 +59,7 @@ export default function VideoPlayer({
   const [isMuted, setIsMuted] = useState(false)
   
   const videoRef = useRef<HTMLVideoElement>(null)
+  const hlsRef = useRef<Hls | null>(null)
   
   // Downloads preview state
   const [previewSegments, setPreviewSegments] = useState<Array<{
@@ -107,6 +110,64 @@ export default function VideoPlayer({
       setCurrentSegmentIndex(0)
     }
   }, [selectedEvents, allEvents, activeTab, segmentPadding, isPreviewMode, autoplayEvents])
+
+  // Initialize HLS player
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    // Cleanup previous HLS instance
+    if (hlsRef.current) {
+      hlsRef.current.destroy()
+      hlsRef.current = null
+    }
+
+    // Try HLS first if supported and URL is available
+    if (game.hlsUrl && Hls.isSupported()) {
+      console.log('🎬 Initializing HLS with URL:', game.hlsUrl)
+      
+      const hls = new Hls({
+        enableWorker: true,
+        lowLatencyMode: false,
+        backBufferLength: 90,
+        debug: false,
+      })
+
+      hls.loadSource(game.hlsUrl)
+      hls.attachMedia(video)
+
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        console.log('✅ HLS manifest loaded successfully')
+      })
+
+      hls.on(Hls.Events.ERROR, (event, data) => {
+        console.error('❌ HLS Error:', data)
+        if (data.fatal) {
+          console.log('🔄 HLS fatal error, falling back to MP4')
+          // Fallback to MP4
+          video.src = game.s3Url
+        }
+      })
+
+      hlsRef.current = hls
+    } else if (game.hlsUrl && video.canPlayType('application/vnd.apple.mpegurl')) {
+      // Native HLS support (Safari)
+      console.log('🍎 Using native HLS support')
+      video.src = game.hlsUrl
+    } else {
+      // Fallback to MP4
+      console.log('📹 Using MP4 fallback')
+      video.src = game.s3Url
+    }
+
+    // Cleanup on unmount
+    return () => {
+      if (hlsRef.current) {
+        hlsRef.current.destroy()
+        hlsRef.current = null
+      }
+    }
+  }, [game.hlsUrl, game.s3Url])
 
   // Jump to next segment in preview mode
   const jumpToNextSegment = () => {
@@ -400,7 +461,6 @@ export default function VideoPlayer({
       <video
         ref={videoRef}
         className="w-full h-full object-contain"
-        src={game.s3Url}
         crossOrigin="anonymous"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleTimeUpdate}

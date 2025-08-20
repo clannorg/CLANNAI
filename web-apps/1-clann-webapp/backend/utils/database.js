@@ -141,10 +141,12 @@ const getDemoGames = async () => {
 const getGameById = async (id) => {
   const result = await pool.query(
     `SELECT g.*, t.name as team_name, t.color as team_color,
-            u.name as uploaded_by_name, u.email as uploaded_by_email
+            u.name as uploaded_by_name, u.email as uploaded_by_email,
+            hls.hls_url
      FROM games g
      JOIN teams t ON g.team_id = t.id
      JOIN users u ON g.uploaded_by = u.id
+     LEFT JOIN hls_conversions hls ON g.id = hls.game_id AND hls.status = 'completed'
      WHERE g.id = $1`,
     [id]
   );

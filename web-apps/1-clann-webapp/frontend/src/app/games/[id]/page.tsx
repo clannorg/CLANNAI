@@ -119,6 +119,7 @@ interface Game {
   title: string
   description: string
   s3Url: string
+  hlsUrl?: string
   status: string
   is_demo?: boolean
   ai_analysis: GameEvent[] | { events: GameEvent[] } | null
