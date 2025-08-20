@@ -131,29 +131,7 @@ export default function VideoPlayer({
     }
   }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents])
 
-  // Keyboard shortcuts for clip navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isPreviewMode || previewSegments.length === 0) return
-      
-      // Only handle if not typing in an input
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
-      
-      switch (e.key) {
-        case 'ArrowRight':
-          e.preventDefault()
-          jumpToNextSegment()
-          break
-        case 'ArrowLeft':
-          e.preventDefault()
-          jumpToPrevSegment()
-          break
-      }
-    }
 
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isPreviewMode, previewSegments.length, jumpToNextSegment, jumpToPrevSegment])
 
   // Initialize HLS player
   useEffect(() => {
@@ -249,6 +227,30 @@ export default function VideoPlayer({
       }
     }
   }, [currentSegmentIndex, previewSegments])
+
+  // Keyboard shortcuts for clip navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isPreviewMode || previewSegments.length === 0) return
+      
+      // Only handle if not typing in an input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      
+      switch (e.key) {
+        case 'ArrowRight':
+          e.preventDefault()
+          jumpToNextSegment()
+          break
+        case 'ArrowLeft':
+          e.preventDefault()
+          jumpToPrevSegment()
+          break
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isPreviewMode, previewSegments.length, jumpToNextSegment, jumpToPrevSegment])
 
   // Generate smart timeline background for clips mode
   const generateSmartTimelineBackground = () => {

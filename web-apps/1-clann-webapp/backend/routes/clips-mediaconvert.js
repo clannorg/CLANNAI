@@ -202,37 +202,12 @@ router.post('/create', authenticateToken, async (req, res) => {
         } catch (mediaConvertError) {
             console.error('❌ MediaConvert failed:', mediaConvertError.message);
             
-            // Check if we're in development and FFmpeg is available
-            const isLocal = process.env.NODE_ENV !== 'production';
-            const ffmpegAvailable = await checkFFmpegAvailable();
+            // DISABLED: FFmpeg fallback - forcing MediaConvert only
+            // const isLocal = process.env.NODE_ENV !== 'production';
+            // const ffmpegAvailable = await checkFFmpegAvailable();
             
-            if (isLocal && ffmpegAvailable) {
-                console.log('🔄 Falling back to FFmpeg for local development...');
-                
-                try {
-                    const ffmpegResult = await createClipsWithFFmpeg(videoUrl, events, gameId);
-                    
-                    return res.json({
-                        success: true,
-                        downloadUrl: ffmpegResult.downloadUrl,
-                        fileName: 'highlight_reel.mp4',
-                        duration: totalDuration,
-                        eventCount: events.length,
-                        message: 'Clips created successfully using FFmpeg (local development)'
-                    });
-                    
-                } catch (ffmpegError) {
-                    console.error('❌ FFmpeg fallback also failed:', ffmpegError);
-                    throw ffmpegError;
-                }
-            } else {
-                // Neither MediaConvert nor FFmpeg available
-                if (!isLocal) {
-                    throw new Error('MediaConvert failed in production environment');
-                } else {
-                    throw new Error('MediaConvert failed and FFmpeg not available for fallback');
-                }
-            }
+            console.log('🚫 FFmpeg fallback disabled - MediaConvert only mode');
+            throw new Error(`MediaConvert failed: ${mediaConvertError.message}`);
         }
 
     } catch (error) {
