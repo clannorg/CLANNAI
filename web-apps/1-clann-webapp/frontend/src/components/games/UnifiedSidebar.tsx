@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
+import AppleStyleTrimmer from './AppleStyleTrimmer'
 
 import { COACHES } from '../ai-chat/coaches'
 import { getTeamInfo, getTeamColorClass } from '../../lib/team-utils'
@@ -472,52 +473,54 @@ export default function UnifiedSidebar({
         afterPadding: padding.afterPadding
       }))
       
-      console.log('🎬 Starting MediaConvert job with events:', selectedEventData)
+      console.log('🎬 Starting clip creation with events:', selectedEventData)
       
-      // Start MediaConvert job
+      // Start clip creation (MediaConvert or FFmpeg)
       const result = await apiClient.createClip(gameId, selectedEventData)
-      console.log('✅ MediaConvert job started:', result)
+      console.log('✅ Clip creation started:', result)
       
-      // Show processing message
-      alert(`🚀 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\nProcessing will take a few minutes. You'll be notified when ready for download.`)
-      
-      // Poll for completion
-      const pollInterval = setInterval(async () => {
-        try {
-          const status = await apiClient.checkClipStatus(result.jobId)
-          console.log('📊 Job status:', status)
-          
-          if (status.status === 'COMPLETE') {
-            clearInterval(pollInterval)
+      // Check if this is MediaConvert (needs polling) or FFmpeg (immediate)
+      if (result.jobId) {
+        // MediaConvert - needs polling
+        alert(`🚀 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\nProcessing will take a few minutes. You'll be notified when ready for download.`)
+        
+        // Poll for completion
+        const pollInterval = setInterval(async () => {
+          try {
+            const status = await apiClient.checkClipStatus(result.jobId)
+            console.log('📊 Job status:', status)
             
-            // Job completed - now we can download
-            const downloadUrl = `/api/clips/download/clips/${gameId}/${result.outputPath.split('/').pop()}/highlight_reel.mp4`
-            
-            try {
-              const blob = await apiClient.downloadClip(downloadUrl)
-              const url = window.URL.createObjectURL(blob)
-              const link = document.createElement('a')
-              link.href = url
-              link.download = `highlight_${gameId}_${Date.now()}.mp4`
-              document.body.appendChild(link)
-              link.click()
-              document.body.removeChild(link)
-              window.URL.revokeObjectURL(url)
+            if (status.status === 'COMPLETE') {
+              clearInterval(pollInterval)
               
-              // Clear selection after successful download
-              updateSelectedEvents(new Map())
+              // Job completed - now we can download
+              const downloadUrl = `/api/clips/download/clips/${gameId}/${result.outputPath.split('/').pop()}/highlight_reel.mp4`
               
-              alert(`🎉 Highlight reel completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download started!`)
+              try {
+                const blob = await apiClient.downloadClip(downloadUrl)
+        const url = window.URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+                link.download = `highlight_${gameId}_${Date.now()}.mp4`
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+                
+                // Clear selection after successful download
+                updateSelectedEvents(new Map())
+                
+                alert(`🎉 Highlight reel completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download started!`)
+                
+      } catch (downloadError: any) {
+        console.error('Download failed:', downloadError)
+                alert('Clip processing completed but download failed. Please try again.')
+              }
               
-            } catch (downloadError: any) {
-              console.error('Download failed:', downloadError)
-              alert('Clip processing completed but download failed. Please try again.')
-            }
-            
-            setIsCreatingClip(false)
-            
-          } else if (status.status === 'ERROR') {
-            clearInterval(pollInterval)
+              setIsCreatingClip(false)
+              
+            } else if (status.status === 'ERROR') {
+              clearInterval(pollInterval)
             setIsCreatingClip(false)
             alert('❌ Clip processing failed. Please try again.')
             
@@ -534,14 +537,47 @@ export default function UnifiedSidebar({
         }
       }, 10000) // Check every 10 seconds
       
-      // Stop polling after 10 minutes (timeout)
-      setTimeout(() => {
-        clearInterval(pollInterval)
-        if (isCreatingClip) {
-          setIsCreatingClip(false)
-          alert('⏰ Clip processing is taking longer than expected. Please check back later.')
+        // Stop polling after 10 minutes (timeout)
+        setTimeout(() => {
+          clearInterval(pollInterval)
+          if (isCreatingClip) {
+            setIsCreatingClip(false)
+            alert('⏰ Clip processing is taking longer than expected. Please check back later.')
+          }
+        }, 600000) // 10 minutes
+        
+      } else if (result.downloadUrl) {
+        // FFmpeg - immediate download available
+        alert(`🎉 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\n💾 Starting download now!`)
+        
+        try {
+          const blob = await apiClient.downloadClip(result.downloadUrl)
+          const url = window.URL.createObjectURL(blob)
+          const link = document.createElement('a')
+          link.href = url
+          link.download = `highlight_${gameId}_${Date.now()}.mp4`
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+          window.URL.revokeObjectURL(url)
+          
+          // Clear selection after successful download
+          updateSelectedEvents(new Map())
+          
+          alert(`✅ Download completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds`)
+          
+        } catch (downloadError: any) {
+          console.error('Download failed:', downloadError)
+          alert('Clip was created but download failed. Please try again.')
         }
-      }, 600000) // 10 minutes
+        
+        setIsCreatingClip(false)
+      } else {
+        // Unknown response format
+        console.error('Unexpected response format:', result)
+        alert('Clip creation completed but response format was unexpected.')
+        setIsCreatingClip(false)
+      }
       
     } catch (error: any) {
       console.error('❌ Error starting clip creation:', error)
@@ -777,13 +813,13 @@ export default function UnifiedSidebar({
                     title="Toggle More Filters"
                   >
                     <div className="flex items-center space-x-2">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
-                      </svg>
-                      <span>More Filters</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
+                    </svg>
+                    <span>More Filters</span>
                       <svg className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
                     </div>
 
                   </button>
@@ -1036,7 +1072,7 @@ export default function UnifiedSidebar({
                   
                   // Show edit form if this event is being edited
                   if (editingEventIndex === originalIndex && editingEvent) {
-                    return (
+                  return (
                       <div
                         key={`${event.timestamp}-${event.type}-${index}-editing`}
                         className="p-3 rounded-lg bg-blue-900/20 border border-blue-500/30 space-y-3"
@@ -1094,7 +1130,7 @@ export default function UnifiedSidebar({
                           {/* Save/Cancel Buttons */}
                           <div className="flex items-center gap-1">
                             {/* Save Button */}
-                            <button
+                    <button
                               onClick={handleSaveEditedEvent}
                               disabled={isSavingEvents}
                               className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
@@ -1195,7 +1231,7 @@ export default function UnifiedSidebar({
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
+                        </svg>
                         </button>
                         
                         {/* Edit Button */}
@@ -1280,10 +1316,10 @@ export default function UnifiedSidebar({
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                               </svg>
-                            </button>
+                  </button>
                           </div>
-                        )
-                      })}
+                )
+                })}
                     </div>
                   </div>
                 )}
@@ -1561,7 +1597,7 @@ export default function UnifiedSidebar({
                                 {/* Before Padding - Left side with responsive width */}
                                 <div className="flex items-center gap-1 min-w-0" style={{ width: 'calc(50% - 30px)' }}>
                                   <span className="text-xs text-gray-400 shrink-0 w-6 text-right">-{eventPadding.beforePadding}</span>
-                                  <input
+                        <input
                                     type="range"
                                     min="0"
                                     max="15"
@@ -1626,23 +1662,23 @@ export default function UnifiedSidebar({
                             key={`binned-${event.timestamp}-${event.type}-${index}`}
                             className="flex items-center space-x-3 p-3 rounded-lg bg-red-900/20 border border-red-500/30 opacity-75"
                           >
-                            <div className="flex-1">
-                              <div className="flex items-center space-x-2">
-                                <span 
-                                  className={`inline-block w-3 h-3 rounded-full`}
-                                  style={{ backgroundColor: getEventColor(event.type) }}
-                                />
-                                <span className="text-white font-medium capitalize">
-                                  {event.type}
-                                </span>
-                                <span className="text-gray-400 text-sm">
-                                  {formatTime(event.timestamp)}
-                                </span>
-                              </div>
-                              <p className="text-gray-300 text-sm mt-1">
-                                {transformDescription(event.description || '')}
-                              </p>
-                            </div>
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2">
+                            <span 
+                              className={`inline-block w-3 h-3 rounded-full`}
+                              style={{ backgroundColor: getEventColor(event.type) }}
+                            />
+                            <span className="text-white font-medium capitalize">
+                              {event.type}
+                            </span>
+                            <span className="text-gray-400 text-sm">
+                              {formatTime(event.timestamp)}
+                            </span>
+                          </div>
+                          <p className="text-gray-300 text-sm mt-1">
+                            {transformDescription(event.description || '')}
+                          </p>
+                        </div>
                             
                             {/* Restore Button */}
                             <button
@@ -1656,9 +1692,9 @@ export default function UnifiedSidebar({
                               </svg>
                             </button>
                           </div>
-                        )
-                      })}
-                    </div>
+                    )
+                  })}
+                </div>
                   </div>
                 )}
               </div>

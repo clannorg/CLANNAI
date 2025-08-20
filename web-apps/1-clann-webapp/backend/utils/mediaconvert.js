@@ -227,7 +227,7 @@ const getJobStatus = async (jobId) => {
   }
 };
 
-// Create clips job with individual padding
+// Create clips job with individual padding - SIMPLIFIED VERSION
 const createClipsJob = async (inputS3Url, events, gameId) => {
   try {
     console.log('🎬 Creating MediaConvert clips job...');
@@ -248,58 +248,12 @@ const createClipsJob = async (inputS3Url, events, gameId) => {
     const timestamp = Date.now();
     const outputPath = `clips/${gameId}/${timestamp}`;
 
-    // Create outputs for each event with individual padding
-    const outputs = events.map((event, index) => {
+    // Simple job: create one concatenated clip with all events
+    const totalDuration = events.reduce((total, event) => {
       const beforePadding = event.beforePadding || 5;
       const afterPadding = event.afterPadding || 5;
-      const startTime = Math.max(0, event.timestamp - beforePadding);
-      const duration = beforePadding + afterPadding;
-
-      return {
-        NameModifier: `_clip_${index + 1}`,
-        VideoDescription: {
-          Width: 1920,
-          Height: 1080,
-          CodecSettings: {
-            Codec: 'H_264',
-            H264Settings: {
-              RateControlMode: 'QVBR',
-              QvbrSettings: {
-                QvbrQualityLevel: 7
-              }
-            }
-          }
-        },
-        AudioDescriptions: [
-          {
-            AudioTypeControl: 'FOLLOW_INPUT',
-            CodecSettings: {
-              Codec: 'AAC',
-              AacSettings: {
-                AudioDescriptionBroadcasterMix: 'NORMAL',
-                Bitrate: 96000,
-                RateControlMode: 'CBR',
-                CodecProfile: 'LC',
-                CodingMode: 'CODING_MODE_2_0',
-                RawFormat: 'NONE',
-                SampleRate: 48000
-              }
-            }
-          }
-        ],
-        ContainerSettings: {
-          Container: 'MP4',
-          Mp4Settings: {
-            CslgAtom: 'INCLUDE',
-            FreeSpaceBox: 'EXCLUDE',
-            MoovPlacement: 'PROGRESSIVE_DOWNLOAD'
-          }
-        },
-        OutputSettings: {
-          HlsSettings: {}
-        }
-      };
-    });
+      return total + beforePadding + afterPadding;
+    }, 0);
 
     // Create input clippings for each event
     const inputClippings = events.map((event) => {
@@ -320,26 +274,28 @@ const createClipsJob = async (inputS3Url, events, gameId) => {
         TimecodeConfig: {
           Source: 'ZEROBASED'
         },
-        Inputs: inputClippings.map((clipping, index) => ({
-          AudioSelectors: {
-            'Audio Selector 1': {
-              Offset: 0,
-              DefaultSelection: 'NOT_DEFAULT',
-              ProgramSelection: 1
-            }
-          },
-          VideoSelector: {
-            ColorSpace: 'FOLLOW'
-          },
-          FilterEnable: 'AUTO',
-          PsiControl: 'USE_PSI',
-          FilterStrength: 0,
-          DeblockFilter: 'DISABLED',
-          DenoiseFilter: 'DISABLED',
-          TimecodeSource: 'EMBEDDED',
-          FileInput: inputS3Url,
-          InputClippings: [clipping]
-        })),
+        Inputs: [
+          {
+            AudioSelectors: {
+              'Audio Selector 1': {
+                Offset: 0,
+                DefaultSelection: 'DEFAULT',
+                ProgramSelection: 1
+              }
+            },
+            VideoSelector: {
+              ColorSpace: 'FOLLOW'
+            },
+            FilterEnable: 'AUTO',
+            PsiControl: 'USE_PSI',
+            FilterStrength: 0,
+            DeblockFilter: 'DISABLED',
+            DenoiseFilter: 'DISABLED',
+            TimecodeSource: 'EMBEDDED',
+            FileInput: inputS3Url,
+            InputClippings: inputClippings
+          }
+        ],
         OutputGroups: [
           {
             Name: 'File Group',
@@ -349,13 +305,57 @@ const createClipsJob = async (inputS3Url, events, gameId) => {
                 Destination: `s3://${process.env.AWS_BUCKET_NAME}/${outputPath}/`
               }
             },
-            Outputs: outputs
+            Outputs: [
+              {
+                NameModifier: '_highlight_reel',
+                VideoDescription: {
+                  Width: 1920,
+                  Height: 1080,
+                  CodecSettings: {
+                    Codec: 'H_264',
+                    H264Settings: {
+                      RateControlMode: 'QVBR',
+                      QvbrSettings: {
+                        QvbrQualityLevel: 7
+                      }
+                    }
+                  }
+                },
+                AudioDescriptions: [
+                  {
+                    AudioTypeControl: 'FOLLOW_INPUT',
+                    CodecSettings: {
+                      Codec: 'AAC',
+                      AacSettings: {
+                        AudioDescriptionBroadcasterMix: 'NORMAL',
+                        Bitrate: 96000,
+                        RateControlMode: 'CBR',
+                        CodecProfile: 'LC',
+                        CodingMode: 'CODING_MODE_2_0',
+                        RawFormat: 'NONE',
+                        SampleRate: 48000
+                      }
+                    }
+                  }
+                ],
+                ContainerSettings: {
+                  Container: 'MP4',
+                  Mp4Settings: {
+                    CslgAtom: 'INCLUDE',
+                    FreeSpaceBox: 'EXCLUDE',
+                    MoovPlacement: 'PROGRESSIVE_DOWNLOAD'
+                  }
+                }
+              }
+            ]
           }
         ]
       }
     };
 
     console.log('🚀 Submitting MediaConvert job...');
+    console.log('📋 Job params:', JSON.stringify(jobParams, null, 2));
+    
     const job = await mc.createJob(jobParams).promise();
     
     console.log('✅ MediaConvert job created:', job.Job.Id);
@@ -367,6 +367,10 @@ const createClipsJob = async (inputS3Url, events, gameId) => {
 
   } catch (error) {
     console.error('❌ Error creating MediaConvert clips job:', error);
+    console.error('❌ Error details:', error.message);
+    if (error.stack) {
+      console.error('❌ Stack trace:', error.stack);
+    }
     throw error;
   }
 };
