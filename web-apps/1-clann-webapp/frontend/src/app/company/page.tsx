@@ -16,6 +16,7 @@ interface Game {
   description: string
   video_url: string
   s3_key?: string
+  chunks_base_url?: string
   status: string
   team_name: string
   uploaded_by_name: string
@@ -211,6 +212,33 @@ export default function CompanyDashboard() {
     } catch (err: any) {
       console.error('Failed to save events URL:', err);
       setError(err.message || 'Failed to save events URL');
+    } finally {
+      setUpdating(false);
+    }
+  };
+
+  // Chunks upload handler  
+  const handleChunksSave = async (game: Game, url: string) => {
+    try {
+      setUpdating(true);
+      setError('');
+      
+      await fetch(`${API_BASE_URL}/api/games/${game.id}/upload-chunks`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${localStorage.getItem('token')}` 
+        },
+        body: JSON.stringify({ 
+          chunksBaseUrl: url
+        })
+      });
+      console.log('✅ Chunks base URL saved');
+      await loadDashboardData();
+      
+    } catch (err: any) {
+      console.error('Failed to save chunks URL:', err);
+      setError(err.message || 'Failed to save chunks URL');
     } finally {
       setUpdating(false);
     }
@@ -526,6 +554,49 @@ export default function CompanyDashboard() {
                               <p className="text-xs text-gray-500 mb-1">Current:</p>
                               <p className="text-sm text-green-700 font-mono bg-green-50 px-2 py-1 rounded break-all">
                                 {game.s3_key}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Chunks URL Input */}
+                        <div className="space-y-2">
+                          <div className="flex items-center space-x-2">
+                            <label className="text-sm font-bold text-gray-900 whitespace-nowrap w-20">
+                              Chunks:
+                            </label>
+                            <input
+                              type="url"
+                              placeholder="Paste chunks base URL..."
+                              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white placeholder-gray-500 focus:ring-2 focus:ring-green-500/20 focus:border-green-500"
+                              onKeyPress={(e) => {
+                                if (e.key === 'Enter') {
+                                  const input = e.target as HTMLInputElement;
+                                  if (input.value.trim()) {
+                                    handleChunksSave(game, input.value.trim());
+                                    input.value = '';
+                                  }
+                                }
+                              }}
+                            />
+                            <button
+                              onClick={(e) => {
+                                const input = (e.target as HTMLElement).previousElementSibling as HTMLInputElement;
+                                if (input && input.value.trim()) {
+                                  handleChunksSave(game, input.value.trim());
+                                  input.value = '';
+                                }
+                              }}
+                              className="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-lg hover:bg-green-700 focus:ring-2 focus:ring-green-500/20 focus:outline-none whitespace-nowrap"
+                            >
+                              Save
+                            </button>
+                          </div>
+                          {game.chunks_base_url && (
+                            <div className="ml-20 pl-2">
+                              <p className="text-xs text-gray-500 mb-1">Current:</p>
+                              <p className="text-sm text-green-700 font-mono bg-green-50 px-2 py-1 rounded break-all">
+                                {game.chunks_base_url}
                               </p>
                             </div>
                           )}

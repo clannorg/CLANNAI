@@ -688,7 +688,38 @@ router.post('/:id/upload-events', [authenticateToken, requireCompanyRole], async
     if (error.response) {
       console.error('HTTP Error:', error.response.status, error.response.statusText);
     }
-    res.status(500).json({ error: 'Failed to upload events: ' + error.message });
+    res.status(500).json({ error: 'Failed to upload even3ts: ' + error.message });
+  }
+});
+
+// Upload chunks base URL (company only)
+router.post('/:id/upload-chunks', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { chunksBaseUrl } = req.body;
+
+    if (!chunksBaseUrl) {
+      return res.status(400).json({ error: 'Chunks base URL is required' });
+    }
+
+    console.log(`📦 Setting chunks base URL for game ${gameId}:`, chunksBaseUrl);
+
+    // Update the game with the chunks base URL
+    const updatedGame = await updateGame(gameId, {
+      chunks_base_url: chunksBaseUrl
+    });
+
+    console.log('✅ Chunks base URL saved successfully');
+
+    res.json({
+      success: true,
+      message: 'Chunks base URL saved successfully',
+      chunks_base_url: chunksBaseUrl,
+      updated_at: updatedGame.updated_at
+    });
+  } catch (error) {
+    console.error('Upload chunks URL error:', error);
+    res.status(500).json({ error: 'Failed to save chunks URL: ' + error.message });
   }
 });
 
@@ -746,7 +777,7 @@ router.post('/:id/upload-tactical', [authenticateToken, requireCompanyRole], asy
     let actualS3Key = s3Key;
     if (s3Key.startsWith('https://')) {
       // Extract key from full S3 URL
-      const urlParts = s3Key.split('/');
+      const urlParts = s3Key.split('/');3
       actualS3Key = urlParts.slice(3).join('/'); // Remove bucket name and domain
     }
 

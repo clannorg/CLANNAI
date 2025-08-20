@@ -180,8 +180,16 @@ router.post('/create', authenticateToken, async (req, res) => {
         // HYBRID APPROACH: Try MediaConvert first, fallback to FFmpeg
         try {
             console.log('🚀 Attempting MediaConvert (production method)...');
-            const s3VideoUrl = game.s3_key.startsWith('s3://') ? game.s3_key : 
-                `s3://${BUCKET_NAME}/${game.s3_key}`;
+            // Extract S3 key from URL if it's a full HTTPS URL
+            let s3Key = game.s3_key;
+            if (s3Key.startsWith('https://')) {
+                // Extract key from https://bucket.s3.amazonaws.com/path/file.mp4
+                const urlParts = s3Key.split('.s3.amazonaws.com/');
+                s3Key = urlParts.length > 1 ? urlParts[1] : s3Key;
+            }
+            
+            const s3VideoUrl = s3Key.startsWith('s3://') ? s3Key : 
+                `s3://${BUCKET_NAME}/${s3Key}`;
             
             // Create MediaConvert job with individual padding
             const mediaConvertResult = await createClipsJob(s3VideoUrl, events, gameId);

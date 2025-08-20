@@ -45,6 +45,7 @@ router.get('/games', [authenticateToken, requireCompanyRole], async (req, res) =
           description: game.description,
           video_url: game.video_url,
           s3_key: game.s3_key,
+          chunks_base_url: game.chunks_base_url,
           original_filename: game.original_filename,
           file_size: game.file_size,
           file_type: game.file_type,
