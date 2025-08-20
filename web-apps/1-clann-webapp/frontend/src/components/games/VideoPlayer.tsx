@@ -57,6 +57,8 @@ export default function VideoPlayer({
   const [duration, setDuration] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
+  const [playbackSpeed, setPlaybackSpeed] = useState(1)
+  const [zoomLevel, setZoomLevel] = useState(1)
   
   const videoRef = useRef<HTMLVideoElement>(null)
   const hlsRef = useRef<Hls | null>(null)
@@ -359,6 +361,17 @@ export default function VideoPlayer({
     }
   }
 
+  const handleSpeedChange = (speed: number) => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = speed
+      setPlaybackSpeed(speed)
+    }
+  }
+
+  const handleZoomChange = (zoom: number) => {
+    setZoomLevel(zoom)
+  }
+
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const time = parseFloat(e.target.value)
     if (videoRef.current) {
@@ -451,7 +464,7 @@ export default function VideoPlayer({
 
   return (
     <div
-      className="relative h-full flex items-center justify-center"
+      className="relative h-full flex items-center justify-center overflow-hidden"
       onMouseMove={onUserInteract}
       onClick={onUserInteract}
       onKeyDown={onUserInteract as any}
@@ -460,7 +473,11 @@ export default function VideoPlayer({
       {/* Video Element */}
       <video
         ref={videoRef}
-        className="w-full h-full object-contain"
+        className="w-full h-full object-contain transition-transform duration-200"
+        style={{ 
+          transform: `scale(${zoomLevel})`,
+          transformOrigin: 'center center'
+        }}
         crossOrigin="anonymous"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleTimeUpdate}
@@ -677,6 +694,71 @@ export default function VideoPlayer({
                   </svg>
                 )}
               </button>
+
+              {/* Playback Speed */}
+              <div className="relative group">
+                <button
+                  className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
+                  title="Playback Speed"
+                >
+                  {playbackSpeed}x
+                </button>
+                {/* Invisible bridge to prevent menu disappearing */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-8 h-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"></div>
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-black/90 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto shadow-lg">
+                  <div className="flex flex-col gap-1">
+                    {[0.25, 0.5, 0.75, 1, 1.25, 1.5, 2].map((speed) => (
+                      <button
+                        key={speed}
+                        onClick={() => handleSpeedChange(speed)}
+                        className={`px-3 py-2 text-xs rounded transition-colors whitespace-nowrap ${
+                          playbackSpeed === speed 
+                            ? 'bg-blue-600 text-white' 
+                            : 'text-white hover:bg-white/20'
+                        }`}
+                      >
+                        {speed}x
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Zoom */}
+              <div className="relative group">
+                <button
+                  className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 transition-colors"
+                  title="Zoom"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </button>
+                {/* Invisible bridge to prevent menu disappearing */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-6 h-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"></div>
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-black/90 rounded-lg p-4 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto shadow-lg">
+                  <div className="flex flex-col gap-3 items-center">
+                    <span className="text-xs text-white font-mono">{Math.round(zoomLevel * 100)}%</span>
+                    <input
+                      type="range"
+                      min="0.5"
+                      max="3"
+                      step="0.1"
+                      value={zoomLevel}
+                      onChange={(e) => handleZoomChange(parseFloat(e.target.value))}
+                      className="w-24 h-1 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer"
+                    />
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => handleZoomChange(1)}
+                        className="px-3 py-1 text-xs rounded bg-white/20 text-white hover:bg-white/30 transition-colors"
+                      >
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
