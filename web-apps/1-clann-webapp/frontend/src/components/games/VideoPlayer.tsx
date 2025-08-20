@@ -65,6 +65,7 @@ export default function VideoPlayer({
   }>>([])
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
   const [segmentPadding] = useState(5) // ±5 seconds padding
+  const [flashRegion, setFlashRegion] = useState<string | null>(null)
 
   // Check if we're in preview mode (clips tab with selected events)
   const isPreviewMode = activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0
@@ -275,6 +276,13 @@ export default function VideoPlayer({
     }
   }
 
+  const triggerFlash = (region: string, action: () => void) => {
+    setFlashRegion(region)
+    setTimeout(() => setFlashRegion(null), 150)
+    action()
+    if (onUserInteract) onUserInteract()
+  }
+
   const handleMuteToggle = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted
@@ -399,6 +407,59 @@ export default function VideoPlayer({
         webkit-playsinline="true"
         x-webkit-airplay="deny"
       />
+
+      {/* Voronoi Diagram - Invisible Tap Regions */}
+      <div className="absolute inset-0 z-20 pointer-events-auto">
+        {/* Previous Event Region - Left 20% */}
+        <div
+          className="absolute top-0 left-0 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('prev', handlePreviousEvent)}
+        >
+          <div className={`absolute inset-0 bg-blue-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'prev' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* -5s Region - Left-Center 20% */}
+        <div
+          className="absolute top-0 left-1/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('back', handleJumpBackward)}
+        >
+          <div className={`absolute inset-0 bg-yellow-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'back' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* Play/Pause Region - Center 20% */}
+        <div
+          className="absolute top-0 left-2/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('play', handlePlayPause)}
+        >
+          <div className={`absolute inset-0 bg-green-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'play' ? 'opacity-30' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* +5s Region - Right-Center 20% */}
+        <div
+          className="absolute top-0 left-3/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('forward', handleJumpForward)}
+        >
+          <div className={`absolute inset-0 bg-orange-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'forward' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* Next Event Region - Right 20% */}
+        <div
+          className="absolute top-0 left-4/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('next', handleNextEvent)}
+        >
+          <div className={`absolute inset-0 bg-purple-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'next' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+      </div>
 
       {/* Floating Play Controls - Above Timeline */}
       <div
