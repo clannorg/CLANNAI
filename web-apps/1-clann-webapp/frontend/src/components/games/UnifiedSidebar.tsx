@@ -1448,33 +1448,73 @@ export default function UnifiedSidebar({
                       <div
                         key={`${event.timestamp}-${event.type}-${index}`}
                         onClick={() => !isDisabled && handleEventSelection(index)}
-                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
+                        className={`w-full text-left p-3 rounded-lg transition-all duration-200 border cursor-pointer ${
                           isSelected 
-                            ? 'bg-orange-500/20 border border-orange-500/30' 
+                            ? 'bg-orange-500/20 text-white border-orange-500 ring-1 ring-orange-500' 
                             : isDisabled 
-                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
-                              : 'bg-gray-800/30 hover:bg-gray-800/50'
+                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed border-gray-700'
+                              : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
                         }`}
                       >
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-2">
-                            <span 
-                              className={`inline-block w-3 h-3 rounded-full`}
-                              style={{ backgroundColor: getEventColor(event.type) }}
-                            />
-                            <span className="text-white font-medium capitalize">
-                              {event.type}
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2">
+                            {/* Time Badge - matching Events tab */}
+                            <div className="flex items-center gap-1">
+                              <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                            </div>
+                            
+                            {/* Event Type Badge - matching Events tab */}
+                            <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
+                              event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
+                              event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
+                              event.type === 'foul' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' :
+                              event.type === 'turnover' ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' :
+                              event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
+                              'bg-gray-500/20 text-gray-300 border-gray-500/30'
+                            }`}>
+                              <span>{getEventEmoji(event.type)}</span>
+                              <span>{event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
                             </span>
-                            <span className="text-gray-400 text-sm">
-                              {formatTime(event.timestamp)}
-                            </span>
+                            
+                            {/* Team Badge - matching Events tab */}
+                            {event.team && (
+                              <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${getTeamBadgeColors(event.team)}`}>
+                                {getTeamName(event.team)}
+                              </span>
+                            )}
                           </div>
-                          <p className="text-gray-300 text-sm mt-1">
-                            {transformDescription(event.description || '')}
-                          </p>
                           
-                          {/* Individual Padding Controls - Only show if selected */}
-                          {isSelected && eventPadding && (
+                          {/* Bin Button - matching Events tab */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation() // Prevent card selection
+                              handleBinEvent(index)
+                            }}
+                            disabled={isSavingEvents}
+                            className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                            title="Delete this event"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                          </button>
+                        </div>
+                        
+                        {/* Description - matching Events tab */}
+                        {event.description && (
+                          <div className="text-xs text-gray-400 mt-2 leading-relaxed">{transformDescription(event.description)}</div>
+                        )}
+                        
+                        {/* Player - matching Events tab */}
+                        {event.player && (
+                          <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
+                        )}
+                        
+                        {/* Individual Padding Controls - Only show if selected */}
+                        {isSelected && eventPadding && (
                             <div className="mt-3 bg-gray-900/50 rounded-lg p-2 w-full max-w-full overflow-hidden">
                               {/* Responsive side-by-side layout */}
                               <div className="flex items-center gap-1 w-full">
@@ -1528,22 +1568,6 @@ export default function UnifiedSidebar({
                               </div>
                             </div>
                           )}
-                        </div>
-                        
-                        {/* Bin Button */}
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation() // Prevent card selection
-                            handleBinEvent(index)
-                          }}
-                          disabled={isSavingEvents}
-                          className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
-                          title="Delete this event"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
-                        </button>
                       </div>
                     )
                   })}
