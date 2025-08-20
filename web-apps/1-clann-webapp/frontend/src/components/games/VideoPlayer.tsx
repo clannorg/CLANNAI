@@ -400,6 +400,78 @@ export default function VideoPlayer({
         x-webkit-airplay="deny"
       />
 
+      {/* Floating Play Controls - Center of Video */}
+      <div
+        className={`absolute inset-0 flex items-center justify-center z-30 transition-opacity duration-300 ${
+          overlayVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex items-center space-x-8">
+          {/* Previous Event */}
+          <button
+            onClick={handlePreviousEvent}
+            disabled={events.length === 0}
+            className="flex items-center justify-center text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            title="Previous Event"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Jump Backward 5s */}
+          <button
+            onClick={handleJumpBackward}
+            className="flex items-center justify-center text-white hover:text-gray-300 transition-colors text-lg font-bold"
+            title="Jump Backward 5s"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            -5s
+          </button>
+
+          {/* Play/Pause - LARGE CENTER BUTTON */}
+          <button
+            onClick={handlePlayPause}
+            className="flex items-center justify-center text-white hover:text-gray-300 transition-colors"
+            style={{ filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.9))' }}
+          >
+            {isPlaying ? (
+              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" strokeWidth={2} stroke="black">
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+              </svg>
+            ) : (
+              <svg className="w-16 h-16 ml-1" fill="currentColor" viewBox="0 0 24 24" strokeWidth={2} stroke="black">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            )}
+          </button>
+
+          {/* Jump Forward 5s */}
+          <button
+            onClick={handleJumpForward}
+            className="flex items-center justify-center text-white hover:text-gray-300 transition-colors text-lg font-bold"
+            title="Jump Forward 5s"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            +5s
+          </button>
+
+          {/* Next Event */}
+          <button
+            onClick={handleNextEvent}
+            disabled={events.length === 0}
+            className="flex items-center justify-center text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            title="Next Event"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
       {/* Progress Bar + Controls Overlay (auto-hide capable) */}
       <div
         className={`absolute bottom-0 left-0 right-0 z-40 transition-opacity duration-300 ${
@@ -430,67 +502,9 @@ export default function VideoPlayer({
             </div>
           )}
 
-                    {/* Clean Controls + Progress Bar */}
+          {/* Bottom Timeline Bar Only */}
           <div className="mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),8px)]">
             <div className="flex items-center space-x-3">
-              {/* Play/Pause */}
-              <button
-                onClick={handlePlayPause}
-                className="flex items-center justify-center w-8 h-8 text-white hover:text-gray-300 transition-colors"
-              >
-                {isPlaying ? (
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
-                  </svg>
-                ) : (
-                  <svg className="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                )}
-              </button>
-
-              {/* Jump Backward 5s */}
-              <button
-                onClick={handleJumpBackward}
-                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
-                title="Jump Backward 5s"
-              >
-                -5s
-              </button>
-
-              {/* Jump Forward 5s */}
-              <button
-                onClick={handleJumpForward}
-                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
-                title="Jump Forward 5s"
-              >
-                +5s
-              </button>
-
-              {/* Previous Event */}
-              <button
-                onClick={handlePreviousEvent}
-                disabled={events.length === 0}
-                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Previous Event"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              {/* Next Event */}
-              <button
-                onClick={handleNextEvent}
-                disabled={events.length === 0}
-                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Next Event"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
               {/* Current Time */}
               <span className="text-white text-sm font-mono whitespace-nowrap">
                 {formatTime(currentTime)}
