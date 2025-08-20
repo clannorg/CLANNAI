@@ -112,7 +112,7 @@ Convert the text to JSON format:"""
                 "error": str(e)
             }
 
-def create_match_metadata(webapp_data: dict, match_id: str) -> dict:
+def create_match_metadata(webapp_data: dict, match_id: str, team_config: dict) -> dict:
     """Create metadata file for the match in v3 format (East London style)"""
     
     # Count events by type
@@ -126,12 +126,12 @@ def create_match_metadata(webapp_data: dict, match_id: str) -> dict:
         'match_id': match_id,
         'teams': {
             'red_team': {
-                'name': webapp_data['teams']['team_a']['name'],
-                'jersey_color': webapp_data['teams']['team_a']['colors']
+                'name': team_config['team_a']['name'],
+                'jersey_color': team_config['team_a']['colors']
             },
             'blue_team': {
-                'name': webapp_data['teams']['team_b']['name'], 
-                'jersey_color': webapp_data['teams']['team_b']['colors']
+                'name': team_config['team_b']['name'], 
+                'jersey_color': team_config['team_b']['colors']
             }
         },
         'counts': {
@@ -196,7 +196,7 @@ def main():
     # Initialize formatter and convert
     formatter = WebappFormatter()
     webapp_data = formatter.convert_text_to_json(highlights_text, team_config, match_id)
-    match_metadata = create_match_metadata(webapp_data, match_id)
+    match_metadata = create_match_metadata(webapp_data, match_id, team_config)
     
     # Save webapp files
     webapp_file = outputs_dir / 'web_events_array.json'
