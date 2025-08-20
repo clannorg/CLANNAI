@@ -1475,12 +1475,12 @@ export default function UnifiedSidebar({
                           
                           {/* Individual Padding Controls - Only show if selected */}
                           {isSelected && eventPadding && (
-                            <div className="mt-3 bg-gray-900/50 rounded-lg p-3 overflow-hidden">
-                              {/* Robust contained layout */}
-                              <div className="flex items-center gap-2 min-w-0">
-                                {/* Before Padding - Fixed width container */}
-                                <div className="flex items-center gap-1 min-w-0" style={{ width: '35%' }}>
-                                  <span className="text-xs text-gray-400 font-medium whitespace-nowrap">-{eventPadding.beforePadding}s</span>
+                            <div className="mt-3 bg-gray-900/50 rounded-lg p-2 w-full max-w-full overflow-hidden">
+                              {/* Responsive side-by-side layout */}
+                              <div className="flex items-center gap-1 w-full">
+                                {/* Before Padding - Left side with responsive width */}
+                                <div className="flex items-center gap-1 min-w-0" style={{ width: 'calc(50% - 30px)' }}>
+                                  <span className="text-xs text-gray-400 shrink-0 w-6 text-right">-{eventPadding.beforePadding}</span>
                                   <input
                                     type="range"
                                     min="0"
@@ -1489,7 +1489,7 @@ export default function UnifiedSidebar({
                                     value={15 - eventPadding.beforePadding}
                                     onChange={(e) => updateEventPadding(index, 'before', 15 - parseInt(e.target.value))}
                                     onClick={(e) => e.stopPropagation()}
-                                    className="flex-1 min-w-0 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                                    className="flex-1 min-w-8 max-w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
                                     style={{
                                       background: `linear-gradient(to left, #f97316 0%, #f97316 ${(eventPadding.beforePadding / 15) * 100}%, #374151 ${(eventPadding.beforePadding / 15) * 100}%, #374151 100%)`
                                     }}
@@ -1497,14 +1497,14 @@ export default function UnifiedSidebar({
                                 </div>
                                 
                                 {/* Event Timestamp - Fixed center */}
-                                <div className="px-2 py-1 bg-orange-500/20 rounded border border-orange-500/30 flex-shrink-0">
-                                  <span className="text-xs font-bold text-orange-400 whitespace-nowrap">
+                                <div className="px-1 py-1 bg-orange-500/20 rounded border border-orange-500/30 shrink-0" style={{ width: '60px' }}>
+                                  <span className="text-xs font-bold text-orange-400 whitespace-nowrap block text-center">
                                     {formatTime(event.timestamp)}
                                   </span>
                                 </div>
                                 
-                                {/* After Padding - Fixed width container */}
-                                <div className="flex items-center gap-1 min-w-0" style={{ width: '35%' }}>
+                                {/* After Padding - Right side with responsive width */}
+                                <div className="flex items-center gap-1 min-w-0" style={{ width: 'calc(50% - 30px)' }}>
                                   <input
                                     type="range"
                                     min="0"
@@ -1513,18 +1513,18 @@ export default function UnifiedSidebar({
                                     value={eventPadding.afterPadding}
                                     onChange={(e) => updateEventPadding(index, 'after', parseInt(e.target.value))}
                                     onClick={(e) => e.stopPropagation()}
-                                    className="flex-1 min-w-0 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                                    className="flex-1 min-w-8 max-w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
                                     style={{
                                       background: `linear-gradient(to right, #f97316 0%, #f97316 ${(eventPadding.afterPadding / 15) * 100}%, #374151 ${(eventPadding.afterPadding / 15) * 100}%, #374151 100%)`
                                     }}
                                   />
-                                  <span className="text-xs text-gray-400 font-medium whitespace-nowrap">+{eventPadding.afterPadding}s</span>
+                                  <span className="text-xs text-gray-400 shrink-0 w-6 text-left">+{eventPadding.afterPadding}</span>
                                 </div>
                               </div>
                               
-                              {/* Total Duration */}
-                              <div className="text-xs text-gray-400 text-center mt-2">
-                                Total: {eventPadding.beforePadding + eventPadding.afterPadding}s
+                              {/* Compact total duration */}
+                              <div className="text-xs text-gray-400 text-center mt-1 pt-1 border-t border-gray-700/30">
+                                {eventPadding.beforePadding + eventPadding.afterPadding}s total
                               </div>
                             </div>
                           )}
