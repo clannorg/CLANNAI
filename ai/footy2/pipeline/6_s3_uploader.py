@@ -143,10 +143,10 @@ def upload_match_to_s3(match_id):
             "content_type": "text/plain", 
             "description": "Fouls, cards, corners and other events"
         },
-        "11_tactical_analysis.json": {
+        "tactical_analysis.txt": {
             "s3_folder": "analysis-data",
-            "content_type": "application/json",
-            "description": "Complete tactical analysis for both teams"
+            "content_type": "text/plain",
+            "description": "Complete tactical analysis using full game timeline + highlights"
         },
         "5_complete_timeline.txt": {
             "s3_folder": "analysis-data",

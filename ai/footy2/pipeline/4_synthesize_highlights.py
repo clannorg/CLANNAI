@@ -56,14 +56,19 @@ Below are descriptions of every 15-second clip from the match. Each clip descrip
 - Clip starts at [12:15] and event happens "At 3 seconds:" = 12:18 total
 - Always calculate: Clip Start Time + Internal Event Time = Exact Timestamp
 
-**STRICT CRITERIA:**
-🥅 **ONLY THE MOST OBVIOUS GOALS** - Only the clearest, most definite goals
-🚫 **BE SELECTIVE** - Quality over quantity
+**GENEROUS CRITERIA - INCLUDE ALL POTENTIAL GOALS:**
+🥅 **GOALS:** Ball clearly in net, celebrations, players resetting for kickoff
+🎯 **NEAR MISSES:** Hits crossbar, hits goalpost, goalkeeper saves, close shots
+⚽ **SHOTS:** Any shot toward goal, even if described as "wide" (could be wrong)
+🎉 **REACTIONS:** Player celebrations, goalkeeper reactions, team responses
+
+**BE GENEROUS - Better to include too many than miss real goals!**
+Users can easily remove false positives on the frontend, but can't generate missing goals.
 
 **IMPORTANT:** 
 - Use EXACT visual identifiers from descriptions (e.g., "Orange bibs", "Non-bibs")
-- Only count events that seem completely certain
-- Be conservative - when in doubt, exclude it
+- Include ANY event that could possibly be a goal or significant moment
+- When in doubt, INCLUDE it - err on the side of more events
 - **CALCULATE EXACT TIMESTAMPS** - don't just use clip start times
 
 **FORMAT YOUR RESPONSE AS PLAIN TEXT:**
@@ -88,8 +93,12 @@ Non-bibs 12 - 8 Orange bibs
 
 HIGHLIGHTS:
 02:38 - GOAL - Non-bibs: Tall player shoots from close range, ball clearly in net
+03:15 - GOAL - Orange bibs: Shot hits crossbar and bounces down
 05:48 - GOAL - Orange bibs: Quick counter-attack finished by bearded player
+07:22 - GOAL - Non-bibs: Powerful shot, goalkeeper dives, close call
 08:15 - GOAL - Non-bibs: Goalkeeper beaten by low shot from edge of area
+09:33 - GOAL - Orange bibs: Ball hits inside of left goalpost
+11:45 - GOAL - Non-bibs: Shot described as "wide" but could be goal
 
 **CLIP DESCRIPTIONS:**
 {all_descriptions}
