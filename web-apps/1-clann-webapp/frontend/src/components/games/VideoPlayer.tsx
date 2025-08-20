@@ -34,6 +34,7 @@ interface VideoPlayerProps {
   // Downloads preview props
   selectedEvents?: Set<number>
   activeTab?: string
+  autoplayEvents?: boolean
 }
 
 export default function VideoPlayer({
@@ -47,7 +48,8 @@ export default function VideoPlayer({
   overlayVisible = true,
   onUserInteract,
   selectedEvents,
-  activeTab
+  activeTab,
+  autoplayEvents
 }: VideoPlayerProps) {
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
@@ -67,13 +69,19 @@ export default function VideoPlayer({
   const [segmentPadding] = useState(5) // ±5 seconds padding
   const [flashRegion, setFlashRegion] = useState<string | null>(null)
 
-  // Check if we're in preview mode (clips tab with selected events)
-  const isPreviewMode = activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0
+  // Check if we're in preview mode (clips tab with selected events OR autoplay events mode)
+  const isPreviewMode = (activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0) || 
+                        (activeTab === 'events' && autoplayEvents)
 
-  // Calculate preview segments when selectedEvents change
+  // Calculate preview segments when selectedEvents or autoplay change
   useEffect(() => {
-    if (isPreviewMode && selectedEvents && allEvents) {
-      const segments = Array.from(selectedEvents)
+    if (isPreviewMode && allEvents) {
+      // Use all events for autoplay mode, selected events for downloads mode
+      const eventsToUse = (activeTab === 'events' && autoplayEvents) 
+        ? allEvents.map((_, index) => index) 
+        : Array.from(selectedEvents || [])
+      
+      const segments = eventsToUse
         .map(eventIndex => {
           const event = allEvents[eventIndex]
           if (!event) return null
@@ -98,7 +106,7 @@ export default function VideoPlayer({
       setPreviewSegments([])
       setCurrentSegmentIndex(0)
     }
-  }, [selectedEvents, allEvents, activeTab, segmentPadding, isPreviewMode])
+  }, [selectedEvents, allEvents, activeTab, segmentPadding, isPreviewMode, autoplayEvents])
 
   // Jump to next segment in preview mode
   const jumpToNextSegment = () => {

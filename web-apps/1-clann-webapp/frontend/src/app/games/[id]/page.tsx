@@ -98,7 +98,8 @@ function MobileVideoPlayer({
           overlayVisible={showOverlay}
           onUserInteract={resetHideTimer}
           selectedEvents={selectedEvents}
-          activeTab={activeTab}
+          activeTab={sidebarTab}
+          autoplayEvents={autoplayEvents}
         />
       </div>
     </div>
@@ -168,6 +169,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   
   // Downloads preview state
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
+  
+  // Autoplay events state
+  const [autoplayEvents, setAutoplayEvents] = useState(false)
   
   // Tactical analysis state
   const [tacticalData, setTacticalData] = useState<{
@@ -378,6 +382,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               onSeekToTimestamp={seekToTimestamp}
               selectedEvents={selectedEvents}
               activeTab={sidebarTab}
+              autoplayEvents={autoplayEvents}
             />
               </div>
           
@@ -405,6 +410,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             onSeekToTimestamp={seekToTimestamp}
             currentTime={currentTime}
             onSelectedEventsChange={setSelectedEvents}
+            onAutoplayChange={setAutoplayEvents}
                 />
               </div>
       ) : (
@@ -429,6 +435,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               seekToTimestamp={seekToTimestamp}
               selectedEvents={selectedEvents}
               activeTab={sidebarTab}
+              autoplayEvents={autoplayEvents}
             />
           }
           activeTab={sidebarTab}
