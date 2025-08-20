@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Hls from 'hls.js'
 
 interface GameEvent {
@@ -131,6 +131,30 @@ export default function VideoPlayer({
     }
   }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents])
 
+  // Keyboard shortcuts for clip navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isPreviewMode || previewSegments.length === 0) return
+      
+      // Only handle if not typing in an input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      
+      switch (e.key) {
+        case 'ArrowRight':
+          e.preventDefault()
+          jumpToNextSegment()
+          break
+        case 'ArrowLeft':
+          e.preventDefault()
+          jumpToPrevSegment()
+          break
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isPreviewMode, previewSegments.length, jumpToNextSegment, jumpToPrevSegment])
+
   // Initialize HLS player
   useEffect(() => {
     const video = videoRef.current
@@ -190,7 +214,7 @@ export default function VideoPlayer({
   }, [game.hlsUrl, game.s3Url])
 
   // Jump to next segment in preview mode
-  const jumpToNextSegment = () => {
+  const jumpToNextSegment = useCallback(() => {
     const nextIndex = currentSegmentIndex + 1
     if (nextIndex < previewSegments.length) {
       // Jump to next segment
@@ -199,14 +223,32 @@ export default function VideoPlayer({
         videoRef.current.currentTime = previewSegments[nextIndex].start
       }
     } else {
-      // End of all clips - stop playing
+      // Loop back to first clip
+      setCurrentSegmentIndex(0)
       if (videoRef.current) {
-        videoRef.current.pause()
+        videoRef.current.currentTime = previewSegments[0].start
       }
-      setIsPlaying(false)
-      setCurrentSegmentIndex(0) // Reset for next time
     }
-  }
+  }, [currentSegmentIndex, previewSegments])
+
+  // Jump to previous segment in preview mode
+  const jumpToPrevSegment = useCallback(() => {
+    const prevIndex = currentSegmentIndex - 1
+    if (prevIndex >= 0) {
+      // Jump to previous segment
+      setCurrentSegmentIndex(prevIndex)
+      if (videoRef.current) {
+        videoRef.current.currentTime = previewSegments[prevIndex].start
+      }
+    } else {
+      // Loop to last clip
+      const lastIndex = previewSegments.length - 1
+      setCurrentSegmentIndex(lastIndex)
+      if (videoRef.current) {
+        videoRef.current.currentTime = previewSegments[lastIndex].start
+      }
+    }
+  }, [currentSegmentIndex, previewSegments])
 
   // Generate smart timeline background for clips mode
   const generateSmartTimelineBackground = () => {
@@ -347,8 +389,8 @@ export default function VideoPlayer({
             setCurrentSegmentIndex(0)
           }
         } else if (currentSegment && time >= currentSegment.end) {
-          // Hit end of current segment? Jump to next!
-          jumpToNextSegment()
+          // Hit end of current segment - loop back to start of same segment
+          videoRef.current.currentTime = currentSegment.start
         }
       }
     }
@@ -359,6 +401,23 @@ export default function VideoPlayer({
       if (isPlaying) {
         videoRef.current.pause()
       } else {
+        // When starting to play in preview mode, ensure we're in a valid clip segment
+        if (isPreviewMode && previewSegments.length > 0) {
+          const currentTime = videoRef.current.currentTime
+          
+          // Check if current time is within any clip segment
+          const currentSegment = previewSegments.find(seg => 
+            currentTime >= seg.start && currentTime <= seg.end
+          )
+          
+          if (!currentSegment) {
+            // Not in any clip - jump to start of first clip
+            const firstSegment = previewSegments[0]
+            videoRef.current.currentTime = firstSegment.start
+            setCurrentSegmentIndex(0)
+          }
+        }
+        
         videoRef.current.play()
       }
       setIsPlaying(!isPlaying)
