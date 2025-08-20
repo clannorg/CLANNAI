@@ -66,7 +66,7 @@ export default function VideoPlayer({
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
   const [segmentPadding] = useState(5) // ±5 seconds padding
 
-  // Check if we're in preview mode
+  // Check if we're in preview mode (clips tab with selected events)
   const isPreviewMode = activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0
 
   // Calculate preview segments when selectedEvents change
@@ -116,6 +116,44 @@ export default function VideoPlayer({
       setIsPlaying(false)
       setCurrentSegmentIndex(0) // Reset for next time
     }
+  }
+
+  // Generate smart timeline background for clips mode
+  const generateSmartTimelineBackground = () => {
+    if (!isPreviewMode || !previewSegments.length || !duration) {
+      // Normal timeline - green progress, grey remainder
+      const progressPercent = (currentTime / (duration || 1)) * 100
+      return `linear-gradient(to right, #016F32 0%, #016F32 ${progressPercent}%, rgba(255,255,255,0.3) ${progressPercent}%, rgba(255,255,255,0.3) 100%)`
+    }
+    
+    // Smart timeline - green clips, grey gaps
+    let gradientStops = []
+    let lastEnd = 0
+    
+    previewSegments.forEach((segment, index) => {
+      const startPercent = (segment.start / duration) * 100
+      const endPercent = (segment.end / duration) * 100
+      
+      // Grey gap before clip
+      if (startPercent > lastEnd) {
+        gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
+        gradientStops.push(`rgba(255,255,255,0.2) ${startPercent}%`)
+      }
+      
+      // Bright green clip segment
+      gradientStops.push(`#22C55E ${startPercent}%`)
+      gradientStops.push(`#22C55E ${endPercent}%`)
+      
+      lastEnd = endPercent
+    })
+    
+    // Grey remainder after last clip
+    if (lastEnd < 100) {
+      gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
+      gradientStops.push(`rgba(255,255,255,0.2) 100%`)
+    }
+    
+    return `linear-gradient(to right, ${gradientStops.join(', ')})`
   }
 
   // Extract team colors from metadata and convert to CSS colors
@@ -198,8 +236,28 @@ export default function VideoPlayer({
       if (isPreviewMode && previewSegments.length > 0 && isPlaying) {
         const currentSegment = previewSegments[currentSegmentIndex]
         
-        // Hit end of current segment? Jump to next!
-        if (currentSegment && time >= currentSegment.end) {
+        // Check if we're in a grey area (not in any clip segment)
+        const inClipSegment = previewSegments.some(seg => 
+          time >= seg.start && time <= seg.end
+        )
+        
+        if (!inClipSegment) {
+          // We're in grey area - jump to next clip segment
+          const nextSegment = previewSegments.find(seg => seg.start > time)
+          if (nextSegment) {
+            // Jump to the start of the next segment
+            videoRef.current.currentTime = nextSegment.start
+            // Update current segment index
+            const nextIndex = previewSegments.findIndex(seg => seg.id === nextSegment.id)
+            setCurrentSegmentIndex(nextIndex)
+          } else {
+            // No more segments - stop playing
+            videoRef.current.pause()
+            setIsPlaying(false)
+            setCurrentSegmentIndex(0)
+          }
+        } else if (currentSegment && time >= currentSegment.end) {
+          // Hit end of current segment? Jump to next!
           jumpToNextSegment()
         }
       }
@@ -449,7 +507,7 @@ export default function VideoPlayer({
                   onChange={handleSeek}
                   className="w-full h-1 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-3 [&::-moz-range-thumb]:h-3 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
                   style={{
-                    background: `linear-gradient(to right, #016F32 0%, #016F32 ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) 100%)`
+                    background: generateSmartTimelineBackground()
                   }}
                 />
               </div>

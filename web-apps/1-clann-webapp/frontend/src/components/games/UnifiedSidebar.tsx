@@ -1356,7 +1356,7 @@ export default function UnifiedSidebar({
             <div className="p-4">
               <h4 className="text-lg font-semibold text-white mb-4">Game Insights</h4>
               <FifaStyleInsights 
-                tacticalData={tacticalData} 
+                tacticalData={tacticalData || {}} 
                 tacticalLoading={tacticalLoading} 
                 gameId={gameId}
                 onSeekToTimestamp={onSeekToTimestamp}
