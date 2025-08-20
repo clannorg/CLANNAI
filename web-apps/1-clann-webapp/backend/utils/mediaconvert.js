@@ -227,8 +227,163 @@ const getJobStatus = async (jobId) => {
   }
 };
 
+// Create clips job with individual padding
+const createClipsJob = async (inputS3Url, events, gameId) => {
+  try {
+    console.log('🎬 Creating MediaConvert clips job...');
+    console.log('📹 Input:', inputS3Url);
+    console.log('📝 Events:', events);
+
+    // Get the MediaConvert endpoint
+    const endpoint = await getMediaConvertEndpoint();
+    
+    // Create MediaConvert client with endpoint
+    const mc = new AWS.MediaConvert({
+      endpoint,
+      region: process.env.AWS_REGION || 'eu-west-1',
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+    });
+
+    const timestamp = Date.now();
+    const outputPath = `clips/${gameId}/${timestamp}`;
+
+    // Create outputs for each event with individual padding
+    const outputs = events.map((event, index) => {
+      const beforePadding = event.beforePadding || 5;
+      const afterPadding = event.afterPadding || 5;
+      const startTime = Math.max(0, event.timestamp - beforePadding);
+      const duration = beforePadding + afterPadding;
+
+      return {
+        NameModifier: `_clip_${index + 1}`,
+        VideoDescription: {
+          Width: 1920,
+          Height: 1080,
+          CodecSettings: {
+            Codec: 'H_264',
+            H264Settings: {
+              RateControlMode: 'QVBR',
+              QvbrSettings: {
+                QvbrQualityLevel: 7
+              }
+            }
+          }
+        },
+        AudioDescriptions: [
+          {
+            AudioTypeControl: 'FOLLOW_INPUT',
+            CodecSettings: {
+              Codec: 'AAC',
+              AacSettings: {
+                AudioDescriptionBroadcasterMix: 'NORMAL',
+                Bitrate: 96000,
+                RateControlMode: 'CBR',
+                CodecProfile: 'LC',
+                CodingMode: 'CODING_MODE_2_0',
+                RawFormat: 'NONE',
+                SampleRate: 48000
+              }
+            }
+          }
+        ],
+        ContainerSettings: {
+          Container: 'MP4',
+          Mp4Settings: {
+            CslgAtom: 'INCLUDE',
+            FreeSpaceBox: 'EXCLUDE',
+            MoovPlacement: 'PROGRESSIVE_DOWNLOAD'
+          }
+        },
+        OutputSettings: {
+          HlsSettings: {}
+        }
+      };
+    });
+
+    // Create input clippings for each event
+    const inputClippings = events.map((event) => {
+      const beforePadding = event.beforePadding || 5;
+      const afterPadding = event.afterPadding || 5;
+      const startTime = Math.max(0, event.timestamp - beforePadding);
+      const duration = beforePadding + afterPadding;
+
+      return {
+        StartTimecode: formatTimecode(startTime),
+        EndTimecode: formatTimecode(startTime + duration)
+      };
+    });
+
+    const jobParams = {
+      Role: process.env.MEDIACONVERT_ROLE_ARN,
+      Settings: {
+        TimecodeConfig: {
+          Source: 'ZEROBASED'
+        },
+        Inputs: inputClippings.map((clipping, index) => ({
+          AudioSelectors: {
+            'Audio Selector 1': {
+              Offset: 0,
+              DefaultSelection: 'NOT_DEFAULT',
+              ProgramSelection: 1
+            }
+          },
+          VideoSelector: {
+            ColorSpace: 'FOLLOW'
+          },
+          FilterEnable: 'AUTO',
+          PsiControl: 'USE_PSI',
+          FilterStrength: 0,
+          DeblockFilter: 'DISABLED',
+          DenoiseFilter: 'DISABLED',
+          TimecodeSource: 'EMBEDDED',
+          FileInput: inputS3Url,
+          InputClippings: [clipping]
+        })),
+        OutputGroups: [
+          {
+            Name: 'File Group',
+            OutputGroupSettings: {
+              Type: 'FILE_GROUP_SETTINGS',
+              FileGroupSettings: {
+                Destination: `s3://${process.env.AWS_BUCKET_NAME}/${outputPath}/`
+              }
+            },
+            Outputs: outputs
+          }
+        ]
+      }
+    };
+
+    console.log('🚀 Submitting MediaConvert job...');
+    const job = await mc.createJob(jobParams).promise();
+    
+    console.log('✅ MediaConvert job created:', job.Job.Id);
+    return {
+      jobId: job.Job.Id,
+      outputPath: outputPath,
+      status: job.Job.Status
+    };
+
+  } catch (error) {
+    console.error('❌ Error creating MediaConvert clips job:', error);
+    throw error;
+  }
+};
+
+// Helper function to format seconds to timecode (HH:MM:SS:FF)
+const formatTimecode = (seconds) => {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+  const frames = Math.floor((seconds % 1) * 30); // Assuming 30fps
+  
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}:${frames.toString().padStart(2, '0')}`;
+};
+
 module.exports = {
   createHLSJob,
+  createClipsJob,
   getJobStatus,
   getMediaConvertEndpoint
 };

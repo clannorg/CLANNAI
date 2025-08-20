@@ -78,7 +78,7 @@ const gamesRoutes = require('./routes/games');
 const teamsRoutes = require('./routes/teams');
 const companyRoutes = require('./routes/company');
 const aiChatRoutes = require('./routes/ai-chat');
-const clipsRoutes = require('./routes/clips');
+const clipsRoutes = require('./routes/clips-mediaconvert');
 const databaseRoutes = require('./routes/database');
 const hlsRoutes = require('./routes/hls');
 

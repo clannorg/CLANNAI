@@ -472,40 +472,80 @@ export default function UnifiedSidebar({
         afterPadding: padding.afterPadding
       }))
       
-      console.log('🎬 Creating clip with events:', selectedEventData)
+      console.log('🎬 Starting MediaConvert job with events:', selectedEventData)
       
-      // Call backend API using ApiClient (same pattern as everything else)
+      // Start MediaConvert job
       const result = await apiClient.createClip(gameId, selectedEventData)
-      console.log('✅ Clip created successfully:', result)
+      console.log('✅ MediaConvert job started:', result)
       
-      // Download the clip using ApiClient
-      try {
-        const blob = await apiClient.downloadClip(result.downloadUrl)
-        const url = window.URL.createObjectURL(blob)
-        const link = document.createElement('a')
-        link.href = url
-        link.download = result.fileName
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        window.URL.revokeObjectURL(url)
-      } catch (downloadError: any) {
-        console.error('Download failed:', downloadError)
-        alert('Clip created but download failed. Please try again.')
-        return
-      }
+      // Show processing message
+      alert(`🚀 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\nProcessing will take a few minutes. You'll be notified when ready for download.`)
       
-      // Clear selection after successful creation
-      updateSelectedEvents(new Map())
+      // Poll for completion
+      const pollInterval = setInterval(async () => {
+        try {
+          const status = await apiClient.checkClipStatus(result.jobId)
+          console.log('📊 Job status:', status)
+          
+          if (status.status === 'COMPLETE') {
+            clearInterval(pollInterval)
+            
+            // Job completed - now we can download
+            const downloadUrl = `/api/clips/download/clips/${gameId}/${result.outputPath.split('/').pop()}/highlight_reel.mp4`
+            
+            try {
+              const blob = await apiClient.downloadClip(downloadUrl)
+              const url = window.URL.createObjectURL(blob)
+              const link = document.createElement('a')
+              link.href = url
+              link.download = `highlight_${gameId}_${Date.now()}.mp4`
+              document.body.appendChild(link)
+              link.click()
+              document.body.removeChild(link)
+              window.URL.revokeObjectURL(url)
+              
+              // Clear selection after successful download
+              updateSelectedEvents(new Map())
+              
+              alert(`🎉 Highlight reel completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download started!`)
+              
+            } catch (downloadError: any) {
+              console.error('Download failed:', downloadError)
+              alert('Clip processing completed but download failed. Please try again.')
+            }
+            
+            setIsCreatingClip(false)
+            
+          } else if (status.status === 'ERROR') {
+            clearInterval(pollInterval)
+            setIsCreatingClip(false)
+            alert('❌ Clip processing failed. Please try again.')
+            
+          } else {
+            // Still processing - show progress if available
+            if (status.progress > 0) {
+              console.log(`⏳ Processing: ${status.progress}%`)
+            }
+          }
+          
+        } catch (statusError) {
+          console.error('Error checking status:', statusError)
+          // Continue polling - don't stop on status check errors
+        }
+      }, 10000) // Check every 10 seconds
       
-      // Show success message with better formatting
-      const message = `🎉 Highlight reel created!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download completed!`
-      alert(message)
+      // Stop polling after 10 minutes (timeout)
+      setTimeout(() => {
+        clearInterval(pollInterval)
+        if (isCreatingClip) {
+          setIsCreatingClip(false)
+          alert('⏰ Clip processing is taking longer than expected. Please check back later.')
+        }
+      }, 600000) // 10 minutes
       
     } catch (error: any) {
-      console.error('❌ Error creating clip:', error)
-      alert(`Error creating clip: ${error.message}`)
-    } finally {
+      console.error('❌ Error starting clip creation:', error)
+      alert(`Error starting clip creation: ${error.message}`)
       setIsCreatingClip(false)
     }
   }
