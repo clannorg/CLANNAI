@@ -53,16 +53,18 @@ export default function AppleStyleTrimmer({
   const handleMouseMove = (e: MouseEvent) => {
     if (!isDragging || !containerRef.current) return;
 
-    const rect = containerRef.current.getBoundingClientRect();
     const deltaX = e.clientX - dragStart.x;
     const deltaSeconds = deltaX / pixelsPerSecond;
 
     if (isDragging === 'left') {
+      // Left handle: moving left increases before padding, moving right decreases it
+      // Since we want left movement (negative deltaX) to increase padding, we subtract deltaSeconds
       const newBefore = Math.max(0, Math.min(maxPadding, dragStart.initialBefore - deltaSeconds));
-      onPaddingChange(Math.round(newBefore), afterPadding);
+      onPaddingChange(Math.round(newBefore), dragStart.initialAfter);
     } else if (isDragging === 'right') {
+      // Right handle: moving right increases after padding, moving left decreases it
       const newAfter = Math.max(0, Math.min(maxPadding, dragStart.initialAfter + deltaSeconds));
-      onPaddingChange(beforePadding, Math.round(newAfter));
+      onPaddingChange(dragStart.initialBefore, Math.round(newAfter));
     }
   };
 

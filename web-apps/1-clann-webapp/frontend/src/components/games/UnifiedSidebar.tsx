@@ -1598,8 +1598,15 @@ export default function UnifiedSidebar({
                               afterPadding={eventPadding.afterPadding}
                               maxPadding={15}
                               onPaddingChange={(before, after) => {
-                                updateEventPadding(index, 'before', before);
-                                updateEventPadding(index, 'after', after);
+                                const newSelected = new Map(selectedEvents);
+                                const current = newSelected.get(index);
+                                if (current) {
+                                  newSelected.set(index, {
+                                    beforePadding: before,
+                                    afterPadding: after
+                                  });
+                                  updateSelectedEvents(newSelected);
+                                }
                               }}
                             />
                           </div>
