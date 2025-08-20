@@ -400,9 +400,9 @@ export default function VideoPlayer({
         x-webkit-airplay="deny"
       />
 
-      {/* Floating Play Controls - Center of Video */}
+      {/* Floating Play Controls - Above Timeline */}
       <div
-        className={`absolute inset-0 flex items-center justify-center z-30 transition-opacity duration-300 ${
+        className={`absolute bottom-16 left-0 right-0 flex items-center justify-center z-30 transition-opacity duration-300 ${
           overlayVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -437,11 +437,11 @@ export default function VideoPlayer({
             style={{ filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.9))' }}
           >
             {isPlaying ? (
-              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24" strokeWidth={2} stroke="black">
+              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
               </svg>
             ) : (
-              <svg className="w-16 h-16 ml-1" fill="currentColor" viewBox="0 0 24 24" strokeWidth={2} stroke="black">
+              <svg className="w-16 h-16 ml-1" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
               </svg>
             )}
