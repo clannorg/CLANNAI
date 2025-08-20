@@ -83,6 +83,9 @@ interface UnifiedSidebarProps {
   
   // Downloads preview callback
   onSelectedEventsChange?: (selectedEvents: Set<number>) => void
+  
+  // Autoplay events callback
+  onAutoplayChange?: (autoplay: boolean) => void
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'downloads'
@@ -111,7 +114,8 @@ export default function UnifiedSidebar({
   gameId,
   onSeekToTimestamp,
   currentTime = 0,
-  onSelectedEventsChange
+  onSelectedEventsChange,
+  onAutoplayChange
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -222,6 +226,9 @@ export default function UnifiedSidebar({
     description: '',
     player: ''
   })
+  
+  // Autoplay events state
+  const [autoplayEvents, setAutoplayEvents] = useState(false)
   
   // Use external active tab if provided, otherwise use internal
   const activeTab = externalActiveTab || internalActiveTab
@@ -804,6 +811,23 @@ export default function UnifiedSidebar({
 
                 {/* Add Event Button OR Inline Form */}
                 <div>
+                  {/* Autoplay Toggle */}
+                  <button
+                    onClick={() => {
+                      const newAutoplay = !autoplayEvents
+                      setAutoplayEvents(newAutoplay)
+                      onAutoplayChange?.(newAutoplay)
+                    }}
+                    className={`flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full mb-3 ${
+                      autoplayEvents 
+                        ? 'bg-green-500/20 hover:bg-green-500/30 border-green-500/50 text-green-300'
+                        : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300'
+                    }`}
+                  >
+                    <span>Autoplay Events</span>
+                    <span className="text-xs">{autoplayEvents ? 'ON' : 'OFF'}</span>
+                  </button>
+                  
                   {!isCreatingEvent ? (
                     // Add Event Button
                     <button
