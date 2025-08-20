@@ -315,6 +315,7 @@ const createClipsJob = async (inputS3Url, events, gameId) => {
                     Codec: 'H_264',
                     H264Settings: {
                       RateControlMode: 'QVBR',
+                      MaxBitrate: 8000000, // 8 Mbps max
                       QvbrSettings: {
                         QvbrQualityLevel: 7
                       }
