@@ -82,7 +82,10 @@ interface UnifiedSidebarProps {
   currentTime?: number
   
   // Downloads preview callback
-  onSelectedEventsChange?: (selectedEvents: Set<number>) => void
+  onSelectedEventsChange?: (selectedEvents: Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>) => void
   
   // Autoplay events callback
   onAutoplayChange?: (autoplay: boolean) => void
@@ -199,12 +202,18 @@ export default function UnifiedSidebar({
   const [isResizing, setIsResizing] = useState(false)
 
   
-  // Downloads state
-  const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
+  // Downloads state - individual padding per event
+  const [selectedEvents, setSelectedEvents] = useState<Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>>(new Map())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
   
   // Wrapper to update selectedEvents and notify parent
-  const updateSelectedEvents = (newSelectedEvents: Set<number>) => {
+  const updateSelectedEvents = (newSelectedEvents: Map<number, {
+    beforePadding: number,
+    afterPadding: number
+  }>) => {
     setSelectedEvents(newSelectedEvents)
     onSelectedEventsChange?.(newSelectedEvents)
   }
@@ -261,9 +270,9 @@ export default function UnifiedSidebar({
     setBinnedEvents(newBinned)
     
     // Also remove from selected events if it was selected
-    const newSelected = new Set(selectedEvents)
+    const newSelected = new Map(selectedEvents)
     newSelected.delete(eventIndex)
-            updateSelectedEvents(newSelected)
+    updateSelectedEvents(newSelected)
     
     // Save to database
     await saveModifiedEvents()
@@ -422,13 +431,30 @@ export default function UnifiedSidebar({
 
   // Downloads functions
   const handleEventSelection = (eventIndex: number) => {
-    const newSelected = new Set(selectedEvents)
+    const newSelected = new Map(selectedEvents)
     if (newSelected.has(eventIndex)) {
       newSelected.delete(eventIndex)
     } else if (newSelected.size < 5) {
-      newSelected.add(eventIndex)
+      // Add event with default 5s padding
+      newSelected.set(eventIndex, {
+        beforePadding: 5,
+        afterPadding: 5
+      })
     }
-            updateSelectedEvents(newSelected)
+    updateSelectedEvents(newSelected)
+  }
+
+  // Update individual event padding
+  const updateEventPadding = (eventIndex: number, type: 'before' | 'after', value: number) => {
+    const newSelected = new Map(selectedEvents)
+    const current = newSelected.get(eventIndex)
+    if (current) {
+      newSelected.set(eventIndex, {
+        ...current,
+        [type === 'before' ? 'beforePadding' : 'afterPadding']: value
+      })
+      updateSelectedEvents(newSelected)
+    }
   }
 
   const handleCreateClip = async () => {
@@ -437,11 +463,13 @@ export default function UnifiedSidebar({
     setIsCreatingClip(true)
     
     try {
-      // Get selected event timestamps
-      const selectedEventData = Array.from(selectedEvents).map(index => ({
+      // Get selected event timestamps with individual padding
+      const selectedEventData = Array.from(selectedEvents.entries()).map(([index, padding]) => ({
         timestamp: allEvents[index].timestamp,
         type: allEvents[index].type,
-        description: allEvents[index].description
+        description: allEvents[index].description,
+        beforePadding: padding.beforePadding,
+        afterPadding: padding.afterPadding
       }))
       
       console.log('🎬 Creating clip with events:', selectedEventData)
@@ -468,7 +496,7 @@ export default function UnifiedSidebar({
       }
       
       // Clear selection after successful creation
-      updateSelectedEvents(new Set())
+      updateSelectedEvents(new Map())
       
       // Show success message with better formatting
       const message = `🎉 Highlight reel created!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download completed!`
@@ -1380,7 +1408,7 @@ export default function UnifiedSidebar({
             <div className="p-4">
               <h4 className="text-lg font-semibold text-white mb-4">Game Insights</h4>
               <FifaStyleInsights 
-                tacticalData={tacticalData || {}} 
+                tacticalData={tacticalData} 
                 tacticalLoading={tacticalLoading} 
                 gameId={gameId}
                 onSeekToTimestamp={onSeekToTimestamp}
@@ -1411,6 +1439,7 @@ export default function UnifiedSidebar({
                     const isBinned = binnedEvents.has(index)
                     const isSelected = selectedEvents.has(index)
                     const isDisabled = !isSelected && selectedEvents.size >= 10
+                    const eventPadding = selectedEvents.get(index)
                     
                     // Skip binned events
                     if (isBinned) return null
@@ -1443,6 +1472,54 @@ export default function UnifiedSidebar({
                           <p className="text-gray-300 text-sm mt-1">
                             {transformDescription(event.description || '')}
                           </p>
+                          
+                          {/* Individual Padding Controls - Only show if selected */}
+                          {isSelected && eventPadding && (
+                            <div className="mt-3 space-y-2 bg-gray-900/50 rounded-lg p-3">
+                              {/* Before Padding Slider */}
+                              <div className="flex items-center gap-3">
+                                <span className="text-xs text-gray-400 w-12">⏪ Before:</span>
+                                <input
+                                  type="range"
+                                  min="0"
+                                  max="15"
+                                  step="1"
+                                  value={eventPadding.beforePadding}
+                                  onChange={(e) => updateEventPadding(index, 'before', parseInt(e.target.value))}
+                                  onClick={(e) => e.stopPropagation()} // Prevent card selection
+                                  className="flex-1 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                                  style={{
+                                    background: `linear-gradient(to right, #f97316 0%, #f97316 ${(eventPadding.beforePadding / 15) * 100}%, #374151 ${(eventPadding.beforePadding / 15) * 100}%, #374151 100%)`
+                                  }}
+                                />
+                                <span className="text-xs text-orange-400 w-8">{eventPadding.beforePadding}s</span>
+                              </div>
+                              
+                              {/* After Padding Slider */}
+                              <div className="flex items-center gap-3">
+                                <span className="text-xs text-gray-400 w-12">⏩ After:</span>
+                                <input
+                                  type="range"
+                                  min="0"
+                                  max="15"
+                                  step="1"
+                                  value={eventPadding.afterPadding}
+                                  onChange={(e) => updateEventPadding(index, 'after', parseInt(e.target.value))}
+                                  onClick={(e) => e.stopPropagation()} // Prevent card selection
+                                  className="flex-1 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                                  style={{
+                                    background: `linear-gradient(to right, #f97316 0%, #f97316 ${(eventPadding.afterPadding / 15) * 100}%, #374151 ${(eventPadding.afterPadding / 15) * 100}%, #374151 100%)`
+                                  }}
+                                />
+                                <span className="text-xs text-orange-400 w-8">{eventPadding.afterPadding}s</span>
+                              </div>
+                              
+                              {/* Duration Display */}
+                              <div className="text-xs text-gray-400 text-center">
+                                Clip: {eventPadding.beforePadding + eventPadding.afterPadding}s total
+                              </div>
+                            </div>
+                          )}
                         </div>
                         
                         {/* Bin Button */}
@@ -1524,9 +1601,20 @@ export default function UnifiedSidebar({
                   <span className="text-orange-400 font-bold">{selectedEvents.size} / 10</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-white font-medium">Estimated Duration:</span>
-                  <span className="text-orange-400 font-bold">{selectedEvents.size * 10}s</span>
+                  <span className="text-white font-medium">Total Duration:</span>
+                  <span className="text-orange-400 font-bold">
+                    {Array.from(selectedEvents.values()).reduce((total, padding) => 
+                      total + padding.beforePadding + padding.afterPadding, 0
+                    )}s
+                  </span>
                 </div>
+                {selectedEvents.size > 0 && (
+                  <p className="text-xs text-gray-400 mt-2">
+                    Individual padding: {Array.from(selectedEvents.values()).map(p => 
+                      `${p.beforePadding}+${p.afterPadding}s`
+                    ).join(', ')}
+                  </p>
+                )}
               </div>
 
               {/* Create Button */}

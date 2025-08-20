@@ -34,7 +34,10 @@ interface VideoPlayerProps {
   // Notify parent about user interaction to reset auto-hide timers
   onUserInteract?: () => void
   // Downloads preview props
-  selectedEvents?: Set<number>
+  selectedEvents?: Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>
   activeTab?: string
   autoplayEvents?: boolean
 }
@@ -71,7 +74,6 @@ export default function VideoPlayer({
     event: GameEvent
   }>>([])
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
-  const [segmentPadding] = useState(5) // ±5 seconds padding
   const [flashRegion, setFlashRegion] = useState<string | null>(null)
 
   // Check if we're in preview mode (clips tab with selected events OR autoplay events mode)
@@ -81,29 +83,45 @@ export default function VideoPlayer({
   // Calculate preview segments when selectedEvents or autoplay change
   useEffect(() => {
     if (isPreviewMode && allEvents) {
-      // Use all events for autoplay mode, selected events for downloads mode
-      const eventsToUse = (activeTab === 'events' && autoplayEvents) 
-        ? allEvents.map((_, index) => index) 
-        : Array.from(selectedEvents || [])
-      
-      const segments = eventsToUse
-        .map(eventIndex => {
-          const event = allEvents[eventIndex]
-          if (!event) return null
-          return {
-            id: eventIndex,
-            start: Math.max(0, event.timestamp - segmentPadding),
-            end: event.timestamp + segmentPadding,
+      let segments: Array<{
+        id: number
+        start: number
+        end: number
+        event: GameEvent
+      }> = []
+
+      if (activeTab === 'events' && autoplayEvents) {
+        // Autoplay mode: use all events with default 5s padding
+        segments = allEvents
+          .map((event, index) => ({
+            id: index,
+            start: Math.max(0, event.timestamp - 5),
+            end: event.timestamp + 5,
             event
-          }
-        })
-        .filter(Boolean)
-        .sort((a, b) => a!.start - b!.start) as Array<{
-          id: number
-          start: number
-          end: number
-          event: GameEvent
-        }>
+          }))
+      } else if (activeTab === 'downloads' && selectedEvents) {
+        // Downloads mode: use individual padding from Map
+        segments = Array.from(selectedEvents.entries())
+          .map(([eventIndex, paddingData]) => {
+            const event = allEvents[eventIndex]
+            if (!event) return null
+            return {
+              id: eventIndex,
+              start: Math.max(0, event.timestamp - paddingData.beforePadding),
+              end: event.timestamp + paddingData.afterPadding,
+              event
+            }
+          })
+          .filter(Boolean) as Array<{
+            id: number
+            start: number
+            end: number
+            event: GameEvent
+          }>
+      }
+      
+      // Sort segments by start time
+      segments.sort((a, b) => a.start - b.start)
       
       setPreviewSegments(segments)
       setCurrentSegmentIndex(0)
@@ -111,7 +129,7 @@ export default function VideoPlayer({
       setPreviewSegments([])
       setCurrentSegmentIndex(0)
     }
-  }, [selectedEvents, allEvents, activeTab, segmentPadding, isPreviewMode, autoplayEvents])
+  }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents])
 
   // Initialize HLS player
   useEffect(() => {

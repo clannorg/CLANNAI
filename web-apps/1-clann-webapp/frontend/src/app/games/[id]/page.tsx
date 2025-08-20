@@ -23,7 +23,8 @@ function MobileVideoPlayer({
   handleEventClick, 
   seekToTimestamp,
   selectedEvents,
-  activeTab
+  activeTab,
+  autoplayEvents
 }: any) {
   const [showOverlay, setShowOverlay] = useState(true)
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -98,7 +99,7 @@ function MobileVideoPlayer({
           overlayVisible={showOverlay}
           onUserInteract={resetHideTimer}
           selectedEvents={selectedEvents}
-          activeTab={sidebarTab}
+          activeTab={activeTab}
           autoplayEvents={autoplayEvents}
         />
       </div>
@@ -168,8 +169,11 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   const [teamFilter, setTeamFilter] = useState('both') // 'red', 'blue', 'both' (red=red_team, blue=blue_team from metadata)
   const [showFilters, setShowFilters] = useState(false)
   
-  // Downloads preview state
-  const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
+  // Downloads preview state - individual padding per event
+  const [selectedEvents, setSelectedEvents] = useState<Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>>(new Map())
   
   // Autoplay events state
   const [autoplayEvents, setAutoplayEvents] = useState(false)
