@@ -1589,61 +1589,21 @@ export default function UnifiedSidebar({
                           <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
                         )}
                         
-                        {/* Individual Padding Controls - Only show if selected */}
+                        {/* Apple-style Timeline Trimmer - Only show if selected */}
                         {isSelected && eventPadding && (
-                            <div className="mt-3 bg-gray-900/50 rounded-lg p-2 w-full max-w-full overflow-hidden">
-                              {/* Responsive side-by-side layout */}
-                              <div className="flex items-center gap-1 w-full">
-                                {/* Before Padding - Left side with responsive width */}
-                                <div className="flex items-center gap-1 min-w-0" style={{ width: 'calc(50% - 30px)' }}>
-                                  <span className="text-xs text-gray-400 shrink-0 w-6 text-right">-{eventPadding.beforePadding}</span>
-                        <input
-                                    type="range"
-                                    min="0"
-                                    max="15"
-                                    step="1"
-                                    value={15 - eventPadding.beforePadding}
-                                    onChange={(e) => updateEventPadding(index, 'before', 15 - parseInt(e.target.value))}
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="flex-1 min-w-8 max-w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
-                                    style={{
-                                      background: `linear-gradient(to left, #f97316 0%, #f97316 ${(eventPadding.beforePadding / 15) * 100}%, #374151 ${(eventPadding.beforePadding / 15) * 100}%, #374151 100%)`
-                                    }}
-                                  />
-                                </div>
-                                
-                                {/* Event Timestamp - Fixed center */}
-                                <div className="px-1 py-1 bg-orange-500/20 rounded border border-orange-500/30 shrink-0" style={{ width: '60px' }}>
-                                  <span className="text-xs font-bold text-orange-400 whitespace-nowrap block text-center">
-                                    {formatTime(event.timestamp)}
-                                  </span>
-                                </div>
-                                
-                                {/* After Padding - Right side with responsive width */}
-                                <div className="flex items-center gap-1 min-w-0" style={{ width: 'calc(50% - 30px)' }}>
-                                  <input
-                                    type="range"
-                                    min="0"
-                                    max="15"
-                                    step="1"
-                                    value={eventPadding.afterPadding}
-                                    onChange={(e) => updateEventPadding(index, 'after', parseInt(e.target.value))}
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="flex-1 min-w-8 max-w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
-                                    style={{
-                                      background: `linear-gradient(to right, #f97316 0%, #f97316 ${(eventPadding.afterPadding / 15) * 100}%, #374151 ${(eventPadding.afterPadding / 15) * 100}%, #374151 100%)`
-                                    }}
-                                  />
-                                  <span className="text-xs text-gray-400 shrink-0 w-6 text-left">+{eventPadding.afterPadding}</span>
-                                </div>
-                              </div>
-                              
-                              {/* Compact total duration */}
-                              <div className="text-xs text-gray-400 text-center mt-1 pt-1 border-t border-gray-700/30">
-                                {eventPadding.beforePadding + eventPadding.afterPadding}s total
-                              </div>
-                            </div>
-                          )}
+                          <div className="mt-3" onClick={(e) => e.stopPropagation()}>
+                            <AppleStyleTrimmer
+                              eventTimestamp={event.timestamp}
+                              beforePadding={eventPadding.beforePadding}
+                              afterPadding={eventPadding.afterPadding}
+                              maxPadding={15}
+                              onPaddingChange={(before, after) => {
+                                updateEventPadding(index, 'before', before);
+                                updateEventPadding(index, 'after', after);
+                              }}
+                            />
+                          </div>
+                        )}
                       </div>
                     )
                   })}
