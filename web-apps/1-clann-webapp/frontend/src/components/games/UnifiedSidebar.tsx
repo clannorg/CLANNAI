@@ -435,10 +435,10 @@ export default function UnifiedSidebar({
     if (newSelected.has(eventIndex)) {
       newSelected.delete(eventIndex)
     } else if (newSelected.size < 5) {
-      // Add event with default 5s padding
+      // Add event with default 5s before, 3s after
       newSelected.set(eventIndex, {
         beforePadding: 5,
-        afterPadding: 5
+        afterPadding: 3
       })
     }
     updateSelectedEvents(newSelected)
@@ -1475,48 +1475,56 @@ export default function UnifiedSidebar({
                           
                           {/* Individual Padding Controls - Only show if selected */}
                           {isSelected && eventPadding && (
-                            <div className="mt-3 space-y-2 bg-gray-900/50 rounded-lg p-3">
-                              {/* Before Padding Slider */}
+                            <div className="mt-3 bg-gray-900/50 rounded-lg p-3">
+                              {/* Clean centered layout: Before | Event Time | After */}
                               <div className="flex items-center gap-3">
-                                <span className="text-xs text-gray-400 w-12">⏪ Before:</span>
-                                <input
-                                  type="range"
-                                  min="0"
-                                  max="15"
-                                  step="1"
-                                  value={eventPadding.beforePadding}
-                                  onChange={(e) => updateEventPadding(index, 'before', parseInt(e.target.value))}
-                                  onClick={(e) => e.stopPropagation()} // Prevent card selection
-                                  className="flex-1 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
-                                  style={{
-                                    background: `linear-gradient(to right, #f97316 0%, #f97316 ${(eventPadding.beforePadding / 15) * 100}%, #374151 ${(eventPadding.beforePadding / 15) * 100}%, #374151 100%)`
-                                  }}
-                                />
-                                <span className="text-xs text-orange-400 w-8">{eventPadding.beforePadding}s</span>
+                                {/* Before Padding */}
+                                <div className="flex-1 flex items-center gap-2">
+                                  <span className="text-xs text-gray-400 font-medium">-{eventPadding.beforePadding}s</span>
+                                  <input
+                                    type="range"
+                                    min="0"
+                                    max="15"
+                                    step="1"
+                                    value={15 - eventPadding.beforePadding}
+                                    onChange={(e) => updateEventPadding(index, 'before', 15 - parseInt(e.target.value))}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="flex-1 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                                    style={{
+                                      background: `linear-gradient(to left, #f97316 0%, #f97316 ${(eventPadding.beforePadding / 15) * 100}%, #374151 ${(eventPadding.beforePadding / 15) * 100}%, #374151 100%)`
+                                    }}
+                                  />
+                                </div>
+                                
+                                {/* Event Timestamp - Center */}
+                                <div className="px-3 py-1 bg-orange-500/20 rounded-md border border-orange-500/30">
+                                  <span className="text-sm font-bold text-orange-400">
+                                    {formatTime(event.timestamp)}
+                                  </span>
+                                </div>
+                                
+                                {/* After Padding */}
+                                <div className="flex-1 flex items-center gap-2">
+                                  <input
+                                    type="range"
+                                    min="0"
+                                    max="15"
+                                    step="1"
+                                    value={eventPadding.afterPadding}
+                                    onChange={(e) => updateEventPadding(index, 'after', parseInt(e.target.value))}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="flex-1 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                                    style={{
+                                      background: `linear-gradient(to right, #f97316 0%, #f97316 ${(eventPadding.afterPadding / 15) * 100}%, #374151 ${(eventPadding.afterPadding / 15) * 100}%, #374151 100%)`
+                                    }}
+                                  />
+                                  <span className="text-xs text-gray-400 font-medium">+{eventPadding.afterPadding}s</span>
+                                </div>
                               </div>
                               
-                              {/* After Padding Slider */}
-                              <div className="flex items-center gap-3">
-                                <span className="text-xs text-gray-400 w-12">⏩ After:</span>
-                                <input
-                                  type="range"
-                                  min="0"
-                                  max="15"
-                                  step="1"
-                                  value={eventPadding.afterPadding}
-                                  onChange={(e) => updateEventPadding(index, 'after', parseInt(e.target.value))}
-                                  onClick={(e) => e.stopPropagation()} // Prevent card selection
-                                  className="flex-1 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
-                                  style={{
-                                    background: `linear-gradient(to right, #f97316 0%, #f97316 ${(eventPadding.afterPadding / 15) * 100}%, #374151 ${(eventPadding.afterPadding / 15) * 100}%, #374151 100%)`
-                                  }}
-                                />
-                                <span className="text-xs text-orange-400 w-8">{eventPadding.afterPadding}s</span>
-                              </div>
-                              
-                              {/* Duration Display */}
-                              <div className="text-xs text-gray-400 text-center">
-                                Clip: {eventPadding.beforePadding + eventPadding.afterPadding}s total
+                              {/* Total Duration */}
+                              <div className="text-xs text-gray-400 text-center mt-2">
+                                Total: {eventPadding.beforePadding + eventPadding.afterPadding}s
                               </div>
                             </div>
                           )}
