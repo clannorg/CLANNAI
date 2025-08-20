@@ -31,6 +31,9 @@ interface VideoPlayerProps {
   overlayVisible?: boolean
   // Notify parent about user interaction to reset auto-hide timers
   onUserInteract?: () => void
+  // Downloads preview props
+  selectedEvents?: Set<number>
+  activeTab?: string
 }
 
 export default function VideoPlayer({
@@ -42,7 +45,9 @@ export default function VideoPlayer({
   onEventClick,
   onSeekToTimestamp,
   overlayVisible = true,
-  onUserInteract
+  onUserInteract,
+  selectedEvents,
+  activeTab
 }: VideoPlayerProps) {
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
@@ -50,6 +55,68 @@ export default function VideoPlayer({
   const [isMuted, setIsMuted] = useState(false)
   
   const videoRef = useRef<HTMLVideoElement>(null)
+  
+  // Downloads preview state
+  const [previewSegments, setPreviewSegments] = useState<Array<{
+    id: number
+    start: number
+    end: number
+    event: GameEvent
+  }>>([])
+  const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
+  const [segmentPadding] = useState(5) // ±5 seconds padding
+
+  // Check if we're in preview mode
+  const isPreviewMode = activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0
+
+  // Calculate preview segments when selectedEvents change
+  useEffect(() => {
+    if (isPreviewMode && selectedEvents && allEvents) {
+      const segments = Array.from(selectedEvents)
+        .map(eventIndex => {
+          const event = allEvents[eventIndex]
+          if (!event) return null
+          return {
+            id: eventIndex,
+            start: Math.max(0, event.timestamp - segmentPadding),
+            end: event.timestamp + segmentPadding,
+            event
+          }
+        })
+        .filter(Boolean)
+        .sort((a, b) => a!.start - b!.start) as Array<{
+          id: number
+          start: number
+          end: number
+          event: GameEvent
+        }>
+      
+      setPreviewSegments(segments)
+      setCurrentSegmentIndex(0)
+    } else {
+      setPreviewSegments([])
+      setCurrentSegmentIndex(0)
+    }
+  }, [selectedEvents, allEvents, activeTab, segmentPadding, isPreviewMode])
+
+  // Jump to next segment in preview mode
+  const jumpToNextSegment = () => {
+    const nextIndex = currentSegmentIndex + 1
+    if (nextIndex < previewSegments.length) {
+      // Jump to next segment
+      setCurrentSegmentIndex(nextIndex)
+      if (videoRef.current) {
+        videoRef.current.currentTime = previewSegments[nextIndex].start
+      }
+    } else {
+      // End of all clips - stop playing
+      if (videoRef.current) {
+        videoRef.current.pause()
+      }
+      setIsPlaying(false)
+      setCurrentSegmentIndex(0) // Reset for next time
+    }
+  }
 
   // Extract team colors from metadata and convert to CSS colors
   const redTeam = game.metadata?.teams?.red_team || { name: 'Red Team', jersey_color: '#DC2626' }
@@ -126,6 +193,16 @@ export default function VideoPlayer({
       setCurrentTime(time)
       setDuration(dur)
       onTimeUpdate(time, dur)
+      
+      // Downloads preview auto-jump logic
+      if (isPreviewMode && previewSegments.length > 0 && isPlaying) {
+        const currentSegment = previewSegments[currentSegmentIndex]
+        
+        // Hit end of current segment? Jump to next!
+        if (currentSegment && time >= currentSegment.end) {
+          jumpToNextSegment()
+        }
+      }
     }
   }
 

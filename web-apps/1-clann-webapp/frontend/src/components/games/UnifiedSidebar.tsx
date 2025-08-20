@@ -80,6 +80,9 @@ interface UnifiedSidebarProps {
   
   // Video time for new event creation
   currentTime?: number
+  
+  // Downloads preview callback
+  onSelectedEventsChange?: (selectedEvents: Set<number>) => void
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'downloads'
@@ -107,7 +110,8 @@ export default function UnifiedSidebar({
   tacticalLoading,
   gameId,
   onSeekToTimestamp,
-  currentTime = 0
+  currentTime = 0,
+  onSelectedEventsChange
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -195,6 +199,12 @@ export default function UnifiedSidebar({
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
   
+  // Wrapper to update selectedEvents and notify parent
+  const updateSelectedEvents = (newSelectedEvents: Set<number>) => {
+    setSelectedEvents(newSelectedEvents)
+    onSelectedEventsChange?.(newSelectedEvents)
+  }
+  
   // Manual annotation state
   const [binnedEvents, setBinnedEvents] = useState<Set<number>>(new Set())
   const [isSavingEvents, setIsSavingEvents] = useState(false)
@@ -246,7 +256,7 @@ export default function UnifiedSidebar({
     // Also remove from selected events if it was selected
     const newSelected = new Set(selectedEvents)
     newSelected.delete(eventIndex)
-    setSelectedEvents(newSelected)
+            updateSelectedEvents(newSelected)
     
     // Save to database
     await saveModifiedEvents()
@@ -411,7 +421,7 @@ export default function UnifiedSidebar({
     } else if (newSelected.size < 5) {
       newSelected.add(eventIndex)
     }
-    setSelectedEvents(newSelected)
+            updateSelectedEvents(newSelected)
   }
 
   const handleCreateClip = async () => {
@@ -451,7 +461,7 @@ export default function UnifiedSidebar({
       }
       
       // Clear selection after successful creation
-      setSelectedEvents(new Set())
+      updateSelectedEvents(new Set())
       
       // Show success message with better formatting
       const message = `🎉 Highlight reel created!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download completed!`

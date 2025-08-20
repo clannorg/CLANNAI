@@ -21,7 +21,9 @@ function MobileVideoPlayer({
   currentEventIndex, 
   handleTimeUpdate, 
   handleEventClick, 
-  seekToTimestamp 
+  seekToTimestamp,
+  selectedEvents,
+  activeTab
 }: any) {
   const [showOverlay, setShowOverlay] = useState(true)
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -95,6 +97,8 @@ function MobileVideoPlayer({
           onSeekToTimestamp={seekToTimestamp}
           overlayVisible={showOverlay}
           onUserInteract={resetHideTimer}
+          selectedEvents={selectedEvents}
+          activeTab={activeTab}
         />
       </div>
     </div>
@@ -161,6 +165,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   })
   const [teamFilter, setTeamFilter] = useState('both') // 'red', 'blue', 'both' (red=red_team, blue=blue_team from metadata)
   const [showFilters, setShowFilters] = useState(false)
+  
+  // Downloads preview state
+  const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
   
   // Tactical analysis state
   const [tacticalData, setTacticalData] = useState<{
@@ -366,9 +373,11 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               events={filteredEvents}
               allEvents={allEvents}
               currentEventIndex={currentEventIndex}
-          onTimeUpdate={handleTimeUpdate}
+              onTimeUpdate={handleTimeUpdate}
               onEventClick={handleEventClick}
               onSeekToTimestamp={seekToTimestamp}
+              selectedEvents={selectedEvents}
+              activeTab={sidebarTab}
             />
               </div>
           
@@ -395,6 +404,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             gameId={gameId}
             onSeekToTimestamp={seekToTimestamp}
             currentTime={currentTime}
+            onSelectedEventsChange={setSelectedEvents}
                 />
               </div>
       ) : (
@@ -417,6 +427,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               handleTimeUpdate={handleTimeUpdate}
               handleEventClick={handleEventClick}
               seekToTimestamp={seekToTimestamp}
+              selectedEvents={selectedEvents}
+              activeTab={sidebarTab}
             />
           }
           activeTab={sidebarTab}
@@ -438,6 +450,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             gameId={gameId}
           onSeekToTimestamp={seekToTimestamp}
           currentTime={currentTime}
+          onSelectedEventsChange={setSelectedEvents}
       />
         </div>
       )}
