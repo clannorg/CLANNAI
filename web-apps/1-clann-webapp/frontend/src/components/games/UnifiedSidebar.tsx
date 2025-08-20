@@ -42,8 +42,28 @@ interface UnifiedSidebarProps {
   allEvents: GameEvent[]
   currentEventIndex: number
   onEventClick: (event: GameEvent) => void
-  eventTypeFilters: Record<string, boolean>
-  setEventTypeFilters: (filters: Record<string, boolean> | ((prev: Record<string, boolean>) => Record<string, boolean>)) => void
+  eventTypeFilters: {
+    goal: boolean
+    shot: boolean
+    save: boolean
+    foul: boolean
+    yellow_card: boolean
+    red_card: boolean
+    corner: boolean
+    substitution: boolean
+    turnover: boolean
+  }
+  setEventTypeFilters: React.Dispatch<React.SetStateAction<{
+    goal: boolean
+    shot: boolean
+    save: boolean
+    foul: boolean
+    yellow_card: boolean
+    red_card: boolean
+    corner: boolean
+    substitution: boolean
+    turnover: boolean
+  }>>
   teamFilter: string
   setTeamFilter: (filter: string) => void
   showFilters: boolean
@@ -57,6 +77,9 @@ interface UnifiedSidebarProps {
   tacticalLoading: boolean
   gameId: string
   onSeekToTimestamp: (timestamp: number) => void
+  
+  // Video time for new event creation
+  currentTime?: number
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'downloads'
@@ -83,7 +106,8 @@ export default function UnifiedSidebar({
   tacticalData,
   tacticalLoading,
   gameId,
-  onSeekToTimestamp
+  onSeekToTimestamp,
+  currentTime = 0
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -110,33 +134,38 @@ export default function UnifiedSidebar({
 
   // Function to get team name from team type
   const getTeamName = (teamType: string) => {
-    switch (teamType.toLowerCase()) {
+    const teamLower = teamType.toLowerCase()
+    
+    // Handle descriptive team names
+    if (teamLower.includes('orange bibs') || teamLower.includes('orange bib')) {
+      return blueTeam.name
+    }
+    if (teamLower.includes('non bibs') || teamLower.includes('colours') || teamLower.includes('colors')) {
+      return redTeam.name
+    }
+    
+    // Handle standard color identifiers
+    switch (teamLower) {
       case 'red': return redTeam.name
       case 'blue':
       case 'black': return blueTeam.name
+      case 'orange': return blueTeam.name
+      case 'white': return redTeam.name
       default: return teamType.charAt(0).toUpperCase() + teamType.slice(1)
     }
   }
 
-  // Function to get team badge colors from team type
+  // Function to get team badge colors - white for clann, orange for lostthehead
   const getTeamBadgeColors = (teamType: string) => {
-    switch (teamType.toLowerCase()) {
-      case 'red': {
-        // Extract the main color from redTeamColorClass (e.g., 'bg-yellow-500' -> 'yellow')
-        const colorMatch = redTeamColorClass.match(/bg-(\w+)-\d+/)
-        const color = colorMatch ? colorMatch[1] : 'yellow'
-        return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
-      }
-      case 'blue':
-      case 'black': {
-        // Extract the main color from blueTeamColorClass (e.g., 'bg-blue-500' -> 'blue')
-        const colorMatch = blueTeamColorClass.match(/bg-(\w+)-\d+/)
-        const color = colorMatch ? colorMatch[1] : 'blue'
-        return `bg-${color}-500/20 text-${color}-300 border-${color}-500/30`
-      }
-      default:
-        return 'bg-gray-500/20 text-gray-300 border-gray-500/30'
+    const teamLower = teamType.toLowerCase()
+    
+    // Lostthehead gets nice orange
+    if (teamLower.includes('lostthehead') || teamLower.includes('lost')) {
+      return 'bg-orange-500/15 text-orange-200 border-orange-500/25'
     }
+    
+    // Everything else gets simple white
+    return 'bg-white/10 text-white border-white/20'
   }
 
   // Get emoji for event type
@@ -166,6 +195,24 @@ export default function UnifiedSidebar({
   const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
   
+  // Manual annotation state
+  const [binnedEvents, setBinnedEvents] = useState<Set<number>>(new Set())
+  const [isSavingEvents, setIsSavingEvents] = useState(false)
+  
+  // Event editing state
+  const [editingEventIndex, setEditingEventIndex] = useState<number | null>(null)
+  const [editingEvent, setEditingEvent] = useState<GameEvent | null>(null)
+  
+  // New event creation state
+  const [isCreatingEvent, setIsCreatingEvent] = useState(false)
+  const [newEvent, setNewEvent] = useState({
+    type: 'goal',
+    timestamp: currentTime,
+    team: redTeam.name.toLowerCase(),
+    description: '',
+    player: ''
+  })
+  
   // Use external active tab if provided, otherwise use internal
   const activeTab = externalActiveTab || internalActiveTab
   
@@ -187,6 +234,172 @@ export default function UnifiedSidebar({
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
       handleSendMessage()
+    }
+  }
+
+  // Manual annotation functions
+  const handleBinEvent = async (eventIndex: number) => {
+    const newBinned = new Set(binnedEvents)
+    newBinned.add(eventIndex)
+    setBinnedEvents(newBinned)
+    
+    // Also remove from selected events if it was selected
+    const newSelected = new Set(selectedEvents)
+    newSelected.delete(eventIndex)
+    setSelectedEvents(newSelected)
+    
+    // Save to database
+    await saveModifiedEvents()
+  }
+  
+  const handleUnbinEvent = async (eventIndex: number) => {
+    const newBinned = new Set(binnedEvents)
+    newBinned.delete(eventIndex)
+    setBinnedEvents(newBinned)
+    
+    // Save to database
+    await saveModifiedEvents()
+  }
+
+  // Event editing functions
+  const handleStartEditingEvent = (eventIndex: number) => {
+    const event = allEvents[eventIndex]
+    setEditingEventIndex(eventIndex)
+    setEditingEvent({
+      ...event,
+      // Keep timestamp as is for editing
+      timestamp: event.timestamp
+    })
+  }
+
+  const handleCancelEditingEvent = () => {
+    setEditingEventIndex(null)
+    setEditingEvent(null)
+  }
+
+  const handleSaveEditedEvent = async () => {
+    if (!editingEvent || editingEventIndex === null) return
+
+    try {
+      setIsSavingEvents(true)
+      
+      // Update the event in allEvents array
+      const updatedEvents = [...allEvents]
+      updatedEvents[editingEventIndex] = editingEvent
+      
+      // Save to backend
+      await apiClient.saveModifiedEvents(gameId, updatedEvents)
+      
+      // Reset editing state
+      setEditingEventIndex(null)
+      setEditingEvent(null)
+      
+    } catch (error) {
+      console.error('Error saving edited event:', error)
+    } finally {
+      setIsSavingEvents(false)
+    }
+  }
+  
+  const saveModifiedEvents = async () => {
+    if (!gameId || isSavingEvents) return
+    
+    setIsSavingEvents(true)
+    try {
+      // Create modified events array (filter out binned events)
+      const modifiedEvents = allEvents
+        .map((event, index) => ({ ...event, originalIndex: index }))
+        .filter((_, index) => !binnedEvents.has(index))
+      
+      await apiClient.saveModifiedEvents(gameId, modifiedEvents)
+      console.log('✅ Modified events saved successfully')
+    } catch (error) {
+      console.error('❌ Error saving modified events:', error)
+      alert('Failed to save changes. Please try again.')
+    } finally {
+      setIsSavingEvents(false)
+    }
+  }
+
+  // New event creation functions
+  const handleStartCreatingEvent = () => {
+    setNewEvent({
+      type: 'goal',
+      timestamp: Math.round(currentTime),
+      team: redTeam.name.toLowerCase(),
+      description: '',
+      player: ''
+    })
+    setIsCreatingEvent(true)
+  }
+
+  const handleCancelNewEvent = () => {
+    setIsCreatingEvent(false)
+    setNewEvent({
+      type: 'goal',
+      timestamp: currentTime,
+      team: redTeam.name.toLowerCase(),
+      description: '',
+      player: ''
+    })
+  }
+
+  const handleSaveNewEvent = async () => {
+    console.log('🔍 handleSaveNewEvent called', { gameId, isSavingEvents, newEvent })
+    if (!gameId || isSavingEvents) return
+
+    try {
+      setIsSavingEvents(true)
+      
+      // Create the new event object
+      const eventToAdd = {
+        type: newEvent.type,
+        timestamp: newEvent.timestamp,
+        team: newEvent.team,
+        description: newEvent.description.trim() || undefined,
+        player: newEvent.player.trim() || undefined
+      }
+      console.log('🔍 Event to add:', eventToAdd)
+
+      // Get current events and add the new one
+      const currentEvents = allEvents
+        .map((event, index) => ({ ...event, originalIndex: index }))
+        .filter((_, index) => !binnedEvents.has(index))
+      
+      console.log('🔍 Current events count:', currentEvents.length)
+      
+      // Insert new event in chronological order
+      const newEvents = [...currentEvents, eventToAdd]
+        .sort((a, b) => a.timestamp - b.timestamp)
+
+      console.log('🔍 New events count:', newEvents.length)
+      console.log('🔍 Calling apiClient.saveModifiedEvents...')
+      
+      await apiClient.saveModifiedEvents(gameId, newEvents)
+      console.log('✅ New event added successfully')
+      
+      // Reset form
+      setIsCreatingEvent(false)
+      setNewEvent({
+        type: 'goal',
+        timestamp: currentTime,
+        team: redTeam.name.toLowerCase(),
+        description: '',
+        player: ''
+      })
+      
+      // Show success message
+      alert('✅ Event added successfully! Refreshing to show new event...')
+      
+      // Refresh after a short delay to let user see the success
+      setTimeout(() => {
+        window.location.reload()
+      }, 1000)
+    } catch (error) {
+      console.error('❌ Error adding new event:', error)
+      alert('Failed to add event. Please try again.')
+    } finally {
+      setIsSavingEvents(false)
     }
   }
 
@@ -433,15 +646,15 @@ export default function UnifiedSidebar({
                     <button
                       onClick={() => {
                         if (teamFilter === 'both') {
-                          setTeamFilter('red') // Both selected -> Red only
-                        } else if (teamFilter === 'red') {
-                          setTeamFilter('blue') // Red only -> Blue only
+                          setTeamFilter(redTeam.name.toLowerCase()) // Both selected -> Red team only
+                        } else if (teamFilter === redTeam.name.toLowerCase()) {
+                          setTeamFilter(blueTeam.name.toLowerCase()) // Red team only -> Blue team only
                         } else {
-                          setTeamFilter('both') // Blue only -> Both
+                          setTeamFilter('both') // Blue team only -> Both
                         }
                       }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
-                        teamFilter === 'red' || teamFilter === 'both'
+                        teamFilter === redTeam.name.toLowerCase() || teamFilter === 'both'
                           ? `${redTeamColorClass} hover:opacity-90`
                           : `bg-gray-500/20 text-gray-400 border-gray-500/30 hover:bg-gray-500/30`
                       }`}
@@ -452,15 +665,15 @@ export default function UnifiedSidebar({
                     <button
                       onClick={() => {
                         if (teamFilter === 'both') {
-                          setTeamFilter('blue') // Both selected -> Blue only
-                        } else if (teamFilter === 'blue' || teamFilter === 'black') {
-                          setTeamFilter('red') // Blue only -> Red only
+                          setTeamFilter(blueTeam.name.toLowerCase()) // Both selected -> Blue team only
+                        } else if (teamFilter === blueTeam.name.toLowerCase()) {
+                          setTeamFilter(redTeam.name.toLowerCase()) // Blue team only -> Red team only
                         } else {
-                          setTeamFilter('both') // Red only -> Both
+                          setTeamFilter('both') // Red team only -> Both
                         }
                       }}
                       className={`h-12 text-xs font-semibold rounded-lg border-2 transition-colors ${
-                        teamFilter === 'blue' || teamFilter === 'black' || teamFilter === 'both'
+                        teamFilter === blueTeam.name.toLowerCase() || teamFilter === 'both'
                           ? `${blueTeamColorClass} hover:opacity-90`
                           : `bg-gray-500/20 text-gray-400 border-gray-500/30 hover:bg-gray-500/30`
                       }`}
@@ -475,25 +688,19 @@ export default function UnifiedSidebar({
                 <div>
                   <button
                     onClick={() => setShowFilters(!showFilters)}
-                    className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full ${
-                      showFilters 
-                        ? 'bg-green-500/20 hover:bg-green-500/30 border-green-400/60 text-green-200 shadow-lg shadow-green-500/10' 
-                        : 'bg-blue-500/20 hover:bg-blue-500/30 border-blue-400/60 text-blue-200 shadow-lg shadow-blue-500/10'
-                    }`}
+                    className="flex items-center justify-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
                     title="Toggle More Filters"
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
-                    </svg>
-                    <span>More Filters</span>
-                    <svg className={`w-4 h-4 ml-auto transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                    {!showFilters && (
-                      <span className="inline-flex items-center justify-center w-5 h-5 text-xs bg-blue-500 text-white rounded-full">
-                        {Object.values(eventTypeFilters).filter(Boolean).length}
-                      </span>
-                    )}
+                    <div className="flex items-center space-x-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
+                      </svg>
+                      <span>More Filters</span>
+                      <svg className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+
                   </button>
 
                   {/* Event Type Filters - Collapsible */}
@@ -530,16 +737,16 @@ export default function UnifiedSidebar({
                                     // If all are selected, clicking one should show only that one
                                     if (allSelected) {
                                       const newFilters = Object.keys(prev).reduce((acc, key) => {
-                                        acc[key] = key === type
+                                        (acc as any)[key] = key === type
                                         return acc
                                       }, {} as typeof prev)
                                       return newFilters
                                     }
                                     
                                     // If only this one is selected, clicking it should show all
-                                    if (selectedCount === 1 && prev[type]) {
+                                    if (selectedCount === 1 && (prev as any)[type]) {
                                       const newFilters = Object.keys(prev).reduce((acc, key) => {
-                                        acc[key] = true
+                                        (acc as any)[key] = true
                                         return acc
                                       }, {} as typeof prev)
                                       return newFilters
@@ -548,7 +755,7 @@ export default function UnifiedSidebar({
                                     // Otherwise, normal toggle
                                     return {
                                       ...prev,
-                                      [type]: !prev[type]
+                                      [type]: !(prev as any)[type]
                                     }
                                   })
                                 }}
@@ -584,6 +791,134 @@ export default function UnifiedSidebar({
                     </div>
                   )}
                 </div>
+
+                {/* Add Event Button OR Inline Form */}
+                <div>
+                  {!isCreatingEvent ? (
+                    // Add Event Button
+                    <button
+                      onClick={handleStartCreatingEvent}
+                      disabled={isSavingEvents}
+                      className="flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      title="Add new event at current time"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                      <span>Add Event</span>
+                      <span className="text-xs text-gray-400">({Math.floor(currentTime / 60)}:{(currentTime % 60).toFixed(0).padStart(2, '0')})</span>
+                    </button>
+                  ) : (
+                    // Inline Event Creation Form (replaces button)
+                    <div className="p-3 rounded-lg bg-purple-900/20 border border-purple-500/30 space-y-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          {/* Time Input */}
+                          <div className="flex items-center gap-1">
+                            <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <input
+                              type="text"
+                              value={`${Math.floor(newEvent.timestamp / 60)}:${(newEvent.timestamp % 60).toString().padStart(2, '0')}`}
+                              onChange={(e) => {
+                                const timeStr = e.target.value
+                                const parts = timeStr.split(':')
+                                if (parts.length === 2) {
+                                  const minutes = parseInt(parts[0]) || 0
+                                  const seconds = parseInt(parts[1]) || 0
+                                  if (seconds < 60) {
+                                    setNewEvent({...newEvent, timestamp: minutes * 60 + seconds})
+                                  }
+                                }
+                              }}
+                              className="w-16 bg-gray-800 text-gray-300 text-xs font-mono px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                              placeholder="0:00"
+                            />
+                          </div>
+                          
+                          {/* Event Type Dropdown */}
+                          <select
+                            value={newEvent.type}
+                            onChange={(e) => setNewEvent({...newEvent, type: e.target.value})}
+                            className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                          >
+                            <option value="goal">Goal</option>
+                            <option value="shot">Shot</option>
+                            <option value="save">Save</option>
+                            <option value="foul">Foul</option>
+                            <option value="yellow_card">Yellow Card</option>
+                            <option value="red_card">Red Card</option>
+                            <option value="corner">Corner</option>
+                            <option value="substitution">Substitution</option>
+                            <option value="turnover">Turnover</option>
+                            <option value="offside">Offside</option>
+                          </select>
+                          
+                          {/* Team Dropdown */}
+                          <select
+                            value={newEvent.team}
+                            onChange={(e) => setNewEvent({...newEvent, team: e.target.value})}
+                            className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                          >
+                            <option value={redTeam.name.toLowerCase()}>{redTeam.name}</option>
+                            <option value={blueTeam.name.toLowerCase()}>{blueTeam.name}</option>
+                          </select>
+                        </div>
+                        
+                        {/* Action Buttons */}
+                        <div className="flex items-center gap-1">
+                          <button
+                            onClick={() => {
+                              console.log('🔍 Save button clicked!')
+                              handleSaveNewEvent()
+                            }}
+                            disabled={isSavingEvents}
+                            className="p-1 text-green-400 hover:text-green-300 hover:bg-green-500/10 rounded transition-colors disabled:opacity-50"
+                            title="Save event"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </button>
+                          
+                          <button
+                            onClick={handleCancelNewEvent}
+                            disabled={isSavingEvents}
+                            className="p-1 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded transition-colors disabled:opacity-50"
+                            title="Cancel"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      
+                      {/* Description Input */}
+                      <div>
+                        <input
+                          type="text"
+                          value={newEvent.description}
+                          onChange={(e) => setNewEvent({...newEvent, description: e.target.value})}
+                          placeholder="Event description..."
+                          className="w-full bg-gray-800 text-gray-300 text-xs px-3 py-2 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                        />
+                      </div>
+                      
+                      {/* Player Input */}
+                      <div>
+                        <input
+                          type="text"
+                          value={newEvent.player}
+                          onChange={(e) => setNewEvent({...newEvent, player: e.target.value})}
+                          placeholder="Player name/number (optional)..."
+                          className="w-full bg-gray-800 text-gray-300 text-xs px-3 py-2 rounded border border-gray-600 focus:border-purple-400 focus:outline-none"
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
             
@@ -592,12 +927,122 @@ export default function UnifiedSidebar({
               <div className="space-y-2">
                 {events.map((event, index) => {
                   const originalIndex = allEvents.indexOf(event)
+                  const isBinned = binnedEvents.has(originalIndex)
+                  
+                  // Skip binned events
+                  if (isBinned) return null
+                  
+                  // Show edit form if this event is being edited
+                  if (editingEventIndex === originalIndex && editingEvent) {
+                    return (
+                      <div
+                        key={`${event.timestamp}-${event.type}-${index}-editing`}
+                        className="p-3 rounded-lg bg-blue-900/20 border border-blue-500/30 space-y-3"
+                      >
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2">
+                            {/* Time Input */}
+                            <div className="flex items-center gap-1">
+                              <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <input
+                                type="text"
+                                value={`${Math.floor(editingEvent.timestamp / 60)}:${(editingEvent.timestamp % 60).toFixed(0).padStart(2, '0')}`}
+                                onChange={(e) => {
+                                  const [minutes, seconds] = e.target.value.split(':').map(Number)
+                                  if (!isNaN(minutes) && !isNaN(seconds)) {
+                                    setEditingEvent({...editingEvent, timestamp: minutes * 60 + seconds})
+                                  }
+                                }}
+                                className="w-16 px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white font-mono"
+                                placeholder="MM:SS"
+                              />
+                            </div>
+                            
+                            {/* Event Type Dropdown */}
+                            <select
+                              value={editingEvent.type}
+                              onChange={(e) => setEditingEvent({...editingEvent, type: e.target.value})}
+                              className="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white"
+                            >
+                              <option value="goal">Goal</option>
+                              <option value="shot">Shot</option>
+                              <option value="save">Save</option>
+                              <option value="foul">Foul</option>
+                              <option value="yellow_card">Yellow Card</option>
+                              <option value="red_card">Red Card</option>
+                              <option value="corner">Corner</option>
+                              <option value="substitution">Substitution</option>
+                              <option value="turnover">Turnover</option>
+                            </select>
+                            
+                            {/* Team Dropdown */}
+                            <select
+                              value={editingEvent.team || ''}
+                              onChange={(e) => setEditingEvent({...editingEvent, team: e.target.value})}
+                              className="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white"
+                            >
+                              <option value="">No Team</option>
+                              <option value={redTeam.name.toLowerCase()}>{redTeam.name}</option>
+                              <option value={blueTeam.name.toLowerCase()}>{blueTeam.name}</option>
+                            </select>
+                          </div>
+                          
+                          {/* Save/Cancel Buttons */}
+                          <div className="flex items-center gap-1">
+                            {/* Save Button */}
+                            <button
+                              onClick={handleSaveEditedEvent}
+                              disabled={isSavingEvents}
+                              className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
+                              title="Save changes"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </button>
+                            
+                            {/* Cancel Button */}
+                            <button
+                              onClick={handleCancelEditingEvent}
+                              className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                              title="Cancel editing"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                        
+                        {/* Description Input */}
+                        <textarea
+                          value={editingEvent.description || ''}
+                          onChange={(e) => setEditingEvent({...editingEvent, description: e.target.value})}
+                          className="w-full px-3 py-2 text-sm bg-gray-700 border border-gray-600 rounded text-white resize-none"
+                          placeholder="Event description..."
+                          rows={2}
+                        />
+                        
+                        {/* Player Input */}
+                        <input
+                          type="text"
+                          value={editingEvent.player || ''}
+                          onChange={(e) => setEditingEvent({...editingEvent, player: e.target.value})}
+                          className="w-full px-3 py-2 text-sm bg-gray-700 border border-gray-600 rounded text-white"
+                          placeholder="Player name (optional)..."
+                        />
+                      </div>
+                    )
+                  }
+
                   return (
-                    <button
+                    <div
                       key={`${event.timestamp}-${event.type}-${index}`}
                       id={`event-${originalIndex}`}
                       onClick={() => onEventClick(event)}
-                      className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
+                      className={`w-full text-left p-3 rounded-lg transition-all duration-200 border cursor-pointer ${
                         originalIndex === currentEventIndex 
                           ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
                           : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
@@ -605,6 +1050,14 @@ export default function UnifiedSidebar({
                     >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
+                        {/* Time Badge - moved to front */}
+                        <div className="flex items-center gap-1">
+                          <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                        </div>
+                        
                         {/* Event Type Badge */}
                         <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
                           event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
@@ -626,12 +1079,36 @@ export default function UnifiedSidebar({
                         )}
                       </div>
                       
-                      {/* Time Badge */}
+                      {/* Action Buttons - bin and edit */}
                       <div className="flex items-center gap-1">
-                        <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                        {/* Bin Button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleBinEvent(originalIndex)
+                          }}
+                          disabled={isSavingEvents}
+                          className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                          title="Delete this event"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                        
+                        {/* Edit Button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleStartEditingEvent(originalIndex)
+                          }}
+                          className="p-1 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 rounded transition-colors"
+                          title="Edit this event"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                     
@@ -644,9 +1121,70 @@ export default function UnifiedSidebar({
                     {event.player && (
                       <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
                     )}
-                  </button>
+                  </div>
                 )
                 })}
+                
+                {/* Binned Events Section */}
+                {binnedEvents.size > 0 && (
+                  <div className="mt-6 pt-4 border-t border-gray-700">
+                    <h5 className="text-white font-medium mb-3">🗑️ Deleted Events ({binnedEvents.size}):</h5>
+                    <div className="space-y-2">
+                      {allEvents.map((event, index) => {
+                        if (!binnedEvents.has(index)) return null
+                        
+                        return (
+                          <div
+                            key={`binned-${event.timestamp}-${event.type}-${index}`}
+                            className="flex items-center justify-between gap-2 p-3 rounded-lg bg-red-900/20 border border-red-500/30 opacity-75"
+                          >
+                            <div className="flex items-center gap-2">
+                              {/* Time Badge */}
+                              <div className="flex items-center gap-1">
+                                <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                              </div>
+                              
+                              {/* Event Type Badge */}
+                              <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
+                                event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
+                                event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
+                                event.type === 'foul' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' :
+                                event.type === 'turnover' ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' :
+                                event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
+                                'bg-gray-500/20 text-gray-300 border-gray-500/30'
+                              }`}>
+                                <span>{getEventEmoji(event.type)}</span>
+                                <span>{event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+                              </span>
+                              
+                              {/* Team Badge */}
+                              {event.team && (
+                                <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${getTeamBadgeColors(event.team)}`}>
+                                  {getTeamName(event.team)}
+                                </span>
+                              )}
+                            </div>
+                            
+                            {/* Restore Button */}
+                            <button
+                              onClick={() => handleUnbinEvent(index)}
+                              disabled={isSavingEvents}
+                              className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
+                              title="Restore this event"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                              </svg>
+                            </button>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -833,15 +1371,20 @@ export default function UnifiedSidebar({
             {/* Event Selection - Scrollable middle */}
             <div className="flex-1 overflow-y-auto p-4">
               <div>
-                <h5 className="text-white font-medium mb-3">Select Events (Max 5):</h5>
+                <h5 className="text-white font-medium mb-3">Select Events:</h5>
                 <div className="space-y-2">
                   {allEvents.slice(0, 20).map((event, index) => {
+                    const isBinned = binnedEvents.has(index)
                     const isSelected = selectedEvents.has(index)
-                    const isDisabled = !isSelected && selectedEvents.size >= 5
+                    const isDisabled = !isSelected && selectedEvents.size >= 10
+                    
+                    // Skip binned events
+                    if (isBinned) return null
                     
                     return (
-                      <label
+                      <div
                         key={`${event.timestamp}-${event.type}-${index}`}
+                        onClick={() => !isDisabled && handleEventSelection(index)}
                         className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
                           isSelected 
                             ? 'bg-orange-500/20 border border-orange-500/30' 
@@ -850,13 +1393,6 @@ export default function UnifiedSidebar({
                               : 'bg-gray-800/30 hover:bg-gray-800/50'
                         }`}
                       >
-                        <input
-                          type="checkbox"
-                          checked={isSelected}
-                          onChange={() => !isDisabled && handleEventSelection(index)}
-                          disabled={isDisabled}
-                          className="w-4 h-4 text-orange-500 bg-gray-700 border-gray-600 rounded focus:ring-orange-500 focus:ring-2"
-                        />
                         <div className="flex-1">
                           <div className="flex items-center space-x-2">
                             <span 
@@ -874,10 +1410,74 @@ export default function UnifiedSidebar({
                             {transformDescription(event.description || '')}
                           </p>
                         </div>
-                      </label>
+                        
+                        {/* Bin Button */}
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation() // Prevent card selection
+                            handleBinEvent(index)
+                          }}
+                          disabled={isSavingEvents}
+                          className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                          title="Delete this event"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                      </div>
                     )
                   })}
                 </div>
+                
+                {/* Binned Events Section */}
+                {binnedEvents.size > 0 && (
+                  <div className="mt-6 pt-4 border-t border-gray-700">
+                    <h5 className="text-white font-medium mb-3">🗑️ Deleted Events ({binnedEvents.size}):</h5>
+                    <div className="space-y-2">
+                      {allEvents.map((event, index) => {
+                        if (!binnedEvents.has(index)) return null
+                        
+                        return (
+                          <div
+                            key={`binned-${event.timestamp}-${event.type}-${index}`}
+                            className="flex items-center space-x-3 p-3 rounded-lg bg-red-900/20 border border-red-500/30 opacity-75"
+                          >
+                            <div className="flex-1">
+                              <div className="flex items-center space-x-2">
+                                <span 
+                                  className={`inline-block w-3 h-3 rounded-full`}
+                                  style={{ backgroundColor: getEventColor(event.type) }}
+                                />
+                                <span className="text-white font-medium capitalize">
+                                  {event.type}
+                                </span>
+                                <span className="text-gray-400 text-sm">
+                                  {formatTime(event.timestamp)}
+                                </span>
+                              </div>
+                              <p className="text-gray-300 text-sm mt-1">
+                                {transformDescription(event.description || '')}
+                              </p>
+                            </div>
+                            
+                            {/* Restore Button */}
+                            <button
+                              onClick={() => handleUnbinEvent(index)}
+                              disabled={isSavingEvents}
+                              className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
+                              title="Restore this event"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                              </svg>
+                            </button>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -887,7 +1487,7 @@ export default function UnifiedSidebar({
               <div className="bg-gray-800/50 rounded-lg p-4">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-white font-medium">Selected Events:</span>
-                  <span className="text-orange-400 font-bold">{selectedEvents.size} / 5</span>
+                  <span className="text-orange-400 font-bold">{selectedEvents.size} / 10</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-white font-medium">Estimated Duration:</span>

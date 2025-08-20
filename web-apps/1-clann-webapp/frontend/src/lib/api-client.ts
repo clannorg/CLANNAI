@@ -306,6 +306,40 @@ class ApiClient {
 
     return response.blob()
   }
+
+  // Events modification methods (manual annotation tool)
+  async getGameEvents(gameId: string) {
+    return this.request<{
+      events: Array<any>
+      is_modified: boolean
+      modified_by?: string
+      modified_at?: string
+      original_count: number
+      current_count: number
+    }>(`/api/games/${gameId}/events`)
+  }
+
+  async saveModifiedEvents(gameId: string, events: Array<any>) {
+    return this.request<{
+      success: boolean
+      events_modified: Array<any>
+      modified_by: string
+      modified_at: string
+    }>(`/api/games/${gameId}/events`, {
+      method: 'PUT',
+      body: JSON.stringify({ events })
+    })
+  }
+
+  async resetEventsToAI(gameId: string) {
+    return this.request<{
+      success: boolean
+      message: string
+      ai_events_count: number
+    }>(`/api/games/${gameId}/events`, {
+      method: 'DELETE'
+    })
+  }
 }
 
 export const apiClient = new ApiClient()

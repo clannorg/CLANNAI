@@ -293,6 +293,141 @@ router.get('/:id', authenticateToken, async (req, res) => {
   }
 });
 
+// Save modified events for a game (manual annotation tool)
+router.put('/:id/events', authenticateToken, async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { events } = req.body;
+    
+    if (!events || !Array.isArray(events)) {
+      return res.status(400).json({ error: 'Events array is required' });
+    }
+    
+    // Get game and check access
+    const game = await getGameById(gameId);
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+    
+    // Check if user has access to modify this game
+    if (req.user.role !== 'company' && !game.is_demo) {
+      const userGames = await getUserGames(req.user.id);
+      const hasAccess = userGames.some(g => g.id === gameId);
+      
+      if (!hasAccess) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
+    }
+    
+    // Update the game with modified events using the existing updateGame function
+    const updates = {
+      events_modified: JSON.stringify(events),
+      events_last_modified_by: req.user.id,
+      events_last_modified_at: new Date()
+    };
+    
+    const updatedGame = await updateGame(gameId, updates);
+    
+    res.json({
+      success: true,
+      events_modified: events,
+      modified_by: req.user.id,
+      modified_at: new Date()
+    });
+    
+  } catch (error) {
+    console.error('Save modified events error:', error);
+    res.status(500).json({ error: 'Failed to save modified events' });
+  }
+});
+
+// Get events for a game (returns modified events if they exist, otherwise AI events)
+router.get('/:id/events', authenticateToken, async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+    
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+    
+    // Check access
+    if (req.user.role !== 'company' && !game.is_demo) {
+      const userGames = await getUserGames(req.user.id);
+      const hasAccess = userGames.some(g => g.id === gameId);
+      
+      if (!hasAccess) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
+    }
+    
+    // Return modified events if they exist, otherwise AI events
+    const events = game.events_modified || game.ai_analysis || [];
+    const isModified = !!game.events_modified;
+    
+    res.json({
+      events,
+      is_modified: isModified,
+      modified_by: game.events_last_modified_by,
+      modified_at: game.events_last_modified_at,
+      original_count: game.ai_analysis ? game.ai_analysis.length : 0,
+      current_count: events.length
+    });
+    
+  } catch (error) {
+    console.error('Get events error:', error);
+    res.status(500).json({ error: 'Failed to get events' });
+  }
+});
+
+// Reset events to AI analysis (clear modified events)
+router.delete('/:id/events', authenticateToken, async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+    
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+    
+    // Check if user has access to modify this game (company users can reset any game)
+    if (req.user.role !== 'company' && !game.is_demo) {
+      const userGames = await getUserGames(req.user.id);
+      const hasAccess = userGames.some(g => g.id === gameId);
+      
+      if (!hasAccess) {
+        return res.status(403).json({ error: 'Access denied' });
+      }
+    }
+    
+    // Check if there are modified events to reset
+    if (!game.events_modified) {
+      return res.status(400).json({ error: 'No modified events to reset' });
+    }
+    
+    // Clear the modified events
+    const updates = {
+      events_modified: null,
+      events_last_modified_by: null,
+      events_last_modified_at: null
+    };
+    
+    await updateGame(gameId, updates);
+    
+    const aiEventsCount = game.ai_analysis ? game.ai_analysis.length : 0;
+    
+    res.json({
+      success: true,
+      message: `Events reset to AI analysis (${aiEventsCount} events)`,
+      ai_events_count: aiEventsCount
+    });
+    
+  } catch (error) {
+    console.error('Reset events error:', error);
+    res.status(500).json({ error: 'Failed to reset events' });
+  }
+});
+
 // Upload VEO URL (create new game)
 router.post('/', authenticateToken, async (req, res) => {
   try {
