@@ -555,7 +555,7 @@ export default function VideoPlayer({
         <div className="flex items-center space-x-8">
           {/* Previous Event */}
           <button
-            onClick={handlePreviousEvent}
+            onClick={() => triggerFlash('prev', handlePreviousEvent)}
             disabled={events.length === 0}
             className="flex items-center justify-center text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             title="Previous Event"
@@ -568,7 +568,7 @@ export default function VideoPlayer({
 
           {/* Jump Backward 5s */}
           <button
-            onClick={handleJumpBackward}
+            onClick={() => triggerFlash('back', handleJumpBackward)}
             className="flex items-center justify-center text-white hover:text-gray-300 transition-colors text-lg font-bold"
             title="Jump Backward 5s"
             style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
@@ -578,7 +578,7 @@ export default function VideoPlayer({
 
           {/* Play/Pause - LARGE CENTER BUTTON */}
           <button
-            onClick={handlePlayPause}
+            onClick={() => triggerFlash('play', handlePlayPause)}
             className="flex items-center justify-center text-white hover:text-gray-300 transition-colors"
             style={{ filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.9))' }}
           >
@@ -595,7 +595,7 @@ export default function VideoPlayer({
 
           {/* Jump Forward 5s */}
           <button
-            onClick={handleJumpForward}
+            onClick={() => triggerFlash('forward', handleJumpForward)}
             className="flex items-center justify-center text-white hover:text-gray-300 transition-colors text-lg font-bold"
             title="Jump Forward 5s"
             style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
@@ -605,7 +605,7 @@ export default function VideoPlayer({
 
           {/* Next Event */}
           <button
-            onClick={handleNextEvent}
+            onClick={() => triggerFlash('next', handleNextEvent)}
             disabled={events.length === 0}
             className="flex items-center justify-center text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             title="Next Event"
