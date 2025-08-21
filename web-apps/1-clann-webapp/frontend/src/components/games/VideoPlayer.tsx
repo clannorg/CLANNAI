@@ -38,6 +38,11 @@ interface VideoPlayerProps {
     beforePadding: number,  // 0-15 seconds before event
     afterPadding: number    // 0-15 seconds after event
   }>
+  // Events tab padding data for autoplay
+  eventPaddings?: Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>
   activeTab?: string
   autoplayEvents?: boolean
 }
@@ -53,6 +58,7 @@ export default function VideoPlayer({
   overlayVisible = true,
   onUserInteract,
   selectedEvents,
+  eventPaddings,
   activeTab,
   autoplayEvents
 }: VideoPlayerProps) {
@@ -91,14 +97,18 @@ export default function VideoPlayer({
       }> = []
 
       if (activeTab === 'events' && autoplayEvents) {
-        // Autoplay mode: use all events with default 5s padding
+        // Autoplay mode: use all events with individual timeline padding
         segments = allEvents
-          .map((event, index) => ({
-            id: index,
-            start: Math.max(0, event.timestamp - 5),
-            end: event.timestamp + 5,
-            event
-          }))
+          .map((event, index) => {
+            // Get individual padding from Events tab timeline settings
+            const padding = eventPaddings?.get(index) || { beforePadding: 5, afterPadding: 3 }
+            return {
+              id: index,
+              start: Math.max(0, event.timestamp - padding.beforePadding),
+              end: event.timestamp + padding.afterPadding,
+              event
+            }
+          })
       } else if (activeTab === 'downloads' && selectedEvents) {
         // Downloads mode: use individual padding from Map
         segments = Array.from(selectedEvents.entries())
@@ -129,7 +139,7 @@ export default function VideoPlayer({
       setPreviewSegments([])
       setCurrentSegmentIndex(0)
     }
-  }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents])
+  }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents, eventPaddings])
 
 
 

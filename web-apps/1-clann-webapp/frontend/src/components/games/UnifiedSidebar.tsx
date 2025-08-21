@@ -90,6 +90,10 @@ interface UnifiedSidebarProps {
   
   // Autoplay events callback
   onAutoplayChange?: (autoplay: boolean) => void
+  
+  // Event padding data from Events tab timelines
+  eventPaddings?: Map<number, { beforePadding: number, afterPadding: number }>
+  onEventPaddingsChange?: (paddings: Map<number, { beforePadding: number, afterPadding: number }>) => void
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'downloads'
@@ -119,7 +123,9 @@ export default function UnifiedSidebar({
   onSeekToTimestamp,
   currentTime = 0,
   onSelectedEventsChange,
-  onAutoplayChange
+  onAutoplayChange,
+  eventPaddings,
+  onEventPaddingsChange
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -215,18 +221,18 @@ export default function UnifiedSidebar({
   const [selectedDownloadEvents, setSelectedDownloadEvents] = useState<Set<number>>(new Set())
   
   // Individual event padding state (for timeline trimmers)
-  const [eventPaddings, setEventPaddings] = useState<Map<number, { beforePadding: number, afterPadding: number }>>(new Map())
-  
   // Helper to get padding for an event (with defaults)
   const getEventPadding = (eventIndex: number) => {
-    return eventPaddings.get(eventIndex) || { beforePadding: 5, afterPadding: 3 }
+    return eventPaddings?.get(eventIndex) || { beforePadding: 5, afterPadding: 3 }
   }
   
   // Helper to update padding for an event timeline
   const updateEventTimelinePadding = (eventIndex: number, beforePadding: number, afterPadding: number) => {
-    const newPaddings = new Map(eventPaddings)
-    newPaddings.set(eventIndex, { beforePadding, afterPadding })
-    setEventPaddings(newPaddings)
+    if (onEventPaddingsChange && eventPaddings) {
+      const newPaddings = new Map(eventPaddings)
+      newPaddings.set(eventIndex, { beforePadding, afterPadding })
+      onEventPaddingsChange(newPaddings)
+    }
   }
   
   // Wrapper to update selectedEvents and notify parent

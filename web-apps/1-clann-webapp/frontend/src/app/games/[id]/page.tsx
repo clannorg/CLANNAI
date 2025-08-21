@@ -178,6 +178,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   // Autoplay events state
   const [autoplayEvents, setAutoplayEvents] = useState(false)
   
+  // Event padding state for autoplay (Events tab individual timeline settings)
+  const [eventPaddings, setEventPaddings] = useState<Map<number, { beforePadding: number, afterPadding: number }>>(new Map())
+  
   // Tactical analysis state
   const [tacticalData, setTacticalData] = useState<{
     tactical: Record<string, { content: string, filename: string, uploaded_at: string }>
@@ -388,6 +391,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               selectedEvents={selectedEvents}
               activeTab={sidebarTab}
               autoplayEvents={autoplayEvents}
+              eventPaddings={eventPaddings}
             />
               </div>
           
@@ -416,6 +420,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             currentTime={currentTime}
             onSelectedEventsChange={setSelectedEvents}
             onAutoplayChange={setAutoplayEvents}
+            eventPaddings={eventPaddings}
+            onEventPaddingsChange={setEventPaddings}
                 />
               </div>
       ) : (
@@ -463,6 +469,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           onSeekToTimestamp={seekToTimestamp}
           currentTime={currentTime}
           onSelectedEventsChange={setSelectedEvents}
+          eventPaddings={eventPaddings}
+          onEventPaddingsChange={setEventPaddings}
       />
         </div>
       )}
