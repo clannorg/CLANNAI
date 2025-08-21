@@ -1,10 +1,42 @@
 {
-  "match_id": "leo1",
-  "upload_timestamp": "2025-08-20T09:16:08.802806",
-  "bucket": "end-nov-webapp-clann",
-  "region": "eu-west-1",
-  "core_files": {
-    "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-web_events_array-json.json",
-    "match_metadata_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-match_metadata-json.json"
+  "web_events_array.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-web_events_array-json.json",
+    "description": "Direct events array for web app",
+    "uploaded_at": "2025-08-20T19:31:24.084593"
+  },
+  "match_metadata.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-match_metadata-json.json",
+    "description": "Match metadata with team colors and stats",
+    "uploaded_at": "2025-08-20T19:31:24.111530"
+  },
+  "highlights.txt": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-highlights-txt.txt",
+    "description": "Generated highlights with exact timestamps",
+    "uploaded_at": "2025-08-20T19:31:24.137649"
+  },
+  "tactical_analysis.txt": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-tactical_analysis-txt.txt",
+    "description": "SICK tactical analysis (plain text)",
+    "uploaded_at": "2025-08-20T19:31:24.161633"
+  },
+  "sick_tactical_analysis.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-sick_tactical_analysis-json.json",
+    "description": "SICK tactical analysis in webapp JSON format",
+    "uploaded_at": "2025-08-20T19:31:24.198597"
+  },
+  "team_config.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-team_config-json.json",
+    "description": "Team configuration and appearance details",
+    "uploaded_at": "2025-08-20T19:31:24.225407"
+  },
+  "full_timeline.txt": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-full_timeline-txt.txt",
+    "description": "Complete match timeline from all clips",
+    "uploaded_at": "2025-08-20T19:31:24.278295"
+  },
+  "clips_manifest.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-clips_manifest-json.json",
+    "description": "Manifest of all created clips",
+    "uploaded_at": "2025-08-20T19:31:24.316635"
   }
 }

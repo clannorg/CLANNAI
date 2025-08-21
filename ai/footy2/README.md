@@ -1,98 +1,127 @@
-# Footy1 - 5-a-Side Football Analysis
+# Footy2 - Advanced 5-a-Side Football Analysis
 
-Analyze **5-a-side games** focusing on goals and cool moments. Simple 5-step pipeline using Gemini.
+The **most detailed football analysis pipeline ever created**. Generates professional-level tactical insights with detailed play-by-play descriptions, player analysis, and interactive webapp integration.
 
 ## What This Analyzes
 
-- 5-a-side football matches
-- Indoor football / Futsal  
-- 7-a-side games
-- Casual pickup games
-- **Focus: Goals and particularly cool moments**
+- 5-a-side football matches with **complete tactical breakdown**
+- **Detailed play-by-play** descriptions of every 15-second segment  
+- **Player identification** by appearance and performance
+- **Tactical patterns** only visible with full game data
+- **Interactive moments** with clickable timestamps
+- **Professional coaching insights** and training recommendations
 
 ## How It Works
 
-### 5-Step Pipeline (Same approach as v4, but 5-a-side focused)
+### 7-Step Advanced Pipeline
 
-1. **Setup teams** - You manually enter team colors ("orange bibs vs blue shirts")
-2. **Make 15-second clips** - Split video into segments
-3. **Analyze each clip** - Gemini describes what's happening, focusing on goals/cool moments
-4. **Synthesize highlights** - Gemini 2.5 Pro identifies the important moments from all descriptions
-5. **Format for webapp** - Structure data for web display
+1. **Setup teams** - Detailed team configuration with visual appearance
+2. **Make 15-second clips** - Split video into analyzable segments
+3. **Analyze clips** - **Detailed chronological descriptions** with exact timing and player identification
+4. **Synthesize highlights** - **Generous goal detection** with exact timestamps 
+5. **Generate sick tactical analysis** - **Professional-level insights** using full game timeline
+6. **Convert to webapp JSON** - **Interactive format** with player cards and clickable moments
+7. **Upload to S3** - Cloud integration for webapp display
 
-### Team Setup
-- **Manual team entry** - You tell it "orange bibs vs blue shirts" etc.
-- No complex team detection needed - you know your teams!
+### Key Features
+- **Exact timestamps** calculated to the second
+- **Player nicknames** based on observations ("The White Shirt Sharpshooter")
+- **Impact ratings** (X/10) for all tactical elements
+- **Evidence-based analysis** with specific timeline references
+- **Priority-based recommendations** with coaching drills
 
 ## Usage
 
 ```bash
 # Navigate to pipeline
-cd ai/footy1/pipeline
+cd ai/footy2/pipeline
 conda activate hooper-ai
 
-# 1. Set up teams (manual input)
+# 1. Setup teams with detailed appearance
 python 1_setup_teams.py <match-id>
 
 # 2. Make clips  
 python 2_make_clips.py <video-path> <match-id>
 
-# 3. Analyze clips (focus on goals/cool moments)
+# 3. Analyze clips with detailed descriptions
 python 3_analyze_clips.py <match-id>
 
-# 4. Synthesize highlights
+# 4. Synthesize highlights with exact timestamps
 python 4_synthesize_highlights.py <match-id>
 
-# 5. Format for webapp
-python 5_format_webapp.py <match-id>
+# 5. Generate sick tactical analysis
+python 4.7_generate_sick_analysis.py <match-id>
+
+# 6. Convert to webapp-friendly JSON
+python 4.8_convert_sick_to_json.py <match-id>
+
+# 7. Upload to S3 for webapp (with video clips!)
+python 6_s3_uploader_with_clips.py <match-id>
 ```
 
 ## Example Workflow
 
 ```bash
-# Setup
-python 1_setup_teams.py "sunday-league-game-1"
-# Enter: Team A = "Orange bibs", Team B = "Blue shirts"
+# Setup with detailed team info
+python 1_setup_teams.py leo1
+# Enter: Team A = "clann" (no bibs/colours)
+#        Team B = "lostthehead" (orange bibs)
 
-# Process video
-python 2_make_clips.py "/path/to/game.mp4" "sunday-league-game-1"
-python 3_analyze_clips.py "sunday-league-game-1"
-python 4_synthesize_highlights.py "sunday-league-game-1"
-python 5_format_webapp.py "sunday-league-game-1"
+# Full analysis pipeline
+python 2_make_clips.py "/path/to/leo1.mp4" leo1
+python 3_analyze_clips.py leo1
+python 4_synthesize_highlights.py leo1
+python 4.7_generate_sick_analysis.py leo1
+python 4.8_convert_sick_to_json.py leo1
+python 6_s3_uploader_with_clips.py leo1
 ```
 
 ## What You Get
 
-### **🎯 For Highlights**
-- **Goals** - All goal moments with timestamps
-- **Cool moments** - Skills, saves, near-misses
-- **Timeline** - When exciting things happened
+### **🔥 Sick Tactical Analysis**
+- **Player cards** with nicknames like "The White Shirt Sharpshooter"
+- **Impact ratings** (9.5/10) for all tactical elements
+- **Evidence timestamps** for every claim
+- **Priority-based recommendations** (🎯 HIGH, ⚡ MEDIUM, 💡 LOW)
+- **Wild insights** only possible with full game data
 
-### **📊 For Webapp**
-- **`highlights.json`** - Key moments for timeline
-- **`match_summary.json`** - Game overview
-- **Video clips** - Goal moments extracted
+### **📊 For Webapp Integration**
+- **`web_events_array.json`** - Timeline events with exact timestamps
+- **`sick_tactical_analysis.json`** - Interactive tactical insights
+- **`match_metadata.json`** - Game overview and team info
+- **S3 URLs** - Cloud-hosted files ready for webapp
 
-### **📄 For Review**
-- **`clip_descriptions/`** - What Gemini saw in each 15s
-- **`synthesis.txt`** - Important moments identified
-- **`team_config.json`** - Your team setup
+### **📄 For Human Review**
+- **`full_timeline.txt`** - Every 15-second segment described (195KB+)
+- **`highlights.txt`** - Key moments with tactical significance
+- **`sick_tactical_analysis.txt`** - Human-readable tactical breakdown
+- **`clip_descriptions/`** - Individual clip analysis files
 
-## Key Differences from v4
+### **🎯 Example Outputs**
+- **Match Summary**: "This wasn't a football match; it was a siege..."
+- **Player Analysis**: "👑 THE WHITE SHIRT SHARPSHOOTER (9.5/10): Stats: 6+ goals, 20+ shots..."
+- **Wild Insights**: "The Woodwork Anomaly: 21 frame hits - psychological warfare"
+- **Coaching**: "🎯 HIGH PRIORITY: Drill Defensive Transitions - Run 3-on-2 counter-attack drills..."
 
-- **Focus**: Goals and cool moments, not full tactical analysis
-- **Teams**: Manual setup (you type colors), no auto-detection  
-- **Pace**: Optimized for faster 5-a-side gameplay
-- **Output**: Highlight reel focused, not comprehensive match analysis
-- **Simpler**: 5 steps instead of 10+
+## Key Advances from Footy1
+
+- **Detailed descriptions**: Chronological play-by-play with exact timing
+- **Player identification**: By appearance, role, and performance
+- **Professional analysis**: Coaching-level insights with evidence
+- **Interactive elements**: Clickable moments and rich data structures
+- **Webapp optimization**: JSON formats designed for frontend display
+- **Evidence-based**: Every claim backed by timeline references
+- **Advanced**: 7-step pipeline generating multiple output formats
+- **Video clips**: All 15-second segments uploaded to S3 for media conversion
 
 ## Requirements
 
 - **Environment**: `hooper-ai` conda environment
 - **API Keys**: GEMINI_API_KEY in `.env` file
 - **Video**: Any format ffmpeg can handle
-- **Storage**: ~1GB per match (much less than full analysis)
+- **Storage**: ~2GB per match (detailed analysis requires more data)
+- **AWS**: S3 credentials for webapp integration
 
 ---
 
-*Adapted from veo-games-v4 pipeline but streamlined for 5-a-side highlights.*
+*The most advanced football analysis pipeline ever created - pushes AI and webapp capabilities to their limits.*

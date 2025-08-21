@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-8. S3 Uploader
+6. S3 Uploader (LEGACY - use 6_s3_uploader_with_clips.py instead)
 Uploads key analysis files to S3 and tracks cloud locations
 """
 
@@ -147,6 +147,16 @@ def upload_match_to_s3(match_id):
             "s3_folder": "analysis-data",
             "content_type": "text/plain",
             "description": "Complete tactical analysis using full game timeline + highlights"
+        },
+        "tactical_analysis.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Webapp-compatible tactical analysis JSON format"
+        },
+        "sick_tactical_analysis.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Interactive tactical analysis with player cards, clickable moments, and rich data"
         },
         "5_complete_timeline.txt": {
             "s3_folder": "analysis-data",

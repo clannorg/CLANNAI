@@ -1,0 +1,1094 @@
+{
+  "web_events_array.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-web_events_array-json.json",
+    "description": "Direct events array for web app",
+    "uploaded_at": "2025-08-20T19:31:24.084593"
+  },
+  "match_metadata.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-match_metadata-json.json",
+    "description": "Match metadata with team colors and stats",
+    "uploaded_at": "2025-08-20T19:31:24.111530"
+  },
+  "highlights.txt": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-highlights-txt.txt",
+    "description": "Generated highlights with exact timestamps",
+    "uploaded_at": "2025-08-20T19:31:24.137649"
+  },
+  "tactical_analysis.txt": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-tactical_analysis-txt.txt",
+    "description": "SICK tactical analysis (plain text)",
+    "uploaded_at": "2025-08-20T19:31:24.161633"
+  },
+  "sick_tactical_analysis.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-sick_tactical_analysis-json.json",
+    "description": "SICK tactical analysis in webapp JSON format",
+    "uploaded_at": "2025-08-20T19:31:24.198597"
+  },
+  "team_config.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-team_config-json.json",
+    "description": "Team configuration and appearance details",
+    "uploaded_at": "2025-08-20T19:31:24.225407"
+  },
+  "full_timeline.txt": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-full_timeline-txt.txt",
+    "description": "Complete match timeline from all clips",
+    "uploaded_at": "2025-08-20T19:31:24.278295"
+  },
+  "clips_manifest.json": {
+    "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/leo1-clips_manifest-json.json",
+    "description": "Manifest of all created clips",
+    "uploaded_at": "2025-08-20T19:31:24.316635"
+  },
+  "clips": {
+    "count": 209,
+    "clips": [
+      {
+        "clip_name": "clip_00m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_00m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_00m00s.mp4"
+      },
+      {
+        "clip_name": "clip_00m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_00m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_00m15s.mp4"
+      },
+      {
+        "clip_name": "clip_00m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_00m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_00m30s.mp4"
+      },
+      {
+        "clip_name": "clip_00m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_00m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_00m45s.mp4"
+      },
+      {
+        "clip_name": "clip_01m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_01m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_01m00s.mp4"
+      },
+      {
+        "clip_name": "clip_01m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_01m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_01m15s.mp4"
+      },
+      {
+        "clip_name": "clip_01m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_01m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_01m30s.mp4"
+      },
+      {
+        "clip_name": "clip_01m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_01m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_01m45s.mp4"
+      },
+      {
+        "clip_name": "clip_02m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_02m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_02m00s.mp4"
+      },
+      {
+        "clip_name": "clip_02m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_02m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_02m15s.mp4"
+      },
+      {
+        "clip_name": "clip_02m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_02m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_02m30s.mp4"
+      },
+      {
+        "clip_name": "clip_02m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_02m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_02m45s.mp4"
+      },
+      {
+        "clip_name": "clip_03m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_03m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_03m00s.mp4"
+      },
+      {
+        "clip_name": "clip_03m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_03m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_03m15s.mp4"
+      },
+      {
+        "clip_name": "clip_03m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_03m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_03m30s.mp4"
+      },
+      {
+        "clip_name": "clip_03m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_03m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_03m45s.mp4"
+      },
+      {
+        "clip_name": "clip_04m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_04m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_04m00s.mp4"
+      },
+      {
+        "clip_name": "clip_04m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_04m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_04m15s.mp4"
+      },
+      {
+        "clip_name": "clip_04m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_04m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_04m30s.mp4"
+      },
+      {
+        "clip_name": "clip_04m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_04m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_04m45s.mp4"
+      },
+      {
+        "clip_name": "clip_05m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_05m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_05m00s.mp4"
+      },
+      {
+        "clip_name": "clip_05m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_05m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_05m15s.mp4"
+      },
+      {
+        "clip_name": "clip_05m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_05m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_05m30s.mp4"
+      },
+      {
+        "clip_name": "clip_05m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_05m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_05m45s.mp4"
+      },
+      {
+        "clip_name": "clip_06m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_06m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_06m00s.mp4"
+      },
+      {
+        "clip_name": "clip_06m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_06m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_06m15s.mp4"
+      },
+      {
+        "clip_name": "clip_06m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_06m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_06m30s.mp4"
+      },
+      {
+        "clip_name": "clip_06m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_06m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_06m45s.mp4"
+      },
+      {
+        "clip_name": "clip_07m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_07m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_07m00s.mp4"
+      },
+      {
+        "clip_name": "clip_07m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_07m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_07m15s.mp4"
+      },
+      {
+        "clip_name": "clip_07m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_07m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_07m30s.mp4"
+      },
+      {
+        "clip_name": "clip_07m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_07m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_07m45s.mp4"
+      },
+      {
+        "clip_name": "clip_08m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_08m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_08m00s.mp4"
+      },
+      {
+        "clip_name": "clip_08m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_08m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_08m15s.mp4"
+      },
+      {
+        "clip_name": "clip_08m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_08m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_08m30s.mp4"
+      },
+      {
+        "clip_name": "clip_08m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_08m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_08m45s.mp4"
+      },
+      {
+        "clip_name": "clip_09m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_09m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_09m00s.mp4"
+      },
+      {
+        "clip_name": "clip_09m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_09m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_09m15s.mp4"
+      },
+      {
+        "clip_name": "clip_09m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_09m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_09m30s.mp4"
+      },
+      {
+        "clip_name": "clip_09m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_09m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_09m45s.mp4"
+      },
+      {
+        "clip_name": "clip_10m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_10m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_10m00s.mp4"
+      },
+      {
+        "clip_name": "clip_10m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_10m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_10m15s.mp4"
+      },
+      {
+        "clip_name": "clip_10m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_10m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_10m30s.mp4"
+      },
+      {
+        "clip_name": "clip_10m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_10m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_10m45s.mp4"
+      },
+      {
+        "clip_name": "clip_11m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_11m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_11m00s.mp4"
+      },
+      {
+        "clip_name": "clip_11m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_11m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_11m15s.mp4"
+      },
+      {
+        "clip_name": "clip_11m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_11m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_11m30s.mp4"
+      },
+      {
+        "clip_name": "clip_11m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_11m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_11m45s.mp4"
+      },
+      {
+        "clip_name": "clip_12m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_12m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_12m00s.mp4"
+      },
+      {
+        "clip_name": "clip_12m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_12m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_12m15s.mp4"
+      },
+      {
+        "clip_name": "clip_12m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_12m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_12m30s.mp4"
+      },
+      {
+        "clip_name": "clip_12m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_12m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_12m45s.mp4"
+      },
+      {
+        "clip_name": "clip_13m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_13m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_13m00s.mp4"
+      },
+      {
+        "clip_name": "clip_13m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_13m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_13m15s.mp4"
+      },
+      {
+        "clip_name": "clip_13m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_13m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_13m30s.mp4"
+      },
+      {
+        "clip_name": "clip_13m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_13m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_13m45s.mp4"
+      },
+      {
+        "clip_name": "clip_14m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_14m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_14m00s.mp4"
+      },
+      {
+        "clip_name": "clip_14m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_14m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_14m15s.mp4"
+      },
+      {
+        "clip_name": "clip_14m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_14m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_14m30s.mp4"
+      },
+      {
+        "clip_name": "clip_14m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_14m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_14m45s.mp4"
+      },
+      {
+        "clip_name": "clip_15m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_15m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_15m00s.mp4"
+      },
+      {
+        "clip_name": "clip_15m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_15m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_15m15s.mp4"
+      },
+      {
+        "clip_name": "clip_15m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_15m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_15m30s.mp4"
+      },
+      {
+        "clip_name": "clip_15m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_15m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_15m45s.mp4"
+      },
+      {
+        "clip_name": "clip_16m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_16m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_16m00s.mp4"
+      },
+      {
+        "clip_name": "clip_16m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_16m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_16m15s.mp4"
+      },
+      {
+        "clip_name": "clip_16m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_16m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_16m30s.mp4"
+      },
+      {
+        "clip_name": "clip_16m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_16m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_16m45s.mp4"
+      },
+      {
+        "clip_name": "clip_17m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_17m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_17m00s.mp4"
+      },
+      {
+        "clip_name": "clip_17m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_17m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_17m15s.mp4"
+      },
+      {
+        "clip_name": "clip_17m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_17m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_17m30s.mp4"
+      },
+      {
+        "clip_name": "clip_17m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_17m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_17m45s.mp4"
+      },
+      {
+        "clip_name": "clip_18m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_18m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_18m00s.mp4"
+      },
+      {
+        "clip_name": "clip_18m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_18m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_18m15s.mp4"
+      },
+      {
+        "clip_name": "clip_18m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_18m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_18m30s.mp4"
+      },
+      {
+        "clip_name": "clip_18m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_18m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_18m45s.mp4"
+      },
+      {
+        "clip_name": "clip_19m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_19m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_19m00s.mp4"
+      },
+      {
+        "clip_name": "clip_19m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_19m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_19m15s.mp4"
+      },
+      {
+        "clip_name": "clip_19m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_19m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_19m30s.mp4"
+      },
+      {
+        "clip_name": "clip_19m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_19m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_19m45s.mp4"
+      },
+      {
+        "clip_name": "clip_20m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_20m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_20m00s.mp4"
+      },
+      {
+        "clip_name": "clip_20m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_20m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_20m15s.mp4"
+      },
+      {
+        "clip_name": "clip_20m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_20m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_20m30s.mp4"
+      },
+      {
+        "clip_name": "clip_20m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_20m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_20m45s.mp4"
+      },
+      {
+        "clip_name": "clip_21m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_21m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_21m00s.mp4"
+      },
+      {
+        "clip_name": "clip_21m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_21m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_21m15s.mp4"
+      },
+      {
+        "clip_name": "clip_21m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_21m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_21m30s.mp4"
+      },
+      {
+        "clip_name": "clip_21m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_21m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_21m45s.mp4"
+      },
+      {
+        "clip_name": "clip_22m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_22m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_22m00s.mp4"
+      },
+      {
+        "clip_name": "clip_22m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_22m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_22m15s.mp4"
+      },
+      {
+        "clip_name": "clip_22m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_22m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_22m30s.mp4"
+      },
+      {
+        "clip_name": "clip_22m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_22m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_22m45s.mp4"
+      },
+      {
+        "clip_name": "clip_23m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_23m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_23m00s.mp4"
+      },
+      {
+        "clip_name": "clip_23m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_23m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_23m15s.mp4"
+      },
+      {
+        "clip_name": "clip_23m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_23m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_23m30s.mp4"
+      },
+      {
+        "clip_name": "clip_23m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_23m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_23m45s.mp4"
+      },
+      {
+        "clip_name": "clip_24m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_24m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_24m00s.mp4"
+      },
+      {
+        "clip_name": "clip_24m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_24m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_24m15s.mp4"
+      },
+      {
+        "clip_name": "clip_24m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_24m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_24m30s.mp4"
+      },
+      {
+        "clip_name": "clip_24m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_24m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_24m45s.mp4"
+      },
+      {
+        "clip_name": "clip_25m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_25m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_25m00s.mp4"
+      },
+      {
+        "clip_name": "clip_25m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_25m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_25m15s.mp4"
+      },
+      {
+        "clip_name": "clip_25m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_25m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_25m30s.mp4"
+      },
+      {
+        "clip_name": "clip_25m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_25m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_25m45s.mp4"
+      },
+      {
+        "clip_name": "clip_26m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_26m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_26m00s.mp4"
+      },
+      {
+        "clip_name": "clip_26m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_26m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_26m15s.mp4"
+      },
+      {
+        "clip_name": "clip_26m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_26m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_26m30s.mp4"
+      },
+      {
+        "clip_name": "clip_26m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_26m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_26m45s.mp4"
+      },
+      {
+        "clip_name": "clip_27m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_27m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_27m00s.mp4"
+      },
+      {
+        "clip_name": "clip_27m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_27m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_27m15s.mp4"
+      },
+      {
+        "clip_name": "clip_27m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_27m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_27m30s.mp4"
+      },
+      {
+        "clip_name": "clip_27m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_27m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_27m45s.mp4"
+      },
+      {
+        "clip_name": "clip_28m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_28m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_28m00s.mp4"
+      },
+      {
+        "clip_name": "clip_28m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_28m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_28m15s.mp4"
+      },
+      {
+        "clip_name": "clip_28m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_28m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_28m30s.mp4"
+      },
+      {
+        "clip_name": "clip_28m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_28m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_28m45s.mp4"
+      },
+      {
+        "clip_name": "clip_29m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_29m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_29m00s.mp4"
+      },
+      {
+        "clip_name": "clip_29m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_29m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_29m15s.mp4"
+      },
+      {
+        "clip_name": "clip_29m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_29m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_29m30s.mp4"
+      },
+      {
+        "clip_name": "clip_29m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_29m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_29m45s.mp4"
+      },
+      {
+        "clip_name": "clip_30m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_30m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_30m00s.mp4"
+      },
+      {
+        "clip_name": "clip_30m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_30m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_30m15s.mp4"
+      },
+      {
+        "clip_name": "clip_30m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_30m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_30m30s.mp4"
+      },
+      {
+        "clip_name": "clip_30m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_30m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_30m45s.mp4"
+      },
+      {
+        "clip_name": "clip_31m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_31m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_31m00s.mp4"
+      },
+      {
+        "clip_name": "clip_31m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_31m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_31m15s.mp4"
+      },
+      {
+        "clip_name": "clip_31m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_31m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_31m30s.mp4"
+      },
+      {
+        "clip_name": "clip_31m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_31m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_31m45s.mp4"
+      },
+      {
+        "clip_name": "clip_32m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_32m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_32m00s.mp4"
+      },
+      {
+        "clip_name": "clip_32m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_32m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_32m15s.mp4"
+      },
+      {
+        "clip_name": "clip_32m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_32m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_32m30s.mp4"
+      },
+      {
+        "clip_name": "clip_32m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_32m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_32m45s.mp4"
+      },
+      {
+        "clip_name": "clip_33m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_33m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_33m00s.mp4"
+      },
+      {
+        "clip_name": "clip_33m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_33m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_33m15s.mp4"
+      },
+      {
+        "clip_name": "clip_33m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_33m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_33m30s.mp4"
+      },
+      {
+        "clip_name": "clip_33m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_33m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_33m45s.mp4"
+      },
+      {
+        "clip_name": "clip_34m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_34m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_34m00s.mp4"
+      },
+      {
+        "clip_name": "clip_34m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_34m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_34m15s.mp4"
+      },
+      {
+        "clip_name": "clip_34m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_34m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_34m30s.mp4"
+      },
+      {
+        "clip_name": "clip_34m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_34m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_34m45s.mp4"
+      },
+      {
+        "clip_name": "clip_35m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_35m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_35m00s.mp4"
+      },
+      {
+        "clip_name": "clip_35m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_35m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_35m15s.mp4"
+      },
+      {
+        "clip_name": "clip_35m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_35m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_35m30s.mp4"
+      },
+      {
+        "clip_name": "clip_35m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_35m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_35m45s.mp4"
+      },
+      {
+        "clip_name": "clip_36m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_36m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_36m00s.mp4"
+      },
+      {
+        "clip_name": "clip_36m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_36m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_36m15s.mp4"
+      },
+      {
+        "clip_name": "clip_36m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_36m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_36m30s.mp4"
+      },
+      {
+        "clip_name": "clip_36m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_36m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_36m45s.mp4"
+      },
+      {
+        "clip_name": "clip_37m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_37m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_37m00s.mp4"
+      },
+      {
+        "clip_name": "clip_37m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_37m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_37m15s.mp4"
+      },
+      {
+        "clip_name": "clip_37m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_37m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_37m30s.mp4"
+      },
+      {
+        "clip_name": "clip_37m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_37m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_37m45s.mp4"
+      },
+      {
+        "clip_name": "clip_38m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_38m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_38m00s.mp4"
+      },
+      {
+        "clip_name": "clip_38m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_38m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_38m15s.mp4"
+      },
+      {
+        "clip_name": "clip_38m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_38m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_38m30s.mp4"
+      },
+      {
+        "clip_name": "clip_38m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_38m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_38m45s.mp4"
+      },
+      {
+        "clip_name": "clip_39m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_39m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_39m00s.mp4"
+      },
+      {
+        "clip_name": "clip_39m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_39m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_39m15s.mp4"
+      },
+      {
+        "clip_name": "clip_39m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_39m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_39m30s.mp4"
+      },
+      {
+        "clip_name": "clip_39m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_39m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_39m45s.mp4"
+      },
+      {
+        "clip_name": "clip_40m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_40m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_40m00s.mp4"
+      },
+      {
+        "clip_name": "clip_40m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_40m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_40m15s.mp4"
+      },
+      {
+        "clip_name": "clip_40m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_40m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_40m30s.mp4"
+      },
+      {
+        "clip_name": "clip_40m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_40m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_40m45s.mp4"
+      },
+      {
+        "clip_name": "clip_41m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_41m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_41m00s.mp4"
+      },
+      {
+        "clip_name": "clip_41m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_41m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_41m15s.mp4"
+      },
+      {
+        "clip_name": "clip_41m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_41m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_41m30s.mp4"
+      },
+      {
+        "clip_name": "clip_41m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_41m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_41m45s.mp4"
+      },
+      {
+        "clip_name": "clip_42m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_42m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_42m00s.mp4"
+      },
+      {
+        "clip_name": "clip_42m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_42m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_42m15s.mp4"
+      },
+      {
+        "clip_name": "clip_42m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_42m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_42m30s.mp4"
+      },
+      {
+        "clip_name": "clip_42m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_42m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_42m45s.mp4"
+      },
+      {
+        "clip_name": "clip_43m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_43m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_43m00s.mp4"
+      },
+      {
+        "clip_name": "clip_43m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_43m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_43m15s.mp4"
+      },
+      {
+        "clip_name": "clip_43m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_43m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_43m30s.mp4"
+      },
+      {
+        "clip_name": "clip_43m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_43m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_43m45s.mp4"
+      },
+      {
+        "clip_name": "clip_44m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_44m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_44m00s.mp4"
+      },
+      {
+        "clip_name": "clip_44m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_44m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_44m15s.mp4"
+      },
+      {
+        "clip_name": "clip_44m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_44m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_44m30s.mp4"
+      },
+      {
+        "clip_name": "clip_44m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_44m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_44m45s.mp4"
+      },
+      {
+        "clip_name": "clip_45m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_45m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_45m00s.mp4"
+      },
+      {
+        "clip_name": "clip_45m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_45m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_45m15s.mp4"
+      },
+      {
+        "clip_name": "clip_45m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_45m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_45m30s.mp4"
+      },
+      {
+        "clip_name": "clip_45m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_45m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_45m45s.mp4"
+      },
+      {
+        "clip_name": "clip_46m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_46m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_46m00s.mp4"
+      },
+      {
+        "clip_name": "clip_46m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_46m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_46m15s.mp4"
+      },
+      {
+        "clip_name": "clip_46m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_46m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_46m30s.mp4"
+      },
+      {
+        "clip_name": "clip_46m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_46m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_46m45s.mp4"
+      },
+      {
+        "clip_name": "clip_47m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_47m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_47m00s.mp4"
+      },
+      {
+        "clip_name": "clip_47m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_47m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_47m15s.mp4"
+      },
+      {
+        "clip_name": "clip_47m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_47m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_47m30s.mp4"
+      },
+      {
+        "clip_name": "clip_47m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_47m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_47m45s.mp4"
+      },
+      {
+        "clip_name": "clip_48m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_48m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_48m00s.mp4"
+      },
+      {
+        "clip_name": "clip_48m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_48m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_48m15s.mp4"
+      },
+      {
+        "clip_name": "clip_48m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_48m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_48m30s.mp4"
+      },
+      {
+        "clip_name": "clip_48m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_48m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_48m45s.mp4"
+      },
+      {
+        "clip_name": "clip_49m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_49m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_49m00s.mp4"
+      },
+      {
+        "clip_name": "clip_49m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_49m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_49m15s.mp4"
+      },
+      {
+        "clip_name": "clip_49m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_49m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_49m30s.mp4"
+      },
+      {
+        "clip_name": "clip_49m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_49m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_49m45s.mp4"
+      },
+      {
+        "clip_name": "clip_50m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_50m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_50m00s.mp4"
+      },
+      {
+        "clip_name": "clip_50m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_50m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_50m15s.mp4"
+      },
+      {
+        "clip_name": "clip_50m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_50m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_50m30s.mp4"
+      },
+      {
+        "clip_name": "clip_50m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_50m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_50m45s.mp4"
+      },
+      {
+        "clip_name": "clip_51m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_51m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_51m00s.mp4"
+      },
+      {
+        "clip_name": "clip_51m15s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_51m15s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_51m15s.mp4"
+      },
+      {
+        "clip_name": "clip_51m30s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_51m30s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_51m30s.mp4"
+      },
+      {
+        "clip_name": "clip_51m45s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_51m45s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_51m45s.mp4"
+      },
+      {
+        "clip_name": "clip_52m00s.mp4",
+        "s3_url": "https://end-nov-webapp-clann.s3.amazonaws.com/clips/leo1/clip_52m00s.mp4",
+        "local_path": "../outputs/leo1/clips/clip_52m00s.mp4"
+      }
+    ],
+    "description": "15-second video clips for analysis",
+    "uploaded_at": "2025-08-20T19:31:48.178614"
+  }
+}

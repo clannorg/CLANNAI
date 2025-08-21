@@ -1,0 +1,14 @@
+{
+  "match_id": "brixton-game",
+  "team_a": {
+    "name": "orangey",
+    "colors": "orange bibs"
+  },
+  "team_b": {
+    "name": "rorys colours",
+    "colors": "colours , mostly white"
+  },
+  "game_type": "5-a-side",
+  "focus": "detailed play-by-play description",
+  "additional_context": ""
+}

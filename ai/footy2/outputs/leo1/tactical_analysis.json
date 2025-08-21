@@ -1,0 +1,53 @@
+{
+  "tactical_analysis": {
+    "red_team": {
+      "team_name": "clann",
+      "strengths": [
+        "High-Volume, Direct Attack: Employed a 'shoot on sight' policy from any range, overwhelming the opposition's defence.",
+        "Aggressive Counter-Press & Rapid Transitions: Won the ball high up the pitch and immediately turned turnovers into scoring opportunities."
+      ],
+      "weaknesses": [
+        "Occasional Defensive Lapses in Transition: Aggressive forward-thinking approach left them vulnerable to quick counters when their own passes were intercepted."
+      ],
+      "key_players": [
+        "Player in white shirt: Central Attacking Midfielder / Deep-Lying Playmaker. The engine of the team who defined their tactical approach with a high volume of shots and leading the press.",
+        "Bearded player: Target Man / Finisher. Provided a physical presence and a clinical finishing touch in advanced areas."
+      ],
+      "tactical_setup": "Employed a fluid, almost chaotic attacking style based on a 'shoot on sight' policy and an aggressive counter-press, prioritizing directness and shot volume over intricate build-up.",
+      "performance_summary": "Dominated the match through relentless offensive pressure and a high-volume shooting strategy that completely suffocated the opposition, leading to a lopsided victory."
+    },
+    "blue_team": {
+      "team_name": "lostthehead",
+      "strengths": [
+        "Clinical Counter-Attacking: Showed an ability to punish opposition over-commitment with quick, decisive transitions and finishing."
+      ],
+      "weaknesses": [
+        "Failure to Pressure the Ball Carrier: Allowed vast amounts of time and space in central areas, giving up an extraordinary number of long-range shots.",
+        "Lack of Concentration at Restarts: Repeatedly caught sleeping immediately following kickoffs, conceding high-quality chances and goals."
+      ],
+      "key_players": [
+        "Goalkeeper (various players): Last line of defense. Faced an incredible number of shots and was left exposed by the defense, performing valiantly but was ultimately overwhelmed."
+      ],
+      "tactical_setup": "Attempted to absorb pressure and score on the counter-attack, but their defensive structure was passive and porous, failing to apply pressure in central areas.",
+      "performance_summary": "Struggled defensively throughout the match, unable to cope with the opposition's direct attack and lack of pressure, though they showed moments of clinical finishing on the counter."
+    }
+  },
+  "match_overview": {
+    "final_score": "clann 18 - 5 lostthehead",
+    "key_tactical_story": "The match was defined by clann's overwhelming 'shoot on sight' policy and aggressive counter-press against a lostthehead side that was defensively porous and failed to apply any pressure on the ball carrier, resulting in a completely one-sided contest."
+  },
+  "key_moments": [
+    "[05:07] - [06:53] - clann's Four-Goal Barrage: A 1-minute, 46-second spell that broke the game open and shattered lostthehead's morale, establishing an insurmountable lead."
+  ],
+  "manager_recommendations": {
+    "red_team": [
+      "Counter-Attack Awareness: Designate one player to provide better defensive cover during offensive transitions to nullify the type of counter-attacks that led to goals.",
+      "Vary the Attack: Against a more organized defense, practice patterns to create closer-range opportunities to add another dimension to the game."
+    ],
+    "blue_team": [
+      "Implement a Compact Midfield Block: The priority must be to deny central space by adopting a narrower defensive shape.",
+      "Establish Clear Pressing Triggers: Define when to press (e.g., a pass to the sideline or a player receiving with their back to goal) to create a coordinated effort to win the ball back.",
+      "Restart Drills: Dedicate training time specifically to defensive organization from kickoffs to prevent conceding easy chances."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "match_id": "brixton-game",
+  "video_path": "../brixton-game.mov",
+  "video_duration": 5400,
+  "clip_duration": 30,
+  "total_clips": 180,
+  "successful_clips": 0,
+  "failed_clips": 180,
+  "method": "parallel_fallback"
+}
