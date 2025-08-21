@@ -475,103 +475,30 @@ export default function UnifiedSidebar({
       
       console.log('🎬 Starting clip creation with events:', selectedEventData)
       
-      // Start clip creation (MediaConvert or FFmpeg)
-      const result = await apiClient.createClip(gameId, selectedEventData)
+      // Use FFmpeg for all clip creation
+      console.log('🔗 Using FFmpeg for clip creation')
+      const result = await apiClient.createClipFFmpeg(gameId, selectedEventData)
       console.log('✅ Clip creation started:', result)
       
-      // Check if this is MediaConvert (needs polling) or FFmpeg (immediate)
-      if (result.jobId) {
-        // MediaConvert - needs polling
-        alert(`🚀 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\nProcessing will take a few minutes. You'll be notified when ready for download.`)
+      // FFmpeg returns blob directly
+      if (result.method === 'ffmpeg' && result.blob) {
+        // FFmpeg - direct blob download
+        alert(`🚀 ${result.message}\n\n💾 Starting download now!`)
         
-        // Poll for completion
-        const pollInterval = setInterval(async () => {
-          try {
-            const status = await apiClient.checkClipStatus(result.jobId)
-            console.log('📊 Job status:', status)
-            
-            if (status.status === 'COMPLETE') {
-              clearInterval(pollInterval)
-              
-              // Job completed - now we can download
-              const downloadUrl = `/api/clips/download/clips/${gameId}/${result.outputPath.split('/').pop()}/highlight_reel.mp4`
-              
-              try {
-                const blob = await apiClient.downloadClip(downloadUrl)
-        const url = window.URL.createObjectURL(blob)
+        // Create download link from blob
+        const url = window.URL.createObjectURL(result.blob)
         const link = document.createElement('a')
         link.href = url
-                link.download = `highlight_${gameId}_${Date.now()}.mp4`
+        link.download = result.fileName || `highlight_${gameId}_${Date.now()}.mp4`
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
         window.URL.revokeObjectURL(url)
-                
-                // Clear selection after successful download
-                updateSelectedEvents(new Map())
-                
-                alert(`🎉 Highlight reel completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download started!`)
-                
-      } catch (downloadError: any) {
-        console.error('Download failed:', downloadError)
-                alert('Clip processing completed but download failed. Please try again.')
-              }
-              
-              setIsCreatingClip(false)
-              
-            } else if (status.status === 'ERROR') {
-              clearInterval(pollInterval)
-            setIsCreatingClip(false)
-            alert('❌ Clip processing failed. Please try again.')
-            
-          } else {
-            // Still processing - show progress if available
-            if (status.progress > 0) {
-              console.log(`⏳ Processing: ${status.progress}%`)
-            }
-          }
-          
-        } catch (statusError) {
-          console.error('Error checking status:', statusError)
-          // Continue polling - don't stop on status check errors
-        }
-      }, 10000) // Check every 10 seconds
-      
-        // Stop polling after 10 minutes (timeout)
-        setTimeout(() => {
-          clearInterval(pollInterval)
-          if (isCreatingClip) {
-            setIsCreatingClip(false)
-            alert('⏰ Clip processing is taking longer than expected. Please check back later.')
-          }
-        }, 600000) // 10 minutes
         
-      } else if (result.downloadUrl) {
-        // FFmpeg - immediate download available
-        alert(`🎉 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\n💾 Starting download now!`)
-        
-        try {
-          const blob = await apiClient.downloadClip(result.downloadUrl)
-          const url = window.URL.createObjectURL(blob)
-          const link = document.createElement('a')
-          link.href = url
-          link.download = `highlight_${gameId}_${Date.now()}.mp4`
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-          window.URL.revokeObjectURL(url)
-          
-          // Clear selection after successful download
-          updateSelectedEvents(new Map())
-          
-          alert(`✅ Download completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds`)
-          
-        } catch (downloadError: any) {
-          console.error('Download failed:', downloadError)
-          alert('Clip was created but download failed. Please try again.')
-        }
-        
+        // Clear selection after successful download
+        updateSelectedEvents(new Map())
         setIsCreatingClip(false)
+        
       } else {
         // Unknown response format
         console.error('Unexpected response format:', result)
