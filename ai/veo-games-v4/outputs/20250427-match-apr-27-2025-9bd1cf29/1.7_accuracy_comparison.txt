@@ -1,0 +1,107 @@
+# AI-Powered Accuracy Comparison (V3)
+# Match: 20250427-match-apr-27-2025-9bd1cf29
+# Teams: Dalkey vs Corduff
+# Generated: 2025-08-21T12:44:40.882331
+# Model: gemini-2.5-pro
+
+Excellent. Here is my expert analysis comparing our AI's results against the VEO ground truth data for the Dalkey vs. Corduff match.
+
+---
+
+## GOALS COMPARISON
+
+**VEO Ground Truth**:
+*   **Goal 1:** 36:29
+*   **Goal 2:** 84:56
+
+**Our AI Detected**:
+*   Goal 1: 06:08 (Dalkey)
+*   Goal 2: 13:34 (Corduff)
+*   Goal 3: ~19:30 (Corduff)
+*   Goal 4: 24:30 (Dalkey)
+*   **Goal 5: 36:43 (Corduff)**
+*   Goal 6: 41:43 (Corduff)
+*   Goal 7: 64:56 (Dalkey)
+*   Goal 8: ~76:45 (Corduff)
+*   Goal 9: ~80:30 (Corduff)
+*   Goal 10: 82:35 (Corduff)
+*   **Goal 11: 85:10 (Corduff)**
+
+**Matches**:
+*   AI Goal at **36:43** successfully matches VEO Goal at **36:29** (14-second difference, within tolerance).
+*   AI Goal at **85:10** successfully matches VEO Goal at **84:56** (14-second difference, within tolerance).
+
+**False Positives**:
+The AI incorrectly identified **9 goals** that did not occur according to the ground truth data. These are:
+*   06:08 (Dalkey)
+*   13:34 (Corduff)
+*   ~19:30 (Corduff)
+*   24:30 (Dalkey)
+*   41:43 (Corduff)
+*   64:56 (Dalkey)
+*   ~76:45 (Corduff)
+*   ~80:30 (Corduff)
+*   82:35 (Corduff)
+
+**False Negatives**:
+The AI successfully detected both ground truth goals. There are **0 false negatives**.
+
+**Team Attribution**:
+For the 2 correctly identified goals, the AI attributed both to Corduff. The VEO ground truth does not contain team information, so this cannot be externally verified. However, assuming the AI's internal logic is consistent, its attribution for the *true positive* events is 100% correct based on its own analysis.
+
+---
+
+## SHOTS COMPARISON
+
+**VEO Ground Truth**:
+There were **29** events logged as "Shot on goal".
+
+**Our AI Detected**:
+The AI identified **25** "Validated Shots" with specific outcomes (missed, saved, blocked).
+
+**Assessment**:
+The analysis shows a significant discrepancy between AI detections and ground truth.
+*   **True Positives:** The AI correctly identified **12** of the 29 ground truth shots within the 30-second tolerance window.
+*   **False Positives:** The AI hallucinated **13** shots that were not present in the VEO data.
+*   **False Negatives:** The AI missed **17** of the 29 actual shots on goal.
+
+While the AI provides valuable context (e.g., saved, blocked, missed) which is missing from VEO, its fundamental event detection accuracy for shots is low.
+
+---
+
+## ACCURACY METRICS
+
+**Goals - Precision**: **18.2%** (2 correct goals / 11 total detected goals)
+**Goals - Recall**: **100%** (2 correct goals / 2 total actual goals)
+**Goals - Team Attribution**: **100%** (2 of 2 matched goals correctly attributed, based on AI's own validated logic)
+
+**Shots - Precision**: **48.0%** (12 correct shots / 25 total detected shots)
+**Shots - Recall**: **41.4%** (12 correct shots / 29 total actual shots)
+
+---
+
+## KEY INSIGHTS
+
+### What our AI does well
+1.  **Perfect Goal Recall**: The AI's most significant strength is its ability to find every real goal. This is a critical success, as missing a goal is the most severe error in match analysis.
+2.  **Semantic Enrichment**: The AI adds crucial context absent from the raw VEO data, such as identifying the scoring team, the type of goal (penalty, free kick), and the outcome of shots (saved, blocked).
+3.  **Intelligent Validation Logic**: The methodology of using "kick-offs from the center circle" to validate a preceding goal is sound and demonstrates a sophisticated understanding of football rules.
+
+### What needs improvement
+1.  **Extreme Goal Hallucination (Low Precision)**: The primary issue is an unacceptable rate of false positives for goals. The model is over-triggering, creating a narrative of a much higher-scoring game than actually occurred. This completely undermines the final score analysis.
+2.  **Poor Shot Detection**: Both precision and recall for shots are below 50%. The model misses more shots than it finds and frequently invents shots that didn't happen. This suggests the underlying event detection model needs significant tuning.
+3.  **Over-Confidence in Ambiguous Evidence**: The AI appears to validate goals based on flimsy evidence, such as a fleeting mention of "goal" in a clip description, without strictly enforcing its own validation rules (e.g., requiring a clear kick-off).
+
+### Specific recommendations for better accuracy
+1.  **Implement a Stricter Goal Confidence Score**: Do not validate a goal unless there is high-confidence evidence of *both* a celebration *and* a subsequent kick-off. A single piece of evidence should result in a "low confidence" flag, not a validated event.
+2.  **Refine the Base Event Detection Model**: Before the validation layer, the core model identifying potential shots and goals needs to be improved to reduce the sheer number of false candidates the validation AI must sift through.
+3.  **Enforce Chronological Rules More Rigorously**: The AI's self-described "Rule 2" (no two goals without a restart) is excellent but was not applied consistently, as shown in the rejected claims. This logic needs to be hard-coded and strictly enforced to eliminate impossible back-to-back goal scenarios.
+
+---
+
+## FINAL SCORE ASSESSMENT
+
+*   **Actual Events**: The VEO ground truth confirms the match had **2 goals**.
+*   **AI Detected Score**: The AI concluded the final score was **Dalkey 3 - 8 Corduff** (11 total goals).
+
+The AI's final score is incorrect due to a massive over-detection of goals (9 false positives). While it correctly identified that 2 goals were scored, it hallucinated 9 others, rendering its final score and match summary unreliable.

@@ -1,0 +1,1101 @@
+{
+  "events": [
+    {
+      "type": "kick_off",
+      "timestamp": 60,
+      "team": "white",
+      "description": "Dalkey kicks off"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 285,
+      "team": "white",
+      "description": "Attacking free kick, wide"
+    },
+    {
+      "type": "corner",
+      "timestamp": 315,
+      "team": "white",
+      "description": "Corner kick, header towards goal"
+    },
+    {
+      "type": "save",
+      "timestamp": 357,
+      "team": "red",
+      "description": "Goalkeeper catches long shot"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 375,
+      "team": "white",
+      "description": "Dalkey kicks off"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 435,
+      "team": "white",
+      "description": "Dalkey starts with possession"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 525,
+      "team": "white",
+      "description": "Dalkey takes the kickoff"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 540,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 612,
+      "team": "red",
+      "description": "Goalkeeper kicks towards midfield"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 630,
+      "team": "white",
+      "description": "Throw-in, intercepted by Corduff"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 690,
+      "team": "white",
+      "description": "Free kick from own half, long ball"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 705,
+      "team": "white",
+      "description": "White team takes throw-in"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 720,
+      "team": "red",
+      "description": "Corduff takes a throw-in"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 735,
+      "team": "white",
+      "description": "Throw-in for Dalkey after tackle"
+    },
+    {
+      "type": "shot",
+      "timestamp": 746,
+      "team": "white",
+      "description": "Shot on goal in penalty area"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 900,
+      "team": "white",
+      "description": "Dalkey initiates play"
+    },
+    {
+      "type": "corner",
+      "timestamp": 930,
+      "team": "white",
+      "description": "Corner kick from the right"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 945,
+      "team": "white",
+      "description": "Free kick, cleared by Corduff"
+    },
+    {
+      "type": "foul",
+      "timestamp": 975,
+      "team": "white",
+      "description": "Foul on Dalkey, free kick for Corduff"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 979,
+      "team": "red",
+      "description": "Free kick awarded after foul"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 990,
+      "team": "red",
+      "description": "Throw-in, intercepted by Dalkey"
+    },
+    {
+      "type": "corner",
+      "timestamp": 1035,
+      "team": "white",
+      "description": "Corner kick, scramble in the box"
+    },
+    {
+      "type": "save",
+      "timestamp": 1038,
+      "team": "red",
+      "description": "Red goalkeeper saves a shot"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1050,
+      "team": "red",
+      "description": "Goal kick, building from back"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1065,
+      "team": "red",
+      "description": "Red player fouls Dalkey attacker"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1076,
+      "team": "white",
+      "description": "Free kick awarded to Dalkey"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1080,
+      "team": "red",
+      "description": "Free kick taken by Corduff"
+    },
+    {
+      "type": "kick_in",
+      "timestamp": 1095,
+      "team": "red",
+      "description": "Kick-in, headed clear by Dalkey"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1104,
+      "team": "white",
+      "description": "Shot on goal after counter-attack"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1125,
+      "team": "white",
+      "description": "Goal kick taken"
+    },
+    {
+      "type": "corner",
+      "timestamp": 1185,
+      "team": "red",
+      "description": "Corner kick, cleared by Dalkey"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1187,
+      "team": "red",
+      "description": "Shot on goal from corner"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1320,
+      "team": "white",
+      "description": "Throw-in after ball out of play"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 1335,
+      "team": "red",
+      "description": "Corduff kicks off, maintains possesion"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1352,
+      "team": "white",
+      "description": "Shot on goal up the right flank"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1395,
+      "team": "red",
+      "description": "Throw-in taken by Corduff"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1425,
+      "team": "white",
+      "description": "Throw-in, possession lost"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1500,
+      "team": "red",
+      "description": "Throw-in, leading to stoppage"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1512,
+      "team": "white",
+      "description": "Free kick from own half"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1527,
+      "team": "white",
+      "description": "Shot on goal after winning ball"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1575,
+      "team": "red",
+      "description": "Corduff prepares free kick"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1580,
+      "team": "red",
+      "description": "Shot on goal, saved by keeper"
+    },
+    {
+      "type": "save",
+      "timestamp": 1594,
+      "team": "white",
+      "description": "Dalkey keeper saves shot"
+    },
+    {
+      "type": "corner",
+      "timestamp": 1605,
+      "team": "red",
+      "description": "Corner kick from right side"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1611,
+      "team": "red",
+      "description": "Shot from corner, blocked"
+    },
+    {
+      "type": "blocked_shot",
+      "timestamp": 1627,
+      "team": "white",
+      "description": "Corduff shot blocked"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1635,
+      "team": "white",
+      "description": "Free kick taken"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 1665,
+      "team": "white",
+      "description": "Dalkey kicks off"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1680,
+      "team": "red",
+      "description": "Throw-in after ball out"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1695,
+      "team": "white",
+      "description": "Free kick into penalty area"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1710,
+      "team": "white",
+      "description": "Free kick from attack"
+    },
+    {
+      "type": "corner",
+      "timestamp": 1725,
+      "team": "red",
+      "description": "Corner kick, shot goes over"
+    },
+    {
+      "type": "corner",
+      "timestamp": 1740,
+      "team": "white",
+      "description": "Corner kick, cleared by Corduff"
+    },
+    {
+      "type": "set_piece",
+      "timestamp": 1755,
+      "team": "white",
+      "description": "Ball delivered into box"
+    },
+    {
+      "type": "shot",
+      "timestamp": 1772,
+      "team": "white",
+      "description": "Shot on goal after set piece"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1800,
+      "team": "white",
+      "description": "Long goal kick taken"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1815,
+      "team": "red",
+      "description": "Red player foul, free kick"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1821,
+      "team": "white",
+      "description": "Free kick awarded"
+    },
+    {
+      "type": "foul",
+      "timestamp": 1845,
+      "team": "white",
+      "description": "Foul by Dalkey, free kick"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1847,
+      "team": "red",
+      "description": "Free kick awarded after foul"
+    },
+    {
+      "type": "save",
+      "timestamp": 1860,
+      "team": "red",
+      "description": "Goalkeeper collects long ball"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1875,
+      "team": "white",
+      "description": "Goal kick from penalty area"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1920,
+      "team": "white",
+      "description": "Throw-in, headed clear"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1935,
+      "team": "white",
+      "description": "Throw-in after winning ball"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1950,
+      "team": "red",
+      "description": "Goal kick taken"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 1965,
+      "team": "white",
+      "description": "Dalkey plays from the back"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 1980,
+      "team": "white",
+      "description": "Throw-in to restart play"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 1995,
+      "team": "white",
+      "description": "Free kick from own half"
+    },
+    {
+      "type": "kick",
+      "timestamp": 2070,
+      "team": "white",
+      "description": "Long kick from own half"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2092,
+      "team": "red",
+      "description": "Shot on goal, counter-attack"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 2130,
+      "team": "red",
+      "description": "Corduff gains possession"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2187,
+      "team": "red",
+      "description": "Shot from free kick"
+    },
+    {
+      "type": "goal",
+      "timestamp": 2189,
+      "team": "red",
+      "description": "Direct free kick results in goal"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 2205,
+      "team": "white",
+      "description": "Kick-off from Dalkey"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 2220,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2230,
+      "team": "white",
+      "description": "Shot inside penalty area"
+    },
+    {
+      "type": "save",
+      "timestamp": 2244,
+      "team": "red",
+      "description": "Red team's goalkeeper saves"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2250,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 2265,
+      "team": "red",
+      "description": "Goal kick taken, ball long"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 2355,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "shot",
+      "timestamp": 2426,
+      "team": "white",
+      "description": "Shot from midfield"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 2475,
+      "team": "white",
+      "description": "Dalkey prepares kickoff"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 2505,
+      "team": "red",
+      "description": "Corduff takes goal kick"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2520,
+      "team": "red",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2535,
+      "team": "red",
+      "description": "Attacking throw-in"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2580,
+      "team": "white",
+      "description": "Free kick from right wing"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2610,
+      "team": "red",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2625,
+      "team": "white",
+      "description": "Dalkey prepares throw-in"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 2640,
+      "team": "red",
+      "description": "Corduff takes throw-in"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 2655,
+      "team": "white",
+      "description": "Free kick from center"
+    },
+    {
+      "type": "save",
+      "timestamp": 2685,
+      "team": "red",
+      "description": "Red team's goalkeeper saves"
+    },
+    {
+      "type": "save",
+      "timestamp": 2692,
+      "team": "red",
+      "description": "Red team's goalkeeper saves"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3045,
+      "team": "white",
+      "description": "Dalkey restarts play"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3150,
+      "team": "white",
+      "description": "Dalkey takes kick-off"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3165,
+      "team": "white",
+      "description": "Dalkey kicks off"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3195,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3204,
+      "team": "red",
+      "description": "Corduff takes throw-in"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3210,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3240,
+      "team": "red",
+      "description": "Indirect free kick"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3285,
+      "team": "white",
+      "description": "Dalkey takes throw-in"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3288,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3314,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "save",
+      "timestamp": 3350,
+      "team": "red",
+      "description": "Goalkeeper collects long pass"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3360,
+      "team": "red",
+      "description": "Attacking free kick"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3375,
+      "team": "red",
+      "description": "Free kick from own half"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3390,
+      "team": "red",
+      "description": "Throw-in after long pass"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3405,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3460,
+      "team": "white",
+      "description": "Shot following long pass"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3495,
+      "team": "white",
+      "description": "Throw-in, intercepted"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3525,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3540,
+      "team": "white",
+      "description": "Free kick from attack"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 3570,
+      "team": "white",
+      "description": "Goal kick taken"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 3585,
+      "team": "white",
+      "description": "Free kick, crossed into box"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3618,
+      "team": "red",
+      "description": "Shot blocked by defender"
+    },
+    {
+      "type": "blocked_shot",
+      "timestamp": 3609,
+      "team": "white",
+      "description": "Corduff shot blocked"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3660,
+      "team": "red",
+      "description": "Throw-in after ball out"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3675,
+      "team": "red",
+      "description": "Throw-in on the left"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3765,
+      "team": "white",
+      "description": "Dalkey throw-in"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3810,
+      "team": "red",
+      "description": "Corduff takes the kick-off"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 3825,
+      "team": "red",
+      "description": "Goal kick taken"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 3870,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3915,
+      "team": "white",
+      "description": "Dalkey kicks off"
+    },
+    {
+      "type": "foul",
+      "timestamp": 3930,
+      "team": "white",
+      "description": "Foul committed by Dalkey"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 3945,
+      "team": "red",
+      "description": "Corduff restarts play"
+    },
+    {
+      "type": "shot",
+      "timestamp": 3994,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4038,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "injury",
+      "timestamp": 4065,
+      "team": "red",
+      "description": "Injury to Corduff player"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4080,
+      "team": "white",
+      "description": "Referee organizes players"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4095,
+      "team": "white",
+      "description": "Indirect free kick"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 4154,
+      "team": "white",
+      "description": "Goal kick taken"
+    },
+    {
+      "type": "foul",
+      "timestamp": 4155,
+      "team": "red",
+      "description": "Foul committed"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4170,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 4215,
+      "team": "red",
+      "description": "Goal kick taken, ball long"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4230,
+      "team": "red",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4235,
+      "team": "white",
+      "description": "Shot on goal, intercepting pass"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4245,
+      "team": "white",
+      "description": "Result of cleared cross"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 4260,
+      "team": "red",
+      "description": "Goal kick taken"
+    },
+    {
+      "type": "save",
+      "timestamp": 4290,
+      "team": "white",
+      "description": "Dalkey keeper saves"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4305,
+      "team": "red",
+      "description": "Attacking free kick"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4320,
+      "team": "white",
+      "description": "Corner kick, cleared"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4331,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4350,
+      "team": "red",
+      "description": "Free kick taken"
+    },
+    {
+      "type": "save",
+      "timestamp": 4353,
+      "team": "white",
+      "description": "Dalkey keeper saves"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4380,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4410,
+      "team": "red",
+      "description": "Attack from corner"
+    },
+    {
+      "type": "corner",
+      "timestamp": 4425,
+      "team": "red",
+      "description": "Corner kick taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4459,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 4485,
+      "team": "red",
+      "description": "Corduff prepares goal kick"
+    },
+    {
+      "type": "goal_kick",
+      "timestamp": 4500,
+      "team": "red",
+      "description": "Goal kick taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4590,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 4620,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4695,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4710,
+      "team": "white",
+      "description": "Free kick taken"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4725,
+      "team": "red",
+      "description": "Free kick awarded"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4740,
+      "team": "red",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "free_kick",
+      "timestamp": 4755,
+      "team": "white",
+      "description": "Free kick taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4756,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "save",
+      "timestamp": 4771,
+      "team": "white",
+      "description": "Dalkey keeper saves"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4798,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 4830,
+      "team": "white",
+      "description": "Dalkey prepares kickoff"
+    },
+    {
+      "type": "blocked_shot",
+      "timestamp": 4851,
+      "team": "white",
+      "description": "Corduff shot blocked"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4870,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "save",
+      "timestamp": 4885,
+      "team": "white",
+      "description": "Dalkey saves long ball"
+    },
+    {
+      "type": "kick",
+      "timestamp": 4890,
+      "team": "red",
+      "description": "Corduff initiates play"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4905,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "shot",
+      "timestamp": 4933,
+      "team": "white",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "blocked_shot",
+      "timestamp": 4950,
+      "team": "white",
+      "description": "Corduff shot blocked"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 4995,
+      "team": "white",
+      "description": "Ball goes out of play"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 5010,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5040,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5095,
+      "team": "red",
+      "description": "Shot from through pass"
+    },
+    {
+      "type": "goal",
+      "timestamp": 5096,
+      "team": "red",
+      "description": "Goal from through pass"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5115,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5130,
+      "team": "white",
+      "description": "Dalkey kicks off"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5145,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5160,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5175,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 5235,
+      "team": "white",
+      "description": "Dalkey takes a throw-in"
+    },
+    {
+      "type": "kick_off",
+      "timestamp": 5250,
+      "team": "red",
+      "description": "Corduff kicks off"
+    },
+    {
+      "type": "throw_in",
+      "timestamp": 5265,
+      "team": "white",
+      "description": "Throw-in taken"
+    },
+    {
+      "type": "foul",
+      "timestamp": 5295,
+      "team": "white",
+      "description": "Foul by Corduff"
+    },
+    {
+      "type": "shot",
+      "timestamp": 5322,
+      "team": "red",
+      "description": "Shot on goal"
+    },
+    {
+      "type": "stoppage",
+      "timestamp": 5340,
+      "description": "Match stopped"
+    }
+  ]
+}

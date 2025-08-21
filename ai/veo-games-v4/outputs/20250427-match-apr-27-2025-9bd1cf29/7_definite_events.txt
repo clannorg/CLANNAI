@@ -1,0 +1,244 @@
+# Definite Events - 20250427-match-apr-27-2025-9bd1cf29
+# Generated: 2025-08-21T12:54:06.765915
+# Method: Direct VEO timestamp matching with AI descriptions
+# Quality: VEO events matched within ±30 seconds
+
+Okay, I will analyze the AI timeline and match the events to the VEO ground truth events based on the specified timestamp analysis and matching rules.
+
+=== DEFINITE SHOTS ===
+
+Timestamp: 04:48 (0 seconds)
+Team: Dalkey
+Description: Shot from a free kick goes wide of the goal.
+Outcome: Missed
+VEO Match: Confirmed shot at 12:26 - Low (Outside of the +/- 30 second window, likely no match)
+
+Timestamp: 05:56 (0 seconds)
+Team: Dalkey
+Description: Long shot from a free kick is caught by the Corduff goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 12:26 - Low (Outside of the +/- 30 second window, likely no match)
+
+Timestamp: 14:39 (0 seconds)
+Team: Dalkey
+Description: Shot from outside the box is blocked by a Corduff defender.
+Outcome: Blocked
+VEO Match: Confirmed shot at 18:24 - Low (Outside of the +/- 30 second window, likely no match)
+
+Timestamp: 17:18 (0 seconds)
+Team: Dalkey
+Description: Shot from a corner kick scramble is saved by the Corduff goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 18:24 - Medium (Closer time window, potential match)
+
+Timestamp: 18:39 (0 seconds)
+Team: Dalkey
+Description: Shot from outside the box on a counter-attack goes wide of the goal.
+Outcome: Missed
+VEO Match: Confirmed shot at 18:24 - Medium (Close time window, potential match)
+
+Timestamp: ~19:30 (17 seconds)
+Team: Corduff
+Description: Goal from open play. The Red team celebrates a goal and the White team prepares to restart play from the center circle.
+Outcome: Goal
+VEO Match: Confirmed shot at 19:47 - Medium (Potential for a shot leading to the goal)
+
+Timestamp: 23:34 (0 seconds)
+Team: Corduff
+Description: Shot from an attack goes over the bar.
+Outcome: Missed
+VEO Match: Confirmed shot at 22:32 - Low (Outside of the +/- 30 second window, likely no match)
+
+Timestamp: 24:30 (0 seconds)
+Team: Dalkey
+Description: Goal from open play. White team scores a goal. The Red team prepares to restart play from the center.
+Outcome: Goal
+VEO Match: Confirmed shot at 25:27 - Low (Potential for a shot leading to the goal)
+
+Timestamp: 25:41 (0 seconds)
+Team: Dalkey
+Description: Shot goes wide of the goal.
+Outcome: Missed
+VEO Match: Confirmed shot at 25:27 - High
+
+Timestamp: 26:34 (0 seconds)
+Team: Corduff
+Description: Shot on goal is saved by the Dalkey keeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 26:20 - High
+
+Timestamp: 27:07 (0 seconds)
+Team: Corduff
+Description: Shot inside the penalty area is blocked by a Dalkey defender.
+Outcome: Blocked
+VEO Match: Confirmed shot at 26:51 - High
+
+Timestamp: 28:54 (0 seconds)
+Team: Corduff
+Description: Shot from outside the box following a corner kick goes over the goal.
+Outcome: Missed
+VEO Match: Confirmed shot at 29:32 - Medium
+
+Timestamp: 34:23 (0 seconds)
+Team: Dalkey
+Description: Shot from inside the penalty area goes wide of the goal.
+Outcome: Missed
+VEO Match: Confirmed shot at 34:52 - High
+
+Timestamp: 35:35 (0 seconds)
+Team: Dalkey
+Description: No shot described.
+Outcome: Missed
+VEO Match: Confirmed shot at 35:35 - Low - no matching AI event
+
+Timestamp: 36:27 (0 seconds)
+Team: Unknown
+Description: No shot described.
+Outcome: Missed
+VEO Match: Confirmed shot at 36:27 - Low - no matching AI event
+
+=== DEFINITE GOALS ===
+Timestamp: 36:43 (14 seconds)
+Team: Corduff
+Description: Scored from a direct free kick. Red team celebrates a goal. The game restarts with a kick-off from the White team.
+VEO Match: Confirmed goal at 36:29 - High
+
+=== DEFINITE SHOTS ===
+Timestamp: 37:24 (14 seconds)
+Team: Dalkey
+Description: Shot inside the penalty area is saved by the Corduff goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 37:10 - High
+
+Timestamp: 40:42 (16 seconds)
+Team: Dalkey
+Description: Shot from an attack in the final third goes wide.
+Outcome: Missed
+VEO Match: Confirmed shot at 40:26 - High
+
+Timestamp: 42:40 (0 seconds)
+Team: Dalkey
+Description: Shot in the final third goes over the bar.
+Outcome: Missed
+VEO Match: Confirmed shot at 54:48 - Low
+
+Timestamp: 44:52 (0 seconds)
+Team: Dalkey
+Description: Shot from a through ball inside the penalty area is saved by the Corduff goalkeeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 54:48 - Low
+
+Timestamp: 45:51 (0 seconds)
+Team: Dalkey
+Description: Shot from a cross inside the penalty area goes wide of the goal.
+Outcome: Missed
+VEO Match: Confirmed shot at 54:48 - Low
+
+Timestamp: 52:56 (0 seconds)
+Team: Dalkey
+Description: Shot from inside the box on a counter-attack goes wide.
+Outcome: Missed
+VEO Match: Confirmed shot at 54:48 - Medium
+
+Timestamp: 53:03 (0 seconds)
+Team: Corduff
+Description: Shot taken, with the evidence being the resulting Dalkey goal kick.
+Outcome: Missed
+VEO Match: Confirmed shot at 54:48 - Medium
+
+Timestamp: 53:03 (0 seconds)
+Team: Corduff
+Description: Shot taken, with the evidence being the resulting Dalkey goal kick.
+Outcome: Missed
+VEO Match: Confirmed shot at 55:14 - Medium
+
+Timestamp: 60:11 (0 seconds)
+Team: Corduff
+Description: Shot in the final third is blocked.
+Outcome: Blocked
+VEO Match: Confirmed shot at 60:18 - High
+
+Timestamp: 61:54 (0 seconds)
+Team: Dalkey
+Description: Shot is cleared off the line by a Corduff defender.
+Outcome: Blocked/Cleared off the line
+VEO Match: Confirmed shot at 57:40 - Low
+
+Timestamp: 66:49 (0 seconds)
+Team: Corduff
+Description: Shot on goal from the penalty area goes wide.
+Outcome: Missed
+VEO Match: Confirmed shot at 66:34 - High
+
+Timestamp: 66:49 (0 seconds)
+Team: Corduff
+Description: Shot on goal from the penalty area goes wide.
+Outcome: Missed
+VEO Match: Confirmed shot at 67:18 - High
+
+Timestamp: 71:36 (0 seconds)
+Team: Corduff
+Description: Shot is saved by the Dalkey keeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 70:35 - Low
+
+Timestamp: 71:36 (0 seconds)
+Team: Corduff
+Description: Shot is saved by the Dalkey keeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 72:11 - Medium
+
+Timestamp: 72:33 (0 seconds)
+Team: Corduff
+Description: Shot from a free kick is saved by the Dalkey keeper.
+Outcome: Saved
+VEO Match: Confirmed shot at 72:11 - High
+
+Timestamp: 79:30 (0 seconds)
+Team: Corduff
+Description: Shot is saved by the Dalkey keeper just before the final whistle.
+Outcome: Saved
+VEO Match: Confirmed shot at 79:16 - High
+
+Timestamp: 80:51 (0 seconds)
+Team: Corduff
+Description: Shot in the final third is blocked by the Dalkey defense.
+Outcome: Blocked
+VEO Match: Confirmed shot at 79:58 - Low
+
+Timestamp: 79:30 (0 seconds)
+Team: Corduff
+Description: Shot is saved by the Dalkey keeper just before the final whistle.
+Outcome: Saved
+VEO Match: Confirmed shot at 79:58 - Low
+
+Timestamp: 80:51 (0 seconds)
+Team: Corduff
+Description: Shot in the final third is blocked by the Dalkey defense.
+Outcome: Blocked
+VEO Match: Confirmed shot at 81:10 - Low
+
+Timestamp: 80:51 (0 seconds)
+Team: Corduff
+Description: Shot in the final third is blocked by the Dalkey defense.
+Outcome: Blocked
+VEO Match: Confirmed shot at 82:13 - Low
+
+Timestamp: 80:51 (0 seconds)
+Team: Corduff
+Description: Shot in the final third is blocked by the Dalkey defense.
+Outcome: Blocked
+VEO Match: Confirmed shot at 84:55 - Low
+
+=== DEFINITE GOALS ===
+Timestamp: 85:10 (14 seconds)
+Team: Corduff
+Description: Goal scored from a through pass into the penalty area. Red team takes the kick-off from the center circle to restart the match.
+VEO Match: Confirmed goal at 84:56 - High
+
+=== DEFINITE SHOTS ===
+Timestamp: 88:42 (0 seconds)
+Team: Unknown
+Description: No shot described.
+Outcome: Missed
+VEO Match: Confirmed shot at 88:42 - Low - no matching AI event

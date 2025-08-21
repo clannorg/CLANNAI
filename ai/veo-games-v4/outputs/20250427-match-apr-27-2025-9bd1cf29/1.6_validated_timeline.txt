@@ -1,0 +1,126 @@
+# AI-Validated Timeline - 20250427-match-apr-27-2025-9bd1cf29
+# Generated: 2025-08-21T12:42:58.572466
+# Method: Gemini 2.5 Pro intelligent validation
+# Teams: Dalkey vs Corduff
+# Context: Error-correcting fallible clip descriptions
+
+Excellent. As an expert football analyst, I have meticulously reviewed the AI-generated timeline of the Dalkey vs. Corduff match. By applying strict validation rules and cross-referencing context across clips, I have separated factual events from AI hallucinations.
+
+Here is the corrected analysis of the match events.
+
+---
+
+### **VALIDATED GOALS:**
+
+1.  **Timestamp:** 06:08
+    *   **Team:** Dalkey
+    *   **Description:** Scored from a penalty kick.
+    *   **Supporting Evidence:** A clear "goal" is stated from a penalty at 06:08. Crucially, this is followed by multiple descriptions of a kick-off from the center circle at 06:15, 07:00, and 07:15, confirming the restart of play.
+    *   **Confidence Level:** High
+
+2.  **Timestamp:** 13:34
+    *   **Team:** Corduff
+    *   **Description:** Scored from a penalty kick.
+    *   **Supporting Evidence:** A goal is claimed from a penalty at 13:34. The subsequent clip at 13:45 describes Dalkey starting with possession in the center of the field, which is a clear description of a kick-off.
+    *   **Confidence Level:** High
+
+3.  **Timestamp:** ~19:30
+    *   **Team:** Corduff
+    *   **Description:** Goal from open play.
+    *   **Supporting Evidence:** The clip at 19:30 provides two key pieces of evidence: "The Red team celebrates a goal" and "the White team prepares to restart play from the center circle." A kick-off is also described later at 22:15. This is a very strong validation.
+    *   **Confidence Level:** High
+
+4.  **Timestamp:** 24:30
+    *   **Team:** Dalkey
+    *   **Description:** Goal from open play.
+    *   **Supporting Evidence:** The description states, "White team scores a goal. The Red team prepares to restart play from the center." This is confirmed by the clip at 25:15, which shows Dalkey taking the kick-off.
+    *   **Confidence Level:** High
+
+5.  **Timestamp:** 36:43
+    *   **Team:** Corduff
+    *   **Description:** Scored from a direct free kick.
+    *   **Supporting Evidence:** A goal is described from a free kick at 36:30. The following clip at 36:45 confirms it perfectly: "Red team celebrates a goal. The game restarts with a kick-off from the White team."
+    *   **Confidence Level:** High
+
+6.  **Timestamp:** 41:43
+    *   **Team:** Corduff
+    *   **Description:** Scored from a penalty kick.
+    *   **Supporting Evidence:** A goal is claimed from a penalty at 41:30. While there is no kick-off *after* this clip, the clip at 41:15 provides strong forward-looking evidence, stating "Red team prepares to kick off from the center circle **following a goal**." This confirms the event despite the AI's chronological confusion.
+    *   **Confidence Level:** Medium
+
+7.  **Timestamp:** 64:56
+    *   **Team:** Dalkey
+    *   **Description:** Goal from open play.
+    *   **Supporting Evidence:** A goal is claimed at 64:45. This is followed by kick-off descriptions at 65:15 ("White team kicks off") and 65:45 ("Red team restarts play with a kick-off"). This validates the goal.
+    *   **Confidence Level:** High
+
+8.  **Timestamp:** ~76:45
+    *   **Team:** Corduff
+    *   **Description:** Goal from open play.
+    *   **Supporting Evidence:** The claim "Red team scores a goal" at 76:45 is immediately validated by the next clip at 77:00: "Red team kicks off from the center circle to start the play."
+    *   **Confidence Level:** High
+
+9.  **Timestamp:** ~80:30
+    *   **Team:** Corduff
+    *   **Description:** Goal from open play.
+    *   **Supporting Evidence:** The clip at 80:30 contains both celebration and restart evidence: "Red team celebrates a goal while the White team prepares for the kickoff." This is sufficient for validation.
+    *   **Confidence Level:** High
+
+10. **Timestamp:** 82:35
+    *   **Team:** Corduff
+    *   **Description:** Scored from a rebound after an initial shot was blocked.
+    *   **Supporting Evidence:** A detailed goal description is given at 82:30. The timeline then shows a flurry of kick-offs starting from 83:45, confirming a restart occurred. The Dalkey goal claim just before it (82:15) is rejected as a duplicate, as two goals cannot occur without a restart between them.
+    *   **Confidence Level:** High
+
+11. **Timestamp:** 85:10
+    *   **Team:** Corduff
+    *   **Description:** Goal scored from a through pass into the penalty area.
+    *   **Supporting Evidence:** A goal is claimed at 85:00. The very next clip at 85:15 explicitly states: "Red team takes the kick-off from the center circle to restart the match." This is a direct validation.
+    *   **Confidence Level:** High
+
+### **VALIDATED SHOTS:**
+
+*   **04:48 (Dalkey):** Shot from a free kick goes wide of the goal. (Outcome: Missed)
+*   **05:56 (Dalkey):** Long shot from a free kick is caught by the Corduff goalkeeper. (Outcome: Saved)
+*   **14:39 (Dalkey):** Shot from outside the box is blocked by a Corduff defender. (Outcome: Blocked)
+*   **17:18 (Dalkey):** Shot from a corner kick scramble is saved by the Corduff goalkeeper. (Outcome: Saved)
+*   **18:39 (Dalkey):** Shot from outside the box on a counter-attack goes wide of the goal. (Outcome: Missed)
+*   **23:34 (Corduff):** Shot from an attack goes over the bar. (Outcome: Missed)
+*   **25:41 (Dalkey):** Shot goes wide of the goal. (Outcome: Missed)
+*   **26:34 (Corduff):** Shot on goal is saved by the Dalkey keeper. (Outcome: Saved)
+*   **27:07 (Corduff):** Shot inside the penalty area is blocked by a Dalkey defender. (Outcome: Blocked)
+*   **28:54 (Corduff):** Shot from outside the box following a corner kick goes over the goal. (Outcome: Missed)
+*   **34:23 (Dalkey):** Shot from inside the penalty area goes wide of the goal. (Outcome: Missed)
+*   **37:24 (Dalkey):** Shot inside the penalty area is saved by the Corduff goalkeeper. (Outcome: Saved)
+*   **40:42 (Dalkey):** Shot from an attack in the final third goes wide. (Outcome: Missed)
+*   **42:40 (Dalkey):** Shot in the final third goes over the bar. (Outcome: Missed)
+*   **44:52 (Dalkey):** Shot from a through ball inside the penalty area is saved by the Corduff goalkeeper. (Outcome: Saved)
+*   **45:51 (Dalkey):** Shot from a cross inside the penalty area goes wide of the goal. (Outcome: Missed)
+*   **52:56 (Dalkey):** Shot from inside the box on a counter-attack goes wide. (Outcome: Missed)
+*   **53:03 (Corduff):** Shot taken, with the evidence being the resulting Dalkey goal kick. (Outcome: Missed)
+*   **60:11 (Corduff):** Shot in the final third is blocked. (Outcome: Blocked)
+*   **61:54 (Dalkey):** Shot is cleared off the line by a Corduff defender. (Outcome: Blocked/Cleared off the line)
+*   **66:49 (Corduff):** Shot on goal from the penalty area goes wide. (Outcome: Missed)
+*   **71:36 (Corduff):** Shot is saved by the Dalkey keeper. (Outcome: Saved)
+*   **72:33 (Corduff):** Shot from a free kick is saved by the Dalkey keeper. (Outcome: Saved)
+*   **79:30 (Corduff):** Shot is saved by the Dalkey keeper just before the final whistle. (Outcome: Saved)
+*   **80:51 (Corduff):** Shot in the final third is blocked by the Dalkey defense. (Outcome: Blocked)
+
+### **REJECTED CLAIMS:**
+
+*   **31:31 Goal (Corduff):** Rejected. The primary description is of Dalkey in possession. The "goal" claim is a likely hallucination with no supporting evidence of a celebration or kick-off nearby.
+*   **35:07 Goal (Dalkey):** Rejected. No kick-off is mentioned in the following clips. A valid Corduff goal with a confirmed kick-off occurs shortly after at 36:43, making this back-to-back goal claim impossible under Rule 2.
+*   **64:21 Goal (Dalkey):** Rejected. Claimed immediately before another Dalkey goal at 64:56. The kick-offs that follow validate the second goal, not this one. This is a duplicate/hallucination.
+*   **67:30 Goal (Dalkey):** Rejected. No supporting evidence. The following clips show an injury stoppage, not a kick-off from the center circle.
+*   **72:15 Goal (Dalkey):** Rejected. No kick-off follows. The very next clip is a Corduff free kick, directly contradicting the required restart of play.
+*   **73:30 Goal (Corduff):** Rejected. Scored from a corner, but there is no subsequent kick-off described in the timeline to validate it.
+*   **74:37 Goal (Dalkey):** Rejected. The following clips describe a goal kick, not a kick-off from the center circle.
+*   **84:26 Goal (Dalkey):** Rejected. Claimed just before a valid Corduff goal at 85:10. There is no kick-off between these two events, violating Rule 2. The evidence for the Corduff goal is more direct and immediate.
+
+### **ANALYSIS SUMMARY:**
+
+The AI timeline, despite significant chronological errors and hallucinations, provided enough contextual evidence to reconstruct the key events of the match. The game was a high-scoring affair, dominated by Corduff.
+
+**Final Score: Dalkey 3 - 8 Corduff**
+
+The scoreline reflects Corduff's dominance. Dalkey's goals included one penalty. Corduff's impressive tally came from a variety of situations, including three penalties, a direct free kick, and a well-taken rebound, showcasing their clinical finishing. The AI struggled most with back-to-back events, often hallucinating a second goal where only one occurred, but its descriptions of celebrations and kick-offs were the key to accurately verifying the score.
