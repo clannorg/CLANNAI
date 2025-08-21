@@ -53,21 +53,23 @@ export default function GameHeader({
 
   return (
     <>
-      {/* Left side - Dashboard link */}
+      {/* Left side - Dashboard icon */}
       <div className="absolute top-4 left-4 z-50">
         <Link 
           href="/dashboard" 
-          className="group flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl px-4 py-2.5 text-white transition-all duration-200 border border-white/20 hover:border-white/30 shadow-lg"
+          className={`group flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-2xl text-white transition-all duration-200 border border-white/20 hover:border-white/30 shadow-xl ${
+            isMobile ? 'w-10 h-10' : 'w-12 h-12'
+          }`}
+          title="Back to Dashboard"
         >
-          <svg className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className={`transition-transform group-hover:-translate-x-0.5 ${isMobile ? 'w-4 h-4' : 'w-5 h-5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          <span className="font-medium" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>Dashboard</span>
         </Link>
       </div>
 
-      {/* Left side - Prominent Score Display */}
-      <div className="absolute top-4 left-40 z-50">
+      {/* Left side - Score Display */}
+      <div className="absolute top-4 left-20 z-50">
         <div className={`bg-black/50 backdrop-blur-lg rounded-2xl border border-white/30 shadow-xl ${
           isMobile ? 'px-4 py-2.5' : 'px-8 py-4'
         }`}>
