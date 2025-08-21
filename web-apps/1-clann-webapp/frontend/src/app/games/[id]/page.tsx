@@ -181,6 +181,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   // Event padding state for autoplay (Events tab individual timeline settings)
   const [eventPaddings, setEventPaddings] = useState<Map<number, { beforePadding: number, afterPadding: number }>>(new Map())
   
+  // Override for currentEventIndex during autoplay (immediate segment switching)
+  const [autoplayCurrentEventIndex, setAutoplayCurrentEventIndex] = useState<number | null>(null)
+  
   // Tactical analysis state
   const [tacticalData, setTacticalData] = useState<{
     tactical: Record<string, { content: string, filename: string, uploaded_at: string }>
@@ -292,8 +295,15 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   useEffect(() => {
     if (!allEvents || allEvents.length === 0) return
 
-    const currentEvent = allEvents.findIndex(event => event.timestamp > currentTime)
-    const newIndex = currentEvent === -1 ? allEvents.length - 1 : Math.max(0, currentEvent - 1)
+    // Use autoplay override if available (immediate segment switching)
+    let newIndex: number
+    if (autoplayEvents && autoplayCurrentEventIndex !== null) {
+      newIndex = autoplayCurrentEventIndex
+    } else {
+      // Normal time-based calculation for regular playback
+      const currentEvent = allEvents.findIndex(event => event.timestamp > currentTime)
+      newIndex = currentEvent === -1 ? allEvents.length - 1 : Math.max(0, currentEvent - 1)
+    }
     
     if (newIndex !== currentEventIndex) {
       setCurrentEventIndex(newIndex)
@@ -326,7 +336,14 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
     if (currentScores.red !== teamScores.red || currentScores.blue !== teamScores.blue) {
       setTeamScores(currentScores)
     }
-  }, [currentTime, game?.ai_analysis, currentEventIndex, teamScores.red, teamScores.blue, allEvents])
+  }, [currentTime, game?.ai_analysis, currentEventIndex, teamScores.red, teamScores.blue, allEvents, autoplayEvents, autoplayCurrentEventIndex])
+
+  // Clear autoplay override when autoplay is turned off
+  useEffect(() => {
+    if (!autoplayEvents) {
+      setAutoplayCurrentEventIndex(null)
+    }
+  }, [autoplayEvents])
 
   // Auto-scroll to current event in sidebar
   useEffect(() => {
@@ -343,8 +360,13 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   }, [currentEventIndex, showSidebar])
 
   const handleTimeUpdate = (time: number, dur: number) => {
-      setCurrentTime(time)
+    setCurrentTime(time)
     setDuration(dur)
+  }
+
+  const handleCurrentEventChange = (eventIndex: number) => {
+    // Immediate event index update during autoplay segment switching
+    setAutoplayCurrentEventIndex(eventIndex)
   }
 
   const handleEventClick = (event: GameEvent) => {
@@ -388,6 +410,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               onTimeUpdate={handleTimeUpdate}
               onEventClick={handleEventClick}
               onSeekToTimestamp={seekToTimestamp}
+              onCurrentEventChange={handleCurrentEventChange}
               selectedEvents={selectedEvents}
               activeTab={sidebarTab}
               autoplayEvents={autoplayEvents}

@@ -29,6 +29,7 @@ interface VideoPlayerProps {
   onTimeUpdate: (currentTime: number, duration: number) => void
   onEventClick: (event: GameEvent) => void
   onSeekToTimestamp: (timestamp: number) => void
+  onCurrentEventChange?: (eventIndex: number) => void
   // When false, hide timeline/controls overlays (used on mobile portrait)
   overlayVisible?: boolean
   // Notify parent about user interaction to reset auto-hide timers
@@ -55,6 +56,7 @@ export default function VideoPlayer({
   onTimeUpdate,
   onEventClick,
   onSeekToTimestamp,
+  onCurrentEventChange,
   overlayVisible = true,
   onUserInteract,
   selectedEvents,
@@ -210,11 +212,19 @@ export default function VideoPlayer({
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[nextIndex].start
       }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[nextIndex].id)
+      }
     } else {
       // Loop back to first clip
       setCurrentSegmentIndex(0)
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[0].start
+      }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[0].id)
       }
     }
   }, [currentSegmentIndex, previewSegments])
@@ -228,12 +238,20 @@ export default function VideoPlayer({
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[prevIndex].start
       }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[prevIndex].id)
+      }
     } else {
       // Loop to last clip
       const lastIndex = previewSegments.length - 1
       setCurrentSegmentIndex(lastIndex)
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[lastIndex].start
+      }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[lastIndex].id)
       }
     }
   }, [currentSegmentIndex, previewSegments])
@@ -394,6 +412,10 @@ export default function VideoPlayer({
             // Update current segment index
             const nextIndex = previewSegments.findIndex(seg => seg.id === nextSegment.id)
             setCurrentSegmentIndex(nextIndex)
+            // Notify parent about event change for immediate sidebar update
+            if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+              onCurrentEventChange(nextSegment.id)
+            }
           } else {
             // No more segments - stop playing
             videoRef.current.pause()
