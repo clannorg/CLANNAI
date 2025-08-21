@@ -73,6 +73,7 @@ export default function VideoPlayer({
   
   const videoRef = useRef<HTMLVideoElement>(null)
   const hlsRef = useRef<Hls | null>(null)
+  const autoplayInitializedRef = useRef(false)
   
   // Downloads preview state
   const [previewSegments, setPreviewSegments] = useState<Array<{
@@ -152,16 +153,27 @@ export default function VideoPlayer({
     }
   }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents, eventPaddings])
 
-  // Jump to first segment start when autoplay is enabled
+  // Jump to first segment start when autoplay is enabled (only once)
   useEffect(() => {
-    if (autoplayEvents && activeTab === 'events' && previewSegments.length > 0 && videoRef.current) {
-      const firstSegment = previewSegments[0]
-      videoRef.current.currentTime = firstSegment.start
-      setCurrentSegmentIndex(0)
-      // Notify parent about initial event
-      if (onCurrentEventChange) {
-        onCurrentEventChange(firstSegment.id)
+    if (autoplayEvents && activeTab === 'events') {
+      if (!autoplayInitializedRef.current && previewSegments.length > 0 && videoRef.current) {
+        const firstSegment = previewSegments[0]
+        console.log(`🚀 Autoplay enabled - jumping to first segment:`, {
+          segmentId: firstSegment.id,
+          start: firstSegment.start.toFixed(2),
+          end: firstSegment.end.toFixed(2)
+        })
+        videoRef.current.currentTime = firstSegment.start
+        setCurrentSegmentIndex(0)
+        autoplayInitializedRef.current = true
+        // Notify parent about initial event
+        if (onCurrentEventChange) {
+          onCurrentEventChange(firstSegment.id)
+        }
       }
+    } else {
+      // Reset when autoplay is turned off
+      autoplayInitializedRef.current = false
     }
   }, [autoplayEvents, activeTab, previewSegments, onCurrentEventChange])
 
@@ -434,6 +446,11 @@ export default function VideoPlayer({
         const inClipSegment = previewSegments.some(seg => 
           time >= seg.start && time <= seg.end
         )
+        
+        console.log(`📍 Segment check:`, {
+          inClipSegment,
+          segmentsContainingTime: previewSegments.filter(seg => time >= seg.start && time <= seg.end).map(seg => seg.id)
+        })
         
         if (!inClipSegment) {
           // We're in grey area - jump to next clip segment
