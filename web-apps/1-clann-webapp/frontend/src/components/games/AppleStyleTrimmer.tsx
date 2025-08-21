@@ -168,13 +168,6 @@ export default function AppleStyleTrimmer({
           <div className="w-0.5 h-4 bg-white/60 rounded-full" />
         </div>
       </div>
-
-      {/* Footer with total duration */}
-      <div className="text-center mt-2">
-        <span className="text-xs text-gray-400">
-          {beforePadding + afterPadding}s total clip
-        </span>
-      </div>
     </div>
   );
 }
