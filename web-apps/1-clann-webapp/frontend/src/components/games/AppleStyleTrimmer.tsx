@@ -5,6 +5,7 @@ interface AppleStyleTrimmerProps {
   beforePadding: number;
   afterPadding: number;
   maxPadding?: number;
+  currentTime?: number;
   onPaddingChange: (before: number, after: number) => void;
   className?: string;
 }
@@ -14,6 +15,7 @@ export default function AppleStyleTrimmer({
   beforePadding,
   afterPadding,
   maxPadding = 15,
+  currentTime = 0,
   onPaddingChange,
   className = ''
 }: AppleStyleTrimmerProps) {
@@ -31,6 +33,12 @@ export default function AppleStyleTrimmer({
   const startPosition = eventPosition - (beforePadding * pixelsPerSecond);
   const endPosition = eventPosition + (afterPadding * pixelsPerSecond);
   const selectedWidth = endPosition - startPosition;
+  
+  // Calculate playhead position (green marker showing current time)
+  const timelineStartTime = eventTimestamp - maxPadding;
+  const playheadOffset = currentTime - timelineStartTime;
+  const playheadPosition = playheadOffset * pixelsPerSecond;
+  const showPlayhead = playheadOffset >= 0 && playheadOffset <= totalDuration;
 
   // Format time helper
   const formatTime = (seconds: number) => {
@@ -146,6 +154,14 @@ export default function AppleStyleTrimmer({
           className="absolute top-1 bottom-1 w-0.5 bg-white z-10 pointer-events-none"
           style={{ left: `${eventPosition}px` }}
         />
+
+        {/* Playhead marker (current time) */}
+        {showPlayhead && (
+          <div
+            className="absolute top-0 bottom-0 w-0.5 bg-green-500 z-20 pointer-events-none transition-all duration-100"
+            style={{ left: `${playheadPosition}px` }}
+          />
+        )}
 
         {/* Left handle */}
         <div
