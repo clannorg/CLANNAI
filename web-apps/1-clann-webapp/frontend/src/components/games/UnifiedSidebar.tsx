@@ -214,6 +214,21 @@ export default function UnifiedSidebar({
   const [isDownloadMode, setIsDownloadMode] = useState(false)
   const [selectedDownloadEvents, setSelectedDownloadEvents] = useState<Set<number>>(new Set())
   
+  // Individual event padding state (for timeline trimmers)
+  const [eventPaddings, setEventPaddings] = useState<Map<number, { beforePadding: number, afterPadding: number }>>(new Map())
+  
+  // Helper to get padding for an event (with defaults)
+  const getEventPadding = (eventIndex: number) => {
+    return eventPaddings.get(eventIndex) || { beforePadding: 5, afterPadding: 3 }
+  }
+  
+  // Helper to update padding for an event timeline
+  const updateEventTimelinePadding = (eventIndex: number, beforePadding: number, afterPadding: number) => {
+    const newPaddings = new Map(eventPaddings)
+    newPaddings.set(eventIndex, { beforePadding, afterPadding })
+    setEventPaddings(newPaddings)
+  }
+  
   // Wrapper to update selectedEvents and notify parent
   const updateSelectedEvents = (newSelectedEvents: Map<number, {
     beforePadding: number,
@@ -246,13 +261,16 @@ export default function UnifiedSidebar({
     
     try {
       // Convert selected events to the format expected by the API
-      const selectedEventData = Array.from(selectedDownloadEvents).map(index => ({
-        timestamp: allEvents[index].timestamp,
-        type: allEvents[index].type,
-        description: allEvents[index].description,
-        beforePadding: 5, // Default padding
-        afterPadding: 3   // Default padding
-      }))
+      const selectedEventData = Array.from(selectedDownloadEvents).map(index => {
+        const padding = getEventPadding(index)
+        return {
+          timestamp: allEvents[index].timestamp,
+          type: allEvents[index].type,
+          description: allEvents[index].description,
+          beforePadding: padding.beforePadding,
+          afterPadding: padding.afterPadding
+        }
+      })
       
       console.log('🎬 Downloading selected events:', selectedEventData)
       
@@ -1251,6 +1269,20 @@ export default function UnifiedSidebar({
                     {event.description && (
                       <div className="text-xs text-gray-400 mt-2 leading-relaxed">{transformDescription(event.description)}</div>
                     )}
+                    
+                    {/* Apple-style Timeline Trimmer */}
+                    <div className="mt-3" onClick={(e) => e.stopPropagation()}>
+                      <AppleStyleTrimmer
+                        eventTimestamp={event.timestamp}
+                        beforePadding={getEventPadding(originalIndex).beforePadding}
+                        afterPadding={getEventPadding(originalIndex).afterPadding}
+                        maxPadding={15}
+                        onPaddingChange={(before, after) => {
+                          updateEventTimelinePadding(originalIndex, before, after)
+                        }}
+                        className=""
+                      />
+                    </div>
                     
                     {/* Player */}
                     {event.player && (
