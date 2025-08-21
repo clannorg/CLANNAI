@@ -370,7 +370,18 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   }
 
   const handleEventClick = (event: GameEvent) => {
-    seekToTimestamp(event.timestamp)
+    // Find the event index to get its padding settings
+    const eventIndex = allEvents.findIndex(e => e.timestamp === event.timestamp && e.type === event.type)
+    
+    if (autoplayEvents && eventIndex !== -1) {
+      // In autoplay mode, jump to the padded segment start
+      const padding = eventPaddings?.get(eventIndex) || { beforePadding: 5, afterPadding: 3 }
+      const segmentStart = Math.max(0, event.timestamp - padding.beforePadding)
+      seekToTimestamp(segmentStart)
+    } else {
+      // In normal mode, jump to exact event timestamp
+      seekToTimestamp(event.timestamp)
+    }
   }
 
   return (

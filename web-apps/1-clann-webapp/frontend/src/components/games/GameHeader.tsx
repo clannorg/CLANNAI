@@ -66,47 +66,44 @@ export default function GameHeader({
         </Link>
       </div>
 
-      {/* Center - Prominent Score Display */}
-      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-50">
+      {/* Left side - Prominent Score Display */}
+      <div className="absolute top-4 left-40 z-50">
         <div className={`bg-black/50 backdrop-blur-lg rounded-2xl border border-white/30 shadow-xl ${
           isMobile ? 'px-4 py-2.5' : 'px-8 py-4'
         }`}>
           <div className={`flex items-center ${isMobile ? 'space-x-2' : 'space-x-4'}`}>
             <div className="flex items-center space-x-2" title={`${redTeam.name} (${redTeam.jersey_color})`}>
-              <div className={`rounded-full bg-${getIndicatorColor(redTeamColorClass)} ${isMobile ? 'w-2 h-2' : 'w-3 h-3'}`}></div>
-              <span className={`font-bold text-white ${isMobile ? 'text-base' : 'text-lg'}`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
+              <span className={`font-medium text-white/90 ${isMobile ? 'text-sm' : 'text-base'}`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
                 {isMobile ? redTeam.name.split(' ')[0].toUpperCase() : redTeam.name.toUpperCase()}
               </span>
               <span className={`font-bold text-white ${isMobile ? 'text-xl' : 'text-2xl'}`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
                 {teamScores.red}
               </span>
+              <div className={`rounded-full bg-${getIndicatorColor(redTeamColorClass)} ${isMobile ? 'w-2 h-2' : 'w-3 h-3'}`}></div>
             </div>
             
             <span className={`text-white/80 font-bold ${isMobile ? 'text-lg' : 'text-xl'}`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>-</span>
             
             <div className="flex items-center space-x-2" title={`${blueTeam.name} (${blueTeam.jersey_color})`}>
+              <div className={`rounded-full bg-${getIndicatorColor(blueTeamColorClass)} ${isMobile ? 'w-2 h-2' : 'w-3 h-3'}`}></div>
               <span className={`font-bold text-white ${isMobile ? 'text-xl' : 'text-2xl'}`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
                 {teamScores.blue}
               </span>
-              <span className={`font-bold text-white ${isMobile ? 'text-base' : 'text-lg'}`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
+              <span className={`font-medium text-white/90 ${isMobile ? 'text-sm' : 'text-base'}`} style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
                 {isMobile ? blueTeam.name.split(' ')[0].toUpperCase() : blueTeam.name.toUpperCase()}
               </span>
-              <div className={`rounded-full bg-${getIndicatorColor(blueTeamColorClass)} ${isMobile ? 'w-2 h-2' : 'w-3 h-3'}`}></div>
             </div>
+
+            <div className={`bg-white/30 ${isMobile ? 'w-px h-3' : 'w-px h-4'}`}></div>
+            
+            <span className={`font-mono text-white/90 font-medium ${isMobile ? 'text-sm' : 'text-base'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
+              {formatTime(currentTime)}
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Right side - Time display */}
-      <div className="absolute top-4 right-20 z-50">
-        <div className={`bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-lg ${
-          isMobile ? 'px-3 py-2' : 'px-4 py-2.5'
-        }`}>
-          <span className={`font-mono text-white/90 font-medium ${isMobile ? 'text-sm' : 'text-base'}`} style={{ textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>
-            {formatTime(currentTime)}
-          </span>
-        </div>
-      </div>
+
 
       {/* Right side - AI Coach toggle button (only show when sidebar is closed and not mobile) */}
       {!showEvents && !isMobile && (
