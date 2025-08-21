@@ -550,28 +550,92 @@ export default function UnifiedSidebar({
         // FFmpeg - immediate download available
         alert(`🎉 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\n💾 Starting download now!`)
         
-        try {
-          const blob = await apiClient.downloadClip(result.downloadUrl)
-          const url = window.URL.createObjectURL(blob)
-          const link = document.createElement('a')
-          link.href = url
+      try {
+        const blob = await apiClient.downloadClip(result.downloadUrl)
+        const url = window.URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
           link.download = `highlight_${gameId}_${Date.now()}.mp4`
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-          window.URL.revokeObjectURL(url)
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
           
           // Clear selection after successful download
           updateSelectedEvents(new Map())
           
           alert(`✅ Download completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds`)
           
-        } catch (downloadError: any) {
-          console.error('Download failed:', downloadError)
+      } catch (downloadError: any) {
+        console.error('Download failed:', downloadError)
           alert('Clip was created but download failed. Please try again.')
         }
         
         setIsCreatingClip(false)
+      } else if (result.method === 'chunks' && result.chunks) {
+        // Chunk-based - instant access to individual chunk URLs
+        console.log('📦 Chunk URLs received:', result.chunks)
+        
+        if (result.chunks.length === 1) {
+          // Single event - direct download of chunk
+          const chunk = result.chunks[0]
+          alert(`🚀 ${result.message}\n\n📦 Chunk ready for event at ${Math.floor(chunk.eventTime / 60)}:${(chunk.eventTime % 60).toString().padStart(2, '0')}\n\n💾 Starting download now!`)
+          
+          // Create download link for the chunk
+          const link = document.createElement('a')
+          link.href = chunk.chunkUrl
+          link.download = `event_${chunk.eventTime}s_chunk.mp4`
+          link.target = '_blank' // Open in new tab to trigger download
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+          
+        } else {
+          // Multiple events - show chunk URLs
+          const chunkList = result.chunks.map((chunk: any) => 
+            `• Event at ${Math.floor(chunk.eventTime / 60)}:${(chunk.eventTime % 60).toString().padStart(2, '0')} → ${chunk.chunkUrl.split('/').pop()}`
+          ).join('\n')
+          
+          alert(`🚀 ${result.message}\n\n📦 ${result.eventCount} chunks ready:\n\n${chunkList}\n\n💡 Each chunk contains ~15 seconds around your selected events.`)
+          
+          // Download all chunks
+          result.chunks.forEach((chunk: any, index: number) => {
+            setTimeout(() => {
+              const link = document.createElement('a')
+              link.href = chunk.chunkUrl
+              link.download = `event_${chunk.eventTime}s_chunk.mp4`
+              link.target = '_blank'
+              document.body.appendChild(link)
+              link.click()
+              document.body.removeChild(link)
+            }, index * 1000) // Stagger downloads by 1 second
+          })
+        }
+        
+        // Clear selection after successful chunk generation
+        updateSelectedEvents(new Map())
+        setIsCreatingClip(false)
+        
+      } else if (result.method === 'ffmpeg' && result.blob) {
+        // Direct FFmpeg processing - blob response
+        console.log('🎬 FFmpeg blob received:', result.fileName)
+        
+        alert(`🚀 ${result.message}\n\n💾 Starting download now!`)
+        
+        // Create download link from blob
+        const url = window.URL.createObjectURL(result.blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = result.fileName || `highlight_${gameId}_${Date.now()}.mp4`
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+        
+        // Clear selection after successful download
+        updateSelectedEvents(new Map())
+        setIsCreatingClip(false)
+        
       } else {
         // Unknown response format
         console.error('Unexpected response format:', result)

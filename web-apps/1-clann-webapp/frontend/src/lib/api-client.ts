@@ -273,18 +273,40 @@ class ApiClient {
 
   // Clips methods
   async createClip(gameId: string, events: Array<{timestamp: number, type: string, description?: string, beforePadding?: number, afterPadding?: number}>) {
-    return this.request<{
-      success: boolean
-      jobId: string
-      status: string
-      message: string
-      duration: number
-      eventCount: number
-      outputPath: string
-    }>('/api/clips/create', {
+    const token = localStorage.getItem('token')
+    const response = await fetch(`${API_BASE_URL}/api/clips/create`, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
       body: JSON.stringify({ gameId, events })
     })
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))
+      throw new Error(errorData.error || `HTTP ${response.status}`)
+    }
+
+    // Check if response is a file (video/mp4) or JSON
+    const contentType = response.headers.get('content-type')
+    
+    if (contentType && contentType.includes('video/mp4')) {
+      // Direct file download - return blob for immediate download
+      const blob = await response.blob()
+      const fileName = response.headers.get('content-disposition')?.match(/filename="([^"]+)"/)?.[1] || `clip_${Date.now()}.mp4`
+      
+      return {
+        success: true,
+        method: 'ffmpeg',
+        message: 'Clip created successfully',
+        blob: blob,
+        fileName: fileName
+      }
+    } else {
+      // JSON response (chunks or other methods)
+      return response.json()
+    }
   }
 
   async checkClipStatus(jobId: string) {

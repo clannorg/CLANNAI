@@ -177,6 +177,43 @@ router.post('/create', authenticateToken, async (req, res) => {
             return total + beforePadding + afterPadding;
         }, 0);
 
+        // CHECK FOR CHUNKS FIRST - direct serving (no processing needed!)
+        if (game.chunks_base_url) {
+            console.log('📦 Using direct chunk serving (instant!)...');
+            
+            const chunkUrls = events.map(event => {
+                const eventTime = event.timestamp;
+                const beforePadding = event.beforePadding || 5;
+                const afterPadding = event.afterPadding || 3;
+                
+                // Find which 15s chunk contains this event (with padding)
+                const startTime = Math.max(0, eventTime - beforePadding);
+                const chunkStart = Math.floor(startTime / 15) * 15;
+                
+                const minutes = Math.floor(chunkStart / 60);
+                const seconds = chunkStart % 60;
+                const chunkFilename = `clip_${minutes.toString().padStart(2,'0')}m${seconds.toString().padStart(2,'0')}s.mp4`;
+                
+                return {
+                    eventId: event.id || event.timestamp,
+                    eventTime: eventTime,
+                    chunkUrl: `${game.chunks_base_url}/${chunkFilename}`,
+                    chunkStart: chunkStart,
+                    seekTo: startTime - chunkStart // Seconds into the chunk to seek to
+                };
+            });
+            
+            console.log('✅ Chunk URLs generated:', chunkUrls.length);
+            
+            return res.json({
+                success: true,
+                method: 'chunks',
+                chunks: chunkUrls,
+                eventCount: events.length,
+                message: 'Chunk URLs ready - no processing needed!'
+            });
+        }
+
         // HYBRID APPROACH: Try MediaConvert first, fallback to FFmpeg
         try {
             console.log('🚀 Attempting MediaConvert (production method)...');
