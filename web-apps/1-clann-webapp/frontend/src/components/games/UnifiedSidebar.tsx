@@ -210,6 +210,10 @@ export default function UnifiedSidebar({
   }>>(new Map())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
   
+  // Download mode state
+  const [isDownloadMode, setIsDownloadMode] = useState(false)
+  const [selectedDownloadEvents, setSelectedDownloadEvents] = useState<Set<number>>(new Set())
+  
   // Wrapper to update selectedEvents and notify parent
   const updateSelectedEvents = (newSelectedEvents: Map<number, {
     beforePadding: number,
@@ -217,6 +221,68 @@ export default function UnifiedSidebar({
   }>) => {
     setSelectedEvents(newSelectedEvents)
     onSelectedEventsChange?.(newSelectedEvents)
+  }
+  
+  // Download mode functions
+  const handleToggleDownloadMode = () => {
+    setIsDownloadMode(!isDownloadMode)
+    setSelectedDownloadEvents(new Set()) // Clear selection when toggling
+  }
+  
+  const handleToggleEventDownload = (eventIndex: number) => {
+    const newSelected = new Set(selectedDownloadEvents)
+    if (newSelected.has(eventIndex)) {
+      newSelected.delete(eventIndex)
+    } else {
+      newSelected.add(eventIndex)
+    }
+    setSelectedDownloadEvents(newSelected)
+  }
+  
+  const handleDownloadSelected = async () => {
+    if (selectedDownloadEvents.size === 0) return
+    
+    setIsCreatingClip(true)
+    
+    try {
+      // Convert selected events to the format expected by the API
+      const selectedEventData = Array.from(selectedDownloadEvents).map(index => ({
+        timestamp: allEvents[index].timestamp,
+        type: allEvents[index].type,
+        description: allEvents[index].description,
+        beforePadding: 5, // Default padding
+        afterPadding: 3   // Default padding
+      }))
+      
+      console.log('🎬 Downloading selected events:', selectedEventData)
+      
+      // Use the same API as clips
+      const result = await apiClient.createClipFFmpeg(gameId, selectedEventData)
+      console.log('✅ Download started:', result)
+      
+      if (result.method === 'ffmpeg' && result.blob) {
+        // Create download link from blob
+        const url = window.URL.createObjectURL(result.blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = result.fileName || `events_${gameId}_${Date.now()}.mp4`
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+        
+        // Clear selection and exit download mode
+        setSelectedDownloadEvents(new Set())
+        setIsDownloadMode(false)
+        alert(`🚀 ${selectedEventData.length === 1 ? 'Event' : 'Events'} downloaded successfully!`)
+      }
+      
+    } catch (error: any) {
+      console.error('❌ Error downloading events:', error)
+      alert(`Error downloading events: ${error.message}`)
+    } finally {
+      setIsCreatingClip(false)
+    }
   }
   
   // Manual annotation state
@@ -1115,6 +1181,19 @@ export default function UnifiedSidebar({
                     >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
+                        {/* Download Mode Checkbox */}
+                        {isDownloadMode && (
+                          <input
+                            type="checkbox"
+                            checked={selectedDownloadEvents.has(originalIndex)}
+                            onChange={(e) => {
+                              e.stopPropagation()
+                              handleToggleEventDownload(originalIndex)
+                            }}
+                            className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2"
+                          />
+                        )}
+                        
                         {/* Time Badge - moved to front */}
                         <div className="flex items-center gap-1">
                           <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1144,8 +1223,9 @@ export default function UnifiedSidebar({
                         )}
                       </div>
                       
-                      {/* Action Buttons - bin and edit */}
-                      <div className="flex items-center gap-1">
+                      {/* Action Buttons - bin and edit (hidden in download mode) */}
+                      {!isDownloadMode && (
+                        <div className="flex items-center gap-1">
                         {/* Bin Button */}
                         <button
                           onClick={(e) => {
@@ -1174,7 +1254,8 @@ export default function UnifiedSidebar({
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                           </svg>
                         </button>
-                      </div>
+                        </div>
+                      )}
                     </div>
                     
                     {/* Description */}
@@ -1251,6 +1332,45 @@ export default function UnifiedSidebar({
                   </div>
                 )}
               </div>
+            </div>
+            
+            {/* Download Mode Toggle Button - Fixed at bottom */}
+            <div className="p-4 border-t border-gray-700 bg-gray-900/50">
+              {!isDownloadMode ? (
+                <button
+                  onClick={handleToggleDownloadMode}
+                  className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-blue-500/10 hover:bg-blue-500/20 border-blue-400/30 text-blue-300"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>Download Mode</span>
+                </button>
+              ) : (
+                <div className="space-y-3">
+                  <div className="text-center text-sm text-gray-300">
+                    Selected: <span className="font-medium text-blue-300">{selectedDownloadEvents.size}</span> event{selectedDownloadEvents.size !== 1 ? 's' : ''}
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleDownloadSelected}
+                      disabled={selectedDownloadEvents.size === 0 || isCreatingClip}
+                      className="flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-green-500/10 hover:bg-green-500/20 border-green-400/30 text-green-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span>{isCreatingClip ? 'Downloading...' : 'Download Selected'}</span>
+                    </button>
+                    <button
+                      onClick={handleToggleDownloadMode}
+                      className="px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
+                    >
+                      Exit
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
