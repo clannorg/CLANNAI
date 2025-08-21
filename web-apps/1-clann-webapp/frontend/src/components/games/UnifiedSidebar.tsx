@@ -1206,7 +1206,7 @@ export default function UnifiedSidebar({
                         isDownloadMode && selectedDownloadEvents.has(originalIndex)
                           ? 'bg-gray-800 text-white border-green-500 ring-1 ring-green-500'
                           : originalIndex === currentEventIndex 
-                          ? 'bg-gray-800 text-white border-blue-500 ring-1 ring-blue-500' 
+                          ? 'bg-gray-800 text-white border-green-500 ring-0.5 ring-green-500' 
                           : 'bg-gray-800 text-gray-300 hover:bg-gray-800 border-gray-700 hover:border-gray-600'
                       }`}
                     >
