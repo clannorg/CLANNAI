@@ -773,7 +773,7 @@ export default function UnifiedSidebar({
             <div className="p-4 border-b border-gray-700">
               <div className="space-y-4">
                 <div>
-                  <label className="text-gray-300 block mb-3 font-medium">Team:</label>
+                  <label className="text-gray-300 block mb-3 font-medium">Filters:</label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => {
@@ -924,39 +924,48 @@ export default function UnifiedSidebar({
                   )}
                 </div>
 
-                {/* Add Event Button OR Inline Form */}
+                {/* Autoplay and Add Event Buttons - Side by Side */}
                 <div>
-                  {/* Autoplay Toggle */}
-                  <button
-                    onClick={() => {
-                      const newAutoplay = !autoplayEvents
-                      setAutoplayEvents(newAutoplay)
-                      onAutoplayChange?.(newAutoplay)
-                    }}
-                    className={`flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full mb-3 ${
-                      autoplayEvents 
-                        ? 'bg-green-500/20 hover:bg-green-500/30 border-green-500/50 text-green-300'
-                        : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300'
-                    }`}
-                  >
-                    <span>Autoplay Events</span>
-                    <span className="text-xs">{autoplayEvents ? 'ON' : 'OFF'}</span>
-                  </button>
-                  
                   {!isCreatingEvent ? (
-                    // Add Event Button
-                    <button
-                      onClick={handleStartCreatingEvent}
-                      disabled={isSavingEvents}
-                      className="flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                      title="Add new event at current time"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                      </svg>
-                      <span>Add Event</span>
-                      <span className="text-xs text-gray-400">({Math.floor(currentTime / 60)}:{(currentTime % 60).toFixed(0).padStart(2, '0')})</span>
-                    </button>
+                    <div className="grid grid-cols-2 gap-2 mb-3">
+                      {/* Autoplay Toggle */}
+                      <button
+                        onClick={() => {
+                          const newAutoplay = !autoplayEvents
+                          setAutoplayEvents(newAutoplay)
+                          onAutoplayChange?.(newAutoplay)
+                        }}
+                        className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 ${
+                          autoplayEvents 
+                            ? 'bg-green-500/20 hover:bg-green-500/30 border-green-500/50 text-green-300'
+                            : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300'
+                        }`}
+                      >
+                        <span>Autoplay</span>
+                        <div className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+                          autoplayEvents ? 'bg-green-500' : 'bg-gray-600'
+                        }`}>
+                          <span
+                            className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
+                              autoplayEvents ? 'translate-x-5' : 'translate-x-1'
+                            }`}
+                          />
+                        </div>
+                      </button>
+                      
+                      {/* Add Event Button */}
+                      <button
+                        onClick={handleStartCreatingEvent}
+                        disabled={isSavingEvents}
+                        className="flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        title="Add new event at current time"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        <span>Add Event</span>
+                      </button>
+                    </div>
                   ) : (
                     // Inline Event Creation Form (replaces button)
                     <div className="p-3 rounded-lg bg-purple-900/20 border border-purple-500/30 space-y-3">
