@@ -1,0 +1,890 @@
+# Other Events - 20250427-match-apr-27-2025-9bd1cf29
+# Generated: 2025-08-21T12:55:44.956589
+# Method: Gemini intelligent event extraction
+# Source: Complete timeline analysis
+# Focus: Fouls, cards, corners, substitutions, turnovers, decisions
+
+Here's an analysis of the provided football match timeline, focusing on extracting significant events beyond goals and shots, categorized as requested.
+
+=== FOULS & FREE KICKS ===
+Timestamp: 16:19 (979 seconds)
+Type: Foul/Free kick
+Team: N/A (Foul results in a free kick for the Red Team)
+Description: A foul is called, resulting in a free kick for the Red team.
+Significance:  Stops White team attack, gives Red team a set piece opportunity.
+
+Timestamp: 17:56 (1076 seconds)
+Type: Foul/Free kick
+Team: Red (Red team commits a foul)
+Description: A Red player commits a foul on a White attacker.
+Significance:  Gives White team a free kick in attacking area.
+
+Timestamp: 30:21 (1821 seconds)
+Type: Foul
+Team: N/A (White team commits foul resulting in free kick for Red Team)
+Description: A Red player commits a foul, resulting in a free kick for the White team.
+Significance:  Gives White team possession and a set piece opportunity.
+
+Timestamp: 30:47 (1847 seconds)
+Type: Foul
+Team: N/A (Red team commits foul)
+Description: Red team is awarded a free kick following a foul.
+Significance:  Stops White team attack, gives Red team a set piece opportunity.
+
+Timestamp: 65:38 (3938 seconds)
+Type: Foul
+Team: White (White team commits foul)
+Description: A White player challenges for the ball and wins it, but the referee calls a foul.
+Significance:  Stops the play, gives Red team possession.
+
+Timestamp: 69:18 (4158 seconds)
+Type: Foul
+Team: N/A (Foul results in free kick for White team)
+Description: Foul committed. A free kick is awarded to the White team.
+Significance:  Stops Red team attack, gives White team a set piece opportunity in their own half.
+
+Timestamp: 69:18 (4158 seconds)
+Type: Foul
+Team: N/A (Foul results in free kick for White team)
+Description: Foul committed. A free kick is awarded to the White team.
+Significance:  Stops Red team attack, gives White team a set piece opportunity in their own half.
+
+Timestamp: 88:20 (5200 seconds)
+Type: Foul
+Team: Red (Red team commits foul)
+Description: A red team player commits a foul
+Significance:  Stops the White team attack through the centre of the pitch, gives White team a free kick.
+
+=== CARDS & DISCIPLINE ===
+(No cards are explicitly mentioned in the timeline)
+
+=== CORNERS & SET PIECES ===
+Timestamp: 05:15 (315 seconds)
+Type: Corner kick
+Team: White
+Description: White team attacks from a corner kick.
+Danger Level: Medium (Header taken towards goal suggests a decent opportunity)
+
+Timestamp: 15:30 (930 seconds)
+Type: Corner kick
+Team: White
+Description: White team takes a corner kick from the right side.
+Danger Level: Medium (Kick delivered into penalty area)
+
+Timestamp: 18:00 (1080 seconds)
+Type: Free kick
+Team: Red
+Description: Red team takes a free kick.
+Danger Level: Medium (Position on field unknown)
+
+Timestamp: 19:45 (1185 seconds)
+Type: Corner kick
+Team: Red
+Description: Red team takes a corner kick from the right side, which is cleared by a header from the White team.
+Danger Level: Medium
+
+Timestamp: 26:45 (1605 seconds)
+Type: Corner kick
+Team: Red
+Description: Red team takes a corner kick from the right side. White team defends in their penalty area.
+Danger Level: Medium
+
+Timestamp: 28:45 (1725 seconds)
+Type: Corner kick
+Team: Red
+Description: Red team takes a corner kick. The ball is cleared to a teammate outside the box.
+Danger Level: Medium
+
+Timestamp: 29:00 (1740 seconds)
+Type: Corner kick
+Team: White
+Description: White team takes a corner kick which is cleared by the Red team.
+Danger Level: Medium
+
+Timestamp: 42:00 (2520 seconds)
+Type: Throw-in
+Team: Red
+Description: Red team takes a throw-in.
+Danger Level: Low
+
+Timestamp: 42:15 (2535 seconds)
+Type: Throw-in
+Team: Red
+Description: Red team takes an attacking throw-in deep into the White team's half.
+Danger Level: Medium
+
+Timestamp: 43:30 (2520 seconds)
+Type: Throw-in
+Team: Red
+Description: Red team takes a throw-in.
+Danger Level: Low
+
+Timestamp: 44:00 (2640 seconds)
+Type: Throw-in
+Team: Red
+Description: Red team takes a throw-in. The ball goes out of play again, and the Red team takes a second consecutive throw-in.
+Danger Level: Low
+
+Timestamp: 53:15 (3195 seconds)
+Type: Throw-in
+Team: Red
+Description: A Red team player takes a throw-in from the right sideline.
+Danger Level: Low
+
+Timestamp: 59:00 (3540 seconds)
+Type: Free kick
+Team: White
+Description: White team takes a free kick from their attacking half, sending the ball towards the Red team's penalty area where it is defended.
+Danger Level: Medium
+
+Timestamp: 61:15 (3675 seconds)
+Type: Throw-in
+Team: Red
+Description: Red team executes a throw-in on the left side of the pitch, with the ball being headed on by a teammate.
+Danger Level: Low
+
+Timestamp: 68:15 (4095 seconds)
+Type: Free kick
+Team: White
+Description: White team prepares to take an indirect free kick from the Red team's half.
+Danger Level: Medium
+
+Timestamp: 72:00 (4320 seconds)
+Type: Corner kick
+Team: White
+Description: White team takes a corner kick from the left. The ball is cleared by the Red team's defense.
+Danger Level: Medium
+
+Timestamp: 72:30 (4350 seconds)
+Type: Free kick
+Team: Red
+Description: Red team takes a free kick.
+Danger Level: Medium
+
+Timestamp: 73:30 (4410 seconds)
+Type: Corner kick
+Team: Red
+Description: Red team attacks from a corner kick.
+Danger Level: High
+
+Timestamp: 73:45 (4425 seconds)
+Type: Corner kick
+Team: Red
+Description: Red team takes a corner kick from the left.
+Danger Level: Medium
+
+Timestamp: 78:15 (4695 seconds)
+Type: Throw-in
+Team: White
+Description: Play results in a throw-in for the white team.
+Danger Level: Low
+
+Timestamp: 79:00 (4740 seconds)
+Type: Throw-in
+Team: Red
+Description: Red team takes a throw-in in the attacking half.
+Danger Level: Medium
+
+Timestamp: 81:45 (4905 seconds)
+Type: Throw-in
+Team: White
+Description: White team takes a throw-in from the right sideline. The ball is briefly contested before going out for another throw-in to the White team.
+Danger Level: Low
+
+Timestamp: 83:15 (4995 seconds)
+Type: Throw-in
+Team: White
+Description: A white team player clears the ball long, which goes out of play for a throw-in.
+Danger Level: Low
+
+Timestamp: 83:30 (5010 seconds)
+Type: Throw-in
+Team: White
+Description: White team takes a throw-in, which is won by the Red team.
+Danger Level: Low
+
+Timestamp: 87:19 (5239 seconds)
+Type: Throw-in
+Team: White
+Description: A white team player takes a throw-in and they proceed to pass the ball amongst their defenders.
+Danger Level: Low
+
+Timestamp: 87:50 (5270 seconds)
+Type: Throw-in
+Team: White
+Description: A red player makes a successful slide tackle, sending the ball out of play for a throw-in.
+Danger Level: Low
+
+=== SUBSTITUTIONS ===
+(No substitutions explicitly mentioned in the timeline)
+
+=== TURNOVERS & POSSESSION CHANGES ===
+Timestamp: 06:45 (405 seconds)
+Type: Turnover
+Team: Blue (assumed, as Red loses to Blue)
+Description: Red team loses possession to the Blue team in midfield.
+Context: Midfield, possible build-up opportunity for Blue
+Impact: Slows down Red attack
+
+Timestamp: 09:15 (555 seconds)
+Type: Interception
+Team: Red
+Description: Red team intercepts the long ball forward.
+Context: White team's kickoff
+Impact: Quick change of possession; Red team gains possession.
+
+Timestamp: 09:45 (585 seconds)
+Type: Recovery
+Team: White
+Description: The White team successfully defends and clears the ball, gaining possession and initiating a build-up from their own half.
+Context: Red team attacking in final third
+Impact: Neutralizes the Red team's attack; starts White team's build up.
+
+Timestamp: 10:30 (630 seconds)
+Type: Interception
+Team: Red
+Description: White team takes a throw-in, which is intercepted by the Red team who gain possession.
+Context: White team throw-in; midfield
+Impact: Immediate change of possession, breaks up White team build-up.
+
+Timestamp: 11:15 (675 seconds)
+Type: Tackle
+Team: Red
+Description: The White team is in possession attempting to build an attack from midfield. The Red team applies pressure, with a player successfully tackling and winning the ball.
+Context: Midfield, building attack from White team.
+Impact: Red team regains the possession.
+
+Timestamp: 12:15 (735 seconds)
+Type: Tackle
+Team: White
+Description: Red team loses possession after a tackle, leading to a throw-in for the White team.
+Context: Midfield
+Impact: A White player tackles a red player, stops red advance, and leads to throw-in.
+
+Timestamp: 15:45 (945 seconds)
+Type: Recovery
+Team: Red
+Description: White team takes a free kick which is defended by the Red team. Red team clears the ball and gains possession.
+Context: Red team defending a free kick
+Impact: Red team clear leads to possession.
+
+Timestamp: 16:00 (960 seconds)
+Type: Turnover
+Team: White
+Description: White team builds an attack from midfield. A pass is intercepted by the Red team who attempt a clearance, but the White team regains possession.
+Context: Midfield attack
+Impact: Short possession change, White team regains
+
+Timestamp: 16:30 (990 seconds)
+Type: Turnover
+Team: White
+Description: Red team takes a throw-in, which is intercepted by the White team who then begins an attack.
+Context: Throw-in leads to immediate turnover and attack
+Impact: White team gains possession
+
+Timestamp: 17:30 (1050 seconds)
+Type: Possession
+Team: White
+Description: Red team takes a goal kick and builds play from the back. The White team gains possession at 17:39 in the midfield and maintains it through passing.
+Context: Following Goal kick
+Impact: Possession change
+
+Timestamp: 18:15 (1095 seconds)
+Type: Recovery
+Team: White
+Description: Red team takes a kick-in, which is headed clear by the White team. Possession is then contested by both teams in the midfield.
+Context: Defensive play
+Impact: White team clear the ball.
+
+Timestamp: 18:30 (1110 seconds)
+Type: Tackle
+Team: White
+Description: Red team loses possession in the centre of the pitch following a tackle. White team counter-attacks, moving the ball towards the Red team's goal.
+Context: Midfield Tackle
+Impact: White team counter-attack.
+
+Timestamp: 19:00 (1140 seconds)
+Type: Turnover
+Team: White
+Description: White team plays the ball out from their own half. Red team intercepts the pass in midfield but is immediately challenged, and the White team successfully regains possession.
+Context: Midfield
+Impact: Regaining possession
+
+Timestamp: 20:15 (1215 seconds)
+Type: Turnover
+Team: White
+Description: White team wins possession from the Red team in midfield and maintains possession by passing the ball.
+Context: White team wins possession in midfield.
+Impact: Quick change of possession.
+
+Timestamp: 21:00 (1260 seconds)
+Type: Turnover
+Team: Red
+Description: Red team loses possession near the White team's penalty area. The White team attempts to build an attack but loses the ball in the midfield, allowing the Red team to regain possession and advance.
+Context: Turnover near the White team's penalty area.
+Impact: Possession change.
+
+Timestamp: 21:15 (1275 seconds)
+Type: Turnover
+Team: White
+Description: Red team has possession in the midfield but loses it to the White team.
+Context: Red team loses possession in the midfield.
+Impact: Possession change.
+
+Timestamp: 22:30 (1350 seconds)
+Type: Turnover
+Team: White
+Description: Red team loses possession in the midfield, allowing the White team to launch an attack up the right flank.
+Context: Red team turnover.
+Impact: White team launch an attack.
+
+Timestamp: 22:45 (1365 seconds)
+Type: Interception
+Team: White
+Description: White team is in possession in the opponent's half. The Red team intercepts a pass and clears the ball upfield. A White team player controls the clearance in their own half, regaining possession.
+Context: Pass Intercepted
+Impact: White team regain possession.
+
+Timestamp: 23:00 (1380 seconds)
+Type: Tackle
+Team: Red
+Description: White team attacks in midfield. The Red team defends strongly, making a successful tackle to win possession near the end of the clip.
+Context: Red team make a successful tackle.
+Impact: Red team wins possession.
+
+Timestamp: 23:45 (1425 seconds)
+Type: Turnover
+Team: Red
+Description: White team takes a throw-in and loses possession. Red team gains control and plays a long pass forward into the White team's half, initiating an attack.
+Context: White team loses possession, Red Team gains possession.
+Impact: Red team initiate an attack.
+
+Timestamp: 24:00 (1440 seconds)
+Type: Possession
+Team: Red
+Description: The White team wins possession from the Red team in the midfield. After a short exchange, the Red team regains the ball and makes a long clearance upfield.
+Context: Possession contested
+Impact: Red team makes a long clearance.
+
+Timestamp: 24:15 (1455 seconds)
+Type: Tackle
+Team: White
+Description: White team starts with possession, moving the ball forward from the center. Red team gains possession and launches a counter-attack down the left wing. The attacking player is tackled by two defenders, and the play breaks down.
+Context: Tackled near end of play
+Impact: Play breaks down
+
+Timestamp: 25:00 (1500 seconds)
+Type: Recovery
+Team: White
+Description: Red team takes a throw-in, leading to a stoppage in play in midfield. White team takes a free kick from their own half at 25:12, which is headed clear by a Red team defender.
+Context: White team recover
+Impact: White team clear
+
+Timestamp: 26:00 (1560 seconds)
+Type: Tackle
+Team: Red
+Description: Red team wins possession in the midfield after a successful tackle
+Context: Midfield Tackle
+Impact: Tackle leads to possession
+
+Timestamp: 27:00 (1620 seconds)
+Type: Recovery
+Team: White
+Description: Red team attacks into the White team's penalty area. Key events: 27:07 a shot is blocked by a White defender. The White team then clears the ball and regains possession.
+Context: White recover possession
+Impact: Possession regained
+
+Timestamp: 27:45 (1665 seconds)
+Type: Turnover
+Team: Red
+Description: White team kicks off from the centre circle. Red team wins possession and advances into the White team's half.
+Context: Midfield
+Impact: Win possession
+
+Timestamp: 28:00 (1680 seconds)
+Type: Loss
+Team: White
+Description: White team gains possession in the midfield and attacks, but the ball goes out of play, resulting in a throw-in for the Red team.
+Context: Midfield
+Impact: Loss of possession
+
+Timestamp: 29:15 (1755 seconds)
+Type: Turnover
+Team: Red
+Description: White team takes a set piece, delivering the ball into the penalty area. The Red team defends and clears the ball, starting a counter-attack.
+Context: Set Piece.
+Impact: Red Team Counter-attack.
+
+Timestamp: 30:00 (1800 seconds)
+Type: Turnover
+Team: Red
+Description: White team takes a long goal kick. The Red team wins possession in the midfield.
+Context: Red Team wins Possession.
+Impact: Gain possession.
+
+Timestamp: 30:30 (1830 seconds)
+Type: Regain
+Team: Red
+Description: Red team attacks in the White team's half. The White team defends and briefly gains possession before the Red team wins it back.
+Context: Regain Possession.
+Impact: Maintains Possession.
+
+Timestamp: 30:45 (1845 seconds)
+Type: Intercept
+Team: White
+Description: Red team is awarded a free kick following a foul. The White team intercepts the subsequent pass and launches a counter-attack.
+Context: Possession Change.
+Impact: White team intercepts pass and launches a counter-attack.
+
+Timestamp: 32:00 (1920 seconds)
+Type: Regain
+Team: Red
+Description: White team takes a throw-in, which is headed clear by the Red team. The Red team gains possession and begins to build an attack from their own half.
+Context: Regains possession.
+Impact: Begins attack from their own half.
+
+Timestamp: 32:15 (1935 seconds)
+Type: Winning
+Team: White
+Description: White team defends an attack, winning the ball which then goes out for a throw-in to the White team.
+Context: Possession Change.
+Impact: White team defends an attack.
+
+Timestamp: 33:45 (2025 seconds)
+Type: Intercepted
+Team: Red
+Description: White team attempts a long forward pass, which is intercepted by the Red team who then gain possession in their own half.
+Context: Intercept pass.
+Impact: Gain possession.
+
+Timestamp: 34:00 (2040 seconds)
+Type: Loss
+Team: Red
+Description: White team loses possession to the Red team in the midfield. Red team builds an attack before being dispossessed by the White team.
+Context: Loss possession.
+Impact: Dispossession by the White team.
+
+Timestamp: 35:30 (2130 seconds)
+Type: Contests
+Team: White
+Description: White team gains possession from a goal kick and contests the ball in the midfield.
+Context: Gains Possession
+Impact: Contested in midfield
+
+Timestamp: 36:45 (2205 seconds)
+Type: Wins
+Team: Red
+Description: Red team celebrates a goal. The game restarts with a kick-off from the White team, after which the Red team quickly wins possession in the midfield.
+Context: Wins possession
+Impact: Starts the match.
+
+Timestamp: 38:00 (2280 seconds)
+Type: Regain
+Team: Red
+Description: Red team plays a long ball forward. The White team gains possession briefly before the Red team wins it back in the midfield and starts an attack, moving the ball into the White team's half.
+Context: Regain possession
+Impact: Starts attack in the White team's half.
+
+Timestamp: 38:30 (2310 seconds)
+Type: Loss
+Team: Red
+Description: Red team loses possession to the White team in the center circle.
+Context: Loss possession
+Impact: Attempt to move the ball forward.
+
+Timestamp: 39:00 (2340 seconds)
+Type: Regain
+Team: Red
+Description: White team attacks in the opponent's final third, but the Red team successfully defends and wins back possession. Red team then plays the ball around their own half.
+Context: Opponent's side
+Impact: Wins back possession
+
+Timestamp: 39:30 (2370 seconds)
+Type: Dispossessed
+Team: White
+Description: Red team starts with possession but is quickly dispossessed by the White team in midfield.
+Context: In the Midfield
+Impact: Moves the ball forward
+
+Timestamp: 40:45 (2445 seconds)
+Type: Aerial
+Team: White
+Description: White team gains possession from an aerial ball in their own half and is put under immediate pressure by the Red team.
+Context: Aerial
+Impact: Immediate Pressure
+
+Timestamp: 41:45 (2505 seconds)
+Type: Aerial
+Team: White
+Description: Red team takes a goal kick. The White team wins the resulting aerial duel and gains possession in the midfield.
+Context: Aerial
+Impact: Midfield Possession
+
+Timestamp: 43:15 (2595 seconds)
+Type: Regain
+Team: Red
+Description: The White team attacks in the final third, but the Red team successfully tackles and regains possession.
+Context: Tackle in the final third
+Impact: Red team's Possession
+
+Timestamp: 44:00 (2640 seconds)
+Type: Possesion
+Team: Red
+Description: Red team takes a throw-in.
+Context: Possesion
+Impact: Moves the ball
+
+Timestamp: 45:00 (2700 seconds)
+Type: Posssesion
+Team: Red
+Description: Red team ultimately gaining possession and passing the ball in their own half.
+Context: Aerial in midfield
+Impact: Own half Possession
+
+Timestamp: 45:15 (2715 seconds)
+Type: Possession
+Team: White
+Description: White team gains possession from the Red team in the midfield and begins to build an attack. The Red team briefly intercepts a pass, but the White team wins the ball back and advances into the attacking half.
+Context: Midfield
+Impact: Intercepted Pass
+
+Timestamp: 45:30 (2730 seconds)
+Type: Intercept
+Team: White
+Description: White team intercepts a pass and maintains possession, with a player carrying the ball from their own half into the opposition's half.
+Context: In Opposition half
+Impact: Maintain Possession
+
+Timestamp: 46:00 (2760 seconds)
+Type: Possession
+Team: Red
+Description: Red team defends and gains possession in the midfield following a successful header.
+Context: Header
+Impact: Possession
+
+Timestamp: 51:45 (3105 seconds)
+Type: Possession
+Team: Red
+Description: The red team wins possession in the midfield before the white team regains control and starts to move the ball forward.
+Context: White Regains control
+Impact: Starts to move the ball forward
+
+Timestamp: 52:00 (3120 seconds)
+Type: Loss
+Team: Red
+Description: Red team loses possession to the White team in midfield.
+Context: Midfield Possession
+Impact: Possession Change
+
+Timestamp: 52:15 (3135 seconds)
+Type: Tackle
+Team: Red
+Description: Red player makes a successful sliding tackle at 52:28 to regain possession in the midfield.
+Context: Tackle leads to posession
+Impact: Possession Change
+
+Timestamp: 54:15 (3255 seconds)
+Type: Turnover
+Team: Red
+Description: The Red team gains possession in the center of the pitch and attempts to build an attack into the White team's half.
+Context: Red's Attack
+Impact: White team defends
+
+Timestamp: 54:30 (3270 seconds)
+Type: Posession
+Team: Red
+Description: The Red team gains possession from the White team and initiates an attack.
+Context: Regaining possesion
+Impact: The White team maintains
+
+Timestamp: 54:45 (3285 seconds)
+Type: Head
+Team: Red
+Description: White team takes a throw-in on the right sideline and plays the ball into midfield. They attempt a long pass forward which is headed away by the Red team.
+Context: Posession Contested.
+Impact: Red team heads the ball.
+
+Timestamp: 55:30 (3330 seconds)
+Type: Posession
+Team: White
+Description: White team gains possession in midfield and circulates the ball amongst their defenders under pressure from the Red team.
+Context: In Midfield
+Impact: Defending Pressure
+
+Timestamp: 56:00 (3360 seconds)
+Type: Posession
+Team: Red
+Description: Red team regains possession and continues the attack.
+Context: White team cleared the ball.
+Impact: continues the attack.
+
+Timestamp: 56:15 (3375 seconds)
+Type: Reagins
+Team: Red
+Description: The ball is cleared long by the White team, but the Red team regains possession and passes the ball in the midfield.
+Context: Long pass
+Impact: Posession change
+
+Timestamp: 56:30 (3390 seconds)
+Type: Gains
+Team: Red
+Description: Red team gains possession in midfield to the White team.
+Context: Middle
+Impact: The ball goes to throw-in.
+
+Timestamp: 56:45 (3405 seconds)
+Type: Starts
+Team: White
+Description: The White team wins the ball and starts an attack in the Red team's half.
+Context: Win the ball
+Impact: Starts to attack.
+
+Timestamp: 57:00 (3420 seconds)
+Type: Gains
+Team: Red
+Description: Red team gains control and starts an attack, advancing the ball up the pitch.
+Context: in midfield
+Impact: gains control.
+
+Timestamp: 57:15 (3435 seconds)
+Type: Gains
+Team: White
+Description: A Red team clearance is recovered by the White team in midfield, who continue to advance towards the Red team's goal.
+Context: Clearance ball
+Impact: attack again.
+
+Timestamp: 57:30 (3450 seconds)
+Type: Posession
+Team: White
+Description: Red team loses possession in the opposing half. The White team attempts a long pass forward, which is contested in the center circle by players from both teams.
+Context: Oppositing half
+Impact: Contested ball.
+
+Timestamp: 58:15 (3495 seconds)
+Type: Intercepts
+Team: Red
+Description: White team takes a throw-in, but the Red team intercepts and quickly transitions to an attack down the left wing.
+Context: Quickly transitions
+Impact: Attack
+
+Timestamp: 58:45 (3525 seconds)
+Type: Possession
+Team: Red
+Description: Red team kicks off and maintains possession in their own half.
+Context: In the own half.
+Impact: maintains in.
+
+Timestamp: 59:15 (3555 seconds)
+Type: Attack
+Team: White
+Description: White team wins possession in the midfield and launches a long pass forward to start an attack.
+Context: Attack from white team
+Impact: Ball goes far
+
+Timestamp: 60:15 (3615 seconds)
+Type: turnover
+Team: White
+Description: The White team gains possession from the Red team and starts an attack.
+Context: Red team is intercept
+Impact: turnover
+
+Timestamp: 60:30 (3630 seconds)
+Type: posession
+Team: White
+Description: The White team regains possession in the midfield and passes the ball amongst themselves.
+Context: midfield
+Impact: white team passes the ball
+
+Timestamp: 60:45 (3645 seconds)
+Type: posession
+Team: White
+Description: White team maintains possession, passing the ball out from their defense into midfield.
+Context: defense
+Impact: white team passing ball to midfield
+
+Timestamp: 61:00 (3660 seconds)
+Type: Intercepts
+Team: White
+Description: White team intercepts the pass, leading to the ball going out of play for a throw-in.
+Context: intercept
+Impact: out for throw in
+
+Timestamp: 61:30 (3690 seconds)
+Type: Attacks
+Team: White
+Description: White team gains possession in their own half and launches a counter-attack, carrying the ball into the Red team's final third.
+Context: attack
+Impact: red team to get ready
+
+Timestamp: 62:00 (3720 seconds)
+Type: Starts
+Team: White
+Description: The White team quickly wins the ball and, after a brief clearance by the Red team, regains possession and launches a long pass forward to start an attack.
+Context: red team defends
+Impact: White team has possesion
+
+Timestamp: 62:15 (3735 seconds)
+Type: possesion
+Team: White
+Description: White team maintains possession, circulating the ball from their defense into the midfield.
+Context: white team attack
+Impact: red team defends
+
+Timestamp: 62:30 (3750 seconds)
+Type: Intercepts
+Team: Red
+Description: White team builds an attack down the left flank before the Red team intercepts a pass
+Context: red team is intercepting
+Impact: red team wins the ball
+
+Timestamp: 62:45 (3765 seconds)
+Type: Loss
+Team: Red
+Description: White team brings the ball into the midfield but loses possession to the Red team. The ball goes out of bounds for a White team throw-in.
+Context: white team pass leads out for a throw-in
+Impact: red team with posession.
+
+Timestamp: 63:00 (3780 seconds)
+Type: possesion
+Team: White
+Description: White team maintains possession, building up play from their own half and moving into the midfield.
+Context: building to mid field.
+Impact: possession.
+
+Timestamp: 63:30 (3810 seconds)
+Type: Clear
+Team: White
+Description: The White team's defense clears the ball.
+Context: defence
+Impact: clear
+
+Timestamp: 64:00 (3840 seconds)
+Type: Win
+Team: White
+Description: White team starts an attack with a long ball into midfield. They win the aerial duel and attempt to build possession in the opposition's half, facing pressure from the Red team.
+Context: win aerial
+Impact: midfeild
+
+Timestamp: 64:30 (3870 seconds)
+Type: Throw-in
+Team: White
+Description: After a series of headers, the ball goes out for a White team throw-in. The Red team wins possession back from the throw-in.
+Context: Throw-in
+Impact: Loss of Possession
+
+Timestamp: 65:00 (3900 seconds)
+Type: Tackle
+Team: Red
+Description: The White team wins an aerial duel, but the Red team immediately gains possession in the center circle with a tackle and begins to build an attack.
+Context: Tackle
+Impact: Possession Change
+
+Timestamp: 66:00 (3960 seconds)
+Type: Loose ball
+Team: White
+Description: Red team loses possession in their own half. White team launches an attack down the left wing, which is broken up by a successful tackle from a red player at 66:10. The White team recovers the loose ball and continues their attack.
+Context: Loss of possession
+Impact:Loose ball
+
+Timestamp: 67:00 (4020 seconds)
+Type: Possession
+Team: White
+Description: White team gains possession in midfield and passes the ball in their own half.
+Context: Passing the ball
+Impact: Possession
+
+Timestamp: 67:15 (4035 seconds)
+Type: Possession
+Team: White
+Description: White team gains possession in midfield and advances into the attacking half.
+Context: Aggresive
+Impact: Possession
+
+Timestamp: 68:30 (4110 seconds)
+Type: Clear
+Team: White
+Description: White team clears the ball from their goal area. The play moves to the midfield where possession is contested by both teams, with the White team ultimately gaining control.
+Context: contest
+Impact: control
+
+Timestamp: 68:45 (4125 seconds)
+Type: Intercept
+Team: White
+Description: At 68:53, the White team intercepts a pass and launches a quick counter-attack with a long through ball, moving into the Red team's defensive half.
+Context: Intercept
+Impact: quick attack
+
+Timestamp: 69:30 (4170 seconds)
+Type: Toss
+Team: Red
+Description: Red team wins possession and maintains it in the midfield under pressure.
+Context: possession
+Impact: throw
+
+Timestamp: 69:45 (4185 seconds)
+Type: Clear
+Team: White
+Description: A white player heads a cross clear from the penalty area.
+Context: goal clear
+Impact: white
+
+Timestamp: 70:00 (4200 seconds)
+Type: Takes
+Team: White
+Description: White team wins possession in the midfield and plays the ball back into their own defensive third.
+Context: takes in
+Impact: midfield
+
+Timestamp: 70:15 (4215 seconds)
+Type: contested
+Team: Red
+Description: A white team player heads the ball in the midfield, and possession is contested.
+Context: Contested
+Impact: Goal
+
+Timestamp: 70:30 (4230 seconds)
+Type: Intercepts
+Team: White
+Description: Red team takes a throw-in and briefly maintains possession before the White team intercepts a pass. The White team then plays the ball forward into the Red team's half.
+Context: goal
+Impact: intercept
+
+Timestamp: 71:00 (4260 seconds)
+Type: Contested
+Team: White
+Description: A white team player heads the ball in the midfield, and possession is contested.
+Context: Midfield
+Impact: Contested
+
+Timestamp: 72:00 (4320 seconds)
+Type: Counter
+Team: Red
+Description: The ball is cleared by the Red team's defense, and they begin a counter-attack, advancing the ball into the White team's half.
+Context: Red team's goal.
+Impact: Counter-attack
+
+Timestamp: 72:45 (4365 seconds)
+Type: Loss of
+Team: White
+Description: A player makes a long cross-field pass that goes out of play, resulting in a loss of possession.
+Context: The long pass
+Impact: Loss possesion
+
+Timestamp: 73:00 (4380 seconds)
+Type: Take
+Team: White
+Description: White team takes a throw-in.
+Context: goal throw
+Impact: white team
+
+Timestamp: 73:15 (4395 seconds)
+Type: Possession
+Team: Red
+Description: Red team gains possession in midfield and launches an attack, with a player dribbling the ball deep into the White team's half.
+Context: white team in defense
+Impact: red in front
+
+Timestamp: 74:15 (4455 seconds)
+Type: Regain
+Team: Red
+Description: The white team gains possession in the midfield and plays a long pass forward, which is then intercepted by the red team who regain possession

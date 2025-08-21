@@ -1,0 +1,13 @@
+{
+  "match_id": "20250427-match-apr-27-2025-9bd1cf29",
+  "team_a": {
+    "name": "Dalkey",
+    "jersey": "white",
+    "ui_color": "red"
+  },
+  "team_b": {
+    "name": "Corduff",
+    "jersey": "red and black",
+    "ui_color": "blue"
+  }
+}

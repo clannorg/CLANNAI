@@ -1,0 +1,251 @@
+```text
+=== MEGA_EVENTS.TXT ===
+01:00 - KICK-OFF: Dalkey - Dalkey kicks off and begins passing in the center of the pitch.
+04:45 - FREE KICK: Dalkey - Attacking free kick taken, ball goes wide of the goal.
+05:15 - CORNER KICK: Dalkey - Corner kick taken, leading to a header towards goal.
+05:57 - SAVE: Corduff - Goalkeeper catches a long shot from Dalkey.
+06:15 - KICK-OFF: Dalkey - Dalkey kicks off to start the match.
+07:15 - KICK-OFF: Dalkey - Dalkey starts with possession from a kickoff.
+08:45 - KICK-OFF: Dalkey - Dalkey prepares for and takes the kickoff to start the match.
+09:00 - KICK-OFF: Corduff - Corduff kicks off to start the play.
+10:12 - GOAL KICK: Corduff - Goalkeeper takes the kick, sending the ball towards midfield.
+10:30 - THROW-IN: Dalkey - Throw-in taken, intercepted by Corduff.
+11:30 - FREE KICK: Dalkey - Free kick taken from own half, playing a long ball down the field.
+11:45 - THROW-IN: Dalkey - White team takes the throw-in to restart play.
+12:00 - THROW-IN: Corduff - Corduff takes a throw-in from the left sideline.
+12:15 - THROW-IN: Dalkey - After a tackle, leading to a throw-in for Dalkey.
+12:26 - SHOT: Dalkey - Shot on goal from an attack in the penalty area.
+15:00 - GOAL KICK: Dalkey - Dalkey initiates play from their goalkeeper.
+15:30 - CORNER KICK: Dalkey - Corner kick taken from the right side.
+15:45 - FREE KICK: Dalkey - Free kick taken, defended by Corduff who clear the ball.
+16:15 - FOUL: Dalkey - Foul called on Dalkey, resulting in a free kick for Corduff.
+16:19 - FREE KICK: Corduff - Free kick awarded after a foul by Dalkey.
+16:30 - THROW-IN: Corduff - Throw-in taken, intercepted by Dalkey.
+17:15 - CORNER KICK: Dalkey - Corner kick taken, leading to a scramble in the box.
+17:18 - SAVE: Corduff - Red goalkeeper saves a shot from Dalkey.
+17:30 - GOAL KICK: Corduff - Goal kick taken, building play from the back.
+17:45 - FOUL: Corduff - Red player commits a foul on a Dalkey attacker.
+17:56 - FREE KICK: Dalkey - Free kick awarded to Dalkey after a foul.
+18:00 - FREE KICK: Corduff - Free kick taken by Corduff.
+18:15 - KICK-IN: Corduff - Kick-in taken, headed clear by Dalkey.
+18:24 - SHOT: Dalkey - Shot on goal after a counter-attack.
+18:45 - GOAL KICK: Dalkey - Goal kick taken.
+19:45 - CORNER KICK: Corduff - Corner kick taken from the right side, cleared by Dalkey.
+19:47 - SHOT: Corduff - Shot on goal from a corner kick situation.
+22:00 - THROW-IN: Dalkey - Throw-in taken after ball goes out of play.
+22:15 - KICK-OFF: Corduff - Corduff kicks off and maintains possession.
+22:32 - SHOT: Dalkey - Shot on goal after launching an attack up the right flank.
+23:15 - THROW-IN: Corduff - Throw-in taken by Corduff.
+23:45 - THROW-IN: Dalkey - Throw-in taken and possession lost.
+25:00 - THROW-IN: Corduff - Throw-in taken, leading to a stoppage.
+25:12 - FREE KICK: Dalkey - Free kick taken from own half.
+25:27 - SHOT: Dalkey - Shot on goal after winning possession in midfield.
+26:15 - FREE KICK: Corduff - Corduff prepares to take a free kick from their own half.
+26:20 - SHOT: Corduff - Shot on goal from an attack, saved by the goalkeeper.
+26:34 - SAVE: Dalkey - Dalkey keeper saves a shot from Corduff.
+26:45 - CORNER KICK: Corduff - Corner kick taken from the right side.
+26:51 - SHOT: Corduff - Shot on goal during an attack from a corner kick, blocked by a defender.
+27:07 - BLOCKED SHOT: Dalkey - Corduff shot blocked by a Dalkey defender.
+27:15 - FREE KICK: Dalkey - Free kick taken.
+27:45 - KICK-OFF: Dalkey - Dalkey kicks off from the centre circle.
+28:00 - THROW-IN: Corduff - Throw-in taken after ball goes out of play.
+28:15 - FREE KICK: Dalkey - Free kick taken into Corduff's penalty area.
+28:30 - FREE KICK: Dalkey - Free kick taken from an attacking position.
+28:45 - CORNER KICK: Corduff - Corner kick taken, shot goes over the goal.
+29:00 - CORNER KICK: Dalkey - Corner kick taken, cleared by Corduff.
+29:15 - SET PIECE: Dalkey - Ball delivered into the penalty area from a set piece.
+29:32 - SHOT: Dalkey - Shot on goal after a set piece attack.
+30:00 - GOAL KICK: Dalkey - Long goal kick taken.
+30:15 - FOUL: Corduff - Red player commits a foul, Dalkey awarded free kick.
+30:21 - FREE KICK: Dalkey - Free kick awarded after foul.
+30:45 - FOUL: Dalkey - Foul committed by Dalkey, Corduff awarded free kick.
+30:47 - FREE KICK: Corduff - Free kick awarded after foul.
+31:00 - SAVE: Corduff - Goalkeeper collects a long ball from Dalkey attack.
+31:15 - GOAL KICK: Dalkey - Goal kick taken from their penalty area.
+32:00 - THROW-IN: Dalkey - Throw-in taken, headed clear by Corduff.
+32:15 - THROW-IN: Dalkey - Throw-in taken after Dalkey wins the ball.
+32:30 - GOAL KICK: Corduff - Goal kick taken.
+32:45 - GOAL KICK: Dalkey - Dalkey plays out from the back, starting with a goal kick.
+33:00 - THROW-IN: Dalkey - Throw-in taken to restart play.
+33:15 - FREE KICK: Dalkey - Free kick taken from their own half.
+34:30 - KICK: Dalkey - Long kick from defensive half to restart play.
+34:52 - SHOT: Corduff - Shot on goal following a counter-attack.
+35:30 - GOAL KICK: Corduff - Corduff gains possession from a goal kick.
+36:27 - SHOT: Corduff - Shot on goal from a direct free kick, immediately preceding a goal.
+36:29 - GOAL: Corduff - Direct free kick results in a goal.
+36:45 - KICK-OFF: Dalkey - Game restarts with a kick-off from Dalkey after Corduff's goal.
+37:00 - KICK-OFF: Corduff - Corduff kicks off the match from the center circle.
+37:10 - SHOT: Dalkey - Shot on goal from inside the penalty area, saved by the goalkeeper.
+37:24 - SAVE: Corduff - Red team's goalkeeper saves a shot from Dalkey.
+37:30 - THROW-IN: Dalkey - Throw-in taken.
+37:45 - GOAL KICK: Corduff - Goal kick taken, sending the ball long into the opposing half.
+39:15 - KICK-OFF: Corduff - Corduff kicks off to start the play.
+40:26 - SHOT: Dalkey - Shot on goal during an attack from midfield into the final third.
+41:15 - KICK-OFF: Dalkey - Dalkey prepares to kick off from the center circle.
+41:45 - GOAL KICK: Corduff - Corduff takes a goal kick.
+42:00 - THROW-IN: Corduff - Throw-in taken.
+42:15 - THROW-IN: Corduff - Attacking throw-in deep into Dalkey's half.
+43:00 - FREE KICK: Dalkey - Free kick taken from the right wing.
+43:30 - THROW-IN: Corduff - Throw-in taken.
+43:45 - THROW-IN: Dalkey - Dalkey prepares to take a throw-in.
+44:00 - THROW-IN: Corduff - Corduff takes a second consecutive throw-in.
+44:15 - FREE KICK: Dalkey - Free kick taken from a central position.
+44:45 - SAVE: Corduff - Red team's goalkeeper saves a shot from Dalkey.
+44:52 - SAVE: Corduff - Red team's goalkeeper saves a shot from Dalkey.
+50:45 - FREE KICK: Dalkey - Dalkey prepares to restart play from a free kick in their own half.
+51:30 - KICK-OFF: Dalkey - Dalkey takes the kick-off to start the game.
+51:45 - KICK-OFF: Dalkey - Dalkey kicks off the match.
+53:15 - KICK-OFF: Corduff - Corduff kicks off from the center circle.
+53:24 - THROW-IN: Corduff - Corduff takes a throw-in from the right sideline.
+53:30 - KICK-OFF: Corduff - Corduff kicks off and maintains possession.
+54:00 - FREE KICK: Corduff - Indirect free kick taken.
+54:45 - THROW-IN: Dalkey - Dalkey takes a throw-in on the right sideline.
+54:48 - SHOT: Corduff - Shot on goal during an attack in the opponent's half.
+55:14 - SHOT: Corduff - Shot on goal during an attack in Dalkey's half.
+55:50 - SAVE: Corduff - Goalkeeper collects the ball from a Dalkey long pass.
+56:00 - FREE KICK: Corduff - Attacking free kick taken into the penalty area.
+56:15 - FREE KICK: Corduff - Free kick taken from own half.
+56:30 - THROW-IN: Corduff - Throw-in taken after Dalkey's long pass.
+56:45 - KICK-OFF: Corduff - Corduff kicks off from the center.
+57:40 - SHOT: Dalkey - Shot on goal during an attack, following a long pass.
+58:15 - THROW-IN: Dalkey - Throw-in taken, but intercepted by Corduff.
+58:45 - KICK-OFF: Corduff - Corduff kicks off and maintains possession.
+59:00 - FREE KICK: Dalkey - Free kick taken from attacking half.
+59:30 - GOAL KICK: Dalkey - Dalkey prepares to take the resulting goal kick.
+59:45 - FREE KICK: Dalkey - Free kick taken, crossed into the box.
+60:18 - SHOT: Corduff - Shot on goal during an attack in the final third, blocked by a defender.
+60:09 - BLOCKED SHOT: Dalkey - Corduff shot blocked by Dalkey defender.
+61:00 - THROW-IN: Corduff - Throw-in taken after ball goes out of play.
+61:15 - THROW-IN: Corduff - Throw-in executed on the left side of the pitch.
+62:45 - THROW-IN: Dalkey - Ball goes out of bounds for a Dalkey throw-in.
+63:30 - KICK-OFF: Corduff - Corduff takes the kick-off.
+63:45 - GOAL KICK: Corduff - Goal kick taken, sending the ball long towards midfield.
+64:30 - THROW-IN: Dalkey - Throw-in taken after a series of headers.
+65:15 - KICK-OFF: Dalkey - Dalkey kicks off the match.
+65:30 - FOUL: Dalkey - Foul committed by Dalkey.
+65:45 - KICK-OFF: Corduff - Corduff restarts play with a kick-off.
+66:34 - SHOT: Corduff - Shot on goal during an attack into the penalty area.
+67:18 - SHOT: Dalkey - Shot on goal during an attack in the final third.
+67:45 - INJURY: Corduff - Stoppage in play for an injury to a Corduff player.
+68:00 - FREE KICK: Dalkey - Referee organizes players for a Dalkey free kick.
+68:15 - FREE KICK: Dalkey - Indirect free kick taken.
+69:14 - GOAL KICK: Dalkey - Goal kick taken.
+69:15 - FOUL: Corduff - Foul committed, a free kick is awarded to Dalkey.
+69:30 - THROW-IN: Dalkey - Throw-in taken.
+70:15 - GOAL KICK: Corduff - Goal kick taken, sending the ball long into the midfield.
+70:30 - THROW-IN: Corduff - Throw-in taken.
+70:35 - SHOT: Dalkey - Shot on goal after intercepting a pass and advancing into the opponent's half.
+70:45 - THROW-IN: Dalkey - Result of a cleared cross.
+71:00 - GOAL KICK: Corduff - Goal kick taken, heading contested in midfield.
+71:30 - SAVE: Dalkey - Dalkey keeper saves a shot from Corduff.
+71:45 - FREE KICK: Corduff - Corduff prepares to take an attacking free kick.
+72:00 - CORNER KICK: Dalkey - Corner kick taken from the left, cleared by Corduff.
+72:11 - SHOT: Dalkey - Shot on goal during an attack in the final third.
+72:30 - FREE KICK: Corduff - Free kick taken.
+72:33 - SAVE: Dalkey - Dalkey keeper saves a shot from Corduff.
+73:00 - THROW-IN: Dalkey - Throw-in taken.
+73:30 - CORNER KICK: Corduff - Attack from a corner kick.
+73:45 - CORNER KICK: Corduff - Corner kick taken from the left.
+74:19 - SHOT: Dalkey - Shot on goal during an attack.
+74:45 - GOAL KICK: Corduff - Corduff prepares for a goal kick.
+75:00 - GOAL KICK: Corduff - Goal kick taken, leading to contested possession.
+76:30 - SHOT: Corduff - Shot on goal after launching an attack from midfield.
+77:00 - KICK-OFF: Corduff - Corduff kicks off to start the play.
+78:15 - THROW-IN: Dalkey - Result of play, leading to another throw-in.
+78:30 - FREE KICK: Dalkey - Free kick taken in their own half.
+78:45 - FREE KICK: Corduff - Corduff awarded a free kick in Dalkey's half.
+79:00 - THROW-IN: Corduff - Throw-in taken in the attacking half.
+79:15 - FREE KICK: Dalkey - Free kick taken.
+79:16 - SHOT: Dalkey - Shot on goal from a free kick.
+79:31 - SAVE: Dalkey - Dalkey keeper saves a shot from Corduff.
+79:58 - SHOT: Corduff - Shot on goal following an attack.
+80:30 - KICK-OFF: Dalkey - Dalkey prepares for the kickoff.
+80:51 - BLOCKED SHOT: Dalkey - Corduff shot blocked by Dalkey defense.
+81:10 - SHOT: Dalkey - Shot on goal during an attack in the opponent's half.
+81:25 - SAVE: Dalkey - Dalkey goalkeeper collects the ball from a Corduff long ball.
+81:30 - KICK: Corduff - Corduff initiates play with a long kick from their half.
+81:45 - THROW-IN: Dalkey - Throw-in taken from the right sideline, leading to another throw-in.
+82:13 - SHOT: Dalkey - Shot on goal during an attack.
+82:30 - BLOCKED SHOT: Dalkey - Corduff shot blocked inside the box.
+83:15 - THROW-IN: Dalkey - Ball goes out of play for a Dalkey throw-in.
+83:30 - THROW-IN: Dalkey - Throw-in taken, won by Corduff.
+84:00 - KICK-OFF: Corduff - Corduff kicks off to start the match.
+84:55 - SHOT: Corduff - Shot on goal from a through pass into the penalty area, immediately preceding a goal.
+84:56 - GOAL: Corduff - Through pass into the penalty area followed by a shot and goal.
+85:15 - KICK-OFF: Corduff - Corduff takes the kick-off to restart the match.
+85:30 - KICK-OFF: Dalkey - Dalkey takes the kick-off and maintains possession.
+85:45 - KICK-OFF: Corduff - Corduff kicks off and attempts to attack with a long ball.
+86:00 - KICK-OFF: Corduff - Corduff takes the kick-off and maintains possession.
+86:15 - KICK-OFF: Corduff - Corduff kicks off to start the play.
+87:15 - THROW-IN: Dalkey - Dalkey takes a throw-in.
+87:30 - KICK-OFF: Corduff - Corduff kicks off and maintains possession.
+87:45 - THROW-IN: Dalkey - Throw-in taken after a slide tackle.
+88:15 - FOUL: Dalkey - Foul committed by Corduff, resulting in a free kick for Dalkey.
+88:42 - SHOT: Corduff - Shot on goal after a long attacking pass.
+89:00 - STOPPAGE: Match stopped by referee's whistle.
+
+=== MEGA_TACTICAL.TXT ===
+=== DALKEY ===
+Strengths:
+- Possession & Build-up: Frequently maintains possession and builds attacks from their own half into the midfield and opposition territory.
+- Counter-attacking: Capable of quickly launching counter-attacks after winning possession.
+- Attacking Set Pieces: Often earns and attempts to create chances from free kicks and corner kicks in attacking areas.
+- Goalkeeping: Their goalkeeper showed effectiveness with multiple saves and collecting loose balls.
+
+Weaknesses:
+- Finishing/Conversion: Despite numerous shots, Dalkey failed to convert any into a verified goal, indicating a lack of clinical finishing.
+- Defensive Vulnerability: Conceded both verified goals from direct attacking plays by Corduff.
+- Losing Possession: At times, struggles to maintain possession under pressure, especially in midfield, leading to turnovers.
+
+Key Moments:
+- 12:26 - SHOT: Shot on goal from attack in penalty area.
+- 17:18 - SAVE: Corduff goalkeeper saves a Dalkey shot from a corner.
+- 37:10 - SHOT: Shot on goal from inside the penalty area, saved.
+- 44:52 - SAVE: Corduff goalkeeper saves a Dalkey shot on goal.
+- 70:35 - SHOT: Shot on goal after intercepting a pass and advancing.
+- 79:16 - SHOT: Shot on goal from a free kick.
+
+=== CORDUFF ===
+Strengths:
+- Clinical Finishing: Scored both verified goals, demonstrating efficiency in converting goal-scoring opportunities.
+- Set Piece Threat: Dangerous from both direct free kicks and corner kicks, leading to goal-scoring opportunities, including one goal.
+- Aggressive Defense & Interception: Often wins possession through tackles and interceptions in midfield, initiating counter-attacks.
+- Long Ball Play: Utilizes long balls effectively to advance play and initiate attacks from their own half.
+
+Weaknesses:
+- Sustained Possession: Less consistent in maintaining prolonged possession compared to Dalkey, often resorting to long clearances or losing the ball after initial advances.
+- Foul Discipline: Committed more fouls than Dalkey, indicating potentially over-aggressive tackling.
+- Defensive Gaps: Allowed Dalkey several clear shot opportunities, relying on goalkeeper saves or Dalkey's poor finishing.
+
+Key Moments:
+- 19:47 - SHOT: Shot on goal from a corner kick situation.
+- 26:20 - SHOT: Shot on goal, saved by Dalkey goalkeeper.
+- 36:29 - GOAL: Goal scored from a direct free kick.
+- 71:30 - SAVE: Dalkey goalkeeper saves a Corduff shot.
+- 76:30 - SHOT: Shot on goal after launching an attack from midfield.
+- 84:56 - GOAL: Goal scored from a through pass into the penalty area.
+
+=== MEGA_SUMMARY.TXT ===
+Match overview:
+
+Match: Dalkey vs Corduff
+Final Score: Dalkey 0 - 2 Corduff
+Duration: 90 minutes (observed timeline up to 92:15)
+
+Key Statistics:
+- Goals: 2 (VEO Verified - 100% accurate)
+- Shots: 29 (VEO Verified - 100% accurate)
+- Kick-offs: 29
+- Throw-ins: 39
+- Free Kicks: 34
+- Corner Kicks: 10
+- Fouls: 7
+- Saves: 10
+- Blocked Shots: 5
+- Injuries: 1
+
+Match Narrative:
+The football match between Dalkey (White team) and Corduff (Red team) was a competitive 90-minute encounter, concluding with a 2-0 victory for Corduff based on verified goals. Dalkey demonstrated a strong emphasis on possession and building attacks from their own half, frequently advancing the ball into Corduff's territory and generating numerous shot opportunities. Their goalkeeping was tested multiple times, resulting in several saves. Despite their offensive efforts and a higher number of implied shots and attacking set pieces, Dalkey struggled with clinical finishing, failing to convert any of their 29 verified shots into a goal.
+
+Corduff, on the other hand, proved to be more incisive in front of goal, scoring both of the match's verified goals. Their first goal came from a direct free kick in the 36th minute, showcasing their set-piece threat. The second goal arrived late in the 84th minute, following a well-executed through pass into Dalkey's penalty area. Corduff also exhibited aggressive defending, winning possession frequently in midfield through tackles and interceptions, which often led to rapid counter-attacks. While Dalkey dominated in terms of general attacking buildup, Corduff's efficiency in key moments, particularly from set-pieces and direct attacks, secured their victory.
+```

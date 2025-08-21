@@ -1,0 +1,23 @@
+Match overview:
+
+Match: Dalkey vs Corduff
+Final Score: Dalkey 0 - 2 Corduff
+Duration: 90 minutes (observed timeline up to 92:15)
+
+Key Statistics:
+- Goals: 2 (VEO Verified - 100% accurate)
+- Shots: 29 (VEO Verified - 100% accurate)
+- Kick-offs: 29
+- Throw-ins: 39
+- Free Kicks: 34
+- Corner Kicks: 10
+- Fouls: 7
+- Saves: 10
+- Blocked Shots: 5
+- Injuries: 1
+
+Match Narrative:
+The football match between Dalkey (White team) and Corduff (Red team) was a competitive 90-minute encounter, concluding with a 2-0 victory for Corduff based on verified goals. Dalkey demonstrated a strong emphasis on possession and building attacks from their own half, frequently advancing the ball into Corduff's territory and generating numerous shot opportunities. Their goalkeeping was tested multiple times, resulting in several saves. Despite their offensive efforts and a higher number of implied shots and attacking set pieces, Dalkey struggled with clinical finishing, failing to convert any of their 29 verified shots into a goal.
+
+Corduff, on the other hand, proved to be more incisive in front of goal, scoring both of the match's verified goals. Their first goal came from a direct free kick in the 36th minute, showcasing their set-piece threat. The second goal arrived late in the 84th minute, following a well-executed through pass into Dalkey's penalty area. Corduff also exhibited aggressive defending, winning possession frequently in midfield through tackles and interceptions, which often led to rapid counter-attacks. While Dalkey dominated in terms of general attacking buildup, Corduff's efficiency in key moments, particularly from set-pieces and direct attacks, secured their victory.
+```

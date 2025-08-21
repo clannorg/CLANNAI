@@ -1,0 +1,29 @@
+{
+  "match_id": "20250427-match-apr-27-2025-9bd1cf29",
+  "teams": {
+    "red_team": {
+      "name": "Dalkey",
+      "jersey_color": "white"
+    },
+    "blue_team": {
+      "name": "Corduff",
+      "jersey_color": "red and black"
+    }
+  },
+  "counts": {
+    "goals": 2,
+    "shots": 28
+  },
+  "files": {
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250427-match-apr-27-2025-9bd1cf29-video-mp4.mp4",
+    "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-web_events_array-json.json",
+    "web_events_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-web_events-json.json",
+    "timeline_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-5_complete_timeline-txt.txt",
+    "ground_truth_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-1_veo_ground_truth-json.json",
+    "other_events_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-8_other_events-txt.txt",
+    "tactical_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-11_tactical_analysis-json.json"
+  },
+  "final_score": "Dalkey 0 - 2 Corduff",
+  "winner": "Corduff",
+  "match_summary": "Match overview:\n\nMatch: Dalkey vs Corduff\nFinal Score: Dalkey 0 - 2 Corduff\nDuration: 90 minutes (observed timeline up to 92:15)\n\nKey Statistics:\n- Goals: 2 (VEO Verified - 100% accurate)\n- Shots: 29 (VEO Verified - 100% accurate)\n- Kick-offs: 29\n- Throw-ins: 39\n- Free Kicks: 34\n- Corner Kicks: 10\n- Fouls: 7\n- Saves: 10\n- Blocked Shots: 5\n- Injuries: 1\n\nMatch Narrative:\nThe football match between Dalkey (White team) and Corduff (Red team) was a competitive 90-minute encounter, concluding with a 2-0 victory for Corduff based on verified goals. Dalkey demonstrated a strong emphasis on possession and building attacks from their own half, frequently advancing the ball into Corduff's territory and generating numerous shot opportunities. Their goalkeeping was tested multiple times, resulting in several saves. Despite their offensive efforts and a higher number of implied shots and attacking set pieces, Dalkey struggled with clinical finishing, failing to convert any of their 29 verified shots into a goal.\n\nCorduff, on the other hand, proved to be more incisive in front of goal, scoring both of the match's verified goals. Their first goal came from a direct free kick in the 36th minute, showcasing their set-piece threat. The second goal arrived late in the 84th minute, following a well-executed through pass into Dalkey's penalty area. Corduff also exhibited aggressive defending, winning possession frequently in midfield through tackles and interceptions, which often led to rapid counter-attacks. While Dalkey dominated in terms of general attacking buildup, Corduff's efficiency in key moments, particularly from set-pieces and direct attacks, secured their victory.\n```"
+}
