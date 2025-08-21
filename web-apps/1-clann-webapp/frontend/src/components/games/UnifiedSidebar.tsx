@@ -935,11 +935,7 @@ export default function UnifiedSidebar({
                           setAutoplayEvents(newAutoplay)
                           onAutoplayChange?.(newAutoplay)
                         }}
-                        className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 ${
-                          autoplayEvents 
-                            ? 'bg-green-500/20 hover:bg-green-500/30 border-green-500/50 text-green-300'
-                            : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300'
-                        }`}
+                        className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
                       >
                         <span>Autoplay</span>
                         <div className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
