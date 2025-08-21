@@ -95,12 +95,12 @@ export default function AppleStyleTrimmer({
       ticks.push(
         <div
           key={i}
-          className={`absolute top-0 ${
+          className={`absolute bottom-0 ${
             isEventTick 
               ? 'w-0.5 h-6 bg-orange-400' 
               : isSecondMark 
-                ? 'w-px h-4 bg-gray-400' 
-                : 'w-px h-2 bg-gray-600'
+                ? 'w-px h-4 bg-white/60' 
+                : 'w-px h-2 bg-white/40'
           }`}
           style={{ left: `${position}px` }}
         />
