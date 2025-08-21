@@ -97,7 +97,7 @@ export default function AppleStyleTrimmer({
           key={i}
           className={`absolute bottom-0 ${
             isEventTick 
-              ? 'w-0.5 h-6 bg-orange-400' 
+              ? 'w-0.5 h-6 bg-white' 
               : isSecondMark 
                 ? 'w-px h-4 bg-white/60' 
                 : 'w-px h-2 bg-white/40'
@@ -114,7 +114,7 @@ export default function AppleStyleTrimmer({
       {/* Header with time info */}
       <div className="flex justify-between items-center mb-3 text-xs">
         <span className="text-gray-400 font-medium">-{beforePadding}s</span>
-        <span className="text-orange-400 font-bold flex items-center gap-1">
+        <span className="text-white font-bold flex items-center gap-1">
           <span>⚽</span>
           {formatTime(eventTimestamp)}
         </span>
@@ -134,7 +134,7 @@ export default function AppleStyleTrimmer({
 
         {/* Selected region */}
         <div
-          className="absolute top-2 bottom-2 bg-orange-500/30 border border-orange-500/50 rounded"
+          className="absolute top-2 bottom-2 bg-white/20 border border-white/40 rounded"
           style={{
             left: `${startPosition}px`,
             width: `${selectedWidth}px`
@@ -143,30 +143,30 @@ export default function AppleStyleTrimmer({
 
         {/* Event marker (center line) */}
         <div
-          className="absolute top-1 bottom-1 w-0.5 bg-orange-400 z-10 pointer-events-none"
+          className="absolute top-1 bottom-1 w-0.5 bg-white z-10 pointer-events-none"
           style={{ left: `${eventPosition}px` }}
         />
 
         {/* Left handle */}
         <div
-          className={`absolute top-0 bottom-0 w-3 bg-orange-500 rounded-l cursor-ew-resize flex items-center justify-center group hover:bg-orange-400 transition-colors ${
-            isDragging === 'left' ? 'bg-orange-400' : ''
+          className={`absolute top-0 bottom-0 w-3 bg-white/80 rounded-l cursor-ew-resize flex items-center justify-center group hover:bg-white transition-colors ${
+            isDragging === 'left' ? 'bg-white' : ''
           }`}
           style={{ left: `${startPosition - 6}px` }}
           onMouseDown={(e) => handleMouseDown(e, 'left')}
         >
-          <div className="w-0.5 h-4 bg-white/60 rounded-full" />
+          <div className="w-0.5 h-4 bg-gray-800 rounded-full" />
         </div>
 
         {/* Right handle */}
         <div
-          className={`absolute top-0 bottom-0 w-3 bg-orange-500 rounded-r cursor-ew-resize flex items-center justify-center group hover:bg-orange-400 transition-colors ${
-            isDragging === 'right' ? 'bg-orange-400' : ''
+          className={`absolute top-0 bottom-0 w-3 bg-white/80 rounded-r cursor-ew-resize flex items-center justify-center group hover:bg-white transition-colors ${
+            isDragging === 'right' ? 'bg-white' : ''
           }`}
           style={{ left: `${endPosition - 6}px` }}
           onMouseDown={(e) => handleMouseDown(e, 'right')}
         >
-          <div className="w-0.5 h-4 bg-white/60 rounded-full" />
+          <div className="w-0.5 h-4 bg-gray-800 rounded-full" />
         </div>
       </div>
     </div>
