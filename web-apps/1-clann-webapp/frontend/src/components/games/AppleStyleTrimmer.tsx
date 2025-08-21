@@ -113,21 +113,22 @@ export default function AppleStyleTrimmer({
     <div className={`bg-gray-800 rounded-lg p-3 ${className}`}>
       {/* Header with time info */}
       <div className="flex justify-between items-center mb-3 text-xs">
-        <span className="text-gray-400">-{beforePadding}s</span>
-        <span className="text-orange-400 font-bold">
+        <span className="text-gray-400 font-medium">-{beforePadding}s</span>
+        <span className="text-orange-400 font-bold flex items-center gap-1">
+          <span>⚽</span>
           {formatTime(eventTimestamp)}
         </span>
-        <span className="text-gray-400">+{afterPadding}s</span>
+        <span className="text-gray-400 font-medium">+{afterPadding}s</span>
       </div>
 
       {/* Timeline Container */}
       <div 
         ref={containerRef}
-        className="relative bg-gray-800 rounded-lg h-12 mx-auto cursor-pointer select-none"
+        className="relative bg-gray-800 rounded-lg h-12 mx-auto cursor-pointer select-none overflow-visible"
         style={{ width: `${containerWidth}px` }}
       >
-        {/* Tick marks */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Tick marks - at bottom edge of timeline */}
+        <div className="absolute -bottom-2 left-0 right-0 pointer-events-none">
           {generateTicks()}
         </div>
 
