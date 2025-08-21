@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
+import Hls from 'hls.js'
 
 interface GameEvent {
   type: string
@@ -13,6 +14,7 @@ interface GameEvent {
 interface VideoPlayerProps {
   game: {
     s3Url: string
+    hlsUrl?: string
     title: string
     metadata?: {
       teams?: {
@@ -31,6 +33,13 @@ interface VideoPlayerProps {
   overlayVisible?: boolean
   // Notify parent about user interaction to reset auto-hide timers
   onUserInteract?: () => void
+  // Downloads preview props
+  selectedEvents?: Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>
+  activeTab?: string
+  autoplayEvents?: boolean
 }
 
 export default function VideoPlayer({
@@ -42,14 +51,244 @@ export default function VideoPlayer({
   onEventClick,
   onSeekToTimestamp,
   overlayVisible = true,
-  onUserInteract
+  onUserInteract,
+  selectedEvents,
+  activeTab,
+  autoplayEvents
 }: VideoPlayerProps) {
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
+  const [playbackSpeed, setPlaybackSpeed] = useState(1)
+  const [zoomLevel, setZoomLevel] = useState(1)
   
   const videoRef = useRef<HTMLVideoElement>(null)
+  const hlsRef = useRef<Hls | null>(null)
+  
+  // Downloads preview state
+  const [previewSegments, setPreviewSegments] = useState<Array<{
+    id: number
+    start: number
+    end: number
+    event: GameEvent
+  }>>([])
+  const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
+  const [flashRegion, setFlashRegion] = useState<string | null>(null)
+
+  // Check if we're in preview mode (clips tab with selected events OR autoplay events mode)
+  const isPreviewMode = (activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0) || 
+                        (activeTab === 'events' && autoplayEvents)
+
+  // Calculate preview segments when selectedEvents or autoplay change
+  useEffect(() => {
+    if (isPreviewMode && allEvents) {
+      let segments: Array<{
+        id: number
+        start: number
+        end: number
+        event: GameEvent
+      }> = []
+
+      if (activeTab === 'events' && autoplayEvents) {
+        // Autoplay mode: use all events with default 5s padding
+        segments = allEvents
+          .map((event, index) => ({
+            id: index,
+            start: Math.max(0, event.timestamp - 5),
+            end: event.timestamp + 5,
+            event
+          }))
+      } else if (activeTab === 'downloads' && selectedEvents) {
+        // Downloads mode: use individual padding from Map
+        segments = Array.from(selectedEvents.entries())
+          .map(([eventIndex, paddingData]) => {
+            const event = allEvents[eventIndex]
+            if (!event) return null
+            return {
+              id: eventIndex,
+              start: Math.max(0, event.timestamp - paddingData.beforePadding),
+              end: event.timestamp + paddingData.afterPadding,
+              event
+            }
+          })
+          .filter(Boolean) as Array<{
+            id: number
+            start: number
+            end: number
+            event: GameEvent
+          }>
+      }
+      
+      // Sort segments by start time
+      segments.sort((a, b) => a.start - b.start)
+      
+      setPreviewSegments(segments)
+      setCurrentSegmentIndex(0)
+    } else {
+      setPreviewSegments([])
+      setCurrentSegmentIndex(0)
+    }
+  }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents])
+
+
+
+  // Initialize HLS player
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    // Cleanup previous HLS instance
+    if (hlsRef.current) {
+      hlsRef.current.destroy()
+      hlsRef.current = null
+    }
+
+    // Try HLS first if supported and URL is available
+    if (game.hlsUrl && Hls.isSupported()) {
+      console.log('🎬 Initializing HLS with URL:', game.hlsUrl)
+      
+      const hls = new Hls({
+        enableWorker: true,
+        lowLatencyMode: false,
+        backBufferLength: 90,
+        debug: false,
+      })
+
+      hls.loadSource(game.hlsUrl)
+      hls.attachMedia(video)
+
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        console.log('✅ HLS manifest loaded successfully')
+      })
+
+      hls.on(Hls.Events.ERROR, (event, data) => {
+        console.error('❌ HLS Error:', data)
+        if (data.fatal) {
+          console.log('🔄 HLS fatal error, falling back to MP4')
+          // Fallback to MP4
+          video.src = game.s3Url
+        }
+      })
+
+      hlsRef.current = hls
+    } else if (game.hlsUrl && video.canPlayType('application/vnd.apple.mpegurl')) {
+      // Native HLS support (Safari)
+      console.log('🍎 Using native HLS support')
+      video.src = game.hlsUrl
+    } else {
+      // Fallback to MP4
+      console.log('📹 Using MP4 fallback')
+      video.src = game.s3Url
+    }
+
+    // Cleanup on unmount
+    return () => {
+      if (hlsRef.current) {
+        hlsRef.current.destroy()
+        hlsRef.current = null
+      }
+    }
+  }, [game.hlsUrl, game.s3Url])
+
+  // Jump to next segment in preview mode
+  const jumpToNextSegment = useCallback(() => {
+    const nextIndex = currentSegmentIndex + 1
+    if (nextIndex < previewSegments.length) {
+      // Jump to next segment
+      setCurrentSegmentIndex(nextIndex)
+      if (videoRef.current) {
+        videoRef.current.currentTime = previewSegments[nextIndex].start
+      }
+    } else {
+      // Loop back to first clip
+      setCurrentSegmentIndex(0)
+      if (videoRef.current) {
+        videoRef.current.currentTime = previewSegments[0].start
+      }
+    }
+  }, [currentSegmentIndex, previewSegments])
+
+  // Jump to previous segment in preview mode
+  const jumpToPrevSegment = useCallback(() => {
+    const prevIndex = currentSegmentIndex - 1
+    if (prevIndex >= 0) {
+      // Jump to previous segment
+      setCurrentSegmentIndex(prevIndex)
+      if (videoRef.current) {
+        videoRef.current.currentTime = previewSegments[prevIndex].start
+      }
+    } else {
+      // Loop to last clip
+      const lastIndex = previewSegments.length - 1
+      setCurrentSegmentIndex(lastIndex)
+      if (videoRef.current) {
+        videoRef.current.currentTime = previewSegments[lastIndex].start
+      }
+    }
+  }, [currentSegmentIndex, previewSegments])
+
+  // Keyboard shortcuts for clip navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isPreviewMode || previewSegments.length === 0) return
+      
+      // Only handle if not typing in an input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      
+      switch (e.key) {
+        case 'ArrowRight':
+          e.preventDefault()
+          jumpToNextSegment()
+          break
+        case 'ArrowLeft':
+          e.preventDefault()
+          jumpToPrevSegment()
+          break
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isPreviewMode, previewSegments.length, jumpToNextSegment, jumpToPrevSegment])
+
+  // Generate smart timeline background for clips mode
+  const generateSmartTimelineBackground = () => {
+    if (!isPreviewMode || !previewSegments.length || !duration) {
+      // Normal timeline - green progress, grey remainder
+      const progressPercent = (currentTime / (duration || 1)) * 100
+      return `linear-gradient(to right, #016F32 0%, #016F32 ${progressPercent}%, rgba(255,255,255,0.3) ${progressPercent}%, rgba(255,255,255,0.3) 100%)`
+    }
+    
+    // Smart timeline - green clips, grey gaps
+    let gradientStops = []
+    let lastEnd = 0
+    
+    previewSegments.forEach((segment, index) => {
+      const startPercent = (segment.start / duration) * 100
+      const endPercent = (segment.end / duration) * 100
+      
+      // Grey gap before clip
+      if (startPercent > lastEnd) {
+        gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
+        gradientStops.push(`rgba(255,255,255,0.2) ${startPercent}%`)
+      }
+      
+      // Bright green clip segment
+      gradientStops.push(`#22C55E ${startPercent}%`)
+      gradientStops.push(`#22C55E ${endPercent}%`)
+      
+      lastEnd = endPercent
+    })
+    
+    // Grey remainder after last clip
+    if (lastEnd < 100) {
+      gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
+      gradientStops.push(`rgba(255,255,255,0.2) 100%`)
+    }
+    
+    return `linear-gradient(to right, ${gradientStops.join(', ')})`
+  }
 
   // Extract team colors from metadata and convert to CSS colors
   const redTeam = game.metadata?.teams?.red_team || { name: 'Red Team', jersey_color: '#DC2626' }
@@ -126,6 +365,36 @@ export default function VideoPlayer({
       setCurrentTime(time)
       setDuration(dur)
       onTimeUpdate(time, dur)
+      
+      // Downloads preview auto-jump logic
+      if (isPreviewMode && previewSegments.length > 0 && isPlaying) {
+        const currentSegment = previewSegments[currentSegmentIndex]
+        
+        // Check if we're in a grey area (not in any clip segment)
+        const inClipSegment = previewSegments.some(seg => 
+          time >= seg.start && time <= seg.end
+        )
+        
+        if (!inClipSegment) {
+          // We're in grey area - jump to next clip segment
+          const nextSegment = previewSegments.find(seg => seg.start > time)
+          if (nextSegment) {
+            // Jump to the start of the next segment
+            videoRef.current.currentTime = nextSegment.start
+            // Update current segment index
+            const nextIndex = previewSegments.findIndex(seg => seg.id === nextSegment.id)
+            setCurrentSegmentIndex(nextIndex)
+          } else {
+            // No more segments - stop playing
+            videoRef.current.pause()
+            setIsPlaying(false)
+            setCurrentSegmentIndex(0)
+          }
+        } else if (currentSegment && time >= currentSegment.end) {
+          // Hit end of current segment - loop back to start of same segment
+          videoRef.current.currentTime = currentSegment.start
+        }
+      }
     }
   }
 
@@ -134,10 +403,34 @@ export default function VideoPlayer({
       if (isPlaying) {
         videoRef.current.pause()
       } else {
+        // When starting to play in preview mode, ensure we're in a valid clip segment
+        if (isPreviewMode && previewSegments.length > 0) {
+          const currentTime = videoRef.current.currentTime
+          
+          // Check if current time is within any clip segment
+          const currentSegment = previewSegments.find(seg => 
+            currentTime >= seg.start && currentTime <= seg.end
+          )
+          
+          if (!currentSegment) {
+            // Not in any clip - jump to start of first clip
+            const firstSegment = previewSegments[0]
+            videoRef.current.currentTime = firstSegment.start
+            setCurrentSegmentIndex(0)
+          }
+        }
+        
         videoRef.current.play()
       }
       setIsPlaying(!isPlaying)
     }
+  }
+
+  const triggerFlash = (region: string, action: () => void) => {
+    setFlashRegion(region)
+    setTimeout(() => setFlashRegion(null), 150)
+    action()
+    if (onUserInteract) onUserInteract()
   }
 
   const handleMuteToggle = () => {
@@ -145,6 +438,17 @@ export default function VideoPlayer({
       videoRef.current.muted = !videoRef.current.muted
       setIsMuted(videoRef.current.muted)
     }
+  }
+
+  const handleSpeedChange = (speed: number) => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = speed
+      setPlaybackSpeed(speed)
+    }
+  }
+
+  const handleZoomChange = (zoom: number) => {
+    setZoomLevel(zoom)
   }
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -239,7 +543,7 @@ export default function VideoPlayer({
 
   return (
     <div
-      className="relative h-full flex items-center justify-center"
+      className="relative h-full flex items-center justify-center overflow-hidden"
       onMouseMove={onUserInteract}
       onClick={onUserInteract}
       onKeyDown={onUserInteract as any}
@@ -248,8 +552,11 @@ export default function VideoPlayer({
       {/* Video Element */}
       <video
         ref={videoRef}
-        className="w-full h-full object-contain"
-        src={game.s3Url}
+        className="w-full h-full object-contain transition-transform duration-200"
+        style={{ 
+          transform: `scale(${zoomLevel})`,
+          transformOrigin: 'center center'
+        }}
         crossOrigin="anonymous"
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleTimeUpdate}
@@ -264,6 +571,131 @@ export default function VideoPlayer({
         webkit-playsinline="true"
         x-webkit-airplay="deny"
       />
+
+      {/* Voronoi Diagram - Invisible Tap Regions */}
+      <div className="absolute inset-0 z-20 pointer-events-auto">
+        {/* Previous Event Region - Left 20% */}
+        <div
+          className="absolute top-0 left-0 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('prev', handlePreviousEvent)}
+        >
+          <div className={`absolute inset-0 bg-blue-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'prev' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* -5s Region - Left-Center 20% */}
+        <div
+          className="absolute top-0 left-1/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('back', handleJumpBackward)}
+        >
+          <div className={`absolute inset-0 bg-yellow-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'back' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* Play/Pause Region - Center 20% */}
+        <div
+          className="absolute top-0 left-2/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('play', handlePlayPause)}
+        >
+          <div className={`absolute inset-0 bg-green-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'play' ? 'opacity-30' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* +5s Region - Right-Center 20% */}
+        <div
+          className="absolute top-0 left-3/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('forward', handleJumpForward)}
+        >
+          <div className={`absolute inset-0 bg-orange-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'forward' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+
+        {/* Next Event Region - Right 20% */}
+        <div
+          className="absolute top-0 left-4/5 w-1/5 h-full cursor-pointer"
+          onClick={() => triggerFlash('next', handleNextEvent)}
+        >
+          <div className={`absolute inset-0 bg-purple-500 pointer-events-none transition-opacity duration-150 ${
+            flashRegion === 'next' ? 'opacity-20' : 'opacity-0'
+          }`} />
+        </div>
+      </div>
+
+      {/* Floating Play Controls - Above Timeline */}
+      <div
+        className={`absolute bottom-16 left-0 right-0 flex items-center justify-center z-30 transition-opacity duration-300 ${
+          overlayVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex items-center space-x-8">
+          {/* Previous Event */}
+          <button
+            onClick={() => triggerFlash('prev', handlePreviousEvent)}
+            disabled={events.length === 0}
+            className="flex items-center justify-center text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            title="Previous Event"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Jump Backward 5s */}
+          <button
+            onClick={() => triggerFlash('back', handleJumpBackward)}
+            className="flex items-center justify-center text-white hover:text-gray-300 transition-colors text-lg font-bold"
+            title="Jump Backward 5s"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            -5s
+          </button>
+
+          {/* Play/Pause - LARGE CENTER BUTTON */}
+          <button
+            onClick={() => triggerFlash('play', handlePlayPause)}
+            className="flex items-center justify-center text-white hover:text-gray-300 transition-colors"
+            style={{ filter: 'drop-shadow(3px 3px 6px rgba(0,0,0,0.9))' }}
+          >
+            {isPlaying ? (
+              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+              </svg>
+            ) : (
+              <svg className="w-16 h-16 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            )}
+          </button>
+
+          {/* Jump Forward 5s */}
+          <button
+            onClick={() => triggerFlash('forward', handleJumpForward)}
+            className="flex items-center justify-center text-white hover:text-gray-300 transition-colors text-lg font-bold"
+            title="Jump Forward 5s"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            +5s
+          </button>
+
+          {/* Next Event */}
+          <button
+            onClick={() => triggerFlash('next', handleNextEvent)}
+            disabled={events.length === 0}
+            className="flex items-center justify-center text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            title="Next Event"
+            style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))' }}
+          >
+            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
 
       {/* Progress Bar + Controls Overlay (auto-hide capable) */}
       <div
@@ -295,67 +727,9 @@ export default function VideoPlayer({
             </div>
           )}
 
-                    {/* Clean Controls + Progress Bar */}
+          {/* Bottom Timeline Bar Only */}
           <div className="mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),8px)]">
             <div className="flex items-center space-x-3">
-              {/* Play/Pause */}
-              <button
-                onClick={handlePlayPause}
-                className="flex items-center justify-center w-8 h-8 text-white hover:text-gray-300 transition-colors"
-              >
-                {isPlaying ? (
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
-                  </svg>
-                ) : (
-                  <svg className="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                )}
-              </button>
-
-              {/* Jump Backward 5s */}
-              <button
-                onClick={handleJumpBackward}
-                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
-                title="Jump Backward 5s"
-              >
-                -5s
-              </button>
-
-              {/* Jump Forward 5s */}
-              <button
-                onClick={handleJumpForward}
-                className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
-                title="Jump Forward 5s"
-              >
-                +5s
-              </button>
-
-              {/* Previous Event */}
-              <button
-                onClick={handlePreviousEvent}
-                disabled={events.length === 0}
-                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Previous Event"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              {/* Next Event */}
-              <button
-                onClick={handleNextEvent}
-                disabled={events.length === 0}
-                className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                title="Next Event"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
               {/* Current Time */}
               <span className="text-white text-sm font-mono whitespace-nowrap">
                 {formatTime(currentTime)}
@@ -372,7 +746,7 @@ export default function VideoPlayer({
                   onChange={handleSeek}
                   className="w-full h-1 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-3 [&::-moz-range-thumb]:h-3 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
                   style={{
-                    background: `linear-gradient(to right, #016F32 0%, #016F32 ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) ${(currentTime / (duration || 1)) * 100}%, rgba(255,255,255,0.3) 100%)`
+                    background: generateSmartTimelineBackground()
                   }}
                 />
               </div>
@@ -399,6 +773,71 @@ export default function VideoPlayer({
                   </svg>
                 )}
               </button>
+
+              {/* Playback Speed */}
+              <div className="relative group">
+                <button
+                  className="flex items-center justify-center w-8 h-6 text-white hover:text-gray-300 transition-colors text-xs font-mono"
+                  title="Playback Speed"
+                >
+                  {playbackSpeed}x
+                </button>
+                {/* Invisible bridge to prevent menu disappearing */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-8 h-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"></div>
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-black/90 rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto shadow-lg">
+                  <div className="flex flex-col gap-1">
+                    {[0.25, 0.5, 0.75, 1, 1.25, 1.5, 2].map((speed) => (
+                      <button
+                        key={speed}
+                        onClick={() => handleSpeedChange(speed)}
+                        className={`px-3 py-2 text-xs rounded transition-colors whitespace-nowrap ${
+                          playbackSpeed === speed 
+                            ? 'bg-blue-600 text-white' 
+                            : 'text-white hover:bg-white/20'
+                        }`}
+                      >
+                        {speed}x
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Zoom */}
+              <div className="relative group">
+                <button
+                  className="flex items-center justify-center w-6 h-6 text-white hover:text-gray-300 transition-colors"
+                  title="Zoom"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </button>
+                {/* Invisible bridge to prevent menu disappearing */}
+                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-6 h-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto"></div>
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-black/90 rounded-lg p-4 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none group-hover:pointer-events-auto shadow-lg">
+                  <div className="flex flex-col gap-3 items-center">
+                    <span className="text-xs text-white font-mono">{Math.round(zoomLevel * 100)}%</span>
+                    <input
+                      type="range"
+                      min="0.5"
+                      max="3"
+                      step="0.1"
+                      value={zoomLevel}
+                      onChange={(e) => handleZoomChange(parseFloat(e.target.value))}
+                      className="w-24 h-1 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer"
+                    />
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => handleZoomChange(1)}
+                        className="px-3 py-1 text-xs rounded bg-white/20 text-white hover:bg-white/30 transition-colors"
+                      >
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

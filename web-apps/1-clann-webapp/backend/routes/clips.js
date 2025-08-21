@@ -2,9 +2,9 @@ const express = require('express');
 const { authenticateToken } = require('../middleware/auth');
 const { getGameById } = require('../utils/database');
 const { uploadToS3 } = require('../utils/s3');
+const { createClipsJob, getJobStatus } = require('../utils/mediaconvert');
 const { PutObjectCommand } = require('@aws-sdk/client-s3');
 const { S3Client, GetObjectCommand } = require('@aws-sdk/client-s3');
-const { exec } = require('child_process');
 const fs = require('fs').promises;
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
@@ -68,14 +68,16 @@ router.post('/create', authenticateToken, async (req, res) => {
                 const event = events[i];
                 const clipPath = path.join(clipsDir, `clip_${i + 1}.mp4`);
                 
-                // Create 10-second clip (5 seconds before + 5 seconds after the event)
-                const startTime = Math.max(0, event.timestamp - 5);
-                const duration = 10;
+                // Use individual padding (beforePadding + afterPadding) or fallback to 5s each
+                const beforePadding = event.beforePadding || 5;
+                const afterPadding = event.afterPadding || 5;
+                const startTime = Math.max(0, event.timestamp - beforePadding);
+                const duration = beforePadding + afterPadding;
                 
                 await createClip(videoUrl, clipPath, startTime, duration);
                 clipPaths.push(clipPath);
                 
-                console.log(`✅ Created clip ${i + 1}: ${event.type} at ${event.timestamp}s`);
+                console.log(`✅ Created clip ${i + 1}: ${event.type} at ${event.timestamp}s (${beforePadding}s before + ${afterPadding}s after = ${duration}s total)`);
             }
 
             // Create file list for concatenation
@@ -113,12 +115,19 @@ router.post('/create', authenticateToken, async (req, res) => {
 
             console.log('🎉 Highlight reel created successfully!');
             
+            // Calculate total duration from individual padding
+            const totalDuration = events.reduce((total, event) => {
+                const beforePadding = event.beforePadding || 5;
+                const afterPadding = event.afterPadding || 5;
+                return total + beforePadding + afterPadding;
+            }, 0);
+            
             // Instead of returning S3 URL, return our backend download endpoint
             res.json({
                 success: true,
                 downloadUrl: `/api/clips/download/${uploadResult.s3Key}`,
                 fileName: clipFileName,
-                duration: events.length * 10, // 10 seconds per event
+                duration: totalDuration,
                 eventCount: events.length
             });
 

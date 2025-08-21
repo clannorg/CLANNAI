@@ -29,7 +29,7 @@ pool.on('error', (err) => {
 
 // Middleware
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: process.env.CORS_ORIGIN || 'http://localhost:3001',
   credentials: true
 }));
 
@@ -66,7 +66,8 @@ app.get('/api', (req, res) => {
       company: '/api/company/*',
       aiChat: '/api/ai-chat/*',
       clips: '/api/clips/*',
-      database: '/api/database/*'
+      database: '/api/database/*',
+      hls: '/api/hls/*'
     }
   });
 });
@@ -77,8 +78,9 @@ const gamesRoutes = require('./routes/games');
 const teamsRoutes = require('./routes/teams');
 const companyRoutes = require('./routes/company');
 const aiChatRoutes = require('./routes/ai-chat');
-const clipsRoutes = require('./routes/clips');
+const clipsRoutes = require('./routes/clips-mediaconvert');
 const databaseRoutes = require('./routes/database');
+const hlsRoutes = require('./routes/hls');
 
 // Register routes
 app.use('/api/auth', authRoutes);
@@ -88,6 +90,7 @@ app.use('/api/company', companyRoutes);
 app.use('/api/ai-chat', aiChatRoutes);
 app.use('/api/clips', clipsRoutes);
 app.use('/api/database', databaseRoutes);
+app.use('/api/hls', hlsRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

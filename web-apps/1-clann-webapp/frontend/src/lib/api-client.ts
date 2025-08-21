@@ -272,16 +272,31 @@ class ApiClient {
   }
 
   // Clips methods
-  async createClip(gameId: string, events: Array<{timestamp: number, type: string, description?: string}>) {
+  async createClip(gameId: string, events: Array<{timestamp: number, type: string, description?: string, beforePadding?: number, afterPadding?: number}>) {
     return this.request<{
       success: boolean
-      downloadUrl: string
-      fileName: string
+      jobId: string
+      status: string
+      message: string
       duration: number
       eventCount: number
+      outputPath: string
     }>('/api/clips/create', {
       method: 'POST',
       body: JSON.stringify({ gameId, events })
+    })
+  }
+
+  async checkClipStatus(jobId: string) {
+    return this.request<{
+      success: boolean
+      jobId: string
+      status: string
+      progress: number
+      createdAt: string
+      finishedAt?: string
+    }>(`/api/clips/status/${jobId}`, {
+      method: 'GET'
     })
   }
 

@@ -21,7 +21,10 @@ function MobileVideoPlayer({
   currentEventIndex, 
   handleTimeUpdate, 
   handleEventClick, 
-  seekToTimestamp 
+  seekToTimestamp,
+  selectedEvents,
+  activeTab,
+  autoplayEvents
 }: any) {
   const [showOverlay, setShowOverlay] = useState(true)
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -95,6 +98,9 @@ function MobileVideoPlayer({
           onSeekToTimestamp={seekToTimestamp}
           overlayVisible={showOverlay}
           onUserInteract={resetHideTimer}
+          selectedEvents={selectedEvents}
+          activeTab={activeTab}
+          autoplayEvents={autoplayEvents}
         />
       </div>
     </div>
@@ -114,6 +120,7 @@ interface Game {
   title: string
   description: string
   s3Url: string
+  hlsUrl?: string
   status: string
   is_demo?: boolean
   ai_analysis: GameEvent[] | { events: GameEvent[] } | null
@@ -161,6 +168,15 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   })
   const [teamFilter, setTeamFilter] = useState('both') // 'red', 'blue', 'both' (red=red_team, blue=blue_team from metadata)
   const [showFilters, setShowFilters] = useState(false)
+  
+  // Downloads preview state - individual padding per event
+  const [selectedEvents, setSelectedEvents] = useState<Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>>(new Map())
+  
+  // Autoplay events state
+  const [autoplayEvents, setAutoplayEvents] = useState(false)
   
   // Tactical analysis state
   const [tacticalData, setTacticalData] = useState<{
@@ -366,9 +382,12 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               events={filteredEvents}
               allEvents={allEvents}
               currentEventIndex={currentEventIndex}
-          onTimeUpdate={handleTimeUpdate}
+              onTimeUpdate={handleTimeUpdate}
               onEventClick={handleEventClick}
               onSeekToTimestamp={seekToTimestamp}
+              selectedEvents={selectedEvents}
+              activeTab={sidebarTab}
+              autoplayEvents={autoplayEvents}
             />
               </div>
           
@@ -395,6 +414,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             gameId={gameId}
             onSeekToTimestamp={seekToTimestamp}
             currentTime={currentTime}
+            onSelectedEventsChange={setSelectedEvents}
+            onAutoplayChange={setAutoplayEvents}
                 />
               </div>
       ) : (
@@ -417,6 +438,9 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
               handleTimeUpdate={handleTimeUpdate}
               handleEventClick={handleEventClick}
               seekToTimestamp={seekToTimestamp}
+              selectedEvents={selectedEvents}
+              activeTab={sidebarTab}
+              autoplayEvents={autoplayEvents}
             />
           }
           activeTab={sidebarTab}
@@ -438,6 +462,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             gameId={gameId}
           onSeekToTimestamp={seekToTimestamp}
           currentTime={currentTime}
+          onSelectedEventsChange={setSelectedEvents}
       />
         </div>
       )}

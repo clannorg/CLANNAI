@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
+import AppleStyleTrimmer from './AppleStyleTrimmer'
 
 import { COACHES } from '../ai-chat/coaches'
 import { getTeamInfo, getTeamColorClass } from '../../lib/team-utils'
@@ -80,6 +81,15 @@ interface UnifiedSidebarProps {
   
   // Video time for new event creation
   currentTime?: number
+  
+  // Downloads preview callback
+  onSelectedEventsChange?: (selectedEvents: Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>) => void
+  
+  // Autoplay events callback
+  onAutoplayChange?: (autoplay: boolean) => void
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'downloads'
@@ -107,7 +117,9 @@ export default function UnifiedSidebar({
   tacticalLoading,
   gameId,
   onSeekToTimestamp,
-  currentTime = 0
+  currentTime = 0,
+  onSelectedEventsChange,
+  onAutoplayChange
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -191,9 +203,21 @@ export default function UnifiedSidebar({
   const [isResizing, setIsResizing] = useState(false)
 
   
-  // Downloads state
-  const [selectedEvents, setSelectedEvents] = useState<Set<number>>(new Set())
+  // Downloads state - individual padding per event
+  const [selectedEvents, setSelectedEvents] = useState<Map<number, {
+    beforePadding: number,  // 0-15 seconds before event
+    afterPadding: number    // 0-15 seconds after event
+  }>>(new Map())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
+  
+  // Wrapper to update selectedEvents and notify parent
+  const updateSelectedEvents = (newSelectedEvents: Map<number, {
+    beforePadding: number,
+    afterPadding: number
+  }>) => {
+    setSelectedEvents(newSelectedEvents)
+    onSelectedEventsChange?.(newSelectedEvents)
+  }
   
   // Manual annotation state
   const [binnedEvents, setBinnedEvents] = useState<Set<number>>(new Set())
@@ -212,6 +236,9 @@ export default function UnifiedSidebar({
     description: '',
     player: ''
   })
+  
+  // Autoplay events state
+  const [autoplayEvents, setAutoplayEvents] = useState(false)
   
   // Use external active tab if provided, otherwise use internal
   const activeTab = externalActiveTab || internalActiveTab
@@ -244,9 +271,9 @@ export default function UnifiedSidebar({
     setBinnedEvents(newBinned)
     
     // Also remove from selected events if it was selected
-    const newSelected = new Set(selectedEvents)
+    const newSelected = new Map(selectedEvents)
     newSelected.delete(eventIndex)
-    setSelectedEvents(newSelected)
+    updateSelectedEvents(newSelected)
     
     // Save to database
     await saveModifiedEvents()
@@ -405,13 +432,30 @@ export default function UnifiedSidebar({
 
   // Downloads functions
   const handleEventSelection = (eventIndex: number) => {
-    const newSelected = new Set(selectedEvents)
+    const newSelected = new Map(selectedEvents)
     if (newSelected.has(eventIndex)) {
       newSelected.delete(eventIndex)
     } else if (newSelected.size < 5) {
-      newSelected.add(eventIndex)
+      // Add event with default 5s before, 3s after
+      newSelected.set(eventIndex, {
+        beforePadding: 5,
+        afterPadding: 3
+      })
     }
-    setSelectedEvents(newSelected)
+    updateSelectedEvents(newSelected)
+  }
+
+  // Update individual event padding
+  const updateEventPadding = (eventIndex: number, type: 'before' | 'after', value: number) => {
+    const newSelected = new Map(selectedEvents)
+    const current = newSelected.get(eventIndex)
+    if (current) {
+      newSelected.set(eventIndex, {
+        ...current,
+        [type === 'before' ? 'beforePadding' : 'afterPadding']: value
+      })
+      updateSelectedEvents(newSelected)
+    }
   }
 
   const handleCreateClip = async () => {
@@ -420,47 +464,124 @@ export default function UnifiedSidebar({
     setIsCreatingClip(true)
     
     try {
-      // Get selected event timestamps
-      const selectedEventData = Array.from(selectedEvents).map(index => ({
+      // Get selected event timestamps with individual padding
+      const selectedEventData = Array.from(selectedEvents.entries()).map(([index, padding]) => ({
         timestamp: allEvents[index].timestamp,
         type: allEvents[index].type,
-        description: allEvents[index].description
+        description: allEvents[index].description,
+        beforePadding: padding.beforePadding,
+        afterPadding: padding.afterPadding
       }))
       
-      console.log('🎬 Creating clip with events:', selectedEventData)
+      console.log('🎬 Starting clip creation with events:', selectedEventData)
       
-      // Call backend API using ApiClient (same pattern as everything else)
+      // Start clip creation (MediaConvert or FFmpeg)
       const result = await apiClient.createClip(gameId, selectedEventData)
-      console.log('✅ Clip created successfully:', result)
+      console.log('✅ Clip creation started:', result)
       
-      // Download the clip using ApiClient
-      try {
-        const blob = await apiClient.downloadClip(result.downloadUrl)
+      // Check if this is MediaConvert (needs polling) or FFmpeg (immediate)
+      if (result.jobId) {
+        // MediaConvert - needs polling
+        alert(`🚀 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\nProcessing will take a few minutes. You'll be notified when ready for download.`)
+        
+        // Poll for completion
+        const pollInterval = setInterval(async () => {
+          try {
+            const status = await apiClient.checkClipStatus(result.jobId)
+            console.log('📊 Job status:', status)
+            
+            if (status.status === 'COMPLETE') {
+              clearInterval(pollInterval)
+              
+              // Job completed - now we can download
+              const downloadUrl = `/api/clips/download/clips/${gameId}/${result.outputPath.split('/').pop()}/highlight_reel.mp4`
+              
+              try {
+                const blob = await apiClient.downloadClip(downloadUrl)
         const url = window.URL.createObjectURL(blob)
         const link = document.createElement('a')
         link.href = url
-        link.download = result.fileName
+                link.download = `highlight_${gameId}_${Date.now()}.mp4`
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
         window.URL.revokeObjectURL(url)
+                
+                // Clear selection after successful download
+                updateSelectedEvents(new Map())
+                
+                alert(`🎉 Highlight reel completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download started!`)
+                
       } catch (downloadError: any) {
         console.error('Download failed:', downloadError)
-        alert('Clip created but download failed. Please try again.')
-        return
+                alert('Clip processing completed but download failed. Please try again.')
+              }
+              
+              setIsCreatingClip(false)
+              
+            } else if (status.status === 'ERROR') {
+              clearInterval(pollInterval)
+            setIsCreatingClip(false)
+            alert('❌ Clip processing failed. Please try again.')
+            
+          } else {
+            // Still processing - show progress if available
+            if (status.progress > 0) {
+              console.log(`⏳ Processing: ${status.progress}%`)
+            }
+          }
+          
+        } catch (statusError) {
+          console.error('Error checking status:', statusError)
+          // Continue polling - don't stop on status check errors
+        }
+      }, 10000) // Check every 10 seconds
+      
+        // Stop polling after 10 minutes (timeout)
+        setTimeout(() => {
+          clearInterval(pollInterval)
+          if (isCreatingClip) {
+            setIsCreatingClip(false)
+            alert('⏰ Clip processing is taking longer than expected. Please check back later.')
+          }
+        }, 600000) // 10 minutes
+        
+      } else if (result.downloadUrl) {
+        // FFmpeg - immediate download available
+        alert(`🎉 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\n💾 Starting download now!`)
+        
+        try {
+          const blob = await apiClient.downloadClip(result.downloadUrl)
+          const url = window.URL.createObjectURL(blob)
+          const link = document.createElement('a')
+          link.href = url
+          link.download = `highlight_${gameId}_${Date.now()}.mp4`
+          document.body.appendChild(link)
+          link.click()
+          document.body.removeChild(link)
+          window.URL.revokeObjectURL(url)
+          
+          // Clear selection after successful download
+          updateSelectedEvents(new Map())
+          
+          alert(`✅ Download completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds`)
+          
+        } catch (downloadError: any) {
+          console.error('Download failed:', downloadError)
+          alert('Clip was created but download failed. Please try again.')
+        }
+        
+        setIsCreatingClip(false)
+      } else {
+        // Unknown response format
+        console.error('Unexpected response format:', result)
+        alert('Clip creation completed but response format was unexpected.')
+        setIsCreatingClip(false)
       }
       
-      // Clear selection after successful creation
-      setSelectedEvents(new Set())
-      
-      // Show success message with better formatting
-      const message = `🎉 Highlight reel created!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download completed!`
-      alert(message)
-      
     } catch (error: any) {
-      console.error('❌ Error creating clip:', error)
-      alert(`Error creating clip: ${error.message}`)
-    } finally {
+      console.error('❌ Error starting clip creation:', error)
+      alert(`Error starting clip creation: ${error.message}`)
       setIsCreatingClip(false)
     }
   }
@@ -692,13 +813,13 @@ export default function UnifiedSidebar({
                     title="Toggle More Filters"
                   >
                     <div className="flex items-center space-x-2">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
-                      </svg>
-                      <span>More Filters</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
+                    </svg>
+                    <span>More Filters</span>
                       <svg className={`w-4 h-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
                     </div>
 
                   </button>
@@ -794,6 +915,23 @@ export default function UnifiedSidebar({
 
                 {/* Add Event Button OR Inline Form */}
                 <div>
+                  {/* Autoplay Toggle */}
+                  <button
+                    onClick={() => {
+                      const newAutoplay = !autoplayEvents
+                      setAutoplayEvents(newAutoplay)
+                      onAutoplayChange?.(newAutoplay)
+                    }}
+                    className={`flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full mb-3 ${
+                      autoplayEvents 
+                        ? 'bg-green-500/20 hover:bg-green-500/30 border-green-500/50 text-green-300'
+                        : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300'
+                    }`}
+                  >
+                    <span>Autoplay Events</span>
+                    <span className="text-xs">{autoplayEvents ? 'ON' : 'OFF'}</span>
+                  </button>
+                  
                   {!isCreatingEvent ? (
                     // Add Event Button
                     <button
@@ -934,7 +1072,7 @@ export default function UnifiedSidebar({
                   
                   // Show edit form if this event is being edited
                   if (editingEventIndex === originalIndex && editingEvent) {
-                    return (
+                  return (
                       <div
                         key={`${event.timestamp}-${event.type}-${index}-editing`}
                         className="p-3 rounded-lg bg-blue-900/20 border border-blue-500/30 space-y-3"
@@ -992,7 +1130,7 @@ export default function UnifiedSidebar({
                           {/* Save/Cancel Buttons */}
                           <div className="flex items-center gap-1">
                             {/* Save Button */}
-                            <button
+                    <button
                               onClick={handleSaveEditedEvent}
                               disabled={isSavingEvents}
                               className="p-1 text-gray-400 hover:text-green-400 hover:bg-green-500/10 rounded transition-colors"
@@ -1093,7 +1231,7 @@ export default function UnifiedSidebar({
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
+                        </svg>
                         </button>
                         
                         {/* Edit Button */}
@@ -1178,10 +1316,10 @@ export default function UnifiedSidebar({
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                               </svg>
-                            </button>
+                  </button>
                           </div>
-                        )
-                      })}
+                )
+                })}
                     </div>
                   </div>
                 )}
@@ -1377,6 +1515,7 @@ export default function UnifiedSidebar({
                     const isBinned = binnedEvents.has(index)
                     const isSelected = selectedEvents.has(index)
                     const isDisabled = !isSelected && selectedEvents.size >= 10
+                    const eventPadding = selectedEvents.get(index)
                     
                     // Skip binned events
                     if (isBinned) return null
@@ -1385,46 +1524,93 @@ export default function UnifiedSidebar({
                       <div
                         key={`${event.timestamp}-${event.type}-${index}`}
                         onClick={() => !isDisabled && handleEventSelection(index)}
-                        className={`flex items-center space-x-3 p-3 rounded-lg transition-colors cursor-pointer ${
+                        className={`w-full text-left p-3 rounded-lg transition-all duration-200 border cursor-pointer ${
                           isSelected 
-                            ? 'bg-orange-500/20 border border-orange-500/30' 
+                            ? 'bg-orange-500/20 text-white border-orange-500 ring-1 ring-orange-500' 
                             : isDisabled 
-                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed'
-                              : 'bg-gray-800/30 hover:bg-gray-800/50'
+                              ? 'bg-gray-800/20 opacity-50 cursor-not-allowed border-gray-700'
+                              : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
                         }`}
                       >
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-2">
-                            <span 
-                              className={`inline-block w-3 h-3 rounded-full`}
-                              style={{ backgroundColor: getEventColor(event.type) }}
-                            />
-                            <span className="text-white font-medium capitalize">
-                              {event.type}
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-2">
+                            {/* Time Badge - matching Events tab */}
+                            <div className="flex items-center gap-1">
+                              <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                            </div>
+                            
+                            {/* Event Type Badge - matching Events tab */}
+                            <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
+                              event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
+                              event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
+                              event.type === 'foul' ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' :
+                              event.type === 'turnover' ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' :
+                              event.type === 'save' ? 'bg-orange-500/20 text-orange-300 border-orange-500/30' :
+                              'bg-gray-500/20 text-gray-300 border-gray-500/30'
+                            }`}>
+                              <span>{getEventEmoji(event.type)}</span>
+                              <span>{event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
                             </span>
-                            <span className="text-gray-400 text-sm">
-                              {formatTime(event.timestamp)}
-                            </span>
+                            
+                            {/* Team Badge - matching Events tab */}
+                            {event.team && (
+                              <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${getTeamBadgeColors(event.team)}`}>
+                                {getTeamName(event.team)}
+                              </span>
+                            )}
                           </div>
-                          <p className="text-gray-300 text-sm mt-1">
-                            {transformDescription(event.description || '')}
-                          </p>
+                          
+                          {/* Bin Button - matching Events tab */}
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation() // Prevent card selection
+                              handleBinEvent(index)
+                            }}
+                            disabled={isSavingEvents}
+                            className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
+                            title="Delete this event"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                          </button>
                         </div>
                         
-                        {/* Bin Button */}
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation() // Prevent card selection
-                            handleBinEvent(index)
-                          }}
-                          disabled={isSavingEvents}
-                          className="p-1 text-gray-400 hover:text-red-400 hover:bg-red-500/10 rounded transition-colors"
-                          title="Delete this event"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
-                        </button>
+                        {/* Description - matching Events tab */}
+                        {event.description && (
+                          <div className="text-xs text-gray-400 mt-2 leading-relaxed">{transformDescription(event.description)}</div>
+                        )}
+                        
+                        {/* Player - matching Events tab */}
+                        {event.player && (
+                          <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
+                        )}
+                        
+                        {/* Apple-style Timeline Trimmer - Only show if selected */}
+                        {isSelected && eventPadding && (
+                          <div className="mt-3" onClick={(e) => e.stopPropagation()}>
+                            <AppleStyleTrimmer
+                              eventTimestamp={event.timestamp}
+                              beforePadding={eventPadding.beforePadding}
+                              afterPadding={eventPadding.afterPadding}
+                              maxPadding={15}
+                              onPaddingChange={(before, after) => {
+                                const newSelected = new Map(selectedEvents);
+                                const current = newSelected.get(index);
+                                if (current) {
+                                  newSelected.set(index, {
+                                    beforePadding: before,
+                                    afterPadding: after
+                                  });
+                                  updateSelectedEvents(newSelected);
+                                }
+                              }}
+                            />
+                          </div>
+                        )}
                       </div>
                     )
                   })}
@@ -1443,23 +1629,23 @@ export default function UnifiedSidebar({
                             key={`binned-${event.timestamp}-${event.type}-${index}`}
                             className="flex items-center space-x-3 p-3 rounded-lg bg-red-900/20 border border-red-500/30 opacity-75"
                           >
-                            <div className="flex-1">
-                              <div className="flex items-center space-x-2">
-                                <span 
-                                  className={`inline-block w-3 h-3 rounded-full`}
-                                  style={{ backgroundColor: getEventColor(event.type) }}
-                                />
-                                <span className="text-white font-medium capitalize">
-                                  {event.type}
-                                </span>
-                                <span className="text-gray-400 text-sm">
-                                  {formatTime(event.timestamp)}
-                                </span>
-                              </div>
-                              <p className="text-gray-300 text-sm mt-1">
-                                {transformDescription(event.description || '')}
-                              </p>
-                            </div>
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-2">
+                            <span 
+                              className={`inline-block w-3 h-3 rounded-full`}
+                              style={{ backgroundColor: getEventColor(event.type) }}
+                            />
+                            <span className="text-white font-medium capitalize">
+                              {event.type}
+                            </span>
+                            <span className="text-gray-400 text-sm">
+                              {formatTime(event.timestamp)}
+                            </span>
+                          </div>
+                          <p className="text-gray-300 text-sm mt-1">
+                            {transformDescription(event.description || '')}
+                          </p>
+                        </div>
                             
                             {/* Restore Button */}
                             <button
@@ -1473,9 +1659,9 @@ export default function UnifiedSidebar({
                               </svg>
                             </button>
                           </div>
-                        )
-                      })}
-                    </div>
+                    )
+                  })}
+                </div>
                   </div>
                 )}
               </div>
@@ -1490,9 +1676,20 @@ export default function UnifiedSidebar({
                   <span className="text-orange-400 font-bold">{selectedEvents.size} / 10</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-white font-medium">Estimated Duration:</span>
-                  <span className="text-orange-400 font-bold">{selectedEvents.size * 10}s</span>
+                  <span className="text-white font-medium">Total Duration:</span>
+                  <span className="text-orange-400 font-bold">
+                    {Array.from(selectedEvents.values()).reduce((total, padding) => 
+                      total + padding.beforePadding + padding.afterPadding, 0
+                    )}s
+                  </span>
                 </div>
+                {selectedEvents.size > 0 && (
+                  <p className="text-xs text-gray-400 mt-2">
+                    Individual padding: {Array.from(selectedEvents.values()).map(p => 
+                      `${p.beforePadding}+${p.afterPadding}s`
+                    ).join(', ')}
+                  </p>
+                )}
               </div>
 
               {/* Create Button */}

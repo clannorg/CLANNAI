@@ -28,10 +28,10 @@
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.2",
     "pg": "^8.16.3",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "aws-sdk": "^2.1692.0"
   },
   "devDependencies": {
-    "aws-sdk": "^2.1692.0",
     "nodemon": "^3.1.10"
   }
 }

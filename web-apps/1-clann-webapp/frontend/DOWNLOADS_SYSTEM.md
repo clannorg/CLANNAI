@@ -27,19 +27,27 @@ Transform the Downloads tab into a professional video editing interface where us
 
 ## 🎬 Downloads Preview System
 
-### Phase 1: Auto-Jump Preview (Current Goal)
+### Phase 1: Smart Timeline Preview (Current Goal)
 ```
 User Flow:
-1. Select events in Downloads tab
-2. Click play button
-3. Video auto-jumps between selected segments only
+1. Select events in Clips tab
+2. Timeline shows full match with visual distinction
+3. Play button only plays selected segments
 
-Timeline Behavior:
+Smart Timeline Design:
 |----[====CLIP1====]------[===CLIP2===]----[====CLIP3====]----|
-     2:25-2:35           15:40-15:50       23:05-23:15
-     
+grey   GREEN/BRIGHT      grey  GREEN      grey  GREEN      grey
+
+Visual System:
+- GREY = Rest of match (visible but dimmed)
+- GREEN = Selected clips (bright/highlighted) 
+- Same timeline length (full match duration)
+- Same scrubbing ability (click anywhere)
+- Smart playback (only plays green segments)
+
 Play Sequence:
-Play → Jump to 2:25 → Play 10s → Jump to 15:40 → Play 10s → Jump to 23:05 → Play 10s → End
+Play → Jump to first GREEN → Play segment → Skip GREY → Jump to next GREEN → Repeat
+User can scrub to grey areas but auto-play only affects green segments
 ```
 
 ### Phase 2: Interactive Timeline Editor (Future Vision)
@@ -72,54 +80,72 @@ const [currentTime, setCurrentTime] = useState(0)
 const [isPlaying, setIsPlaying] = useState(false)
 ```
 
-### Phase 1: Preview Mode Implementation
+### Phase 1: Smart Timeline Implementation
 ```typescript
 // New states needed in VideoPlayer.tsx
-const [isPreviewMode, setIsPreviewMode] = useState(false)
-const [previewSegments, setPreviewSegments] = useState<PreviewSegment[]>([])
+const [isClipsMode, setIsClipsMode] = useState(false)
+const [clipSegments, setClipSegments] = useState<ClipSegment[]>([])
 const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
 const [segmentPadding, setSegmentPadding] = useState(5) // ±5 seconds
 
-interface PreviewSegment {
-  id: string
+interface ClipSegment {
+  id: number
   start: number
   end: number
   event: GameEvent
 }
 
-// Segment calculation
-const calculatePreviewSegments = (selectedEvents: Set<string>, events: GameEvent[], padding: number): PreviewSegment[] => {
-  return Array.from(selectedEvents)
-    .map(eventId => events.find(e => e.id === eventId))
-    .filter(Boolean)
-    .map(event => ({
-      id: event.id,
-      start: Math.max(0, event.timestamp - padding),
-      end: event.timestamp + padding,
-      event
-    }))
-    .sort((a, b) => a.start - b.start)
-}
-
-// Auto-jump logic
-const handleTimeUpdate = () => {
-  if (!isPreviewMode || previewSegments.length === 0) return
+// Smart timeline styling
+const generateTimelineBackground = (segments: ClipSegment[], duration: number) => {
+  if (segments.length === 0) return 'rgba(255,255,255,0.3)' // Default grey
   
-  const currentSegment = previewSegments[currentSegmentIndex]
-  if (currentTime >= currentSegment.end) {
-    jumpToNextSegment()
+  let gradientStops = []
+  let lastEnd = 0
+  
+  segments.forEach((segment, index) => {
+    const startPercent = (segment.start / duration) * 100
+    const endPercent = (segment.end / duration) * 100
+    
+    // Grey section before clip
+    if (startPercent > lastEnd) {
+      gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
+      gradientStops.push(`rgba(255,255,255,0.2) ${startPercent}%`)
+    }
+    
+    // Green clip section
+    gradientStops.push(`#22C55E ${startPercent}%`)
+    gradientStops.push(`#22C55E ${endPercent}%`)
+    
+    lastEnd = endPercent
+  })
+  
+  // Grey section after last clip
+  if (lastEnd < 100) {
+    gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
+    gradientStops.push(`rgba(255,255,255,0.2) 100%`)
   }
+  
+  return `linear-gradient(to right, ${gradientStops.join(', ')})`
 }
 
-const jumpToNextSegment = () => {
-  const nextIndex = currentSegmentIndex + 1
-  if (nextIndex < previewSegments.length) {
-    setCurrentSegmentIndex(nextIndex)
-    videoRef.current.currentTime = previewSegments[nextIndex].start
-  } else {
-    // End of preview
-    setIsPlaying(false)
-    setCurrentSegmentIndex(0)
+// Smart play logic
+const handleTimeUpdate = () => {
+  // ... existing logic ...
+  
+  // Clips mode auto-jump logic
+  if (isClipsMode && clipSegments.length > 0 && isPlaying) {
+    const currentSegment = clipSegments[currentSegmentIndex]
+    
+    // Hit end of green segment? Jump to next green segment
+    if (currentSegment && time >= currentSegment.end) {
+      jumpToNextClipSegment()
+    }
+    
+    // In grey area while playing? Jump to next green segment
+    const inGreenSegment = clipSegments.some(seg => time >= seg.start && time <= seg.end)
+    if (!inGreenSegment) {
+      jumpToNextClipSegment()
+    }
   }
 }
 ```
@@ -147,16 +173,21 @@ frontend/src/
 5. Downloads combined video file
 ```
 
-### Enhanced Preview Flow
+### Enhanced Clips Flow
 ```
-1. User clicks Downloads tab
+1. User clicks Clips tab
 2. Selects events (whole card clickable)
-3. Video player enters "Preview Mode"
-4. Timeline shows selected segments highlighted
-5. Play button only plays selected segments
-6. User can adjust ±padding with slider
-7. Real-time preview of final output
-8. Download button creates exact preview
+3. Timeline transforms with smart styling:
+   - Full match timeline (same length)
+   - Selected clips = bright green
+   - Rest of match = dimmed grey
+4. Play button enters "Smart Preview Mode":
+   - Only plays green segments
+   - Auto-skips grey areas
+   - User can still scrub anywhere
+5. User can adjust ±padding with slider
+6. Real-time preview of final output
+7. Download button creates exact preview
 ```
 
 ## 🚀 Implementation Phases
@@ -167,12 +198,14 @@ frontend/src/
 - [x] Remove 5-event limit (now 10)
 - [x] Bin button functionality
 
-### 🔄 Phase 1: Auto-Jump Preview (In Progress)
-- [ ] Detect Downloads tab active state
-- [ ] Calculate preview segments from selected events
-- [ ] Implement auto-jump video logic
+### 🔄 Phase 1: Smart Timeline Preview (In Progress)
+- [x] Detect Clips tab active state
+- [x] Calculate clip segments from selected events  
+- [x] Basic auto-jump video logic (needs refinement)
+- [ ] Smart timeline styling (green/grey gradient)
+- [ ] Enhanced play logic (skip grey areas)
 - [ ] Add segment padding control (±5s slider)
-- [ ] Visual feedback on timeline
+- [ ] Visual feedback and polish
 
 ### 🔮 Phase 2: Interactive Timeline Editor (Future)
 - [ ] Draggable segment markers
@@ -198,10 +231,16 @@ frontend/src/
 > "Most sports analysis tools give you basic clips. This is a full video production suite built into match analysis."
 
 ### Key Differentiators:
-1. **Real-time Preview**: See exactly what you'll download
-2. **Interactive Editing**: Drag to adjust clip boundaries
-3. **Professional Output**: Frame-perfect highlights
-4. **Integrated Workflow**: Analysis → Selection → Editing → Export
+1. **Smart Timeline Preview**: Visual distinction between clips and full match
+2. **Intelligent Playback**: Only plays selected segments, skips irrelevant parts
+3. **Familiar Interface**: Same timeline/controls, just enhanced behavior
+4. **Real-time Preview**: See exactly what you'll download
+5. **Interactive Editing**: Drag to adjust clip boundaries (Phase 2)
+6. **Professional Output**: Frame-perfect highlights
+7. **Integrated Workflow**: Analysis → Selection → Preview → Export
+
+### The "GOAT Selling Point":
+**Smart Timeline System** - Users get professional video editing capabilities without learning new interfaces. Same familiar video player, but with intelligent preview that shows exactly what they're creating.
 
 ---
 
