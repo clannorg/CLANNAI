@@ -1172,28 +1172,17 @@ export default function UnifiedSidebar({
                     <div
                       key={`${event.timestamp}-${event.type}-${index}`}
                       id={`event-${originalIndex}`}
-                      onClick={() => onEventClick(event)}
+                      onClick={() => isDownloadMode ? handleToggleEventDownload(originalIndex) : onEventClick(event)}
                       className={`w-full text-left p-3 rounded-lg transition-all duration-200 border cursor-pointer ${
-                        originalIndex === currentEventIndex 
+                        isDownloadMode && selectedDownloadEvents.has(originalIndex)
+                          ? 'bg-green-600/20 text-white border-green-500 ring-1 ring-green-500'
+                          : originalIndex === currentEventIndex 
                           ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
                           : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
                       }`}
                     >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
-                        {/* Download Mode Checkbox */}
-                        {isDownloadMode && (
-                          <input
-                            type="checkbox"
-                            checked={selectedDownloadEvents.has(originalIndex)}
-                            onChange={(e) => {
-                              e.stopPropagation()
-                              handleToggleEventDownload(originalIndex)
-                            }}
-                            className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500 focus:ring-2"
-                          />
-                        )}
-                        
                         {/* Time Badge - moved to front */}
                         <div className="flex items-center gap-1">
                           <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1339,7 +1328,7 @@ export default function UnifiedSidebar({
               {!isDownloadMode ? (
                 <button
                   onClick={handleToggleDownloadMode}
-                  className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-blue-500/10 hover:bg-blue-500/20 border-blue-400/30 text-blue-300"
+                  className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
