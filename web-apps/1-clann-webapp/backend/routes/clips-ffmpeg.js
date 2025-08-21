@@ -105,7 +105,7 @@ router.post('/create', authenticateToken, async (req, res) => {
                 const concatListPath = path.join(tempDir, 'concat_list.txt');
                 
                 // Create concat list file
-                const concatList = clipPaths.map(clipPath => `file '${clipPath}'`).join('\\n');
+                const concatList = clipPaths.map(clipPath => `file '${path.basename(clipPath)}'`).join('\n');
                 fs.writeFileSync(concatListPath, concatList);
                 
                 console.log(`🔗 Concatenating ${clipPaths.length} clips...`);
