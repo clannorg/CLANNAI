@@ -85,9 +85,8 @@ export default function VideoPlayer({
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
   const [flashRegion, setFlashRegion] = useState<string | null>(null)
 
-  // Check if we're in preview mode (clips tab with selected events OR autoplay events mode)
-  const isPreviewMode = (activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0) || 
-                        (activeTab === 'events' && autoplayEvents)
+  // Check if we're in preview mode (autoplay events mode only - downloads tab removed)
+  const isPreviewMode = (activeTab === 'events' && autoplayEvents)
 
   // Calculate preview segments when selectedEvents or autoplay change
   useEffect(() => {
@@ -112,38 +111,11 @@ export default function VideoPlayer({
               event
             }
           })
-      } else if (activeTab === 'downloads' && selectedEvents) {
-        // Downloads mode: use individual padding from Map
-        segments = Array.from(selectedEvents.entries())
-          .map(([eventIndex, paddingData]) => {
-            const event = allEvents[eventIndex]
-            if (!event) return null
-            return {
-              id: eventIndex,
-              start: Math.max(0, event.timestamp - paddingData.beforePadding),
-              end: event.timestamp + paddingData.afterPadding,
-              event
-            }
-          })
-          .filter(Boolean) as Array<{
-            id: number
-            start: number
-            end: number
-            event: GameEvent
-          }>
       }
+      // Downloads tab removed - functionality moved to Events tab
       
       // Sort segments by start time
       segments.sort((a, b) => a.start - b.start)
-      
-      // Debug logging for segments
-      console.log(`🎯 Autoplay Segments Created:`, segments.map(seg => ({
-        id: seg.id,
-        start: seg.start.toFixed(2),
-        end: seg.end.toFixed(2),
-        eventType: seg.event.type,
-        eventTime: seg.event.timestamp.toFixed(2)
-      })))
       
       setPreviewSegments(segments)
       setCurrentSegmentIndex(0)
@@ -158,11 +130,7 @@ export default function VideoPlayer({
     if (autoplayEvents && activeTab === 'events') {
       if (!autoplayInitializedRef.current && previewSegments.length > 0 && videoRef.current) {
         const firstSegment = previewSegments[0]
-        console.log(`🚀 Autoplay enabled - jumping to first segment:`, {
-          segmentId: firstSegment.id,
-          start: firstSegment.start.toFixed(2),
-          end: firstSegment.end.toFixed(2)
-        })
+        
         videoRef.current.currentTime = firstSegment.start
         setCurrentSegmentIndex(0)
         autoplayInitializedRef.current = true
@@ -430,38 +398,15 @@ export default function VideoPlayer({
       if (isPreviewMode && previewSegments.length > 0 && isPlaying) {
         const currentSegment = previewSegments[currentSegmentIndex]
         
-        // Debug logging
-        console.log(`🎬 Autoplay Debug:`, {
-          time: time.toFixed(2),
-          currentSegmentIndex,
-          currentSegment: currentSegment ? {
-            id: currentSegment.id,
-            start: currentSegment.start.toFixed(2),
-            end: currentSegment.end.toFixed(2)
-          } : null,
-          totalSegments: previewSegments.length
-        })
-        
         // Check if we're in a grey area (not in any clip segment)
         const inClipSegment = previewSegments.some(seg => 
           time >= seg.start && time <= seg.end
         )
         
-        console.log(`📍 Segment check:`, {
-          inClipSegment,
-          segmentsContainingTime: previewSegments.filter(seg => time >= seg.start && time <= seg.end).map(seg => seg.id)
-        })
-        
         if (!inClipSegment) {
           // We're in grey area - jump to next clip segment
-          console.log(`🚫 In grey area at ${time.toFixed(2)}`)
           const nextSegment = previewSegments.find(seg => seg.start > time)
           if (nextSegment) {
-            console.log(`⏭️ Jumping to next segment:`, {
-              from: time.toFixed(2),
-              to: nextSegment.start.toFixed(2),
-              segmentId: nextSegment.id
-            })
             // Jump to the start of the next segment
             videoRef.current.currentTime = nextSegment.start
             // Update current segment index
@@ -472,18 +417,15 @@ export default function VideoPlayer({
               onCurrentEventChange(nextSegment.id)
             }
           } else {
-            console.log(`🛑 No more segments - stopping`)
             // No more segments - stop playing
             videoRef.current.pause()
             setIsPlaying(false)
             setCurrentSegmentIndex(0)
           }
         } else if (currentSegment && time >= currentSegment.end) {
-          console.log(`🏁 Reached end of segment ${currentSegmentIndex} at ${time.toFixed(2)}`)
           // Hit end of current segment - advance to next segment
           const nextIndex = currentSegmentIndex + 1
           if (nextIndex < previewSegments.length) {
-            console.log(`➡️ Advancing to segment ${nextIndex}`)
             // Jump to next segment
             setCurrentSegmentIndex(nextIndex)
             videoRef.current.currentTime = previewSegments[nextIndex].start
@@ -492,7 +434,6 @@ export default function VideoPlayer({
               onCurrentEventChange(previewSegments[nextIndex].id)
             }
           } else {
-            console.log(`🔄 Looping back to first segment`)
             // No more segments - stop or loop to beginning
             setCurrentSegmentIndex(0)
             videoRef.current.currentTime = previewSegments[0].start

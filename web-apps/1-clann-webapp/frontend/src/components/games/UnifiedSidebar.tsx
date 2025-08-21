@@ -20,8 +20,8 @@ interface GameEvent {
 interface UnifiedSidebarProps {
   isOpen: boolean
   onClose: () => void
-  activeTab?: 'events' | 'ai' | 'insights' | 'downloads'
-  onTabChange?: (tab: 'events' | 'ai' | 'insights' | 'downloads') => void
+  activeTab?: 'events' | 'ai' | 'insights'
+  onTabChange?: (tab: 'events' | 'ai' | 'insights') => void
   onWidthChange?: (width: number) => void
   isMobile?: boolean // New prop for mobile positioning
   mobileVideoComponent?: React.ReactNode // Video component for mobile header
@@ -96,7 +96,7 @@ interface UnifiedSidebarProps {
   onEventPaddingsChange?: (paddings: Map<number, { beforePadding: number, afterPadding: number }>) => void
 }
 
-type TabType = 'events' | 'ai' | 'insights' | 'downloads'
+type TabType = 'events' | 'ai' | 'insights'
 
 export default function UnifiedSidebar({
   isOpen,
@@ -753,19 +753,7 @@ export default function UnifiedSidebar({
             <span>Stats</span>
           </button>
 
-          <button
-            onClick={() => handleTabChange('downloads')}
-            className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
-              activeTab === 'downloads'
-                ? 'bg-orange-500/20 text-orange-200 border border-orange-500/30'
-                : 'text-gray-400 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <span>Clips</span>
-          </button>
+
           </div>
         </div>
       </div>
@@ -1577,8 +1565,8 @@ export default function UnifiedSidebar({
           </div>
         )}
 
-        {/* Downloads Tab */}
-        {activeTab === 'downloads' && (
+        {/* Removed Downloads Tab - functionality moved to Events tab */}
+        {false && (
           <div className="h-full flex flex-col">
             {/* Header - Fixed at top */}
             <div className="p-4 border-b border-gray-700">
