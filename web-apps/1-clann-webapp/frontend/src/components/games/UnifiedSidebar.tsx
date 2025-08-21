@@ -1086,7 +1086,7 @@ export default function UnifiedSidebar({
                   return (
                       <div
                         key={`${event.timestamp}-${event.type}-${index}-editing`}
-                        className="p-3 rounded-lg bg-blue-900/20 border border-blue-500/30 space-y-3"
+                        className="p-3 rounded-lg bg-gray-800 border border-blue-500/30 space-y-3"
                       >
                         <div className="flex items-center justify-between gap-2">
                           <div className="flex items-center gap-2">
@@ -1193,10 +1193,10 @@ export default function UnifiedSidebar({
                       onClick={() => isDownloadMode ? handleToggleEventDownload(originalIndex) : onEventClick(event)}
                       className={`w-full text-left p-3 rounded-lg transition-all duration-200 border cursor-pointer ${
                         isDownloadMode && selectedDownloadEvents.has(originalIndex)
-                          ? 'bg-green-600/20 text-white border-green-500 ring-1 ring-green-500'
+                          ? 'bg-gray-800 text-white border-green-500 ring-1 ring-green-500'
                           : originalIndex === currentEventIndex 
-                          ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
-                          : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
+                          ? 'bg-gray-800 text-white border-blue-500 ring-1 ring-blue-500' 
+                          : 'bg-gray-800 text-gray-300 hover:bg-gray-800 border-gray-700 hover:border-gray-600'
                       }`}
                     >
                     <div className="flex items-center justify-between gap-2">

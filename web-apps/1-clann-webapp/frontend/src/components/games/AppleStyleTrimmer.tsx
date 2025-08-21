@@ -110,7 +110,7 @@ export default function AppleStyleTrimmer({
   };
 
   return (
-    <div className={`bg-gray-900/50 rounded-lg p-3 ${className}`}>
+    <div className={`bg-gray-800 rounded-lg p-3 ${className}`}>
       {/* Header with time info */}
       <div className="flex justify-between items-center mb-3 text-xs">
         <span className="text-gray-400">-{beforePadding}s</span>
