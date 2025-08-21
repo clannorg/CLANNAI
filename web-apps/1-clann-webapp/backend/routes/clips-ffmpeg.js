@@ -31,9 +31,15 @@ router.post('/create', authenticateToken, async (req, res) => {
             return res.status(404).json({ success: false, error: 'Game not found' });
         }
         
-        if (!game.s3_url) {
+        if (!game.s3_key) {
             return res.status(400).json({ success: false, error: 'Game video not found' });
         }
+        
+        // Construct S3 URL from s3_key
+        const videoUrl = game.s3_key.startsWith('https://') ? game.s3_key : 
+            `https://${process.env.AWS_BUCKET_NAME || 'end-nov-webapp-clann'}.s3.${process.env.AWS_REGION || 'eu-west-1'}.amazonaws.com/${game.s3_key}`;
+        
+        console.log(`📹 Using video: ${videoUrl}`);
         
         // Create temporary directory for processing
         const jobId = uuidv4();
@@ -65,7 +71,7 @@ router.post('/create', authenticateToken, async (req, res) => {
                     'ffmpeg',
                     '-y', // Overwrite output files
                     '-ss', startTime.toString(),
-                    '-i', game.s3_url,
+                    '-i', videoUrl,
                     '-t', duration.toString(),
                     '-c', 'copy', // Copy streams without re-encoding (faster)
                     '-avoid_negative_ts', 'make_zero',
