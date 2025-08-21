@@ -90,6 +90,10 @@ interface UnifiedSidebarProps {
   
   // Autoplay events callback
   onAutoplayChange?: (autoplay: boolean) => void
+  
+  // Event padding data from Events tab timelines
+  eventPaddings?: Map<number, { beforePadding: number, afterPadding: number }>
+  onEventPaddingsChange?: (paddings: Map<number, { beforePadding: number, afterPadding: number }>) => void
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'downloads'
@@ -119,7 +123,9 @@ export default function UnifiedSidebar({
   onSeekToTimestamp,
   currentTime = 0,
   onSelectedEventsChange,
-  onAutoplayChange
+  onAutoplayChange,
+  eventPaddings,
+  onEventPaddingsChange
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -210,6 +216,25 @@ export default function UnifiedSidebar({
   }>>(new Map())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
   
+  // Download mode state
+  const [isDownloadMode, setIsDownloadMode] = useState(false)
+  const [selectedDownloadEvents, setSelectedDownloadEvents] = useState<Set<number>>(new Set())
+  
+  // Individual event padding state (for timeline trimmers)
+  // Helper to get padding for an event (with defaults)
+  const getEventPadding = (eventIndex: number) => {
+    return eventPaddings?.get(eventIndex) || { beforePadding: 5, afterPadding: 3 }
+  }
+  
+  // Helper to update padding for an event timeline
+  const updateEventTimelinePadding = (eventIndex: number, beforePadding: number, afterPadding: number) => {
+    if (onEventPaddingsChange && eventPaddings) {
+      const newPaddings = new Map(eventPaddings)
+      newPaddings.set(eventIndex, { beforePadding, afterPadding })
+      onEventPaddingsChange(newPaddings)
+    }
+  }
+  
   // Wrapper to update selectedEvents and notify parent
   const updateSelectedEvents = (newSelectedEvents: Map<number, {
     beforePadding: number,
@@ -217,6 +242,71 @@ export default function UnifiedSidebar({
   }>) => {
     setSelectedEvents(newSelectedEvents)
     onSelectedEventsChange?.(newSelectedEvents)
+  }
+  
+  // Download mode functions
+  const handleToggleDownloadMode = () => {
+    setIsDownloadMode(!isDownloadMode)
+    setSelectedDownloadEvents(new Set()) // Clear selection when toggling
+  }
+  
+  const handleToggleEventDownload = (eventIndex: number) => {
+    const newSelected = new Set(selectedDownloadEvents)
+    if (newSelected.has(eventIndex)) {
+      newSelected.delete(eventIndex)
+    } else {
+      newSelected.add(eventIndex)
+    }
+    setSelectedDownloadEvents(newSelected)
+  }
+  
+  const handleDownloadSelected = async () => {
+    if (selectedDownloadEvents.size === 0) return
+    
+    setIsCreatingClip(true)
+    
+    try {
+      // Convert selected events to the format expected by the API
+      const selectedEventData = Array.from(selectedDownloadEvents).map(index => {
+        const padding = getEventPadding(index)
+        return {
+          timestamp: allEvents[index].timestamp,
+          type: allEvents[index].type,
+          description: allEvents[index].description,
+          beforePadding: padding.beforePadding,
+          afterPadding: padding.afterPadding
+        }
+      })
+      
+      console.log('🎬 Downloading selected events:', selectedEventData)
+      
+      // Use the same API as clips
+      const result = await apiClient.createClipFFmpeg(gameId, selectedEventData)
+      console.log('✅ Download started:', result)
+      
+      if (result.method === 'ffmpeg' && result.blob) {
+        // Create download link from blob
+        const url = window.URL.createObjectURL(result.blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = result.fileName || `events_${gameId}_${Date.now()}.mp4`
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        window.URL.revokeObjectURL(url)
+        
+        // Clear selection and exit download mode
+        setSelectedDownloadEvents(new Set())
+        setIsDownloadMode(false)
+        alert(`🚀 ${selectedEventData.length === 1 ? 'Event' : 'Events'} downloaded successfully!`)
+      }
+      
+    } catch (error: any) {
+      console.error('❌ Error downloading events:', error)
+      alert(`Error downloading events: ${error.message}`)
+    } finally {
+      setIsCreatingClip(false)
+    }
   }
   
   // Manual annotation state
@@ -475,103 +565,30 @@ export default function UnifiedSidebar({
       
       console.log('🎬 Starting clip creation with events:', selectedEventData)
       
-      // Start clip creation (MediaConvert or FFmpeg)
-      const result = await apiClient.createClip(gameId, selectedEventData)
+      // Use FFmpeg for all clip creation
+      console.log('🔗 Using FFmpeg for clip creation')
+      const result = await apiClient.createClipFFmpeg(gameId, selectedEventData)
       console.log('✅ Clip creation started:', result)
       
-      // Check if this is MediaConvert (needs polling) or FFmpeg (immediate)
-      if (result.jobId) {
-        // MediaConvert - needs polling
-        alert(`🚀 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\nProcessing will take a few minutes. You'll be notified when ready for download.`)
+      // FFmpeg returns blob directly
+      if (result.method === 'ffmpeg' && result.blob) {
+        // FFmpeg - direct blob download
+        alert(`🚀 ${result.message}\n\n💾 Starting download now!`)
         
-        // Poll for completion
-        const pollInterval = setInterval(async () => {
-          try {
-            const status = await apiClient.checkClipStatus(result.jobId)
-            console.log('📊 Job status:', status)
-            
-            if (status.status === 'COMPLETE') {
-              clearInterval(pollInterval)
-              
-              // Job completed - now we can download
-              const downloadUrl = `/api/clips/download/clips/${gameId}/${result.outputPath.split('/').pop()}/highlight_reel.mp4`
-              
-              try {
-                const blob = await apiClient.downloadClip(downloadUrl)
-        const url = window.URL.createObjectURL(blob)
+        // Create download link from blob
+        const url = window.URL.createObjectURL(result.blob)
         const link = document.createElement('a')
         link.href = url
-                link.download = `highlight_${gameId}_${Date.now()}.mp4`
+        link.download = result.fileName || `highlight_${gameId}_${Date.now()}.mp4`
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
         window.URL.revokeObjectURL(url)
-                
-                // Clear selection after successful download
-                updateSelectedEvents(new Map())
-                
-                alert(`🎉 Highlight reel completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n💾 Download started!`)
-                
-      } catch (downloadError: any) {
-        console.error('Download failed:', downloadError)
-                alert('Clip processing completed but download failed. Please try again.')
-              }
-              
-              setIsCreatingClip(false)
-              
-            } else if (status.status === 'ERROR') {
-              clearInterval(pollInterval)
-            setIsCreatingClip(false)
-            alert('❌ Clip processing failed. Please try again.')
-            
-          } else {
-            // Still processing - show progress if available
-            if (status.progress > 0) {
-              console.log(`⏳ Processing: ${status.progress}%`)
-            }
-          }
-          
-        } catch (statusError) {
-          console.error('Error checking status:', statusError)
-          // Continue polling - don't stop on status check errors
-        }
-      }, 10000) // Check every 10 seconds
-      
-        // Stop polling after 10 minutes (timeout)
-        setTimeout(() => {
-          clearInterval(pollInterval)
-          if (isCreatingClip) {
-            setIsCreatingClip(false)
-            alert('⏰ Clip processing is taking longer than expected. Please check back later.')
-          }
-        }, 600000) // 10 minutes
         
-      } else if (result.downloadUrl) {
-        // FFmpeg - immediate download available
-        alert(`🎉 ${result.message}\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds\n\n💾 Starting download now!`)
-        
-        try {
-          const blob = await apiClient.downloadClip(result.downloadUrl)
-          const url = window.URL.createObjectURL(blob)
-          const link = document.createElement('a')
-          link.href = url
-          link.download = `highlight_${gameId}_${Date.now()}.mp4`
-          document.body.appendChild(link)
-          link.click()
-          document.body.removeChild(link)
-          window.URL.revokeObjectURL(url)
-          
-          // Clear selection after successful download
-          updateSelectedEvents(new Map())
-          
-          alert(`✅ Download completed!\n\n📊 ${result.eventCount} events\n⏱️ ${result.duration} seconds`)
-          
-        } catch (downloadError: any) {
-          console.error('Download failed:', downloadError)
-          alert('Clip was created but download failed. Please try again.')
-        }
-        
+        // Clear selection after successful download
+        updateSelectedEvents(new Map())
         setIsCreatingClip(false)
+        
       } else {
         // Unknown response format
         console.error('Unexpected response format:', result)
@@ -762,7 +779,7 @@ export default function UnifiedSidebar({
             <div className="p-4 border-b border-gray-700">
               <div className="space-y-4">
                 <div>
-                  <label className="text-gray-300 block mb-3 font-medium">Team:</label>
+                  <label className="text-gray-300 block mb-3 font-medium">Filters:</label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => {
@@ -913,39 +930,44 @@ export default function UnifiedSidebar({
                   )}
                 </div>
 
-                {/* Add Event Button OR Inline Form */}
+                {/* Autoplay and Add Event Buttons - Side by Side */}
                 <div>
-                  {/* Autoplay Toggle */}
-                  <button
-                    onClick={() => {
-                      const newAutoplay = !autoplayEvents
-                      setAutoplayEvents(newAutoplay)
-                      onAutoplayChange?.(newAutoplay)
-                    }}
-                    className={`flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full mb-3 ${
-                      autoplayEvents 
-                        ? 'bg-green-500/20 hover:bg-green-500/30 border-green-500/50 text-green-300'
-                        : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300'
-                    }`}
-                  >
-                    <span>Autoplay Events</span>
-                    <span className="text-xs">{autoplayEvents ? 'ON' : 'OFF'}</span>
-                  </button>
-                  
                   {!isCreatingEvent ? (
-                    // Add Event Button
-                    <button
-                      onClick={handleStartCreatingEvent}
-                      disabled={isSavingEvents}
-                      className="flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 w-full bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                      title="Add new event at current time"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                      </svg>
-                      <span>Add Event</span>
-                      <span className="text-xs text-gray-400">({Math.floor(currentTime / 60)}:{(currentTime % 60).toFixed(0).padStart(2, '0')})</span>
-                    </button>
+                    <div className="grid grid-cols-2 gap-2 mb-3">
+                      {/* Autoplay Toggle */}
+                      <button
+                        onClick={() => {
+                          const newAutoplay = !autoplayEvents
+                          setAutoplayEvents(newAutoplay)
+                          onAutoplayChange?.(newAutoplay)
+                        }}
+                        className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
+                      >
+                        <span>Autoplay</span>
+                        <div className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+                          autoplayEvents ? 'bg-green-500' : 'bg-gray-600'
+                        }`}>
+                          <span
+                            className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
+                              autoplayEvents ? 'translate-x-5' : 'translate-x-1'
+                            }`}
+                          />
+                        </div>
+                      </button>
+                      
+                      {/* Add Event Button */}
+                      <button
+                        onClick={handleStartCreatingEvent}
+                        disabled={isSavingEvents}
+                        className="flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        title="Add new event at current time"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        <span>Add Event</span>
+                      </button>
+                    </div>
                   ) : (
                     // Inline Event Creation Form (replaces button)
                     <div className="p-3 rounded-lg bg-purple-900/20 border border-purple-500/30 space-y-3">
@@ -1075,7 +1097,7 @@ export default function UnifiedSidebar({
                   return (
                       <div
                         key={`${event.timestamp}-${event.type}-${index}-editing`}
-                        className="p-3 rounded-lg bg-blue-900/20 border border-blue-500/30 space-y-3"
+                        className="p-3 rounded-lg bg-gray-800 border border-blue-500/30 space-y-3"
                       >
                         <div className="flex items-center justify-between gap-2">
                           <div className="flex items-center gap-2">
@@ -1179,11 +1201,13 @@ export default function UnifiedSidebar({
                     <div
                       key={`${event.timestamp}-${event.type}-${index}`}
                       id={`event-${originalIndex}`}
-                      onClick={() => onEventClick(event)}
+                      onClick={() => isDownloadMode ? handleToggleEventDownload(originalIndex) : onEventClick(event)}
                       className={`w-full text-left p-3 rounded-lg transition-all duration-200 border cursor-pointer ${
-                        originalIndex === currentEventIndex 
-                          ? 'bg-blue-600/20 text-white border-blue-500 ring-1 ring-blue-500' 
-                          : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border-gray-700 hover:border-gray-600'
+                        isDownloadMode && selectedDownloadEvents.has(originalIndex)
+                          ? 'bg-gray-800 text-white border-green-500 ring-1 ring-green-500'
+                          : originalIndex === currentEventIndex 
+                          ? 'bg-gray-800 text-white border-blue-500 ring-1 ring-blue-500' 
+                          : 'bg-gray-800 text-gray-300 hover:bg-gray-800 border-gray-700 hover:border-gray-600'
                       }`}
                     >
                     <div className="flex items-center justify-between gap-2">
@@ -1217,7 +1241,8 @@ export default function UnifiedSidebar({
                         )}
                       </div>
                       
-                      {/* Action Buttons - bin and edit */}
+                      {/* Action Buttons - bin and edit (hidden in download mode) */}
+                      {!isDownloadMode && (
                       <div className="flex items-center gap-1">
                         {/* Bin Button */}
                         <button
@@ -1248,12 +1273,28 @@ export default function UnifiedSidebar({
                           </svg>
                         </button>
                       </div>
+                      )}
                     </div>
                     
                     {/* Description */}
                     {event.description && (
                       <div className="text-xs text-gray-400 mt-2 leading-relaxed">{transformDescription(event.description)}</div>
                     )}
+                    
+                    {/* Apple-style Timeline Trimmer */}
+                    <div className="mt-3" onClick={(e) => e.stopPropagation()}>
+                      <AppleStyleTrimmer
+                        eventTimestamp={event.timestamp}
+                        beforePadding={getEventPadding(originalIndex).beforePadding}
+                        afterPadding={getEventPadding(originalIndex).afterPadding}
+                        maxPadding={15}
+                        currentTime={currentTime}
+                        onPaddingChange={(before, after) => {
+                          updateEventTimelinePadding(originalIndex, before, after)
+                        }}
+                        className=""
+                      />
+                    </div>
                     
                     {/* Player */}
                     {event.player && (
@@ -1320,10 +1361,49 @@ export default function UnifiedSidebar({
                           </div>
                 )
                 })}
-                    </div>
+              </div>
                   </div>
                 )}
               </div>
+            </div>
+            
+            {/* Download Mode Toggle Button - Fixed at bottom */}
+            <div className="p-4 border-t border-gray-700 bg-gray-900/50">
+              {!isDownloadMode ? (
+                <button
+                  onClick={handleToggleDownloadMode}
+                  className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <span>Download Mode</span>
+                </button>
+              ) : (
+                <div className="space-y-3">
+                  <div className="text-center text-sm text-gray-300">
+                    Selected: <span className="font-medium text-blue-300">{selectedDownloadEvents.size}</span> event{selectedDownloadEvents.size !== 1 ? 's' : ''}
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleDownloadSelected}
+                      disabled={selectedDownloadEvents.size === 0 || isCreatingClip}
+                      className="flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-green-500/10 hover:bg-green-500/20 border-green-400/30 text-green-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span>{isCreatingClip ? 'Downloading...' : 'Download Selected'}</span>
+                    </button>
+                    <button
+                      onClick={handleToggleDownloadMode}
+                      className="px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
+                    >
+                      Exit
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -1597,6 +1677,7 @@ export default function UnifiedSidebar({
                               beforePadding={eventPadding.beforePadding}
                               afterPadding={eventPadding.afterPadding}
                               maxPadding={15}
+                              currentTime={currentTime}
                               onPaddingChange={(before, after) => {
                                 const newSelected = new Map(selectedEvents);
                                 const current = newSelected.get(index);

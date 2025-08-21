@@ -11,28 +11,10 @@ const {
   getUserTeams 
 } = require('../utils/database');
 const { generatePresignedUploadUrl, getFileInfo } = require('../utils/s3');
-const { createHLSJob } = require('../utils/mediaconvert');
 
 const router = express.Router();
 
-// Helper function to auto-trigger HLS conversion for uploaded videos
-const autoTriggerHLSConversion = async (gameId, s3Key) => {
-  try {
-    console.log(`🎬 Auto-triggering HLS conversion for game ${gameId}, s3Key: ${s3Key}`);
-    
-    // Create the input URL from S3 key
-    const bucketName = process.env.AWS_BUCKET_NAME || 'clannai-uploads';
-    const region = process.env.AWS_REGION || 'eu-west-1';
-    const inputUrl = `s3://${bucketName}/${s3Key}`;
-    
-    // Trigger HLS conversion
-    await createHLSJob(gameId, inputUrl);
-    console.log(`✅ HLS conversion job started for game ${gameId}`);
-  } catch (error) {
-    console.error(`❌ Failed to auto-trigger HLS conversion for game ${gameId}:`, error);
-    // Don't throw - we don't want to fail the upload if HLS conversion fails
-  }
-};
+// HLS conversion removed - using direct MP4 playback
 
 // Get user's games (or all games for company admins)
 router.get('/', authenticateToken, async (req, res) => {
@@ -581,7 +563,7 @@ router.post('/:id/upload-video', [authenticateToken, requireCompanyRole], async 
     }
 
     // Auto-trigger HLS conversion
-    await autoTriggerHLSConversion(gameId, s3Key);
+    // await autoTriggerHLSConversion(gameId, s3Key); // Disabled - MediaConvert removed
 
     res.json({
       message: 'Video uploaded successfully',
@@ -1320,7 +1302,7 @@ router.post('/upload/confirm', authenticateToken, async (req, res) => {
     console.log(`📹 New video uploaded: ${title} (${originalFilename}) for team ${teamId}`);
 
     // Auto-trigger HLS conversion
-    await autoTriggerHLSConversion(updatedGame.id, s3Key);
+    // await autoTriggerHLSConversion(updatedGame.id, s3Key); // Disabled - MediaConvert removed
 
     res.json({
       success: true,

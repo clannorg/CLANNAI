@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Pool } = require('pg');
-const { createHLSJob, getJobStatus } = require('../utils/mediaconvert');
+// const { createHLSJob, getJobStatus } = require('../utils/mediaconvert'); // Disabled - MediaConvert removed
 
 // Database connection
 const pool = new Pool({
@@ -60,9 +60,14 @@ router.post('/convert/:gameId', async (req, res) => {
       }
     }
 
-    // Create HLS conversion job
-    const outputPath = `hls/${gameId}`;
-    const jobResult = await createHLSJob(game.s3_url, outputPath, gameId);
+    // Create HLS conversion job - DISABLED (MediaConvert removed)
+    return res.status(503).json({
+      error: 'HLS conversion temporarily disabled - MediaConvert removed',
+      message: 'Use direct MP4 playback for now'
+    });
+    
+    // const outputPath = `hls/${gameId}`;
+    // const jobResult = await createHLSJob(game.s3_url, outputPath, gameId);
     
     // Store job details in database
     const hlsUrl = `${jobResult.outputPath}index.m3u8`;

@@ -287,6 +287,35 @@ class ApiClient {
     })
   }
 
+  async createClipFFmpeg(gameId: string, events: Array<{timestamp: number, type: string, description?: string, beforePadding?: number, afterPadding?: number}>) {
+    const token = localStorage.getItem('token')
+    const response = await fetch(`${API_BASE_URL}/api/clips/create`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({ gameId, events })
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({ error: 'Unknown error' }))
+      throw new Error(errorData.error || `HTTP ${response.status}`)
+    }
+
+    // FFmpeg returns a blob (video file)
+    const blob = await response.blob()
+    const fileName = response.headers.get('content-disposition')?.match(/filename="(.+)"/)?.[1] || 'clip.mp4'
+    
+    return {
+      success: true,
+      method: 'ffmpeg',
+      blob,
+      fileName,
+      message: events.length === 1 ? 'Single clip created with FFmpeg' : `${events.length} clips stitched together with FFmpeg`
+    }
+  }
+
   async checkClipStatus(jobId: string) {
     return this.request<{
       success: boolean

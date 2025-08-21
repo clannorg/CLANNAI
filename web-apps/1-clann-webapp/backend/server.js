@@ -78,9 +78,9 @@ const gamesRoutes = require('./routes/games');
 const teamsRoutes = require('./routes/teams');
 const companyRoutes = require('./routes/company');
 const aiChatRoutes = require('./routes/ai-chat');
-const clipsRoutes = require('./routes/clips-mediaconvert');
+const clipsRoutes = require('./routes/clips-ffmpeg');
 const databaseRoutes = require('./routes/database');
-const hlsRoutes = require('./routes/hls');
+// const hlsRoutes = require('./routes/hls'); // Disabled - MediaConvert dependency
 
 // Register routes
 app.use('/api/auth', authRoutes);
@@ -90,7 +90,7 @@ app.use('/api/company', companyRoutes);
 app.use('/api/ai-chat', aiChatRoutes);
 app.use('/api/clips', clipsRoutes);
 app.use('/api/database', databaseRoutes);
-app.use('/api/hls', hlsRoutes);
+// app.use('/api/hls', hlsRoutes); // Disabled - MediaConvert dependency
 
 // Error handling middleware
 app.use((err, req, res, next) => {

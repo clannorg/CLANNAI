@@ -5,6 +5,7 @@ interface AppleStyleTrimmerProps {
   beforePadding: number;
   afterPadding: number;
   maxPadding?: number;
+  currentTime?: number;
   onPaddingChange: (before: number, after: number) => void;
   className?: string;
 }
@@ -14,6 +15,7 @@ export default function AppleStyleTrimmer({
   beforePadding,
   afterPadding,
   maxPadding = 15,
+  currentTime = 0,
   onPaddingChange,
   className = ''
 }: AppleStyleTrimmerProps) {
@@ -31,6 +33,12 @@ export default function AppleStyleTrimmer({
   const startPosition = eventPosition - (beforePadding * pixelsPerSecond);
   const endPosition = eventPosition + (afterPadding * pixelsPerSecond);
   const selectedWidth = endPosition - startPosition;
+  
+  // Calculate playhead position (green marker showing current time)
+  const timelineStartTime = eventTimestamp - maxPadding;
+  const playheadOffset = currentTime - timelineStartTime;
+  const playheadPosition = playheadOffset * pixelsPerSecond;
+  const showPlayhead = playheadOffset >= 0 && playheadOffset <= totalDuration;
 
   // Format time helper
   const formatTime = (seconds: number) => {
@@ -95,12 +103,12 @@ export default function AppleStyleTrimmer({
       ticks.push(
         <div
           key={i}
-          className={`absolute top-0 ${
+          className={`absolute bottom-0 ${
             isEventTick 
-              ? 'w-0.5 h-6 bg-orange-400' 
+              ? 'w-0.5 h-6 bg-white' 
               : isSecondMark 
-                ? 'w-px h-4 bg-gray-400' 
-                : 'w-px h-2 bg-gray-600'
+                ? 'w-px h-4 bg-white/60' 
+                : 'w-px h-2 bg-white/40'
           }`}
           style={{ left: `${position}px` }}
         />
@@ -110,30 +118,31 @@ export default function AppleStyleTrimmer({
   };
 
   return (
-    <div className={`bg-gray-900/50 rounded-lg p-3 ${className}`}>
+    <div className={`bg-gray-800 rounded-lg p-3 ${className}`}>
       {/* Header with time info */}
       <div className="flex justify-between items-center mb-3 text-xs">
-        <span className="text-gray-400">-{beforePadding}s</span>
-        <span className="text-orange-400 font-bold">
+        <span className="text-gray-400 font-medium">-{beforePadding}s</span>
+        <span className="text-white font-bold flex items-center gap-1">
+          <span>⚽</span>
           {formatTime(eventTimestamp)}
         </span>
-        <span className="text-gray-400">+{afterPadding}s</span>
+        <span className="text-gray-400 font-medium">+{afterPadding}s</span>
       </div>
 
       {/* Timeline Container */}
       <div 
         ref={containerRef}
-        className="relative bg-gray-800 rounded-lg h-12 mx-auto cursor-pointer select-none"
+        className="relative bg-gray-800 rounded-lg h-12 mx-auto cursor-pointer select-none overflow-visible"
         style={{ width: `${containerWidth}px` }}
       >
-        {/* Tick marks */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Tick marks - at bottom edge of timeline */}
+        <div className="absolute -bottom-2 left-0 right-0 pointer-events-none">
           {generateTicks()}
         </div>
 
         {/* Selected region */}
         <div
-          className="absolute top-2 bottom-2 bg-orange-500/30 border border-orange-500/50 rounded"
+          className="absolute top-2 bottom-2 bg-white/20 border border-white/40 rounded"
           style={{
             left: `${startPosition}px`,
             width: `${selectedWidth}px`
@@ -142,38 +151,39 @@ export default function AppleStyleTrimmer({
 
         {/* Event marker (center line) */}
         <div
-          className="absolute top-1 bottom-1 w-0.5 bg-orange-400 z-10 pointer-events-none"
+          className="absolute top-1 bottom-1 w-0.5 bg-white z-10 pointer-events-none"
           style={{ left: `${eventPosition}px` }}
         />
 
+        {/* Playhead marker (current time) */}
+        {showPlayhead && (
+          <div
+            className="absolute top-0 bottom-0 w-0.5 bg-green-500 z-20 pointer-events-none transition-all duration-100"
+            style={{ left: `${playheadPosition}px` }}
+          />
+        )}
+
         {/* Left handle */}
         <div
-          className={`absolute top-0 bottom-0 w-3 bg-orange-500 rounded-l cursor-ew-resize flex items-center justify-center group hover:bg-orange-400 transition-colors ${
-            isDragging === 'left' ? 'bg-orange-400' : ''
+          className={`absolute top-0 bottom-0 w-3 bg-white/80 rounded-l cursor-ew-resize flex items-center justify-center group hover:bg-white transition-colors ${
+            isDragging === 'left' ? 'bg-white' : ''
           }`}
           style={{ left: `${startPosition - 6}px` }}
           onMouseDown={(e) => handleMouseDown(e, 'left')}
         >
-          <div className="w-0.5 h-4 bg-white/60 rounded-full" />
+          <div className="w-0.5 h-4 bg-gray-800 rounded-full" />
         </div>
 
         {/* Right handle */}
         <div
-          className={`absolute top-0 bottom-0 w-3 bg-orange-500 rounded-r cursor-ew-resize flex items-center justify-center group hover:bg-orange-400 transition-colors ${
-            isDragging === 'right' ? 'bg-orange-400' : ''
+          className={`absolute top-0 bottom-0 w-3 bg-white/80 rounded-r cursor-ew-resize flex items-center justify-center group hover:bg-white transition-colors ${
+            isDragging === 'right' ? 'bg-white' : ''
           }`}
           style={{ left: `${endPosition - 6}px` }}
           onMouseDown={(e) => handleMouseDown(e, 'right')}
         >
-          <div className="w-0.5 h-4 bg-white/60 rounded-full" />
+          <div className="w-0.5 h-4 bg-gray-800 rounded-full" />
         </div>
-      </div>
-
-      {/* Footer with total duration */}
-      <div className="text-center mt-2">
-        <span className="text-xs text-gray-400">
-          {beforePadding + afterPadding}s total clip
-        </span>
       </div>
     </div>
   );
