@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useAIChat } from '../ai-chat'
 import FifaStyleInsights from './FifaStyleInsights'
 import AppleStyleTrimmer from './AppleStyleTrimmer'
@@ -227,6 +227,7 @@ export default function UnifiedSidebar({
   // Download mode state
   const [isDownloadMode, setIsDownloadMode] = useState(false)
   const [selectedDownloadEvents, setSelectedDownloadEvents] = useState<Set<number>>(new Set())
+  const [includeScoreline, setIncludeScoreline] = useState(true)
   
   // Individual event padding state (for timeline trimmers)
   // Helper to get padding for an event (with defaults)
@@ -240,6 +241,11 @@ export default function UnifiedSidebar({
       const newPaddings = new Map(eventPaddings)
       newPaddings.set(eventIndex, { beforePadding, afterPadding })
       onEventPaddingsChange(newPaddings)
+      
+      // Auto-save padding changes to database (will be defined later)
+      if (savePaddingChanges) {
+        savePaddingChanges()
+      }
     }
   }
   
@@ -288,8 +294,8 @@ export default function UnifiedSidebar({
       
       console.log('🎬 Downloading selected events:', selectedEventData)
       
-      // Use the same API as clips
-      const result = await apiClient.createClipFFmpeg(gameId, selectedEventData)
+      // Use the same API as clips with scoreline option
+      const result = await apiClient.createClipFFmpeg(gameId, selectedEventData, includeScoreline)
       console.log('✅ Download started:', result)
       
       if (result.method === 'ffmpeg' && result.blob) {
@@ -324,6 +330,38 @@ export default function UnifiedSidebar({
   // Event editing state
   const [editingEventIndex, setEditingEventIndex] = useState<number | null>(null)
   const [editingEvent, setEditingEvent] = useState<GameEvent | null>(null)
+  
+  // Debounced save for padding changes
+  const savePaddingChangesTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  
+  const savePaddingChanges = useCallback(() => {
+    // Clear existing timeout
+    if (savePaddingChangesTimeoutRef.current) {
+      clearTimeout(savePaddingChangesTimeoutRef.current)
+    }
+    
+    // Set new timeout to save after 1 second of inactivity
+    savePaddingChangesTimeoutRef.current = setTimeout(async () => {
+      if (!gameId || isSavingEvents) return
+      
+      try {
+        // Create events with current padding data
+        const eventsWithPadding = allEvents.map((event, index) => {
+          const padding = eventPaddings?.get(index) || { beforePadding: 5, afterPadding: 3 }
+          return {
+            ...event,
+            beforePadding: padding.beforePadding,
+            afterPadding: padding.afterPadding
+          }
+        })
+        
+        await apiClient.saveModifiedEvents(gameId, eventsWithPadding)
+        console.log('✅ Padding changes auto-saved')
+      } catch (error) {
+        console.error('❌ Error auto-saving padding changes:', error)
+      }
+    }, 1000)
+  }, [gameId, allEvents, eventPaddings, isSavingEvents])
   
   // New event creation state
   const [isCreatingEvent, setIsCreatingEvent] = useState(false)
@@ -412,8 +450,18 @@ export default function UnifiedSidebar({
       const updatedEvents = [...allEvents]
       updatedEvents[editingEventIndex] = editingEvent
       
+      // Include padding data for all events when saving
+      const eventsWithPadding = updatedEvents.map((event, index) => {
+        const padding = eventPaddings.get(index) || { beforePadding: 5, afterPadding: 3 }
+        return {
+          ...event,
+          beforePadding: padding.beforePadding,
+          afterPadding: padding.afterPadding
+        }
+      })
+      
       // Save to backend
-      await apiClient.saveModifiedEvents(gameId, updatedEvents)
+      await apiClient.saveModifiedEvents(gameId, eventsWithPadding)
       
       // Reset editing state
       setEditingEventIndex(null)
@@ -433,11 +481,21 @@ export default function UnifiedSidebar({
     try {
       // Create modified events array (filter out binned events)
       const modifiedEvents = allEvents
-        .map((event, index) => ({ ...event, originalIndex: index }))
+        .map((event, index) => {
+          // Get padding for this event (use defaults if not set)
+          const padding = eventPaddings.get(index) || { beforePadding: 5, afterPadding: 3 }
+          
+          return { 
+            ...event, 
+            originalIndex: index,
+            beforePadding: padding.beforePadding,
+            afterPadding: padding.afterPadding
+          }
+        })
         .filter((_, index) => !binnedEvents.has(index))
       
       await apiClient.saveModifiedEvents(gameId, modifiedEvents)
-      console.log('✅ Modified events saved successfully')
+      console.log('✅ Modified events saved successfully (including padding)')
     } catch (error) {
       console.error('❌ Error saving modified events:', error)
       alert('Failed to save changes. Please try again.')
@@ -1181,7 +1239,6 @@ export default function UnifiedSidebar({
                     </div>
                   )}
                 </div>
-
 
               </div>
             </div>

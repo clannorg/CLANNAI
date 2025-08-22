@@ -272,8 +272,23 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
     const loadEvents = async () => {
       try {
         const response = await apiClient.getGameEvents(gameId)
-        setAllEvents(response.events || [])
-        console.log('📊 Events loaded:', response.events?.length, 'events', response.is_modified ? '(modified)' : '(original)')
+        const events = response.events || []
+        setAllEvents(events)
+        
+        // Restore padding data from stored events
+        const newPaddings = new Map<number, { beforePadding: number, afterPadding: number }>()
+        events.forEach((event: any, index: number) => {
+          if (event.beforePadding !== undefined || event.afterPadding !== undefined) {
+            newPaddings.set(index, {
+              beforePadding: event.beforePadding || 5,
+              afterPadding: event.afterPadding || 3
+            })
+          }
+        })
+        setEventPaddings(newPaddings)
+        
+        console.log('📊 Events loaded:', events.length, 'events', response.is_modified ? '(modified)' : '(original)')
+        console.log('📏 Padding data restored for', newPaddings.size, 'events')
       } catch (error) {
         console.error('Failed to load events:', error)
         // Fallback to game.ai_analysis
@@ -281,6 +296,8 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           ? game.ai_analysis 
           : (game?.ai_analysis?.events || [])
         setAllEvents(fallbackEvents)
+        // Clear padding data on fallback
+        setEventPaddings(new Map())
       }
     }
     

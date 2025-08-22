@@ -89,8 +89,8 @@ export default function VideoPlayer({
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
   const [flashRegion, setFlashRegion] = useState<string | null>(null)
 
-  // Check if we're in preview mode (autoplay events mode only - downloads tab removed)
-  const isPreviewMode = (activeTab === 'events' && autoplayEvents)
+  // Check if we're in preview mode (autoplay events mode - works regardless of active tab)
+  const isPreviewMode = autoplayEvents
 
   // Calculate preview segments when selectedEvents or autoplay change
   useEffect(() => {
@@ -102,7 +102,7 @@ export default function VideoPlayer({
         event: GameEvent
       }> = []
 
-      if (activeTab === 'events' && autoplayEvents) {
+      if (autoplayEvents) {
         // Autoplay mode: use all events with individual timeline padding
         segments = allEvents
           .map((event, index) => {
@@ -155,7 +155,7 @@ export default function VideoPlayer({
 
   // Jump to first segment start when autoplay is enabled (only once)
   useEffect(() => {
-    if (autoplayEvents && activeTab === 'events') {
+    if (autoplayEvents) {
       if (!autoplayInitializedRef.current && previewSegments.length > 0 && videoRef.current) {
         const firstSegment = previewSegments[0]
         
@@ -171,7 +171,7 @@ export default function VideoPlayer({
       // Reset when autoplay is turned off
       autoplayInitializedRef.current = false
     }
-  }, [autoplayEvents, activeTab, previewSegments, onCurrentEventChange])
+  }, [autoplayEvents, previewSegments, onCurrentEventChange])
 
   // Initialize HLS player
   useEffect(() => {
@@ -473,7 +473,7 @@ export default function VideoPlayer({
             const nextIndex = previewSegments.findIndex(seg => seg.id === nextSegment.id)
             setCurrentSegmentIndex(nextIndex)
             // Notify parent about event change for immediate sidebar update
-            if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+            if (onCurrentEventChange && autoplayEvents) {
               onCurrentEventChange(nextSegment.id)
             }
           } else {
@@ -490,7 +490,7 @@ export default function VideoPlayer({
             setCurrentSegmentIndex(nextIndex)
             videoRef.current.currentTime = previewSegments[nextIndex].start
             // Notify parent about event change
-            if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+            if (onCurrentEventChange && autoplayEvents) {
               onCurrentEventChange(previewSegments[nextIndex].id)
             }
           } else {

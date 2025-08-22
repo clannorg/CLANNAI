@@ -13,7 +13,7 @@ const { v4: uuidv4 } = require('uuid');
  */
 router.post('/create', authenticateToken, async (req, res) => {
     try {
-        const { gameId, events } = req.body;
+        const { gameId, events, includeScoreline = false } = req.body;
         
         // Validate input
         if (!gameId || !events || !Array.isArray(events) || events.length === 0) {
@@ -41,11 +41,57 @@ router.post('/create', authenticateToken, async (req, res) => {
         
         console.log(`📹 Using video: ${videoUrl}`);
         
+        // Get team information and calculate scores if scoreline is requested
+        let teamInfo = null;
+        let allGameEvents = [];
+        
+        if (includeScoreline) {
+            // Parse team metadata
+            const metadata = game.metadata ? JSON.parse(game.metadata) : null;
+            teamInfo = {
+                redTeam: metadata?.teams?.red_team || { name: 'Team A', jersey_color: 'red' },
+                blueTeam: metadata?.teams?.blue_team || { name: 'Team B', jersey_color: 'blue' }
+            };
+            
+            // Parse all game events for score calculation
+            allGameEvents = game.ai_analysis ? JSON.parse(game.ai_analysis) : [];
+            console.log(`📊 Team info: ${teamInfo.redTeam.name} vs ${teamInfo.blueTeam.name}`);
+        }
+        
         // Create temporary directory for processing
         const jobId = uuidv4();
         const tempDir = path.join(os.tmpdir(), `clip-job-${jobId}`);
         fs.mkdirSync(tempDir, { recursive: true });
         
+        // Helper function to calculate scores at a given timestamp
+        const calculateScoresAtTime = (timestamp) => {
+            if (!includeScoreline || !allGameEvents.length) return { red: 0, blue: 0 };
+            
+            const goalsUpToTime = allGameEvents.filter(event => 
+                event.type === 'goal' && event.timestamp <= timestamp
+            );
+            
+            let redScore = 0, blueScore = 0;
+            
+            goalsUpToTime.forEach(goal => {
+                const goalTeam = (goal.team || '').toLowerCase();
+                const redTeamName = teamInfo.redTeam.name.toLowerCase();
+                const blueTeamName = teamInfo.blueTeam.name.toLowerCase();
+                
+                if (goalTeam === redTeamName || 
+                    goalTeam.includes(redTeamName) || 
+                    redTeamName.includes(goalTeam)) {
+                    redScore++;
+                } else if (goalTeam === blueTeamName || 
+                          goalTeam.includes(blueTeamName) || 
+                          blueTeamName.includes(goalTeam)) {
+                    blueScore++;
+                }
+            });
+            
+            return { red: redScore, blue: blueScore };
+        };
+
         try {
             const clipPaths = [];
             const totalDuration = events.reduce((sum, event) => {
@@ -66,17 +112,47 @@ router.post('/create', authenticateToken, async (req, res) => {
                 
                 console.log(`📹 Creating clip ${i + 1}: ${startTime}s for ${duration}s`);
                 
-                // Use FFmpeg to extract clip segment
-                const ffmpegCmd = [
-                    'ffmpeg',
-                    '-y', // Overwrite output files
-                    '-ss', startTime.toString(),
-                    '-i', videoUrl,
-                    '-t', duration.toString(),
-                    '-c', 'copy', // Copy streams without re-encoding (faster)
-                    '-avoid_negative_ts', 'make_zero',
-                    clipPath
-                ].join(' ');
+                let ffmpegCmd;
+                
+                if (includeScoreline && teamInfo) {
+                    // Calculate scores at the event timestamp
+                    const scores = calculateScoresAtTime(event.timestamp);
+                    const minutes = Math.floor(event.timestamp / 60);
+                    const seconds = Math.floor(event.timestamp % 60);
+                    const timeStr = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    // Create scoreline text
+                    const redTeamShort = teamInfo.redTeam.name.split(' ')[0].toUpperCase();
+                    const blueTeamShort = teamInfo.blueTeam.name.split(' ')[0].toUpperCase();
+                    const scorelineText = `${redTeamShort} ${scores.red} - ${scores.blue} ${blueTeamShort}    ${timeStr}`;
+                    
+                    console.log(`📊 Adding scoreline: ${scorelineText}`);
+                    
+                    // Use FFmpeg with text overlay for scoreline
+                    ffmpegCmd = [
+                        'ffmpeg',
+                        '-y',
+                        '-ss', startTime.toString(),
+                        '-i', videoUrl,
+                        '-t', duration.toString(),
+                        '-vf', `drawtext=text='${scorelineText}':fontcolor=white:fontsize=24:box=1:boxcolor=black@0.7:boxborderw=5:x=20:y=20`,
+                        '-c:a', 'copy', // Copy audio without re-encoding
+                        '-avoid_negative_ts', 'make_zero',
+                        clipPath
+                    ].join(' ');
+                } else {
+                    // Use FFmpeg to extract clip segment without overlay
+                    ffmpegCmd = [
+                        'ffmpeg',
+                        '-y', // Overwrite output files
+                        '-ss', startTime.toString(),
+                        '-i', videoUrl,
+                        '-t', duration.toString(),
+                        '-c', 'copy', // Copy streams without re-encoding (faster)
+                        '-avoid_negative_ts', 'make_zero',
+                        clipPath
+                    ].join(' ');
+                }
                 
                 console.log(`🔧 Running: ${ffmpegCmd}`);
                 execSync(ffmpegCmd, { stdio: 'pipe' });
