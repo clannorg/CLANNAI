@@ -283,39 +283,54 @@ export default function VideoPlayer({
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [isPreviewMode, previewSegments.length, jumpToNextSegment, jumpToPrevSegment])
 
-  // Generate smart timeline background for clips mode
+  // Generate smart timeline background with team colors for events
   const generateSmartTimelineBackground = () => {
-    if (!isPreviewMode || !previewSegments.length || !duration) {
-      // Normal timeline - green progress, grey remainder
-      const progressPercent = (currentTime / (duration || 1)) * 100
+    if (!duration) return 'rgba(255,255,255,0.3)'
+    
+    // If no events, show simple progress
+    if (!allEvents.length) {
+      const progressPercent = (currentTime / duration) * 100
       return `linear-gradient(to right, #016F32 0%, #016F32 ${progressPercent}%, rgba(255,255,255,0.3) ${progressPercent}%, rgba(255,255,255,0.3) 100%)`
     }
     
-    // Smart timeline - green clips, grey gaps
+    // Create timeline segments with team colors
     let gradientStops = []
     let lastEnd = 0
     
-    previewSegments.forEach((segment, index) => {
-      const startPercent = (segment.start / duration) * 100
-      const endPercent = (segment.end / duration) * 100
+    // Sort events by timestamp
+    const sortedEvents = [...allEvents].sort((a, b) => a.timestamp - b.timestamp)
+    
+    sortedEvents.forEach((event, index) => {
+      const eventPercent = (event.timestamp / duration) * 100
+      const eventColor = getTimelineEventColor(event)
       
-      // Grey gap before clip
-      if (startPercent > lastEnd) {
-        gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
-        gradientStops.push(`rgba(255,255,255,0.2) ${startPercent}%`)
+      // Add grey background before this event
+      if (eventPercent > lastEnd) {
+        gradientStops.push(`rgba(255,255,255,0.3) ${lastEnd}%`)
+        gradientStops.push(`rgba(255,255,255,0.3) ${Math.max(0, eventPercent - 0.5)}%`)
       }
       
-      // Bright green clip segment
-      gradientStops.push(`#22C55E ${startPercent}%`)
-      gradientStops.push(`#22C55E ${endPercent}%`)
+      // Add colored segment for this event (make it 1% wide for visibility)
+      const segmentStart = Math.max(0, eventPercent - 0.5)
+      const segmentEnd = Math.min(100, eventPercent + 0.5)
       
-      lastEnd = endPercent
+      gradientStops.push(`${eventColor} ${segmentStart}%`)
+      gradientStops.push(`${eventColor} ${segmentEnd}%`)
+      
+      lastEnd = segmentEnd
     })
     
-    // Grey remainder after last clip
+    // Fill remainder with grey
     if (lastEnd < 100) {
-      gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
-      gradientStops.push(`rgba(255,255,255,0.2) 100%`)
+      gradientStops.push(`rgba(255,255,255,0.3) ${lastEnd}%`)
+      gradientStops.push(`rgba(255,255,255,0.3) 100%`)
+    }
+    
+    // Add progress overlay up to current time
+    const progressPercent = (currentTime / duration) * 100
+    if (progressPercent > 0) {
+      // Create a subtle overlay to show progress
+      return `linear-gradient(to right, ${gradientStops.join(', ')}), linear-gradient(to right, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) ${progressPercent}%, transparent ${progressPercent}%, transparent 100%)`
     }
     
     return `linear-gradient(to right, ${gradientStops.join(', ')})`
@@ -805,28 +820,6 @@ export default function VideoPlayer({
         }`}
       >
         <div className="bg-transparent">
-          {/* Timeline Dots Overlay */}
-          {events.length > 0 && duration > 0 && (
-            <div className="relative h-12 px-4 pt-3 pointer-events-none z-5">
-              {events.map((event, index) => {
-                const position = (event.timestamp / duration) * 100
-                const originalIndex = allEvents.indexOf(event)
-                const isCurrent = originalIndex === currentEventIndex
-                
-                return (
-                  <button
-                    key={`${event.timestamp}-${event.type}-${index}`}
-                    onClick={() => onEventClick(event)}
-                    className={`absolute top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 hover:scale-200 hover:shadow-xl pointer-events-auto ${
-                      isCurrent ? 'ring-3 ring-yellow-400 ring-offset-2 ring-offset-black shadow-xl scale-125' : 'hover:ring-2 hover:ring-white/70'
-                    }`}
-                    style={{ backgroundColor: getTimelineEventColor(event), left: `${position}%` }}
-                    title={`${event.type} - ${formatTime(event.timestamp)}`}
-                  />
-                )
-              })}
-            </div>
-          )}
 
           {/* Bottom Timeline Bar Only */}
           <div className="mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),8px)]">
@@ -845,11 +838,34 @@ export default function VideoPlayer({
                   step="0.1"
                   value={currentTime}
                   onChange={handleSeek}
-                  className="w-full h-1 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-3 [&::-moz-range-thumb]:h-3 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
+                  className="w-full h-2 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
                   style={{
                     background: generateSmartTimelineBackground()
                   }}
                 />
+                
+                {/* Event Click Overlay - Invisible buttons for event clicks */}
+                {allEvents.length > 0 && duration > 0 && (
+                  <div className="absolute inset-0 pointer-events-none">
+                    {allEvents.map((event, index) => {
+                      const position = (event.timestamp / duration) * 100
+                      const originalIndex = allEvents.indexOf(event)
+                      
+                      return (
+                        <button
+                          key={`${event.timestamp}-${event.type}-${index}`}
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            onEventClick(event)
+                          }}
+                          className="absolute top-0 bottom-0 w-4 pointer-events-auto hover:bg-white/10 rounded transition-colors"
+                          style={{ left: `calc(${position}% - 8px)` }}
+                          title={`${event.type} - ${formatTime(event.timestamp)}`}
+                        />
+                      )
+                    })}
+                  </div>
+                )}
               </div>
 
               {/* Duration */}
