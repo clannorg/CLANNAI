@@ -123,15 +123,15 @@ const getAllGames = async () => {
   return result.rows;
 };
 
-// Get demo games (visible to all users) - ONLY newmills content
+// Get demo games (visible to all users) - ALL demo games
 const getDemoGames = async () => {
   const result = await pool.query(
     `SELECT g.*, t.name as team_name, t.color as team_color,
             u.name as uploaded_by_name, u.email as uploaded_by_email
      FROM games g
      JOIN teams t ON g.team_id = t.id
-     JOIN users u ON g.uploaded_by = u.id
-     WHERE t.team_code = 'TQJ1Q5' AND g.status = 'analyzed'
+     LEFT JOIN users u ON g.uploaded_by = u.id
+     WHERE g.is_demo = true AND g.status = 'analyzed'
      ORDER BY g.created_at DESC`
   );
   return result.rows;

@@ -499,14 +499,25 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
             backgroundImage: `linear-gradient(135deg, ${userTeamColor}10, ${userTeamColor}05)`
           }}
         >
-          <div className="flex items-center mb-4">
-            <div 
-              className="w-4 h-4 rounded-full mr-3" 
-              style={{ backgroundColor: userTeamColor }}
-            ></div>
-            <h3 className="text-xl font-bold text-white">
-              {userTeamTacticalData?.team_name || userTeamName} Tactical Analysis
-            </h3>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center">
+              <div 
+                className="w-4 h-4 rounded-full mr-3" 
+                style={{ backgroundColor: userTeamColor }}
+              ></div>
+              <h3 className="text-xl font-bold text-white">
+                {userTeamTacticalData?.team_name || userTeamName} Tactical Analysis
+              </h3>
+            </div>
+            {/* Final Score Display */}
+            {tacticalData?.analysis?.match_summary?.final_score && (
+              <div className="bg-black/40 px-4 py-2 rounded-lg border border-green-500/30">
+                <div className="text-green-400 font-mono text-lg font-bold">
+                  {tacticalData.analysis.match_summary.final_score}
+                </div>
+                <div className="text-gray-400 text-xs text-center">Final Score</div>
+              </div>
+            )}
           </div>
 
           {/* Team-specific evidence stats */}
@@ -575,6 +586,43 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
               </div>
             </div>
           </div>
+
+          {/* Key Players Section */}
+          {userTeamTacticalData.key_players && (
+            <div className="mt-4 bg-black/20 rounded-lg p-4">
+              <h4 className="text-blue-400 font-semibold mb-3 flex items-center">
+                👥 Key Players
+              </h4>
+              <div className="space-y-2">
+                {normalizeDetailList(userTeamTacticalData.key_players)?.map((player: string, i: number) => (
+                  <div key={i} className="flex items-start space-x-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-200 text-sm">{player}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Tactical Setup */}
+          {userTeamTacticalData.tactical_setup && (
+            <div className="mt-4 bg-black/20 rounded-lg p-4">
+              <h4 className="text-purple-400 font-semibold mb-3 flex items-center">
+                ⚽ Tactical Setup
+              </h4>
+              <p className="text-gray-200 text-sm">{userTeamTacticalData.tactical_setup}</p>
+            </div>
+          )}
+
+          {/* Performance Summary */}
+          {userTeamTacticalData.performance_summary && (
+            <div className="mt-4 bg-black/20 rounded-lg p-4">
+              <h4 className="text-green-400 font-semibold mb-3 flex items-center">
+                📈 Performance Summary
+              </h4>
+              <p className="text-gray-200 text-sm">{userTeamTacticalData.performance_summary}</p>
+            </div>
+          )}
 
           {/* Shot Accuracy */}
           {userTeamTacticalData.shot_accuracy && (
