@@ -77,6 +77,7 @@ export default function VideoPlayer({
   const userSeekingRef = useRef(false)
   const lastSeekTimeRef = useRef(0)
   const userSeekTargetRef = useRef<number | null>(null)
+  const paddingAdjustmentRef = useRef(false)
   
   // Downloads preview state
   const [previewSegments, setPreviewSegments] = useState<Array<{
@@ -120,8 +121,32 @@ export default function VideoPlayer({
       // Sort segments by start time
       segments.sort((a, b) => a.start - b.start)
       
+      // Preserve current segment context when recalculating
+      const currentTime = videoRef.current?.currentTime || 0
+      let newSegmentIndex = 0
+      
+      // Find which segment contains the current time
+      if (segments.length > 0) {
+        const currentSegmentIndex = segments.findIndex(seg => 
+          currentTime >= seg.start && currentTime <= seg.end
+        )
+        if (currentSegmentIndex !== -1) {
+          newSegmentIndex = currentSegmentIndex
+        } else {
+          // If not in any segment, find the closest upcoming segment
+          const nextSegmentIndex = segments.findIndex(seg => seg.start > currentTime)
+          newSegmentIndex = nextSegmentIndex !== -1 ? nextSegmentIndex : 0
+        }
+      }
+      
       setPreviewSegments(segments)
-      setCurrentSegmentIndex(0)
+      setCurrentSegmentIndex(newSegmentIndex)
+      
+      // Set padding adjustment flag to prevent immediate jumping
+      paddingAdjustmentRef.current = true
+      setTimeout(() => {
+        paddingAdjustmentRef.current = false
+      }, 1000) // Give 1 second buffer after padding changes
     } else {
       setPreviewSegments([])
       setCurrentSegmentIndex(0)
@@ -422,6 +447,12 @@ export default function VideoPlayer({
         // Also block if we're near a user's recent seek target (give them 2 seconds to watch)
         if (userSeekTargetRef.current !== null && Math.abs(time - userSeekTargetRef.current) < 2) {
           console.log('🛡️ Autoplay blocked - near user seek target', userSeekTargetRef.current)
+          return
+        }
+        
+        // Block if user is adjusting padding (prevent jumps during trimmer use)
+        if (paddingAdjustmentRef.current) {
+          console.log('🛡️ Autoplay blocked - padding adjustment in progress')
           return
         }
         const currentSegment = previewSegments[currentSegmentIndex]

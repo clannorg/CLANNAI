@@ -1803,18 +1803,9 @@ export default function UnifiedSidebar({
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-orange-300 mb-3">Coming Soon</h3>
-                <p className="text-orange-200/80 text-sm leading-relaxed mb-4">
-                  Individual player performance analysis, heat maps, and personalized insights are currently in development.
+                <p className="text-orange-200/80 text-sm">
+                  Player focus, reels and insights for each player.
                 </p>
-                <div className="text-orange-300/60 text-xs">
-                  Expected features:
-                </div>
-                <div className="mt-2 space-y-1 text-orange-200/70 text-xs">
-                  <div>• Player performance ratings</div>
-                  <div>• Heat maps & positioning analysis</div>
-                  <div>• Individual highlight reels</div>
-                  <div>• Skill development recommendations</div>
-                </div>
               </div>
             </div>
           </div>
