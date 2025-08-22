@@ -58,7 +58,7 @@ export default function GameHeader({
         <Link 
           href="/dashboard" 
           className={`group flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-2xl text-white transition-all duration-200 border border-white/20 hover:border-white/30 shadow-xl ${
-            isMobile ? 'w-10 h-10' : 'w-12 h-12'
+            isMobile ? 'px-3 py-2.5' : 'px-4 py-4'
           }`}
           title="Back to Dashboard"
         >

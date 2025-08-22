@@ -74,6 +74,9 @@ export default function VideoPlayer({
   const videoRef = useRef<HTMLVideoElement>(null)
   const hlsRef = useRef<Hls | null>(null)
   const autoplayInitializedRef = useRef(false)
+  const userSeekingRef = useRef(false)
+  const lastSeekTimeRef = useRef(0)
+  const userSeekTargetRef = useRef<number | null>(null)
   
   // Downloads preview state
   const [previewSegments, setPreviewSegments] = useState<Array<{
@@ -394,8 +397,18 @@ export default function VideoPlayer({
       setDuration(dur)
       onTimeUpdate(time, dur)
       
-      // Downloads preview auto-jump logic
+      // Downloads preview auto-jump logic (skip if user is manually seeking)
       if (isPreviewMode && previewSegments.length > 0 && isPlaying) {
+        if (userSeekingRef.current) {
+          console.log('🛡️ Autoplay blocked - user is seeking')
+          return
+        }
+        
+        // Also block if we're near a user's recent seek target (give them 2 seconds to watch)
+        if (userSeekTargetRef.current !== null && Math.abs(time - userSeekTargetRef.current) < 2) {
+          console.log('🛡️ Autoplay blocked - near user seek target', userSeekTargetRef.current)
+          return
+        }
         const currentSegment = previewSegments[currentSegmentIndex]
         
         // Check if we're in a grey area (not in any clip segment)
@@ -407,6 +420,7 @@ export default function VideoPlayer({
           // We're in grey area - jump to next clip segment
           const nextSegment = previewSegments.find(seg => seg.start > time)
           if (nextSegment) {
+            console.log('🤖 Autoplay: Jumping to next segment at', nextSegment.start)
             // Jump to the start of the next segment
             videoRef.current.currentTime = nextSegment.start
             // Update current segment index
@@ -575,11 +589,49 @@ export default function VideoPlayer({
   useEffect(() => {
     const seek = (timestamp: number) => {
       if (videoRef.current) {
+        const now = Date.now()
+        
+        // Debounce rapid clicks (ignore if clicked within 100ms)
+        if (now - lastSeekTimeRef.current < 100) {
+          console.log('🚫 Ignoring rapid click - too soon after last seek')
+          return
+        }
+        
+        lastSeekTimeRef.current = now
+        
+        // Set user seeking flag to prevent autoplay interference
+        userSeekingRef.current = true
+        userSeekTargetRef.current = timestamp
+        console.log('🎯 User seeking to:', timestamp, '- Autoplay disabled for 1000ms')
+        
+        // If in autoplay mode, update the current segment index to match the seek target
+        if (isPreviewMode && previewSegments.length > 0) {
+          const targetSegmentIndex = previewSegments.findIndex(seg => 
+            timestamp >= seg.start && timestamp <= seg.end
+          )
+          if (targetSegmentIndex !== -1) {
+            setCurrentSegmentIndex(targetSegmentIndex)
+            console.log('🎯 Updated autoplay segment index to:', targetSegmentIndex)
+          }
+        }
+        
         videoRef.current.currentTime = timestamp
         if (videoRef.current.paused) {
           videoRef.current.play()
         }
         videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        
+        // Clear the flag after a longer delay to ensure autoplay doesn't interfere
+        setTimeout(() => {
+          userSeekingRef.current = false
+          console.log('🎯 User seeking complete - Autoplay re-enabled')
+        }, 1000) // Increased to 1000ms for better protection
+        
+        // Clear the seek target after 5 seconds to allow normal autoplay to resume
+        setTimeout(() => {
+          userSeekTargetRef.current = null
+          console.log('🎯 User seek target cleared - Normal autoplay resumed')
+        }, 5000)
       }
     }
     

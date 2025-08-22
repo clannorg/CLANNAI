@@ -94,6 +94,9 @@ interface UnifiedSidebarProps {
   // Event padding data from Events tab timelines
   eventPaddings?: Map<number, { beforePadding: number, afterPadding: number }>
   onEventPaddingsChange?: (paddings: Map<number, { beforePadding: number, afterPadding: number }>) => void
+  
+  // Events update callback for edit mode
+  onEventsUpdate?: (events: GameEvent[]) => void
 }
 
 type TabType = 'events' | 'ai' | 'insights'
@@ -125,7 +128,8 @@ export default function UnifiedSidebar({
   onSelectedEventsChange,
   onAutoplayChange,
   eventPaddings,
-  onEventPaddingsChange
+  onEventPaddingsChange,
+  onEventsUpdate
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -214,6 +218,10 @@ export default function UnifiedSidebar({
     beforePadding: number,  // 0-15 seconds before event
     afterPadding: number    // 0-15 seconds after event
   }>>(new Map())
+  
+  // Edit mode state
+  const [isEditMode, setIsEditMode] = useState(false)
+  const [editModeEvents, setEditModeEvents] = useState<Map<number, GameEvent>>(new Map())
   const [isCreatingClip, setIsCreatingClip] = useState(false)
   
   // Download mode state
@@ -517,6 +525,46 @@ export default function UnifiedSidebar({
       alert('Failed to add event. Please try again.')
     } finally {
       setIsSavingEvents(false)
+    }
+  }
+
+  // Edit mode functions
+  const handleToggleEditMode = () => {
+    if (!isEditMode) {
+      // Entering edit mode - initialize edit data with current events
+      const editData = new Map()
+      allEvents.forEach((event, index) => {
+        editData.set(index, { ...event })
+      })
+      setEditModeEvents(editData)
+    } else {
+      // Exiting edit mode - save changes
+      handleSaveEditModeChanges()
+    }
+    setIsEditMode(!isEditMode)
+  }
+
+  const handleUpdateEditModeEvent = (eventIndex: number, updatedEvent: GameEvent) => {
+    const newEditData = new Map(editModeEvents)
+    newEditData.set(eventIndex, updatedEvent)
+    setEditModeEvents(newEditData)
+  }
+
+  const handleSaveEditModeChanges = async () => {
+    try {
+      // Convert Map to array of events
+      const updatedEvents = Array.from(editModeEvents.values())
+
+      // Save to backend
+      await apiClient.saveModifiedEvents(gameId, updatedEvents)
+      
+      // Update local state
+      onEventsUpdate?.(updatedEvents)
+      
+      console.log('✅ Edit mode changes saved successfully')
+    } catch (error) {
+      console.error('❌ Failed to save edit mode changes:', error)
+      alert('Failed to save changes. Please try again.')
     }
   }
 
@@ -1067,6 +1115,23 @@ export default function UnifiedSidebar({
                     </div>
                   )}
                 </div>
+
+                {/* Edit Events Button */}
+                <div>
+                  <button
+                    onClick={handleToggleEditMode}
+                    className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border-2 ${
+                      isEditMode
+                        ? 'bg-blue-500/20 text-blue-300 border-blue-500/40 hover:bg-blue-500/30'
+                        : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 hover:text-white'
+                    }`}
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                    <span>{isEditMode ? 'Save & Exit' : 'Edit Events'}</span>
+                  </button>
+                </div>
               </div>
             </div>
             
@@ -1080,8 +1145,8 @@ export default function UnifiedSidebar({
                   // Skip binned events
                   if (isBinned) return null
                   
-                  // Show edit form if this event is being edited
-                  if (editingEventIndex === originalIndex && editingEvent) {
+                                    // Show edit form if this event is being edited (individual editing only, not bulk edit mode)
+                  if (editingEventIndex === originalIndex && editingEvent && !isEditMode) {
                   return (
                       <div
                         key={`${event.timestamp}-${event.type}-${index}-editing`}
@@ -1200,15 +1265,54 @@ export default function UnifiedSidebar({
                     >
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
-                        {/* Time Badge - moved to front */}
+                        {/* Time Badge - editable in edit mode */}
                         <div className="flex items-center gap-1">
                           <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                          {isEditMode ? (
+                            <input
+                              type="text"
+                              value={`${Math.floor((editModeEvents.get(originalIndex) || event).timestamp / 60)}:${((editModeEvents.get(originalIndex) || event).timestamp % 60).toFixed(0).padStart(2, '0')}`}
+                              onChange={(e) => {
+                                e.stopPropagation()
+                                const [minutes, seconds] = e.target.value.split(':').map(Number)
+                                if (!isNaN(minutes) && !isNaN(seconds)) {
+                                  const updatedEvent = {...(editModeEvents.get(originalIndex) || event), timestamp: minutes * 60 + seconds}
+                                  handleUpdateEditModeEvent(originalIndex, updatedEvent)
+                                }
+                              }}
+                              className="w-12 px-1 py-0.5 text-xs bg-gray-700 border border-gray-600 rounded text-white font-mono"
+                              onClick={(e) => e.stopPropagation()}
+                            />
+                          ) : (
+                            <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                          )}
                         </div>
                         
-                        {/* Event Type Badge */}
+                        {/* Event Type Badge - editable in edit mode */}
+                        {isEditMode ? (
+                          <select
+                            value={(editModeEvents.get(originalIndex) || event).type}
+                            onChange={(e) => {
+                              e.stopPropagation()
+                              const updatedEvent = {...(editModeEvents.get(originalIndex) || event), type: e.target.value}
+                              handleUpdateEditModeEvent(originalIndex, updatedEvent)
+                            }}
+                            className="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <option value="goal">Goal</option>
+                            <option value="shot">Shot</option>
+                            <option value="save">Save</option>
+                            <option value="foul">Foul</option>
+                            <option value="yellow_card">Yellow Card</option>
+                            <option value="red_card">Red Card</option>
+                            <option value="corner">Corner</option>
+                            <option value="substitution">Substitution</option>
+                            <option value="turnover">Turnover</option>
+                          </select>
+                        ) : (
                         <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium border ${
                           event.type === 'goal' ? 'bg-green-500/20 text-green-300 border-green-500/30' :
                           event.type === 'shot' ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' :
@@ -1220,12 +1324,30 @@ export default function UnifiedSidebar({
                           <span>{getEventEmoji(event.type)}</span>
                           <span>{event.type.replace('_', ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
                         </span>
+                        )}
                         
-                        {/* Team Badge */}
-                        {event.team && (
+                        {/* Team Badge - editable in edit mode */}
+                        {isEditMode ? (
+                          <select
+                            value={(editModeEvents.get(originalIndex) || event).team || ''}
+                            onChange={(e) => {
+                              e.stopPropagation()
+                              const updatedEvent = {...(editModeEvents.get(originalIndex) || event), team: e.target.value}
+                              handleUpdateEditModeEvent(originalIndex, updatedEvent)
+                            }}
+                            className="px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <option value="">No Team</option>
+                            <option value={redTeam.name.toLowerCase()}>{redTeam.name}</option>
+                            <option value={blueTeam.name.toLowerCase()}>{blueTeam.name}</option>
+                          </select>
+                        ) : (
+                          event.team && (
                           <span className={`inline-flex items-center px-2 py-1 rounded-md text-xs font-medium border ${getTeamBadgeColors(event.team)}`}>
                             {getTeamName(event.team)}
                           </span>
+                          )
                         )}
                       </div>
                       
@@ -1264,9 +1386,24 @@ export default function UnifiedSidebar({
                       )}
                     </div>
                     
-                    {/* Description */}
-                    {event.description && (
+                    {/* Description - editable in edit mode */}
+                    {isEditMode ? (
+                      <textarea
+                        value={(editModeEvents.get(originalIndex) || event).description || ''}
+                        onChange={(e) => {
+                          e.stopPropagation()
+                          const updatedEvent = {...(editModeEvents.get(originalIndex) || event), description: e.target.value}
+                          handleUpdateEditModeEvent(originalIndex, updatedEvent)
+                        }}
+                        className="w-full px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white resize-none mt-2"
+                        placeholder="Event description..."
+                        rows={2}
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                    ) : (
+                      event.description && (
                       <div className="text-xs text-gray-400 mt-2 leading-relaxed">{transformDescription(event.description)}</div>
+                      )
                     )}
                     
                     {/* Apple-style Timeline Trimmer */}
@@ -1284,9 +1421,24 @@ export default function UnifiedSidebar({
                       />
                     </div>
                     
-                    {/* Player */}
-                    {event.player && (
+                    {/* Player - editable in edit mode */}
+                    {isEditMode ? (
+                      <input
+                        type="text"
+                        value={(editModeEvents.get(originalIndex) || event).player || ''}
+                        onChange={(e) => {
+                          e.stopPropagation()
+                          const updatedEvent = {...(editModeEvents.get(originalIndex) || event), player: e.target.value}
+                          handleUpdateEditModeEvent(originalIndex, updatedEvent)
+                        }}
+                        className="w-full px-2 py-1 text-xs bg-gray-700 border border-gray-600 rounded text-white mt-1"
+                        placeholder="Player name (optional)..."
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                    ) : (
+                      event.player && (
                       <div className="text-xs text-gray-500 mt-1 italic">{event.player}</div>
+                      )
                     )}
                   </div>
                 )
@@ -1369,8 +1521,29 @@ export default function UnifiedSidebar({
                 </button>
               ) : (
                 <div className="space-y-3">
-                  <div className="text-center text-sm text-gray-300">
-                    Selected: <span className="font-medium text-blue-300">{selectedDownloadEvents.size}</span> event{selectedDownloadEvents.size !== 1 ? 's' : ''}
+                  <div className="flex items-center justify-between text-sm text-gray-300">
+                    <span>Selected: <span className="font-medium text-blue-300">{selectedDownloadEvents.size}</span> event{selectedDownloadEvents.size !== 1 ? 's' : ''}</span>
+                    <button
+                      onClick={() => {
+                        if (selectedDownloadEvents.size === events.length) {
+                          // Deselect all
+                          setSelectedDownloadEvents(new Set())
+                        } else {
+                          // Select all visible events
+                          const allEventIndices = new Set<number>()
+                          events.forEach((_, index) => {
+                            const originalIndex = allEvents.indexOf(events[index])
+                            if (originalIndex !== -1) {
+                              allEventIndices.add(originalIndex)
+                            }
+                          })
+                          setSelectedDownloadEvents(allEventIndices)
+                        }
+                      }}
+                      className="text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-300 hover:bg-blue-500/30 transition-colors"
+                    >
+                      {selectedDownloadEvents.size === events.length ? 'Deselect All' : 'Select All'}
+                    </button>
                   </div>
                   <div className="flex gap-2">
                     <button

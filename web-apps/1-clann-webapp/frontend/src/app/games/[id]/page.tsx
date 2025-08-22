@@ -377,24 +377,21 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
       currentTime
     })
     
-    // Find the event index to get its padding settings
-    const eventIndex = allEvents.findIndex(e => e.timestamp === event.timestamp && e.type === event.type)
+    // Always jump to exact event timestamp when user clicks
+    // This gives immediate, predictable navigation regardless of autoplay state
+    console.log('⏭️ User clicked - jumping to exact event time:', event.timestamp)
     
-    if (autoplayEvents && eventIndex !== -1) {
-      // In autoplay mode, jump to the padded segment start
-      const padding = eventPaddings?.get(eventIndex) || { beforePadding: 5, afterPadding: 3 }
-      const segmentStart = Math.max(0, event.timestamp - padding.beforePadding)
-      console.log('🚀 Autoplay mode - jumping to segment start:', {
-        eventTime: event.timestamp,
-        segmentStart,
-        padding
-      })
-      seekToTimestamp(segmentStart)
-    } else {
-      // In normal mode, jump to exact event timestamp
-      console.log('⏭️ Normal mode - jumping to event time:', event.timestamp)
-      seekToTimestamp(event.timestamp)
+    // If autoplay is active, temporarily clear the autoplay override to allow immediate seeking
+    if (autoplayEvents && autoplayCurrentEventIndex !== null) {
+      setAutoplayCurrentEventIndex(null)
     }
+    
+    seekToTimestamp(event.timestamp)
+  }
+
+  const handleEventsUpdate = (updatedEvents: GameEvent[]) => {
+    setAllEvents(updatedEvents)
+    console.log('📝 Events updated:', updatedEvents.length, 'events')
   }
 
   return (
@@ -469,6 +466,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
             onAutoplayChange={setAutoplayEvents}
             eventPaddings={eventPaddings}
             onEventPaddingsChange={setEventPaddings}
+            onEventsUpdate={handleEventsUpdate}
                 />
               </div>
       ) : (
@@ -518,6 +516,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           onSelectedEventsChange={setSelectedEvents}
           eventPaddings={eventPaddings}
           onEventPaddingsChange={setEventPaddings}
+          onEventsUpdate={handleEventsUpdate}
       />
         </div>
       )}
