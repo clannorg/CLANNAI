@@ -494,13 +494,10 @@ export default function VideoPlayer({
               onCurrentEventChange(previewSegments[nextIndex].id)
             }
           } else {
-            // No more segments - stop or loop to beginning
-            setCurrentSegmentIndex(0)
-            videoRef.current.currentTime = previewSegments[0].start
-            // Notify parent about event change
-            if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
-              onCurrentEventChange(previewSegments[0].id)
-            }
+            // No more segments - just stop playing
+            videoRef.current.pause()
+            setIsPlaying(false)
+            console.log('🎬 Autoplay: Reached end of all segments - stopping')
           }
         }
       }
