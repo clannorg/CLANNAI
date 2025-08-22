@@ -1,6 +1,6 @@
 {
   "match_id": "leo1",
-  "upload_timestamp": "2025-08-20T10:39:33.345642",
+  "upload_timestamp": "2025-08-22T12:41:31.912355",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "s3_urls": {
@@ -33,12 +33,18 @@
       "s3_key": "analysis-data/leo1-sick_tactical_analysis-json.json",
       "description": "Interactive tactical analysis with player cards, clickable moments, and rich data",
       "file_size_mb": 0.02
+    },
+    "video.mp4": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/leo1-video-mp4.mp4",
+      "s3_key": "analysis-videos/leo1-video-mp4.mp4",
+      "description": "Full match video",
+      "file_size_mb": 1031.51
     }
   },
   "upload_summary": {
     "total_files": 13,
-    "successful_uploads": 5,
-    "failed_uploads": 8,
-    "total_size_mb": 0.04
+    "successful_uploads": 6,
+    "failed_uploads": 7,
+    "total_size_mb": 1031.55
   }
 }

@@ -1,0 +1,204 @@
+{
+  "match_id": "footy2_corrected",
+  "title": "Footy2: Clann vs Lostthehead",
+  "final_score": "Clann 14 - 9 Lostthehead",
+  "total_events": 23,
+  "total_goals": 23,
+  "team_stats": {
+    "clann": {
+      "goals": 14,
+      "colors": "no bibs/white"
+    },
+    "lostthehead": {
+      "goals": 9,
+      "colors": "orange bibs"
+    }
+  },
+  "events": [
+    {
+      "timestamp": 181,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "The ball is seen hitting the back of the net of the no bibs/colours team",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 322,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "The ball is seen hitting the back of the net of the no bibs/colours team",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 387,
+      "type": "goal",
+      "team": "clann",
+      "description": "A right-footed shot from just outside the penalty area goes into the top right corner of the goal.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 413,
+      "type": "goal",
+      "team": "clann",
+      "description": "A player in a white shirt shoots from distance, and the ball goes low into the bottom left corner.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 529,
+      "type": "goal",
+      "team": "clann",
+      "description": "A powerful shot hits the top bar of the goal and deflects down into the net.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 783,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "A long-range shot from just behind the halfway line goes into the goal.",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 905,
+      "type": "goal",
+      "team": "clann",
+      "description": "A powerful shot hits the inside of the left goalpost and deflects into the net.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 1380,
+      "type": "goal",
+      "team": "clann",
+      "description": "White jersey player scores another screamer",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 1560,
+      "type": "goal",
+      "team": "clann",
+      "description": "Outside of boot",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 1581,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "A long-range shot from behind the center line goes into the top left corner.",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 1658,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "A shot from just outside the center circle goes into the bottom left of the goal.",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 1785,
+      "type": "goal",
+      "team": "clann",
+      "description": "A goal is inferred from the players resetting for a kickoff.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 1940,
+      "type": "goal",
+      "team": "clann",
+      "description": "A shot from the left just outside the penalty area goes into the bottom left corner of the goal.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2050,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "A powerful, low shot with the left foot goes into the bottom corner of the net.",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 2097,
+      "type": "goal",
+      "team": "clann",
+      "description": "A shot from the left side flies into the top right corner of the net.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2130,
+      "type": "goal",
+      "team": "clann",
+      "description": "A shot hits the underside of the crossbar and bounces down over the goal line.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2193,
+      "type": "goal",
+      "team": "clann",
+      "description": "outside frame",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 2224,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "Goal scored by Lostthehead",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 2395,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "Goal scored by Lostthehead",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 2957,
+      "type": "goal",
+      "team": "clann",
+      "description": "A long-range shot from just outside the center circle goes into the top left corner of the goal.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 3025,
+      "type": "goal",
+      "team": "clann",
+      "description": "A shot from near the center circle line goes into the bottom left of the net.",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    },
+    {
+      "timestamp": 3080,
+      "type": "goal",
+      "team": "lostthehead",
+      "description": "Goal scored by Lostthehead",
+      "excitement_level": 8,
+      "original_team_name": "orange bibs"
+    },
+    {
+      "timestamp": 3117,
+      "type": "goal",
+      "team": "clann",
+      "description": "White jersey far post",
+      "excitement_level": 8,
+      "original_team_name": "no bibs/colours"
+    }
+  ],
+  "notes": "Corrected events based on actual match detection"
+}

@@ -52,6 +52,8 @@ Queue: Redis + Celery for job management
 2. **Technical Delivery:** Full system working as specified
 3. **Deadline:** Completed by August 31, 2025
 
+
+
 **If any condition fails = £0 payment**
 
 ---
