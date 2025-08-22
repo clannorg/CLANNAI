@@ -150,7 +150,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
   const [duration, setDuration] = useState(0)
   const [currentEventIndex, setCurrentEventIndex] = useState(-1)
   const [showSidebar, setShowSidebar] = useState(true)
-  const [sidebarTab, setSidebarTab] = useState<'events' | 'ai' | 'insights'>('events')
+  const [sidebarTab, setSidebarTab] = useState<'events' | 'ai' | 'insights' | 'players'>('events')
   const [sidebarWidth, setSidebarWidth] = useState(400)
   const [teamScores, setTeamScores] = useState({ red: 0, blue: 0 })
   

@@ -20,8 +20,8 @@ interface GameEvent {
 interface UnifiedSidebarProps {
   isOpen: boolean
   onClose: () => void
-  activeTab?: 'events' | 'ai' | 'insights'
-  onTabChange?: (tab: 'events' | 'ai' | 'insights') => void
+  activeTab?: 'events' | 'ai' | 'insights' | 'players'
+  onTabChange?: (tab: 'events' | 'ai' | 'insights' | 'players') => void
   onWidthChange?: (width: number) => void
   isMobile?: boolean // New prop for mobile positioning
   mobileVideoComponent?: React.ReactNode // Video component for mobile header
@@ -99,7 +99,7 @@ interface UnifiedSidebarProps {
   onEventsUpdate?: (events: GameEvent[]) => void
 }
 
-type TabType = 'events' | 'ai' | 'insights'
+type TabType = 'events' | 'ai' | 'insights' | 'players'
 
 export default function UnifiedSidebar({
   isOpen,
@@ -801,6 +801,20 @@ export default function UnifiedSidebar({
             <span>Stats</span>
           </button>
 
+          <button
+            onClick={() => handleTabChange('players')}
+            className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
+              activeTab === 'players'
+                ? 'bg-orange-500/20 text-orange-200 border border-orange-500/30'
+                : 'text-gray-400 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>Players</span>
+          </button>
+
 
           </div>
         </div>
@@ -966,9 +980,9 @@ export default function UnifiedSidebar({
                   )}
                 </div>
 
-                {/* Autoplay and Add Event Buttons - Side by Side */}
+                {/* Autoplay and Edit Events Buttons - Side by Side */}
                 <div>
-                  {!isCreatingEvent ? (
+                  {!isCreatingEvent && !isEditMode && (
                     <div className="grid grid-cols-2 gap-2 mb-3">
                       {/* Autoplay Toggle */}
                       <button
@@ -991,20 +1005,72 @@ export default function UnifiedSidebar({
                         </div>
                       </button>
                       
-                      {/* Add Event Button */}
+                      {/* Edit Events Button */}
                       <button
-                        onClick={handleStartCreatingEvent}
-                        disabled={isSavingEvents}
-                        className="flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                        title="Add new event at current time"
+                        onClick={handleToggleEditMode}
+                        className="flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 hover:text-white"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                         </svg>
-                        <span>Add Event</span>
+                        <span>Edit</span>
                       </button>
                     </div>
-                  ) : (
+                  )}
+
+                  {/* Edit Mode: Autoplay and Add Event side by side */}
+                  {!isCreatingEvent && isEditMode && (
+                    <div className="space-y-2 mb-3">
+                      <div className="grid grid-cols-2 gap-2">
+                        {/* Autoplay Toggle */}
+                        <button
+                          onClick={() => {
+                            const newAutoplay = !autoplayEvents
+                            setAutoplayEvents(newAutoplay)
+                            onAutoplayChange?.(newAutoplay)
+                          }}
+                          className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
+                        >
+                          <span>Autoplay</span>
+                          <div className={`relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
+                            autoplayEvents ? 'bg-green-500' : 'bg-gray-600'
+                          }`}>
+                            <span
+                              className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
+                                autoplayEvents ? 'translate-x-5' : 'translate-x-1'
+                              }`}
+                            />
+                          </div>
+                        </button>
+                        
+                        {/* Add Event Button - Only in Edit Mode */}
+                        <button
+                          onClick={handleStartCreatingEvent}
+                          disabled={isSavingEvents}
+                          className="flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-purple-500/10 hover:bg-purple-500/20 border-purple-400/30 text-purple-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                          title="Add new event at current time"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          </svg>
+                          <span>Add Event</span>
+                        </button>
+                      </div>
+                      
+                      {/* Save & Exit Button - Full width in Edit Mode */}
+                      <button
+                        onClick={handleToggleEditMode}
+                        className="w-full flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-blue-500/20 text-blue-300 border-blue-500/40 hover:bg-blue-500/30"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Save & Exit</span>
+                      </button>
+                    </div>
+                  )}
+
+                  {isCreatingEvent && (
                     // Inline Event Creation Form (replaces button)
                     <div className="p-3 rounded-lg bg-purple-900/20 border border-purple-500/30 space-y-3">
                       <div className="flex items-center justify-between gap-2">
@@ -1116,22 +1182,7 @@ export default function UnifiedSidebar({
                   )}
                 </div>
 
-                {/* Edit Events Button */}
-                <div>
-                  <button
-                    onClick={handleToggleEditMode}
-                    className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 border-2 ${
-                      isEditMode
-                        ? 'bg-blue-500/20 text-blue-300 border-blue-500/40 hover:bg-blue-500/30'
-                        : 'bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300 hover:text-white'
-                    }`}
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                    </svg>
-                    <span>{isEditMode ? 'Save & Exit' : 'Edit Events'}</span>
-                  </button>
-                </div>
+
               </div>
             </div>
             
@@ -1734,6 +1785,37 @@ export default function UnifiedSidebar({
                   ai_analysis: allEvents
                 }}
               />
+            </div>
+          </div>
+        )}
+
+        {/* Players Tab */}
+        {activeTab === 'players' && (
+          <div className="h-full overflow-y-auto">
+            <div className="p-4">
+              <h4 className="text-lg font-semibold text-white mb-4">Player Insights</h4>
+              
+              {/* Coming Soon Section */}
+              <div className="bg-gradient-to-br from-orange-900/20 to-orange-800/10 border border-orange-500/30 rounded-xl p-8 text-center">
+                <div className="text-orange-400 mb-4">
+                  <svg className="mx-auto h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-orange-300 mb-3">Coming Soon</h3>
+                <p className="text-orange-200/80 text-sm leading-relaxed mb-4">
+                  Individual player performance analysis, heat maps, and personalized insights are currently in development.
+                </p>
+                <div className="text-orange-300/60 text-xs">
+                  Expected features:
+                </div>
+                <div className="mt-2 space-y-1 text-orange-200/70 text-xs">
+                  <div>• Player performance ratings</div>
+                  <div>• Heat maps & positioning analysis</div>
+                  <div>• Individual highlight reels</div>
+                  <div>• Skill development recommendations</div>
+                </div>
+              </div>
             </div>
           </div>
         )}
