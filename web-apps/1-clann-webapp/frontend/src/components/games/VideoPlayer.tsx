@@ -29,6 +29,7 @@ interface VideoPlayerProps {
   onTimeUpdate: (currentTime: number, duration: number) => void
   onEventClick: (event: GameEvent) => void
   onSeekToTimestamp: (timestamp: number) => void
+  onCurrentEventChange?: (eventIndex: number) => void
   // When false, hide timeline/controls overlays (used on mobile portrait)
   overlayVisible?: boolean
   // Notify parent about user interaction to reset auto-hide timers
@@ -55,6 +56,7 @@ export default function VideoPlayer({
   onTimeUpdate,
   onEventClick,
   onSeekToTimestamp,
+  onCurrentEventChange,
   overlayVisible = true,
   onUserInteract,
   selectedEvents,
@@ -71,6 +73,11 @@ export default function VideoPlayer({
   
   const videoRef = useRef<HTMLVideoElement>(null)
   const hlsRef = useRef<Hls | null>(null)
+  const autoplayInitializedRef = useRef(false)
+  const userSeekingRef = useRef(false)
+  const lastSeekTimeRef = useRef(0)
+  const userSeekTargetRef = useRef<number | null>(null)
+  const paddingAdjustmentRef = useRef(false)
   
   // Downloads preview state
   const [previewSegments, setPreviewSegments] = useState<Array<{
@@ -82,9 +89,8 @@ export default function VideoPlayer({
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
   const [flashRegion, setFlashRegion] = useState<string | null>(null)
 
-  // Check if we're in preview mode (clips tab with selected events OR autoplay events mode)
-  const isPreviewMode = (activeTab === 'downloads' && selectedEvents && selectedEvents.size > 0) || 
-                        (activeTab === 'events' && autoplayEvents)
+  // Check if we're in preview mode (autoplay events mode only - downloads tab removed)
+  const isPreviewMode = (activeTab === 'events' && autoplayEvents)
 
   // Calculate preview segments when selectedEvents or autoplay change
   useEffect(() => {
@@ -109,39 +115,63 @@ export default function VideoPlayer({
               event
             }
           })
-      } else if (activeTab === 'downloads' && selectedEvents) {
-        // Downloads mode: use individual padding from Map
-        segments = Array.from(selectedEvents.entries())
-          .map(([eventIndex, paddingData]) => {
-            const event = allEvents[eventIndex]
-            if (!event) return null
-            return {
-              id: eventIndex,
-              start: Math.max(0, event.timestamp - paddingData.beforePadding),
-              end: event.timestamp + paddingData.afterPadding,
-              event
-            }
-          })
-          .filter(Boolean) as Array<{
-            id: number
-            start: number
-            end: number
-            event: GameEvent
-          }>
       }
+      // Downloads tab removed - functionality moved to Events tab
       
       // Sort segments by start time
       segments.sort((a, b) => a.start - b.start)
       
+      // Preserve current segment context when recalculating
+      const currentTime = videoRef.current?.currentTime || 0
+      let newSegmentIndex = 0
+      
+      // Find which segment contains the current time
+      if (segments.length > 0) {
+        const currentSegmentIndex = segments.findIndex(seg => 
+          currentTime >= seg.start && currentTime <= seg.end
+        )
+        if (currentSegmentIndex !== -1) {
+          newSegmentIndex = currentSegmentIndex
+        } else {
+          // If not in any segment, find the closest upcoming segment
+          const nextSegmentIndex = segments.findIndex(seg => seg.start > currentTime)
+          newSegmentIndex = nextSegmentIndex !== -1 ? nextSegmentIndex : 0
+        }
+      }
+      
       setPreviewSegments(segments)
-      setCurrentSegmentIndex(0)
+      setCurrentSegmentIndex(newSegmentIndex)
+      
+      // Set padding adjustment flag to prevent immediate jumping
+      paddingAdjustmentRef.current = true
+      setTimeout(() => {
+        paddingAdjustmentRef.current = false
+      }, 1000) // Give 1 second buffer after padding changes
     } else {
       setPreviewSegments([])
       setCurrentSegmentIndex(0)
     }
   }, [selectedEvents, allEvents, activeTab, isPreviewMode, autoplayEvents, eventPaddings])
 
-
+  // Jump to first segment start when autoplay is enabled (only once)
+  useEffect(() => {
+    if (autoplayEvents && activeTab === 'events') {
+      if (!autoplayInitializedRef.current && previewSegments.length > 0 && videoRef.current) {
+        const firstSegment = previewSegments[0]
+        
+        videoRef.current.currentTime = firstSegment.start
+        setCurrentSegmentIndex(0)
+        autoplayInitializedRef.current = true
+        // Notify parent about initial event
+        if (onCurrentEventChange) {
+          onCurrentEventChange(firstSegment.id)
+        }
+      }
+    } else {
+      // Reset when autoplay is turned off
+      autoplayInitializedRef.current = false
+    }
+  }, [autoplayEvents, activeTab, previewSegments, onCurrentEventChange])
 
   // Initialize HLS player
   useEffect(() => {
@@ -210,11 +240,19 @@ export default function VideoPlayer({
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[nextIndex].start
       }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[nextIndex].id)
+      }
     } else {
       // Loop back to first clip
       setCurrentSegmentIndex(0)
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[0].start
+      }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[0].id)
       }
     }
   }, [currentSegmentIndex, previewSegments])
@@ -228,12 +266,20 @@ export default function VideoPlayer({
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[prevIndex].start
       }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[prevIndex].id)
+      }
     } else {
       // Loop to last clip
       const lastIndex = previewSegments.length - 1
       setCurrentSegmentIndex(lastIndex)
       if (videoRef.current) {
         videoRef.current.currentTime = previewSegments[lastIndex].start
+      }
+      // Notify parent about event change
+      if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+        onCurrentEventChange(previewSegments[lastIndex].id)
       }
     }
   }, [currentSegmentIndex, previewSegments])
@@ -262,39 +308,54 @@ export default function VideoPlayer({
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [isPreviewMode, previewSegments.length, jumpToNextSegment, jumpToPrevSegment])
 
-  // Generate smart timeline background for clips mode
+  // Generate smart timeline background with team colors for events
   const generateSmartTimelineBackground = () => {
-    if (!isPreviewMode || !previewSegments.length || !duration) {
-      // Normal timeline - green progress, grey remainder
-      const progressPercent = (currentTime / (duration || 1)) * 100
+    if (!duration) return 'rgba(255,255,255,0.3)'
+    
+    // If no events, show simple progress
+    if (!allEvents.length) {
+      const progressPercent = (currentTime / duration) * 100
       return `linear-gradient(to right, #016F32 0%, #016F32 ${progressPercent}%, rgba(255,255,255,0.3) ${progressPercent}%, rgba(255,255,255,0.3) 100%)`
     }
     
-    // Smart timeline - green clips, grey gaps
+    // Create timeline segments with team colors
     let gradientStops = []
     let lastEnd = 0
     
-    previewSegments.forEach((segment, index) => {
-      const startPercent = (segment.start / duration) * 100
-      const endPercent = (segment.end / duration) * 100
+    // Sort events by timestamp
+    const sortedEvents = [...allEvents].sort((a, b) => a.timestamp - b.timestamp)
+    
+    sortedEvents.forEach((event, index) => {
+      const eventPercent = (event.timestamp / duration) * 100
+      const eventColor = getTimelineEventColor(event)
       
-      // Grey gap before clip
-      if (startPercent > lastEnd) {
-        gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
-        gradientStops.push(`rgba(255,255,255,0.2) ${startPercent}%`)
+      // Add grey background before this event
+      if (eventPercent > lastEnd) {
+        gradientStops.push(`rgba(255,255,255,0.3) ${lastEnd}%`)
+        gradientStops.push(`rgba(255,255,255,0.3) ${Math.max(0, eventPercent - 0.5)}%`)
       }
       
-      // Bright green clip segment
-      gradientStops.push(`#22C55E ${startPercent}%`)
-      gradientStops.push(`#22C55E ${endPercent}%`)
+      // Add colored segment for this event (make it 1% wide for visibility)
+      const segmentStart = Math.max(0, eventPercent - 0.5)
+      const segmentEnd = Math.min(100, eventPercent + 0.5)
       
-      lastEnd = endPercent
+      gradientStops.push(`${eventColor} ${segmentStart}%`)
+      gradientStops.push(`${eventColor} ${segmentEnd}%`)
+      
+      lastEnd = segmentEnd
     })
     
-    // Grey remainder after last clip
+    // Fill remainder with grey
     if (lastEnd < 100) {
-      gradientStops.push(`rgba(255,255,255,0.2) ${lastEnd}%`)
-      gradientStops.push(`rgba(255,255,255,0.2) 100%`)
+      gradientStops.push(`rgba(255,255,255,0.3) ${lastEnd}%`)
+      gradientStops.push(`rgba(255,255,255,0.3) 100%`)
+    }
+    
+    // Add progress overlay up to current time
+    const progressPercent = (currentTime / duration) * 100
+    if (progressPercent > 0) {
+      // Create a subtle overlay to show progress
+      return `linear-gradient(to right, ${gradientStops.join(', ')}), linear-gradient(to right, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) ${progressPercent}%, transparent ${progressPercent}%, transparent 100%)`
     }
     
     return `linear-gradient(to right, ${gradientStops.join(', ')})`
@@ -376,8 +437,24 @@ export default function VideoPlayer({
       setDuration(dur)
       onTimeUpdate(time, dur)
       
-      // Downloads preview auto-jump logic
+      // Downloads preview auto-jump logic (skip if user is manually seeking)
       if (isPreviewMode && previewSegments.length > 0 && isPlaying) {
+        if (userSeekingRef.current) {
+          console.log('🛡️ Autoplay blocked - user is seeking')
+          return
+        }
+        
+        // Also block if we're near a user's recent seek target (give them 2 seconds to watch)
+        if (userSeekTargetRef.current !== null && Math.abs(time - userSeekTargetRef.current) < 2) {
+          console.log('🛡️ Autoplay blocked - near user seek target', userSeekTargetRef.current)
+          return
+        }
+        
+        // Block if user is adjusting padding (prevent jumps during trimmer use)
+        if (paddingAdjustmentRef.current) {
+          console.log('🛡️ Autoplay blocked - padding adjustment in progress')
+          return
+        }
         const currentSegment = previewSegments[currentSegmentIndex]
         
         // Check if we're in a grey area (not in any clip segment)
@@ -389,11 +466,16 @@ export default function VideoPlayer({
           // We're in grey area - jump to next clip segment
           const nextSegment = previewSegments.find(seg => seg.start > time)
           if (nextSegment) {
+            console.log('🤖 Autoplay: Jumping to next segment at', nextSegment.start)
             // Jump to the start of the next segment
             videoRef.current.currentTime = nextSegment.start
             // Update current segment index
             const nextIndex = previewSegments.findIndex(seg => seg.id === nextSegment.id)
             setCurrentSegmentIndex(nextIndex)
+            // Notify parent about event change for immediate sidebar update
+            if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+              onCurrentEventChange(nextSegment.id)
+            }
           } else {
             // No more segments - stop playing
             videoRef.current.pause()
@@ -401,8 +483,22 @@ export default function VideoPlayer({
             setCurrentSegmentIndex(0)
           }
         } else if (currentSegment && time >= currentSegment.end) {
-          // Hit end of current segment - loop back to start of same segment
-          videoRef.current.currentTime = currentSegment.start
+          // Hit end of current segment - advance to next segment
+          const nextIndex = currentSegmentIndex + 1
+          if (nextIndex < previewSegments.length) {
+            // Jump to next segment
+            setCurrentSegmentIndex(nextIndex)
+            videoRef.current.currentTime = previewSegments[nextIndex].start
+            // Notify parent about event change
+            if (onCurrentEventChange && activeTab === 'events' && autoplayEvents) {
+              onCurrentEventChange(previewSegments[nextIndex].id)
+            }
+          } else {
+            // No more segments - just stop playing
+            videoRef.current.pause()
+            setIsPlaying(false)
+            console.log('🎬 Autoplay: Reached end of all segments - stopping')
+          }
         }
       }
     }
@@ -536,11 +632,49 @@ export default function VideoPlayer({
   useEffect(() => {
     const seek = (timestamp: number) => {
       if (videoRef.current) {
+        const now = Date.now()
+        
+        // Debounce rapid clicks (ignore if clicked within 100ms)
+        if (now - lastSeekTimeRef.current < 100) {
+          console.log('🚫 Ignoring rapid click - too soon after last seek')
+          return
+        }
+        
+        lastSeekTimeRef.current = now
+        
+        // Set user seeking flag to prevent autoplay interference
+        userSeekingRef.current = true
+        userSeekTargetRef.current = timestamp
+        console.log('🎯 User seeking to:', timestamp, '- Autoplay disabled for 1000ms')
+        
+        // If in autoplay mode, update the current segment index to match the seek target
+        if (isPreviewMode && previewSegments.length > 0) {
+          const targetSegmentIndex = previewSegments.findIndex(seg => 
+            timestamp >= seg.start && timestamp <= seg.end
+          )
+          if (targetSegmentIndex !== -1) {
+            setCurrentSegmentIndex(targetSegmentIndex)
+            console.log('🎯 Updated autoplay segment index to:', targetSegmentIndex)
+          }
+        }
+        
         videoRef.current.currentTime = timestamp
         if (videoRef.current.paused) {
           videoRef.current.play()
         }
         videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        
+        // Clear the flag after a longer delay to ensure autoplay doesn't interfere
+        setTimeout(() => {
+          userSeekingRef.current = false
+          console.log('🎯 User seeking complete - Autoplay re-enabled')
+        }, 1000) // Increased to 1000ms for better protection
+        
+        // Clear the seek target after 5 seconds to allow normal autoplay to resume
+        setTimeout(() => {
+          userSeekTargetRef.current = null
+          console.log('🎯 User seek target cleared - Normal autoplay resumed')
+        }, 5000)
       }
     }
     
@@ -714,28 +848,6 @@ export default function VideoPlayer({
         }`}
       >
         <div className="bg-transparent">
-          {/* Timeline Dots Overlay */}
-          {events.length > 0 && duration > 0 && (
-            <div className="relative h-12 px-4 pt-3 pointer-events-none z-5">
-              {events.map((event, index) => {
-                const position = (event.timestamp / duration) * 100
-                const originalIndex = allEvents.indexOf(event)
-                const isCurrent = originalIndex === currentEventIndex
-                
-                return (
-                  <button
-                    key={`${event.timestamp}-${event.type}-${index}`}
-                    onClick={() => onEventClick(event)}
-                    className={`absolute top-1/2 transform -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 hover:scale-200 hover:shadow-xl pointer-events-auto ${
-                      isCurrent ? 'ring-3 ring-yellow-400 ring-offset-2 ring-offset-black shadow-xl scale-125' : 'hover:ring-2 hover:ring-white/70'
-                    }`}
-                    style={{ backgroundColor: getTimelineEventColor(event), left: `${position}%` }}
-                    title={`${event.type} - ${formatTime(event.timestamp)}`}
-                  />
-                )
-              })}
-            </div>
-          )}
 
           {/* Bottom Timeline Bar Only */}
           <div className="mx-3 sm:mx-6 mb-[max(env(safe-area-inset-bottom),8px)]">
@@ -754,11 +866,34 @@ export default function VideoPlayer({
                   step="0.1"
                   value={currentTime}
                   onChange={handleSeek}
-                  className="w-full h-1 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-3 [&::-moz-range-thumb]:h-3 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
+                  className="w-full h-2 bg-white/30 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:cursor-pointer"
                   style={{
                     background: generateSmartTimelineBackground()
                   }}
                 />
+                
+                {/* Event Click Overlay - Invisible buttons for event clicks */}
+                {allEvents.length > 0 && duration > 0 && (
+                  <div className="absolute inset-0 pointer-events-none">
+                    {allEvents.map((event, index) => {
+                      const position = (event.timestamp / duration) * 100
+                      const originalIndex = allEvents.indexOf(event)
+                      
+                      return (
+                        <button
+                          key={`${event.timestamp}-${event.type}-${index}`}
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            onEventClick(event)
+                          }}
+                          className="absolute top-0 bottom-0 w-4 pointer-events-auto hover:bg-white/10 rounded transition-colors"
+                          style={{ left: `calc(${position}% - 8px)` }}
+                          title={`${event.type} - ${formatTime(event.timestamp)}`}
+                        />
+                      )
+                    })}
+                  </div>
+                )}
               </div>
 
               {/* Duration */}
