@@ -1,0 +1,11 @@
+At 0 seconds: The ball is in the air inside the penalty area, descending after a set-piece. A player in a white jersey and a player in a red jersey both jump for it.
+
+At 1 second: The player in the white jersey successfully heads the ball, clearing it high and away from the goal towards the center of the field.
+
+At 2 seconds: The ball is in the air, traveling away from the goal. Players from both the white and red teams begin to move out of the penalty box.
+
+At 4 seconds: The ball lands near the halfway line.
+
+At 5 seconds: Players from both teams are jogging back into their positions across the field. The play has reset.
+
+At 11 seconds: A player in a white jersey (jersey #13 is visible) walks near the center circle as other players continue to reposition.

@@ -1,0 +1,8 @@
+**Segment Description:**
+
+*   **At 0 seconds:** The ball is in the air, dropping into the penalty area of the red and black jerseys team.
+*   **At 1 second:** A white jerseys player heads the ball down toward the center of the box.
+*   **At 3 seconds:** A teammate in a white jersey receives the pass just inside the penalty area.
+*   **At 5 seconds:** After a brief tackle, a different white jerseys player runs onto the loose ball and shoots with their left foot.
+*   **At 6 seconds:** The red and black jerseys goalkeeper, wearing an orange jersey, dives to their left and makes a save, pushing the ball away from the goal.
+*   **At 7 seconds:** The ball rolls clear, and possession is recovered by the red and black jerseys team. The play resets.

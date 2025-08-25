@@ -1,0 +1,10 @@
+**DESCRIPTION:**
+
+- **At 0 seconds:** A player in a red jersey has possession near the center circle.
+- **At 1 second:** The red jersey player passes the ball, but a player in a white jersey intercepts it.
+- **At 3 seconds:** The white jersey player passes the ball to a teammate in the center of the field.
+- **At 4 seconds:** The central white jersey player immediately passes the ball forward.
+- **At 6 seconds:** A player in a red jersey (#11) intercepts the forward pass and kicks a long ball down the right side of the field.
+- **At 10 seconds:** The ball bounces, and a player in a white jersey (#4) heads it towards a teammate.
+- **At 12 seconds:** A white jersey player controls the headed ball and makes a short pass to another teammate.
+- **At 14 seconds:** The white jersey player receives the pass and controls the ball while a red jersey player moves in to defend.

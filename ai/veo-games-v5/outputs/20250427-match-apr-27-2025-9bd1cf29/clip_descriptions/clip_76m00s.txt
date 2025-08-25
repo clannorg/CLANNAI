@@ -1,0 +1,11 @@
+At 0 seconds: The red team's goalkeeper, wearing an orange jersey, stands over the ball at the edge of his penalty area.
+
+At 1 second: The red team's goalkeeper takes a long goal kick with his right foot, sending the ball down the middle of the field.
+
+At 5 seconds: A player from the white team (wearing #5) and a player from the red team jump for a header near the center circle after the ball bounces once. The red team player wins the header.
+
+At 7 seconds: The ball falls to a red team player (#13) who controls it with his right foot.
+
+At 9 seconds: The red team player #13 makes a short pass with his right foot to a teammate moving towards the right side of the field.
+
+At 12 seconds: The red team player on the right side of the field receives the ball, turns, and passes it back towards the center of the pitch to another red team player.

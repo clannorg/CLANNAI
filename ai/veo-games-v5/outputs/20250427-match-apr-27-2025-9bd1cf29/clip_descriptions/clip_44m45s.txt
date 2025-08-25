@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time starts at: 44m45s
+- Team A: white jerseys
+- Team B: red jerseys
+
+**DESCRIPTION:**
+At 0 seconds, a white jerseys player in the center of the pitch is in possession, being pressured from behind by a red jerseys player.
+At 2 seconds, the white jerseys player passes the ball forward with their right foot.
+At 5 seconds, a different white jerseys player runs onto the through ball inside the penalty area and takes a left-footed shot.
+At 6 seconds, the goalkeeper, who is wearing a purple jersey, dives to their left and saves the shot. The ball rebounds in front of them.
+At 8 seconds, the goalkeeper gathers the loose ball.
+At 10 seconds, the goalkeeper stands with the ball in their hands. The clip ends with the goalkeeper still in possession.

@@ -1,0 +1,11 @@
+**GAME CONTEXT:**
+- Global match time starts at: 87m45s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+- **At 0 seconds:** A white jerseys player receives a pass just inside the red and black team's half.
+- **At 3 seconds:** The white jerseys player passes the ball forward and to the right to a teammate making a run down the wing.
+- **At 5 seconds:** A red and black jerseys player executes a sliding tackle on the white jerseys player near the corner of the penalty area. The ball is knocked out of play for a goal kick. The red and black player falls to the ground during the tackle.
+- **At 6 seconds:** The referee, in an all-black uniform, gestures for a goal kick.
+- **From 7 to 15 seconds:** Players from both teams reset their positions on the field as the red and black goalkeeper prepares to take the goal kick.

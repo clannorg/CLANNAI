@@ -1,0 +1,14 @@
+**GAME CONTEXT:**
+- Global match time starts at: 56m45s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+*   At 0 seconds: Players from both teams are positioned for a restart. The referee is in the center circle, giving instructions.
+*   At 5 seconds: A red and black jerseys player takes the kick-off, passing the ball backwards to a teammate.
+*   At 6 seconds: The red and black jerseys team completes two short passes, moving the ball towards their left sideline.
+*   At 10 seconds: A red and black jerseys player on the left attempts a pass towards the center of the pitch.
+*   At 11 seconds: A white jerseys player intercepts the pass in the middle of the field.
+*   At 12 seconds: The white jerseys player is immediately tackled by a red and black jerseys player, and the ball comes loose.
+*   At 13 seconds: White jerseys player #11 recovers the loose ball.
+*   At 14 seconds: White jerseys player #11 passes the ball forward to a teammate on the left side of the field.

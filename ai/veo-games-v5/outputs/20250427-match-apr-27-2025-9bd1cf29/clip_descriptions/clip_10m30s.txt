@@ -1,0 +1,17 @@
+At 0 seconds: The game is in progress with the ball near the far goal.
+
+At 3 seconds: A player in a white jersey kicks the ball from near their goal line toward the midfield.
+
+At 4 seconds: A player in a red jersey heads the ball high into the air.
+
+At 5 seconds: A player in a white jersey heads the ball forward.
+
+At 6 seconds: Another player in a white jersey heads the ball towards the right sideline, and it goes out of play.
+
+At 8 seconds: A player in a white jersey with long sleeves picks up the ball for a throw-in from the right sideline.
+
+At 11 seconds: The long-sleeved white jersey player executes the throw-in, sending the ball towards the center of the pitch.
+
+At 13 seconds: The red jerseys player #7 chests the ball down.
+
+At 14 seconds: The white jerseys player #11 immediately challenges and takes possession from the red jerseys player.

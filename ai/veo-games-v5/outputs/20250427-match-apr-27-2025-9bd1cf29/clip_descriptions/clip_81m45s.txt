@@ -1,0 +1,11 @@
+**GAME CONTEXT:**
+- Global match time starts at: 81m45s
+- Team A: white jerseys
+- Team B: red jerseys
+
+**DESCRIPTION:**
+At 0 seconds, the white team has possession, following what appears to be a goal scored against them. Players from both teams are walking back towards the center of the pitch to reset for a kickoff.
+At 5 seconds, a player from the white team picks up the ball near the goal on the far right side of the screen.
+At 6 seconds, the player from the white team begins walking with the ball toward the center circle.
+At 11 seconds, the player from the white team places the ball on the center spot in preparation for the kickoff.
+At 15 seconds, players are still getting into their positions, and the game has not yet restarted.

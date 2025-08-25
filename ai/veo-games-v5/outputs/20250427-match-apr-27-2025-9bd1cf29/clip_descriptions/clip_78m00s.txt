@@ -1,0 +1,13 @@
+At 0 seconds, a player in a white jersey in the center of the pitch has possession and is under pressure from a player in a red and black jersey.
+
+At 2 seconds, the player in the white jersey passes the ball to a teammate to their left, who is also in the center circle.
+
+At 4 seconds, the second white jersey player passes the ball forward to another teammate in a white jersey.
+
+At 6 seconds, the white jersey player with the ball is tackled by a player in a red and black jersey, who wins possession.
+
+At 9 seconds, the red and black jersey player passes the ball forward to a teammate who is running into the opponent's half.
+
+At 11 seconds, the receiving red and black jersey player dribbles forward.
+
+At 14 seconds, the player in the red and black jersey continues to dribble down the right side of the pitch, being closed down by a defender in a white jersey.

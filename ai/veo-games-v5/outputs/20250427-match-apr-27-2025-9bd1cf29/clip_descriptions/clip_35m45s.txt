@@ -1,0 +1,8 @@
+At 0 seconds: The ball is in the air in the center of the pitch, where a red jerseys player heads it.
+At 1 second: A white jerseys player (#12) chests the ball down to gain control.
+At 3 seconds: The white jerseys player (#12) passes the ball to a teammate on the right side of the field.
+At 6 seconds: The teammate in the white jersey on the right wing receives the pass and controls it.
+At 9 seconds: The white jerseys player on the wing dribbles towards the goal line.
+At 10 seconds: The white jerseys player makes a ground pass into the center, just outside the penalty area.
+At 11 seconds: A teammate in a white jersey receives the pass, turning towards the goal.
+At 14 seconds: A red jerseys player tackles the white jerseys player, and the ball comes loose.

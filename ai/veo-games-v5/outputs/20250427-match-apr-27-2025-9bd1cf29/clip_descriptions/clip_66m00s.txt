@@ -1,0 +1,12 @@
+**Segment Description:**
+
+*   **At 0 seconds:** The game is restarting with a throw-in for the red and black jerseys team on the right side of the field. A red and black jerseys player has their hand raised, ready to receive the ball.
+*   **At 2 seconds:** The throw-in is taken.
+*   **At 3 seconds:** The red and black jerseys player receives the throw-in and immediately passes it back to a teammate.
+*   **At 4 seconds:** The red and black jerseys teammate makes a long, lofted pass across the field toward the left.
+*   **At 5 seconds:** A white jerseys player jumps and intercepts the pass with a header.
+*   **At 8 seconds:** After a brief scramble for the loose ball, a red and black jerseys player gains possession and passes forward.
+*   **At 9 seconds:** A white jerseys player intercepts the short pass.
+*   **At 10 seconds:** A red and black jerseys player executes a successful slide tackle, dispossessing the white jerseys player, who falls to the ground.
+*   **At 11 seconds:** The red and black jerseys player who made the tackle gets up and passes the ball forward to a teammate.
+*   **At 14 seconds:** After being pressured by a white jerseys player, the red and black jerseys player passes the ball further up the right flank to another teammate.

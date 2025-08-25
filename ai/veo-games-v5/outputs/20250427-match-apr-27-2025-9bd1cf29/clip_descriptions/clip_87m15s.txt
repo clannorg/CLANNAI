@@ -1,0 +1,7 @@
+At 0 seconds: Play is stopped. A player in a red jersey is on the ground in the center of the pitch, attended to by another player in a red jersey.
+At 3 seconds: The player on the ground is helped up and begins to walk.
+At 8 seconds: Players are getting back into position to restart play. A player in a white jersey stands over the ball near the center circle.
+At 10 seconds: The player in the white jersey restarts play by kicking the ball towards a player in a red jersey.
+At 11 seconds: The red jersey player receives the ball.
+At 12 seconds: The red jersey player immediately kicks the ball back to a player in a white jersey in an act of sportsmanship.
+At 13 seconds: A player in a white jersey receives the ball, and play resumes with the white jersey team in possession.

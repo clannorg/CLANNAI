@@ -1,0 +1,9 @@
+At 0 seconds: A player in a red and black jersey with the number 7 on their back stands over the ball in the center circle.
+At 1 second: The red and black jersey player #7 passes the ball backward to a teammate.
+At 3 seconds: The teammate passes the ball to another red and black jersey player to the right.
+At 5 seconds: The player with the ball passes it forward along the right side of the pitch.
+At 7 seconds: The red and black jersey player on the right passes the ball back toward the center.
+At 9 seconds: The player in the center passes the ball forward to a teammate who is immediately pressured by a player in a white jersey.
+At 11 seconds: The red and black jersey player passes the ball to a teammate to their left.
+At 13 seconds: The player with the ball passes it back toward the center of the field.
+At 14 seconds: A red and black jersey player receives the pass and is immediately challenged by a player in a white jersey.

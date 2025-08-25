@@ -1,0 +1,14 @@
+**Game:** 5-a-side
+**Team A:** white jerseys
+**Team B:** red and black jerseys
+**Global match time:** 31m30s - 31m45s
+
+**Segment Description:**
+-   **At 0 seconds:** A player in a red jersey, positioned centrally outside the penalty area, takes a shot on goal with their right foot.
+-   **At 1 second:** The goalkeeper, wearing an orange jersey, dives to their left and saves the shot. The ball rebounds into the field of play.
+-   **At 4 seconds:** A player in a white jersey, on the right side of the field, throws the ball in to a teammate further up the field.
+-   **At 6 seconds:** The white jersey player who received the throw-in passes the ball forward to another teammate in white.
+-   **At 7 seconds:** A player in a red jersey intercepts the pass in the center of the field.
+-   **At 8 seconds:** The red jersey player passes the ball backward to a teammate.
+-   **At 12 seconds:** The red jersey player with the ball dribbles toward the right sideline under pressure from a player in white.
+-   **At 14 seconds:** The red jersey player continues to dribble along the sideline.

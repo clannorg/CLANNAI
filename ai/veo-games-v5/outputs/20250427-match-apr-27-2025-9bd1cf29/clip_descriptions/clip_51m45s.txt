@@ -1,0 +1,9 @@
+At 0 seconds: The game starts with a kick-off from the white team in the center circle.
+At 4 seconds: The red and black team has possession in the center circle. The player on the ball is challenged by a white jersey player.
+At 6 seconds: The white jersey player wins the tackle and immediately passes the ball forward and to the left.
+At 7 seconds: A white jersey teammate receives the pass on the left wing and begins dribbling forward.
+At 9 seconds: Under pressure from a red and black defender, the white jersey player passes the ball back towards the center of the pitch.
+At 10 seconds: A white jersey player receives the pass in the center of the pitch.
+At 11 seconds: The white jersey player is immediately challenged by a red and black player.
+At 14 seconds: After attempting to dribble past two defenders, the white jersey player is dispossessed by a red and black player.
+At 15 seconds: The red and black player who won the ball passes it to a teammate.

@@ -1,0 +1,7 @@
+**DESCRIPTION:**
+
+At 0 seconds: The game is in progress with the ball in the center of the pitch.
+At 3 seconds: A white jerseys player successfully tackles a red jerseys player and gains possession.
+At 5 seconds: The white jerseys player makes a short forward pass to a teammate.
+At 11 seconds: The receiving white jerseys player, positioned on the right side of the field, kicks a long, high pass towards the goal on the far left.
+At 12 seconds: The ball is in the air, traveling towards the penalty area. The clip ends as the ball is still airborne.

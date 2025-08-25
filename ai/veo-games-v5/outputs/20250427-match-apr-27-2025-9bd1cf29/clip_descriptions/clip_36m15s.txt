@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time: 36m15s - 36m30s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+-   **At 0 seconds:** The red and black jerseys team is setting up for a free kick just outside the penalty area. A player from the red and black jerseys team places the ball.
+-   **At 2 seconds:** A wall of five white jerseys players is formed to defend the free kick.
+-   **At 9 seconds:** The red and black jerseys player begins their run-up to the ball.
+-   **At 10 seconds:** The red and black jerseys player takes the free kick, striking the ball with their right foot.
+-   **At 12 seconds:** The ball travels over the wall and into the top right corner of the net for a goal. The goalkeeper in the orange jersey dives but is unable to save it.
+-   **At 13 seconds:** The red and black jerseys players start to celebrate the goal.

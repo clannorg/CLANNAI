@@ -1,0 +1,10 @@
+**GAME CONTEXT:**
+- Global match time starts at: 39m21s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+At 0 seconds: The white jersey team is preparing for a free kick from the right side of the pitch, outside the penalty area. The red and black jersey team has formed a multi-player wall.
+At 8 seconds: The white jersey player wearing number 4 on his back takes the free kick, striking the ball with his right foot.
+At 10 seconds: The ball travels over the wall and into the top left corner of the goal, resulting in a score for the white jersey team.
+At 11 seconds: The white jersey players start celebrating the goal.

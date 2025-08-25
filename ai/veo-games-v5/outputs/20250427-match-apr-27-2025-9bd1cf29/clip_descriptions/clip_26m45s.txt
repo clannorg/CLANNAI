@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time starts at: 26m45s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+- **At 0 seconds:** Players are set up in the white jerseys' penalty area for a corner kick to be taken by the red and black jerseys team from the right side of the field.
+- **At 5 seconds:** A red and black jerseys player takes the corner kick, sending the ball towards the near post.
+- **At 7 seconds:** The white jerseys' goalkeeper punches the ball away from the goal.
+- **At 9 seconds:** The ball lands near the edge of the penalty box, where a red and black jerseys player (#2) and a white jerseys player challenge for it.
+- **At 11 seconds:** A white jerseys player successfully clears the ball out of the penalty area towards the right sideline.
+- **At 14 seconds:** Players from both teams begin to move out of the box as the play moves downfield.

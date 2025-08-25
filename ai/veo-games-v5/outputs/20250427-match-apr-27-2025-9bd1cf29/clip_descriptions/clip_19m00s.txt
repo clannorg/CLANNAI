@@ -1,0 +1,14 @@
+**GAME CONTEXT:**
+- Global match time starts at: 19m00s
+- Team A: white jerseys
+- Team B: red jerseys with black shorts
+
+**DESCRIPTION:**
+*   **At 0 seconds:** A player in a red jersey takes a shot from inside the penalty area.
+*   **At 1 second:** The goalkeeper in an orange jersey dives to their right, making a save. The ball rebounds into the penalty area.
+*   **At 3 seconds:** The goalkeeper collects the loose ball.
+*   **At 4 seconds:** The goalkeeper rolls the ball to a defender in a white jersey.
+*   **At 7 seconds:** A player in a white jersey makes a pass in the midfield, which is intercepted by a player in a red jersey wearing number 11.
+*   **At 10 seconds:** After a quick one-two pass with a teammate, the red jersey player #11 receives the ball back.
+*   **At 12 seconds:** A player in a white jersey wearing number 2 tackles the ball away from the red jersey player #11.
+*   **At 13 seconds:** A different player in a white jersey gains possession of the loose ball near the halfway line.

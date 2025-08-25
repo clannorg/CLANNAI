@@ -1,0 +1,7 @@
+At 0 seconds: A white jerseys player in the center of the pitch passes the ball forward and to the right.
+At 2 seconds: A white jerseys player runs onto the pass on the right side of the field.
+At 5 seconds: The white jerseys player with the ball passes it back towards a teammate in the center circle.
+At 7 seconds: A red jerseys player (number 18) intercepts the pass and immediately kicks the ball long, up the left side of the field.
+At 11 seconds: The long ball bounces near the sideline, where a red jerseys player and a white jerseys player (number 13) challenge for it.
+At 12 seconds: The ball goes out of play on the far sideline.
+At 13 seconds: The referee walks towards the sideline as the play has stopped.

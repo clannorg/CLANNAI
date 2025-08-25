@@ -1,0 +1,16 @@
+**Player Identification:**
+- **white jerseys:** Players in white jerseys and black shorts.
+- **red jerseys:** Players in red jerseys and black shorts.
+
+**Description:**
+
+-   **At 0 seconds:** The clip begins with a white jerseys player in the center circle receiving a pass from the left side of the field.
+-   **At 1 second:** The white jerseys player passes the ball forward.
+-   **At 2 seconds:** A red jerseys player intercepts the pass just outside the center circle.
+-   **At 5 seconds:** Two white jerseys players pressure the red jerseys player, and a white jerseys player tackles the ball away.
+-   **At 6 seconds:** Another white jerseys player recovers the loose ball inside the center circle.
+-   **At 7 seconds:** Under pressure, he passes the ball to a teammate on his right.
+-   **At 10 seconds:** As the white jerseys player attempts to dribble, a red jerseys player makes a successful standing tackle, knocking the ball away.
+-   **At 11 seconds:** A different red jerseys player collects the loose ball.
+-   **At 13 seconds:** The red jerseys player makes a forward pass to a teammate running up the right side of the pitch.
+-   **At 15 seconds:** The clip ends as the receiving red jerseys player attempts to control the pass.

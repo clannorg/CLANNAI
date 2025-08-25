@@ -1,0 +1,8 @@
+**Event description:**
+
+*   **At 0 seconds:** A player in a white jersey, number 13, has possession and is dribbling from right to left across the center of the pitch.
+*   **At 4 seconds:** A player in a red jersey performs a sliding tackle on the player in the white jersey inside the center circle.
+*   **At 5 seconds:** The player in the white jersey falls to the ground, and the ball rolls away a short distance.
+*   **At 6 seconds:** The referee blows the whistle to call a foul.
+*   **At 7 seconds:** The referee signals for a free kick to be taken by the team in white jerseys. The game is paused.
+*   **At 10 seconds:** A player in a white jersey picks up the ball to set up for the free kick.

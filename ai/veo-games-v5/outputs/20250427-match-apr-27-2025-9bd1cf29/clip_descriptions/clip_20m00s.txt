@@ -1,0 +1,13 @@
+**GAME CONTEXT:**
+- Global match time starts at: 20m00s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+*   **At 0 seconds:** A player in a white jersey inside the penalty area kicks the ball forward towards midfield.
+*   **At 2 seconds:** The ball is played forward by a white jersey player (wearing #7 on his shorts) on the left side of the pitch.
+*   **At 3 seconds:** A red and black jersey player kicks the ball high and long down the left flank.
+*   **At 6 seconds:** A player in a white jersey on the far left wing controls the ball as it comes down.
+*   **At 8 seconds:** A player in a red and black jersey tackles the white jersey player, winning possession.
+*   **At 9 seconds:** The red and black jersey player makes a short pass infield to a teammate.
+*   **At 13 seconds:** The red and black jersey player in possession is being defended by two white jersey players as the clip ends.

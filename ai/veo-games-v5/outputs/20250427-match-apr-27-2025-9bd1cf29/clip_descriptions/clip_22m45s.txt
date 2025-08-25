@@ -1,0 +1,13 @@
+At 0 seconds: A player in a white jersey has possession in their own half, near the center circle.
+
+At 2 seconds: A player in a red jersey, just inside the center circle, passes the ball forward towards a teammate on the right.
+
+At 4 seconds: The red jersey player on the right wing attempts a pass forward towards the goal.
+
+At 5 seconds: A player in a white jersey intercepts the pass just outside their penalty area.
+
+At 6 seconds: The white jersey player clears the ball with a long, high kick upfield.
+
+At 12 seconds: The goalkeeper in an orange jersey comes out to the edge of his penalty area and kicks the ball back upfield.
+
+At 14 seconds: A player in a white jersey in the center circle chests the ball down to control it.

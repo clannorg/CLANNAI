@@ -1,0 +1,11 @@
+**GAME CONTEXT:**
+- Global match time starts at: 86m15s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+*   **At 0 seconds:** The red and black jerseys team prepares to kick off from the center circle.
+*   **At 3 seconds:** A person in dark clothing, who is not a player, walks through the center circle from left to right.
+*   **At 12 seconds:** A red and black jerseys player kicks the ball backwards to a teammate to start the game.
+*   **At 13 seconds:** The teammate receiving the kickoff immediately passes the ball forward to another red and black jerseys player positioned just outside the center circle on the left.
+*   **At 14 seconds:** The red and black jerseys player receives the pass and takes a touch forward as a white jerseys player moves in to defend.

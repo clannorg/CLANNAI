@@ -1,0 +1,14 @@
+**GAME CONTEXT:**
+- Global match time starts at: 37m45s
+- Team A: white jerseys with black shorts
+- Team B: red jerseys with black shorts
+
+**DESCRIPTION:**
+*   **At 0 seconds:** The play is restarting. The red jersey team has possession, with the ball stationary near the left corner of the penalty area.
+*   **At 2 seconds:** A red jersey player passes the ball back to a teammate near the center circle.
+*   **At 4 seconds:** The red jersey player who received the ball passes it to a teammate on the right side of the pitch.
+*   **At 7 seconds:** The red jersey player on the right side passes the ball back towards the center.
+*   **At 8 seconds:** The central red jersey player returns the pass with one touch to the player on the right.
+*   **At 10 seconds:** The red jersey player on the right attempts a through pass into the penalty area.
+*   **At 11 seconds:** A white jersey player wearing number 2 intercepts the pass at the edge of the penalty area. Possession changes to the white jersey team.
+*   **At 13 seconds:** The white jersey #2 player controls the ball and looks upfield.

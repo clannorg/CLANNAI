@@ -1,0 +1,13 @@
+At 0 seconds: A white jerseys player on the left side of the field has possession.
+
+At 2 seconds: The white jerseys player makes a long, low pass across the field to a teammate on the right wing.
+
+At 5 seconds: The white jerseys player on the right wing receives the pass and is immediately pressured by a red and black jerseys player.
+
+At 7 seconds: The white jerseys player passes the ball back toward the center of the pitch.
+
+At 8 seconds: A red and black jerseys player intercepts the pass in the middle of the field.
+
+At 9 seconds: The red and black jerseys team gains possession of the ball. The player who intercepted the ball takes a touch forward.
+
+At 11 seconds: The red and black jerseys player in possession slows down, and the play resets in the midfield.

@@ -1,0 +1,7 @@
+At 0 seconds: The ball is in the air near the center circle.
+At 1 second: A white jersey player heads the ball backward to a teammate.
+At 2 seconds: The white jersey player receives the header and immediately passes the ball to another white jersey player on the left.
+At 4 seconds: A red and black jersey player challenges the white jersey player for the ball.
+At 5 seconds: The red and black jersey player successfully tackles the white jersey player and gains possession.
+At 8 seconds: After a brief dribble, the ball is tackled and goes out of play on the far sideline.
+At 9 seconds: The referee points to signal a throw-in for the white jersey team.

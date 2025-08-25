@@ -1,0 +1,13 @@
+At 0 seconds: The game is about to restart. Players from both the white jersey team and the red jersey team are positioned in their respective halves. The referee is in the center of the pitch.
+
+At 5 seconds: A player in a white jersey (#1) in the center circle kicks the ball to restart the game, passing it forward into the red team's half.
+
+At 6 seconds: A player in a red jersey heads the ball.
+
+At 7 seconds: A player in a white jersey controls the loose ball and passes it to a teammate on the far left side of the field.
+
+At 11 seconds: The white jersey player on the left wing, under pressure from a red jersey player, passes the ball back towards the center of the pitch.
+
+At 13 seconds: The white jersey player (#13) receives the pass near the halfway line.
+
+At 14 seconds: The white jersey player (#13) makes a long pass across the field to a teammate on the right side.

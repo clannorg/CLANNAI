@@ -86,6 +86,51 @@ class S3MatchUploader:
             print(f"   ❌ Failed to upload {local_path.name}: {e}")
             return None
 
+    def upload_clips_folder(self, clips_dir, match_id, max_clips=None):
+        """Upload all 15-second clips to S3 with organized structure"""
+        print(f"🎬 Uploading clips from {clips_dir}")
+        
+        if not clips_dir.exists():
+            print(f"⚠️  Clips directory not found: {clips_dir}")
+            return {}
+        
+        # Get all clip files
+        clip_files = sorted([f for f in clips_dir.glob("*.mp4") if f.name.startswith("clip_")])
+        
+        if max_clips:
+            clip_files = clip_files[:max_clips]
+            print(f"📋 Limiting to first {max_clips} clips for testing")
+        
+        print(f"📋 Found {len(clip_files)} clips to upload")
+        
+        clips_urls = {}
+        successful_uploads = 0
+        total_size_mb = 0
+        
+        for i, clip_file in enumerate(clip_files, 1):
+            # Generate S3 key: analysis-clips/match-id/clip_00m00s.mp4
+            s3_key = f"analysis-clips/{match_id}/{clip_file.name}"
+            
+            # Upload clip
+            s3_url = self.upload_file_to_s3(clip_file, s3_key, "video/mp4")
+            
+            if s3_url:
+                clips_urls[clip_file.name] = {
+                    "url": s3_url,
+                    "s3_key": s3_key,
+                    "file_size_mb": round(clip_file.stat().st_size / 1024 / 1024, 2),
+                    "timestamp": clip_file.name.replace("clip_", "").replace(".mp4", "")
+                }
+                successful_uploads += 1
+                total_size_mb += clips_urls[clip_file.name]["file_size_mb"]
+            
+            # Progress indicator
+            if i % 50 == 0 or i == len(clip_files):
+                print(f"   📊 Progress: {i}/{len(clip_files)} clips uploaded")
+        
+        print(f"🎬 Clips upload complete: {successful_uploads}/{len(clip_files)} successful ({total_size_mb:.1f}MB)")
+        return clips_urls
+
 def upload_match_to_s3(match_id):
     """Upload key match analysis files to S3"""
     print(f"🌩️  Starting S3 upload for {match_id}")
@@ -183,7 +228,22 @@ def upload_match_to_s3(match_id):
     
     print(f"📋 Found {len(upload_files)} files to upload")
     
-    # Upload each file
+    # Upload clips first (optional - can be skipped for faster testing)
+    clips_dir = data_dir / "clips"
+    clips_urls = {}
+    if clips_dir.exists():
+        print(f"\n🎬 CLIPS UPLOAD SECTION")
+        upload_clips = input("Upload 15-second clips to S3? This will take time (~5GB). (y/n/test): ").lower().strip()
+        
+        if upload_clips == 'y':
+            clips_urls = uploader.upload_clips_folder(clips_dir, match_id)
+        elif upload_clips == 'test':
+            print("📋 Test mode: uploading first 10 clips only")
+            clips_urls = uploader.upload_clips_folder(clips_dir, match_id, max_clips=10)
+        else:
+            print("⏭️  Skipping clips upload")
+    
+    # Upload each analysis file
     for filename, config in upload_files.items():
         local_path = data_dir / filename
         
@@ -215,6 +275,20 @@ def upload_match_to_s3(match_id):
             s3_locations["upload_summary"]["total_size_mb"] += s3_locations["s3_urls"][filename]["file_size_mb"]
         else:
             s3_locations["upload_summary"]["failed_uploads"] += 1
+    
+    # Add clips URLs to S3 locations
+    if clips_urls:
+        s3_locations["clips"] = {
+            "total_clips": len(clips_urls),
+            "clips_folder_s3": f"analysis-clips/{match_id}/",
+            "clips_base_url": f"https://{uploader.bucket_name}.s3.amazonaws.com/analysis-clips/{match_id}/",
+            "clips_urls": clips_urls
+        }
+        # Update summary with clips data
+        clips_size_mb = sum(clip["file_size_mb"] for clip in clips_urls.values())
+        s3_locations["upload_summary"]["total_size_mb"] += clips_size_mb
+        s3_locations["upload_summary"]["total_files"] += len(clips_urls)
+        s3_locations["upload_summary"]["successful_uploads"] += len(clips_urls)
     
     # Save S3 locations tracker
     s3_locations_file = data_dir / "s3_locations.json"
@@ -261,6 +335,10 @@ def upload_match_to_s3(match_id):
     print(f"   ✅ Successful: {summary['successful_uploads']}/{summary['total_files']} files")
     print(f"   📦 Total uploaded: {summary['total_size_mb']:.1f}MB")
     print(f"   🌐 S3 bucket: {uploader.bucket_name}")
+    
+    if clips_urls:
+        print(f"   🎬 Clips uploaded: {len(clips_urls)} clips")
+        print(f"   📁 Clips folder: analysis-clips/{match_id}/")
     
     if summary["failed_uploads"] > 0:
         print(f"   ⚠️  Failed uploads: {summary['failed_uploads']}")
@@ -311,7 +389,15 @@ def upload_match_to_s3(match_id):
             print(f"      }}")
             print(f"")
         
-        print(f"   ✅ 4. CLICK 'Mark Analyzed' to enable user access")
+        # Clips information
+        if clips_urls:
+            print(f"   🎬 4. CLIPS ACCESS - Individual 15-second clips available at:")
+            print(f"      Base URL: https://{uploader.bucket_name}.s3.amazonaws.com/analysis-clips/{match_id}/")
+            print(f"      Example: https://{uploader.bucket_name}.s3.amazonaws.com/analysis-clips/{match_id}/clip_00m00s.mp4")
+            print(f"      Total clips: {len(clips_urls)} (useful for media conversion)")
+            print(f"")
+        
+        print(f"   ✅ 5. CLICK 'Mark Analyzed' to enable user access")
         print(f"   🌐 Users can now view the game with interactive timeline!")
     
     # Update source.json with cloud status

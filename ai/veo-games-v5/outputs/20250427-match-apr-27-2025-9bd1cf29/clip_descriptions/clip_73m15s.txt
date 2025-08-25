@@ -1,0 +1,7 @@
+At 0 seconds: In the center of the pitch, a white jerseys player (#13) has possession.
+At 2 seconds: The white jerseys player (#13) makes a short forward pass.
+At 3 seconds: A red and black jerseys player (#7) intercepts the pass and gains possession.
+At 5 seconds: The red and black player (#7) dribbles the ball forward and to the left.
+At 11 seconds: The red and black player (#7) dribbles past a challenging white jerseys player.
+At 13 seconds: The red and black player (#7) continues dribbling down the left wing, evading a second white jerseys defender.
+At 15 seconds: The red and black player (#7) maintains possession, advancing towards the goal.

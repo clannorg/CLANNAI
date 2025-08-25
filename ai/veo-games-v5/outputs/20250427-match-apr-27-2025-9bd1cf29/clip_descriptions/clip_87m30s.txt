@@ -1,0 +1,9 @@
+At 0 seconds: The game begins with a kickoff from the white jerseys team at the center circle.
+At 2 seconds: A white jerseys player passes the ball backward to a teammate, player #8.
+At 3 seconds: White jerseys player #8 passes the ball forward to the right wing.
+At 4 seconds: A red jerseys player intercepts the pass with his right foot.
+At 5 seconds: The red jerseys player gains possession and begins dribbling down the right side of the field.
+At 9 seconds: After being challenged by a white jerseys defender near the sideline, the red jerseys player attempts a pass towards the center of the pitch with his right foot.
+At 10 seconds: The pass is intercepted by a different white jerseys player.
+At 12 seconds: The white jerseys player passes the ball with his left foot to a teammate, player #9, who is near the center circle.
+At 13 seconds: White jerseys player #9 receives the ball and turns towards the opponent's goal.

@@ -1,0 +1,5 @@
+At 0 seconds: A player in a white jersey retrieves the ball from the back of the goal. Other players in white jerseys are walking back toward the center of the pitch.
+At 5 seconds: A player in a blue jersey runs onto the field from the left sideline.
+At 10 seconds: Players in white jerseys are positioned in the center circle for a kickoff.
+At 11 seconds: A player in a white jersey kicks the ball from the center spot back to a teammate.
+At 14 seconds: The teammate who received the kickoff passes the ball further back to another player in a white jersey.

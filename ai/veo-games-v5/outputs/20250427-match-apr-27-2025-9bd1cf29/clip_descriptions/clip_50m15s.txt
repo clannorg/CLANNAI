@@ -1,0 +1,5 @@
+At 0 seconds: The white jerseys team is gathered near the center of the pitch, preparing for kick-off. The ball is stationary on the center spot.
+
+At 10 seconds: A white jerseys player kicks the ball backwards from the center spot to a teammate to start the game.
+
+At 12 seconds: The white jerseys player who received the kick-off passes the ball forward to another teammate.

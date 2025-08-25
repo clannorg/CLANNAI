@@ -1,0 +1,15 @@
+At 0 seconds: A player in a red jersey stands over the ball at the center circle, preparing for a restart.
+
+At 4 seconds: The red jerseys player kicks the ball high and long into the white jerseys' half.
+
+At 6 seconds: A player in a white jersey, positioned in the midfield, jumps and heads the ball back towards the center of the pitch.
+
+At 8 seconds: After the ball bounces, a player in a white jersey gains control near the center circle.
+
+At 10 seconds: A player in a red jersey tackles the white jerseys player and wins possession.
+
+At 11 seconds: The red jerseys player is immediately challenged by two players in white jerseys, and the ball is knocked loose.
+
+At 12 seconds: The white jerseys player #8 recovers the loose ball.
+
+At 13 seconds: The white jerseys player #8 passes the ball forward to a teammate making a run down the right side of the field.

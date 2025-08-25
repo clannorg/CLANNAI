@@ -1,0 +1,7 @@
+At 0 seconds, a player in a white jersey in the middle of the pitch passes the ball forward to a teammate.
+At 1 second, the receiving white jersey player immediately passes the ball forward to another teammate.
+At 3 seconds, a player in a red jersey tackles the white jersey player, but the ball is recovered by another white jersey player.
+At 5 seconds, a player in a red jersey (#13) intercepts a forward pass from the white team.
+At 7 seconds, the red jersey player (#13) chips the ball back towards his own half.
+At 9 seconds, a white jersey player clears the ball with a high kick downfield.
+At 11 seconds, the ball bounces in the center of the pitch and rolls towards the camera's position.

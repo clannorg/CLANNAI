@@ -1,0 +1,11 @@
+**GAME CONTEXT:**
+- Global match time starts at: 73m30s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+At 0 seconds: The clip begins immediately after a goal has been scored by the red and black team. The ball is in the back of the net. A player in a red and black jersey runs from the goalmouth towards the left corner flag to celebrate.
+At 3 seconds: The celebrating red and black player meets a teammate and they walk back towards the center of the pitch.
+At 7 seconds: Players from the red and black team and the white team walk around the penalty area, resetting after the goal.
+At 11 seconds: A player in a red and black jersey bends down near the penalty spot.
+At 14 seconds: A different player in a red and black jersey picks up a long, black pole that was lying on the ground near the corner flag and stands it back up.

@@ -1,0 +1,8 @@
+At 0 seconds, a player in a red jersey on the left side of the pitch kicks the ball high into the air towards the center of the field.
+At 3 seconds, a player in a white jersey near the center circle heads the ball.
+At 5 seconds, a player in a red jersey kicks the ball high and long toward the right side of the field.
+At 8 seconds, a player in a white jersey on the right wing heads the ball forward.
+At 9 seconds, a player in a red jersey takes control of the ball near the right sideline.
+At 10 seconds, the player in the red jersey passes the ball up the sideline to a teammate.
+At 13 seconds, the red player with the ball passes it infield towards the center.
+At 14 seconds, a player in a white jersey intercepts the pass, taking possession.

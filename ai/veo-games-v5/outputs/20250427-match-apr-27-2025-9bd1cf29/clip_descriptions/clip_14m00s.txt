@@ -1,0 +1,9 @@
+**DESCRIPTION:**
+
+At 0 seconds: The red and black jerseys team has possession in the center of the field. A player receives a short pass.
+At 2 seconds: The player in the red and black jersey dribbles forward, moving towards the right side of the field.
+At 5 seconds: A white jerseys player (#14) approaches the player with the ball.
+At 7 seconds: The white jerseys player (#14) makes a successful tackle and takes possession of the ball.
+At 9 seconds: The white jerseys player #14 dribbles toward the right sideline.
+At 12 seconds: The white jerseys player #14 passes the ball across the field to a teammate on the far right.
+At 14 seconds: The video ends as the ball is in mid-air, traveling towards the intended recipient.

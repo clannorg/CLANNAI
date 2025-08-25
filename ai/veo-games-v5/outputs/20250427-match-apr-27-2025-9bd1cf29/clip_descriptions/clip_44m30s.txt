@@ -1,0 +1,9 @@
+At 0 seconds: The game restarts with a player in a white jersey kicking the ball from the center circle to a teammate on the left side of the field.
+At 5 seconds: The white jersey player on the left wing, under pressure from a red jersey player, passes the ball back towards the center.
+At 6 seconds: A player in a red jersey, wearing number 2, intercepts the pass inside the center circle.
+At 8 seconds: The red jersey player #2 makes a short forward pass to a teammate.
+At 9 seconds: A player in a white jersey tackles the red jersey player, causing the ball to come loose.
+At 10 seconds: Another player in a red jersey gains possession of the loose ball.
+At 11 seconds: The red jersey player passes the ball forward and to the right.
+At 12 seconds: The player in the white jersey, wearing number 17, intercepts the pass.
+At 14 seconds: The white jersey player #17 passes the ball forward up the left wing to a teammate.

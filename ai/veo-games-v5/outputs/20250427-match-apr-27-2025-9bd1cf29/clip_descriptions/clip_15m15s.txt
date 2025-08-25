@@ -1,0 +1,15 @@
+**GAME CONTEXT:**
+- Global match time starts at: 15m15s
+- Team A: white jerseys
+- Team B: red jerseys with black shorts
+
+**DESCRIPTION:**
+
+**At 0 seconds:** The ball is in the air, traveling towards the center of the field. A player in white (#7) is positioned to receive it.
+**At 2 seconds:** The white jerseys player #7 chests the ball down to control it.
+**At 3 seconds:** Player #7 passes the ball with his right foot to a teammate on the left wing.
+**At 4 seconds:** The player on the left wing immediately plays a first-time, left-footed through pass into the center, just outside the penalty area.
+**At 5 seconds:** A central attacker in white receives the pass.
+**At 7 seconds:** The central attacker takes a right-footed shot on goal.
+**At 8 seconds:** The ball goes into the bottom left corner of the net for a goal.
+**At 9 seconds:** The white jerseys players begin to celebrate. A red jerseys player retrieves the ball from the back of the net.

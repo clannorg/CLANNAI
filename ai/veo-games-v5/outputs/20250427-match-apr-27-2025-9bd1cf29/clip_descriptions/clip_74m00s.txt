@@ -1,0 +1,6 @@
+At 0 seconds: A player in a white jersey dribbles into the penalty area on the right side.
+At 2 seconds: The player in the white jersey takes a right-footed shot toward the goal.
+At 3 seconds: The goalkeeper in the red and black jersey dives to his right and makes a save, blocking the shot. The ball rebounds to the left side of the penalty area.
+At 7 seconds: A player in a red and black jersey collects the loose ball.
+At 9 seconds: The red and black jersey player, now in possession, dribbles past an opposing player in a white jersey.
+At 12 seconds: The red and black jersey player continues to dribble the ball up the left side of the field.

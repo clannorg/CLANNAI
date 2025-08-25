@@ -1,0 +1,11 @@
+**GAME CONTEXT:**
+- Global match time starts at: 36m00s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+*   **At 0 seconds:** A red and black jerseys player tackles a white jerseys player, who falls to the ground in the center of the pitch.
+*   **At 2 seconds:** The referee, wearing a dark blue top, blows the whistle to stop play for a foul.
+*   **At 3 seconds:** The referee points with his right arm, awarding a free kick to the white jerseys team.
+*   **At 6 seconds:** Players from both teams begin to get into position for the free kick.
+*   **At 11 seconds:** A white jerseys player sets the ball down on the grass while the red and black jerseys team starts to form a defensive wall. The play remains stopped for the remainder of the clip as players prepare for the set piece.

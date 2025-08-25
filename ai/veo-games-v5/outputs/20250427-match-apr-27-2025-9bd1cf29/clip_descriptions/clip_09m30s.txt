@@ -1,0 +1,10 @@
+At 0 seconds: The ball is in mid-air and is controlled by a red and black jerseys player in the center of the pitch.
+At 1 second: The red and black jerseys player passes the ball forward to a teammate on their left.
+At 2 seconds: The teammate one-touch passes the ball further left.
+At 4 seconds: The red and black jerseys player on the far left of the attack kicks a long, high pass across the field to the right wing.
+At 8 seconds: A white jerseys player near the right touchline heads the ball to control it.
+At 9 seconds: The white jerseys player dribbles forward along the right side of the pitch.
+At 11 seconds: The white jerseys player passes the ball infield towards the center of the pitch.
+At 12 seconds: A red and black jerseys player intercepts the pass.
+At 13 seconds: The red and black jerseys player kicks the ball forward to clear it from their defensive half.
+At 14 seconds: The ball lands near the halfway line.

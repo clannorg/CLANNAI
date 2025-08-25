@@ -1,0 +1,6 @@
+At 0 seconds: The red and black jerseys team is gathered in a huddle on the left side of the pitch.
+At 5 seconds: The camera pans to the right side of the pitch where the white jerseys team is positioned for kickoff.
+At 6 seconds: A white jerseys player kicks the ball from the center spot to a teammate behind him to start the match.
+At 8 seconds: The white jerseys player who received the kickoff pass kicks the ball forward to another teammate.
+At 11 seconds: A white jerseys player near the center circle passes the ball back towards his own half.
+At 13 seconds: Another white jerseys player receives the pass in his own half. The white jerseys team maintains possession.

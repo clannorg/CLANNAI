@@ -1,0 +1,8 @@
+At 0 seconds: The referee blows the whistle to start play. A player in a white jersey at the center circle taps the ball to a teammate behind them.
+At 2 seconds: The white jerseys player receives the ball and is immediately pressured by a player in a red and black jersey.
+At 3 seconds: The player in the white jersey passes the ball to another teammate in a white jersey to their left.
+At 4 seconds: The player in the white jersey is tackled by a player in a red and black jersey. The ball becomes loose.
+At 5 seconds: Another player in a red and black jersey takes possession of the loose ball.
+At 7 seconds: The player in the red and black jersey passes the ball forward to a teammate.
+At 9 seconds: The red and black jerseys team continues to pass the ball in the midfield.
+At 12 seconds: A player in a red and black jersey passes the ball to a teammate on the right side of the field.

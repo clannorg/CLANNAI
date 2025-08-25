@@ -1,0 +1,832 @@
+{
+  "match_id": "20250427-match-apr-27-2025-9bd1cf29",
+  "ai_analysis": {
+    "goals": [
+      {
+        "timestamp": "05:15",
+        "timestamp_seconds": 315,
+        "team": "Dalkey",
+        "description": "Ball crosses the goal line after a header and a deflection."
+      },
+      {
+        "timestamp": "05:45",
+        "timestamp_seconds": 345,
+        "team": "Dalkey",
+        "description": "Free kick goes over the goalkeeper's head and into the goal."
+      },
+      {
+        "timestamp": "06:00",
+        "timestamp_seconds": 360,
+        "team": "Dalkey",
+        "description": "Penalty kick goes past the diving goalkeeper into the net."
+      },
+      {
+        "timestamp": "17:15",
+        "timestamp_seconds": 1035,
+        "team": "Dalkey",
+        "description": "Shot goes into the bottom left corner of the goal."
+      },
+      {
+        "timestamp": "18:30",
+        "timestamp_seconds": 1110,
+        "team": "Dalkey",
+        "description": "Shot goes past the diving goalkeeper into the bottom left corner of the goal."
+      },
+      {
+        "timestamp": "31:15",
+        "timestamp_seconds": 1875,
+        "team": "Corduff",
+        "description": "Long-range shot saved by goalkeeper."
+      },
+      {
+        "timestamp": "36:15",
+        "timestamp_seconds": 2175,
+        "team": "Corduff",
+        "description": "Free kick goes into the top right corner of the goal."
+      },
+      {
+        "timestamp": "36:30",
+        "timestamp_seconds": 2190,
+        "team": "Corduff",
+        "description": "Free kick goes through the wall and into the goal."
+      },
+      {
+        "timestamp": "37:15",
+        "timestamp_seconds": 2235,
+        "team": "Dalkey",
+        "description": "Shot goes into the bottom left corner of the goal."
+      },
+      {
+        "timestamp": "54:45",
+        "timestamp_seconds": 3285,
+        "team": "Dalkey",
+        "description": "Shot goes into the net."
+      },
+      {
+        "timestamp": "55:45",
+        "timestamp_seconds": 3345,
+        "team": "Dalkey",
+        "description": "Shot goes into the bottom right corner of the goal."
+      },
+      {
+        "timestamp": "70:45",
+        "timestamp_seconds": 4245,
+        "team": "Dalkey",
+        "description": "Shot goes into the net."
+      },
+      {
+        "timestamp": "71:30",
+        "timestamp_seconds": 4290,
+        "team": "Corduff",
+        "description": "Shot deflects off a defender and goes into the goal."
+      },
+      {
+        "timestamp": "82:15",
+        "timestamp_seconds": 4935,
+        "team": "Corduff",
+        "description": "Shot goes into the bottom left corner of the net."
+      },
+      {
+        "timestamp": "84:30",
+        "timestamp_seconds": 5070,
+        "team": "Dalkey",
+        "description": "Shot goes past the diving goalkeeper and into the bottom left corner."
+      },
+      {
+        "timestamp": "87:30",
+        "timestamp_seconds": 5250,
+        "team": "Dalkey",
+        "description": "Shot goes into the bottom left corner of the net."
+      },
+      {
+        "timestamp": "88:45",
+        "timestamp_seconds": 5325,
+        "team": "Dalkey",
+        "description": "Shot goes into the bottom right corner of the goal."
+      }
+    ],
+    "shots": [
+      {
+        "timestamp": "03:45",
+        "timestamp_seconds": 225,
+        "team": "Dalkey",
+        "description": "Free kick saved by goalkeeper, rebound shot missed."
+      },
+      {
+        "timestamp": "03:45",
+        "timestamp_seconds": 225,
+        "team": "Dalkey",
+        "description": "Rebound shot goes high over the crossbar."
+      },
+      {
+        "timestamp": "04:30",
+        "timestamp_seconds": 270,
+        "team": "Dalkey",
+        "description": "Shot from the left side of the penalty box saved by the goalkeeper."
+      },
+      {
+        "timestamp": "04:30",
+        "timestamp_seconds": 270,
+        "team": "Dalkey",
+        "description": "Shot from near the penalty spot saved by the goalkeeper."
+      },
+      {
+        "timestamp": "09:45",
+        "timestamp_seconds": 585,
+        "team": "Corduff",
+        "description": "Long-range shot goes over the crossbar."
+      },
+      {
+        "timestamp": "11:45",
+        "timestamp_seconds": 705,
+        "team": "Dalkey",
+        "description": "Shot saved by the goalkeeper."
+      },
+      {
+        "timestamp": "13:30",
+        "timestamp_seconds": 810,
+        "team": "Corduff",
+        "description": "Penalty kick saved by the goalkeeper."
+      },
+      {
+        "timestamp": "14:30",
+        "timestamp_seconds": 870,
+        "team": "Dalkey",
+        "description": "Shot blocked by a defender."
+      },
+      {
+        "timestamp": "19:00",
+        "timestamp_seconds": 1140,
+        "team": "Corduff",
+        "description": "Shot saved by the goalkeeper."
+      },
+      {
+        "timestamp": "38:00",
+        "timestamp_seconds": 2280,
+        "team": "Corduff",
+        "description": "Shot saved by goalkeeper."
+      },
+      {
+        "timestamp": "39:00",
+        "timestamp_seconds": 2340,
+        "team": "Corduff",
+        "description": "Shot goes over the crossbar."
+      },
+      {
+        "timestamp": "43:30",
+        "timestamp_seconds": 2610,
+        "team": "Corduff",
+        "description": "Shot goes wide of the left goalpost."
+      },
+      {
+        "timestamp": "44:45",
+        "timestamp_seconds": 2685,
+        "team": "Dalkey",
+        "description": "Shot saved by the goalkeeper."
+      },
+      {
+        "timestamp": "71:15",
+        "timestamp_seconds": 4275,
+        "team": "Corduff",
+        "description": "Shot saved by goalkeeper."
+      },
+      {
+        "timestamp": "72:00",
+        "timestamp_seconds": 4320,
+        "team": "Dalkey",
+        "description": "Shot saved by goalkeeper."
+      },
+      {
+        "timestamp": "77:15",
+        "timestamp_seconds": 4635,
+        "team": "Dalkey",
+        "description": "Shot goes into the bottom left corner of the goal."
+      },
+      {
+        "timestamp": "85:00",
+        "timestamp_seconds": 5100,
+        "team": "Corduff",
+        "description": "Shot saved by the goalkeeper."
+      }
+    ],
+    "errors": []
+  },
+  "veo_ground_truth": {
+    "goals": [
+      {
+        "timestamp": "36:29",
+        "timestamp_seconds": 2189,
+        "event_type": "Goal",
+        "event_id": "78674794-b093-4317-92b0-b5477ab048fc"
+      },
+      {
+        "timestamp": "84:56",
+        "timestamp_seconds": 5096,
+        "event_type": "Goal",
+        "event_id": "89fa2c63-210a-4b1c-8f8f-b1503de9f987"
+      }
+    ],
+    "shots": [
+      {
+        "timestamp": "12:26",
+        "timestamp_seconds": 746,
+        "event_type": "Shot on goal",
+        "event_id": "c1a1d87e-e6fa-4d43-a81e-4af1d2f218bc"
+      },
+      {
+        "timestamp": "18:24",
+        "timestamp_seconds": 1104,
+        "event_type": "Shot on goal",
+        "event_id": "09f45fa1-d0d6-4562-9a8e-1c3589b3e2f2"
+      },
+      {
+        "timestamp": "19:47",
+        "timestamp_seconds": 1187,
+        "event_type": "Shot on goal",
+        "event_id": "fc8ce57b-385a-45dd-be76-8b1b81cb105f"
+      },
+      {
+        "timestamp": "22:32",
+        "timestamp_seconds": 1352,
+        "event_type": "Shot on goal",
+        "event_id": "7cce6906-c8e0-45cf-8c9d-76568383317b"
+      },
+      {
+        "timestamp": "25:27",
+        "timestamp_seconds": 1527,
+        "event_type": "Shot on goal",
+        "event_id": "3a01f3a7-14b8-4691-b962-f355f2aca2e3"
+      },
+      {
+        "timestamp": "26:20",
+        "timestamp_seconds": 1580,
+        "event_type": "Shot on goal",
+        "event_id": "adebc7c4-035a-45de-a041-f35506b4c293"
+      },
+      {
+        "timestamp": "26:51",
+        "timestamp_seconds": 1611,
+        "event_type": "Shot on goal",
+        "event_id": "bc8b21bd-b5d5-49ba-bb62-a78aae40db1c"
+      },
+      {
+        "timestamp": "29:32",
+        "timestamp_seconds": 1772,
+        "event_type": "Shot on goal",
+        "event_id": "cf86dce8-52f9-4545-a3e8-8bc4e65f3563"
+      },
+      {
+        "timestamp": "34:52",
+        "timestamp_seconds": 2092,
+        "event_type": "Shot on goal",
+        "event_id": "5ed94599-6230-490a-a4a3-e9a816bca0f4"
+      },
+      {
+        "timestamp": "35:35",
+        "timestamp_seconds": 2135,
+        "event_type": "Shot on goal",
+        "event_id": "486b7664-1874-4c4b-a889-2c1912d597d3"
+      },
+      {
+        "timestamp": "36:27",
+        "timestamp_seconds": 2187,
+        "event_type": "Shot on goal",
+        "event_id": "3b828258-4db6-4ee2-98e2-a2aa25fc9fc1"
+      },
+      {
+        "timestamp": "37:10",
+        "timestamp_seconds": 2230,
+        "event_type": "Shot on goal",
+        "event_id": "834d8478-1c6e-4621-a887-de2e17b42d32"
+      },
+      {
+        "timestamp": "40:26",
+        "timestamp_seconds": 2426,
+        "event_type": "Shot on goal",
+        "event_id": "d31115c8-db3d-4e8e-ad60-52b51c68182d"
+      },
+      {
+        "timestamp": "54:48",
+        "timestamp_seconds": 3288,
+        "event_type": "Shot on goal",
+        "event_id": "ec3bf1e2-522d-4cb4-9b65-64c7e649f1c0"
+      },
+      {
+        "timestamp": "55:14",
+        "timestamp_seconds": 3314,
+        "event_type": "Shot on goal",
+        "event_id": "6beef961-ad28-48ac-b9b6-390db7980b26"
+      },
+      {
+        "timestamp": "57:40",
+        "timestamp_seconds": 3460,
+        "event_type": "Shot on goal",
+        "event_id": "07852b31-71c1-4b7b-b791-f065bc093dbd"
+      },
+      {
+        "timestamp": "60:18",
+        "timestamp_seconds": 3618,
+        "event_type": "Shot on goal",
+        "event_id": "1ae65641-2525-4137-8dc0-6bc1a1d61b82"
+      },
+      {
+        "timestamp": "66:34",
+        "timestamp_seconds": 3994,
+        "event_type": "Shot on goal",
+        "event_id": "b1652bad-eb80-4e74-8ef4-c40cd113320d"
+      },
+      {
+        "timestamp": "67:18",
+        "timestamp_seconds": 4038,
+        "event_type": "Shot on goal",
+        "event_id": "5a75daef-7bb1-4ea9-99f4-56e11e153c0b"
+      },
+      {
+        "timestamp": "70:35",
+        "timestamp_seconds": 4235,
+        "event_type": "Shot on goal",
+        "event_id": "4b8b9881-15ea-4d2e-8b84-f96a623de146"
+      },
+      {
+        "timestamp": "72:11",
+        "timestamp_seconds": 4331,
+        "event_type": "Shot on goal",
+        "event_id": "ac5667ed-24bc-44e9-ab1e-135c04314ca6"
+      },
+      {
+        "timestamp": "74:19",
+        "timestamp_seconds": 4459,
+        "event_type": "Shot on goal",
+        "event_id": "cdffc2c1-4e40-468c-bb03-76a1034c4434"
+      },
+      {
+        "timestamp": "76:30",
+        "timestamp_seconds": 4590,
+        "event_type": "Shot on goal",
+        "event_id": "23cae6ec-73dc-49c8-975f-5c73280343e1"
+      },
+      {
+        "timestamp": "79:16",
+        "timestamp_seconds": 4756,
+        "event_type": "Shot on goal",
+        "event_id": "d392cf01-3037-4f55-8893-e28894519080"
+      },
+      {
+        "timestamp": "79:58",
+        "timestamp_seconds": 4798,
+        "event_type": "Shot on goal",
+        "event_id": "23e7bec4-a545-43d2-ade1-44a95a05f90c"
+      },
+      {
+        "timestamp": "81:10",
+        "timestamp_seconds": 4870,
+        "event_type": "Shot on goal",
+        "event_id": "04fb91eb-3ec8-47ff-a0cb-664e33cb6056"
+      },
+      {
+        "timestamp": "82:13",
+        "timestamp_seconds": 4933,
+        "event_type": "Shot on goal",
+        "event_id": "a8048e02-f7de-47a9-99fc-b9a74264c0e8"
+      },
+      {
+        "timestamp": "84:55",
+        "timestamp_seconds": 5095,
+        "event_type": "Shot on goal",
+        "event_id": "0d224361-f0bb-4234-94bf-0b9d515ca05d"
+      },
+      {
+        "timestamp": "88:42",
+        "timestamp_seconds": 5322,
+        "event_type": "Shot on goal",
+        "event_id": "5acc5362-fd22-4c84-b367-264733c04589"
+      }
+    ]
+  },
+  "comparison": {
+    "goals": {
+      "ai_count": 17,
+      "veo_count": 2,
+      "matches": [
+        {
+          "ai": {
+            "timestamp": "36:15",
+            "timestamp_seconds": 2175,
+            "team": "Corduff",
+            "description": "Free kick goes into the top right corner of the goal."
+          },
+          "veo": {
+            "timestamp": "36:29",
+            "timestamp_seconds": 2189,
+            "event_type": "Goal",
+            "event_id": "78674794-b093-4317-92b0-b5477ab048fc"
+          },
+          "time_diff": 14
+        },
+        {
+          "ai": {
+            "timestamp": "36:30",
+            "timestamp_seconds": 2190,
+            "team": "Corduff",
+            "description": "Free kick goes through the wall and into the goal."
+          },
+          "veo": {
+            "timestamp": "36:29",
+            "timestamp_seconds": 2189,
+            "event_type": "Goal",
+            "event_id": "78674794-b093-4317-92b0-b5477ab048fc"
+          },
+          "time_diff": 1
+        },
+        {
+          "ai": {
+            "timestamp": "84:30",
+            "timestamp_seconds": 5070,
+            "team": "Dalkey",
+            "description": "Shot goes past the diving goalkeeper and into the bottom left corner."
+          },
+          "veo": {
+            "timestamp": "84:56",
+            "timestamp_seconds": 5096,
+            "event_type": "Goal",
+            "event_id": "89fa2c63-210a-4b1c-8f8f-b1503de9f987"
+          },
+          "time_diff": 26
+        }
+      ],
+      "ai_only": [
+        {
+          "timestamp": "05:15",
+          "timestamp_seconds": 315,
+          "team": "Dalkey",
+          "description": "Ball crosses the goal line after a header and a deflection."
+        },
+        {
+          "timestamp": "05:45",
+          "timestamp_seconds": 345,
+          "team": "Dalkey",
+          "description": "Free kick goes over the goalkeeper's head and into the goal."
+        },
+        {
+          "timestamp": "06:00",
+          "timestamp_seconds": 360,
+          "team": "Dalkey",
+          "description": "Penalty kick goes past the diving goalkeeper into the net."
+        },
+        {
+          "timestamp": "17:15",
+          "timestamp_seconds": 1035,
+          "team": "Dalkey",
+          "description": "Shot goes into the bottom left corner of the goal."
+        },
+        {
+          "timestamp": "18:30",
+          "timestamp_seconds": 1110,
+          "team": "Dalkey",
+          "description": "Shot goes past the diving goalkeeper into the bottom left corner of the goal."
+        },
+        {
+          "timestamp": "31:15",
+          "timestamp_seconds": 1875,
+          "team": "Corduff",
+          "description": "Long-range shot saved by goalkeeper."
+        },
+        {
+          "timestamp": "37:15",
+          "timestamp_seconds": 2235,
+          "team": "Dalkey",
+          "description": "Shot goes into the bottom left corner of the goal."
+        },
+        {
+          "timestamp": "54:45",
+          "timestamp_seconds": 3285,
+          "team": "Dalkey",
+          "description": "Shot goes into the net."
+        },
+        {
+          "timestamp": "55:45",
+          "timestamp_seconds": 3345,
+          "team": "Dalkey",
+          "description": "Shot goes into the bottom right corner of the goal."
+        },
+        {
+          "timestamp": "70:45",
+          "timestamp_seconds": 4245,
+          "team": "Dalkey",
+          "description": "Shot goes into the net."
+        },
+        {
+          "timestamp": "71:30",
+          "timestamp_seconds": 4290,
+          "team": "Corduff",
+          "description": "Shot deflects off a defender and goes into the goal."
+        },
+        {
+          "timestamp": "82:15",
+          "timestamp_seconds": 4935,
+          "team": "Corduff",
+          "description": "Shot goes into the bottom left corner of the net."
+        },
+        {
+          "timestamp": "87:30",
+          "timestamp_seconds": 5250,
+          "team": "Dalkey",
+          "description": "Shot goes into the bottom left corner of the net."
+        },
+        {
+          "timestamp": "88:45",
+          "timestamp_seconds": 5325,
+          "team": "Dalkey",
+          "description": "Shot goes into the bottom right corner of the goal."
+        }
+      ],
+      "veo_only": []
+    },
+    "shots": {
+      "ai_count": 17,
+      "veo_count": 29,
+      "matches": [],
+      "ai_only": [
+        {
+          "timestamp": "03:45",
+          "timestamp_seconds": 225,
+          "team": "Dalkey",
+          "description": "Free kick saved by goalkeeper, rebound shot missed."
+        },
+        {
+          "timestamp": "03:45",
+          "timestamp_seconds": 225,
+          "team": "Dalkey",
+          "description": "Rebound shot goes high over the crossbar."
+        },
+        {
+          "timestamp": "04:30",
+          "timestamp_seconds": 270,
+          "team": "Dalkey",
+          "description": "Shot from the left side of the penalty box saved by the goalkeeper."
+        },
+        {
+          "timestamp": "04:30",
+          "timestamp_seconds": 270,
+          "team": "Dalkey",
+          "description": "Shot from near the penalty spot saved by the goalkeeper."
+        },
+        {
+          "timestamp": "09:45",
+          "timestamp_seconds": 585,
+          "team": "Corduff",
+          "description": "Long-range shot goes over the crossbar."
+        },
+        {
+          "timestamp": "11:45",
+          "timestamp_seconds": 705,
+          "team": "Dalkey",
+          "description": "Shot saved by the goalkeeper."
+        },
+        {
+          "timestamp": "13:30",
+          "timestamp_seconds": 810,
+          "team": "Corduff",
+          "description": "Penalty kick saved by the goalkeeper."
+        },
+        {
+          "timestamp": "14:30",
+          "timestamp_seconds": 870,
+          "team": "Dalkey",
+          "description": "Shot blocked by a defender."
+        },
+        {
+          "timestamp": "19:00",
+          "timestamp_seconds": 1140,
+          "team": "Corduff",
+          "description": "Shot saved by the goalkeeper."
+        },
+        {
+          "timestamp": "38:00",
+          "timestamp_seconds": 2280,
+          "team": "Corduff",
+          "description": "Shot saved by goalkeeper."
+        },
+        {
+          "timestamp": "39:00",
+          "timestamp_seconds": 2340,
+          "team": "Corduff",
+          "description": "Shot goes over the crossbar."
+        },
+        {
+          "timestamp": "43:30",
+          "timestamp_seconds": 2610,
+          "team": "Corduff",
+          "description": "Shot goes wide of the left goalpost."
+        },
+        {
+          "timestamp": "44:45",
+          "timestamp_seconds": 2685,
+          "team": "Dalkey",
+          "description": "Shot saved by the goalkeeper."
+        },
+        {
+          "timestamp": "71:15",
+          "timestamp_seconds": 4275,
+          "team": "Corduff",
+          "description": "Shot saved by goalkeeper."
+        },
+        {
+          "timestamp": "72:00",
+          "timestamp_seconds": 4320,
+          "team": "Dalkey",
+          "description": "Shot saved by goalkeeper."
+        },
+        {
+          "timestamp": "77:15",
+          "timestamp_seconds": 4635,
+          "team": "Dalkey",
+          "description": "Shot goes into the bottom left corner of the goal."
+        },
+        {
+          "timestamp": "85:00",
+          "timestamp_seconds": 5100,
+          "team": "Corduff",
+          "description": "Shot saved by the goalkeeper."
+        }
+      ],
+      "veo_only": [
+        {
+          "timestamp": "12:26",
+          "timestamp_seconds": 746,
+          "event_type": "Shot on goal",
+          "event_id": "c1a1d87e-e6fa-4d43-a81e-4af1d2f218bc"
+        },
+        {
+          "timestamp": "18:24",
+          "timestamp_seconds": 1104,
+          "event_type": "Shot on goal",
+          "event_id": "09f45fa1-d0d6-4562-9a8e-1c3589b3e2f2"
+        },
+        {
+          "timestamp": "19:47",
+          "timestamp_seconds": 1187,
+          "event_type": "Shot on goal",
+          "event_id": "fc8ce57b-385a-45dd-be76-8b1b81cb105f"
+        },
+        {
+          "timestamp": "22:32",
+          "timestamp_seconds": 1352,
+          "event_type": "Shot on goal",
+          "event_id": "7cce6906-c8e0-45cf-8c9d-76568383317b"
+        },
+        {
+          "timestamp": "25:27",
+          "timestamp_seconds": 1527,
+          "event_type": "Shot on goal",
+          "event_id": "3a01f3a7-14b8-4691-b962-f355f2aca2e3"
+        },
+        {
+          "timestamp": "26:20",
+          "timestamp_seconds": 1580,
+          "event_type": "Shot on goal",
+          "event_id": "adebc7c4-035a-45de-a041-f35506b4c293"
+        },
+        {
+          "timestamp": "26:51",
+          "timestamp_seconds": 1611,
+          "event_type": "Shot on goal",
+          "event_id": "bc8b21bd-b5d5-49ba-bb62-a78aae40db1c"
+        },
+        {
+          "timestamp": "29:32",
+          "timestamp_seconds": 1772,
+          "event_type": "Shot on goal",
+          "event_id": "cf86dce8-52f9-4545-a3e8-8bc4e65f3563"
+        },
+        {
+          "timestamp": "34:52",
+          "timestamp_seconds": 2092,
+          "event_type": "Shot on goal",
+          "event_id": "5ed94599-6230-490a-a4a3-e9a816bca0f4"
+        },
+        {
+          "timestamp": "35:35",
+          "timestamp_seconds": 2135,
+          "event_type": "Shot on goal",
+          "event_id": "486b7664-1874-4c4b-a889-2c1912d597d3"
+        },
+        {
+          "timestamp": "36:27",
+          "timestamp_seconds": 2187,
+          "event_type": "Shot on goal",
+          "event_id": "3b828258-4db6-4ee2-98e2-a2aa25fc9fc1"
+        },
+        {
+          "timestamp": "37:10",
+          "timestamp_seconds": 2230,
+          "event_type": "Shot on goal",
+          "event_id": "834d8478-1c6e-4621-a887-de2e17b42d32"
+        },
+        {
+          "timestamp": "40:26",
+          "timestamp_seconds": 2426,
+          "event_type": "Shot on goal",
+          "event_id": "d31115c8-db3d-4e8e-ad60-52b51c68182d"
+        },
+        {
+          "timestamp": "54:48",
+          "timestamp_seconds": 3288,
+          "event_type": "Shot on goal",
+          "event_id": "ec3bf1e2-522d-4cb4-9b65-64c7e649f1c0"
+        },
+        {
+          "timestamp": "55:14",
+          "timestamp_seconds": 3314,
+          "event_type": "Shot on goal",
+          "event_id": "6beef961-ad28-48ac-b9b6-390db7980b26"
+        },
+        {
+          "timestamp": "57:40",
+          "timestamp_seconds": 3460,
+          "event_type": "Shot on goal",
+          "event_id": "07852b31-71c1-4b7b-b791-f065bc093dbd"
+        },
+        {
+          "timestamp": "60:18",
+          "timestamp_seconds": 3618,
+          "event_type": "Shot on goal",
+          "event_id": "1ae65641-2525-4137-8dc0-6bc1a1d61b82"
+        },
+        {
+          "timestamp": "66:34",
+          "timestamp_seconds": 3994,
+          "event_type": "Shot on goal",
+          "event_id": "b1652bad-eb80-4e74-8ef4-c40cd113320d"
+        },
+        {
+          "timestamp": "67:18",
+          "timestamp_seconds": 4038,
+          "event_type": "Shot on goal",
+          "event_id": "5a75daef-7bb1-4ea9-99f4-56e11e153c0b"
+        },
+        {
+          "timestamp": "70:35",
+          "timestamp_seconds": 4235,
+          "event_type": "Shot on goal",
+          "event_id": "4b8b9881-15ea-4d2e-8b84-f96a623de146"
+        },
+        {
+          "timestamp": "72:11",
+          "timestamp_seconds": 4331,
+          "event_type": "Shot on goal",
+          "event_id": "ac5667ed-24bc-44e9-ab1e-135c04314ca6"
+        },
+        {
+          "timestamp": "74:19",
+          "timestamp_seconds": 4459,
+          "event_type": "Shot on goal",
+          "event_id": "cdffc2c1-4e40-468c-bb03-76a1034c4434"
+        },
+        {
+          "timestamp": "76:30",
+          "timestamp_seconds": 4590,
+          "event_type": "Shot on goal",
+          "event_id": "23cae6ec-73dc-49c8-975f-5c73280343e1"
+        },
+        {
+          "timestamp": "79:16",
+          "timestamp_seconds": 4756,
+          "event_type": "Shot on goal",
+          "event_id": "d392cf01-3037-4f55-8893-e28894519080"
+        },
+        {
+          "timestamp": "79:58",
+          "timestamp_seconds": 4798,
+          "event_type": "Shot on goal",
+          "event_id": "23e7bec4-a545-43d2-ade1-44a95a05f90c"
+        },
+        {
+          "timestamp": "81:10",
+          "timestamp_seconds": 4870,
+          "event_type": "Shot on goal",
+          "event_id": "04fb91eb-3ec8-47ff-a0cb-664e33cb6056"
+        },
+        {
+          "timestamp": "82:13",
+          "timestamp_seconds": 4933,
+          "event_type": "Shot on goal",
+          "event_id": "a8048e02-f7de-47a9-99fc-b9a74264c0e8"
+        },
+        {
+          "timestamp": "84:55",
+          "timestamp_seconds": 5095,
+          "event_type": "Shot on goal",
+          "event_id": "0d224361-f0bb-4234-94bf-0b9d515ca05d"
+        },
+        {
+          "timestamp": "88:42",
+          "timestamp_seconds": 5322,
+          "event_type": "Shot on goal",
+          "event_id": "5acc5362-fd22-4c84-b367-264733c04589"
+        }
+      ]
+    }
+  },
+  "raw_ai_output": "SHOT|03:45|Dalkey|Free kick saved by goalkeeper, rebound shot missed.\nSHOT|03:45|Dalkey|Rebound shot goes high over the crossbar.\nSHOT|04:30|Dalkey|Shot from the left side of the penalty box saved by the goalkeeper.\nSHOT|04:30|Dalkey|Shot from near the penalty spot saved by the goalkeeper.\nGOAL|05:15|Dalkey|Ball crosses the goal line after a header and a deflection.\nGOAL|05:45|Dalkey|Free kick goes over the goalkeeper's head and into the goal.\nGOAL|06:00|Dalkey|Penalty kick goes past the diving goalkeeper into the net.\nSHOT|09:45|Corduff|Long-range shot goes over the crossbar.\nSHOT|11:45|Dalkey|Shot saved by the goalkeeper.\nSHOT|13:30|Corduff|Penalty kick saved by the goalkeeper.\nSHOT|14:30|Dalkey|Shot blocked by a defender.\nSHOT|19:00|Corduff|Shot saved by the goalkeeper.\nGOAL|17:15|Dalkey|Shot goes into the bottom left corner of the goal.\nGOAL|18:30|Dalkey|Shot goes past the diving goalkeeper into the bottom left corner of the goal.\nGOAL|31:15|Corduff|Long-range shot saved by goalkeeper.\nGOAL|36:15|Corduff|Free kick goes into the top right corner of the goal.\nGOAL|36:30|Corduff|Free kick goes through the wall and into the goal.\nGOAL|37:15|Dalkey|Shot goes into the bottom left corner of the goal.\nSHOT|38:00|Corduff|Shot saved by goalkeeper.\nSHOT|39:00|Corduff|Shot goes over the crossbar.\nSHOT|43:30|Corduff|Shot goes wide of the left goalpost.\nSHOT|44:45|Dalkey|Shot saved by the goalkeeper.\nGOAL|54:45|Dalkey|Shot goes into the net.\nGOAL|55:45|Dalkey|Shot goes into the bottom right corner of the goal.\nGOAL|70:45|Dalkey|Shot goes into the net.\nSHOT|71:15|Corduff|Shot saved by goalkeeper.\nGOAL|71:30|Corduff|Shot deflects off a defender and goes into the goal.\nSHOT|72:00|Dalkey|Shot saved by goalkeeper.\nSHOT|77:15|Dalkey|Shot goes into the bottom left corner of the goal.\nGOAL|82:15|Corduff|Shot goes into the bottom left corner of the net.\nGOAL|84:30|Dalkey|Shot goes past the diving goalkeeper and into the bottom left corner.\nSHOT|85:00|Corduff|Shot saved by the goalkeeper.\nGOAL|87:30|Dalkey|Shot goes into the bottom left corner of the net.\nGOAL|88:45|Dalkey|Shot goes into the bottom right corner of the goal."
+}

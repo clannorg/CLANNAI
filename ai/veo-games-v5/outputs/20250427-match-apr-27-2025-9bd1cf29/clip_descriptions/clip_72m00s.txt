@@ -1,0 +1,13 @@
+**GAME CONTEXT:**
+- Global match time starts at: 72m00s
+- Team A: white jerseys
+- Team B: red jerseys with black shorts
+
+**DESCRIPTION:**
+*   **At 0 seconds:** The white jerseys team prepares to take a free kick from the left side, just outside the red jerseys' penalty area.
+*   **At 3 seconds:** A white jerseys player takes the free kick, curling a low shot with his right foot toward the near post.
+*   **At 4 seconds:** The goalkeeper in the orange jersey dives to his right and makes a save, parrying the ball away.
+*   **At 6 seconds:** A red jerseys defender inside the box clears the rebound, kicking the ball high and upfield with his right foot.
+*   **At 10 seconds:** The cleared ball travels towards the center of the pitch, initiating a counter-attack for the red jerseys team.
+*   **At 13 seconds:** The red jerseys team gains possession of the ball in the midfield as it comes down.
+*   **At 15 seconds:** A red jerseys player controls the ball near the center circle as the white jerseys players retreat to defend.

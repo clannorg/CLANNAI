@@ -1,0 +1,11 @@
+At 0 seconds: A player in a red jersey stands over the ball at the penalty spot, preparing to take a kick. The goalkeeper is in a purple jersey.
+
+At 3 seconds: The player in the red jersey takes the penalty kick, shooting towards the left side of the goal.
+
+At 4 seconds: The goalkeeper in the purple jersey dives to their left and makes a save.
+
+At 5 seconds: The ball rebounds to a player in a white jersey with the number 7, who gains possession.
+
+At 7 seconds: The player in the white jersey (#7) begins to dribble the ball forward, away from their goal.
+
+At 11 seconds: The player in the white jersey (#7) continues to move the ball slowly up the right side of the field as players from both teams reposition.

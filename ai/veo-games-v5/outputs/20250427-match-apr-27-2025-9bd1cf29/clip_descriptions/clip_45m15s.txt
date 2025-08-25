@@ -1,0 +1,15 @@
+**GAME CONTEXT:**
+- Global match time starts at: 45m15s
+- Team A: white jerseys
+- Team B: red jerseys
+
+**DESCRIPTION:**
+*   **At 0 seconds:** The game is in play. A white jersey player in the center of the field receives a pass from a teammate.
+*   **At 1 second:** The white jersey player passes the ball forward to teammate #9.
+*   **At 3 seconds:** A red jersey player tackles white player #9, dispossessing him.
+*   **At 4 seconds:** The red jersey team gains possession of the loose ball.
+*   **At 6 seconds:** The red jersey player passes the ball back to a teammate standing near the halfway line.
+*   **At 9 seconds:** The red jersey player attempts a forward pass to the right wing.
+*   **At 10 seconds:** A white jersey player intercepts the pass.
+*   **At 12 seconds:** The white jersey player makes a pass forward to teammate #2 on the left side of the pitch.
+*   **At 14 seconds:** White player #2 dribbles the ball forward, crossing the halfway line.

@@ -1,0 +1,13 @@
+Here is a description of the 15-second video clip:
+
+**GAME STATE:**
+- **Teams:** white jerseys vs. red and black jerseys.
+- **Possession:** red and black jerseys.
+
+**EVENTS:**
+- **At 0 seconds:** The game is set to restart with a kickoff by the red and black jerseys from the center spot.
+- **At 4 seconds:** A red and black player kicks the ball backwards to a teammate to begin play.
+- **At 5 seconds:** The red and black player passes the ball to a teammate on the right wing.
+- **At 9 seconds:** The player on the right wing makes a forward pass along the sideline to another red and black teammate.
+- **At 11 seconds:** This player passes the ball back towards a teammate in the center of the pitch.
+- **At 14 seconds:** The central red and black player, positioned near the top of the penalty area, passes the ball to a teammate running into the box on the left. The clip ends as the ball travels to the intended receiver.

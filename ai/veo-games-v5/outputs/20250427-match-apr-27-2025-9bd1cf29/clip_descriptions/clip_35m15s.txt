@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time: 35m15s - 35m30s
+- Team A: white jerseys
+- Team B: red jerseys
+- Team B Goalkeeper: orange jersey
+
+**DESCRIPTION:**
+At 0 seconds: A player in a white jersey, playing as the goalkeeper, has the ball at his feet inside his own penalty area.
+At 3 seconds: The white jerseys goalkeeper makes a short pass with his right foot to a teammate on the left side of the penalty area.
+At 7 seconds: The white jerseys player who received the pass plays a long, right-footed pass up the left sideline.
+At 10 seconds: A teammate in a white jersey, positioned near the halfway line, receives and controls the pass with his left foot.
+At 13 seconds: The white jerseys player with the ball turns to face upfield. The clip ends with the white team in possession.

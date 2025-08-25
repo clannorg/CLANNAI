@@ -1,0 +1,13 @@
+At 0 seconds: A player in a white jersey has possession in the attacking half and is dribbling towards the goal.
+
+At 3 seconds: The white jersey player is challenged by a red jersey player just outside the penalty area.
+
+At 5 seconds: The white jersey player dribbles past the red jersey defender and enters the penalty area.
+
+At 7 seconds: The white jersey player takes a right-footed shot on goal.
+
+At 8 seconds: The ball goes past the red jersey goalkeeper and into the back of the net.
+
+At 9 seconds: The team in white jerseys scores a goal.
+
+At 11 seconds: The players from the white team begin to walk back towards the center of the pitch.

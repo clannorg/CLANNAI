@@ -1,0 +1,8 @@
+**Events:**
+
+*   **At 0 seconds:** Players from the white jersey team and the red jersey team are positioned around the center of the pitch, which is in a state of disrepair. A person in dark clothing, possibly a coach or referee, is in the center circle.
+*   **At 3 seconds:** A player in a red jersey on the right side of the pitch passes the ball to a teammate in the center.
+*   **At 5 seconds:** The red jersey player in the center, under pressure from a white jersey player, passes the ball forward to another red jersey teammate.
+*   **At 9 seconds:** The red jersey player with the ball is pressured by a white jersey player and makes a pass towards the right sideline.
+*   **At 11 seconds:** A player in a white jersey (wearing #8) intercepts the pass intended for a red jersey player.
+*   **At 13 seconds:** The white jersey player (#8) immediately passes the ball with the outside of their right foot toward a teammate in the center of the pitch.

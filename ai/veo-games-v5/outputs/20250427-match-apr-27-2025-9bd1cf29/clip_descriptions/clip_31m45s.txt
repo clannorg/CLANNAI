@@ -1,0 +1,13 @@
+At 0 seconds: A player in a red jersey has possession in the midfield, being marked by a player in a white jersey with number 2 on his back.
+
+At 1 second: The red jersey player passes the ball to a teammate to his left.
+
+At 3 seconds: The teammate in the red jersey receives the ball and is immediately pressured by a player in a white jersey. He makes a quick pass back to the original player.
+
+At 5 seconds: The whistle blows, stopping play.
+
+At 6 seconds: The referee, dressed in black, walks towards the center of the field where the players are gathered.
+
+At 10 seconds: A player in a red jersey picks up the ball with his hands.
+
+At 11 seconds: The referee gestures while talking to the players. The players remain stationary, waiting for play to restart.

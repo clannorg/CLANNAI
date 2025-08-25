@@ -1,0 +1,6 @@
+At 0 seconds, a player in a red jersey and a player in a white jersey are in the center of the pitch.
+At 1 second, the player in the red jersey heads the ball high into the air.
+At 2 seconds, the ball comes down and the play appears to have stopped for an out-of-bounds call.
+At 7 seconds, a player in a red jersey (#2) on the left side of the pitch picks up the ball from the sideline to take a throw-in.
+At 13 seconds, a man on the sideline in a blue top and black cap, presumably a coach, gestures upfield with his right arm.
+At 14 seconds, the player in the red jersey is still holding the ball, preparing for the throw-in.

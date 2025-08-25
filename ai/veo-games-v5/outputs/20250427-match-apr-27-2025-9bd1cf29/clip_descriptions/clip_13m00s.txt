@@ -1,0 +1,7 @@
+At 0 seconds: A player in a white jersey heads the ball away from a player in a red jersey.
+At 2 seconds: The ball is kicked high and long downfield by a white jersey player.
+At 5 seconds: A white jersey player on the right side of the field chests the ball down to control it.
+At 7 seconds: The white jersey player passes the ball to a teammate in the center of the pitch.
+At 9 seconds: The central white jersey player passes the ball forward to a teammate on the right.
+At 11 seconds: The teammate receives the pass, turns, and begins dribbling towards the center.
+At 14 seconds: He passes the ball forward to another white jersey player.

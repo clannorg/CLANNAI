@@ -1,0 +1,7 @@
+At 0 seconds, play resumes with the white jerseys team in possession in the center circle.
+At 2 seconds, a player in a white jersey passes the ball to a teammate.
+At 5 seconds, the white jerseys team continues to pass the ball around their side of the center circle.
+At 8 seconds, a player in a white jersey kicks a long pass down the right sideline.
+At 9 seconds, the ball goes out of bounds for a throw-in.
+At 10 seconds, the referee signals for a throw-in for the red jerseys team.
+At 12 seconds, a player in a red jersey walks to the sideline to take the throw-in.

@@ -1,0 +1,8 @@
+**Game State:** Pre-game warm-up and team talk.
+
+**Description:**
+- **At 0 seconds:** The team in white jerseys is in a huddle with a coach on the halfway line. In the background, the team in red jerseys is spread out in their half, warming up by passing a ball.
+- **At 6 seconds:** The coach finishes his team talk, and the players in white jerseys begin to break from their huddle.
+- **At 10 seconds:** The team in white jerseys has fully dispersed from their huddle. The camera begins a slow pan to the left.
+- **At 12 seconds:** A player from the red jerseys team passes the ball to a teammate.
+- **At 14 seconds:** Another player from the red jerseys team receives a pass and controls the ball.

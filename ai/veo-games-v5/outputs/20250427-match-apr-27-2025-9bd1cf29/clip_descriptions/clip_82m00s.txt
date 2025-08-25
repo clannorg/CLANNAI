@@ -1,0 +1,10 @@
+**GAME CONTEXT:**
+- Global match time starts at: 82m00s
+- Team A: white jerseys
+- Team B: red jerseys
+
+**DESCRIPTION:**
+*   **At 0 seconds:** A player in a white jersey has possession of the ball near the center circle. Players from both teams are spread across the field, mostly walking or standing still.
+*   **At 4 seconds:** The player in the white jersey makes a forward pass to a teammate on the right side of the field.
+*   **At 9 seconds:** The white jersey player who received the ball makes a short pass further to his right to another teammate near the sideline.
+*   **At 13 seconds:** The white jersey player on the right wing controls the ball as a player in a red jersey approaches slowly. The clip ends with the white team maintaining possession.

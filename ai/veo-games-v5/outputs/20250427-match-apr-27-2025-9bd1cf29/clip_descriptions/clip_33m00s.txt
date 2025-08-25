@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time starts at: 33m00s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+- **At 0 seconds:** Play is stopped. Players from both teams are walking and repositioning on the field. A player in a red jersey with #11 on his back is standing near a player in a white jersey.
+- **At 2 seconds:** A person on the sideline wearing a green shirt raises a small yellow flag.
+- **At 3 seconds:** The red jerseys player #11 gently kicks the ball towards a coach on the sideline.
+- **At 8 seconds:** A player in a white jersey, standing near the center of the field, picks up a different ball.
+- **At 13 seconds:** The white jerseys player executes a two-handed overhead throw-in from the middle of the field, launching the ball towards the left side of the pitch.
+- **At 15 seconds:** The ball is in mid-air, heading towards a group of players.

@@ -1,0 +1,14 @@
+**GAME CONTEXT:**
+- Global match time starts at: 22m15s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+- At 0 seconds: A white jerseys player on the left sideline prepares for a throw-in.
+- At 3 seconds: The white jerseys player throws the ball into play.
+- At 4 seconds: A red and black jerseys player heads the ball towards the center of the pitch.
+- At 5 seconds: A white jerseys player attempts to control the loose ball but is challenged by a red and black jerseys player.
+- At 6 seconds: The red and black jerseys player gains possession and kicks the ball to a teammate.
+- At 8 seconds: The red and black jerseys player is dispossessed by a white jerseys player.
+- At 9 seconds: The white jerseys player kicks the ball high and long up the field as a clearance.
+- At 12 seconds: The ball is in the air, traveling towards the center circle. Players from both teams begin to reposition to receive it.

@@ -1,0 +1,10 @@
+At 0 seconds: The ball is in the air near the center circle, having been played from the right side of the pitch.
+At 2 seconds: A white jerseys player heads the ball toward a teammate, the player wearing number 11.
+At 3 seconds: The white jerseys player #11 makes a one-touch pass forward into the center circle.
+At 4 seconds: A red jerseys player intercepts the pass.
+At 6 seconds: The red jerseys player is challenged by the white jerseys player #11, slides, and loses the ball. The white jerseys regain possession.
+At 7 seconds: The white jerseys player #11 passes the ball to a teammate on his left.
+At 8 seconds: The receiving white jerseys player passes the ball forward.
+At 10 seconds: A red jerseys player intercepts the pass.
+At 11 seconds: The red jerseys player kicks the ball long upfield toward the left sideline.
+At 15 seconds: The clip ends with the ball still in the air.

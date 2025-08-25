@@ -1,0 +1,14 @@
+**GAME CONTEXT:**
+- Global match time starts at: 74m15s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+*   **At 0 seconds:** The white jerseys' goalkeeper, wearing an orange jersey, has possession inside his penalty area.
+*   **At 2 seconds:** The goalkeeper passes the ball with his right foot to a teammate on the left side of the pitch.
+*   **At 5 seconds:** The white jerseys player passes the ball forward to a central teammate.
+*   **At 6 seconds:** The central player plays a one-touch pass to a teammate on his right.
+*   **At 8 seconds:** The player on the right passes the ball back to the central player.
+*   **At 10 seconds:** The central white jerseys player kicks a long, high ball with his right foot toward the center of the field.
+*   **At 13 seconds:** A red and black jerseys player wins an aerial duel against a white jerseys player near the center circle, heading the ball down to a teammate. Possession changes to the red and black jerseys team.
+*   **At 14 seconds:** The red and black jerseys player who received the header passes the ball with his right foot to a teammate on his left.

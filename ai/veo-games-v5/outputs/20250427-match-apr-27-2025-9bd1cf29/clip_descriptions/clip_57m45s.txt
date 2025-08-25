@@ -1,0 +1,14 @@
+**GAME CONTEXT:**
+- Global match time starts at: 57m45s
+- Team A: white jerseys
+- Team B: red jerseys with black shorts
+
+**DESCRIPTION:**
+- **At 0 seconds:** A red jerseys player in the center circle is challenged by a white jerseys player and loses the ball.
+- **At 2 seconds:** A white jerseys player gains possession but is immediately tackled by a red jerseys player and falls to the ground.
+- **At 4 seconds:** A different white jerseys player takes control of the loose ball in the center circle.
+- **At 5 seconds:** The white jerseys player with the ball begins dribbling forward, advancing into the red team's half of the field.
+- **At 8 seconds:** The white jerseys player dribbles into the penalty box on the right side.
+- **At 9 seconds:** The white jerseys player takes a shot with his right foot, aiming for the far post.
+- **At 11 seconds:** The ball rolls past the left goalpost and goes out of bounds for a goal kick.
+- **At 12 seconds:** A player on the sideline wearing a yellow bib puts his hands on his head in reaction to the missed shot.

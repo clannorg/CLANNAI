@@ -1,0 +1,8 @@
+At 0 seconds, a player in a red jersey in the center circle has possession of the ball. The camera pans to the right, following the play.
+At 3 seconds, the red jersey player passes the ball forward and to the right to a teammate.
+At 6 seconds, the receiving red jersey player makes a short pass further to the right to a teammate running along the sideline.
+At 9 seconds, the red jersey player on the right wing kicks the ball, attempting a low cross into the penalty area.
+At 10 seconds, a player in a white jersey inside the penalty area intercepts the cross.
+At 11 seconds, the white jersey player clears the ball upfield with a long kick.
+At 13 seconds, a red jersey player near the center circle heads the cleared ball.
+At 14 seconds, the ball bounces to another red jersey player, who gains possession near the center circle.

@@ -1,0 +1,8 @@
+At 0 seconds: The ball is in the air, moving from the right side of the pitch towards the center circle.
+At 3 seconds: A white jersey player in the center circle heads the ball forward.
+At 4 seconds: A red jersey player intercepts the header.
+At 5 seconds: The red jersey player makes a short pass forward to a teammate.
+At 7 seconds: A white jersey player tackles the red jersey player, and the ball comes loose.
+At 8 seconds: Another red jersey player recovers the loose ball just outside the center circle.
+At 9 seconds: The red jersey player makes a long pass with their right foot towards the right sideline.
+At 11 seconds: The ball rolls out of bounds for a throw-in. The referee, wearing a dark blue top, points to indicate the direction of the throw.

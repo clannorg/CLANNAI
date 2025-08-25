@@ -1,0 +1,9 @@
+At 0 seconds: Players from a team in red jerseys and a team in yellow jerseys are arranged in a circle in the middle of the field, participating in a passing drill. A player in a red jersey passes the ball to a player in a yellow jersey.
+At 2 seconds: The player in the yellow jersey passes the ball to another player in a yellow jersey.
+At 3 seconds: The second player in a yellow jersey passes the ball to a player in a red jersey.
+At 5 seconds: The player in the red jersey passes the ball to a teammate in a red jersey.
+At 7 seconds: The player in the red jersey passes the ball to a player in a yellow jersey.
+At 9 seconds: The player in the yellow jersey makes a one-touch pass to another player in a yellow jersey.
+At 11 seconds: The player in the yellow jersey passes the ball to a player in a red jersey.
+At 12 seconds: The player in the red jersey passes the ball across the circle to another player in a red jersey.
+Throughout the clip: A player in a red jersey with number 11 on the back stands alone on the right side of the field, away from the group activity.

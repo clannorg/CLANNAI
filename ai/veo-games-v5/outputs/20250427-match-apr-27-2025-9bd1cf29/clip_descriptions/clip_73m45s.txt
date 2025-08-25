@@ -1,0 +1,12 @@
+**GAME CONTEXT:**
+- Global match time starts at: 73m45s
+- Team A: white jerseys
+- Team B: red and black jerseys
+
+**DESCRIPTION:**
+*   At 0 seconds: A red and black jerseys player is positioned to take a corner kick from the left side of the pitch. A teammate in a red and black jersey stands near the penalty area, marked by a player in a white jersey.
+*   At 2 seconds: The red and black jerseys player takes the corner kick, playing a low pass on the ground to their teammate.
+*   At 4 seconds: The receiving red and black jerseys player takes a touch and begins to dribble towards the goal along the goal line.
+*   At 7 seconds: The red and black jerseys player, now very close to the goal on the left side, attempts to pass the ball across the goalmouth.
+*   At 8 seconds: The ball rolls across the front of the goal and goes out of play on the far side for a goal kick.
+*   At 12 seconds: Another player in a white jersey jogs into the frame from the right side.

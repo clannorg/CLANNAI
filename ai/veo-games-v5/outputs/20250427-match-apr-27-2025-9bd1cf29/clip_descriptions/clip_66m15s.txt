@@ -1,0 +1,7 @@
+At 0 seconds: The game is stopped. Players from the team in white jerseys and the team in red and black jerseys are walking and getting into position across the midfield.
+
+At 4 seconds: A player from the red and black jerseys team stands over the ball, which is stationary just inside their team's half of the center circle.
+
+At 10 seconds: A person in a dark blue top walks from the left side of the screen towards the center of the pitch.
+
+At 15 seconds: The players are still repositioning themselves on the field, and the ball has not yet been put back into play.

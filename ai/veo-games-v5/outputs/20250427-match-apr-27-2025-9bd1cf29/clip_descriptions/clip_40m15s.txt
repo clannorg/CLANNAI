@@ -1,0 +1,13 @@
+At 0 seconds: The game begins with a red and black jerseys player in the center circle.
+At 1 second: The red and black jerseys player passes the ball forward, but a white jerseys player immediately tackles and takes possession.
+At 2 seconds: Two red and black jerseys players challenge the white jerseys player, knocking the ball loose.
+At 3 seconds: Another white jerseys player collects the loose ball.
+At 4 seconds: The white jerseys player passes the ball to a teammate.
+At 5 seconds: The receiving player passes the ball back to the original passer.
+At 6 seconds: The white jerseys player with the ball kicks a long, high pass towards the left wing.
+At 8 seconds: A red and black jerseys player intercepts the long pass with a header.
+At 9 seconds: A white jerseys player collects the ball from the header.
+At 10 seconds: The white jerseys player passes to a teammate.
+At 11 seconds: The teammate passes the ball back.
+At 12 seconds: The white jerseys player attempts a pass forward which is blocked by a red and black jerseys player.
+At 13 seconds: Another white jerseys player recovers the loose ball and passes it to a teammate near the center circle.

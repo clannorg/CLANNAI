@@ -1,0 +1,10 @@
+**Event Description:**
+
+*   **At 0 seconds:** A player in a white jersey, located in the attacking third, is in possession of the ball.
+*   **At 2 seconds:** The player in the white jersey passes the ball forward and to the left, into the penalty area.
+*   **At 4 seconds:** A teammate in a white jersey receives the pass on the left side of the penalty box.
+*   **At 5 seconds:** A player in a red jersey attempts a sliding tackle.
+*   **At 7 seconds:** The ball comes loose, and another player in a white jersey recovers it just inside the box.
+*   **At 8 seconds:** The player in the white jersey dribbles the ball out of the penalty area towards the center of the field.
+*   **At 12 seconds:** The player in the white jersey continues to dribble centrally, maintaining possession.
+*   **At 14 seconds:** The player in the white jersey is still dribbling in the center, looking for a pass as the clip ends.

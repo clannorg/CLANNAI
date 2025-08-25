@@ -1,0 +1,5 @@
+At 0 seconds, a player in a white jersey has possession near the center of the pitch, on their defensive half.
+At 3 seconds, the player in the white jersey passes the ball back to their goalkeeper, who is wearing an orange jersey.
+At 11 seconds, the orange jersey goalkeeper makes a ground pass with his right foot toward the center of the pitch.
+At 13 seconds, a player in a white jersey with the number 4 on his back receives the pass and controls it with his left foot.
+At 14 seconds, the player in the white jersey #4 is pressured by a player in a red jersey as he turns upfield.

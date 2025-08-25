@@ -1,0 +1,15 @@
+{
+  "match_id": "20250427-match-apr-27-2025-9bd1cf29",
+  "team_a": {
+    "name": "Dalkey",
+    "colors": "white jerseys"
+  },
+  "team_b": {
+    "name": "Corduff", 
+    "colors": "red and black jerseys"
+  },
+  "game_type": "11-a-side",
+  "focus": "detailed play-by-play description",
+  "additional_context": "Full match analysis with tactical insights"
+}
+

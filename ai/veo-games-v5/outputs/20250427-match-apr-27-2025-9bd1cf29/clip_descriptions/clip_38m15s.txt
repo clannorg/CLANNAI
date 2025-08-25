@@ -1,0 +1,13 @@
+At 0 seconds: The game is in progress, with the ball in the center of the pitch. A white jerseys player is in possession.
+
+At 4 seconds: The white jerseys player passes the ball forward and to the right to a teammate.
+
+At 5 seconds: A white jerseys player receives the pass near the center circle and is immediately pressured by a red and black jerseys player.
+
+At 8 seconds: The white jerseys player passes the ball forward to a teammate making a run into the opposition's half.
+
+At 11 seconds: The white jerseys player with the ball is challenged by a red and black jerseys defender.
+
+At 13 seconds: The red and black jerseys defender intercepts a pass attempt with their right foot, knocking the ball loose.
+
+At 14 seconds: Another red and black jerseys player takes possession of the loose ball.

@@ -8,7 +8,7 @@ from threading import Lock
 INPUT_CSV = 'data/veo_clubs_2.csv'
 
 OUTPUT_CSV = 'data/all_clubs_by_country.csv'
-API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDyQMe6inPpyQuYXNFir-lHMsukARGqqJc')
+API_KEY = os.getenv('GEMINI_API_KEY')  # Removed hardcoded fallback for security
 API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent'
 TOTAL_CLUBS = 27676  # Process all clubs
 BATCH_SIZE = 500    # 500 clubs per call

@@ -1,0 +1,17 @@
+At 0 seconds: The team in white jerseys has possession in the midfield. A player in a white jersey passes the ball to a teammate.
+
+At 2 seconds: A player in a red and black jersey tackles the white jersey player, causing the ball to come loose.
+
+At 3 seconds: A player in a white jersey with the number 19 on their back recovers the loose ball.
+
+At 4 seconds: The player in white jersey #19 makes a short forward pass to a teammate.
+
+At 9 seconds: A player in a red and black jersey tackles the white jersey player who received the pass, and the ball is loose again.
+
+At 10 seconds: Another player in a white jersey recovers the ball in the center of the pitch.
+
+At 12 seconds: A player in a red and black jersey tackles the white jersey player and successfully wins possession of the ball.
+
+At 13 seconds: The red and black jersey player dribbles the ball towards the center circle.
+
+At 14 seconds: A white jersey player approaches to challenge for the ball as the clip ends.

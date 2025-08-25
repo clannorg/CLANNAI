@@ -1,0 +1,7 @@
+At 0 seconds: Play is stopped. The ball is placed for a goal kick for the red and black jerseys team on the left side of the field.
+
+At 10 seconds: A player in a red and black jersey takes the goal kick, passing it short to a teammate just outside the penalty area.
+
+At 11 seconds: The player who received the pass immediately plays a one-touch pass forward to another red and black jerseys player near the half-way line.
+
+At 13 seconds: The red and black jerseys player receives the pass and begins dribbling forward into the opponent's half.
