@@ -195,31 +195,40 @@ TACTICAL ANALYSIS:
 MATCH SUMMARY:
 {summary_text}
 
-OUTPUT FORMAT - Return JSON with this exact structure:
+OUTPUT FORMAT - Return JSON with this EXACT structure (webapp compatible):
 {{
-  "team_a": {{
-    "team_name": "{team_a_name}",
-    "team_color": "{team_a_color}",
-    "strengths": ["strength1", "strength2", "strength3"],
-    "weaknesses": ["weakness1", "weakness2"],
-    "key_players": ["player1", "player2"],
-    "tactical_setup": "Formation and style description",
-    "performance_summary": "Overall performance paragraph"
+  "analysis": {{
+    "match_summary": {{
+      "final_score": "{team_a_name} X - Y {team_b_name}",
+      "story": "Match story paragraph",
+      "key_moments": ["moment1", "moment2", "moment3"],
+      "turning_points": ["point1", "point2"]
+    }},
+    "team_analysis": {{
+      "{team_a_name.lower()}": {{
+        "team_name": "{team_a_name}",
+        "team_color": "{team_a_color}",
+        "strengths": ["strength1", "strength2", "strength3"],
+        "weaknesses": ["weakness1", "weakness2"],
+        "key_players": ["player1", "player2"],
+        "tactical_setup": "Formation and style description",
+        "performance_summary": "Overall performance paragraph"
+      }},
+      "{team_b_name.lower()}": {{
+        "team_name": "{team_b_name}",
+        "team_color": "{team_b_color}", 
+        "strengths": ["strength1", "strength2"],
+        "weaknesses": ["weakness1", "weakness2", "weakness3"],
+        "key_players": ["player1", "player2"],
+        "tactical_setup": "Formation and style description",
+        "performance_summary": "Overall performance paragraph"
+      }}
+    }}
   }},
-  "team_b": {{
-    "team_name": "{team_b_name}",
-    "team_color": "{team_b_color}", 
-    "strengths": ["strength1", "strength2"],
-    "weaknesses": ["weakness1", "weakness2", "weakness3"],
-    "key_players": ["player1", "player2"],
-    "tactical_setup": "Formation and style description",
-    "performance_summary": "Overall performance paragraph"
-  }},
-  "match_summary": {{
-    "final_score": "{team_a_name} X - Y {team_b_name}",
-    "key_moments": ["moment1", "moment2", "moment3"],
-    "turning_points": ["point1", "point2"],
-    "overall_narrative": "Match story paragraph"
+  "tactical": {{
+    "insights_generated": true,
+    "analysis_timestamp": "{match_id}",
+    "teams_analyzed": ["{team_a_name}", "{team_b_name}"]
   }}
 }}
 
@@ -230,6 +239,7 @@ RULES:
 4. Make descriptions coach-friendly and actionable
 5. Extract final score with actual team names from summary
 6. If specific players aren't mentioned, use generic descriptions
+7. CRITICAL: Use this exact structure - webapp expects "analysis" and "tactical" keys
 
 Return ONLY the JSON object, no other text.
 """

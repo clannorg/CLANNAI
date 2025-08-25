@@ -1,57 +1,69 @@
 {
-  "team_a": {
-    "team_name": "Dalkey",
-    "team_color": "white",
-    "strengths": [
-      "Strong possession-based play",
-      "Good attacking buildup into opponent's half",
-      "Generated numerous shot opportunities"
-    ],
-    "weaknesses": [
-      "Poor finishing; inability to convert chances",
-      "Susceptible to counter-attacks",
-      "Lack of clinical edge in final third"
-    ],
-    "key_players": [
-      "Attacking midfielders driving possession",
-      "Goalkeeper making multiple saves"
-    ],
-    "tactical_setup": "Emphasis on building attacks from the back with a focus on possession and moving the ball into Corduff's territory.",
-    "performance_summary": "Dalkey dominated possession and created numerous chances but failed to convert them, ultimately costing them the match. Their inability to finish and susceptibility to counter-attacks were key weaknesses."
+  "analysis": {
+    "match_summary": {
+      "final_score": "Dalkey 0 - 2 Corduff",
+      "story": "Corduff secured a 2-0 victory over Dalkey despite being out-possessed and out-shot. Corduff's clinical finishing and strong defensive display proved decisive, while Dalkey's inability to convert their chances ultimately cost them the match.",
+      "key_moments": [
+        "Corduff's free-kick goal in the 36th minute",
+        "Corduff's second goal from a through pass in the 84th minute",
+        "Dalkey's missed scoring opportunities throughout the match"
+      ],
+      "turning_points": [
+        "Corduff's opening goal shifted momentum",
+        "Corduff's defensive resilience frustrated Dalkey"
+      ]
+    },
+    "team_analysis": {
+      "dalkey": {
+        "team_name": "Dalkey",
+        "team_color": "white",
+        "strengths": [
+          "Strong possession-based play",
+          "Good attacking buildup into opponent's half",
+          "Generated numerous shot opportunities"
+        ],
+        "weaknesses": [
+          "Poor finishing; inability to convert chances",
+          "Susceptible to counter-attacks",
+          "Lack of clinical edge in final third"
+        ],
+        "key_players": [
+          "Attacking midfielders driving possession",
+          "Goalkeeper making multiple saves"
+        ],
+        "tactical_setup": "Emphasis on building attacks from the back with a focus on possession and moving the ball into Corduff's territory.",
+        "performance_summary": "Dalkey dominated possession and created numerous chances but failed to convert them, ultimately costing them the match. Their inability to finish and susceptibility to counter-attacks were key weaknesses."
+      },
+      "corduff": {
+        "team_name": "Corduff",
+        "team_color": "red",
+        "strengths": [
+          "Efficient finishing; scored from limited chances",
+          "Strong set-piece threat (direct free kick goal)",
+          "Aggressive defending and interceptions in midfield",
+          "Effective counter-attacking"
+        ],
+        "weaknesses": [
+          "Relied on direct attacks more than sustained pressure",
+          "Could be vulnerable to sustained possession",
+          "Potentially relies on set pieces"
+        ],
+        "key_players": [
+          "Free-kick specialist",
+          "Midfielders winning possession",
+          "Forward making runs behind Dalkey's defence"
+        ],
+        "tactical_setup": "A more direct approach, focusing on winning possession in midfield, launching quick counter-attacks, and capitalizing on set-piece opportunities.",
+        "performance_summary": "Corduff capitalized on their limited chances with clinical finishing and strong defensive work, securing a 2-0 victory despite Dalkey's dominance in possession. Their set-piece threat and counter-attacking efficiency proved decisive."
+      }
+    }
   },
-  "team_b": {
-    "team_name": "Corduff",
-    "team_color": "red",
-    "strengths": [
-      "Efficient finishing; scored from limited chances",
-      "Strong set-piece threat (direct free kick goal)",
-      "Aggressive defending and interceptions in midfield",
-      "Effective counter-attacking"
-    ],
-    "weaknesses": [
-      "Relied on direct attacks more than sustained pressure",
-      "Could be vulnerable to sustained possession",
-      "Potentially relies on set pieces"
-    ],
-    "key_players": [
-      "Free-kick specialist",
-      "Midfielders winning possession",
-      "Forward making runs behind Dalkey's defence"
-    ],
-    "tactical_setup": "A more direct approach, focusing on winning possession in midfield, launching quick counter-attacks, and capitalizing on set-piece opportunities.",
-    "performance_summary": "Corduff capitalized on their limited chances with clinical finishing and strong defensive work, securing a 2-0 victory despite Dalkey's dominance in possession. Their set-piece threat and counter-attacking efficiency proved decisive."
-  },
-  "match_summary": {
-    "final_score": "Dalkey 0 - 2 Corduff",
-    "key_moments": [
-      "Corduff's free-kick goal in the 36th minute",
-      "Corduff's second goal from a through pass in the 84th minute",
-      "Dalkey's missed scoring opportunities throughout the match"
-    ],
-    "turning_points": [
-      "Corduff's opening goal shifted momentum",
-      "Corduff's defensive resilience frustrated Dalkey"
-    ],
-    "overall_narrative": "Corduff secured a 2-0 victory over Dalkey despite being out-possessed and out-shot. Corduff's clinical finishing and strong defensive display proved decisive, while Dalkey's inability to convert their chances ultimately cost them the match."
+  "tactical": {
+    "insights_generated": true,
+    "analysis_timestamp": "20250427-match-apr-27-2025-9bd1cf29",
+    "teams_analyzed": [
+      "Dalkey",
+      "Corduff"
+    ]
   }
 }
