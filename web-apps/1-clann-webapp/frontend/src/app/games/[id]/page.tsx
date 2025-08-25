@@ -267,28 +267,72 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
 
   // Load events from API (handles both ai_analysis and events_modified)
   const [allEvents, setAllEvents] = useState<GameEvent[]>([])
+  const [deletedEvents, setDeletedEvents] = useState<Set<number>>(new Set())
   
   useEffect(() => {
     const loadEvents = async () => {
       try {
-        const response = await apiClient.getGameEvents(gameId)
-        const events = response.events || []
-        setAllEvents(events)
+        // For demo games, use the ai_analysis data directly (it's already loaded)
+        if (game?.is_demo && game?.ai_analysis?.events) {
+          console.log('📊 Using demo game events from ai_analysis')
+          const events = game.ai_analysis.events
+          setAllEvents(events)
         
-        // Restore padding data from stored events
-        const newPaddings = new Map<number, { beforePadding: number, afterPadding: number }>()
-        events.forEach((event: any, index: number) => {
-          if (event.beforePadding !== undefined || event.afterPadding !== undefined) {
-            newPaddings.set(index, {
-              beforePadding: event.beforePadding || 5,
-              afterPadding: event.afterPadding || 3
-            })
-          }
-        })
-        setEventPaddings(newPaddings)
-        
-        console.log('📊 Events loaded:', events.length, 'events', response.is_modified ? '(modified)' : '(original)')
-        console.log('📏 Padding data restored for', newPaddings.size, 'events')
+          // Restore padding data and deleted status from stored events
+          const newPaddings = new Map<number, { beforePadding: number, afterPadding: number }>()
+          const deletedEventIndices = new Set<number>()
+          
+          events.forEach((event: any, index: number) => {
+            // Restore padding data
+            if (event.beforePadding !== undefined || event.afterPadding !== undefined) {
+              newPaddings.set(index, {
+                beforePadding: event.beforePadding || 5,
+                afterPadding: event.afterPadding || 3
+              })
+            }
+            
+            // Restore deleted status
+            if (event.isDeleted) {
+              deletedEventIndices.add(index)
+            }
+          })
+          
+          setEventPaddings(newPaddings)
+          setDeletedEvents(deletedEventIndices)
+          
+          console.log('📊 Demo events loaded:', events.length, 'events from ai_analysis')
+          console.log('📏 Padding data restored for', newPaddings.size, 'events')
+        } else {
+          // For non-demo games, use the events API
+          const response = await apiClient.getGameEvents(gameId)
+          const events = response.events || []
+          setAllEvents(events)
+          
+          // Restore padding data and deleted status from stored events
+          const newPaddings = new Map<number, { beforePadding: number, afterPadding: number }>()
+          const deletedEventIndices = new Set<number>()
+          
+          events.forEach((event: any, index: number) => {
+            // Restore padding data
+            if (event.beforePadding !== undefined || event.afterPadding !== undefined) {
+              newPaddings.set(index, {
+                beforePadding: event.beforePadding || 5,
+                afterPadding: event.afterPadding || 3
+              })
+            }
+            
+            // Restore deleted status
+            if (event.isDeleted) {
+              deletedEventIndices.add(index)
+            }
+          })
+          
+          setEventPaddings(newPaddings)
+          setDeletedEvents(deletedEventIndices)
+          
+          console.log('📊 Events loaded:', events.length, 'events', response.is_modified ? '(modified)' : '(original)')
+          console.log('📏 Padding data restored for', newPaddings.size, 'events')
+        }
       } catch (error) {
         console.error('Failed to load events:', error)
         // Fallback to game.ai_analysis
@@ -298,6 +342,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
         setAllEvents(fallbackEvents)
         // Clear padding data on fallback
         setEventPaddings(new Map())
+        setDeletedEvents(new Set())
       }
     }
     
@@ -534,6 +579,7 @@ const GameViewContent: React.FC<{ game: Game }> = ({ game }) => {
           eventPaddings={eventPaddings}
           onEventPaddingsChange={setEventPaddings}
           onEventsUpdate={handleEventsUpdate}
+          deletedEvents={deletedEvents}
       />
         </div>
       )}

@@ -236,6 +236,196 @@ router.get('/demo', authenticateToken, async (req, res) => {
   }
 });
 
+// Test endpoint for local development (no auth required)
+router.get('/demo-test', async (req, res) => {
+  try {
+    const demoGames = await getDemoGames();
+
+    res.json({
+      games: demoGames.map(game => ({
+        id: game.id,
+        title: game.title,
+        description: game.description,
+        video_url: game.video_url,
+        s3_key: game.s3_key,
+        status: game.status,
+        ai_analysis: game.ai_analysis,
+        tactical_analysis: game.tactical_analysis,
+        team_id: game.team_id,
+        team_name: game.team_name,
+        team_color: game.team_color,
+        is_demo: true,
+        created_at: game.created_at,
+        updated_at: game.updated_at,
+        has_analysis: !!game.ai_analysis
+      }))
+    });
+  } catch (error) {
+    console.error('Get demo games error:', error);
+    res.status(500).json({ error: 'Failed to get demo games' });
+  }
+});
+
+// All games endpoint for local development (no auth required)
+router.get('/all-test', async (req, res) => {
+  try {
+    const { Pool } = require('pg');
+    const isAWSRDS = process.env.DATABASE_URL && process.env.DATABASE_URL.includes('rds.amazonaws.com');
+    const pool = new Pool({
+      connectionString: process.env.DATABASE_URL || `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
+      ssl: isAWSRDS ? { rejectUnauthorized: false } : false
+    });
+
+    const result = await pool.query(`
+      SELECT * FROM games 
+      ORDER BY created_at DESC 
+      LIMIT 20
+    `);
+
+    await pool.end();
+
+    res.json({
+      games: result.rows.map(game => ({
+        id: game.id,
+        title: game.title,
+        description: game.description,
+        video_url: game.video_url,
+        s3_key: game.s3_key,
+        status: game.status,
+        ai_analysis: game.ai_analysis,
+        tactical_analysis: game.tactical_analysis,
+        team_id: game.team_id,
+        team_name: game.team_name,
+        team_color: game.team_color,
+        is_demo: game.is_demo,
+        created_at: game.created_at,
+        updated_at: game.updated_at,
+        has_analysis: !!game.ai_analysis
+      }))
+    });
+  } catch (error) {
+    console.error('Get all games error:', error);
+    res.status(500).json({ error: 'Failed to get all games' });
+  }
+});
+
+// Test upload endpoints for local development (no auth required)
+router.post('/:id/upload-analysis-file-test', async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { s3Key, originalFilename, fileType } = req.body;
+
+    if (!s3Key) {
+      return res.status(400).json({ error: 'S3 key is required' });
+    }
+
+    console.log(`📊 Test upload: ${fileType} for game ${gameId}`);
+    
+    // Fetch events from S3 and save to database
+    if (fileType === 'events') {
+      const axios = require('axios');
+      console.log('📥 Fetching events from:', s3Key);
+      
+      const eventsResponse = await axios.get(s3Key, {
+        responseType: 'text'
+      });
+      
+      let eventsData = eventsResponse.data;
+      if (typeof eventsData === 'string') {
+        eventsData = JSON.parse(eventsData);
+      }
+      
+      console.log(`📊 Fetched ${eventsData.length} events`);
+      
+      // Update game with events
+      const updatedGame = await updateGame(gameId, {
+        ai_analysis: JSON.stringify({ events: eventsData }),
+        status: 'analyzed'
+      });
+      
+      if (!updatedGame) {
+        return res.status(404).json({ error: 'Game not found' });
+      }
+      
+      console.log('✅ Events saved to database');
+    }
+    
+    res.json({
+      message: 'Events uploaded and saved successfully',
+      game: { id: gameId },
+      fileType: fileType
+    });
+  } catch (error) {
+    console.error('Test upload error:', error);
+    res.status(500).json({ error: 'Failed to upload file: ' + error.message });
+  }
+});
+
+router.post('/:id/upload-tactical-test', async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { s3Key, originalFilename, fileType } = req.body;
+
+    if (!s3Key) {
+      return res.status(400).json({ error: 'S3 key is required' });
+    }
+
+    console.log(`🧠 Test tactical upload for game ${gameId}`);
+    
+    // Fetch tactical analysis from S3 and save to database
+    const axios = require('axios');
+    console.log('📥 Fetching tactical analysis from:', s3Key);
+    
+    const analysisResponse = await axios.get(s3Key, {
+      responseType: 'text'
+    });
+    
+    let analysisData = analysisResponse.data;
+    if (typeof analysisData === 'string') {
+      analysisData = JSON.parse(analysisData);
+    }
+    
+    console.log('📊 Fetched tactical analysis with keys:', Object.keys(analysisData));
+    
+    // Update game with tactical analysis
+    const updatedGame = await updateGame(gameId, {
+      tactical_analysis: JSON.stringify(analysisData)
+    });
+    
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+    
+    console.log('✅ Tactical analysis saved to database');
+    
+    res.json({
+      message: 'Tactical analysis uploaded and saved successfully',
+      game: { id: gameId }
+    });
+  } catch (error) {
+    console.error('Test tactical upload error:', error);
+    res.status(500).json({ error: 'Failed to upload tactical file: ' + error.message });
+  }
+});
+
+router.put('/:id/test', async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const updateData = req.body;
+
+    console.log(`🔄 Test update game ${gameId}`);
+    
+    // For now, just return success for testing
+    res.json({
+      message: 'Test game update successful',
+      game: { id: gameId }
+    });
+  } catch (error) {
+    console.error('Test update error:', error);
+    res.status(500).json({ error: 'Failed to update game' });
+  }
+});
+
 // Get single game by ID (for game viewing page)
 router.get('/:id', authenticateToken, async (req, res) => {
   try {
@@ -366,7 +556,15 @@ router.get('/:id/events', authenticateToken, async (req, res) => {
     }
     
     // Return modified events if they exist, otherwise AI events
-    const events = game.events_modified || game.ai_analysis || [];
+    let events = [];
+    if (game.events_modified) {
+      events = game.events_modified;
+    } else if (game.ai_analysis) {
+      // Handle both array format and object format
+      events = Array.isArray(game.ai_analysis) 
+        ? game.ai_analysis 
+        : (game.ai_analysis.events || []);
+    }
     const isModified = !!game.events_modified;
     
     res.json({
@@ -1207,6 +1405,37 @@ router.put('/:id/status', [authenticateToken, requireCompanyRole], async (req, r
   } catch (error) {
     console.error('Update status error:', error);
     res.status(500).json({ error: 'Failed to update game status' });
+  }
+});
+
+// Update game metadata (for auto-upload script)
+router.put('/:id', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const updateData = req.body;
+
+    console.log(`🔄 Updating game ${gameId} with:`, Object.keys(updateData));
+
+    const updatedGame = await updateGame(gameId, updateData);
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      message: 'Game updated successfully',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        status: updatedGame.status,
+        video_url: updatedGame.video_url,
+        metadata: updatedGame.metadata,
+        updated_at: updatedGame.updated_at
+      }
+    });
+  } catch (error) {
+    console.error('Update game error:', error);
+    res.status(500).json({ error: 'Failed to update game' });
   }
 });
 

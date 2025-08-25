@@ -97,6 +97,9 @@ interface UnifiedSidebarProps {
   
   // Events update callback for edit mode
   onEventsUpdate?: (events: GameEvent[]) => void
+  
+  // Deleted events from database
+  deletedEvents?: Set<number>
 }
 
 type TabType = 'events' | 'ai' | 'insights' | 'players'
@@ -129,7 +132,8 @@ export default function UnifiedSidebar({
   onAutoplayChange,
   eventPaddings,
   onEventPaddingsChange,
-  onEventsUpdate
+  onEventsUpdate,
+  deletedEvents
 }: UnifiedSidebarProps) {
   // Auto-open AI Coach by default (mobile and desktop)
   const [internalActiveTab, setInternalActiveTab] = useState<TabType>('ai')
@@ -327,6 +331,14 @@ export default function UnifiedSidebar({
   const [binnedEvents, setBinnedEvents] = useState<Set<number>>(new Set())
   const [isSavingEvents, setIsSavingEvents] = useState(false)
   
+  // Initialize binnedEvents with deletedEvents from props (restored from database)
+  useEffect(() => {
+    if (deletedEvents && deletedEvents.size > 0) {
+      setBinnedEvents(deletedEvents)
+      console.log('🗑️ Restored deleted events from database:', deletedEvents.size)
+    }
+  }, [deletedEvents])
+  
   // Event editing state
   const [editingEventIndex, setEditingEventIndex] = useState<number | null>(null)
   const [editingEvent, setEditingEvent] = useState<GameEvent | null>(null)
@@ -361,7 +373,7 @@ export default function UnifiedSidebar({
         console.error('❌ Error auto-saving padding changes:', error)
       }
     }, 1000)
-  }, [gameId, allEvents, eventPaddings, isSavingEvents])
+  }, [gameId, allEvents, eventPaddings, isSavingEvents, binnedEvents])
   
   // New event creation state
   const [isCreatingEvent, setIsCreatingEvent] = useState(false)
@@ -411,8 +423,8 @@ export default function UnifiedSidebar({
     newSelected.delete(eventIndex)
     updateSelectedEvents(newSelected)
     
-    // Save to database
-    await saveModifiedEvents()
+    // Save to database with updated binned events
+    await saveModifiedEventsWithBinned(newBinned)
   }
   
   const handleUnbinEvent = async (eventIndex: number) => {
@@ -420,8 +432,8 @@ export default function UnifiedSidebar({
     newBinned.delete(eventIndex)
     setBinnedEvents(newBinned)
     
-    // Save to database
-    await saveModifiedEvents()
+    // Save to database with updated binned events
+    await saveModifiedEventsWithBinned(newBinned)
   }
 
   // Event editing functions
@@ -479,7 +491,7 @@ export default function UnifiedSidebar({
     
     setIsSavingEvents(true)
     try {
-      // Create modified events array (filter out binned events)
+      // Create modified events array with deleted status tracking
       const modifiedEvents = allEvents
         .map((event, index) => {
           // Get padding for this event (use defaults if not set)
@@ -489,13 +501,43 @@ export default function UnifiedSidebar({
             ...event, 
             originalIndex: index,
             beforePadding: padding.beforePadding,
-            afterPadding: padding.afterPadding
+            afterPadding: padding.afterPadding,
+            isDeleted: binnedEvents.has(index) // Track deleted status
           }
         })
-        .filter((_, index) => !binnedEvents.has(index))
       
       await apiClient.saveModifiedEvents(gameId, modifiedEvents)
-      console.log('✅ Modified events saved successfully (including padding)')
+      console.log('✅ Modified events saved successfully (including padding and deleted status)')
+    } catch (error) {
+      console.error('❌ Error saving modified events:', error)
+      alert('Failed to save changes. Please try again.')
+    } finally {
+      setIsSavingEvents(false)
+    }
+  }
+
+  const saveModifiedEventsWithBinned = async (currentBinnedEvents: Set<number>) => {
+    if (!gameId || isSavingEvents) return
+    
+    setIsSavingEvents(true)
+    try {
+      // Create modified events array with current binned events state
+      const modifiedEvents = allEvents
+        .map((event, index) => {
+          // Get padding for this event (use defaults if not set)
+          const padding = eventPaddings.get(index) || { beforePadding: 5, afterPadding: 3 }
+          
+          return { 
+            ...event, 
+            originalIndex: index,
+            beforePadding: padding.beforePadding,
+            afterPadding: padding.afterPadding,
+            isDeleted: currentBinnedEvents.has(index) // Use current binned state
+          }
+        })
+      
+      await apiClient.saveModifiedEvents(gameId, modifiedEvents)
+      console.log('✅ Modified events saved successfully with current deleted status')
     } catch (error) {
       console.error('❌ Error saving modified events:', error)
       alert('Failed to save changes. Please try again.')
@@ -1837,10 +1879,7 @@ export default function UnifiedSidebar({
                 tacticalLoading={tacticalLoading} 
                 gameId={gameId}
                 onSeekToTimestamp={onSeekToTimestamp}
-                game={{
-                  ...game,
-                  ai_analysis: allEvents
-                }}
+                game={game}
               />
             </div>
           </div>

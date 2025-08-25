@@ -227,7 +227,9 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
   }
 
   // Extract evidence-based stats from game events
-  const gameEvents = game?.ai_analysis || []
+  const gameEvents = Array.isArray(game?.ai_analysis) 
+    ? game.ai_analysis 
+    : (game?.ai_analysis?.events || [])
   
   // Get the user's team (the team that owns this game)
   const userTeamName = game?.team_name || ''
