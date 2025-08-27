@@ -108,7 +108,7 @@ def upload_events(game_id, events_url, auth_token, base_url="http://localhost:30
 def upload_tactical(game_id, tactical_url, auth_token, base_url="http://localhost:3001"):
     """Upload tactical analysis via API"""
     if auth_token is None:
-        # Use test endpoint (no auth required)
+        # Use improved test endpoint (no auth required, now updates tactical_files properly)
         url = f"{base_url}/api/games/{game_id}/upload-tactical-test"
         headers = {'Content-Type': 'application/json'}
     else:
@@ -143,6 +143,44 @@ def upload_tactical(game_id, tactical_url, auth_token, base_url="http://localhos
             
     except Exception as e:
         print(f"❌ Tactical upload error: {e}")
+        return False
+
+def upload_metadata(game_id, metadata_url, auth_token, base_url="http://localhost:3001"):
+    """Upload metadata JSON via API"""
+    if auth_token is None:
+        # Use test endpoint (no auth required)
+        url = f"{base_url}/api/games/{game_id}/upload-metadata-test"
+        headers = {'Content-Type': 'application/json'}
+    else:
+        # Use regular endpoint (auth required)
+        url = f"{base_url}/api/games/{game_id}/upload-metadata"
+        headers = {
+            'Authorization': f'Bearer {auth_token}',
+            'Content-Type': 'application/json'
+        }
+    
+    filename = metadata_url.split('/')[-1]
+    
+    payload = {
+        'metadataUrl': metadata_url
+    }
+    
+    print(f"📤 Uploading metadata: {filename}")
+    print(f"🔗 URL: {metadata_url}")
+    
+    try:
+        response = requests.post(url, json=payload, headers=headers)
+        
+        if response.status_code == 200:
+            print(f"✅ Metadata uploaded successfully")
+            return True
+        else:
+            print(f"❌ Metadata upload failed: {response.status_code}")
+            print(f"Error: {response.text}")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Metadata upload error: {e}")
         return False
 
 def upload_video(game_id, video_url, auth_token, base_url="http://localhost:3001"):
@@ -226,6 +264,14 @@ def main():
             success_count += 1
     else:
         print("⚠️  No web_events_array_json found in S3 locations")
+    
+    # Upload metadata JSON (if available)
+    if 'match_metadata_json' in core_files:
+        total_uploads += 1
+        if upload_metadata(game_id, core_files['match_metadata_json'], auth_token, base_url):
+            success_count += 1
+    else:
+        print("⚠️  No match_metadata_json found in S3 locations")
     
     # Upload tactical analysis (if available)
     if 'tactical_analysis_json' in core_files:

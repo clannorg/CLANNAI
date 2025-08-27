@@ -157,6 +157,35 @@ export default function CompanyDashboard() {
     }
   }
 
+  const handleClearFile = async (game: Game, fileType: 'video' | 'chunks' | 'events' | 'analysis' | 'metadata' | 'tactical') => {
+    if (!confirm(`Clear ${fileType} file for "${game.title}"?\n\nThis will remove the current ${fileType} URL and data.`)) {
+      return
+    }
+
+    try {
+      setUpdating(true)
+      setError('')
+      
+      // Call appropriate clear endpoint based on file type
+      const endpoint = `/api/games/${game.id}/clear-${fileType}`
+      await fetch(`${API_BASE_URL}${endpoint}`, {
+        method: 'DELETE',
+        headers: { 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${localStorage.getItem('token')}` 
+        }
+      })
+      
+      console.log(`🗑️ ${fileType} cleared for game: ${game.title}`)
+      await loadDashboardData()
+    } catch (err: any) {
+      console.error(`Failed to clear ${fileType}:`, err)
+      setError(err.message || `Failed to clear ${fileType}`)
+    } finally {
+      setUpdating(false)
+    }
+  }
+
 
 
   // Video upload handler
@@ -548,6 +577,16 @@ export default function CompanyDashboard() {
                             >
                               Save
                             </button>
+                            {game.s3_key && (
+                              <button
+                                className="bg-red-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-red-700 transition-colors"
+                                onClick={() => handleClearFile(game, 'video')}
+                                disabled={updating}
+                                title="Clear video file"
+                              >
+                                Clear
+                              </button>
+                            )}
                           </div>
                           {game.s3_key && (
                             <div className="ml-20 pl-2">
@@ -591,6 +630,16 @@ export default function CompanyDashboard() {
                             >
                               Save
                             </button>
+                            {game.chunks_base_url && (
+                              <button
+                                className="bg-red-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-red-700 transition-colors"
+                                onClick={() => handleClearFile(game, 'chunks')}
+                                disabled={updating}
+                                title="Clear chunks URL"
+                              >
+                                Clear
+                              </button>
+                            )}
                           </div>
                           {game.chunks_base_url && (
                             <div className="ml-20 pl-2">
@@ -634,6 +683,16 @@ export default function CompanyDashboard() {
                             >
                               Save
                             </button>
+                            {game.events_url && (
+                              <button
+                                className="bg-red-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-red-700 transition-colors"
+                                onClick={() => handleClearFile(game, 'events')}
+                                disabled={updating}
+                                title="Clear events file"
+                              >
+                                Clear
+                              </button>
+                            )}
                           </div>
                           {game.events_url && (
                             <div className="ml-20 pl-2">
@@ -676,6 +735,16 @@ export default function CompanyDashboard() {
                           >
                             Save
                           </button>
+                          {game.has_analysis && (
+                            <button
+                              className="bg-red-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-red-700 transition-colors"
+                              onClick={() => handleClearFile(game, 'analysis')}
+                              disabled={updating}
+                              title="Clear analysis file"
+                            >
+                              Clear
+                            </button>
+                          )}
                         </div>
 
                         {/* Metadata URL Input */}
@@ -709,6 +778,16 @@ export default function CompanyDashboard() {
                           >
                             Save
                           </button>
+                          {game.metadata_url && (
+                            <button
+                              className="bg-red-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-red-700 transition-colors"
+                              onClick={() => handleClearFile(game, 'metadata')}
+                              disabled={updating}
+                              title="Clear metadata file"
+                            >
+                              Clear
+                            </button>
+                          )}
                         </div>
 
                         {/* Show Metadata Location if uploaded */}
@@ -747,6 +826,8 @@ export default function CompanyDashboard() {
                             Mark as {game.status === 'pending' ? 'Analyzed' : 'Pending'}
                           </button>
                         </div>
+
+
 
                         {/* Events Management - Enhanced */}
                         <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-4 border border-gray-200">

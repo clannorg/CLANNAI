@@ -387,20 +387,89 @@ router.post('/:id/upload-tactical-test', async (req, res) => {
     
     console.log('📊 Fetched tactical analysis with keys:', Object.keys(analysisData));
     
-    // Update game with tactical analysis
+    // Get current game and metadata
+    const currentGame = await getGameById(gameId);
+    if (!currentGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    const currentMetadata = currentGame.metadata || {};
+    const tacticalFiles = currentMetadata.tactical_files || {};
+    
+    // Determine file type from filename
+    let tacticalType = fileType || 'general';
+    if (originalFilename) {
+      const filename = originalFilename.toLowerCase();
+      if (filename.includes('red_team')) tacticalType = 'red_team';
+      else if (filename.includes('yellow_team')) tacticalType = 'yellow_team';
+      else if (filename.includes('coaching') || filename.includes('insights')) tacticalType = 'coaching_insights';
+      else if (filename.includes('summary')) tacticalType = 'match_summary';
+      else if (filename.includes('tactical_analysis')) tacticalType = 'tactical_analysis';
+    }
+
+    // Update tactical_files in metadata
+    tacticalFiles[tacticalType] = {
+      url: s3Key,
+      filename: originalFilename || 'tactical_analysis.json',
+      uploaded_at: new Date().toISOString()
+    };
+
+    // Always keep a canonical pointer to the latest tactical file
+    tacticalFiles.latest = {
+      url: s3Key,
+      filename: originalFilename || 'tactical_analysis.json',
+      uploaded_at: new Date().toISOString()
+    };
+
+    // Transform data structure to match frontend expectations
+    const transformedData = {
+      tactical: {},
+      analysis: {}
+    };
+
+    // Handle both nested (tactical_analysis.red_team) and direct (red_team) structures
+    let tacticalData = analysisData;
+    if (analysisData.tactical_analysis) {
+      tacticalData = analysisData.tactical_analysis;
+    }
+    
+    // Transform team data if it exists
+    if (tacticalData.red_team) {
+      transformedData.tactical.red_team = tacticalData.red_team;
+    }
+    if (tacticalData.blue_team) {
+      transformedData.tactical.blue_team = tacticalData.blue_team;
+    }
+    if (tacticalData.match_summary) {
+      transformedData.analysis.match_summary = tacticalData.match_summary;
+    }
+    if (tacticalData.recommendations) {
+      transformedData.analysis.recommendations = tacticalData.recommendations;
+    }
+    
+    // Update game with both tactical analysis and metadata
     const updatedGame = await updateGame(gameId, {
-      tactical_analysis: JSON.stringify(analysisData)
+      tactical_analysis: JSON.stringify(transformedData),
+      metadata: {
+        ...currentMetadata,
+        tactical_files: tacticalFiles
+      },
+      status: 'analyzed'
     });
     
     if (!updatedGame) {
       return res.status(404).json({ error: 'Game not found' });
     }
     
-    console.log('✅ Tactical analysis saved to database');
+    console.log('✅ Tactical analysis and tactical_files saved to database');
     
     res.json({
       message: 'Tactical analysis uploaded and saved successfully',
-      game: { id: gameId }
+      game: { 
+        id: gameId,
+        tactical_type: tacticalType,
+        has_tactical: true
+      }
     });
   } catch (error) {
     console.error('Test tactical upload error:', error);
@@ -1552,6 +1621,212 @@ router.post('/upload/confirm', authenticateToken, async (req, res) => {
   } catch (error) {
     console.error('Upload confirmation error:', error);
     res.status(500).json({ error: 'Failed to confirm upload' });
+  }
+});
+
+// Upload metadata JSON (test endpoint - no auth required)
+router.post('/:id/upload-metadata-test', async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { metadataUrl } = req.body;
+
+    if (!metadataUrl) {
+      return res.status(400).json({ error: 'Metadata URL is required' });
+    }
+
+    // Fetch metadata from S3 URL
+    const axios = require('axios');
+    console.log('📥 Fetching metadata from:', metadataUrl);
+    const metadataResponse = await axios.get(metadataUrl, {
+      responseType: 'text'
+    });
+    
+    let metadataData = metadataResponse.data;
+    
+    // Handle different response types
+    if (typeof metadataData === 'string') {
+      try {
+        metadataData = JSON.parse(metadataData);
+      } catch (parseError) {
+        console.error('Failed to parse metadata JSON:', parseError);
+        return res.status(400).json({ error: 'Invalid JSON format in metadata file' });
+      }
+    }
+    
+    console.log('📊 Fetched metadata with keys:', Object.keys(metadataData));
+
+    // Update game with metadata
+    const updatedGame = await updateGame(gameId, {
+      metadata: metadataData,
+      metadata_url: metadataUrl
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      message: 'Metadata uploaded successfully (test mode)',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        metadata_url: metadataUrl,
+        updated_at: updatedGame.updated_at
+      }
+    });
+  } catch (error) {
+    console.error('Test metadata upload error:', error);
+    res.status(500).json({ error: 'Failed to upload metadata: ' + error.message });
+  }
+});
+
+// Clear individual file types (company only)
+router.delete('/:id/clear-video', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const updatedGame = await updateGame(gameId, { 
+      s3_key: null,
+      video_url: null 
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      success: true,
+      message: 'Video file cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear video error:', error);
+    res.status(500).json({ error: 'Failed to clear video file' });
+  }
+});
+
+router.delete('/:id/clear-chunks', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const updatedGame = await updateGame(gameId, { 
+      chunks_base_url: null 
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      success: true,
+      message: 'Chunks URL cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear chunks error:', error);
+    res.status(500).json({ error: 'Failed to clear chunks URL' });
+  }
+});
+
+router.delete('/:id/clear-events', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+    
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    // Clear events data and metadata
+    const currentMetadata = game.metadata || {};
+    if (currentMetadata.events_files) {
+      delete currentMetadata.events_files;
+    }
+
+    const updatedGame = await updateGame(gameId, { 
+      ai_analysis: null,
+      events_modified: null,
+      events_last_modified_by: null,
+      events_last_modified_at: null,
+      metadata: currentMetadata
+    });
+
+    res.json({
+      success: true,
+      message: 'Events file cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear events error:', error);
+    res.status(500).json({ error: 'Failed to clear events file' });
+  }
+});
+
+router.delete('/:id/clear-analysis', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const updatedGame = await updateGame(gameId, { 
+      ai_analysis: null 
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      success: true,
+      message: 'Analysis file cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear analysis error:', error);
+    res.status(500).json({ error: 'Failed to clear analysis file' });
+  }
+});
+
+router.delete('/:id/clear-metadata', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const updatedGame = await updateGame(gameId, { 
+      metadata: null,
+      metadata_url: null 
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      success: true,
+      message: 'Metadata file cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear metadata error:', error);
+    res.status(500).json({ error: 'Failed to clear metadata file' });
+  }
+});
+
+router.delete('/:id/clear-tactical', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+    
+    if (!game) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    // Clear tactical data and metadata
+    const currentMetadata = game.metadata || {};
+    if (currentMetadata.tactical_files) {
+      delete currentMetadata.tactical_files;
+    }
+
+    const updatedGame = await updateGame(gameId, { 
+      tactical_analysis: null,
+      metadata: currentMetadata
+    });
+
+    res.json({
+      success: true,
+      message: 'Tactical analysis cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear tactical error:', error);
+    res.status(500).json({ error: 'Failed to clear tactical analysis' });
   }
 });
 
