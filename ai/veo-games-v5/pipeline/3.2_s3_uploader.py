@@ -227,7 +227,7 @@ def upload_match_to_s3(match_id):
             s3_locations["upload_summary"]["failed_uploads"] += 1
     
     # Save S3 locations tracker
-    s3_locations_file = data_dir / "s3_locations.json"
+    s3_locations_file = data_dir / "3.2_s3_locations.json"
     try:
         with open(s3_locations_file, 'w') as f:
             json.dump(s3_locations, f, indent=2)
@@ -247,17 +247,17 @@ def upload_match_to_s3(match_id):
         
         # Core file mapping for website (essential files only)
         core_file_mapping = {
-            "web_events_array_json": "web_events_array.json",  # Main events file
+            "web_events_array_json": "3.1_web_events_array.json",  # Main events file
             "video_mp4": "video.mp4",                          # Match video
-            "match_metadata_json": "match_metadata.json",       # Final score, teams
-            "11_tactical_analysis_json": "11_tactical_analysis.json"  # Coaching insights
+            "match_metadata_json": "3.1_match_metadata.json",       # Final score, teams
+            "team_config_json": "1_team_config.json"  # Team configuration
         }
         
         for key, filename in core_file_mapping.items():
             if filename in s3_locations["s3_urls"]:
                 core_locations["core_files"][key] = s3_locations["s3_urls"][filename]["url"]
         
-        core_locations_file = data_dir / "s3_core_locations.json"
+        core_locations_file = data_dir / "3.2_s3_core_locations.json"
         with open(core_locations_file, 'w') as f:
             json.dump(core_locations, f, indent=2)
         print(f"📋 Core locations saved to: {core_locations_file}")

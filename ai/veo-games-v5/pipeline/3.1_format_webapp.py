@@ -200,8 +200,8 @@ def main():
     match_metadata = create_match_metadata(webapp_data, match_id, team_config)
     
     # Save webapp files
-    webapp_file = outputs_dir / 'web_events_array.json'
-    metadata_file = outputs_dir / 'match_metadata.json'
+    webapp_file = outputs_dir / '3.1_web_events_array.json'
+    metadata_file = outputs_dir / '3.1_match_metadata.json'
     
     with open(webapp_file, 'w') as f:
         json.dump(webapp_data.get('timeline_events', []), f, indent=2)
@@ -210,7 +210,7 @@ def main():
         json.dump(match_metadata, f, indent=2)
     
     # Also save complete webapp data
-    complete_file = outputs_dir / 'webapp_complete.json'
+    complete_file = outputs_dir / '3.1_webapp_complete.json'
     with open(complete_file, 'w') as f:
         json.dump(webapp_data, f, indent=2)
     

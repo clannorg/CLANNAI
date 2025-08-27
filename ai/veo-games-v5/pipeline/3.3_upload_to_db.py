@@ -59,7 +59,7 @@ def upload_to_database(match_id, game_id=None):
     base_path = Path(__file__).parent.parent / "outputs" / match_id
     
     # Load S3 locations
-    s3_file = base_path / "s3_core_locations.json"
+    s3_file = base_path / "3.2_s3_core_locations.json"
     if not s3_file.exists():
         print(f"❌ S3 locations not found: {s3_file}")
         print("Run step 6 first: python 6_s3_uploader_with_clips.py <match-id>")
@@ -74,12 +74,12 @@ def upload_to_database(match_id, game_id=None):
         team_config = json.load(f)
     
     # Load match metadata
-    metadata_file = base_path / "match_metadata.json"
+    metadata_file = base_path / "3.1_match_metadata.json"
     with open(metadata_file, 'r') as f:
         match_metadata = json.load(f)
     
     print(f"✅ Loaded analysis data")
-    print(f"📄 Events URL: {s3_locations['web_events_array.json']['url']}")
+    print(f"📄 Events URL: {s3_locations['core_files']['web_events_array_json']}")
     
     # Create events array (simple version for DB)
     events = [
@@ -126,9 +126,9 @@ def upload_to_database(match_id, game_id=None):
         "v5_analysis": True,
         "s3_files": s3_locations,
         "tactical_files": {
-            "web_events_array_json": s3_locations['web_events_array.json']['url'],
-            "match_metadata_json": s3_locations['match_metadata.json']['url'],
-            "team_config_json": s3_locations['1_team_config.json']['url']
+            "web_events_array_json": s3_locations['core_files'].get('web_events_array_json', ''),
+            "match_metadata_json": s3_locations['core_files'].get('match_metadata_json', ''),
+            "team_config_json": s3_locations['core_files'].get('team_config_json', '')
         },
         "uploaded_at": datetime.now().isoformat()
     }
@@ -192,7 +192,7 @@ def upload_to_database(match_id, game_id=None):
         print(f"\n🎉 SUCCESS!")
         print(f"📊 Game ID: {final_game_id}")
         print(f"🎯 Status: analyzed")
-        print(f"📄 Events URL: {s3_locations['web_events_array.json']['url']}")
+        print(f"📄 Events URL: {s3_locations['core_files']['web_events_array_json']}")
         print(f"🌐 Game should now be visible on the website!")
         
         return True
