@@ -732,10 +732,10 @@ export default function UnifiedSidebar({
         link.click()
         document.body.removeChild(link)
         window.URL.revokeObjectURL(url)
-        
-        // Clear selection after successful download
-        updateSelectedEvents(new Map())
-        setIsCreatingClip(false)
+                
+                // Clear selection after successful download
+                updateSelectedEvents(new Map())
+              setIsCreatingClip(false)
         
       } else {
         // Unknown response format
@@ -860,6 +860,20 @@ export default function UnifiedSidebar({
           {/* Tab Navigation */}
           <div className="flex bg-gray-800/50 rounded-lg p-1 flex-1">
           <button
+            onClick={() => handleTabChange('insights')}
+            className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
+              activeTab === 'insights'
+                ? 'bg-purple-500/20 text-purple-200 border border-purple-500/30'
+                : 'text-gray-400 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span>Stats</span>
+          </button>
+
+          <button
             onClick={() => handleTabChange('events')}
             className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
               activeTab === 'events'
@@ -885,20 +899,6 @@ export default function UnifiedSidebar({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
             <span>Coach</span>
-          </button>
-
-          <button
-            onClick={() => handleTabChange('insights')}
-            className={`flex-1 flex items-center justify-center space-x-2 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 ${
-              activeTab === 'insights'
-                ? 'bg-purple-500/20 text-purple-200 border border-purple-500/30'
-                : 'text-gray-400 hover:text-white hover:bg-white/10'
-            }`}
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-            <span>Stats</span>
           </button>
 
           <button
@@ -1084,13 +1084,13 @@ export default function UnifiedSidebar({
                 <div>
                   {!isCreatingEvent && !isEditMode && (
                     <div className="grid grid-cols-2 gap-2 mb-3">
-                      {/* Autoplay Toggle */}
-                      <button
-                        onClick={() => {
-                          const newAutoplay = !autoplayEvents
-                          setAutoplayEvents(newAutoplay)
-                          onAutoplayChange?.(newAutoplay)
-                        }}
+                  {/* Autoplay Toggle */}
+                  <button
+                    onClick={() => {
+                      const newAutoplay = !autoplayEvents
+                      setAutoplayEvents(newAutoplay)
+                      onAutoplayChange?.(newAutoplay)
+                    }}
                         className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-gray-500/10 hover:bg-gray-500/20 border-gray-400/30 text-gray-300"
                       >
                         <span>Autoplay</span>
@@ -1114,7 +1114,7 @@ export default function UnifiedSidebar({
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                         </svg>
                         <span>Edit</span>
-                      </button>
+                  </button>
                     </div>
                   )}
 
@@ -1144,17 +1144,17 @@ export default function UnifiedSidebar({
                         </button>
                         
                         {/* Add Event Button - Only in Edit Mode */}
-                        <button
-                          onClick={handleStartCreatingEvent}
-                          disabled={isSavingEvents}
+                    <button
+                      onClick={handleStartCreatingEvent}
+                      disabled={isSavingEvents}
                           className="flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border-2 bg-purple-500/10 hover:bg-purple-500/20 border-purple-400/30 text-purple-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                          title="Add new event at current time"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                          </svg>
-                          <span>Add Event</span>
-                        </button>
+                      title="Add new event at current time"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                      </svg>
+                      <span>Add Event</span>
+                    </button>
                       </div>
                       
                       {/* Save & Exit Button - Full width in Edit Mode */}
@@ -1436,7 +1436,7 @@ export default function UnifiedSidebar({
                               onClick={(e) => e.stopPropagation()}
                             />
                           ) : (
-                            <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
+                          <span className="text-xs text-gray-400 font-mono">{formatTime(event.timestamp)}</span>
                           )}
                         </div>
                         
@@ -1651,7 +1651,7 @@ export default function UnifiedSidebar({
                           </div>
                 )
                 })}
-              </div>
+                    </div>
                   </div>
                 )}
               </div>
@@ -2020,8 +2020,8 @@ export default function UnifiedSidebar({
                                 }
                               }}
                             />
-                          </div>
-                        )}
+                            </div>
+                          )}
                       </div>
                     )
                   })}
