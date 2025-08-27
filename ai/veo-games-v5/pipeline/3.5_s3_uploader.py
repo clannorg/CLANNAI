@@ -103,65 +103,60 @@ def upload_match_to_s3(match_id):
         print(f"❌ Data directory not found: {data_dir}")
         return False
     
-    # Define files to upload (v2 pipeline outputs only)
+    # Define files to upload (v5 pipeline outputs only)
     upload_files = {
         # Core webapp files (highest priority)
-        "web_events.json": {
-            "s3_folder": "analysis-data",
-            "content_type": "application/json",
-            "description": "Web app compatible events timeline"
-        },
-        "web_events_array.json": {
+        "3.1_web_events_array.json": {
             "s3_folder": "analysis-data",
             "content_type": "application/json", 
-            "description": "Direct events array for web app"
+            "description": "Direct events array for web app with VEO verification"
         },
-        "match_metadata.json": {
+        "3.1_match_metadata.json": {
             "s3_folder": "analysis-data",
             "content_type": "application/json",
-            "description": "Match metadata with team colors and stats"
+            "description": "Match metadata with team colors and final score"
+        },
+        "3.1_webapp_complete.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Complete webapp data including summary"
+        },
+        "3.2_tactical_analysis.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Rich tactical analysis with team insights and recommendations"
         },
         
-        # V2 pipeline intermediate files
-        "6_validated_timeline.txt": {
+        # V5 pipeline analysis files
+        "2.5_mega_events.txt": {
             "s3_folder": "analysis-data",
             "content_type": "text/plain",
-            "description": "AI validated match timeline (goals/shots)"
+            "description": "Complete match events timeline with VEO verification"
         },
-        "6.5_accuracy_comparison.txt": {
+        "2.5_mega_tactical.txt": {
             "s3_folder": "analysis-data",
             "content_type": "text/plain",
-            "description": "AI vs VEO accuracy comparison"
+            "description": "Tactical analysis by team with strengths/weaknesses"
         },
-        "7_definite_events.txt": {
-            "s3_folder": "analysis-data", 
-            "content_type": "text/plain",
-            "description": "VEO-confirmed events only"
-        },
-        "8_other_events.txt": {
-            "s3_folder": "analysis-data",
-            "content_type": "text/plain", 
-            "description": "Fouls, cards, corners and other events"
-        },
-        "tactical_analysis.txt": {
+        "2.5_mega_summary.txt": {
             "s3_folder": "analysis-data",
             "content_type": "text/plain",
-            "description": "Complete tactical analysis using full game timeline + highlights"
+            "description": "Match summary with final score and narrative"
         },
-        "tactical_analysis.json": {
+        "2.5_mega_analysis_full.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Complete analysis file with all sections"
+        },
+        "1.6_complete_timeline.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Detailed play-by-play timeline from AI analysis"
+        },
+        "1_team_config.json": {
             "s3_folder": "analysis-data",
             "content_type": "application/json",
-            "description": "Webapp-compatible tactical analysis JSON format"
-        },
-        "sick_tactical_analysis.json": {
-            "s3_folder": "analysis-data",
-            "content_type": "application/json",
-            "description": "Interactive tactical analysis with player cards, clickable moments, and rich data"
-        },
-        "5_complete_timeline.txt": {
-            "s3_folder": "analysis-data",
-            "content_type": "text/plain",
-            "description": "Complete detailed play-by-play timeline"
+            "description": "Team configuration with names and jersey colors"
         },
         "1_veo_ground_truth.json": {
             "s3_folder": "analysis-data",
@@ -227,7 +222,7 @@ def upload_match_to_s3(match_id):
             s3_locations["upload_summary"]["failed_uploads"] += 1
     
     # Save S3 locations tracker
-    s3_locations_file = data_dir / "3.2_s3_locations.json"
+    s3_locations_file = data_dir / "3.5_s3_locations.json"
     try:
         with open(s3_locations_file, 'w') as f:
             json.dump(s3_locations, f, indent=2)
@@ -250,14 +245,19 @@ def upload_match_to_s3(match_id):
             "web_events_array_json": "3.1_web_events_array.json",  # Main events file
             "video_mp4": "video.mp4",                          # Match video
             "match_metadata_json": "3.1_match_metadata.json",       # Final score, teams
-            "team_config_json": "1_team_config.json"  # Team configuration
+            "team_config_json": "1_team_config.json",  # Team configuration
+            "webapp_complete_json": "3.1_webapp_complete.json",  # Complete webapp data
+            "tactical_analysis_json": "3.2_tactical_analysis.json",  # Rich tactical analysis
+            "mega_tactical_txt": "2.5_mega_tactical.txt",  # Tactical analysis
+            "mega_summary_txt": "2.5_mega_summary.txt",    # Match summary
+            "mega_events_txt": "2.5_mega_events.txt"       # Events timeline
         }
         
         for key, filename in core_file_mapping.items():
             if filename in s3_locations["s3_urls"]:
                 core_locations["core_files"][key] = s3_locations["s3_urls"][filename]["url"]
         
-        core_locations_file = data_dir / "3.2_s3_core_locations.json"
+        core_locations_file = data_dir / "3.5_s3_core_locations.json"
         with open(core_locations_file, 'w') as f:
             json.dump(core_locations, f, indent=2)
         print(f"📋 Core locations saved to: {core_locations_file}")

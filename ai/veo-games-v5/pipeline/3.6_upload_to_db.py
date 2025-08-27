@@ -59,7 +59,7 @@ def upload_to_database(match_id, game_id=None):
     base_path = Path(__file__).parent.parent / "outputs" / match_id
     
     # Load S3 locations
-    s3_file = base_path / "3.2_s3_core_locations.json"
+    s3_file = base_path / "3.5_s3_core_locations.json"
     if not s3_file.exists():
         print(f"❌ S3 locations not found: {s3_file}")
         print("Run step 6 first: python 6_s3_uploader_with_clips.py <match-id>")

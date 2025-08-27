@@ -1,0 +1,1812 @@
+[
+  {
+    "timestamp": 525,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff takes the kick-off to start the match.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 615,
+    "type": "goal-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 630,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 690,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a free kick from the center of the pitch.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 705,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 720,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in from the left sideline.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 746,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 765,
+    "type": "foul",
+    "team": "Corduff",
+    "description": "Foul by Corduff leads to a Dalkey free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 810,
+    "type": "penalty",
+    "team": "Dalkey",
+    "description": "Penalty kick results in a goal",
+    "excitement_level": 6,
+    "original_team_name": "white jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 876,
+    "type": "save",
+    "team": "Corduff",
+    "description": "Corduff goalkeeper catches a cross.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 915,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Ball goes out of play for a Dalkey throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 930,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Free kick crossed into the box and cleared by Corduff's defense.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 945,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Attacking free kick cleared by Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 975,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 990,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1020,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a short free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1065,
+    "type": "foul",
+    "team": "Corduff",
+    "description": "Foul committed by Corduff on Dalkey.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1080,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey prepares for a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1095,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff takes the kick-off and gains possession.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1104,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1170,
+    "type": "corner",
+    "team": "Dalkey",
+    "description": "Dalkey takes a corner kick.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1185,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a short free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1187,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1329,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Free kick awarded to Dalkey.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1335,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1352,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1395,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1425,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1455,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1470,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff takes the kick-off after a Dalkey goal",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 1485,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1515,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1527,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1562,
+    "type": "foul",
+    "team": "Dalkey",
+    "description": "Tackle by Dalkey results in a free kick for Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1575,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1580,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1611,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1635,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1650,
+    "type": "dropped-ball",
+    "team": "Corduff",
+    "description": "Play restarted with a dropped ball, Corduff gains possession.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1665,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey takes the kick-off.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1680,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1695,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a long free kick, then awarded another free kick.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1710,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey prepares for a set piece.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1740,
+    "type": "corner",
+    "team": "Dalkey",
+    "description": "Header from a corner kick goes over the bar.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1755,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a free kick into the box.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1772,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1800,
+    "type": "goal-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a long kick from their goal area.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1821,
+    "type": "foul",
+    "team": "Dalkey",
+    "description": "Foul by Dalkey results in a free kick for Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1847,
+    "type": "foul",
+    "team": "Corduff",
+    "description": "Foul awarded to Dalkey.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1875,
+    "type": "penalty",
+    "team": "Corduff",
+    "description": "Penalty kick results in a goal",
+    "excitement_level": 6,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 1905,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Free kick awarded to Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1920,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff attacks from a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1935,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Ball goes out of play for a Dalkey throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1965,
+    "type": "goal-kick",
+    "team": "Dalkey",
+    "description": "Dalkey builds up play from a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1993,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Play restarts with a Dalkey throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1995,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2010,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a long free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2092,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2135,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2162,
+    "type": "foul",
+    "team": "Corduff",
+    "description": "Foul awarded to Dalkey.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2175,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff prepares for a direct free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2187,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2190,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Free kick taken and blocked by Dalkey's defense.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2205,
+    "type": "goal",
+    "team": "Corduff",
+    "description": "Corduff celebrates a goal, Dalkey kicks off to restart.",
+    "excitement_level": 10,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2205,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off to restart play.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2220,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off and begins to build possession.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2230,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot saved by Corduff goalkeeper, second shot from rebound missed.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2250,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2265,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff prepares to restart play from the center circle.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2355,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off to start play.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2368,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Ball goes out of play for a Corduff throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2445,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey restarts play from the centre.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2475,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff prepares for kickoff after a goal",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 2490,
+    "type": "penalty",
+    "team": "Corduff",
+    "description": "Corduff prepares to take a penalty kick.",
+    "excitement_level": 6,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2505,
+    "type": "goal-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2520,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff prepares for a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2535,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2580,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a free-kick, defended by Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2599,
+    "type": "tackle",
+    "team": "Corduff",
+    "description": "Successful sliding tackle by a Corduff defender.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2625,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey is awarded a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2640,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2655,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2670,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off and builds an attack.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2700,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a free kick from their own half.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2787,
+    "type": "foul",
+    "team": "Corduff",
+    "description": "Foul by Corduff results in a free kick for Dalkey.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2790,
+    "type": "half-time",
+    "team": null,
+    "description": "Match has ended. (End of First Half)",
+    "excitement_level": 2,
+    "original_team_name": null,
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3090,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off to start the game. (Start of Second Half)",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3195,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off to start the play.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3195,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Ball goes out of play for a Dalkey throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3210,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off and maintains possession.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3225,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey takes the kick-off and maintains possession.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3270,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3288,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3314,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3330,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff takes the kick-off.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3360,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes an attacking free kick.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3375,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a short free kick.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3402,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Ball goes out of play for a Corduff throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3405,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off from the centre circle.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3460,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3480,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3495,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3525,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off and maintains possession.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3540,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a free kick from their own half.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3570,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey prepares to restart play with a kickoff.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3585,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Free kick taken into penalty area, cleared by Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3660,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3675,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a free kick from their own half.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3765,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Ball goes out of play for a Corduff throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3795,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off to start the play.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3810,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off and plays a long ball forward.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3825,
+    "type": "goal-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3870,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3915,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff takes the kickoff.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3939,
+    "type": "foul",
+    "team": "Corduff",
+    "description": "Foul by Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3945,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off and maintains possession.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3975,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off to restart the match.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3990,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey initiates play from the center.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3994,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4005,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off after a Corduff goal",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 4035,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4050,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off after a Dalkey goal",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 4065,
+    "type": "injury",
+    "team": "Corduff",
+    "description": "Stoppage in play for apparent injury to a Corduff player.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4095,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Referee signals for an indirect free kick for Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4140,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Ball goes out of play for a Dalkey throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4158,
+    "type": "yellow-card",
+    "team": "Dalkey",
+    "description": "Yellow card shown to a Dalkey player for a foul.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4155,
+    "type": "foul",
+    "team": "Dalkey",
+    "description": "Foul by Dalkey results in a free kick for Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4185,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off after a Dalkey goal",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 4200,
+    "type": "goal-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4215,
+    "type": "goal-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4230,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off from the center.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4235,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4245,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off after a Dalkey goal",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 4260,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4305,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff prepares to take a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4320,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a free kick near the penalty area.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4331,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4365,
+    "type": "foul",
+    "team": "Dalkey",
+    "description": "Foul by Dalkey results in a free kick for Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4425,
+    "type": "corner",
+    "team": "Corduff",
+    "description": "Corduff takes a short corner kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4459,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4485,
+    "type": "penalty",
+    "team": "Corduff",
+    "description": "Penalty kick results in a goal",
+    "excitement_level": 6,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 4500,
+    "type": "goal-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4560,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff takes a throw-in from an attacking position.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4590,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4605,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off after a Dalkey goal",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  },
+  {
+    "timestamp": 4620,
+    "type": "goal-kick",
+    "team": "Dalkey",
+    "description": "Dalkey prepares for a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4695,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Ball goes out of play for a Dalkey throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4710,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey restarts play with a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4725,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off and builds an attack.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4740,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff sets up for an attacking free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4755,
+    "type": "free-kick",
+    "team": "Dalkey",
+    "description": "Dalkey takes a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4756,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4785,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff prepares for a kick-off.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4798,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4815,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey takes the kick-off.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4830,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey prepares to kick off.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4870,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4890,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff takes the kick-off from the center circle.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4905,
+    "type": "goal-kick",
+    "team": "Corduff",
+    "description": "Corduff is awarded a goal kick.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4933,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4995,
+    "type": "throw-in",
+    "team": "Corduff",
+    "description": "Corduff player clears the ball, goes out of play.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5010,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Dalkey takes a throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5015,
+    "type": "foul",
+    "team": "Dalkey",
+    "description": "Foul by Dalkey awarded to Corduff.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5040,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off, initiating play.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5095,
+    "type": "shot",
+    "team": "Corduff",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5111,
+    "type": "goal",
+    "team": "Corduff",
+    "description": "Corduff scores after progressing into the penalty area.",
+    "excitement_level": 10,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5115,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey restarts the match with a kick-off.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5130,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off to start the match.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5145,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off and attacks.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5160,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off to start the game.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5175,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff takes the kick-off to start the match.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5205,
+    "type": "throw-in",
+    "team": "Dalkey",
+    "description": "Ball is cleared out for a Dalkey throw-in.",
+    "excitement_level": 4,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5220,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off and maintains possession.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5235,
+    "type": "free-kick",
+    "team": "Corduff",
+    "description": "Corduff takes a free kick.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5250,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off and maintains possession.",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5270,
+    "type": "tackle",
+    "team": "Corduff",
+    "description": "Successful sliding tackle by a Corduff defender.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5280,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off and plays the ball.",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5295,
+    "type": "foul",
+    "team": "Corduff",
+    "description": "Foul by Corduff results in a free kick for Dalkey.",
+    "excitement_level": 4,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5322,
+    "type": "shot",
+    "team": "Dalkey",
+    "description": "Shot on goal attempt.",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5340,
+    "type": "kick-off",
+    "team": "Dalkey",
+    "description": "Dalkey kicks off, referee blows the whistle (End of Match).",
+    "excitement_level": 2,
+    "original_team_name": "white jerseys",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5355,
+    "type": "kick-off",
+    "team": "Corduff",
+    "description": "Corduff kicks off after a Dalkey goal",
+    "excitement_level": 2,
+    "original_team_name": "red and black jerseys",
+    "veo_verified": false,
+    "ai_detected": true
+  }
+]

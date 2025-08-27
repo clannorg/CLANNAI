@@ -40,7 +40,7 @@ class WebappFormatter:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-2.5-pro')
 
-    def convert_text_to_json(self, highlights_text: str, team_config: dict, match_id: str) -> dict:
+    def convert_text_to_json(self, highlights_text: str, summary_text: str, team_config: dict, match_id: str) -> dict:
         """Use Gemini to convert plain text highlights to webapp JSON format"""
         
         prompt = f"""Convert this plain text match analysis into webapp-compatible JSON format.
@@ -49,20 +49,35 @@ class WebappFormatter:
 - Team A: {team_config['team_a']['name']} ({team_config['team_a']['colors']})
 - Team B: {team_config['team_b']['name']} ({team_config['team_b']['colors']})
 
-**INPUT TEXT:**
+**EVENTS TEXT:**
 {highlights_text}
+
+**SUMMARY TEXT:**
+{summary_text}
 
 **REQUIRED JSON FORMAT:**
 ```json
 {{
   "timeline_events": [
     {{
-      "timestamp": 150,
+      "timestamp": 2205,
       "type": "goal",
+      "team": "{team_config['team_b']['name']}",
+      "description": "Corduff celebrates a goal, Dalkey kicks off to restart", 
+      "excitement_level": 10,
+      "original_team_name": "{team_config['team_b']['colors']}",
+      "veo_verified": true,
+      "ai_detected": false
+    }},
+    {{
+      "timestamp": 810,
+      "type": "penalty",
       "team": "{team_config['team_a']['name']}",
-      "description": "Goal description from text", 
-      "excitement_level": 8,
-      "original_team_name": "{team_config['team_a']['colors']}"
+      "description": "Penalty kick results in a goal", 
+      "excitement_level": 6,
+      "original_team_name": "{team_config['team_a']['colors']}",
+      "veo_verified": false,
+      "ai_detected": true
     }}
   ],
   "match_summary": "Match summary from text",
@@ -70,15 +85,23 @@ class WebappFormatter:
 }}
 ```
 
-**CONVERSION RULES:**
-- Convert timestamps MM:SS to seconds (e.g., "05:30" → 330)
+**CRITICAL CONVERSION RULES:**
+- Convert timestamps MM:SS to seconds (e.g., "36:45" → 2205)
 - Map team visual identifiers to exact team NAMES from config (team field = team name, original_team_name = jersey colors)
-- Extract goal descriptions from HIGHLIGHTS section
-- Use match summary and final score from text
-- Set excitement_level 8-10 for goals
-- Only include events that are clearly marked as GOAL
+- Include ALL event types: GOAL, SHOT, PENALTY, FOUL, CORNER, THROW-IN, KICK-OFF, etc.
+- VEO VERIFICATION FLAGS:
+  * veo_verified: true + ai_detected: false → for "GOAL:", "SHOT:" (VEO ground truth)
+  * veo_verified: false + ai_detected: true → for anything with "(AI-reported, not VEO verified)"
+  * veo_verified: true + ai_detected: false → for standard events like "FOUL:", "CORNER:", etc.
+- EXCITEMENT LEVELS:
+  * 10: VEO verified goals
+  * 8: VEO verified shots
+  * 6: AI-detected penalties/goals
+  * 4: Fouls, corners, throw-ins
+  * 2: Kick-offs, goal kicks
+- Extract match summary and final score from the mega_summary.txt content if available
 
-Convert the text to JSON format:"""
+Convert ALL events from the text to JSON format:"""
 
         try:
             response = self.model.generate_content(prompt)
@@ -171,7 +194,9 @@ def main():
     # Load required files
     team_config_file = outputs_dir / '1_team_config.json'
     # Use mega events from 2.5 synthesizer
-    highlights_file = outputs_dir / 'mega_events.txt'
+    highlights_file = outputs_dir / '2.5_mega_events.txt'
+    # Also load summary for final score and match summary
+    summary_file = outputs_dir / '2.5_mega_summary.txt'
     
     if not team_config_file.exists():
         print(f"❌ Error: Team configuration not found: {team_config_file}")
@@ -179,7 +204,12 @@ def main():
     
     if not highlights_file.exists():
         print(f"❌ Error: Highlights data not found: {highlights_file}")
-        print("Run step 4 first: python 4_synthesize_highlights.py <match-id>")
+        print("Run step 2.5 first: python 2.5_events_synthesizer.py <match-id>")
+        sys.exit(1)
+    
+    if not summary_file.exists():
+        print(f"❌ Error: Summary data not found: {summary_file}")
+        print("Run step 2.5 first: python 2.5_events_synthesizer.py <match-id>")
         sys.exit(1)
     
     # Load data
@@ -189,6 +219,9 @@ def main():
     with open(highlights_file, 'r') as f:
         highlights_text = f.read()
     
+    with open(summary_file, 'r') as f:
+        summary_text = f.read()
+    
     print(f"🌐 Formatting for webapp: {match_id}")
     print(f"👕 Teams: {team_config['team_a']['name']} vs {team_config['team_b']['name']}")
     print("=" * 50)
@@ -196,7 +229,7 @@ def main():
     
     # Initialize formatter and convert
     formatter = WebappFormatter()
-    webapp_data = formatter.convert_text_to_json(highlights_text, team_config, match_id)
+    webapp_data = formatter.convert_text_to_json(highlights_text, summary_text, team_config, match_id)
     match_metadata = create_match_metadata(webapp_data, match_id, team_config)
     
     # Save webapp files

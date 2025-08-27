@@ -277,25 +277,25 @@ Generate these 3 sections now:"""
                 tactical_text = "=== " + "=== ".join(tactical_sections)
             
             # Save mega_events.txt
-            events_path = base_path / "mega_events.txt"
+            events_path = base_path / "2.5_mega_events.txt"
             with open(events_path, 'w') as f:
                 f.write(events_text)
             print(f"✅ Saved: {events_path}")
             
             # Save mega_tactical.txt  
-            tactical_path = base_path / "mega_tactical.txt"
+            tactical_path = base_path / "2.5_mega_tactical.txt"
             with open(tactical_path, 'w') as f:
                 f.write(tactical_text)
             print(f"✅ Saved: {tactical_path}")
             
             # Save mega_summary.txt
-            summary_path = base_path / "mega_summary.txt"
+            summary_path = base_path / "2.5_mega_summary.txt"
             with open(summary_path, 'w') as f:
                 f.write(summary_text)
             print(f"✅ Saved: {summary_path}")
             
             # Also save the full analysis for debugging
-            full_path = base_path / "mega_analysis_full.txt"
+            full_path = base_path / "2.5_mega_analysis_full.txt"
             with open(full_path, 'w') as f:
                 f.write(analysis_text)
             print(f"📄 Full analysis saved: {full_path}")
