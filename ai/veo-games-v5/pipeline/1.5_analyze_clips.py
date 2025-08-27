@@ -149,8 +149,8 @@ Example: "Blue team maintains possession in midfield" or "White team takes throw
         print(f"🎬 Simple Clip Analysis for {match_id}")
         
         data_dir = Path("../outputs") / match_id
-        clips_dir = data_dir / "clips"  # Use original clips directly
-        output_dir = data_dir / "4_clip_descriptions"
+        clips_dir = data_dir / "1.4_clips"  # Use numbered clips directory
+        output_dir = data_dir / "1.5_clip_descriptions"
         
         if not clips_dir.exists():
             print(f"❌ Clips directory not found: {clips_dir}")

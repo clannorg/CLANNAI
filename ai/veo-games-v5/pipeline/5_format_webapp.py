@@ -169,8 +169,9 @@ def main():
         sys.exit(1)
     
     # Load required files
-    team_config_file = outputs_dir / 'team_config.json'
-    highlights_file = outputs_dir / 'highlights.txt'
+    team_config_file = outputs_dir / '1_team_config.json'
+    # Use validated goals instead of old highlights with 29 fake goals
+    highlights_file = outputs_dir / '2.1_validated_goals.txt'
     
     if not team_config_file.exists():
         print(f"❌ Error: Team configuration not found: {team_config_file}")

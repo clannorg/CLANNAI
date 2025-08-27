@@ -1,234 +1,34 @@
 [
   {
-    "timestamp": 327,
+    "timestamp": 2172,
     "type": "goal",
-    "team": "Dalkey",
-    "description": "After a header from player #17, the ball crosses the goal line for a goal.",
+    "team": "red and black jerseys",
+    "description": "The ball travels over the wall and into the top right corner of the net for a goal.",
     "excitement_level": 9,
-    "original_team_name": "white jerseys"
+    "original_team_name": "Corduff"
   },
   {
-    "timestamp": 356,
+    "timestamp": 2193,
     "type": "goal",
-    "team": "Dalkey",
-    "description": "A player scores directly from a long-range free kick into the top right of the goal.",
+    "team": "red and black jerseys",
+    "description": "The ball travels low, goes through the defensive wall, and enters the goal.",
+    "excitement_level": 9,
+    "original_team_name": "Corduff"
+  },
+  {
+    "timestamp": 5074,
+    "type": "goal",
+    "team": "white jerseys",
+    "description": "The ball goes past the diving orange goalkeeper and into the bottom left corner of the net.",
     "excitement_level": 10,
-    "original_team_name": "white jerseys"
+    "original_team_name": "Dalkey"
   },
   {
-    "timestamp": 369,
+    "timestamp": 5101,
     "type": "goal",
-    "team": "Dalkey",
-    "description": "A player scores a penalty kick, shooting into the left side of the goal.",
+    "team": "white jerseys",
+    "description": "The ball enters the goal.",
     "excitement_level": 8,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 923,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A central attacker takes a right-footed shot that goes into the bottom left corner of the net.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 940,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A free kick from player #4 goes over the wall and into the top left corner of the goal.",
-    "excitement_level": 10,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 1037,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A player shoots from the left side of the box into the bottom left corner of the goal.",
-    "excitement_level": 8,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 1121,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A shot from just outside the penalty box goes past the diving goalkeeper and into the goal.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 1416,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A player volleys the ball from long range, scoring a goal.",
-    "excitement_level": 10,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 1470,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "The clip opens showing the ball inside the red and black jerseys' goal, confirming a score.",
-    "excitement_level": 8,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 1731,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A free kick from the left side curves into the top right corner of the net.",
-    "excitement_level": 10,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 2063,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A player dribbles past a defender and scores from inside the penalty area.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 2187,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A free kick from outside the penalty area goes over the wall and into the top right corner.",
-    "excitement_level": 10,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 2203,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A low, hard free kick goes through the defensive wall and into the goal.",
-    "excitement_level": 9,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 2493,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A player scores from a penalty kick.",
-    "excitement_level": 8,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 2561,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A player receives a pass inside the box and shoots into the top left of the goal.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 3351,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A shot from outside the penalty box goes into the bottom right corner of the goal.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 3570,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "The clip opens showing the ball in the goal and the white team celebrating.",
-    "excitement_level": 8,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 3862,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "An unmarked player receives a low pass and shoots into the bottom left corner of the net.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 3896,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A player controls the ball inside the penalty area and scores.",
-    "excitement_level": 8,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 4009,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A shot from the center of the penalty box goes into the bottom left corner of the goal.",
-    "excitement_level": 8,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 4054,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A player shoots from inside the penalty area, scoring a goal.",
-    "excitement_level": 8,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 4293,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A shot from inside the penalty box deflects off a defender and goes into the goal.",
-    "excitement_level": 8,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 4347,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A player receives a pass inside the box, takes a touch, and scores with a left-footed shot.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 4476,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A shot from the right side of the penalty area goes into the bottom left corner of the net.",
-    "excitement_level": 8,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 4645,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A player receives a through pass into the penalty area and scores in the bottom left corner.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 4771,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A shot from the right side of the penalty box goes into the goal.",
-    "excitement_level": 8,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 4946,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A player receives a pass across the box and scores with a right-footed shot.",
-    "excitement_level": 9,
-    "original_team_name": "red and black jerseys"
-  },
-  {
-    "timestamp": 5084,
-    "type": "goal",
-    "team": "Dalkey",
-    "description": "A player receives a pass inside the penalty area and shoots into the bottom left corner for a goal.",
-    "excitement_level": 9,
-    "original_team_name": "white jerseys"
-  },
-  {
-    "timestamp": 5111,
-    "type": "goal",
-    "team": "Corduff",
-    "description": "A player running into the box shoots a low cross into the back of the net.",
-    "excitement_level": 9,
-    "original_team_name": "red and black jerseys"
+    "original_team_name": "Dalkey"
   }
 ]

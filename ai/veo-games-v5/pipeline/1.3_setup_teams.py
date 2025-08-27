@@ -60,7 +60,7 @@ def main():
     }
     
     # Save configuration
-    config_file = outputs_dir / 'team_config.json'
+    config_file = outputs_dir / '1_team_config.json'
     with open(config_file, 'w') as f:
         json.dump(team_config, f, indent=2)
     

@@ -131,7 +131,7 @@ def generate_clips(match_id):
     
     data_dir = Path("../outputs") / match_id
     video_path = data_dir / "video.mp4"
-    clips_dir = data_dir / "clips"
+    clips_dir = data_dir / "1.4_clips"
     
     if not video_path.exists():
         print(f"❌ Video not found: {video_path}")

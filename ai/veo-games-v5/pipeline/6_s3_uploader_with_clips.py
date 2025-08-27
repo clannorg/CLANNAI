@@ -136,7 +136,7 @@ def upload_match_to_s3(match_id):
     
     # Define paths
     data_dir = Path("../outputs") / match_id
-    clips_dir = data_dir / "clips"
+    clips_dir = data_dir / "1.4_clips"
     
     if not data_dir.exists():
         print(f"❌ Data directory not found: {data_dir}")
@@ -174,7 +174,7 @@ def upload_match_to_s3(match_id):
         },
         
         # Supporting files
-        "team_config.json": {
+        "1_team_config.json": {
             "s3_folder": "analysis-data",
             "content_type": "application/json",
             "description": "Team configuration and appearance details"

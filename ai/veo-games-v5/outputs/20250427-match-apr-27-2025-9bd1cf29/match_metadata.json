@@ -11,7 +11,7 @@
     }
   },
   "counts": {
-    "goals": 29,
+    "goals": 4,
     "shots": 0
   },
   "files": {
@@ -23,6 +23,6 @@
     "other_events_txt": null,
     "tactical_json": null
   },
-  "final_score": "white jerseys 19 - 10 red and black jerseys",
-  "match_summary": "This was an action-packed, high-scoring game where the team in white jerseys demonstrated superior attacking ability. While the red and black jerseys team had several strong moments, including well-taken free kicks, they struggled to contain the consistent offensive pressure from the white jerseys team, who secured a decisive victory."
+  "final_score": "Dalkey 2 - 2 Corduff",
+  "match_summary": "AI detected 20 potential goals. After validation against ground truth, 4 goals were confirmed and 16 were rejected."
 }
