@@ -51,7 +51,7 @@ class MegaAnalyzer:
     
     def load_team_config(self, match_id: str) -> dict:
         """Load team configuration for consistent naming"""
-        config_path = Path(f"../outputs/{match_id}/match_config.json")
+        config_path = Path(f"../outputs/{match_id}/1_team_config.json")
         if config_path.exists():
             with open(config_path, 'r') as f:
                 return json.load(f)
@@ -69,7 +69,7 @@ class MegaAnalyzer:
         print(f"📖 Loading match data for: {match_id}")
         
         # Load timeline
-        timeline_path = base_path / "5_complete_timeline.txt"
+        timeline_path = base_path / "1.6_complete_timeline.txt"
         if not timeline_path.exists():
             raise FileNotFoundError(f"Timeline not found: {timeline_path}")
         
@@ -153,12 +153,20 @@ OUTPUT 3 SEPARATE SECTIONS:
 List all significant events in chronological order, one per line:
 Format: MM:SS - TYPE: Team - Description
 
-CRITICAL RULES:
+CRITICAL RULES FOR VEO GOAL MATCHING:
 - VEO goals are the ONLY goals that count - use exactly {len(veo_goals)} goals from VEO data
-- Use AI timeline to add DETAILS to VEO goals (who scored, how, from where, etc.)
+- VEO timestamps mark the START of attacking plays that led to goals
+- For each VEO goal timestamp, look 15-30 seconds AFTER in the AI timeline to find the actual goal moment
+- Use the AI's precise timestamp when the ball actually went in, not VEO's start-of-attack time
+- Extract which team scored from the AI description (look for jersey colors/team names)
+- NEVER output "Unidentified Team" - always find the team from AI timeline
 - Add other events from AI timeline: fouls, corners, cards, substitutions, throw-ins, free kicks
-- NEVER add AI-detected goals that aren't in VEO data
 - Use "{team_a_name}" and "{team_b_name}" consistently
+
+**VEO GOAL MATCHING EXAMPLE:**
+- VEO says: Goal at 36:29 (start of attack)
+- AI timeline at 36:45: "red and black jerseys player scores into top corner"
+- Output: "36:45 - GOAL: {team_b_name} - Ball travels into top right corner of net"
 
 Example:
 30:50 - GOAL: {team_a_name} - Header from corner kick, player #10 scores with powerful header
@@ -250,13 +258,23 @@ Generate these 3 sections now:"""
             tactical_text = ""
             summary_text = ""
             
-            for section in sections:
-                if section.startswith("MEGA_EVENTS.TXT"):
+            # Find the tactical section (starts after MEGA_TACTICAL.TXT and ends before MEGA_SUMMARY.TXT)
+            tactical_start = -1
+            tactical_end = -1
+            
+            for i, section in enumerate(sections):
+                if "MEGA_EVENTS.TXT" in section:
                     events_text = section.replace("MEGA_EVENTS.TXT ===", "").strip()
-                elif section.startswith("MEGA_TACTICAL.TXT"):
-                    tactical_text = "=== " + section.strip()
-                elif section.startswith("MEGA_SUMMARY.TXT"):
+                elif "MEGA_TACTICAL.TXT" in section:
+                    tactical_start = i + 1  # Tactical content starts in next section
+                elif "MEGA_SUMMARY.TXT" in section:
+                    tactical_end = i  # Tactical content ends before this section
                     summary_text = section.replace("MEGA_SUMMARY.TXT ===", "").strip()
+            
+            # Combine tactical sections
+            if tactical_start != -1 and tactical_end != -1:
+                tactical_sections = sections[tactical_start:tactical_end]
+                tactical_text = "=== " + "=== ".join(tactical_sections)
             
             # Save mega_events.txt
             events_path = base_path / "mega_events.txt"

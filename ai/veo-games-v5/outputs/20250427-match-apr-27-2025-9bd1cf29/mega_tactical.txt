@@ -1,0 +1,34 @@
+=== DALKEY ===
+Strengths:
+- Strong in midfield possession and build-up play, often moving the ball from their own half into the attacking third.
+- Active on the wings, attempting crosses and dribbling, particularly down the left flank.
+- Numerous throw-ins and free kicks indicate consistent pressure and ability to draw fouls in advanced positions.
+- Demonstrated ability to launch counter-attacks after winning possession.
+
+Weaknesses:
+- Finishing appears to be a significant weakness, as many AI-reported "goals" were not verified by VEO, suggesting missed opportunities or strong saves.
+- Vulnerable to conceding fouls in midfield and their own half, leading to free kicks for the opposition.
+- Can be dispossessed in midfield, leading to opposition counter-attacks.
+
+Key Moments:
+- Numerous attempts on goal (20 VEO shots).
+- Awarded multiple free kicks (18) and throw-ins (22) due to attacking pressure.
+- Had a yellow card issued (69:18).
+
+=== CORDUFF ===
+Strengths:
+- Effective in counter-attacking, often using long balls from defense or midfield to initiate rapid attacks.
+- Strong defensive capabilities, clearing crosses and free kicks, and making successful tackles to regain possession.
+- Dangerous from set pieces, with a VEO goal stemming from an attacking play.
+- Displays resilience, scoring two verified goals in the match.
+
+Weaknesses:
+- Prone to committing fouls, particularly in midfield, giving away free kicks to Dalkey.
+- Can lose possession in midfield, allowing Dalkey to launch attacks.
+- Tendency to clear the ball long, which can sometimes result in loss of possession.
+
+Key Moments:
+- Scored both verified goals of the match (36:45, 85:11).
+- Registered 9 VEO shots.
+- Involved in a penalty kick situation multiple times (AI-reported goals/preparations).
+

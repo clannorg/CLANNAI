@@ -170,8 +170,8 @@ def main():
     
     # Load required files
     team_config_file = outputs_dir / '1_team_config.json'
-    # Use validated goals instead of old highlights with 29 fake goals
-    highlights_file = outputs_dir / '2.1_validated_goals.txt'
+    # Use mega events from 2.5 synthesizer
+    highlights_file = outputs_dir / 'mega_events.txt'
     
     if not team_config_file.exists():
         print(f"❌ Error: Team configuration not found: {team_config_file}")

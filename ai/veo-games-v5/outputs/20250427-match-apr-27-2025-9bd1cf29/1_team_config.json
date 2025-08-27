@@ -5,11 +5,10 @@
     "colors": "white jerseys"
   },
   "team_b": {
-    "name": "Corduff", 
+    "name": "Corduff",
     "colors": "red and black jerseys"
   },
-  "game_type": "11-a-side",
+  "game_type": "5-a-side",
   "focus": "detailed play-by-play description",
-  "additional_context": "Full match analysis with tactical insights"
+  "additional_context": ""
 }
-
