@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import TrainingRecommendations from './TrainingRecommendations'
 
 interface TacticalData {
   tactical: Record<string, { content: string, filename: string, uploaded_at: string }>
@@ -37,6 +38,7 @@ interface EvidenceBasedStat {
 }
 
 export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameId, onSeekToTimestamp, game }: Props) {
+  console.log('🎮 FifaStyleInsights rendered with gameId:', gameId);
   // Extract evidence-based stats from game events
   const extractEvidenceStats = (events: any[]): EvidenceBasedStat[] => {
     if (!events || !Array.isArray(events)) return []
@@ -700,6 +702,11 @@ export default function FifaStyleInsights({ tacticalData, tacticalLoading, gameI
           </div>
         </div>
       )}
+
+      {/* Training Recommendations Section */}
+      <div className="mt-6">
+        <TrainingRecommendations gameId={gameId} />
+      </div>
     </div>
   )
 }

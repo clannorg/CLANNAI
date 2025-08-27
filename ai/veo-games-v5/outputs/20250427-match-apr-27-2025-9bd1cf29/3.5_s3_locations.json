@@ -1,6 +1,6 @@
 {
   "match_id": "20250427-match-apr-27-2025-9bd1cf29",
-  "upload_timestamp": "2025-08-27T16:09:41.404790",
+  "upload_timestamp": "2025-08-27T17:43:16.316895",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "s3_urls": {
@@ -27,6 +27,12 @@
       "s3_key": "analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-2_tactical_analysis-json.json",
       "description": "Rich tactical analysis with team insights and recommendations",
       "file_size_mb": 0.01
+    },
+    "3.3_training_recommendations.json": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-3_training_recommendations-json.json",
+      "s3_key": "analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-3_training_recommendations-json.json",
+      "description": "Training drill recommendations with YouTube videos",
+      "file_size_mb": 0.0
     },
     "2.5_mega_events.txt": {
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-5_mega_events-txt.txt",
@@ -72,8 +78,8 @@
     }
   },
   "upload_summary": {
-    "total_files": 12,
-    "successful_uploads": 11,
+    "total_files": 13,
+    "successful_uploads": 12,
     "failed_uploads": 1,
     "total_size_mb": 0.18000000000000002
   }

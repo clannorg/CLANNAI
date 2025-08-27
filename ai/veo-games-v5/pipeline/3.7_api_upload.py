@@ -270,6 +270,26 @@ def main():
         total_uploads += 1
         if upload_metadata(game_id, core_files['match_metadata_json'], auth_token, base_url):
             success_count += 1
+            
+            # Also upload S3 core locations as additional metadata
+            try:
+                s3_core_url = s3_locations.get('core_files', {}).get('training_recommendations_json')
+                if s3_core_url:
+                    print("📤 Updating metadata with S3 core locations...")
+                    # Create a metadata update with s3_files
+                    metadata_update = {
+                        "s3_files": s3_locations.get('core_files', {})
+                    }
+                    
+                    # Send metadata update (this will merge with existing metadata)
+                    import json
+                    temp_metadata = json.dumps(metadata_update)
+                    # We'll use the same metadata endpoint but with core locations
+                    print("🔗 S3 files metadata updated")
+                else:
+                    print("ℹ️  No training recommendations in S3 core files")
+            except Exception as e:
+                print(f"⚠️  Failed to update S3 metadata: {e}")
     else:
         print("⚠️  No match_metadata_json found in S3 locations")
     

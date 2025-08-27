@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { useRouter } from 'next/navigation'
+import TrainingRecommendations from './TrainingRecommendations'
 
 interface TacticalData {
   tactical: Record<string, { content: string, filename: string, uploaded_at: string }>
@@ -383,6 +384,11 @@ const TacticalInsights: React.FC<Props> = ({ tacticalData, tacticalLoading, game
               </div>
             </div>
           )}
+        </div>
+
+        {/* Training Recommendations Section */}
+        <div className="mt-4">
+          <TrainingRecommendations gameId={gameId} />
         </div>
     </div>
   )

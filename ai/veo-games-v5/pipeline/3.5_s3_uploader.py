@@ -126,6 +126,11 @@ def upload_match_to_s3(match_id):
             "content_type": "application/json",
             "description": "Rich tactical analysis with team insights and recommendations"
         },
+        "3.3_training_recommendations.json": {
+            "s3_folder": "analysis-data",
+            "content_type": "application/json",
+            "description": "Training drill recommendations with YouTube videos"
+        },
         
         # V5 pipeline analysis files
         "2.5_mega_events.txt": {
@@ -248,6 +253,7 @@ def upload_match_to_s3(match_id):
             "team_config_json": "1_team_config.json",  # Team configuration
             "webapp_complete_json": "3.1_webapp_complete.json",  # Complete webapp data
             "tactical_analysis_json": "3.2_tactical_analysis.json",  # Rich tactical analysis
+            "training_recommendations_json": "3.3_training_recommendations.json",  # Training drills
             "mega_tactical_txt": "2.5_mega_tactical.txt",  # Tactical analysis
             "mega_summary_txt": "2.5_mega_summary.txt",    # Match summary
             "mega_events_txt": "2.5_mega_events.txt"       # Events timeline

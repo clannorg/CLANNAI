@@ -26,3 +26,4 @@ chmod +x ffmpeg
 
 echo "✅ Static FFmpeg installation complete!"
 echo "📍 FFmpeg location: $(pwd)/ffmpeg"
+

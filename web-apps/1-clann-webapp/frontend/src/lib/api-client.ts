@@ -385,6 +385,25 @@ class ApiClient {
     })
   }
 
+  async getTrainingRecommendations(gameId: string) {
+    return this.request<{
+      game_id: string
+      training_recommendations: {
+        match_id: string
+        generated_at: string
+        training_recommendations: Array<{
+          drill_name: string
+          youtube_url: string
+          youtube_embed: string
+          description: string
+          focus_areas: string
+          match_evidence: string
+          why_needed: string
+          priority: number
+        }>
+      } | null
+    }>(`/api/games/${gameId}/training-recommendations`)
+  }
 
 }
 

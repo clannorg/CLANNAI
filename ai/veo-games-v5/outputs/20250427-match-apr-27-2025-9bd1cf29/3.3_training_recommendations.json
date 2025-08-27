@@ -1,0 +1,36 @@
+{
+  "match_id": "20250427-match-apr-27-2025-9bd1cf29",
+  "generated_at": "2025-08-27T17:41:52.883191",
+  "training_recommendations": [
+    {
+      "drill_name": "1v1 Finishing Drill",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "description": "Improve clinical finishing in one-on-one situations",
+      "focus_areas": "Composure, shot placement, beating the goalkeeper",
+      "match_evidence": "Dalkey failed to convert any of their 20 VEO-verified shots into goals.",
+      "why_needed": "This highlights a critical weakness in converting created chances into goals, directly impacting the match result despite dominating possession and territory.",
+      "priority": 1
+    },
+    {
+      "drill_name": "4v2 Defensive Transition Drill",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "description": "Improve defensive shape and pressing after losing possession",
+      "focus_areas": "Quick transition from attack to defense, compact shape",
+      "match_evidence": "Dalkey was vulnerable to opposition counter-attacks, particularly after being dispossessed in central midfield areas, which led to Corduff's goals.",
+      "why_needed": "Improving defensive transitions will help Dalkey regain defensive shape quickly after losing possession, mitigating the threat of Corduff's fast breaks.",
+      "priority": 2
+    },
+    {
+      "drill_name": "Rondo Possession Drill",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "description": "Improve passing accuracy and ball retention under pressure",
+      "focus_areas": "Quick passing, movement off the ball, press resistance",
+      "match_evidence": "While Dalkey dominated midfield possession, their occasional loss of the ball in central areas proved costly, triggering Corduff's dangerous counter-attacks.",
+      "why_needed": "Improving ball security in midfield will reduce turnovers and minimize the opportunities for Corduff to exploit Dalkey's vulnerability in transition.",
+      "priority": 3
+    }
+  ]
+}

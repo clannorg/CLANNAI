@@ -1,6 +1,6 @@
 {
   "match_id": "20250427-match-apr-27-2025-9bd1cf29",
-  "upload_timestamp": "2025-08-27T16:09:41.404790",
+  "upload_timestamp": "2025-08-27T17:43:16.316895",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "core_files": {
@@ -9,6 +9,7 @@
     "team_config_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-1_team_config-json.json",
     "webapp_complete_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-1_webapp_complete-json.json",
     "tactical_analysis_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-2_tactical_analysis-json.json",
+    "training_recommendations_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-3_training_recommendations-json.json",
     "mega_tactical_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-5_mega_tactical-txt.txt",
     "mega_summary_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-5_mega_summary-txt.txt",
     "mega_events_txt": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-5_mega_events-txt.txt"

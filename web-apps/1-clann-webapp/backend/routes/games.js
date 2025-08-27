@@ -45,7 +45,8 @@ router.get('/', authenticateToken, async (req, res) => {
         }),
         created_at: game.created_at,
         updated_at: game.updated_at,
-        has_analysis: !!game.ai_analysis
+        has_analysis: !!game.ai_analysis,
+        training_url: game.training_url
       }))
     });
   } catch (error) {
@@ -1655,9 +1656,21 @@ router.post('/:id/upload-metadata-test', async (req, res) => {
     
     console.log('📊 Fetched metadata with keys:', Object.keys(metadataData));
 
-    // Update game with metadata
+    // Get current game metadata to preserve existing data
+    const currentGame = await getGameById(gameId);
+    const currentMetadata = currentGame?.metadata || {};
+    
+    // Merge new metadata with existing, preserving s3_files if they exist
+    const mergedMetadata = {
+      ...currentMetadata,
+      ...metadataData,
+      // Preserve s3_files from current metadata if they exist
+      s3_files: currentMetadata.s3_files || {}
+    };
+
+    // Update game with merged metadata
     const updatedGame = await updateGame(gameId, {
-      metadata: metadataData,
+      metadata: mergedMetadata,
       metadata_url: metadataUrl
     });
 
@@ -1677,6 +1690,110 @@ router.post('/:id/upload-metadata-test', async (req, res) => {
   } catch (error) {
     console.error('Test metadata upload error:', error);
     res.status(500).json({ error: 'Failed to upload metadata: ' + error.message });
+  }
+});
+
+// Upload training recommendations URL (company only)
+router.post('/:id/upload-training', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const { trainingUrl } = req.body;
+
+    if (!trainingUrl) {
+      return res.status(400).json({ error: 'Training URL is required' });
+    }
+
+    // Update game with training URL
+    const updatedGame = await updateGame(gameId, {
+      training_url: trainingUrl
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      message: 'Training recommendations URL uploaded successfully',
+      game: {
+        id: updatedGame.id,
+        title: updatedGame.title,
+        training_url: trainingUrl,
+        updated_at: updatedGame.updated_at
+      }
+    });
+  } catch (error) {
+    console.error('Upload training URL error:', error);
+    res.status(500).json({ error: 'Failed to upload training URL' });
+  }
+});
+
+// Get training recommendations for a game
+router.get('/:id/training-recommendations', authenticateToken, async (req, res) => {
+  try {
+    console.log('🏋️ Training recommendations endpoint called for game:', req.params.id);
+    console.log('🏋️ User:', req.user?.email, 'Role:', req.user?.role);
+    
+    const gameId = req.params.id;
+    const game = await getGameById(gameId);
+
+    if (!game) {
+      console.log('🏋️ Game not found:', gameId);
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    console.log('🏋️ Game found:', game.title);
+    console.log('🏋️ Game training_url:', game.training_url);
+
+    // Check if user has access to this game
+    const isMember = await isTeamMember(req.user.id, game.team_id);
+    console.log('🏋️ User is team member:', isMember);
+    
+    if (!isMember && req.user.role !== 'company') {
+      console.log('🏋️ Access denied - not team member and not company role');
+      return res.status(403).json({ 
+        error: 'You do not have access to this game' 
+      });
+    }
+
+    // Look for training recommendations from training_url field
+    let trainingRecommendations = null;
+    
+    if (game.training_url) {
+      console.log('🏋️ Training URL found, fetching data...');
+      try {
+        const axios = require('axios');
+        const trainingUrl = game.training_url;
+        console.log('📥 Fetching training recommendations from:', trainingUrl);
+        
+        const response = await axios.get(trainingUrl, {
+          responseType: 'text'
+        });
+        
+        let data = response.data;
+        if (typeof data === 'string') {
+          data = JSON.parse(data);
+        }
+        
+        trainingRecommendations = data;
+        console.log('🏋️ Training recommendations loaded:', trainingRecommendations.training_recommendations?.length || 0, 'drills');
+        
+      } catch (fetchError) {
+        console.error('🏋️ Failed to fetch training recommendations from S3:', fetchError);
+        // Don't fail the request, just return null
+      }
+    } else {
+      console.log('🏋️ No training_url found for this game');
+    }
+
+    console.log('🏋️ Sending response with training recommendations:', !!trainingRecommendations);
+    res.json({
+      game_id: gameId,
+      training_recommendations: trainingRecommendations
+    });
+
+  } catch (error) {
+    console.error('Get training recommendations error:', error);
+    res.status(500).json({ error: 'Failed to get training recommendations' });
   }
 });
 
@@ -1827,6 +1944,27 @@ router.delete('/:id/clear-tactical', [authenticateToken, requireCompanyRole], as
   } catch (error) {
     console.error('Clear tactical error:', error);
     res.status(500).json({ error: 'Failed to clear tactical analysis' });
+  }
+});
+
+router.delete('/:id/clear-training', [authenticateToken, requireCompanyRole], async (req, res) => {
+  try {
+    const gameId = req.params.id;
+    const updatedGame = await updateGame(gameId, { 
+      training_url: null
+    });
+
+    if (!updatedGame) {
+      return res.status(404).json({ error: 'Game not found' });
+    }
+
+    res.json({
+      success: true,
+      message: 'Training recommendations cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear training error:', error);
+    res.status(500).json({ error: 'Failed to clear training recommendations' });
   }
 });
 
