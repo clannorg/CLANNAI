@@ -1,0 +1,36 @@
+# VEO Games V5 Pipeline Requirements
+# Core dependencies for football analysis pipeline
+
+# HTTP requests for API calls
+requests>=2.31.0
+
+# Database connectivity
+psycopg2-binary>=2.9.7
+
+# Google AI/Gemini API
+google-generativeai>=0.3.0
+
+# AWS S3 operations
+boto3>=1.28.0
+botocore>=1.31.0
+
+# JSON and data processing
+jsonschema>=4.19.0
+
+# Video processing (if needed)
+opencv-python>=4.8.0
+
+# File operations and utilities
+pathlib2>=2.3.7
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Date/time utilities
+python-dateutil>=2.8.2
+
+# Progress bars for long operations
+tqdm>=4.66.0
+
+# Logging
+colorlog>=6.7.0

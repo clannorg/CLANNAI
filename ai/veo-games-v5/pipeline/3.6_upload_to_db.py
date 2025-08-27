@@ -58,6 +58,17 @@ def upload_to_database(match_id, game_id=None):
     # Load data files
     base_path = Path(__file__).parent.parent / "outputs" / match_id
     
+    # Auto-load website game ID if not provided
+    if not game_id:
+        website_id_file = base_path / "website_game_id.txt"
+        if website_id_file.exists():
+            game_id = website_id_file.read_text().strip()
+            print(f"🔗 Auto-loaded website game ID: {game_id}")
+        else:
+            print("⚠️  No website game ID found. Run step 1.0 first:")
+            print(f"   python 1.0_webid.py {match_id}")
+            return False
+    
     # Load S3 locations
     s3_file = base_path / "3.5_s3_core_locations.json"
     if not s3_file.exists():

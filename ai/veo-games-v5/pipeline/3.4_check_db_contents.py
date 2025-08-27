@@ -78,12 +78,34 @@ def check_game_data(game_id):
                 if 's3_files' in metadata:
                     print(f"\n📦 S3_FILES:")
                     s3_files = metadata['s3_files']
-                    for file_name, file_info in s3_files.items():
-                        url = file_info.get('url', 'No URL')
-                        print(f"   📄 {file_name}")
-                        print(f"      URL: {url}")
-                        print(f"      Description: {file_info.get('description', 'N/A')}")
-                        print()
+                    
+                    # Handle both old format (direct URLs) and new format (nested objects)
+                    if isinstance(s3_files, dict):
+                        # Check if it's the new format with core_files
+                        if 'core_files' in s3_files:
+                            core_files = s3_files['core_files']
+                            print(f"   📋 Core Files:")
+                            for file_name, url in core_files.items():
+                                print(f"      📄 {file_name}")
+                                print(f"         URL: {url}")
+                            print()
+                            
+                            # Show other S3 metadata
+                            for key, value in s3_files.items():
+                                if key != 'core_files':
+                                    print(f"   📋 {key}: {value}")
+                        else:
+                            # Old format or direct file mapping
+                            for file_name, file_info in s3_files.items():
+                                print(f"   📄 {file_name}")
+                                if isinstance(file_info, dict):
+                                    url = file_info.get('url', 'No URL')
+                                    print(f"      URL: {url}")
+                                    print(f"      Description: {file_info.get('description', 'N/A')}")
+                                else:
+                                    # Direct URL string
+                                    print(f"      URL: {file_info}")
+                                print()
                 else:
                     print(f"❌ No s3_files in metadata")
                 
@@ -176,21 +198,48 @@ def list_games_by_title(search_term=None):
     finally:
         conn.close()
 
+def auto_check_current_analysis(match_id):
+    """Auto-check database contents for current analysis session"""
+    base_path = Path(__file__).parent.parent / "outputs" / match_id
+    website_id_file = base_path / "website_game_id.txt"
+    
+    if not website_id_file.exists():
+        print(f"❌ No website game ID found for: {match_id}")
+        print(f"Run step 1.0 first: python 1.0_webid.py {match_id}")
+        return False
+    
+    game_id = website_id_file.read_text().strip()
+    print(f"🔗 Auto-loaded game ID from: {website_id_file}")
+    print(f"📋 Checking database for current analysis session: {match_id}")
+    print()
+    
+    check_game_data(game_id)
+    return True
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage:")
-        print("  python check_db_contents.py <game-id>           # Check specific game")
-        print("  python check_db_contents.py --list [search]     # List games")
+        print("  python 3.4_check_db_contents.py <match-id>      # Check current analysis session")
+        print("  python 3.4_check_db_contents.py --game <id>     # Check specific game ID")
+        print("  python 3.4_check_db_contents.py --list [search] # List games")
         print()
         print("Examples:")
-        print("  python check_db_contents.py 50ce15ae-b083-4e93-a831-d9f950c39ee8")
-        print("  python check_db_contents.py --list dalkey")
-        print("  python check_db_contents.py --list")
+        print("  python 3.4_check_db_contents.py 20250427-match-apr-27-2025-9bd1cf29")
+        print("  python 3.4_check_db_contents.py --game 50ce15ae-b083-4e93-a831-d9f950c39ee8")
+        print("  python 3.4_check_db_contents.py --list dalkey")
+        print("  python 3.4_check_db_contents.py --list")
         sys.exit(1)
     
     if sys.argv[1] == '--list':
         search_term = sys.argv[2] if len(sys.argv) > 2 else None
         list_games_by_title(search_term)
-    else:
-        game_id = sys.argv[1]
+    elif sys.argv[1] == '--game':
+        if len(sys.argv) < 3:
+            print("❌ --game requires a game ID")
+            sys.exit(1)
+        game_id = sys.argv[2]
         check_game_data(game_id)
+    else:
+        # Default: treat as match_id and auto-load website game ID
+        match_id = sys.argv[1]
+        auto_check_current_analysis(match_id)
