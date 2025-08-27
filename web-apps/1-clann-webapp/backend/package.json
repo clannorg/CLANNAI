@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "postinstall": "./install-ffmpeg.sh",
+    "postinstall": "./install-ffmpeg-static.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

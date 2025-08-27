@@ -129,8 +129,9 @@ router.post('/create', authenticateToken, async (req, res) => {
                     console.log(`📊 Adding scoreline: ${scorelineText}`);
                     
                     // Use FFmpeg with text overlay for scoreline
+                    const ffmpegPath = path.join(__dirname, '../bin/ffmpeg');
                     ffmpegCmd = [
-                        'ffmpeg',
+                        ffmpegPath,
                         '-y',
                         '-ss', startTime.toString(),
                         '-i', videoUrl,
@@ -142,8 +143,9 @@ router.post('/create', authenticateToken, async (req, res) => {
                     ].join(' ');
                 } else {
                     // Use FFmpeg to extract clip segment without overlay
+                    const ffmpegPath = path.join(__dirname, '../bin/ffmpeg');
                     ffmpegCmd = [
-                        'ffmpeg',
+                        ffmpegPath,
                         '-y', // Overwrite output files
                         '-ss', startTime.toString(),
                         '-i', videoUrl,
@@ -187,8 +189,9 @@ router.post('/create', authenticateToken, async (req, res) => {
                 console.log(`🔗 Concatenating ${clipPaths.length} clips...`);
                 
                 // Concatenate clips
+                const ffmpegPath = path.join(__dirname, '../bin/ffmpeg');
                 const concatCmd = [
-                    'ffmpeg',
+                    ffmpegPath,
                     '-y',
                     '-f', 'concat',
                     '-safe', '0',
