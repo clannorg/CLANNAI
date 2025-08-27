@@ -160,7 +160,7 @@ ${gameContext}` : defaultSystemPrompt
     conversationText += `Human: ${message}\n\nAssistant: `
 
     // Get Gemini model and generate response
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" })
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
     
     const result = await model.generateContent(conversationText)
     const aiResponse = result.response.text()
