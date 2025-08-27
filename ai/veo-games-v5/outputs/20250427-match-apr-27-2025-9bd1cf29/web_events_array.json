@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": 810,
+    "type": "goal",
+    "team": "Dalkey",
+    "description": "Penalty kick results in a goal (AI-reported, not VEO verified).",
+    "excitement_level": 8,
+    "original_team_name": "white jerseys"
+  },
+  {
+    "timestamp": 1875,
+    "type": "goal",
+    "team": "Corduff",
+    "description": "Penalty kick results in a goal (AI-reported, not VEO verified).",
+    "excitement_level": 8,
+    "original_team_name": "red and black jerseys"
+  },
+  {
+    "timestamp": 2205,
+    "type": "goal",
+    "team": "Corduff",
+    "description": "Corduff celebrates a goal, Dalkey kicks off to restart.",
+    "excitement_level": 9,
+    "original_team_name": "red and black jerseys"
+  },
+  {
+    "timestamp": 5111,
+    "type": "goal",
+    "team": "Corduff",
+    "description": "Corduff scores after progressing into the penalty area.",
+    "excitement_level": 9,
+    "original_team_name": "red and black jerseys"
+  }
+]

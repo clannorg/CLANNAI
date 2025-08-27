@@ -59,10 +59,10 @@ class WebappFormatter:
     {{
       "timestamp": 150,
       "type": "goal",
-      "team": "{team_config['team_a']['colors']}",
-      "description": "Goal description from text",
+      "team": "{team_config['team_a']['name']}",
+      "description": "Goal description from text", 
       "excitement_level": 8,
-      "original_team_name": "Team name from text"
+      "original_team_name": "{team_config['team_a']['colors']}"
     }}
   ],
   "match_summary": "Match summary from text",
@@ -72,7 +72,7 @@ class WebappFormatter:
 
 **CONVERSION RULES:**
 - Convert timestamps MM:SS to seconds (e.g., "05:30" → 330)
-- Map team visual identifiers to exact team colors from config
+- Map team visual identifiers to exact team NAMES from config (team field = team name, original_team_name = jersey colors)
 - Extract goal descriptions from HIGHLIGHTS section
 - Use match summary and final score from text
 - Set excitement_level 8-10 for goals

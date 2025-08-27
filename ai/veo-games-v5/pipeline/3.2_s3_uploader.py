@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-6. S3 Uploader (LEGACY - use 6_s3_uploader_with_clips.py instead)
+6. S3 Uploader - Analysis Files Only
 Uploads key analysis files to S3 and tracks cloud locations
 """
 
