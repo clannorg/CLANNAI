@@ -1,0 +1,327 @@
+03:12 - SHOT: RIVEFLAIBANO - Shot taken → OUTCOME: Saved by goalkeeper
+03:19 - CORNER: RIVEFLAIBANO - Corner kick taken, header over goal → OUTCOME: Shot missed
+03:43 - CORNER: RIVEFLAIBANO - Corner kick taken → OUTCOME: Cross delivered
+03:45 - TURNOVER: MUGGIA - Goalkeeper catches cross → OUTCOME: Possession regained
+04:19 - FREE KICK: RIVEFLAIBANO - Free kick blocked by defensive wall → OUTCOME: Shot blocked
+04:20 - SHOT: RIVEFLAIBANO - Rebound shot taken → OUTCOME: Saved by goalkeeper
+04:43 - FOUL: RIVEFLAIBANO - Defender tackles Yellow player inside penalty box → OUTCOME: Penalty awarded
+05:26 - FOUL: MUGGIA - Player commits foul → OUTCOME: Free kick awarded
+05:45 - TURNOVER: RIVEFLAIBANO - Intercepts ball in midfield → OUTCOME: Possession regained
+06:30 - TURNOVER: MUGGIA - Dispossessed by sliding tackle → OUTCOME: Possession lost
+06:30 - TURNOVER: RIVEFLAIBANO - Regains possession → OUTCOME: Possession regained
+06:48 - FOUL: RIVEFLAIBANO - Player commits foul → OUTCOME: Free kick awarded
+07:13 - FREE KICK: MUGGIA - Direct free kick taken → OUTCOME: Cross delivered
+07:42 - FREE KICK: RIVEFLAIBANO - Direct free kick taken → OUTCOME: Shot saved
+07:44 - SHOT: RIVEFLAIBANO - Direct free kick shot → OUTCOME: Saved by goalkeeper
+07:46 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+08:04 - FREE KICK: RIVEFLAIBANO - Free kick taken, header wide of goal → OUTCOME: Shot missed
+08:04 - SHOT: RIVEFLAIBANO - Header from free kick → OUTCOME: Shot missed
+08:15 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+08:30 - FREE KICK: MUGGIA - Set piece taken → OUTCOME: Cross delivered
+08:30 - TURNOVER: RIVEFLAIBANO - Clears set piece → OUTCOME: Counter-attack started
+09:11 - TURNOVER: MUGGIA - Wins possession with tackle → OUTCOME: Counter-attack started
+09:16 - SHOT: MUGGIA - Header on goal → OUTCOME: Saved by goalkeeper
+09:17 - TURNOVER: RIVEFLAIBANO - Goalkeeper saves shot → OUTCOME: Possession regained
+09:57 - TURNOVER: RIVEFLAIBANO - Regains possession with sliding tackle → OUTCOME: Possession regained
+10:08 - SHOT: RIVEFLAIBANO - Shot on goal → OUTCOME: Saved by goalkeeper
+10:26 - TURNOVER: RIVEFLAIBANO - Intercepts forward pass → OUTCOME: Possession regained
+10:30 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+11:04 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+11:45 - TURNOVER: RIVEFLAIBANO - Intercepts pass in penalty area → OUTCOME: Possession regained
+12:27 - FOUL: MUGGIA - Player commits foul → OUTCOME: Free kick awarded
+12:30 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+13:01 - TURNOVER: RIVEFLAIBANO - Intercepts ball → OUTCOME: Possession regained
+13:12 - SHOT: MUGGIA - Shot taken → OUTCOME: Shot blocked
+13:58 - TURNOVER: MUGGIA - Intercepts pass → OUTCOME: Possession regained
+13:58 - TURNOVER: RIVEFLAIBANO - Wins possession back immediately → OUTCOME: Possession regained
+14:04 - FOUL: RIVEFLAIBANO - Player commits foul → OUTCOME: Play stopped
+14:15 - TURNOVER: RIVEFLAIBANO - Gains possession from throw-in → OUTCOME: Counter-attack started
+14:30 - TURNOVER: MUGGIA - Intercepts ball → OUTCOME: Counter-attack started
+15:07 - TURNOVER: MUGGIA - Goalkeeper intercepts pass → OUTCOME: Possession regained
+15:07 - TURNOVER: RIVEFLAIBANO - Regains possession → OUTCOME: Possession regained
+15:26 - TURNOVER: MUGGIA - Intercepts long pass → OUTCOME: Possession regained
+15:30 - TURNOVER: RIVEFLAIBANO - Gains possession from MUGGIA → OUTCOME: Possession regained
+15:36 - FOUL: MUGGIA - Player commits foul → OUTCOME: Free kick awarded
+15:52 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+16:13 - TURNOVER: RIVEFLAIBANO - Intercepts pass inside the box → OUTCOME: Possession regained
+16:26 - TURNOVER: RIVEFLAIBANO - Intercepts pass into the box → OUTCOME: Possession regained
+16:45 - TURNOVER: RIVEFLAIBANO - Recovers ball from MUGGIA → OUTCOME: Counter-attack started
+17:04 - TURNOVER: RIVEFLAIBANO - Clears cross → OUTCOME: Possession regained
+17:57 - SHOT: RIVEFLAIBANO - Shot taken → OUTCOME: Shot blocked
+18:11 - GOAL: MUGGIA - Shot taken → OUTCOME: Goal scored
+19:20 - FOUL: RIVEFLAIBANO - Offside against Blue team → OUTCOME: Free kick awarded
+19:43 - TURNOVER: MUGGIA - Wins ball in midfield → OUTCOME: Possession regained
+20:06 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+20:31 - TURNOVER: RIVEFLAIBANO - Intercepts pass → OUTCOME: Possession regained
+21:11 - SHOT: RIVEFLAIBANO - Shot taken → OUTCOME: Shot missed
+21:45 - TURNOVER: RIVEFLAIBANO - Wins possession with header → OUTCOME: Possession regained
+22:28 - TURNOVER: MUGGIA - Intercepts through-ball → OUTCOME: Possession regained
+23:15 - TURNOVER: RIVEFLAIBANO - Intercepts pass → OUTCOME: Counter-attack started
+23:45 - TURNOVER: MUGGIA - Recovers ball from RIVEFLAIBANO → OUTCOME: Possession regained
+24:56 - TURNOVER: RIVEFLAIBANO - Clears cross with header → OUTCOME: Possession regained
+25:29 - SHOT: RIVEFLAIBANO - Shot taken from inside the penalty area → OUTCOME: Shot taken
+25:31 - SHOT: RIVEFLAIBANO - Shot blocked → OUTCOME: Shot blocked
+25:33 - SHOT: RIVEFLAIBANO - Follow-up shot → OUTCOME: Shot missed
+26:07 - TURNOVER: MUGGIA - Intercepts long pass → OUTCOME: Possession regained
+26:12 - TURNOVER: RIVEFLAIBANO - Wins ball back in midfield → OUTCOME: Possession regained
+26:27 - FOUL: RIVEFLAIBANO - Foul committed in penalty area → OUTCOME: Penalty awarded
+26:30 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Possession maintained
+26:45 - GOAL KICK: MUGGIA - Goal kick taken (RIVEFLAIBANO gains possession) → OUTCOME: Possession changed
+27:30 - TURNOVER: MUGGIA - Wins possession with tackle → OUTCOME: Possession regained
+28:44 - SHOT: MUGGIA - Shot taken → OUTCOME: Saved by goalkeeper
+29:00 - GOAL KICK: MUGGIA - Goal kick taken → OUTCOME: Possession maintained
+29:25 - FOUL: MUGGIA - Foul committed → OUTCOME: Free kick awarded
+29:32 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Possession regained
+29:45 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+30:00 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Play restarted
+30:15 - TURNOVER: MUGGIA - Goalkeeper collects ball → OUTCOME: Possession regained
+30:55 - SHOT: MUGGIA - Shot taken → OUTCOME: Saved by goalkeeper
+31:19 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+31:30 - TURNOVER: MUGGIA - Wins possession from RIVEFLAIBANO → OUTCOME: Counter-attack started
+31:58 - TURNOVER: RIVEFLAIBANO - Intercepts long pass with header → OUTCOME: Possession regained
+32:13 - TURNOVER: MUGGIA - Intercepts forward pass → OUTCOME: Possession regained
+32:22 - SHOT: MUGGIA - Shot taken → OUTCOME: Shot missed
+32:55 - FOUL: MUGGIA - Foul committed → OUTCOME: Free kick awarded
+33:00 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+33:30 - CORNER: MUGGIA - Corner kick taken → OUTCOME: Saved by goalkeeper
+33:34 - TURNOVER: RIVEFLAIBANO - Goalkeeper catches header → OUTCOME: Possession regained
+33:45 - CORNER: MUGGIA - Corner kick taken → OUTCOME: Cross delivered
+34:00 - CORNER: MUGGIA - Corner kick taken → OUTCOME: Corner cleared
+34:14 - TURNOVER: RIVEFLAIBANO - Clears ball with header → OUTCOME: Possession regained
+35:36 - TURNOVER: RIVEFLAIBANO - Clears cross → OUTCOME: Possession regained
+36:11 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+36:13 - TURNOVER: MUGGIA - Clears ball → OUTCOME: Possession regained
+36:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+36:30 - TURNOVER: RIVEFLAIBANO - Heads ball clear → OUTCOME: Possession regained
+36:57 - SHOT: MUGGIA - Shot taken → OUTCOME: Shot missed
+37:00 - CORNER: MUGGIA - Corner kick taken → OUTCOME: Corner cleared
+37:04 - TURNOVER: RIVEFLAIBANO - Defensive header to clear → OUTCOME: Possession regained
+37:30 - CORNER: MUGGIA - Corner kick taken → OUTCOME: Corner cleared
+37:42 - TURNOVER: RIVEFLAIBANO - Clears cross → OUTCOME: Possession regained
+37:45 - GOAL KICK: MUGGIA - Goal kick taken → OUTCOME: Possession maintained
+38:15 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+38:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+38:45 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+39:13 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Shot saved
+39:14 - SHOT: RIVEFLAIBANO - Free kick shot → OUTCOME: Saved by goalkeeper
+39:15 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+39:15 - FOUL: MUGGIA - Attacking foul committed → OUTCOME: Free kick awarded
+39:15 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Possession maintained
+    40:00 - FOUL: RIVEFLAIBANO - Foul throw → OUTCOME: Free kick awarded
+40:29 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+40:37 - TURNOVER: MUGGIA - Gains possession → OUTCOME: Possession regained
+40:37 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+40:45 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Play restarted
+41:00 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+41:30 - TURNOVER: RIVEFLAIBANO - Wins ball from MUGGIA → OUTCOME: Counter-attack started
+41:44 - TURNOVER: MUGGIA - Heads ball clear → OUTCOME: Possession regained
+41:56 - TURNOVER: MUGGIA - Wins possession → OUTCOME: Possession regained
+42:23 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+42:24 - TURNOVER: RIVEFLAIBANO - Heads ball clear → OUTCOME: Possession regained
+42:40 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+42:42 - TURNOVER: RIVEFLAIBANO - Clears ball with header → OUTCOME: Possession regained
+42:46 - CORNER: MUGGIA - Corner kick taken → OUTCOME: Corner cleared
+42:48 - TURNOVER: MUGGIA - Goalkeeper clears ball → OUTCOME: Possession regained
+42:50 - SHOT: MUGGIA - Shot from corner → OUTCOME: Shot missed
+43:00 - TURNOVER: RIVEFLAIBANO - Clears cross → OUTCOME: Possession regained
+43:28 - TURNOVER: RIVEFLAIBANO - Clears ball → OUTCOME: Possession regained
+43:38 - FOUL: MUGGIA - Foul committed → OUTCOME: Play stopped
+44:02 - FOUL: MUGGIA - Yellow card shown → OUTCOME: Card shown
+44:15 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Play restarted
+44:35 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+44:51 - FOUL: MUGGIA - Foul committed in penalty area → OUTCOME: Penalty awarded
+45:00 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+45:15 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+45:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+45:56 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Shot missed
+45:56 - SHOT: MUGGIA - Free kick shot → OUTCOME: Shot missed
+46:04 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Shot saved
+46:05 - SHOT: RIVEFLAIBANO - Free kick shot → OUTCOME: Saved by goalkeeper
+46:29 - FREE KICK: RIVEFLAIBANO - Direct free kick shot → OUTCOME: Shot taken
+46:29 - SHOT: RIVEFLAIBANO - Direct free kick shot → OUTCOME: Shot taken
+46:30 - CORNER: RIVEFLAIBANO - Corner kick taken → OUTCOME: Corner cleared
+46:30 - TURNOVER: MUGGIA - Clears corner → OUTCOME: Possession regained
+46:30 - TURNOVER: RIVEFLAIBANO - Regains possession with tackle → OUTCOME: Possession regained
+47:15 - GOAL KICK: MUGGIA - Goal kick taken → OUTCOME: Play restarted
+47:43 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+53:05 - SHOT: RIVEFLAIBANO - Long shot taken (warm-up) → OUTCOME: Shot missed
+53:08 - SHOT: RIVEFLAIBANO - Shot hits crossbar (warm-up) → OUTCOME: Shot missed
+55:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+58:45 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+61:12 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+62:00 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+62:15 - CORNER: RIVEFLAIBANO - Corner kick awarded → OUTCOME: Corner kick awarded
+62:15 - TURNOVER: MUGGIA - Clears ball → OUTCOME: Corner awarded
+62:35 - FOUL: MUGGIA - Foul committed → OUTCOME: Free kick awarded
+62:57 - TURNOVER: MUGGIA - Intercepts pass → OUTCOME: Counter-attack started
+63:15 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+63:19 - TURNOVER: RIVEFLAIBANO - Goalkeeper catches ball → OUTCOME: Possession regained
+63:30 - TURNOVER: RIVEFLAIBANO - Intercepts long pass → OUTCOME: Possession regained
+63:45 - TURNOVER: MUGGIA - Intercepts pass → OUTCOME: Counter-attack started
+63:56 - SHOT: MUGGIA - Shot taken from outside box → OUTCOME: Shot taken
+64:00 - TURNOVER: MUGGIA - Intercepts long pass → OUTCOME: Possession regained
+64:21 - TURNOVER: MUGGIA - Wins possession → OUTCOME: Counter-attack started
+65:00 - TURNOVER: RIVEFLAIBANO - Goalkeeper collects ball → OUTCOME: Possession regained
+65:30 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Possession regained
+65:41 - TURNOVER: RIVEFLAIBANO - Intercepts ball → OUTCOME: Possession regained
+65:45 - TURNOVER: MUGGIA - Regains possession immediately → OUTCOME: Possession regained
+65:45 - TURNOVER: MUGGIA - Clears long ball → OUTCOME: Possession regained
+66:00 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+66:37 - TURNOVER: RIVEFLAIBANO - Intercepts and clears cross → OUTCOME: Possession regained
+67:09 - TURNOVER: MUGGIA - Wins possession with interception → OUTCOME: Counter-attack started
+67:30 - CORNER: RIVEFLAIBANO - Corner kick awarded → OUTCOME: Corner kick awarded
+67:30 - TURNOVER: MUGGIA - Blocks cross → OUTCOME: Corner awarded
+68:15 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Possession regained
+68:57 - FOUL: MUGGIA - Foul committed (implied by whistle) → OUTCOME: Play stopped
+69:16 - FOUL: RIVEFLAIBANO - Foul committed (implied by Free kick awarded) → OUTCOME: Free kick awarded
+69:21 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+69:58 - FOUL: MUGGIA - Foul committed → OUTCOME: Free kick awarded
+70:00 - TURNOVER: MUGGIA - Gains possession with tackle → OUTCOME: Counter-attack started
+70:25 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+70:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+71:39 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Shot missed
+71:39 - SHOT: MUGGIA - Free kick shot → OUTCOME: Shot missed
+71:45 - TURNOVER: MUGGIA - Gains possession from dropped ball → OUTCOME: Possession regained
+72:09 - TURNOVER: RIVEFLAIBANO - Clears cross → OUTCOME: Possession regained
+72:12 - SHOT: MUGGIA - Shot taken from outside box → OUTCOME: Shot missed
+72:15 - GOAL KICK: MUGGIA - Goal kick taken → OUTCOME: Possession maintained
+73:08 - TURNOVER: RIVEFLAIBANO - Intercepts pass → OUTCOME: Counter-attack started
+73:14 - TURNOVER: MUGGIA - Wins ball back → OUTCOME: Possession regained
+73:15 - TURNOVER: RIVEFLAIBANO - Intercepts pass → OUTCOME: Possession regained
+73:45 - TURNOVER: MUGGIA - Gains possession → OUTCOME: Possession regained
+74:21 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+74:49 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+75:00 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Possession maintained
+75:15 - TURNOVER: MUGGIA - Gains possession → OUTCOME: Possession regained
+75:50 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Possession maintained
+76:30 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Possession regained
+76:39 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+77:05 - TURNOVER: RIVEFLAIBANO - Intercepts pass → OUTCOME: Possession regained
+77:25 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+77:30 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+77:45 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+78:08 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+78:10 - TURNOVER: RIVEFLAIBANO - Clears free kick → OUTCOME: Possession regained
+78:15 - TURNOVER: MUGGIA - Intercepts pass → OUTCOME: Possession regained
+78:25 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+78:45 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Play restarted
+79:00 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+79:15 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+79:35 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+79:58 - FOUL: RIVEFLAIBANO - Foul committed (advantage played) → OUTCOME: Play continued (advantage)
+80:11 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+80:15 - TURNOVER: MUGGIA - Wins possession in midfield → OUTCOME: Counter-attack started
+80:45 - TURNOVER: RIVEFLAIBANO - Recovers possession → OUTCOME: Possession regained
+81:07 - TURNOVER: RIVEFLAIBANO - Intercepts cross → OUTCOME: Possession regained
+81:15 - GOAL KICK: MUGGIA - Goal kick taken → OUTCOME: Possession maintained
+81:57 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+82:15 - SHOT: MUGGIA - Shot blocked → OUTCOME: Shot blocked
+82:15 - TURNOVER: RIVEFLAIBANO - Regains possession from blocked shot → OUTCOME: Counter-attack started
+82:34 - TURNOVER: MUGGIA - Regains possession in midfield → OUTCOME: Counter-attack started
+82:44 - SHOT: MUGGIA - Shot taken from penalty area → OUTCOME: Shot taken
+82:46 - GOAL: RIVEFLAIBANO - Penalty kick taken → OUTCOME: Goal scored
+83:00 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Play restarted
+83:15 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+83:30 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+84:22 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+84:30 - TURNOVER: RIVEFLAIBANO - Intercepts long pass → OUTCOME: Possession regained
+85:00 - TURNOVER: RIVEFLAIBANO - Gains possession → OUTCOME: Possession regained
+85:00 - TURNOVER: MUGGIA - Gains possession → OUTCOME: Possession regained
+85:19 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+85:30 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Possession regained
+85:45 - TURNOVER: RIVEFLAIBANO - Gains possession from MUGGIA → OUTCOME: Possession regained
+86:15 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Play restarted
+86:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+86:40 - FOUL: MUGGIA - Foul committed → OUTCOME: Free kick awarded
+87:15 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+87:38 - SHOT: RIVEFLAIBANO - Shot taken → OUTCOME: Shot missed
+87:45 - TURNOVER: MUGGIA - Intercepts pass → OUTCOME: Counter-attack started
+87:45 - TURNOVER: RIVEFLAIBANO - Goalkeeper collects ball → OUTCOME: Possession regained
+88:06 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+88:30 - TURNOVER: RIVEFLAIBANO - Intercepts ball → OUTCOME: Counter-attack started
+88:30 - TURNOVER: MUGGIA - Recovers possession → OUTCOME: Counter-attack started
+88:41 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Red card shown
+88:45 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Possession maintained
+89:21 - TURNOVER: MUGGIA - Intercepts ball → OUTCOME: Possession regained
+89:21 - TURNOVER: RIVEFLAIBANO - Wins ball back immediately → OUTCOME: Possession regained
+89:30 - TURNOVER: RIVEFLAIBANO - Gains possession from MUGGIA → OUTCOME: Counter-attack started
+90:00 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+90:00 - TURNOVER: MUGGIA - Clears ball with punch → OUTCOME: Possession regained
+90:15 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Play restarted
+90:30 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+90:51 - FOUL: RIVEFLAIBANO - Handball foul committed → OUTCOME: Free kick awarded
+91:03 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Shot missed
+91:04 - SHOT: RIVEFLAIBANO - Header from free kick → OUTCOME: Shot missed
+91:24 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Shot missed
+91:24 - SHOT: RIVEFLAIBANO - Free kick shot → OUTCOME: Shot missed
+91:36 - GOAL: MUGGIA - Free kick taken → OUTCOME: Goal scored
+91:48 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+92:04 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+92:15 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Counter-attack started
+92:37 - FOUL: MUGGIA - Offside foul committed → OUTCOME: Free kick awarded
+92:45 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+93:00 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+93:15 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Play restarted
+93:44 - FREE KICK: RIVEFLAIBANO - Kick-off → OUTCOME: Possession maintained
+94:00 - TURNOVER: MUGGIA - Intercepts ball → OUTCOME: Possession regained
+94:29 - SHOT: MUGGIA - Shot taken → OUTCOME: Shot missed
+94:30 - TURNOVER: MUGGIA - Clears attack → OUTCOME: Possession regained
+94:30 - TURNOVER: MUGGIA - Gains possession → OUTCOME: Possession regained
+95:12 - TURNOVER: RIVEFLAIBANO - Intercepts long pass → OUTCOME: Possession regained
+95:27 - TURNOVER: RIVEFLAIBANO - Intercepts throw-in → OUTCOME: Possession regained
+95:30 - TURNOVER: MUGGIA - Intercepts long pass → OUTCOME: Possession regained
+95:49 - FOUL: MUGGIA - Offside foul committed → OUTCOME: Free kick awarded
+96:34 - TURNOVER: MUGGIA - Wins possession from RIVEFLAIBANO → OUTCOME: Counter-attack started
+96:42 - TURNOVER: RIVEFLAIBANO - Regains possession → OUTCOME: Counter-attack started
+96:46 - SHOT: RIVEFLAIBANO - Shot taken → OUTCOME: Saved by goalkeeper
+96:46 - CORNER: RIVEFLAIBANO - Corner kick awarded → OUTCOME: Corner kick awarded
+97:15 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Counter-attack started
+97:29 - SHOT: MUGGIA - Shot taken from penalty area → OUTCOME: Shot blocked
+97:32 - TURNOVER: RIVEFLAIBANO - Wins ball with tackle → OUTCOME: Possession regained
+97:45 - TURNOVER: MUGGIA - Recovers ball from RIVEFLAIBANO → OUTCOME: Counter-attack started
+98:00 - TURNOVER: MUGGIA - Intercepts pass → OUTCOME: Possession regained
+98:25 - TURNOVER: RIVEFLAIBANO - Wins possession → OUTCOME: Counter-attack started
+98:36 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+98:46 - SHOT: MUGGIA - Shot saved → OUTCOME: Saved by goalkeeper
+100:45 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Possession regained
+100:45 - TURNOVER: RIVEFLAIBANO - Regains possession with tackle → OUTCOME: Counter-attack started
+101:03 - SHOT: MUGGIA - Shot deflected by Blue team defender into goal → OUTCOME: Goal scored
+101:27 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+101:33 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+101:34 - TURNOVER: MUGGIA - Intercepts pass and clears ball → OUTCOME: Possession regained
+101:46 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+101:47 - TURNOVER: MUGGIA - Heads ball clear → OUTCOME: Corner awarded
+101:47 - CORNER: RIVEFLAIBANO - Corner kick awarded → OUTCOME: Corner kick awarded
+102:08 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Shot missed
+102:08 - SHOT: RIVEFLAIBANO - Free kick shot → OUTCOME: Shot missed
+102:20 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+102:21 - TURNOVER: MUGGIA - Clears ball → OUTCOME: Possession regained
+102:37 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Shot blocked
+102:37 - SHOT: MUGGIA - Free kick shot → OUTCOME: Shot blocked
+102:52 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Shot saved
+102:53 - SHOT: RIVEFLAIBANO - Free kick shot → OUTCOME: Saved by goalkeeper
+103:09 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Shot missed
+103:09 - SHOT: MUGGIA - Free kick shot → OUTCOME: Shot missed
+103:15 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+103:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Cross delivered
+103:58 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Shot missed
+103:58 - SHOT: MUGGIA - Free kick shot → OUTCOME: Shot missed
+104:09 - GOAL: MUGGIA - Header on rebound from free kick → OUTCOME: Goal scored
+105:45 - FREE KICK: MUGGIA - Kick-off → OUTCOME: Possession maintained
+106:09 - FOUL: MUGGIA - Foul committed → OUTCOME: Free kick awarded
+106:30 - TURNOVER: MUGGIA - Wins header and clears ball → OUTCOME: Possession regained
+107:20 - TURNOVER: RIVEFLAIBANO - Goalkeeper catches ball → OUTCOME: Possession regained
+107:45 - TURNOVER: MUGGIA - Intercepts pass with header → OUTCOME: Possession regained
+108:00 - TURNOVER: RIVEFLAIBANO - Gains possession → OUTCOME: Counter-attack started
+108:15 - TURNOVER: MUGGIA - Gains possession → OUTCOME: Possession regained
+108:37 - FOUL: MUGGIA - Foul committed → OUTCOME: Free kick awarded
+108:38 - TURNOVER: RIVEFLAIBANO - Wins ball back → OUTCOME: Possession regained
+109:15 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+110:20 - TURNOVER: MUGGIA - Gains possession from RIVEFLAIBANO → OUTCOME: Possession regained
+110:30 - FOUL: RIVEFLAIBANO - Foul committed (implied by foul called) → OUTCOME: Free kick awarded
+110:30 - FREE KICK: MUGGIA - Free kick taken → OUTCOME: Play restarted
+110:53 - TURNOVER: MUGGIA - Intercepts forward pass → OUTCOME: Possession regained
+111:02 - FOUL: RIVEFLAIBANO - Foul committed → OUTCOME: Free kick awarded
+111:15 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+111:30 - FREE KICK: RIVEFLAIBANO - Free kick taken → OUTCOME: Cross delivered
+111:30 - TURNOVER: MUGGIA - Clears ball → OUTCOME: Possession regained

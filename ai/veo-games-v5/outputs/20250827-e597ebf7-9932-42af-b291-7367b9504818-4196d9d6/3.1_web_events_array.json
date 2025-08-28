@@ -1,0 +1,3274 @@
+[
+  {
+    "timestamp": 192,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot taken \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 199,
+    "type": "corner",
+    "team": "RIVEFLAIBANO",
+    "description": "Corner kick taken, header over goal \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 223,
+    "type": "corner",
+    "team": "RIVEFLAIBANO",
+    "description": "Corner kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 225,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Goalkeeper catches cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 259,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick blocked by defensive wall \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 260,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Rebound shot taken \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 283,
+    "type": "penalty_awarded",
+    "team": "RIVEFLAIBANO",
+    "description": "Defender tackles Yellow player inside penalty box \u2192 OUTCOME: Penalty awarded",
+    "excitement_level": 6,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 326,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Player commits foul \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 345,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts ball in midfield \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 390,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Dispossessed by sliding tackle \u2192 OUTCOME: Possession lost",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 390,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Regains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 408,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Player commits foul \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 433,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Direct free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 462,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Direct free kick taken \u2192 OUTCOME: Shot saved",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 464,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Direct free kick shot \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 466,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 484,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken, header wide of goal \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 484,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Header from free kick \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 495,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 510,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Set piece taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 510,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears set piece \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 551,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession with tackle \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 556,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Header on goal \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 557,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Goalkeeper saves shot \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 597,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Regains possession with sliding tackle \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 608,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot on goal \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 626,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts forward pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 630,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 664,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 705,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass in penalty area \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 747,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Player commits foul \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 750,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 781,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 792,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 838,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 838,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins possession back immediately \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 844,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Player commits foul \u2192 OUTCOME: Play stopped",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 855,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Gains possession from throw-in \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 870,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts ball \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 907,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Goalkeeper intercepts pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 907,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Regains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 926,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts long pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 930,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Gains possession from MUGGIA \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 936,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Player commits foul \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 952,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 973,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass inside the box \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 986,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass into the box \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1005,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Recovers ball from MUGGIA \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1024,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1077,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot taken \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1091,
+    "type": "goal",
+    "team": "MUGGIA",
+    "description": "Shot taken \u2192 OUTCOME: Goal scored",
+    "excitement_level": 10,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1160,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Offside against Blue team \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1183,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins ball in midfield \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1206,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1231,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1271,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1305,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins possession with header \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1348,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts through-ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1395,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1425,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Recovers ball from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1496,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears cross with header \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1529,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot taken from inside the penalty area \u2192 OUTCOME: Shot taken",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1531,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot blocked \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1533,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Follow-up shot \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1567,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts long pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1572,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins ball back in midfield \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1587,
+    "type": "penalty_awarded",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed in penalty area \u2192 OUTCOME: Penalty awarded",
+    "excitement_level": 6,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1590,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1605,
+    "type": "goal_kick",
+    "team": "MUGGIA",
+    "description": "Goal kick taken (RIVEFLAIBANO gains possession) \u2192 OUTCOME: Possession changed",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1650,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession with tackle \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1724,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1740,
+    "type": "goal_kick",
+    "team": "MUGGIA",
+    "description": "Goal kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1765,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1772,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1785,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1800,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1815,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Goalkeeper collects ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1855,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1879,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1890,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession from RIVEFLAIBANO \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1918,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts long pass with header \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1933,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts forward pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1942,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1975,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 1980,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2010,
+    "type": "corner",
+    "team": "MUGGIA",
+    "description": "Corner kick taken \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2014,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Goalkeeper catches header \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2025,
+    "type": "corner",
+    "team": "MUGGIA",
+    "description": "Corner kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2040,
+    "type": "corner",
+    "team": "MUGGIA",
+    "description": "Corner kick taken \u2192 OUTCOME: Corner cleared",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2054,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears ball with header \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2136,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2171,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2173,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2190,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2190,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Heads ball clear \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2217,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2220,
+    "type": "corner",
+    "team": "MUGGIA",
+    "description": "Corner kick taken \u2192 OUTCOME: Corner cleared",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2224,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Defensive header to clear \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2250,
+    "type": "corner",
+    "team": "MUGGIA",
+    "description": "Corner kick taken \u2192 OUTCOME: Corner cleared",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2262,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2265,
+    "type": "goal_kick",
+    "team": "MUGGIA",
+    "description": "Goal kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2295,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2310,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2325,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2353,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Shot saved",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2354,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick shot \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2355,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2355,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Attacking foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2355,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2400,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul throw \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2429,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2437,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2437,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2445,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2460,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2490,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins ball from MUGGIA \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2504,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Heads ball clear \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2516,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2543,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2544,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Heads ball clear \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2560,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2562,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears ball with header \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2566,
+    "type": "corner",
+    "team": "MUGGIA",
+    "description": "Corner kick taken \u2192 OUTCOME: Corner cleared",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2568,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Goalkeeper clears ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2570,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot from corner \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2580,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2608,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2618,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Play stopped",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2642,
+    "type": "card",
+    "team": "MUGGIA",
+    "description": "Yellow card shown \u2192 OUTCOME: Card shown",
+    "excitement_level": 5,
+    "original_team_name": "blue jersey",
+    "card_type": "yellow",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2655,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2675,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2691,
+    "type": "penalty_awarded",
+    "team": "MUGGIA",
+    "description": "Foul committed in penalty area \u2192 OUTCOME: Penalty awarded",
+    "excitement_level": 6,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2700,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2715,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2730,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2756,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2756,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Free kick shot \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2764,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Shot saved",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2765,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick shot \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2789,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Direct free kick shot \u2192 OUTCOME: Shot taken",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2789,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Direct free kick shot \u2192 OUTCOME: Shot taken",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2790,
+    "type": "corner",
+    "team": "RIVEFLAIBANO",
+    "description": "Corner kick taken \u2192 OUTCOME: Corner cleared",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2790,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears corner \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2790,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Regains possession with tackle \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2835,
+    "type": "goal_kick",
+    "team": "MUGGIA",
+    "description": "Goal kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 2863,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3185,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Long shot taken (warm-up) \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3188,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot hits crossbar (warm-up) \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3330,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3525,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3672,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3720,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3735,
+    "type": "corner",
+    "team": "RIVEFLAIBANO",
+    "description": "Corner kick awarded \u2192 OUTCOME: Corner kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3735,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears ball \u2192 OUTCOME: Corner awarded",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3755,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3777,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3795,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3799,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Goalkeeper catches ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3810,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts long pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3825,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3836,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken from outside box \u2192 OUTCOME: Shot taken",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3840,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts long pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3861,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3900,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Goalkeeper collects ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3930,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3941,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3945,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Regains possession immediately \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3945,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears long ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3960,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 3997,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts and clears cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4029,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession with interception \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4050,
+    "type": "corner",
+    "team": "RIVEFLAIBANO",
+    "description": "Corner kick awarded \u2192 OUTCOME: Corner kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4050,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Blocks cross \u2192 OUTCOME: Corner awarded",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4095,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4137,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed (implied by whistle) \u2192 OUTCOME: Play stopped",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4156,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed (implied by Free kick awarded) \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4161,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4198,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4200,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession with tackle \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4225,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4230,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4299,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4299,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Free kick shot \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4305,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from dropped ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4329,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4332,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken from outside box \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4335,
+    "type": "goal_kick",
+    "team": "MUGGIA",
+    "description": "Goal kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4388,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4394,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins ball back \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4395,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4425,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4461,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4489,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4500,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4515,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4550,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4590,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4599,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4625,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4645,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4650,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4665,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4688,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4690,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Clears free kick \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4695,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4705,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4725,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4740,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4755,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4775,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4798,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed (advantage played) \u2192 OUTCOME: Play continued (advantage)",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4811,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4815,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession in midfield \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4845,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Recovers possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4867,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts cross \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4875,
+    "type": "goal_kick",
+    "team": "MUGGIA",
+    "description": "Goal kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4917,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4935,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot blocked \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4935,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Regains possession from blocked shot \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4954,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Regains possession in midfield \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4964,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken from penalty area \u2192 OUTCOME: Shot taken",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4966,
+    "type": "goal",
+    "team": "RIVEFLAIBANO",
+    "description": "Penalty kick taken \u2192 OUTCOME: Goal scored",
+    "excitement_level": 10,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4980,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Play restarted",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 4995,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5010,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5062,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5070,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts long pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5100,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Gains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5100,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5119,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5130,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5145,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Gains possession from MUGGIA \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5175,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Play restarted",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5190,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5200,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5235,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5258,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5265,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5265,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Goalkeeper collects ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5286,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5310,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts ball \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5310,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Recovers possession \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5321,
+    "type": "card",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Red card shown",
+    "excitement_level": 5,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "card_type": "red",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5325,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5361,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5361,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins ball back immediately \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5370,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Gains possession from MUGGIA \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5400,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5400,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears ball with punch \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5415,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5430,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5451,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Handball foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5463,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5464,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Header from free kick \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5484,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5484,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick shot \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5496,
+    "type": "goal",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Goal scored",
+    "excitement_level": 10,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5508,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5524,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5535,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5557,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Offside foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5565,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5580,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5595,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Play restarted",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5624,
+    "type": "kick_off",
+    "team": "RIVEFLAIBANO",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5640,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5669,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5670,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears attack \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5670,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5712,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts long pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5727,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Intercepts throw-in \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5730,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts long pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5749,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Offside foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5794,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins possession from RIVEFLAIBANO \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5802,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Regains possession \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5806,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Shot taken \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5806,
+    "type": "corner",
+    "team": "RIVEFLAIBANO",
+    "description": "Corner kick awarded \u2192 OUTCOME: Corner kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5835,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5849,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot taken from penalty area \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5852,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins ball with tackle \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5865,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Recovers ball from RIVEFLAIBANO \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5880,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5905,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins possession \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5916,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 5926,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Shot saved \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6045,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6045,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Regains possession with tackle \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6063,
+    "type": "goal",
+    "team": "MUGGIA",
+    "description": "Shot deflected by Blue team defender into goal \u2192 OUTCOME: Goal scored",
+    "excitement_level": 10,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6087,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6093,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6094,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass and clears ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6106,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6107,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Heads ball clear \u2192 OUTCOME: Corner awarded",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6107,
+    "type": "corner",
+    "team": "RIVEFLAIBANO",
+    "description": "Corner kick awarded \u2192 OUTCOME: Corner kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6128,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6128,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick shot \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6140,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6141,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6157,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6157,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Free kick shot \u2192 OUTCOME: Shot blocked",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6172,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Shot saved",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6173,
+    "type": "shot",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick shot \u2192 OUTCOME: Saved by goalkeeper",
+    "excitement_level": 8,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6189,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6189,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Free kick shot \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6195,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6210,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6238,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Shot missed",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6238,
+    "type": "shot",
+    "team": "MUGGIA",
+    "description": "Free kick shot \u2192 OUTCOME: Shot missed",
+    "excitement_level": 8,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6249,
+    "type": "goal",
+    "team": "MUGGIA",
+    "description": "Header on rebound from free kick \u2192 OUTCOME: Goal scored",
+    "excitement_level": 10,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6345,
+    "type": "kick_off",
+    "team": "MUGGIA",
+    "description": "Kick-off \u2192 OUTCOME: Possession maintained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6369,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6390,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Wins header and clears ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6440,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Goalkeeper catches ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6465,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts pass with header \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6480,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Gains possession \u2192 OUTCOME: Counter-attack started",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6495,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6517,
+    "type": "foul",
+    "team": "MUGGIA",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6518,
+    "type": "turnover",
+    "team": "RIVEFLAIBANO",
+    "description": "Wins ball back \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6555,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6620,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Gains possession from RIVEFLAIBANO \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6630,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed (implied by foul called) \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6630,
+    "type": "free_kick",
+    "team": "MUGGIA",
+    "description": "Free kick taken \u2192 OUTCOME: Play restarted",
+    "excitement_level": 4,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6653,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Intercepts forward pass \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6662,
+    "type": "foul",
+    "team": "RIVEFLAIBANO",
+    "description": "Foul committed \u2192 OUTCOME: Free kick awarded",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6675,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6690,
+    "type": "free_kick",
+    "team": "RIVEFLAIBANO",
+    "description": "Free kick taken \u2192 OUTCOME: Cross delivered",
+    "excitement_level": 4,
+    "original_team_name": "yrllow [Dyellow jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  },
+  {
+    "timestamp": 6690,
+    "type": "turnover",
+    "team": "MUGGIA",
+    "description": "Clears ball \u2192 OUTCOME: Possession regained",
+    "excitement_level": 2,
+    "original_team_name": "blue jersey",
+    "veo_verified": true,
+    "ai_detected": false
+  }
+]

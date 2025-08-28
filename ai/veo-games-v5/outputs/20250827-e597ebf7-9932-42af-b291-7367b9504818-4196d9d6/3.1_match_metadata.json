@@ -1,0 +1,28 @@
+{
+  "match_id": "20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6",
+  "teams": {
+    "red_team": {
+      "name": "RIVEFLAIBANO",
+      "jersey_color": "yrllow \u001b[Dyellow jersey"
+    },
+    "blue_team": {
+      "name": "MUGGIA",
+      "jersey_color": "blue jersey"
+    }
+  },
+  "counts": {
+    "goals": 5,
+    "shots": 40
+  },
+  "files": {
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6-video-mp4.mp4",
+    "web_events_array_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6-web_events_array-json.json",
+    "web_events_json": null,
+    "timeline_txt": null,
+    "ground_truth_json": null,
+    "other_events_txt": null,
+    "tactical_json": null
+  },
+  "final_score": "RIVEFLAIBANO 1 - MUGGIA 3",
+  "match_summary": "The match saw MUGGIA take an early lead with a goal in the 18th minute. RIVEFLAIBANO struggled to convert their chances despite taking numerous shots, including several direct free kicks and a shot that was blocked inside the penalty area. MUGGIA also demonstrated offensive prowess, registering multiple shots on goal and from free kicks, though some were missed or saved.\n\nA significant turning point occurred when RIVEFLAIBANO was awarded a penalty kick in the 82nd minute, which they successfully converted, bringing the score to 1-1. However, MUGGIA quickly responded, scoring two more goals from free-kick situations in the 91st and 104th minutes. RIVEFLAIBANO faced disciplinary issues, accumulating more fouls and receiving a red card in the 88th minute, which likely impacted their ability to mount a late comeback. MUGGIA effectively capitalized on set-piece opportunities, ultimately securing a 3-1 victory."
+}

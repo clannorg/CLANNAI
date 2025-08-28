@@ -61,7 +61,7 @@ def synthesize_timeline(match_id: str) -> bool:
     
     # Use V5 directory structure
     data_dir = Path(__file__).parent.parent / "outputs" / match_id
-    descriptions_dir = data_dir / "4_clip_descriptions"
+    descriptions_dir = data_dir / "1.5_clip_descriptions"
     output_path = data_dir / "1.6_complete_timeline.txt"
     
     if not descriptions_dir.exists():

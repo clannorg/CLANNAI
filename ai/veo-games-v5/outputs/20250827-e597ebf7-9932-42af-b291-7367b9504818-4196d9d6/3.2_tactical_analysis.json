@@ -1,0 +1,68 @@
+{
+  "tactical_analysis": {
+    "red_team": {
+      "team_name": "RIVEFLAIBANO",
+      "strengths": [
+        "Set Piece Threat: The team consistently won and executed free kicks in dangerous attacking areas, generating numerous shots on goal and threatening crosses into the penalty box.",
+        "Transition Game: Demonstrated a strong ability to regain possession through defensive interceptions and immediately launch counter-attacks, effectively turning defense into offense.",
+        "Goalkeeping Resilience: The goalkeeper was a key performer, making several crucial saves that prevented a wider goal margin and kept the team competitive for much of the match.",
+        "Composure from the Penalty Spot: Successfully converted a high-pressure penalty kick late in the game, showcasing clinical execution when it mattered most."
+      ],
+      "weaknesses": [
+        "Poor Discipline: A high foul count (29) and a critical red card undermined their defensive stability, conceding a penalty and numerous dangerous set pieces which MUGGIA capitalized on.",
+        "Inefficient Finishing: Despite creating a high volume of scoring opportunities (20 shots), the team lacked clinical finishing, with many attempts being off-target, blocked, or saved.",
+        "Set-Piece Defending: Showed significant structural weakness in defending dead-ball situations, conceding two goals directly from MUGGIA's free kicks, indicating a failure in marking or organization."
+      ],
+      "key_players": [
+        "Goalkeeper: Proved to be a vital last line of defense, whose saves kept the scoreline respectable and offered the team a chance to stay in the game.",
+        "Penalty Taker: Demonstrated excellent composure and technique to score the equalizer from the penalty spot, a moment that briefly shifted the match's momentum."
+      ],
+      "tactical_setup": "RIVEFLAIBANO employed an aggressive, high-energy tactical approach focused on pressing opponents and creating chances through set pieces. This high-risk strategy led to a high number of both shots and fouls, but their offensive efforts were ultimately negated by a lack of finishing quality and severe defensive indiscipline.",
+      "performance_summary": "Despite showing offensive intent and creating numerous chances, RIVEFLAIBANO's performance was defined by its fatal flaws: a lack of discipline and a vulnerability to set pieces. Their inability to defend dead balls and the late red card handed the initiative to MUGGIA, who clinically punished these errors to secure the win."
+    },
+    "blue_team": {
+      "team_name": "MUGGIA",
+      "strengths": [
+        "Lethal Set-Piece Execution: Proved exceptionally dangerous from dead-ball situations, scoring three goals that originated from free kicks. Their precision and strategy in these moments were the decisive factors.",
+        "Effective Counter-Attack: Capitalized on turnovers by quickly transitioning from a defensive posture into swift, dangerous counter-attacks that put RIVEFLAIBANO's backline under pressure.",
+        "Drawing Fouls Strategically: Showcased an intelligent ability to draw fouls in the attacking third, creating the set-piece opportunities that formed the core of their offensive success.",
+        "Solid Goalkeeping: The goalkeeper was a reliable presence, making key saves from RIVEFLAIBANO's numerous shots to protect the lead and frustrate the opposition."
+      ],
+      "weaknesses": [
+        "Inconsistent Open-Play Shooting: While effective on set pieces, they missed a significant number of shots from open play, indicating a need for greater accuracy and composure in front of goal.",
+        "Midfield Turnovers: Occasionally lost possession in the midfield, which gave RIVEFLAIBANO opportunities to launch their own counter-attacks.",
+        "Offside Issues: Attacking rhythm was periodically broken by being caught offside, suggesting potential timing issues with their forward runs against the defensive line."
+      ],
+      "key_players": [
+        "Set-Piece Specialists: The players responsible for free-kick delivery and execution were the undisputed match-winners, demonstrating superior technique and tactical awareness to score crucial goals.",
+        "Goalkeeper: Provided a foundation of defensive security, making critical saves at important junctures to deny RIVEFLAIBANO and maintain their team's advantage."
+      ],
+      "tactical_setup": "MUGGIA played a patient and opportunistic game, focused on defensive solidity and exploiting opponent mistakes. They willingly absorbed pressure, knowing their strength lay in rapid counter-attacks and a masterful execution of set pieces. This strategy perfectly countered RIVEFLAIBANO's aggressive but undisciplined style.",
+      "performance_summary": "MUGGIA delivered a tactically astute performance. They remained disciplined in defense, potent on the counter, and absolutely clinical from set pieces. By intelligently drawing fouls and masterfully converting the resulting opportunities, they overcame their own struggles in open-play finishing to earn a well-deserved victory."
+    },
+    "match_summary": {
+      "final_score": "RIVEFLAIBANO 1 - MUGGIA 3",
+      "match_story": "The match was a tactical battle decided by discipline and set-piece prowess. MUGGIA seized an early lead and weathered a storm of RIVEFLAIBANO attacks, who despite creating 20 shots, couldn't find a way through. A late penalty for RIVEFLAIBANO leveled the score at 1-1 and suggested a dramatic finish. However, RIVEFLAIBANO's persistent fouling and a subsequent red card proved to be their downfall. MUGGIA expertly punished this indiscipline, scoring two late goals from free kicks to seal a commanding 3-1 victory built on tactical intelligence.",
+      "key_moments": [
+        "82:46 - RIVEFLAIBANO's penalty goal brings the match to a tense 1-1 standoff, briefly swinging momentum in their favor.",
+        "88:41 - RIVEFLAIBANO receives a red card, a critical disciplinary error that left them shorthanded and vulnerable in the decisive final minutes.",
+        "91:36 & 104:09 - MUGGIA scores two late goals from free-kick situations, showcasing their set-piece superiority and securing the victory."
+      ],
+      "tactical_themes": [
+        "The Decisive Battle of Set Pieces: MUGGIA's clinical execution on free kicks directly contrasted with RIVEFLAIBANO's inability to defend them, becoming the single most important factor in the outcome.",
+        "Discipline as a Weapon: MUGGIA effectively used RIVEFLAIBANO's aggression against them, drawing fouls in key areas, while RIVEFLAIBANO's high foul count was a self-inflicted wound.",
+        "Wastefulness vs. Efficiency: Both teams generated 20 shots, but the match was a lesson in efficiency. MUGGIA converted their key chances from set plays, while RIVEFLAIBANO's high volume of attacks yielded only one goal."
+      ]
+    },
+    "recommendations": {
+      "riveflaibano": [
+        "Enhance Set-Piece Defensive Organization: Implement rigorous training focused on zonal/man-marking assignments and wall setup to urgently address the vulnerability that conceded two goals.",
+        "Improve Tackling Discipline: Coach players on maintaining defensive shape and executing cleaner challenges to reduce the foul count, thereby limiting the number of dangerous set-piece opportunities for the opposition."
+      ],
+      "muggia": [
+        "Refine Open-Play Finishing: Incorporate drills focused on composure and shot placement in dynamic, game-like scenarios to improve their goal conversion rate from open play and become a more multi-faceted attacking threat.",
+        "Synchronize Attacking Runs: Work on the timing and communication between midfielders and forwards to avoid being caught offside, ensuring that promising attacking moves are not nullified."
+      ]
+    }
+  }
+}

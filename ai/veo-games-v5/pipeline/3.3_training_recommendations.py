@@ -10,9 +10,26 @@ import os
 from pathlib import Path
 import google.generativeai as genai
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables
+env_paths = [
+    Path('.env'),
+    Path('../.env'), 
+    Path('../../.env'),
+    Path('/home/ubuntu/CLANNAI/.env'),
+    Path('/home/ubuntu/CLANNAI/ai/.env')
+]
+
+for env_path in env_paths:
+    if env_path.exists():
+        load_dotenv(env_path)
+        print(f"🔑 Loaded environment from: {env_path}")
+        break
 
 # Configure Gemini
-genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
+api_key = os.getenv('GOOGLE_API_KEY') or os.getenv('GEMINI_API_KEY')
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.5-pro')
 
 # Training Drill Database with YouTube links
@@ -230,8 +247,9 @@ def main():
     
     match_id = sys.argv[1]
     
-    if not os.getenv('GEMINI_API_KEY'):
-        print("❌ GEMINI_API_KEY environment variable not set")
+    api_key = os.getenv('GOOGLE_API_KEY') or os.getenv('GEMINI_API_KEY')
+    if not api_key:
+        print("❌ GOOGLE_API_KEY or GEMINI_API_KEY environment variable not set")
         sys.exit(1)
     
     success = generate_training_recommendations(match_id)

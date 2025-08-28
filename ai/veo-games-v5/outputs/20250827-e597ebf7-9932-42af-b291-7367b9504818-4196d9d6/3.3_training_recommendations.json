@@ -1,0 +1,36 @@
+{
+  "match_id": "20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6",
+  "generated_at": "2025-08-28T16:14:56.904511",
+  "training_recommendations": [
+    {
+      "drill_name": "Zonal Marking Corner Drill",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "description": "Organize defensive set piece structure and communication",
+      "focus_areas": "Zonal positioning, aerial duels, clearing techniques",
+      "match_evidence": "Conceded two goals directly from MUGGIA's free kicks in the 91st and 104th minutes.",
+      "why_needed": "This was a critical weakness exploited by MUGGIA and directly led to their defeat. Improved organization, marking, and wall discipline are essential.",
+      "priority": 1
+    },
+    {
+      "drill_name": "1v1 Finishing Drill",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "description": "Improve clinical finishing in one-on-one situations",
+      "focus_areas": "Composure, shot placement, beating the goalkeeper",
+      "match_evidence": "Created 20 shooting opportunities but only scored one goal, demonstrating a significant lack of clinical finishing.",
+      "why_needed": "Converting a higher percentage of their chances would make RIVEFLAIBANO's attacking play far more effective and could have changed the match outcome.",
+      "priority": 2
+    },
+    {
+      "drill_name": "High Press Trigger Drill",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "description": "Coordinate team pressing and win ball in final third",
+      "focus_areas": "Press triggers, compactness, ball recovery",
+      "match_evidence": "RIVEFLAIBANO's aggressive pressing style resulted in a high foul count (29) and a red card, ultimately contributing to their loss.",
+      "why_needed": "While pressing can be effective, it needs to be controlled and disciplined. Training should focus on smarter pressing triggers and cleaner tackling technique to reduce fouls and avoid costly disciplinary actions.",
+      "priority": 3
+    }
+  ]
+}
