@@ -1,27 +1,25 @@
 Match: Dalkey vs Corduff
-Final Score: Dalkey 0-2 Corduff
+Final Score: Corduff 2 - Dalkey 0
 
 === DALKEY STATISTICS ===
 - Goals: 0
-- Shots: 47
-- Fouls: 8 (including 3 penalties awarded against Dalkey)
-- Corners: 2
-- Free kicks: 13
-- Goal kicks: 4
-- Turnovers: 45
+- Shots: 36
+- Fouls: 6
+- Corners: 3
+- Free kicks: 11
+- Goal kicks: 7
+- Turnovers: 56
 
 === CORDUFF STATISTICS ===
 - Goals: 2
-- Shots: 22
-- Fouls: 10 (including 2 penalties awarded against Corduff)
+- Shots: 17
+- Fouls: 9
 - Corners: 2
-- Free kicks: 12
-- Goal kicks: 5
-- Turnovers: 42
+- Free kicks: 16
+- Goal kicks: 4
+- Turnovers: 52
 
 Match Flow (Key Moments Only):
-The match saw Corduff emerge victorious with a 2-0 scoreline, with both goals being VEO-verified. Corduff opened the scoring late in the first half at 36:45, following an attacking play that began with a free kick. Their second and final goal came late in the second half at 85:11, after a build-up into the penalty area.
+The match was a tightly contested affair, with Corduff securing a 2-0 victory through two VEO-verified goals. The first breakthrough came at 36:45 when Corduff capitalized on an attacking play, with the Red team celebrating a goal. Despite numerous attacking attempts from both sides, the score remained 1-0 until late in the game. Corduff sealed their victory at 85:11, with the Red team scoring after a sustained attack into the penalty area.
 
-Despite the score, Dalkey was highly active in attacking, registering a significant number of shots (47) throughout the game, compared to Corduff's 22. Dalkey had numerous opportunities, including several shots saved by the Corduff goalkeeper and many that went wide. Corduff, while having fewer shots, demonstrated clinical finishing in the two moments that counted. Key defensive moments included Corduff committing 10 fouls, leading to 2 penalties awarded against them, and Dalkey committing 8 fouls, leading to 3 penalties awarded against them.
-
-The midfield battle was intense, with both teams frequently winning and losing possession. Dalkey led in turnovers (45 vs 42), indicating their persistent efforts to win back the ball and launch attacks. Set pieces were also a feature, with Dalkey having more free kicks than Corduff, and both teams earning two corners each.
+Throughout the game, Dalkey showed a strong offensive presence, registering 36 shots, including several "goals" not verified by VEO, highlighting their attacking intent despite being unable to convert them into official goals. Key Dalkey shots were saved by the goalkeeper at 09:53, 26:35, 29:47, 37:23, and 44:51. Corduff's defense was put to the test, blocking Dalkey shots at 27:05. Corduff, while having fewer shots (17), made them count, with crucial blocks at 36:42, 80:51, and 82:32, and a vital save by their goalkeeper at 82:27. Turnovers were frequent, indicating an intense battle for possession in midfield, with Dalkey initiating 56 counter-attacks and Corduff 52, showcasing the end-to-end nature of the game.

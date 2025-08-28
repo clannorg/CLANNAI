@@ -155,7 +155,7 @@ OUTPUT 3 SECTIONS - FOCUS ONLY ON THESE 7 EVENT TYPES:
 List ONLY the 7 event types above in chronological order, one per line:
 Format: MM:SS - TYPE: Team - Description → OUTCOME: [what happened next]
 
-CRITICAL RULES FOR VEO GOAL MATCHING (SAME AS 2.5):
+CRITICAL RULES FOR VEO GOAL MATCHING:
 - VEO goals are the ONLY goals that count - use exactly {len(veo_goals)} goals from VEO data
 - VEO timestamps mark the START of attacking plays that led to goals
 - For each VEO goal timestamp, look 15-30 seconds AFTER in the AI timeline to find the actual goal moment
@@ -163,6 +163,7 @@ CRITICAL RULES FOR VEO GOAL MATCHING (SAME AS 2.5):
 - Extract which team scored from the AI description (look for jersey colors/team names)
 - NEVER output "Unidentified Team" - always find the team from AI timeline
 - Use "{team_a_name}" and "{team_b_name}" consistently
+- IGNORE ALL OTHER "goal" mentions in AI timeline - only VEO goals count
 
 OUTCOME TRACKING:
 - SHOT → "Goal scored" / "Saved by goalkeeper" / "Shot missed" / "Shot blocked"
@@ -176,6 +177,12 @@ OUTCOME TRACKING:
 - AI timeline at 36:45: "red and black jerseys player scores into top corner"
 - Output: "36:45 - GOAL: {team_b_name} - Ball travels into top right corner of net → OUTCOME: Goal scored"
 
+**MANDATORY GOAL VERIFICATION:**
+- You MUST output exactly {len(veo_goals)} goals and NO MORE
+- Each goal MUST correspond to a VEO timestamp: {[g['time'] for g in veo_goals]}
+- If AI timeline mentions other "goals", they are NOT real goals - ignore them completely
+- Only goals that match VEO verification timestamps are valid
+
 Example output:
 30:50 - GOAL: {team_a_name} - Header from corner kick, player #10 scores → OUTCOME: Goal scored
 31:31 - SHOT: {team_b_name} - Long range effort from 25 yards → OUTCOME: Saved by goalkeeper
@@ -184,6 +191,12 @@ Example output:
 75:22 - TURNOVER: {team_b_name} - Midfielder intercepts pass in center circle → OUTCOME: Counter-attack started
 
 IGNORE ALL OTHER EVENTS: No throw-ins, substitutions, warm-ups, pre-match activities, general possession play, etc.
+
+**CRITICAL WARNING ABOUT FAKE GOALS:**
+- AI timeline may mention many "goals" that are NOT real goals
+- These could be: warm-up shots, practice goals, celebration descriptions, or AI mistakes
+- ONLY the {len(veo_goals)} VEO-verified goals at timestamps {[g['time'] for g in veo_goals]} are real
+- All other "goal" mentions in AI timeline must be classified as SHOTS instead
 
 === FOCUSED_SUMMARY.TXT ===
 Match summary focusing on the 7 event types:
