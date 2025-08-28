@@ -7,8 +7,8 @@ const { getGameById } = require('../utils/database')
 // Initialize Gemini client
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
 
-// Debug endpoint to check server status
-router.get('/debug', (req, res) => {
+// Debug endpoint to check server status (DISABLED FOR SECURITY)
+router.get('/debug-disabled', (req, res) => {
   try {
     const fs = require('fs');
     const path = require('path');
@@ -64,14 +64,14 @@ router.get('/debug', (req, res) => {
       }
     });
 
-    // Check all environment variables that might be relevant
+    // Check all environment variables that might be relevant (sanitized)
     const relevantEnvVars = {};
     Object.keys(process.env).forEach(key => {
       if (key.includes('GEMINI') || key.includes('API') || key.includes('KEY')) {
         relevantEnvVars[key] = {
           exists: !!process.env[key],
           length: process.env[key]?.length,
-          start: process.env[key]?.substring(0, 10) + '...',
+          start: process.env[key] ? '[REDACTED]' : 'NOT_SET',
           source: 'environment_variable'
         };
       }
@@ -90,8 +90,8 @@ router.get('/debug', (req, res) => {
       current_gemini_key: {
         exists: !!process.env.GEMINI_API_KEY,
         length: process.env.GEMINI_API_KEY?.length,
-        start: process.env.GEMINI_API_KEY?.substring(0, 10),
-        full_key_for_debug: process.env.GEMINI_API_KEY // TEMPORARY - remove after debugging
+        start: process.env.GEMINI_API_KEY?.substring(0, 10) + '...',
+        status: process.env.GEMINI_API_KEY?.startsWith('AIzaSyDDAN') ? 'correct_key' : 'unknown_key'
       },
       all_relevant_env_vars: relevantEnvVars,
       environment: {
