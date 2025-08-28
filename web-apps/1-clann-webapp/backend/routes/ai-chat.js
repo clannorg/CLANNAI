@@ -29,12 +29,21 @@ router.get('/debug', (req, res) => {
         const fullPath = path.resolve(envPath);
         if (fs.existsSync(fullPath)) {
           const content = fs.readFileSync(fullPath, 'utf8');
+          
+          // Check if this file contains the current Gemini key
+          const geminiKeyMatch = content.match(/GEMINI_API_KEY=([^\n\r]+)/);
+          const foundGeminiKey = geminiKeyMatch ? geminiKeyMatch[1].trim() : null;
+          const isActiveEnvFile = foundGeminiKey && process.env.GEMINI_API_KEY && 
+                                 foundGeminiKey.startsWith(process.env.GEMINI_API_KEY.substring(0, 10));
+          
           envFileInfo[fullPath] = {
             exists: true,
             size: content.length,
             lines: content.split('\n').length,
+            gemini_key_in_file: foundGeminiKey ? foundGeminiKey.substring(0, 10) + '...' : 'NOT_FOUND',
+            is_active_env_file: isActiveEnvFile,
             // Show first few chars of each line for debugging (hide sensitive values)
-            preview: content.split('\n').slice(0, 10).map(line => {
+            preview: content.split('\n').slice(0, 15).map(line => {
               if (line.includes('=')) {
                 const [key, value] = line.split('=', 2);
                 return `${key}=${value ? value.substring(0, 10) + '...' : ''}`;
