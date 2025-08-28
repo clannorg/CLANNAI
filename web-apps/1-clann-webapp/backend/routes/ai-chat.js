@@ -13,15 +13,22 @@ router.get('/debug', (req, res) => {
     const fs = require('fs');
     const path = require('path');
     
-    // Try to find .env files
+    // Try to find ALL possible .env files
     let envFileInfo = {};
     const possibleEnvPaths = [
       '.env',
-      '../.env', 
+      '.env.clean',
+      '.env.production',
+      '.env.local',
+      '../.env',
+      '../.env.clean', 
       '../../.env',
       '/app/.env',
+      '/app/.env.clean',
       '/app/backend/.env',
-      process.cwd() + '/.env'
+      '/app/backend/.env.clean',
+      process.cwd() + '/.env',
+      process.cwd() + '/.env.clean'
     ];
     
     possibleEnvPaths.forEach(envPath => {
@@ -57,21 +64,41 @@ router.get('/debug', (req, res) => {
       }
     });
 
+    // Check all environment variables that might be relevant
+    const relevantEnvVars = {};
+    Object.keys(process.env).forEach(key => {
+      if (key.includes('GEMINI') || key.includes('API') || key.includes('KEY')) {
+        relevantEnvVars[key] = {
+          exists: !!process.env[key],
+          length: process.env[key]?.length,
+          start: process.env[key]?.substring(0, 10) + '...',
+          source: 'environment_variable'
+        };
+      }
+    });
+
     res.json({
       timestamp: new Date().toISOString(),
       server_status: 'running',
       process_info: {
         cwd: process.cwd(),
         node_version: process.version,
-        platform: process.platform
+        platform: process.platform,
+        argv: process.argv,
+        env_node_path: process.env.NODE_PATH
       },
+      current_gemini_key: {
+        exists: !!process.env.GEMINI_API_KEY,
+        length: process.env.GEMINI_API_KEY?.length,
+        start: process.env.GEMINI_API_KEY?.substring(0, 10),
+        full_key_for_debug: process.env.GEMINI_API_KEY // TEMPORARY - remove after debugging
+      },
+      all_relevant_env_vars: relevantEnvVars,
       environment: {
         node_env: process.env.NODE_ENV,
-        gemini_key_exists: !!process.env.GEMINI_API_KEY,
-        gemini_key_length: process.env.GEMINI_API_KEY?.length,
-        gemini_key_start: process.env.GEMINI_API_KEY?.substring(0, 10),
         cors_origin: process.env.CORS_ORIGIN,
-        port: process.env.PORT
+        port: process.env.PORT,
+        database_url_exists: !!process.env.DATABASE_URL
       },
       env_files_found: envFileInfo,
       dependencies: {
