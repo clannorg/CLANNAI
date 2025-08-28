@@ -10,15 +10,61 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
 // Debug endpoint to check server status
 router.get('/debug', (req, res) => {
   try {
+    const fs = require('fs');
+    const path = require('path');
+    
+    // Try to find .env files
+    let envFileInfo = {};
+    const possibleEnvPaths = [
+      '.env',
+      '../.env', 
+      '../../.env',
+      '/app/.env',
+      '/app/backend/.env',
+      process.cwd() + '/.env'
+    ];
+    
+    possibleEnvPaths.forEach(envPath => {
+      try {
+        const fullPath = path.resolve(envPath);
+        if (fs.existsSync(fullPath)) {
+          const content = fs.readFileSync(fullPath, 'utf8');
+          envFileInfo[fullPath] = {
+            exists: true,
+            size: content.length,
+            lines: content.split('\n').length,
+            // Show first few chars of each line for debugging (hide sensitive values)
+            preview: content.split('\n').slice(0, 10).map(line => {
+              if (line.includes('=')) {
+                const [key, value] = line.split('=', 2);
+                return `${key}=${value ? value.substring(0, 10) + '...' : ''}`;
+              }
+              return line;
+            })
+          };
+        }
+      } catch (e) {
+        envFileInfo[envPath] = { error: e.message };
+      }
+    });
+
     res.json({
       timestamp: new Date().toISOString(),
       server_status: 'running',
+      process_info: {
+        cwd: process.cwd(),
+        node_version: process.version,
+        platform: process.platform
+      },
       environment: {
         node_env: process.env.NODE_ENV,
         gemini_key_exists: !!process.env.GEMINI_API_KEY,
         gemini_key_length: process.env.GEMINI_API_KEY?.length,
-        gemini_key_start: process.env.GEMINI_API_KEY?.substring(0, 10)
+        gemini_key_start: process.env.GEMINI_API_KEY?.substring(0, 10),
+        cors_origin: process.env.CORS_ORIGIN,
+        port: process.env.PORT
       },
+      env_files_found: envFileInfo,
       dependencies: {
         google_ai_loaded: !!require('@google/generative-ai'),
         express_loaded: !!require('express')
@@ -27,27 +73,37 @@ router.get('/debug', (req, res) => {
   } catch (error) {
     res.status(500).json({
       error: 'Debug endpoint failed',
-      message: error.message
+      message: error.message,
+      stack: error.stack
     });
   }
 })
 
 // Chat with AI about a specific game
 router.post('/game/:gameId', authenticateToken, async (req, res) => {
+  console.log(`🤖 AI Chat request for game: ${req.params.gameId}`)
+  
   try {
     const { gameId } = req.params
     const { message, chatHistory = [], systemPrompt } = req.body
 
+    console.log(`🤖 Message received: ${message}`)
+    console.log(`🤖 Chat history length: ${chatHistory.length}`)
+
     if (!message) {
+      console.log('❌ No message provided')
       return res.status(400).json({ error: 'Message is required' })
     }
 
     // Get game details with events
+    console.log(`🎮 Fetching game data for: ${gameId}`)
     const game = await getGameById(gameId)
     
     if (!game) {
+      console.log('❌ Game not found in database')
       return res.status(404).json({ error: 'Game not found' })
     }
+    console.log(`✅ Game found: ${game.team_name} vs ${game.opponent_name}`)
     
     // Parse events from ai_analysis
     let events = []
@@ -56,6 +112,7 @@ router.post('/game/:gameId', authenticateToken, async (req, res) => {
         ? game.ai_analysis 
         : (game.ai_analysis.events || [])
     }
+    console.log(`📊 Events parsed: ${events.length} events`)
 
     // Parse tactical analysis
     let tacticalAnalysis = null
