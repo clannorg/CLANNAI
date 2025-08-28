@@ -1,0 +1,10 @@
+{
+  "match_id": "20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6",
+  "upload_timestamp": "2025-08-28T16:00:13.485083",
+  "bucket": "end-nov-webapp-clann",
+  "region": "eu-west-1",
+  "core_files": {
+    "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6-video-mp4.mp4",
+    "team_config_json": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6-1_team_config-json.json"
+  }
+}
