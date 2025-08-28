@@ -61,20 +61,20 @@ router.get('/overview', authenticateToken, requireCompanyRole, async (req, res) 
                 CASE WHEN g.ai_analysis IS NOT NULL AND g.ai_analysis != '[]' THEN 'Yes' ELSE 'No' END as has_analysis,
                 CASE WHEN g.tactical_analysis IS NOT NULL AND g.tactical_analysis != '{}' THEN 'Yes' ELSE 'No' END as has_tactical,
                 CASE 
-                    WHEN g.events_modified IS NOT NULL 
+                    WHEN g.events_modified IS NOT NULL AND jsonb_typeof(g.events_modified) = 'array'
                     THEN jsonb_array_length(g.events_modified)
-                    WHEN g.ai_analysis IS NOT NULL AND g.ai_analysis != '[]' 
+                    WHEN g.ai_analysis IS NOT NULL AND jsonb_typeof(g.ai_analysis) = 'array' AND g.ai_analysis != '[]'
                     THEN jsonb_array_length(g.ai_analysis) 
                     ELSE 0 
                 END as events_count,
                 CASE WHEN g.events_modified IS NOT NULL THEN 'Modified' ELSE 'AI' END as events_type,
                 CASE 
-                    WHEN g.ai_analysis IS NOT NULL AND g.ai_analysis != '[]' 
+                    WHEN g.ai_analysis IS NOT NULL AND jsonb_typeof(g.ai_analysis) = 'array' AND g.ai_analysis != '[]'
                     THEN jsonb_array_length(g.ai_analysis) 
                     ELSE 0 
                 END as ai_events_count,
                 CASE 
-                    WHEN g.events_modified IS NOT NULL 
+                    WHEN g.events_modified IS NOT NULL AND jsonb_typeof(g.events_modified) = 'array'
                     THEN jsonb_array_length(g.events_modified)
                     ELSE 0 
                 END as modified_events_count,
