@@ -1,31 +1,35 @@
 === DALKEY ===
 Strengths:
--   **Aggressive Attacking Play**: Dalkey showed a strong intent to attack, evidenced by their high shot count (47) and numerous turnovers regained (45), indicating a proactive approach to winning the ball high up the pitch.
--   **Set Piece Opportunities**: Dalkey frequently earned free kicks (13) in attacking positions, suggesting effective play-making or drawing fouls in dangerous areas.
--   **Resilient in Possession**: Despite losing possession, Dalkey quickly regained the ball, often initiating counter-attacks, demonstrating good defensive transitioning and midfield pressure.
+- **Offensive Volume:** Dalkey generated a high number of shots (36), demonstrating their ability to create chances from various positions, including set pieces and open play.
+- **Midfield Control:** Frequent turnovers indicate Dalkey's ability to win possession in the midfield and launch counter-attacks (56 turnovers gained).
+- **Set-Piece Threat (Non-VEO):** While not leading to VEO goals, Dalkey showed a propensity to score from corners and free kicks (e.g., 05:26, 05:57, 79:31 shots classified as goals).
+- **Defensive Recovery:** Dalkey's ability to regain possession immediately after losing it (e.g., 28:00, 38:45) or after defensive clearances suggests good recovery play.
 
 Weaknesses:
--   **Lack of Clinical Finishing**: Despite their high volume of shots, Dalkey failed to convert any into VEO-verified goals, highlighting a significant challenge in converting opportunities.
--   **Defensive Discipline**: Dalkey committed 8 fouls, leading to three penalty awards against them (13:34, 31:20, 74:47), indicating moments of defensive lapses in crucial areas.
+- **Finishing Efficiency:** Despite a high shot count, Dalkey failed to convert any into VEO-verified goals, suggesting a need for improved composure or precision in front of goal.
+- **Discipline:** Dalkey committed 6 fouls leading to free kicks, including a yellow card at 69:18, indicating moments of defensive vulnerability or rash challenges.
 
 Key Moments:
--   09:53 - SHOT: Dalkey - shot saved by keeper.
--   29:32 - SHOT: Dalkey - shot saved by keeper.
--   37:10 - SHOT: Dalkey - shot saved by goalkeeper, followed by a missed rebound shot.
--   69:18 - FOUL: Dalkey - yellow card shown for a foul, impacting defensive stability.
+- 05:26 - SHOT: Dalkey - Header from corner kick (AI goal, not VEO) → OUTCOME: Goal scored
+- 09:53 - SHOT: Dalkey - Shot taken in final third → OUTCOME: Saved by goalkeeper
+- 13:34 - SHOT: Dalkey - Penalty kick (AI goal, not VEO) → OUTCOME: Goal scored
+- 29:47 - SHOT: Dalkey - Shot saved by keeper → OUTCOME: Saved by goalkeeper
+- 69:18 - FOUL: Dalkey - Foul leading to free kick for Corduff → OUTCOME: Free kick awarded; Card shown (Yellow Card)
 
 === CORDUFF ===
 Strengths:
--   **Clinical Finishing**: Corduff was highly efficient, converting two of their attacking plays into VEO-verified goals, despite a lower overall shot count (22).
--   **Effective Set Pieces**: Corduff successfully used set pieces to create opportunities, including a free kick leading directly to their first goal at 36:45.
--   **Strong Defensive Tackling**: Corduff demonstrated good defensive capabilities through successful tackles and interceptions (42 turnovers), disrupting Dalkey's attacks.
+- **Clinical Finishing:** Corduff were highly efficient, converting their attacking plays into both VEO-verified goals despite a lower overall shot count than Dalkey.
+- **Set-Piece Effectiveness:** Corduff demonstrated an ability to generate goals from set pieces, scoring one VEO goal after a free kick lead-up at 36:45, and also converting an AI-classified 'goal' from a free kick (28:57) and a corner (73:33).
+- **Defensive Resilience:** Corduff's defense effectively cleared Dalkey's crosses (e.g., 15:38, 29:15) and blocked several shots (e.g., 27:05, 36:42, 80:51, 82:32), showcasing their ability to absorb pressure.
+- **Midfield Interception:** Corduff consistently intercepted Dalkey's passes (e.g., 12:30, 24:45, 56:30, 84:45), turning defense into offense.
 
 Weaknesses:
--   **Lower Shot Volume**: Corduff generated fewer shots compared to Dalkey, which could limit their scoring chances if not for their efficiency.
--   **Defensive Vulnerability to Penalties**: Corduff conceded two penalty kicks (41:30, 13:34), showing susceptibility to fouls in their penalty area.
+- **Foul Accumulation:** Corduff committed more fouls (9) than Dalkey, indicating a slightly more aggressive or less disciplined approach in challenges.
+- **Offensive Volume:** While clinical, Corduff had fewer shots (17) overall compared to Dalkey, suggesting they relied more on quality over quantity in their attacks.
 
 Key Moments:
--   36:45 - GOAL: Corduff - Goal scored from a free kick opportunity, highlighting their set-piece effectiveness.
--   82:13 - SHOT: Corduff - shot saved by the goalkeeper, showing a strong attempt on goal.
--   85:11 - GOAL: Corduff - Goal scored after progressing the ball into the penalty area, securing their win.
--   80:45 - SHOT: Corduff - shot blocked by a Dalkey defender, indicating Dalkey's defensive pressure.
+- 17:16 - SHOT: Corduff - Shot hits the crossbar → OUTCOME: Shot missed
+- 28:57 - SHOT: Corduff - Header from free kick (AI goal, not VEO) → OUTCOME: Goal scored
+- 36:45 - GOAL: Corduff - Red team celebrates a goal after an attack → OUTCOME: Goal scored
+- 73:33 - SHOT: Corduff - Header from corner kick (AI goal, not VEO) → OUTCOME: Goal scored
+- 85:11 - GOAL: Corduff - Red team scores after progressing ball into penalty area → OUTCOME: Goal scored
