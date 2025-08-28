@@ -7,6 +7,41 @@ const { getGameById } = require('../utils/database')
 // Initialize Gemini client
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
 
+// FFmpeg test endpoint
+router.get('/test-ffmpeg', (req, res) => {
+  const { exec } = require('child_process');
+  const path = require('path');
+  
+  // Test both system FFmpeg and static binary
+  const tests = [
+    { name: 'System FFmpeg', command: 'ffmpeg -version' },
+    { name: 'Static FFmpeg', command: path.join(__dirname, '../bin/ffmpeg') + ' -version' }
+  ];
+  
+  const results = {};
+  let completed = 0;
+  
+  tests.forEach(test => {
+    exec(test.command, (error, stdout, stderr) => {
+      results[test.name] = {
+        available: !error,
+        error: error?.message,
+        version: stdout ? stdout.split('\n')[0] : null
+      };
+      
+      completed++;
+      if (completed === tests.length) {
+        res.json({
+          timestamp: new Date().toISOString(),
+          ffmpeg_status: results,
+          recommendation: results['System FFmpeg'].available ? 'use_system_ffmpeg' : 
+                        results['Static FFmpeg'].available ? 'use_static_ffmpeg' : 'install_required'
+        });
+      }
+    });
+  });
+});
+
 // Debug endpoint to check server status (DISABLED FOR SECURITY)
 router.get('/debug-disabled', (req, res) => {
   try {
