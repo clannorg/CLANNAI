@@ -25,6 +25,28 @@ router.post('/create', authenticateToken, async (req, res) => {
         
         console.log(`🎬 Creating clips with FFmpeg for game ${gameId} with ${events.length} events`);
         
+        // Check FFmpeg availability first
+        const ffmpegPath = path.join(__dirname, '../bin/ffmpeg');
+        console.log(`🔍 Checking FFmpeg at: ${ffmpegPath}`);
+        
+        try {
+            const ffmpegExists = fs.existsSync(ffmpegPath);
+            console.log(`📁 FFmpeg file exists: ${ffmpegExists}`);
+            
+            if (ffmpegExists) {
+                const stats = fs.statSync(ffmpegPath);
+                console.log(`📊 FFmpeg file size: ${stats.size} bytes`);
+                console.log(`🔐 FFmpeg permissions: ${stats.mode.toString(8)}`);
+            }
+        } catch (error) {
+            console.error(`❌ Error checking FFmpeg: ${error.message}`);
+            return res.status(500).json({ 
+                success: false, 
+                error: 'FFmpeg not available on server. Please install FFmpeg or use MediaConvert fallback.',
+                details: error.message
+            });
+        }
+        
         // Get game details
         const game = await getGameById(gameId);
         if (!game) {
