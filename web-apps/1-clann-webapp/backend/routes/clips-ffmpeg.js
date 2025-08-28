@@ -12,6 +12,9 @@ const { v4: uuidv4 } = require('uuid');
  * Create clips using FFmpeg (for multiple events/stitching)
  */
 router.post('/create', authenticateToken, async (req, res) => {
+    console.log('🚀 CLIP CREATION STARTED');
+    console.log('📝 Request body:', JSON.stringify(req.body, null, 2));
+    
     try {
         const { gameId, events, includeScoreline = false } = req.body;
         
@@ -43,7 +46,19 @@ router.post('/create', authenticateToken, async (req, res) => {
             return res.status(500).json({ 
                 success: false, 
                 error: 'FFmpeg not available on server. Please install FFmpeg or use MediaConvert fallback.',
-                details: error.message
+                details: error.message,
+                ffmpeg_path: ffmpegPath,
+                debug_info: 'FFmpeg check failed'
+            });
+        }
+        
+        if (!fs.existsSync(ffmpegPath)) {
+            console.error(`❌ FFmpeg binary not found at: ${ffmpegPath}`);
+            return res.status(500).json({ 
+                success: false, 
+                error: 'FFmpeg binary not found at expected location',
+                ffmpeg_path: ffmpegPath,
+                debug_info: 'File does not exist'
             });
         }
         
