@@ -7,6 +7,31 @@ const { getGameById } = require('../utils/database')
 // Initialize Gemini client
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
 
+// Debug endpoint to check server status
+router.get('/debug', (req, res) => {
+  try {
+    res.json({
+      timestamp: new Date().toISOString(),
+      server_status: 'running',
+      environment: {
+        node_env: process.env.NODE_ENV,
+        gemini_key_exists: !!process.env.GEMINI_API_KEY,
+        gemini_key_length: process.env.GEMINI_API_KEY?.length,
+        gemini_key_start: process.env.GEMINI_API_KEY?.substring(0, 10)
+      },
+      dependencies: {
+        google_ai_loaded: !!require('@google/generative-ai'),
+        express_loaded: !!require('express')
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: 'Debug endpoint failed',
+      message: error.message
+    });
+  }
+})
+
 // Chat with AI about a specific game
 router.post('/game/:gameId', authenticateToken, async (req, res) => {
   try {
