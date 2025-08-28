@@ -7,7 +7,7 @@ echo "🎬 Downloading static FFmpeg binary..."
 mkdir -p ./bin
 
 # Download static FFmpeg for Linux x64
-wget -O ./bin/ffmpeg https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+wget -O ./bin/ffmpeg-release.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
 if [ $? -ne 0 ]; then
     echo "❌ Failed to download FFmpeg"
     exit 1
@@ -15,8 +15,8 @@ fi
 
 # Extract the binary
 cd ./bin
-tar -xf ffmpeg-release-amd64-static.tar.xz --strip-components=1
-rm ffmpeg-release-amd64-static.tar.xz
+tar -xf ffmpeg-release.tar.xz --strip-components=1
+rm ffmpeg-release.tar.xz
 
 # Make executable
 chmod +x ffmpeg
