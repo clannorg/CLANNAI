@@ -84,7 +84,7 @@ CRITICAL TEAM IDENTIFICATION RULES:
 Focus on:
 - Which team has possession
 - Main actions: passing, defending, attacking, set pieces, throw-ins
-- Only mention significant events if they clearly occur (actual shots on goal, saves, fouls, cards, goals)
+- Only mention significant events if they CLEARLY and OBVIOUSLY occur (don't speculate or force events)
 - For events, use timing relative to this clip (00:00 to 00:15) - the pipeline will convert to global match time
 
 Be precise and avoid speculation. Most clips will show routine play - that's normal.

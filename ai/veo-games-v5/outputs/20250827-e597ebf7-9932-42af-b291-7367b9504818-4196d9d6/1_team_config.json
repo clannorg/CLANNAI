@@ -1,0 +1,14 @@
+{
+  "match_id": "20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6",
+  "team_a": {
+    "name": "RIVEFLAIBANO",
+    "colors": "yrllow \u001b[Dyellow jersey"
+  },
+  "team_b": {
+    "name": "MUGGIA",
+    "colors": "blue jersey"
+  },
+  "game_type": "5-a-side",
+  "focus": "detailed play-by-play description",
+  "additional_context": ""
+}

@@ -1,0 +1,391 @@
+{
+  "match_url": "https://app.veo.co/matches/20250827-e597ebf7-9932-42af-b291-7367b9504818-4196d9d6/",
+  "extraction_time": "2025-08-28T14:35:02.384694",
+  "total_events": 22,
+  "events": [
+    {
+      "timestamp": "2:57",
+      "timestamp_seconds": 177,
+      "event_type": "Tiro in porta",
+      "event_id": "d447078c-b963-4cc7-b406-a66685339f89",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.743367+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "7:28",
+      "timestamp_seconds": 448,
+      "event_type": "Tiro in porta",
+      "event_id": "a720c0b2-125a-4d9e-ab85-aa597bf5b279",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.743829+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "9:02",
+      "timestamp_seconds": 542,
+      "event_type": "Tiro in porta",
+      "event_id": "b7076354-1ef4-49b9-9c50-dc2aeee6c16a",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.744141+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "11:34",
+      "timestamp_seconds": 694,
+      "event_type": "Tiro in porta",
+      "event_id": "ab5e2ec0-b5e5-4e8c-ac71-25644275e040",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.744418+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "12:57",
+      "timestamp_seconds": 777,
+      "event_type": "Tiro in porta",
+      "event_id": "f2d28c74-4309-485c-89ea-6528909ddc32",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.744713+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "16:49",
+      "timestamp_seconds": 1009,
+      "event_type": "Tiro in porta",
+      "event_id": "42287b2e-e656-4f4d-b5f9-32b043dfc006",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.744994+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "17:55",
+      "timestamp_seconds": 1075,
+      "event_type": "Tiro in porta",
+      "event_id": "45e64c55-0fcb-4326-89ed-a6d3da573a55",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.745256+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "17:56",
+      "timestamp_seconds": 1076,
+      "event_type": "Goal",
+      "event_id": "73083c56-c941-479a-9093-42b575ea1edd",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.745504+02:00",
+      "tags": [
+        {
+          "name": "Goal",
+          "slug": "goal",
+          "origin": "1",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "20:56",
+      "timestamp_seconds": 1256,
+      "event_type": "Tiro in porta",
+      "event_id": "9f11398a-2f17-4e66-8bdb-90ac21366faf",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.745788+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "25:17",
+      "timestamp_seconds": 1517,
+      "event_type": "Tiro in porta",
+      "event_id": "fe0bfe5d-7417-46e1-a460-e8cfed7fc192",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.746028+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "28:32",
+      "timestamp_seconds": 1712,
+      "event_type": "Tiro in porta",
+      "event_id": "e63e9558-9c76-4f1d-ae27-f58b1802a54d",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.746294+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "32:07",
+      "timestamp_seconds": 1927,
+      "event_type": "Tiro in porta",
+      "event_id": "d7c0686c-4be0-4897-9b8e-8980cc8e2c62",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.746559+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "33:59",
+      "timestamp_seconds": 2039,
+      "event_type": "Tiro in porta",
+      "event_id": "01d21acc-dddd-40b9-b202-d508d04dc545",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.746814+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "36:00",
+      "timestamp_seconds": 2160,
+      "event_type": "Tiro in porta",
+      "event_id": "8ce34a5e-e990-4133-b7e8-1989d3dc2195",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.747064+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "46:41",
+      "timestamp_seconds": 2801,
+      "event_type": "Tiro in porta",
+      "event_id": "a6ebd656-40d7-423c-a064-83edab059292",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.747263+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "71:58",
+      "timestamp_seconds": 4318,
+      "event_type": "Tiro in porta",
+      "event_id": "fe13e92f-a225-4d27-b54a-0011255ef661",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.747429+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "82:31",
+      "timestamp_seconds": 4951,
+      "event_type": "Tiro in porta",
+      "event_id": "e4a01ff8-0f06-4dce-ae70-bb00f7563f8f",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.747595+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "82:32",
+      "timestamp_seconds": 4952,
+      "event_type": "Goal",
+      "event_id": "b16c9177-4261-45d1-8146-8b1ce34ac64c",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.747741+02:00",
+      "tags": [
+        {
+          "name": "Goal",
+          "slug": "goal",
+          "origin": "1",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "91:20",
+      "timestamp_seconds": 5480,
+      "event_type": "Tiro in porta",
+      "event_id": "1a088ab4-b4ba-4b88-a387-827739842209",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.747899+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "91:21",
+      "timestamp_seconds": 5481,
+      "event_type": "Goal",
+      "event_id": "bcb5e94b-7c7c-4a82-adab-d0998ff53e8c",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.748043+02:00",
+      "tags": [
+        {
+          "name": "Goal",
+          "slug": "goal",
+          "origin": "1",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "96:30",
+      "timestamp_seconds": 5790,
+      "event_type": "Tiro in porta",
+      "event_id": "e97ae6eb-1c16-4a02-8a42-976a2ded1e69",
+      "duration": 25,
+      "is_ai_generated": true,
+      "created": "2025-08-28T04:11:29.748205+02:00",
+      "tags": [
+        {
+          "name": "Tiro in porta",
+          "slug": "shot-on-goal",
+          "origin": "9",
+          "custom": false
+        }
+      ]
+    },
+    {
+      "timestamp": "103:52",
+      "timestamp_seconds": 6232,
+      "event_type": "Goal",
+      "event_id": "692c293e-87cb-4dc0-a936-2be9909d2430",
+      "duration": 25,
+      "is_ai_generated": false,
+      "created": "2025-08-28T12:10:07.316206+02:00",
+      "tags": [
+        {
+          "name": "Goal",
+          "slug": "goal",
+          "origin": "1",
+          "custom": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_events": 22,
+    "goals": 4,
+    "shots_on_goal": 0,
+    "ai_generated_events": 21,
+    "event_types": {
+      "Tiro in porta": 18,
+      "Goal": 4
+    }
+  }
+}
