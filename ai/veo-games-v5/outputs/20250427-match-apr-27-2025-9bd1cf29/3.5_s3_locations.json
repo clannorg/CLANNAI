@@ -1,6 +1,6 @@
 {
   "match_id": "20250427-match-apr-27-2025-9bd1cf29",
-  "upload_timestamp": "2025-08-27T17:43:16.316895",
+  "upload_timestamp": "2025-08-28T14:50:10.917650",
   "bucket": "end-nov-webapp-clann",
   "region": "eu-west-1",
   "s3_urls": {
@@ -20,7 +20,7 @@
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-1_webapp_complete-json.json",
       "s3_key": "analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-1_webapp_complete-json.json",
       "description": "Complete webapp data including summary",
-      "file_size_mb": 0.05
+      "file_size_mb": 0.06
     },
     "3.2_tactical_analysis.json": {
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-2_tactical_analysis-json.json",
@@ -32,6 +32,24 @@
       "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-3_training_recommendations-json.json",
       "s3_key": "analysis-data/20250427-match-apr-27-2025-9bd1cf29-3-3_training_recommendations-json.json",
       "description": "Training drill recommendations with YouTube videos",
+      "file_size_mb": 0.0
+    },
+    "2.6_focused_events.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-6_focused_events-txt.txt",
+      "s3_key": "analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-6_focused_events-txt.txt",
+      "description": "Focused match events (7 types) with VEO verification",
+      "file_size_mb": 0.02
+    },
+    "2.6_focused_tactical.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-6_focused_tactical-txt.txt",
+      "s3_key": "analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-6_focused_tactical-txt.txt",
+      "description": "Focused tactical analysis by team with strengths/weaknesses",
+      "file_size_mb": 0.0
+    },
+    "2.6_focused_summary.txt": {
+      "url": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-6_focused_summary-txt.txt",
+      "s3_key": "analysis-data/20250427-match-apr-27-2025-9bd1cf29-2-6_focused_summary-txt.txt",
+      "description": "Focused match summary with team statistics and final score",
       "file_size_mb": 0.0
     },
     "2.5_mega_events.txt": {
@@ -78,9 +96,9 @@
     }
   },
   "upload_summary": {
-    "total_files": 13,
-    "successful_uploads": 12,
+    "total_files": 16,
+    "successful_uploads": 15,
     "failed_uploads": 1,
-    "total_size_mb": 0.18000000000000002
+    "total_size_mb": 0.21000000000000002
   }
 }

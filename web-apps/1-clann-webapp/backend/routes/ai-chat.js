@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { GoogleGenerativeAI } = require('@google/generative-ai')
 const { authenticateToken } = require('../middleware/auth')
+const { aiChatRateLimit, getAiUsage } = require('../middleware/rateLimiter')
 const { getGameById } = require('../utils/database')
 
 // Initialize Gemini client
@@ -150,8 +151,30 @@ router.get('/debug-disabled', (req, res) => {
   }
 })
 
+// Get AI usage stats for current user
+router.get('/usage', authenticateToken, async (req, res) => {
+  try {
+    // Company users have unlimited access
+    if (req.user.role === 'company') {
+      return res.json({
+        current: 0,
+        limit: -1,
+        remaining: -1,
+        unlimited: true,
+        resetTime: null
+      });
+    }
+
+    const usage = await getAiUsage(req.user.id);
+    res.json(usage);
+  } catch (error) {
+    console.error('Error getting AI usage:', error);
+    res.status(500).json({ error: 'Failed to get usage stats' });
+  }
+});
+
 // Chat with AI about a specific game
-router.post('/game/:gameId', authenticateToken, async (req, res) => {
+router.post('/game/:gameId', authenticateToken, aiChatRateLimit, async (req, res) => {
   console.log(`🤖 AI Chat request for game: ${req.params.gameId}`)
   
   try {
@@ -321,7 +344,11 @@ ${gameContext}` : defaultSystemPrompt
     res.json({
       response: aiResponse,
       gameStats: stats,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      // Include usage info for non-company users
+      ...(req.user.role !== 'company' && req.aiUsage && {
+        usage: req.aiUsage
+      })
     })
 
   } catch (error) {

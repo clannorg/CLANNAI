@@ -132,7 +132,23 @@ def upload_match_to_s3(match_id):
             "description": "Training drill recommendations with YouTube videos"
         },
         
-        # V5 pipeline analysis files
+        # V5 pipeline analysis files (2.6 focused)
+        "2.6_focused_events.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Focused match events (7 types) with VEO verification"
+        },
+        "2.6_focused_tactical.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Focused tactical analysis by team with strengths/weaknesses"
+        },
+        "2.6_focused_summary.txt": {
+            "s3_folder": "analysis-data",
+            "content_type": "text/plain",
+            "description": "Focused match summary with team statistics and final score"
+        },
+        # Legacy 2.5 files (for backward compatibility)
         "2.5_mega_events.txt": {
             "s3_folder": "analysis-data",
             "content_type": "text/plain",
@@ -254,6 +270,10 @@ def upload_match_to_s3(match_id):
             "webapp_complete_json": "3.1_webapp_complete.json",  # Complete webapp data
             "tactical_analysis_json": "3.2_tactical_analysis.json",  # Rich tactical analysis
             "training_recommendations_json": "3.3_training_recommendations.json",  # Training drills
+            "focused_tactical_txt": "2.6_focused_tactical.txt",  # Focused tactical analysis
+            "focused_summary_txt": "2.6_focused_summary.txt",    # Focused match summary
+            "focused_events_txt": "2.6_focused_events.txt",      # Focused events timeline
+            # Legacy 2.5 files (for backward compatibility)
             "mega_tactical_txt": "2.5_mega_tactical.txt",  # Tactical analysis
             "mega_summary_txt": "2.5_mega_summary.txt",    # Match summary
             "mega_events_txt": "2.5_mega_events.txt"       # Events timeline

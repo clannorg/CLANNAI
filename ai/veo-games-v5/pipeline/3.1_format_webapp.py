@@ -193,23 +193,23 @@ def main():
     
     # Load required files
     team_config_file = outputs_dir / '1_team_config.json'
-    # Use mega events from 2.5 synthesizer
-    highlights_file = outputs_dir / '2.5_mega_events.txt'
+    # Use focused events from 2.6 analyzer
+    highlights_file = outputs_dir / '2.6_focused_events.txt'
     # Also load summary for final score and match summary
-    summary_file = outputs_dir / '2.5_mega_summary.txt'
+    summary_file = outputs_dir / '2.6_focused_summary.txt'
     
     if not team_config_file.exists():
         print(f"❌ Error: Team configuration not found: {team_config_file}")
         sys.exit(1)
     
     if not highlights_file.exists():
-        print(f"❌ Error: Highlights data not found: {highlights_file}")
-        print("Run step 2.5 first: python 2.5_events_synthesizer.py <match-id>")
+        print(f"❌ Error: Focused events data not found: {highlights_file}")
+        print("Run step 2.6 first: python 2.6_focused_events.py <match-id>")
         sys.exit(1)
     
     if not summary_file.exists():
-        print(f"❌ Error: Summary data not found: {summary_file}")
-        print("Run step 2.5 first: python 2.5_events_synthesizer.py <match-id>")
+        print(f"❌ Error: Focused summary data not found: {summary_file}")
+        print("Run step 2.6 first: python 2.6_focused_events.py <match-id>")
         sys.exit(1)
     
     # Load data

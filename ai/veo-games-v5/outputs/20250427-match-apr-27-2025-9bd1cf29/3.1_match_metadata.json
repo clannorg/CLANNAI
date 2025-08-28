@@ -11,8 +11,8 @@
     }
   },
   "counts": {
-    "goals": 2,
-    "shots": 27
+    "goals": 23,
+    "shots": 51
   },
   "files": {
     "video_mp4": "https://end-nov-webapp-clann.s3.amazonaws.com/analysis-videos/20250427-match-apr-27-2025-9bd1cf29-video-mp4.mp4",
@@ -23,6 +23,6 @@
     "other_events_txt": null,
     "tactical_json": null
   },
-  "final_score": "Dalkey 0 - 2 Corduff",
-  "match_summary": "The 90-minute football match between Dalkey and Corduff saw Corduff emerge victorious with a 2-0 scoreline, based on the VEO verified goals. The first half was a competitive affair, with both teams building attacks and creating chances. Corduff broke the deadlock in the 37th minute (36:45), taking a 1-0 lead after a period of attacking play, as Dalkey restarted the match from kickoff. Dalkey showed strong possession and often initiated play from their defense, but struggled to convert their attacking efforts into verified goals.\n\nThe second half continued with Dalkey pressing forward, accumulating numerous throw-ins and free kicks, and attempting shots on goal. However, Corduff's defense held firm, thwarting many of Dalkey's advances and often intercepting passes to launch their own counter-attacks. As the game neared its conclusion, Corduff solidified their lead, scoring their second and final VEO verified goal in the 86th minute (85:11) after progressing the ball into the penalty area, sealing their victory. Despite Dalkey's consistent pressure and numerous shot attempts throughout the match, they were unable to find the back of the net against a resilient Corduff side."
+  "final_score": "Dalkey 0-2 Corduff",
+  "match_summary": "The match saw Corduff emerge victorious with a 2-0 scoreline, with both goals being VEO-verified. Corduff opened the scoring late in the first half at 36:45, following an attacking play that began with a free kick. Their second and final goal came late in the second half at 85:11, after a build-up into the penalty area.\n\nDespite the score, Dalkey was highly active in attacking, registering a significant number of shots (47) throughout the game, compared to Corduff's 22. Dalkey had numerous opportunities, including several shots saved by the Corduff goalkeeper and many that went wide. Corduff, while having fewer shots, demonstrated clinical finishing in the two moments that counted. Key defensive moments included Corduff committing 10 fouls, leading to 2 penalties awarded against them, and Dalkey committing 8 fouls, leading to 3 penalties awarded against them.\n\nThe midfield battle was intense, with both teams frequently winning and losing possession. Dalkey led in turnovers (45 vs 42), indicating their persistent efforts to win back the ball and launch attacks. Set pieces were also a feature, with Dalkey having more free kicks than Corduff, and both teams earning two corners each."
 }

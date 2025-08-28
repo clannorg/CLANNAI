@@ -873,9 +873,9 @@ export default function VideoPlayer({
                 />
                 
                 {/* Event Click Overlay - Invisible buttons for event clicks */}
-                {allEvents.length > 0 && duration > 0 && (
+                {events.length > 0 && duration > 0 && (
                   <div className="absolute inset-0 pointer-events-none">
-                    {allEvents.map((event, index) => {
+                    {events.map((event, index) => {
                       const position = (event.timestamp / duration) * 100
                       const originalIndex = allEvents.indexOf(event)
                       

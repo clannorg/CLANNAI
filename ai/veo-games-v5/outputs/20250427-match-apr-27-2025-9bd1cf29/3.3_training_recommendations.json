@@ -1,6 +1,6 @@
 {
   "match_id": "20250427-match-apr-27-2025-9bd1cf29",
-  "generated_at": "2025-08-27T17:41:52.883191",
+  "generated_at": "2025-08-28T14:49:58.544632",
   "training_recommendations": [
     {
       "drill_name": "1v1 Finishing Drill",
@@ -8,9 +8,19 @@
       "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
       "description": "Improve clinical finishing in one-on-one situations",
       "focus_areas": "Composure, shot placement, beating the goalkeeper",
-      "match_evidence": "Dalkey failed to convert any of their 20 VEO-verified shots into goals.",
-      "why_needed": "This highlights a critical weakness in converting created chances into goals, directly impacting the match result despite dominating possession and territory.",
+      "match_evidence": "Dalkey had 47 shots but scored 0 goals, highlighting a critical lack of composure and quality in front of goal.",
+      "why_needed": "Improving finishing is paramount for Dalkey.  Converting even a small percentage of their numerous chances would drastically change match outcomes.",
       "priority": 1
+    },
+    {
+      "drill_name": "Zonal Marking Corner Drill",
+      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "description": "Organize defensive set piece structure and communication",
+      "focus_areas": "Zonal positioning, aerial duels, clearing techniques",
+      "match_evidence": "Corduff's opening goal came directly from a free kick, demonstrating Dalkey's vulnerability to set pieces.  While they didn't concede from corners, they gave away 13 free kicks, which provided many platforms for Corduff.",
+      "why_needed": "Tightening up set-piece defending, particularly around free kicks near the box, will reduce the likelihood of conceding crucial goals.",
+      "priority": 2
     },
     {
       "drill_name": "4v2 Defensive Transition Drill",
@@ -18,18 +28,8 @@
       "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
       "description": "Improve defensive shape and pressing after losing possession",
       "focus_areas": "Quick transition from attack to defense, compact shape",
-      "match_evidence": "Dalkey was vulnerable to opposition counter-attacks, particularly after being dispossessed in central midfield areas, which led to Corduff's goals.",
-      "why_needed": "Improving defensive transitions will help Dalkey regain defensive shape quickly after losing possession, mitigating the threat of Corduff's fast breaks.",
-      "priority": 2
-    },
-    {
-      "drill_name": "Rondo Possession Drill",
-      "youtube_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      "youtube_embed": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "description": "Improve passing accuracy and ball retention under pressure",
-      "focus_areas": "Quick passing, movement off the ball, press resistance",
-      "match_evidence": "While Dalkey dominated midfield possession, their occasional loss of the ball in central areas proved costly, triggering Corduff's dangerous counter-attacks.",
-      "why_needed": "Improving ball security in midfield will reduce turnovers and minimize the opportunities for Corduff to exploit Dalkey's vulnerability in transition.",
+      "match_evidence": "While not explicitly stated, Dalkey conceded two penalties, suggesting defensive lapses when transitioning from attack to defense.  Corduff's counter-punching style relies on exploiting such transitions.",
+      "why_needed": "Improving defensive organization and composure after losing possession will limit Corduff's opportunities for quick counter-attacks and reduce fouls in the box.",
       "priority": 3
     }
   ]

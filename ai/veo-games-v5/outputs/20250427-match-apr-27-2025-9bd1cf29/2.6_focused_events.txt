@@ -1,0 +1,216 @@
+04:37 - SHOT: Dalkey - shot taken, goes wide of the goal → OUTCOME: Shot missed
+04:47 - FREE KICK: Dalkey - takes a kick from the right side of the pitch, sending the ball towards the penalty area → OUTCOME: Cross delivered
+05:26 - CORNER: Dalkey - goal scored after a headed pass across the box is headed into the net → OUTCOME: Shot on target
+05:31 - FREE KICK: Dalkey - shot taken, which goes over the goal → OUTCOME: Shot missed
+05:57 - FREE KICK: Dalkey - goal scored → OUTCOME: Shot on target
+09:53 - SHOT: Dalkey - shot taken, saved by keeper → OUTCOME: Saved by goalkeeper
+10:15 - GOAL KICK: Dalkey - takes a goal kick → OUTCOME: Play restarted
+10:45 - TURNOVER: Corduff - wins possession from Dalkey in midfield → OUTCOME: Possession regained
+10:45 - TURNOVER: Dalkey - intercepts pass, regains possession and clears the ball → OUTCOME: Possession regained
+11:30 - FREE KICK: Dalkey - takes a free kick from the center of the pitch, plays a long ball forward → OUTCOME: Cross delivered
+11:49 - SHOT: Dalkey - shot taken → OUTCOME: Shot on target
+12:15 - TURNOVER: Corduff - wins an aerial duel but quickly loses possession → OUTCOME: Possession regained
+12:26 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+12:45 - FOUL: Corduff - foul by Corduff team → OUTCOME: Free kick awarded
+13:34 - FOUL: Dalkey - foul leading to penalty kick → OUTCOME: Penalty awarded
+14:00 - TURNOVER: Dalkey - successfully tackles to win the ball → OUTCOME: Possession regained
+14:36 - SHOT: Dalkey - cross into the box caught by Corduff's goalkeeper → OUTCOME: Saved by goalkeeper
+15:00 - TURNOVER: Dalkey - wins the resulting aerial duel and establishes possession → OUTCOME: Possession regained
+15:38 - FREE KICK: Dalkey - a free kick is crossed into the box and cleared by Corduff's defense → OUTCOME: Cross delivered
+15:45 - FREE KICK: Dalkey - takes an attacking free kick. The initial cross is cleared by Corduff → OUTCOME: Cross delivered
+16:30 - TURNOVER: Dalkey - wins possession from Corduff throw-in → OUTCOME: Possession regained
+17:00 - FREE KICK: Corduff - takes a free kick in the middle of the pitch, passing it short → OUTCOME: Play restarted
+17:16 - SHOT: Corduff - shot taken, hits the crossbar → OUTCOME: Shot missed
+17:56 - FOUL: Corduff - foul committed by Corduff team → OUTCOME: Free kick awarded
+18:24 - SHOT: Dalkey - Shot on goal (VEO verified shot) → OUTCOME: Shot on goal
+18:41 - SHOT: Dalkey - goal scored → OUTCOME: Shot on target
+18:46 - SHOT: Dalkey - shot by Dalkey, ball goes wide → OUTCOME: Shot missed
+19:30 - CORNER: Dalkey - takes a corner kick which is defended and cleared by Corduff → OUTCOME: Corner cleared
+19:47 - SHOT: Corduff - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+19:56 - FREE KICK: Corduff - takes a free kick short, subsequent cross into penalty area defended → OUTCOME: Cross delivered
+20:15 - TURNOVER: Dalkey - recovers the ball and builds play → OUTCOME: Possession regained
+20:30 - TURNOVER: Dalkey - gains possession after an aerial duel → OUTCOME: Possession regained
+20:45 - TURNOVER: Corduff - gains control and passes the ball in the midfield → OUTCOME: Possession regained
+21:10 - SHOT: Dalkey - A Dalkey player takes a shot from outside the penalty area → OUTCOME: Shot on target
+21:15 - TURNOVER: Dalkey - starts an attack and maintains possession → OUTCOME: Possession regained
+22:09 - FOUL: Corduff - a free kick is awarded to Dalkey → OUTCOME: Free kick awarded
+22:15 - FREE KICK: Corduff - takes a free kick which is headed clear by Dalkey → OUTCOME: Cross delivered
+22:32 - SHOT: Corduff - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+22:45 - TURNOVER: Dalkey - wins Corduff's long ball → OUTCOME: Possession regained
+23:33 - SHOT: Corduff - shot taken, misses the target → OUTCOME: Shot missed
+23:45 - TURNOVER: Corduff - briefly wins possession → OUTCOME: Possession regained
+24:15 - TURNOVER: Corduff - wins possession and attacks → OUTCOME: Possession regained
+24:30 - SHOT: Dalkey - Goal scored → OUTCOME: Shot on target
+24:45 - TURNOVER: Corduff - intercepts the ball → OUTCOME: Possession regained
+24:45 - TURNOVER: Dalkey - regains possession → OUTCOME: Possession regained
+25:00 - TURNOVER: Corduff - gains possession in midfield after an aerial contest → OUTCOME: Possession regained
+25:27 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+25:30 - SHOT: Dalkey - shot taken, goes wide of the goal → OUTCOME: Shot missed
+26:02 - FOUL: Dalkey - tackle results in a free kick for Corduff → OUTCOME: Free kick awarded
+26:15 - FREE KICK: Corduff - takes a free kick from a central position → OUTCOME: Play restarted
+26:20 - SHOT: Dalkey - a shot is taken, saved by Corduff's goalkeeper (VEO verified shot) → OUTCOME: Saved by goalkeeper
+26:49 - SHOT: Dalkey - shot goes wide of the goal → OUTCOME: Shot missed
+26:51 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+27:05 - SHOT: Dalkey - shot taken by Dalkey, blocked by Corduff defender → OUTCOME: Shot blocked
+27:45 - TURNOVER: Corduff - quickly wins possession → OUTCOME: Possession regained
+27:45 - TURNOVER: Dalkey - regains control near the sideline → OUTCOME: Possession regained
+28:00 - TURNOVER: Corduff - intercepts ball from Dalkey long pass → OUTCOME: Possession regained
+28:15 - FREE KICK: Dalkey - takes a long free kick, cleared by Corduff → OUTCOME: Cross delivered
+28:15 - TURNOVER: Dalkey - regains possession before another free kick → OUTCOME: Possession regained
+28:57 - FREE KICK: Corduff - goal scored with a header → OUTCOME: Shot on target
+29:01 - CORNER: Dalkey - a header from Dalkey goes over the bar → OUTCOME: Shot from corner
+29:15 - FREE KICK: Dalkey - takes a free kick into the box, headed clear by Corduff → OUTCOME: Cross delivered
+29:15 - TURNOVER: Corduff - gains possession and begins a counter-attack → OUTCOME: Counter-attack started
+29:32 - SHOT: Dalkey - shot saved by keeper (VEO verified shot) → OUTCOME: Saved by goalkeeper
+30:00 - TURNOVER: Corduff - gains possession in the midfield → OUTCOME: Possession regained
+30:21 - FOUL: Dalkey - Foul called, free kick to Corduff → OUTCOME: Free kick awarded
+30:30 - TURNOVER: Dalkey - wins the ball and begins to build an attack → OUTCOME: Possession regained
+30:47 - FOUL: Corduff - Foul awarded to Dalkey → OUTCOME: Free kick awarded
+31:04 - SHOT: Corduff - shot taken, goes wide of the goal → OUTCOME: Shot missed
+31:20 - FOUL: Dalkey - foul leading to penalty kick → OUTCOME: Penalty awarded
+31:45 - FOUL: Dalkey - referee stops play and awards free kick to Corduff → OUTCOME: Free kick awarded
+33:15 - FREE KICK: Corduff - takes a free kick near the center circle → OUTCOME: Play restarted
+33:30 - FREE KICK: Corduff - takes a long free kick, sent deep into Dalkey's penalty area → OUTCOME: Cross delivered
+34:00 - TURNOVER: Dalkey - dispossesses Corduff in midfield → OUTCOME: Possession regained
+34:24 - SHOT: Dalkey - shot taken, goes wide → OUTCOME: Shot missed
+34:45 - TURNOVER: Corduff - wins the ball and launches an attack → OUTCOME: Possession regained
+34:52 - SHOT: Corduff - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+35:07 - SHOT: Dalkey - goal scored → OUTCOME: Shot on target
+35:35 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+35:45 - TURNOVER: Corduff - wins possession from Dalkey in midfield → OUTCOME: Possession regained
+36:02 - FOUL: Corduff - foul is awarded to Dalkey → OUTCOME: Free kick awarded
+36:15 - FREE KICK: Corduff - prepares for a direct free kick just outside the penalty area → OUTCOME: Cross delivered
+36:27 - SHOT: Corduff - free kick is taken and blocked by Dalkey's defence (VEO verified shot) → OUTCOME: Shot blocked
+36:45 - GOAL: Corduff - Red team celebrating a goal (VEO Goal 1) → OUTCOME: Goal scored
+37:10 - SHOT: Dalkey - shot taken, saved by the goalkeeper (VEO verified shot) → OUTCOME: Saved by goalkeeper
+37:26 - SHOT: Dalkey - a second shot from the rebound is missed over the goal → OUTCOME: Shot missed
+37:30 - TURNOVER: Corduff - gains possession and starts building up an attack → OUTCOME: Possession regained
+38:14 - SHOT: Corduff - takes a shot that goes wide of the goal → OUTCOME: Shot missed
+38:15 - TURNOVER: Corduff - successfully defends and wins back possession in the midfield → OUTCOME: Possession regained
+38:36 - TURNOVER: Dalkey - wins possession in the center circle → OUTCOME: Possession regained
+38:45 - TURNOVER: Corduff - wins the ball back → OUTCOME: Possession regained
+39:30 - TURNOVER: Corduff - wins possession after a successful tackle → OUTCOME: Possession regained
+40:26 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+40:42 - SHOT: Dalkey - shot is taken and goes wide of the goal → OUTCOME: Shot missed
+41:15 - SHOT: Corduff - celebrates a goal → OUTCOME: Shot on target
+41:30 - FOUL: Corduff - prepares to take a penalty kick → OUTCOME: Penalty awarded
+41:45 - GOAL KICK: Corduff - takes a goal kick → OUTCOME: Play restarted
+41:45 - TURNOVER: Dalkey - wins the aerial ball and maintains possession → OUTCOME: Possession regained
+42:30 - SHOT: Dalkey - shot taken, goal scored → OUTCOME: Shot on target
+43:00 - FREE KICK: Dalkey - takes a free-kick from the right side which is defended by Corduff → OUTCOME: Cross delivered
+43:00 - TURNOVER: Corduff - gains possession and starts a counter-attack → OUTCOME: Counter-attack started
+43:19 - TURNOVER: Corduff - successful sliding tackle results in change of possession → OUTCOME: Possession regained
+44:51 - SHOT: Dalkey - shot taken, saved by keeper → OUTCOME: Saved by goalkeeper
+45:00 - FREE KICK: Corduff - takes a free kick from their own half → OUTCOME: Play restarted
+45:00 - TURNOVER: Dalkey - wins the resulting aerial duel and gains possession → OUTCOME: Possession regained
+45:15 - TURNOVER: Corduff - dispossesses Dalkey, then maintains possession → OUTCOME: Possession regained
+45:51 - SHOT: Dalkey - shot taken, misses the goal → OUTCOME: Shot missed
+46:27 - FOUL: Corduff - foul by Corduff results in a free kick for Dalkey → OUTCOME: Free kick awarded
+52:15 - TURNOVER: Dalkey - makes a tackle and wins possession → OUTCOME: Possession regained
+52:30 - TURNOVER: Dalkey - intercepts and moves into an attacking phase → OUTCOME: Possession regained
+53:00 - TURNOVER: Corduff - clears the ball long, wins the second ball in midfield and begins to build an attack → OUTCOME: Possession regained
+53:15 - TURNOVER: Dalkey - possession gained from Corduff kickoff → OUTCOME: Possession regained
+54:15 - TURNOVER: Corduff - gains possession in midfield → OUTCOME: Possession regained
+54:48 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+55:00 - TURNOVER: Dalkey - recovers the ball and begins to build an attack → OUTCOME: Possession regained
+55:14 - SHOT: Corduff - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+55:30 - GOAL KICK: Corduff - plays the ball back to their goalkeeper, who then sends a long pass upfield → OUTCOME: Play restarted
+56:00 - FREE KICK: Dalkey - takes an attacking free kick, defended and cleared by Corduff → OUTCOME: Cross delivered
+56:15 - FREE KICK: Dalkey - takes a short free kick which is cleared by Corduff → OUTCOME: Cross delivered
+56:45 - TURNOVER: Dalkey - wins possession in the midfield and begins an attack → OUTCOME: Possession regained
+57:00 - TURNOVER: Dalkey - wins possession in the midfield after a tackle → OUTCOME: Possession regained
+57:15 - TURNOVER: Dalkey - gains control, advancing the ball → OUTCOME: Possession regained
+57:30 - TURNOVER: Corduff - defends, heading away a long pass and gaining possession → OUTCOME: Possession regained
+57:40 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+58:00 - TURNOVER: Dalkey - takes a throw-in → OUTCOME: Possession regained
+58:15 - TURNOVER: Corduff - intercepts throw-in → OUTCOME: Possession regained
+59:00 - FREE KICK: Dalkey - takes a free kick from their own half → OUTCOME: Play restarted
+59:52 - FREE KICK: Dalkey - a free kick is taken into the penalty area, cleared by Corduff → OUTCOME: Cross delivered
+60:15 - TURNOVER: Dalkey - wins possession from Corduff → OUTCOME: Possession regained
+60:18 - SHOT: Corduff - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+60:30 - TURNOVER: Corduff - intercepts the ball in an attacking position → OUTCOME: Possession regained
+60:30 - TURNOVER: Dalkey - clears the danger and regains possession in midfield → OUTCOME: Possession regained
+61:00 - TURNOVER: Corduff - intercepts the ball → OUTCOME: Possession regained
+61:15 - FREE KICK: Corduff - takes a free kick from their own half, ball headed out of play by Dalkey → OUTCOME: Cross delivered
+61:30 - TURNOVER: Dalkey - wins possession in their half and starts an attack → OUTCOME: Possession regained
+61:54 - SHOT: Dalkey - shot taken, goes wide of the goal → OUTCOME: Shot missed
+62:00 - TURNOVER: Dalkey - initiates an attack → OUTCOME: Possession regained
+62:15 - TURNOVER: Corduff - gains possession and maintains it in the midfield → OUTCOME: Possession regained
+62:30 - TURNOVER: Corduff - successfully defends and wins back possession → OUTCOME: Possession regained
+62:45 - TURNOVER: Corduff - wins possession → OUTCOME: Possession regained
+63:45 - GOAL KICK: Corduff - takes a goal kick → OUTCOME: Play restarted
+64:15 - TURNOVER: Corduff - defends and clears the ball → OUTCOME: Possession regained
+64:30 - TURNOVER: Dalkey - intercepts Corduff's long ball → OUTCOME: Possession regained
+64:30 - TURNOVER: Corduff - intercepts Dalkey's pass and regains possession → OUTCOME: Possession regained
+64:56 - SHOT: Dalkey - goal scored → OUTCOME: Shot on target
+65:00 - TURNOVER: Corduff - wins possession in midfield after a tackle → OUTCOME: Possession regained
+65:39 - FOUL: Corduff - foul by Corduff team → OUTCOME: Free kick awarded
+66:10 - TURNOVER: Dalkey - wins the ball after a tackle → OUTCOME: Possession regained
+66:34 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+66:49 - SHOT: Corduff - goal → OUTCOME: Shot on target
+67:00 - TURNOVER: Dalkey - wins possession and plays the ball forward → OUTCOME: Possession regained
+67:18 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+67:34 - SHOT: Dalkey - goal scored → OUTCOME: Shot on target
+68:15 - FREE KICK: Corduff - prepares to take a free kick in Dalkey's half → OUTCOME: Cross delivered
+68:30 - TURNOVER: Dalkey - gains possession and builds an attack → OUTCOME: Possession regained
+68:45 - TURNOVER: Dalkey - wins possession in midfield → OUTCOME: Possession regained
+68:45 - TURNOVER: Corduff - dispossesses Dalkey, then plays a long attacking pass → OUTCOME: Counter-attack started
+69:00 - TURNOVER: Dalkey - defends and clears the ball → OUTCOME: Possession regained
+69:18 - FOUL: Dalkey - foul by Dalkey team, yellow card shown to a Dalkey player → OUTCOME: Free kick awarded, Card shown
+69:49 - SHOT: Dalkey - goal scored → OUTCOME: Shot on target
+70:00 - GOAL KICK: Dalkey - takes a goal kick → OUTCOME: Play restarted
+70:15 - GOAL KICK: Corduff - takes a goal kick → OUTCOME: Play restarted
+70:30 - TURNOVER: Dalkey - gains possession in midfield → OUTCOME: Possession regained
+70:35 - SHOT: Dalkey - goal scored by Dalkey (VEO verified shot) → OUTCOME: Shot on target
+71:33 - SHOT: Corduff - shot from inside the penalty area goes wide of the goal → OUTCOME: Shot missed
+71:45 - FREE KICK: Corduff - prepares to take a free kick from just outside the penalty area → OUTCOME: Cross delivered
+72:00 - FREE KICK: Corduff - takes a free kick near the penalty area → OUTCOME: Cross delivered
+72:00 - TURNOVER: Dalkey - defends the set piece and clears the ball, subsequently launching a counter-attack → OUTCOME: Counter-attack started
+72:11 - SHOT: Dalkey - shot taken, goal scored (VEO verified shot) → OUTCOME: Shot on target
+72:33 - SHOT: Corduff - shot taken, goes wide of the goal → OUTCOME: Shot missed
+72:53 - FOUL: Dalkey - foul resulting in free kick to Corduff → OUTCOME: Free kick awarded
+73:15 - TURNOVER: Corduff - wins possession in midfield and initiates a counter-attack → OUTCOME: Counter-attack started
+73:33 - CORNER: Corduff - goal scored by Corduff from a header → OUTCOME: Shot on target
+73:56 - CORNER: Corduff - A short corner kick is taken → OUTCOME: Cross delivered
+74:15 - TURNOVER: Corduff - wins the resulting aerial duel and gains possession → OUTCOME: Possession regained
+74:19 - SHOT: Dalkey - shot taken, goal scored (VEO verified shot) → OUTCOME: Shot on target
+74:47 - FOUL: Dalkey - foul leading to penalty kick → OUTCOME: Penalty awarded
+75:00 - GOAL KICK: Dalkey - takes a goal kick → OUTCOME: Play restarted
+75:15 - TURNOVER: Corduff - gains control and passes the ball → OUTCOME: Possession regained
+75:30 - TURNOVER: Dalkey - gains possession in the midfield → OUTCOME: Possession regained
+75:45 - TURNOVER: Corduff - wins possession from Dalkey in midfield → OUTCOME: Possession regained
+76:15 - TURNOVER: Corduff - wins possession from Dalkey in midfield → OUTCOME: Counter-attack started
+76:30 - SHOT: Corduff - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+76:45 - SHOT: Dalkey - goal scored by Dalkey → OUTCOME: Shot on target
+77:00 - GOAL KICK: Dalkey - prepares for a goal kick → OUTCOME: Play restarted
+78:14 - TURNOVER: Corduff - successfully tackles and wins possession → OUTCOME: Possession regained
+78:30 - FREE KICK: Dalkey - restarts play with a free kick → OUTCOME: Play restarted
+79:00 - FREE KICK: Corduff - Corduff sets up for an attacking free kick → OUTCOME: Cross delivered
+79:15 - FREE KICK: Dalkey - takes a free kick from the right side, ball sent into penalty area, Corduff defends and clears → OUTCOME: Cross delivered
+79:15 - TURNOVER: Dalkey - recovers the ball in the midfield → OUTCOME: Possession regained
+79:31 - SHOT: Dalkey - goal from a free kick → OUTCOME: Shot on target
+79:58 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+80:00 - TURNOVER: Dalkey - intercepts Corduff's long pass → OUTCOME: Possession regained
+80:00 - TURNOVER: Dalkey - launches a counter-attack → OUTCOME: Counter-attack started
+80:45 - SHOT: Corduff - shot from outside the box is blocked by a Dalkey defender → OUTCOME: Shot blocked
+80:45 - TURNOVER: Dalkey - recovers the loose ball and transitions to a counter-attack → OUTCOME: Counter-attack started
+81:10 - SHOT: Corduff - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+81:15 - TURNOVER: Dalkey - intercepts a pass on the right flank → OUTCOME: Possession regained
+81:45 - GOAL KICK: Corduff - is awarded a goal kick, prepares to take → OUTCOME: Play restarted
+82:13 - SHOT: Corduff - shot taken, saved by the goalkeeper (VEO verified shot) → OUTCOME: Saved by goalkeeper
+82:32 - SHOT: Corduff - shot taken by Corduff is blocked → OUTCOME: Shot blocked
+82:35 - SHOT: Corduff - another Corduff shot is taken, Corduff scores a goal → OUTCOME: Shot on target
+83:35 - FOUL: Dalkey - foul awarded to Corduff in their own half → OUTCOME: Free kick awarded
+84:00 - TURNOVER: Dalkey - wins the ball and moving forward → OUTCOME: Possession regained
+84:27 - SHOT: Dalkey - a shot is taken which goes wide of the goal → OUTCOME: Shot missed
+84:45 - TURNOVER: Corduff - intercepts a forward pass and gaining possession → OUTCOME: Possession regained
+84:55 - SHOT: Corduff - Shot on goal leading to VEO Goal 2 (VEO verified shot) → OUTCOME: Goal scored
+85:11 - GOAL: Corduff - Red team attacks, progressing the ball into the opponent's penalty area. Goal scored (VEO Goal 2) → OUTCOME: Goal scored
+86:30 - TURNOVER: Dalkey - wins possession in midfield and initiates an attack → OUTCOME: Possession regained
+86:45 - TURNOVER: Corduff - ball successfully cleared out for a throw-in by Corduff → OUTCOME: Possession regained
+87:45 - TURNOVER: Corduff - successful sliding tackle by Corduff player → OUTCOME: Possession regained
+88:11 - TURNOVER: Dalkey - intercepts the ball and starts an attack → OUTCOME: Possession regained
+88:21 - FOUL: Corduff - foul by Corduff team, referee awards a free kick to Dalkey → OUTCOME: Free kick awarded
+88:42 - SHOT: Dalkey - Shot on goal from attacking play (VEO verified shot) → OUTCOME: Shot on goal
+88:45 - SHOT: Dalkey - plays a long ball forward towards the Corduff's goal → OUTCOME: Shot on target
+89:15 - SHOT: Dalkey - Goal scored by Dalkey → OUTCOME: Shot on target

@@ -180,21 +180,21 @@ def main():
     
     # Load required files
     team_config_file = outputs_dir / '1_team_config.json'
-    tactical_file = outputs_dir / '2.5_mega_tactical.txt'
-    summary_file = outputs_dir / '2.5_mega_summary.txt'
+    tactical_file = outputs_dir / '2.6_focused_tactical.txt'
+    summary_file = outputs_dir / '2.6_focused_summary.txt'
     
     if not team_config_file.exists():
         print(f"❌ Error: Team configuration not found: {team_config_file}")
         sys.exit(1)
     
     if not tactical_file.exists():
-        print(f"❌ Error: Tactical analysis not found: {tactical_file}")
-        print("Run step 2.5 first: python 2.5_events_synthesizer.py <match-id>")
+        print(f"❌ Error: Focused tactical analysis not found: {tactical_file}")
+        print("Run step 2.6 first: python 2.6_focused_events.py <match-id>")
         sys.exit(1)
     
     if not summary_file.exists():
-        print(f"❌ Error: Summary data not found: {summary_file}")
-        print("Run step 2.5 first: python 2.5_events_synthesizer.py <match-id>")
+        print(f"❌ Error: Focused summary data not found: {summary_file}")
+        print("Run step 2.6 first: python 2.6_focused_events.py <match-id>")
         sys.exit(1)
     
     # Load data

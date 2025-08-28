@@ -83,7 +83,7 @@ def load_tactical_analysis(match_id):
 def load_match_summary(match_id):
     """Load match summary for additional context"""
     base_path = Path(__file__).parent.parent / "outputs" / match_id
-    summary_file = base_path / "2.5_mega_summary.txt"
+    summary_file = base_path / "2.6_focused_summary.txt"
     
     if not summary_file.exists():
         return "No match summary available"
